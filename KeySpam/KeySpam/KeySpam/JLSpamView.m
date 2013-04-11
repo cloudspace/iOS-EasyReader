@@ -7,7 +7,10 @@
 //
 
 #import "JLSpamView.h"
+#import "JLAppDelegate.h"
 
 @implementation JLSpamView
+
+
 
 @end

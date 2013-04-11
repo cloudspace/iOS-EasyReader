@@ -10,4 +10,9 @@
 
 @interface JLSpamView : NSView
 
+
+@property IBOutlet NSButton *button_toggleCM;
+@property IBOutlet NSTextField *textField_status;
+
+
 @end
