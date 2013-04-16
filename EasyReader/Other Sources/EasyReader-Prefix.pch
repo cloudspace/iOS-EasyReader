@@ -1,0 +1,36 @@
+//
+// Prefix header for all source files of the 'EasyReader' target in the 'EasyReader' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+// UIKit/Foundation/CoreData
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#endif
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+  #import <SystemConfiguration/SystemConfiguration.h>
+  #import <MobileCoreServices/MobileCoreServices.h>
+#else
+  #import <SystemConfiguration/SystemConfiguration.h>
+  #import <CoreServices/CoreServices.h>
+#endif
+
+// Make app delegate available
+#import "CSAppDelegate.h"
+#define appDelegate (CSAppDelegate *)[UIApplication sharedApplication].delegate
+
+// Magical Record
+#define MR_SHORTHAND
+#import "CoreData+MagicalRecord.h"
+
+
+
+
