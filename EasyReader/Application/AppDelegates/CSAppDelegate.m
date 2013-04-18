@@ -12,12 +12,14 @@
 #import "HPAccountManager.h"
 
 #import "User.h"
+#import "Feed.h"
 
 @implementation CSAppDelegate
 
 - (void)applyStyles
 {
   [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:43/255.0 green:120/255.0 blue:176/255.0 alpha:1.0]];
+  [[UISearchBar appearance]     setTintColor:[UIColor colorWithRed:43/255.0 green:120/255.0 blue:176/255.0 alpha:1.0]];
   //[[UILabel appearanceWhenContainedIn:[UINavigationBar class], nil] setFont:[UIFont fontWithName:@"Avenir-Medium" size:17.00]];
   
   [[UINavigationBar appearance] setTitleTextAttributes:
@@ -31,6 +33,8 @@
   self.window.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1];
   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
 }
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -49,6 +53,8 @@
   //
   [MagicalRecord setupAutoMigratingCoreDataStack];
   
+  
+
 
   //
   // Set up root view controller

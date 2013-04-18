@@ -7,16 +7,21 @@
 //
 
 #import "CSBaseViewController.h"
+#import "CSAutoCompleteViewController.h"
 
-@class Feed;
+@class Feed, AFJSONRequestOperation;
 
-@interface CSFeedCreateViewController : CSBaseViewController
+
+@interface CSFeedAddViewController : CSBaseViewController <CSAutoCompleteDelegate>
 
 #pragma mark - Properties
 @property (nonatomic, retain) UIBarButtonItem *barButton_save;
 @property (nonatomic, retain) UIBarButtonItem *barButton_cancel;
 @property (nonatomic, retain) Feed *feed;
 
+@property (nonatomic, retain) CSAutoCompleteViewController *autoCompleteController;
+@property (nonatomic, retain) AFJSONRequestOperation *requestOperation;
+@property (nonatomic, retain) NSArray *availableFeeds;
 
 #pragma mark - IBOutlet Properties
 @property (nonatomic, retain) IBOutlet UITextField *textField_name;

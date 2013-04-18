@@ -7,7 +7,6 @@
 //
 
 #import "CSMenuRightViewController.h"
-#import "CSBaseView.h"
 
 @interface CSMenuRightViewController ()
 
@@ -28,7 +27,7 @@
 - (void)loadView
 {
   CGRect screenRect = [[UIScreen mainScreen] bounds];
-  CSBaseView *view = [[CSBaseView alloc] initWithFrame:screenRect];
+  UIView *view = [[UIView alloc] initWithFrame:screenRect];
   
   [view setBackgroundColor:[UIColor greenColor]];
   

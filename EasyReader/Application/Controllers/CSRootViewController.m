@@ -41,8 +41,25 @@
     
     _sideMenu = [MFSideMenu menuWithNavigationController:self
                                  leftSideMenuController:_viewController_menuLeft
-                                rightSideMenuController:_viewController_menuRight];
+                                rightSideMenuController:nil];
 
+    _sideMenu.menuStateEventBlock = ^(MFSideMenuStateEvent event) {
+      switch (event) {
+        case MFSideMenuStateEventMenuWillOpen:
+          NSLog(@"asdf");
+          // the menu will open
+          break;
+        case MFSideMenuStateEventMenuDidOpen:
+          // the menu finished opening
+          break;
+        case MFSideMenuStateEventMenuWillClose:
+          // the menu will close
+          break;
+        case MFSideMenuStateEventMenuDidClose:
+          // the menu finished closing
+          break;
+      }
+    };
   }
   
   return self;

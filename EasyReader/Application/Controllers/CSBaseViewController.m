@@ -48,13 +48,13 @@
       nibType = @"iPad";
     }
     
-    
     // Get the final nib name and set it if it exists
     NSString *nibName = [NSString stringWithFormat:@"%@_%@", className, nibType];
     if ([[NSBundle mainBundle] pathForResource:nibName ofType:@"nib"])
     {
       nibNameOrNil = nibName;
       nibBundleOrNil = [NSBundle mainBundle];
+      _shouldSetViewFrame = YES;
     }
   }
   
@@ -69,11 +69,24 @@
   return self;
 }
 
-- (void)viewDidLoad
+/**
+ * Sets the default frame
+ */
+- (UIView *)view
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+  if (_shouldSetViewFrame)
+  {
+    [[super view] setFrame:[[UIApplication sharedApplication] delegate].window.screen.applicationFrame];
+    _shouldSetViewFrame = NO;
+  }
+  return [super view];
 }
+
+- (void)setView:(UIView *)view
+{
+  [super setView:view];
+}
+
 
 /**
  * Shows or hides the nav bar when the view appears
@@ -100,12 +113,17 @@
   return [[[self class] alloc] initWithNibName:nil bundle:nil];
 }
 
-
-- (CSRootViewController *)rootViewController
+/**
+ * Returns the root view controller
+ */
+- (id)rootViewController
 {
-  return (CSRootViewController *)[[appDelegate window] rootViewController];
+  return [[appDelegate window] rootViewController];
 }
 
+/**
+ * Handles memory warnings
+ */
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

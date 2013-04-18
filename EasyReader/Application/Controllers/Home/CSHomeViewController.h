@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
 
-@class User, AFJSONRequestOperation;
+@class User, AFJSONRequestOperation, CSStyledTableView;
 
 /**
  * The home view controller for the feed parser
@@ -26,7 +26,7 @@
 
 #pragma mark - UI Properties
 @property (nonatomic, retain) IBOutlet UICollectionView *collectionView_feed;
-@property (nonatomic, retain) IBOutlet UITableView *tableView_feed;
+@property (nonatomic, retain) IBOutlet CSStyledTableView *tableView_feed;
 @property (nonatomic, retain) UIBarButtonItem *barButton_menu;
 
 

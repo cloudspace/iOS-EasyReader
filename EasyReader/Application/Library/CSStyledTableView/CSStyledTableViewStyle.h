@@ -11,6 +11,8 @@
 @protocol CSTableViewStyle <NSObject>
 
 @optional
+- (UIColor *)       tableBackgroundColor;
+
 //
 // Header
 //
@@ -46,6 +48,8 @@
 
 // Selection
 - (UIColor *)       cellSelectedBackgroundColor;
+- (UIColor *)       cellSelectedTextColor;
+- (UIColor *)       cellSeparatorColor;
 
 
 @end

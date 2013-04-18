@@ -13,12 +13,36 @@
 
 @implementation CSStyledTableView
 
+
+/**
+ * Sets the table view style and updates the main table styles
+ */
+- (void)setTableViewStyle:(CSStyledTableViewStyle *)tableViewStyle
+{
+  _tableViewStyle = tableViewStyle;
+  
+  [self setBackgroundColor:[tableViewStyle tableBackgroundColor]];
+  [self  setSeparatorColor:[tableViewStyle cellSeparatorColor]];
+}
+
+/**
+ * The current table view style
+ */
+- (CSStyledTableViewStyle *)tableViewStyle
+{
+  return _tableViewStyle;
+}
+
+
 /**
  * Gets the default style or the current style if non is available
  */
 - (CSStyledTableViewStyle *) tableViewStyleOrDefault
 {
-  if (!self.tableViewStyle) self.tableViewStyle = [[CSStyledTableViewStyle alloc] init];
+  if (!self.tableViewStyle)
+  {
+    self.tableViewStyle = [[CSStyledTableViewStyle alloc] init];
+  }
   
   return self.tableViewStyle;
 }

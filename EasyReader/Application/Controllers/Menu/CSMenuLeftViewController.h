@@ -11,7 +11,11 @@
 
 @class Feed, User, CSStyledTableView;
 
-@interface CSMenuLeftViewController : CSBaseViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CSMenuLeftViewController : CSBaseViewController <
+  UITableViewDataSource,
+  UITableViewDelegate
+>
+
 
 #pragma mark - IBOutlet Properties
 @property (nonatomic, retain) IBOutlet CSStyledTableView *tableView_feeds;

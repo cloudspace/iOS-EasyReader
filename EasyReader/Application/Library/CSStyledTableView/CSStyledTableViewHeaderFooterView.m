@@ -23,7 +23,6 @@
   {
     self.tableViewStyle = style;
     
-    //self.overrideBackgroundView = [[UIView alloc] initWithFrame:self.frame];
     _gradientBackgroundLayer = [CAGradientLayer layer];
     _gradientBackgroundLayer.colors = [NSArray arrayWithObjects:(id)[[style headerBackgroundTopColor] CGColor], (id)[[style headerBackgroundBottomColor] CGColor], nil];
     [self.backgroundView.layer addSublayer:_gradientBackgroundLayer];

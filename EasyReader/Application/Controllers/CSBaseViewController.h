@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 @class CSRootViewController;
 @interface CSBaseViewController : UIViewController
-
+{
+  bool _shouldSetViewFrame;
+}
 
 #pragma mark - Properties
-@property (nonatomic)        BOOL hasNavigationBar;                    ///< Whether or not the navigation bar shoudl be shown
-@property (readonly, retain) CSRootViewController *rootViewController; ///< The root view controller for the project
+@property (nonatomic)        BOOL hasNavigationBar;   ///< Whether or not the navigation bar should be shown
+@property (readonly, retain) id   rootViewController; ///< A reference to the root view controller for the application
+@property (nonatomic, retain) UIView *view;
 
 @end

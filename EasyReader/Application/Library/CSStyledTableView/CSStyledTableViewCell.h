@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 @class CSStyledTableViewStyle;
 
 
@@ -15,6 +16,11 @@
 
 #pragma mark - IBOutlet Properties
 @property (nonatomic) CSStyledTableViewStyle *tableViewStyle; ///< The style for this cell
+
+
+#pragma mark - Properties
+@property (nonatomic, retain) CAGradientLayer *gradientBackgroundLayer;
+
 
 
 #pragma mark - Methods

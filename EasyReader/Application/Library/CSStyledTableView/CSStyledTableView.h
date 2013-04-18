@@ -14,6 +14,11 @@
  * An easily styled table view class
  */
 @interface CSStyledTableView : UITableView
+{
+  BOOL _hasStyledTable;
+  CSStyledTableViewStyle *_tableViewStyle;
+}
+
 
 #pragma mark - Properties
 @property (nonatomic) CSStyledTableViewStyle *tableViewStyle;

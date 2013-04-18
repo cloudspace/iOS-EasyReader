@@ -7,8 +7,7 @@
 //
 
 #import "CSMenuLeftViewController.h"
-#import "CSBaseView.h"
-#import "CSFeedCreateViewController.h"
+#import "CSFeedAddViewController.h"
 
 #import "Feed.h"
 #import "User.h"
@@ -22,6 +21,7 @@
 #import "CSStyledTableView.h"
 #import "CSStyledTableViewCell.h"
 #import "CSStyledTableViewHeaderFooterView.h"
+#import "CSStyledTableViewStyleDark.h"
 
 @interface CSMenuLeftViewController ()
 
@@ -29,21 +29,16 @@
 
 @implementation CSMenuLeftViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-      
-    }
-    return self;
-}
-
-
+/**
+ * Sets up the table view, observers, and loads the core data feed list
+ */
 - (void)viewDidLoad
 {
   [super viewDidLoad];
 
+  // Set tableViewStyle
+  self.tableView_feeds.tableViewStyle =[[CSStyledTableViewStyleDark alloc] init];
+  
   // Add observer
   self.currentUser = [User current];
   [self.currentUser addObserver:self forKeyPath:@"feeds" options:NSKeyValueObservingOptionNew context:nil];
@@ -93,18 +88,18 @@
   //
   // Dequeue the header view
   //
-  CSStyledTableViewHeaderFooterView *header = [self.tableView_feeds dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
+  CSStyledTableViewHeaderFooterView *header = [self.tableView_feeds dequeueReusableHeaderFooterViewWithIdentifier:@"leftMenuHeader"];
   
   NSInteger headerWidth  = tableView.frame.size.width;
   
   //
   // Add edit button to first section
   //
-  UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(headerWidth - 44, 0, 44, 44)];
-  [button setTintColor:[UIColor colorWithRed:62/255.0 green:69/255.0 blue:88/255.0 alpha:1.0]];
-  [button setImage:[UIImage imageNamed:@"Images/Icons/icon_pencil@2x.png" ] forState:UIControlStateNormal];
-  [button addTarget:self action:@selector(toggleEditMode:) forControlEvents:UIControlEventTouchUpInside];
-  [header.contentView addSubview: button];
+  UIButton *button_edit = [[UIButton alloc] initWithFrame:CGRectMake(headerWidth - 44, 0, 44, 44)];
+  [button_edit setTintColor:[UIColor colorWithRed:62/255.0 green:69/255.0 blue:88/255.0 alpha:1.0]];
+  [button_edit setImage:[UIImage imageNamed:@"icon_pencil@2x.png" ] forState:UIControlStateNormal];
+  [button_edit addTarget:self action:@selector(toggleEditMode:) forControlEvents:UIControlEventTouchUpInside];
+  [header.contentView addSubview: button_edit];
   
   // Set label
   [header.titleLabel setText:[self tableView:tableView titleForHeaderInSection:section]];
@@ -118,7 +113,7 @@
  */
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-  return @"ALL FEEDS";
+  return @"MY FEEDS";
 }
 
 /**
@@ -151,16 +146,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   // Dequeue a styled cell
-  CSStyledTableViewCell *cell = [self.tableView_feeds dequeueReusableCellWithIdentifier:@"cell"];
+  CSStyledTableViewCell *cell;
   
   // Set the content
   if (tableView.editing && indexPath.row == [self tableView:self.tableView_feeds numberOfRowsInSection:0] - 1)
   {
+    cell = [self.tableView_feeds dequeueReusableCellWithIdentifier:@"leftMenuCellAdd"];
+    
     // Set the label text
     [cell.textLabel setText:@"Add a new feed"];
+    [cell.textLabel setFont:[UIFont fontWithName:@"Avenir-Black" size:14.0f]];
+    [cell.textLabel setFrame:CGRectMake(15, 0, tableView.frame.size.width-44, 44)];
+    [cell.imageView setHidden:YES];
   }
   else
   {
+    cell = [self.tableView_feeds dequeueReusableCellWithIdentifier:@"leftMenuCell"];
+    
     // Set data based on feed name
     Feed *feed = self.feeds[indexPath.row];
     
@@ -171,8 +173,9 @@
     [cell.textLabel setFrame:CGRectMake(40, 0, tableView.frame.size.width, 44)];
     
     // Show feed icons
+    [cell.imageView setHidden:NO];
     [cell.imageView setFrame:CGRectMake(0,0,44,44)];
-    [cell.imageView setImage:[UIImage imageNamed:@"Images/Icons/icon_rss@2x.png"]];
+    [cell.imageView setImage:[UIImage imageNamed:@"icon_rss@2x.png"]];
   }
 
   return cell;
@@ -194,18 +197,18 @@
   if (editingStyle == UITableViewCellEditingStyleInsert)
   {    
     // Create (or edit) a feed
-    CSFeedCreateViewController *feedCreateController = [CSFeedCreateViewController new];
+    CSFeedAddViewController *feedAddController = [CSFeedAddViewController new];
     
     if (indexPath.row < [self.feeds count])
     {
-      feedCreateController.feed = self.feeds[indexPath.row];
+      feedAddController.feed = self.feeds[indexPath.row];
     }
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:feedCreateController];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:feedAddController];
     navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
     [self.rootViewController presentViewController:navController animated:YES completion:^{
-      [self.rootViewController.sideMenu setMenuState:MFSideMenuStateClosed];
+      [((CSRootViewController *)self.rootViewController).sideMenu setMenuState:MFSideMenuStateClosed];
       [self toggleEditMode:nil];
     }];
     
@@ -255,7 +258,7 @@
   user.activeFeed = self.feeds[indexPath.row];
   
   [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
-  [self.rootViewController.sideMenu setMenuState:MFSideMenuStateClosed];
+  [((CSRootViewController *)self.rootViewController).sideMenu setMenuState:MFSideMenuStateClosed];
 }
 
 
@@ -263,7 +266,7 @@
 /**
  * Toggles edit mode for the table
  */
-- (void)toggleEditMode:(id) sender
+- (void)toggleEditMode:(id)sender
 {
   [self.tableView_feeds beginUpdates];
   
@@ -285,6 +288,12 @@
   }
   
   [self.tableView_feeds endUpdates];
+}
+
+- (void)searchForFeeds:(id)sender
+{
+  NSLog(@"feedserach");
+//  [CSFeedSearchViewController]
 }
 
 
