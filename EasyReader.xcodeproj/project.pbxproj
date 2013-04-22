@@ -14,6 +14,8 @@
 		9D27B1E51715E30F001C39CF /* CSStyledTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27B1E41715E30F001C39CF /* CSStyledTableViewCell.m */; };
 		9D27B1E81715E326001C39CF /* CSStyledTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27B1E71715E326001C39CF /* CSStyledTableViewHeaderFooterView.m */; };
 		9D27B1F11715EFB2001C39CF /* CSStyledTableViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27B1F01715EFB1001C39CF /* CSStyledTableViewStyle.m */; };
+		9D2FDF881721EE4400535763 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF871721EE4400535763 /* Default@2x.png */; };
+		9D2FDF8A1721EE4800535763 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF891721EE4700535763 /* Default.png */; };
 		9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
 		9D429773170E166300E73BFE /* CSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D429772170E166200E73BFE /* CSBaseViewController.m */; };
 		9D429777170E168A00E73BFE /* CSMenuRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D429776170E168A00E73BFE /* CSMenuRightViewController.m */; };
@@ -57,6 +59,7 @@
 		9DAC16F91709D48E00383722 /* EasyReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC16F81709D48E00383722 /* EasyReaderTests.m */; };
 		9DAC172D170A043200383722 /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC171A170A043200383722 /* CSAppDelegate.m */; };
 		9DAC172E170A043200383722 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC1721170A043200383722 /* main.m */; };
+		9DCAE7561720957300034DF8 /* control_dualEntryTextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DCAE7551720957300034DF8 /* control_dualEntryTextField@2x.png */; };
 		9DF355CC171F3D4300A720AA /* icon_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CB171F3D4300A720AA /* icon_search@2x.png */; };
 		9DF355CE171F450200A720AA /* FeedAdd_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CD171F450200A720AA /* FeedAdd_iPhone.xib */; };
 		9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
@@ -90,6 +93,8 @@
 		9D27B1E71715E326001C39CF /* CSStyledTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSStyledTableViewHeaderFooterView.m; path = CSStyledTableView/CSStyledTableViewHeaderFooterView.m; sourceTree = "<group>"; };
 		9D27B1EF1715EFB1001C39CF /* CSStyledTableViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSStyledTableViewStyle.h; path = CSStyledTableView/CSStyledTableViewStyle.h; sourceTree = "<group>"; };
 		9D27B1F01715EFB1001C39CF /* CSStyledTableViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSStyledTableViewStyle.m; path = CSStyledTableView/CSStyledTableViewStyle.m; sourceTree = "<group>"; };
+		9D2FDF871721EE4400535763 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9D2FDF891721EE4700535763 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9D42976E170E164D00E73BFE /* CSMenuLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMenuLeftViewController.h; path = Menu/CSMenuLeftViewController.h; sourceTree = "<group>"; };
 		9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMenuLeftViewController.m; path = Menu/CSMenuLeftViewController.m; sourceTree = "<group>"; };
 		9D429771170E166200E73BFE /* CSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseViewController.h; sourceTree = "<group>"; };
@@ -146,6 +151,7 @@
 		9DAC1720170A043200383722 /* EasyReader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EasyReader-Prefix.pch"; sourceTree = "<group>"; };
 		9DAC1721170A043200383722 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DAC172C170A043200383722 /* EasyReader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EasyReader-Info.plist"; sourceTree = "<group>"; };
+		9DCAE7551720957300034DF8 /* control_dualEntryTextField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "control_dualEntryTextField@2x.png"; sourceTree = "<group>"; };
 		9DF355CB171F3D4300A720AA /* icon_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_search@2x.png"; sourceTree = "<group>"; };
 		9DF355CD171F450200A720AA /* FeedAdd_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedAdd_iPhone.xib; path = Feed/FeedAdd_iPhone.xib; sourceTree = "<group>"; };
 		9DF4BB1E17130E99001DCC88 /* EasyReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyReader.xcdatamodel; sourceTree = "<group>"; };
@@ -229,6 +235,7 @@
 		9D8F318D171DB3CE006CFC6A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9DCAE7551720957300034DF8 /* control_dualEntryTextField@2x.png */,
 				9D8F318E171DB410006CFC6A /* Buttons */,
 				9D8F3190171DB410006CFC6A /* Default */,
 				9D8F3191171DB410006CFC6A /* Icons */,
@@ -278,6 +285,8 @@
 		9DA7CB35171CAD020045CC88 /* iOS Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9D2FDF891721EE4700535763 /* Default.png */,
+				9D2FDF871721EE4400535763 /* Default@2x.png */,
 				9D27B1DE1715DECB001C39CF /* Default-568h@2x.png */,
 				9DA7CB2B171CAD020045CC88 /* Icon-72.png */,
 				9DA7CB2C171CAD020045CC88 /* Icon-72@2x.png */,
@@ -499,9 +508,9 @@
 			children = (
 				9DFBC0971714957E006BF840 /* CSFeedAddViewController.h */,
 				9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */,
-				9DFBC0A01714A9B3006BF840 /* CSFeedItemViewController.h */,
 				9DA7CB40171D9F2A0045CC88 /* CSFeedSearchViewController.h */,
 				9DA7CB41171D9F2A0045CC88 /* CSFeedSearchViewController.m */,
+				9DFBC0A01714A9B3006BF840 /* CSFeedItemViewController.h */,
 				9DFBC0A11714A9B3006BF840 /* CSFeedItemViewController.m */,
 			);
 			name = Feed;
@@ -618,6 +627,9 @@
 				9DF355CC171F3D4300A720AA /* icon_search@2x.png in Resources */,
 				9DF355CE171F450200A720AA /* FeedAdd_iPhone.xib in Resources */,
 				9D140BF5171F68E000CDD319 /* button_add@2x.png in Resources */,
+				9DCAE7561720957300034DF8 /* control_dualEntryTextField@2x.png in Resources */,
+				9D2FDF881721EE4400535763 /* Default@2x.png in Resources */,
+				9D2FDF8A1721EE4800535763 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,16 +809,13 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Sampson (7QVD7BU6QR)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott Sampson (7QVD7BU6QR)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Desktop/HPSocialNetworkManager/Dependencies\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				INFOPLIST_FILE = "EasyReader/Supporting Files/EasyReader-Info.plist";
 				PRODUCT_NAME = "Easy Reader";
-				PROVISIONING_PROFILE = "2F507595-DF3C-45E3-90ED-3B38897A31FC";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2F507595-DF3C-45E3-90ED-3B38897A31FC";
+				PROVISIONING_PROFILE = "2BB50DDB-61BF-4B41-88D5-45080FDE7544";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2BB50DDB-61BF-4B41-88D5-45080FDE7544";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -818,16 +827,13 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Cloudspace";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Cloudspace";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Desktop/HPSocialNetworkManager/Dependencies\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				INFOPLIST_FILE = "EasyReader/Supporting Files/EasyReader-Info.plist";
 				PRODUCT_NAME = "Easy Reader";
-				PROVISIONING_PROFILE = "803C16A6-46EE-49BB-BB2F-41FA3E82D4F7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "803C16A6-46EE-49BB-BB2F-41FA3E82D4F7";
+				PROVISIONING_PROFILE = "8CDF1186-DC61-4978-BF8A-EDD81AA4A8C9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8CDF1186-DC61-4978-BF8A-EDD81AA4A8C9";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};

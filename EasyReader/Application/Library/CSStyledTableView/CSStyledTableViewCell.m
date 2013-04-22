@@ -69,6 +69,28 @@
   }
   
 }
+
+//- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+//{
+//  return [super gestureRecognizerShouldBegin:gestureRecognizer];
+//}
+//
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+//{
+// return  [super gestureRecognizer:gestureRecognizer shouldReceiveTouch:touch];
+//}
+//
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+//{
+//  return [super gestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
+//}
+//
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//  [super touchesBegan:touches withEvent:event];  //let the tableview handle cell selection
+//  [self.nextResponder touchesBegan:touches withEvent:event]; // give the controller a chance for handling touch events
+//}
+
 //
 //- (void)setSelected:(BOOL)selected animated:(BOOL)animated
 //{

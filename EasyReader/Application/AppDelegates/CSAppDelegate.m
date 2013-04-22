@@ -20,6 +20,8 @@
 {
   [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:43/255.0 green:120/255.0 blue:176/255.0 alpha:1.0]];
   [[UISearchBar appearance]     setTintColor:[UIColor colorWithRed:43/255.0 green:120/255.0 blue:176/255.0 alpha:1.0]];
+  [[UIToolbar appearance]       setTintColor:[UIColor colorWithRed:43/255.0 green:120/255.0 blue:176/255.0 alpha:1.0]];
+  
   //[[UILabel appearanceWhenContainedIn:[UINavigationBar class], nil] setFont:[UIFont fontWithName:@"Avenir-Medium" size:17.00]];
   
   [[UINavigationBar appearance] setTitleTextAttributes:

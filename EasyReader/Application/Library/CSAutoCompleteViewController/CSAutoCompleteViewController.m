@@ -276,8 +276,11 @@
     }
   }
   
-  [cell.textLabel setText:text];
-    
+  if ($exists(text))
+  {
+    [cell.textLabel setText:text];
+  }
+  
   return cell;
 }
 

@@ -16,8 +16,8 @@
 // Header
 //
 
-- (UIColor *)       headerBackgroundTopColor      { return [UIColor colorWithRed:67/255.0 green:74/255.0 blue:94/255.0 alpha:0.90]; }
-- (UIColor *)       headerBackgroundBottomColor   { return [UIColor colorWithRed:58/255.0 green:65/255.0 blue:83/255.0 alpha:0.90]; }
+- (UIColor *)       headerBackgroundTopColor      { return [UIColor colorWithRed:67/255.0 green:74/255.0 blue:94/255.0 alpha:1.0]; }
+- (UIColor *)       headerBackgroundBottomColor   { return [UIColor colorWithRed:58/255.0 green:65/255.0 blue:83/255.0 alpha:1.0]; }
 
 - (UIFont  *)       headerTitleLabelFont          { return [UIFont fontWithName:@"Avenir-Black" size:12.0f]; }
 - (UIColor *)       headerTitleLabelTextColor     { return [UIColor colorWithWhite:0.90 alpha:1.0]; }

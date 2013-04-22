@@ -15,6 +15,7 @@
 #import "CSAppDelegate.h"
 #import "CSRootViewController.h"
 #import "MFSideMenu.h"
+#import "UINavigationController+MFSideMenu.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -35,7 +36,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-
+  
   // Set tableViewStyle
   self.tableView_feeds.tableViewStyle =[[CSStyledTableViewStyleDark alloc] init];
   
@@ -45,6 +46,28 @@
   
   // Get feeds from core data
   self.feeds = [[self.currentUser feeds] allObjects];
+  
+  CSRootViewController *rootVC = self.rootViewController;
+  
+  __weak CSMenuLeftViewController *weakSelf = self;
+  
+  rootVC.sideMenu.menuStateEventBlock = ^(MFSideMenuStateEvent event) {
+    switch (event) {
+      case MFSideMenuStateEventMenuWillOpen:
+        // the menu will open
+        break;
+      case MFSideMenuStateEventMenuDidOpen:
+        // the menu finished opening
+        break;
+      case MFSideMenuStateEventMenuWillClose:
+        // the menu will close
+        break;
+      case MFSideMenuStateEventMenuDidClose:
+        [weakSelf.tableView_feeds setEditing:NO animated:YES];
+        [weakSelf.tableView_feeds reloadData];
+        break;
+    }
+  };
 }
 
 /**
@@ -69,53 +92,45 @@
 }
 
 
-#pragma mark - UITableViewDataSource Methods
-// Height of the header in each section
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-  return 44;
-}
-
-// Height of all the cells
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  return 44;
-}
-
-// Generates a view for the header in each section
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-  //
-  // Dequeue the header view
-  //
-  CSStyledTableViewHeaderFooterView *header = [self.tableView_feeds dequeueReusableHeaderFooterViewWithIdentifier:@"leftMenuHeader"];
-  
-  NSInteger headerWidth  = tableView.frame.size.width;
-  
-  //
-  // Add edit button to first section
-  //
-  UIButton *button_edit = [[UIButton alloc] initWithFrame:CGRectMake(headerWidth - 44, 0, 44, 44)];
-  [button_edit setTintColor:[UIColor colorWithRed:62/255.0 green:69/255.0 blue:88/255.0 alpha:1.0]];
-  [button_edit setImage:[UIImage imageNamed:@"icon_pencil@2x.png" ] forState:UIControlStateNormal];
-  [button_edit addTarget:self action:@selector(toggleEditMode:) forControlEvents:UIControlEventTouchUpInside];
-  [header.contentView addSubview: button_edit];
-  
-  // Set label
-  [header.titleLabel setText:[self tableView:tableView titleForHeaderInSection:section]];
-  
-  // Return the header
-  return header;
-}
-
+#pragma mark - Actions
 /**
- * Determines the header title for each section
+ * Toggles edit mode for the table
  */
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (void)toggleEditMode:(id)sender
 {
-  return @"MY FEEDS";
+  [self.tableView_feeds beginUpdates];
+  
+  if ([self.tableView_feeds isEditing]) {
+    // Stop editing, delete the 'Add new feed' row
+    [self.tableView_feeds setEditing:NO animated:YES];
+    [self.tableView_feeds deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self tableView:self.tableView_feeds numberOfRowsInSection:0]
+                                                                      inSection:0]]
+                                withRowAnimation:UITableViewRowAnimationFade];
+    
+    
+  }
+  else {
+    // Start editing, add the 'Add new feed' row
+    [self.tableView_feeds insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self tableView:self.tableView_feeds numberOfRowsInSection:0]
+                                                                      inSection:0]]
+                                withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView_feeds setEditing:YES animated:YES];
+  }
+  
+  [self.tableView_feeds endUpdates];
 }
 
+- (void)searchForFeeds:(id)sender
+{
+  NSLog(@"feedserach");
+  //  [CSFeedSearchViewController]
+}
+
+
+#pragma mark -
+#pragma mark - UITableViewDataSource Methods -
+
+#pragma mark - Count Methods
 /**
  * Determines the number of sections in the table view
  */
@@ -137,9 +152,71 @@
   {
     return [self.feeds count];
   }
-
+  
 }
 
+
+#pragma mark - Size Methods
+/**
+ * Height of the header in each section
+ */
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+  return 44;
+}
+
+/**
+ * Height of all the cells
+ */
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  return 44;
+}
+
+
+#pragma mark - Header View
+/**
+ * Generates a view for the header in each section
+ */
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+  //
+  // Dequeue the header view
+  //
+  CSStyledTableViewHeaderFooterView *header = [self.tableView_feeds dequeueReusableHeaderFooterViewWithIdentifier:@"leftMenuHeader"];
+  
+  NSInteger headerWidth  = tableView.frame.size.width;
+  
+  //
+  // Add edit button to first section
+  //
+  UIButton *button_edit = [[UIButton alloc] initWithFrame:CGRectMake(headerWidth - 84, 0, 74, 44)];
+  [button_edit setTintColor:[UIColor colorWithRed:62/255.0 green:69/255.0 blue:88/255.0 alpha:1.0]];
+  [button_edit setImage:[UIImage imageNamed:@"icon_pencil.png" ] forState:UIControlStateNormal];
+  [button_edit addTarget:self action:@selector(toggleEditMode:) forControlEvents:UIControlEventTouchUpInside];
+
+  [button_edit.imageView setContentMode:UIViewContentModeScaleAspectFit];
+  [button_edit setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+
+  [header.contentView addSubview: button_edit];
+  
+  // Set label
+  [header.titleLabel setText:[self tableView:tableView titleForHeaderInSection:section]];
+  
+  // Return the header
+  return header;
+}
+
+/**
+ * Determines the header title for each section
+ */
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+  return @"MY FEEDS";
+}
+
+
+#pragma mark - Cell View
 /**
  * Generates a cell for a given index path
  */
@@ -168,7 +245,7 @@
     
     // Set the label text
     [cell.textLabel setText:feed.name];
-    cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    //cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     [cell.textLabel setFrame:CGRectMake(40, 0, tableView.frame.size.width, 44)];
     
@@ -181,6 +258,8 @@
   return cell;
 }
 
+
+#pragma mark - Editing
 /**
  * Determines which rows are editable
  */
@@ -188,6 +267,43 @@
 {
   return YES;
 }
+
+/**
+ * Determines whether or not a row can be moved
+ */
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  return indexPath.row < [self.feeds count];
+}
+
+/**
+ * Handle moving rows
+ */
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+  NSMutableArray *reorderedFeeds = [self.feeds mutableCopy];
+  
+  id feedToMove =  [reorderedFeeds objectAtIndex:sourceIndexPath.row];
+  [reorderedFeeds removeObjectAtIndex:sourceIndexPath.row];
+  [reorderedFeeds insertObject:feedToMove atIndex:destinationIndexPath.row];
+  
+  self.feeds = [reorderedFeeds copy];
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+       toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath {
+  if (proposedDestinationIndexPath.row < [self.feeds count] - 1)
+  {
+    return proposedDestinationIndexPath;
+  }
+  else
+  {
+    NSIndexPath *lastIndexPathInSection = [NSIndexPath indexPathForRow:[tableView numberOfRowsInSection:sourceIndexPath.section]-2
+                                                             inSection:sourceIndexPath.section];
+    
+    return lastIndexPathInSection;
+  }
+}
+
 
 /**
  * Commits each editing action
@@ -244,9 +360,7 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  //
-  // Handle add on edit mode
-  //
+  // Handle select while in edit mode
   if (tableView.isEditing)
   {
     [self tableView:tableView commitEditingStyle:UITableViewCellEditingStyleInsert forRowAtIndexPath:indexPath];
@@ -254,6 +368,7 @@
     return;
   }
 
+  // Handle normal select
   User *user = [User current];
   user.activeFeed = self.feeds[indexPath.row];
   
@@ -262,39 +377,6 @@
 }
 
 
-#pragma mark - Actions
-/**
- * Toggles edit mode for the table
- */
-- (void)toggleEditMode:(id)sender
-{
-  [self.tableView_feeds beginUpdates];
-  
-  if ([self.tableView_feeds isEditing]) {
-    // Stop editing, delete the 'Add new feed' row
-    [self.tableView_feeds setEditing:NO animated:YES];
-    [self.tableView_feeds deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self tableView:self.tableView_feeds numberOfRowsInSection:0]
-                                                                      inSection:0]]
-                                withRowAnimation:UITableViewRowAnimationFade];
-
-
-  }
-  else {
-    // Start editing, add the 'Add new feed' row
-    [self.tableView_feeds insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self tableView:self.tableView_feeds numberOfRowsInSection:0]
-                                                                      inSection:0]]
-                                withRowAnimation:UITableViewRowAnimationFade];
-    [self.tableView_feeds setEditing:YES animated:YES];
-  }
-  
-  [self.tableView_feeds endUpdates];
-}
-
-- (void)searchForFeeds:(id)sender
-{
-  NSLog(@"feedserach");
-//  [CSFeedSearchViewController]
-}
 
 
 @end

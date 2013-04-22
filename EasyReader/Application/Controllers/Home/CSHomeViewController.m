@@ -16,6 +16,7 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "UIScrollView+SVPullToRefresh.h"
 #import "AFNetworking.h"
+#import "SDWebImagePrefetcher.h"
 
 #import "CSStyledTableView.h"
 #import "CSStyledTableViewCell.h"
@@ -64,8 +65,11 @@
   // Execute and parse the request
   [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
     dispatch_async(dispatch_get_main_queue(), ^{
+      [self.tableView_feed setShowsPullToRefresh:YES];
       [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     });
+    
+    User *currentUser = [User current];
     
     // Create default feeds
     for (NSDictionary *feedData in JSON[@"feeds"])
@@ -73,14 +77,13 @@
       Feed *feed = [Feed createEntity];
       feed.name = feedData[@"name"];
       feed.url  = feedData[@"url"];
-      [[User current] addFeedsObject:feed];
+      [currentUser addFeedsObject:feed];
     }
     
     // Set the first feed as active
-    Feed *firstFeed = [Feed findAll][0];
-    if (firstFeed)
+    if ([currentUser.feeds count] > 0)
     {
-      [firstFeed setIsActiveFor:[User current]];
+      [currentUser setActiveFeed:[currentUser.feeds allObjects][0]];
     }
     
     // Mark database as seeded
@@ -91,6 +94,7 @@
     
   } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
     dispatch_async(dispatch_get_main_queue(), ^{
+      [self.tableView_feed setShowsPullToRefresh:YES];
       [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     });
     
@@ -120,10 +124,19 @@
   UIButton *buttonMenu = [UIButton buttonWithType:UIButtonTypeCustom];
   [buttonMenu setFrame:CGRectMake(0, 0, 44, 44)];
   [buttonMenu addTarget:self.rootViewController action:@selector(toggleLeftMenu) forControlEvents:UIControlEventTouchUpInside];
-  [buttonMenu setBackgroundImage:[UIImage imageNamed:@"button_menu@2x.png"] forState:UIControlStateNormal];
+  [buttonMenu setImage:[UIImage imageNamed:@"button_menu@2x.png"] forState:UIControlStateNormal];
+
+  [buttonMenu.imageView setContentMode:UIViewContentModeScaleAspectFit];
+  [buttonMenu setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin];
+
   
   self.barButton_menu = [[UIBarButtonItem alloc] initWithCustomView:buttonMenu];
   [self.navigationItem setLeftBarButtonItem:self.barButton_menu];
+  
+  // Set up back buttons that point to this view
+  UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+  self.navigationItem.backBarButtonItem = backButton;
+
   
   //
   // Set up pull-to-refresh on tableview
@@ -159,6 +172,12 @@
   [super viewDidAppear:animated];
   
 
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+  [[SDWebImagePrefetcher sharedImagePrefetcher] cancelPrefetching];
+  [super viewDidDisappear:animated];
 }
 
 
@@ -268,8 +287,15 @@
   NSMutableDictionary *feeds = [NSMutableDictionary new];
   NSMutableArray *days = [NSMutableArray new];
   
+  
+  NSMutableArray *urlsToPrefetch = [NSMutableArray new];
+  
   for (NSDictionary *item in self.feedData)
   {
+    // Prefetch image
+    NSString *thumbnailURL = [NSString stringWithFormat:@"%@/feed_items/%@/thumbnail", host, item[@"id"]];
+    [urlsToPrefetch addObject:[NSURL URLWithString:thumbnailURL]];
+    
     if ([item[@"published"] isNull])
     {
       if (![[feeds allKeys] containsObject:@"Recent"])
@@ -294,6 +320,8 @@
       [days addObject:dateString];
     }
   }
+  
+  [[SDWebImagePrefetcher sharedImagePrefetcher] prefetchURLs:[urlsToPrefetch copy]];
   
   // Loop through keys and add the arrays of objects to keep the order right
   NSMutableArray *__feedsByDay = [NSMutableArray new];
@@ -377,21 +405,13 @@
   
   cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   
-  if (item[@"readability_image"])
-  {
-    [cell.imageView setHidden:NO];
-    
-    cell.imageView.layer.cornerRadius = 4;
-    cell.imageView.layer.masksToBounds = YES;
-    [cell.imageView setImageWithURL:item[@"image"] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-    
-  }
-  else
-  {
-    [cell.imageView setHidden:YES];
-    cell.imageView.image = nil;
-  }
+  NSString *thumbnailURL = [NSString stringWithFormat:@"%@/feed_items/%@/thumbnail", host, item[@"id"]];
   
+  
+  cell.imageView.layer.cornerRadius = 4;
+  cell.imageView.layer.masksToBounds = YES;
+  [cell.imageView setImageWithURL:[NSURL URLWithString:thumbnailURL] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    
   // Return the cell
   return cell;
 }
@@ -405,12 +425,27 @@
   NSDictionary *item = self.feedsByDay[indexPath.section][@"items"][indexPath.row];
   
   CSFeedItemViewController *feedItemController = [CSFeedItemViewController new];
+  
+  feedItemController.destinationUrl = item[@"url"];
+  
   feedItemController.title = item[@"name"];
+  [feedItemController setTitle:self.navigationItem.title];
   
   [self.navigationController pushViewController:feedItemController animated:YES];
-  NSString *htmlString = item[@"readability_content"];
-  [feedItemController.webView loadHTMLString:htmlString baseURL:nil];
   
+  if ($exists(item[@"readability_content"]))
+  {
+    [feedItemController.webView loadHTMLString:item[@"readability_content"] baseURL:nil];
+  }
+  else
+  {
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:item[@"url"]]];
+    
+    [feedItemController.webView loadRequest:request];
+  }
+
+ 
+
 }
 
 

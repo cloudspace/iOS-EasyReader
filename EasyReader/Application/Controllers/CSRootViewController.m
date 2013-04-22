@@ -15,6 +15,7 @@
 //#import "UIViewController+NibLoader.h"
 
 #import "MFSideMenu.h"
+#import "UINavigationController+MFSideMenu.h"
 
 @interface CSRootViewController ()
 
@@ -23,7 +24,7 @@
 @implementation CSRootViewController
 
 /**
- * 
+ * Creates the menu contorllers and side menu
  */
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,7 +35,6 @@
     
     // Create view controllers
     _viewController_menuLeft  = [CSMenuLeftViewController new];
-    _viewController_menuRight = [CSMenuRightViewController new];
     _viewController_main      = [CSHomeViewController new];
 
     [self setViewControllers:@[_viewController_main]];
@@ -42,24 +42,11 @@
     _sideMenu = [MFSideMenu menuWithNavigationController:self
                                  leftSideMenuController:_viewController_menuLeft
                                 rightSideMenuController:nil];
+    
+    
+    [self setSideMenu:_sideMenu];
+    
 
-    _sideMenu.menuStateEventBlock = ^(MFSideMenuStateEvent event) {
-      switch (event) {
-        case MFSideMenuStateEventMenuWillOpen:
-          NSLog(@"asdf");
-          // the menu will open
-          break;
-        case MFSideMenuStateEventMenuDidOpen:
-          // the menu finished opening
-          break;
-        case MFSideMenuStateEventMenuWillClose:
-          // the menu will close
-          break;
-        case MFSideMenuStateEventMenuDidClose:
-          // the menu finished closing
-          break;
-      }
-    };
   }
   
   return self;
@@ -98,11 +85,6 @@
   }
 }
 
-- (void)viewDidLoad
-{
-  [super viewDidLoad];
-  // Do any additional setup after loading the view.
-}
 
 - (void)didReceiveMemoryWarning
 {

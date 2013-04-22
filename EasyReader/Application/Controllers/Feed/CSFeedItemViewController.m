@@ -15,64 +15,45 @@
 
 @implementation CSFeedItemViewController
 
-- (void) loadBrowser: (NSURL *) url
+/**
+ * Sets up the toolbar on load
+ */
+- (void)viewDidLoad
 {
+  [super viewDidLoad];
+  _barButton_action = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                    target:self
+                                                                    action:@selector(launchSafari:)];
   self.webView.delegate = self;
+  self.navigationItem.rightBarButtonItem = _barButton_action;
+}
+
+/**
+ * Stops loading when the view disappears
+ */
+- (void)viewWillDisappear:(BOOL)animated
+{
+  [super viewWillDisappear:animated];
   
-  [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
-  
-  // Disable forward button
-  self.webForward.enabled = NO;
+  [self.webView stopLoading];
+  self.webView = NULL;
 }
 
-- (IBAction) browseBack: (id) sender
-{
-	if ([self.webView canGoBack]){
-		[self.webView goBack];
-		// Enable the forward button
-		self.webForward.enabled = YES;
-	}else{
-		[self done:nil];
-	}
-	
-}
-
-- (IBAction) browseForward: (id) sender
-{
-	if ([self.webView canGoForward]){
-		[self.webView goForward];
-		
-		if (![self.webView canGoForward]){
-			// disable the forward button
-			self.webForward.enabled = NO;
-		}
-	}else{
-		self.webForward.enabled = NO;
-	}
-	
-}
-
-- (IBAction) stopOrReLoadWeb: (id) sender
-{
-	// NOTE: stop is not implemented.  Only reload is implemented.
-	/*
-	 if ([webView isLoading]){
-	 [webView stopLoading];
-	 }else*/{
-		 [self.webView reload];
-	 }
-}
-
-
+/**
+ * Launches safari with the curren tURL
+ */
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-	if (buttonIndex == 0){
-		[[UIApplication sharedApplication] openURL:[[self.webView request] URL]];
+	if (buttonIndex == 0 && self.destinationUrl){
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.destinationUrl]];
 	}
 	
 }
 
-- (IBAction) launchSafari: (id) sender{
+/**
+ * Shows a UIActionSheet with the option to view in safari
+ */
+- (void) launchSafari: (id) sender{
 	
 	UIActionSheet *menu = [[UIActionSheet alloc]
                          initWithTitle: nil
@@ -80,11 +61,12 @@
                          cancelButtonTitle:@"Cancel"
                          destructiveButtonTitle:nil
                          otherButtonTitles:@"View in Safari", nil];
-	[menu showFromToolbar:self.toolBar];
+  [menu showInView:self.view];
 }
 
-
-
+/**
+ * Shows an alert when no network connection is available
+ */
 - (void) showNoNetworkAlert
 {
 	UIAlertView *baseAlert = [[UIAlertView alloc]
@@ -94,33 +76,39 @@
 	[baseAlert show];
 }
 
-//
-#pragma mark UIWebView delegate methods
-//
 
+#pragma mark UIWebView delegate methods
+/**
+ * Shows a loading indicatior on load start
+ */
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
   // starting the load, show the activity indicator in the status bar
   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
+
+/**
+ * Removes the loading indicator on load finish
+ */
 - (void)webViewDidFinishLoad:(UIWebView *)webView1
 {
   // finished loading, hide the activity indicator
   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-	
-	if (![webView1 canGoForward]){
-		// disable the forward button
-		self.webForward.enabled = NO;
-	}
 }
 
+/**
+ * Hides the loading indicator on fail with error
+ */
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
   // load error, hide the activity indicator in the status bar
   [MBProgressHUD hideAllHUDsForView:webView animated:YES];
 }
 
+/**
+ * Determines if the webview should start loading a request
+ */
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
 	return YES;
@@ -133,43 +121,10 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-  // Release anything that's not essential, such as cached data
-}
-
--(IBAction)back: (id)sender
-{
-	//  If we go back past the first web page in the cache, then dismiss the web view
-	
-	if ([self.webView canGoBack]){
-		[self.webView goBack];
-	}else{
-		[self done:nil];
-	}
-}
-
--(IBAction)done: (id)sender
-{
-  [self dismissViewControllerAnimated:YES completion:^{
-    
-  }];
-}
-
-- (void)viewDidLoad
-{
-  [self.toolBar setBarStyle:UIBarStyleBlackOpaque];
-  [self.toolBar setTintColor:[UIColor blackColor]];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-  [self.webView stopLoading];
-  self.webView = NULL;
-}
-
 #pragma mark - iAD
-
+/**
+ *
+ */
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
 {
   if (!willLeave)
@@ -179,8 +134,13 @@
   return YES;
 }
 
+/**
+ * Hides the banner ad when an error occurs loading it
+ */
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
+  NSLog(@"Failed to load iAD: %@", error.localizedDescription);
+  
 	self.adView.hidden = YES;
 //  [self.webView setFrame:CGRectMake(
 //    self.webView.frame.origin.x,
@@ -190,8 +150,13 @@
 //  )];
 }
 
+/**
+ * Shows the banner ad when an ad successfully loads
+ */
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
+  NSLog(@"Successfully loaded iAD");
+  
   self.adView.hidden = NO;
   [self.webView setFrame:CGRectMake(
     self.webView.frame.origin.x,
@@ -200,4 +165,5 @@
     self.webView.frame.size.height - self.adView.frame.size.height
   )];
 }
+
 @end
