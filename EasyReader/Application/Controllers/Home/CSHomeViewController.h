@@ -25,7 +25,6 @@
 }
 
 #pragma mark - UI Properties
-@property (nonatomic, retain) IBOutlet UICollectionView *collectionView_feed;
 @property (nonatomic, retain) IBOutlet CSStyledTableView *tableView_feed;
 @property (nonatomic, retain) UIBarButtonItem *barButton_menu;
 
@@ -34,6 +33,8 @@
 @property (nonatomic, retain) User *currentUser;
 @property (nonatomic, retain) NSArray *feedData;
 @property (nonatomic, retain) NSArray *feedsByDay;
+@property NSInteger feedOffset;
+@property NSInteger feedLimit;
 
 
 @end

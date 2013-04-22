@@ -15,6 +15,7 @@
 #import "MTLabel.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "UIScrollView+SVPullToRefresh.h"
+#import "UIScrollView+SVInfiniteScrolling.h"
 #import "AFNetworking.h"
 #import "SDWebImagePrefetcher.h"
 
@@ -134,6 +135,8 @@
   [buttonMenu.imageView setContentMode:UIViewContentModeScaleAspectFit];
   [buttonMenu setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin];
 
+  self.feedLimit = 10;
+  self.feedOffset = 0;
   
   self.barButton_menu = [[UIBarButtonItem alloc] initWithCustomView:buttonMenu];
   [self.navigationItem setLeftBarButtonItem:self.barButton_menu];
@@ -151,6 +154,15 @@
     if (weakHomeController.currentUser.activeFeed)
     {
       [weakHomeController downloadFeedData:weakHomeController.currentUser.activeFeed];
+    }
+  }];
+  
+
+  [self.tableView_feed addInfiniteScrollingWithActionHandler:^{
+    if (weakHomeController.currentUser.activeFeed)
+    {
+      weakHomeController.feedOffset += 10;
+      [weakHomeController downloadFeedData:weakHomeController.currentUser.activeFeed limit:weakHomeController.feedLimit offset:weakHomeController.feedOffset];
     }
   }];
   
@@ -209,7 +221,8 @@
   else if ([keyPath isEqualToString:@"activeFeed"])
   {
     [self.navigationController popToRootViewControllerAnimated:YES];
-     
+    self.feedOffset = 0;
+    
     if (_requestOperation)
     {
       [_requestOperation cancel];
@@ -230,16 +243,25 @@
 }
 
 /**
- * Get the data from the RSS feed
+ * Get the newest data from the RSS feed
  */
 - (void) downloadFeedData:(Feed *)activeFeed
+{
+  [self downloadFeedData:activeFeed limit:10 offset:0];
+}
+
+
+/**
+ * Get the data from the RSS feed
+ */
+- (void) downloadFeedData:(Feed *)activeFeed limit:(NSInteger)limit offset:(NSInteger)offset
 {
   if (!$exists(activeFeed)) return;
   
   // Build a request
   [self.navigationItem setTitle:[NSString stringWithFormat:@"%@", activeFeed.name]];
   
-  NSString *url = [NSString stringWithFormat:@"%@/feeds?url=%@", host, activeFeed.url];
+  NSString *url = [NSString stringWithFormat:@"%@/feeds?url=%@&limit=%d&offset=%d", host, activeFeed.url, limit, offset];
   
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
   
@@ -251,10 +273,18 @@
     dispatch_async(dispatch_get_main_queue(), ^{
       //[MBProgressHUD hideAllHUDsForView:self.tableView_feed animated:YES];
       [self.tableView_feed.pullToRefreshView stopAnimating];
+      [self.tableView_feed.infiniteScrollingView stopAnimating];
     });
     
     // Set the feed data if no errors
-    [self setFeedData:JSON];
+    if (!self.feedData)
+    {
+      [self setFeedData:JSON];
+    }
+    else
+    {
+      [self setFeedData:[[[NSMutableArray arrayWithArray:self.feedData] arrayByAddingObjectsFromArray:JSON] copy]];
+    }
     
     _requestOperation = nil;
     

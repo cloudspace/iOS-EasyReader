@@ -57,9 +57,7 @@
   }
   
   self.feeds = [feeds copy];
-  
-//  self.feeds = [[self.currentUser feeds] allObjects];
-  
+    
   CSRootViewController *rootVC = self.rootViewController;
   
   __weak CSMenuLeftViewController *weakSelf = self;
