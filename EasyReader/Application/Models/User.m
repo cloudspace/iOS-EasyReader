@@ -8,12 +8,13 @@
 
 #import "User.h"
 #import "Feed.h"
-
+#import "FeedSort.h"
 
 @implementation User
 
 @dynamic feeds;
 @dynamic activeFeed;
+@dynamic feedSorts;
 
 
 + (User *)current

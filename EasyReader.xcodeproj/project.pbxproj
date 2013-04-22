@@ -22,6 +22,8 @@
 		9D42977D170E190700E73BFE /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42977C170E190600E73BFE /* CSHomeViewController.m */; };
 		9D429783170E283A00E73BFE /* Home_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D429782170E283A00E73BFE /* Home_iPhone.xib */; };
 		9D6C2B61170F39710087D8F8 /* MenuLeft_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C2B60170F39710087D8F8 /* MenuLeft_iPhone.xib */; };
+		9D7C6F991725D1130037E8CF /* FeedSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C6F981725D1130037E8CF /* FeedSort.m */; };
+		9D7C6FA21725DEDB0037E8CF /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C6FA11725DEDB0037E8CF /* Feed.m */; };
 		9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		9D8F3196171DB410006CFC6A /* button_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F318F171DB410006CFC6A /* button_menu@2x.png */; };
 		9D8F3197171DB410006CFC6A /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F3192171DB410006CFC6A /* icon_back.png */; };
@@ -63,7 +65,6 @@
 		9DF355CC171F3D4300A720AA /* icon_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CB171F3D4300A720AA /* icon_search@2x.png */; };
 		9DF355CE171F450200A720AA /* FeedAdd_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CD171F450200A720AA /* FeedAdd_iPhone.xib */; };
 		9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
-		9DFBC08D17146155006BF840 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBC08C17146155006BF840 /* Feed.m */; };
 		9DFBC0901714615F006BF840 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBC08F1714615F006BF840 /* User.m */; };
 		9DFBC0991714957E006BF840 /* CSFeedAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */; };
 		9DFBC09C1714959C006BF840 /* FeedCreate_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DFBC09B1714959C006BF840 /* FeedCreate_iPhone.xib */; };
@@ -105,6 +106,10 @@
 		9D42977C170E190600E73BFE /* CSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSHomeViewController.m; path = Home/CSHomeViewController.m; sourceTree = "<group>"; };
 		9D429782170E283A00E73BFE /* Home_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Home_iPhone.xib; path = Home/Home_iPhone.xib; sourceTree = "<group>"; };
 		9D6C2B60170F39710087D8F8 /* MenuLeft_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuLeft_iPhone.xib; path = Menu/MenuLeft_iPhone.xib; sourceTree = "<group>"; };
+		9D7C6F971725D1130037E8CF /* FeedSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedSort.h; sourceTree = "<group>"; };
+		9D7C6F981725D1130037E8CF /* FeedSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedSort.m; sourceTree = "<group>"; };
+		9D7C6FA01725DEDB0037E8CF /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
+		9D7C6FA11725DEDB0037E8CF /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
 		9D8C6C5B170CA12500B18012 /* CSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRootViewController.h; sourceTree = "<group>"; };
 		9D8C6C5C170CA12500B18012 /* CSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRootViewController.m; sourceTree = "<group>"; };
 		9D8F318F171DB410006CFC6A /* button_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_menu@2x.png"; sourceTree = "<group>"; };
@@ -155,8 +160,6 @@
 		9DF355CB171F3D4300A720AA /* icon_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_search@2x.png"; sourceTree = "<group>"; };
 		9DF355CD171F450200A720AA /* FeedAdd_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedAdd_iPhone.xib; path = Feed/FeedAdd_iPhone.xib; sourceTree = "<group>"; };
 		9DF4BB1E17130E99001DCC88 /* EasyReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyReader.xcdatamodel; sourceTree = "<group>"; };
-		9DFBC08B17146155006BF840 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
-		9DFBC08C17146155006BF840 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
 		9DFBC08E1714615F006BF840 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		9DFBC08F1714615F006BF840 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		9DFBC0971714957E006BF840 /* CSFeedAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedAddViewController.h; path = Feed/CSFeedAddViewController.h; sourceTree = "<group>"; };
@@ -442,10 +445,12 @@
 		9DAC171D170A043200383722 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9D7C6FA01725DEDB0037E8CF /* Feed.h */,
+				9D7C6FA11725DEDB0037E8CF /* Feed.m */,
+				9D7C6F971725D1130037E8CF /* FeedSort.h */,
+				9D7C6F981725D1130037E8CF /* FeedSort.m */,
 				9DFBC08E1714615F006BF840 /* User.h */,
 				9DFBC08F1714615F006BF840 /* User.m */,
-				9DFBC08B17146155006BF840 /* Feed.h */,
-				9DFBC08C17146155006BF840 /* Feed.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -700,7 +705,6 @@
 				9D429777170E168A00E73BFE /* CSMenuRightViewController.m in Sources */,
 				9D42977D170E190700E73BFE /* CSHomeViewController.m in Sources */,
 				9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */,
-				9DFBC08D17146155006BF840 /* Feed.m in Sources */,
 				9DFBC0901714615F006BF840 /* User.m in Sources */,
 				9DFBC0991714957E006BF840 /* CSFeedAddViewController.m in Sources */,
 				9DFBC0A21714A9B3006BF840 /* CSFeedItemViewController.m in Sources */,
@@ -712,6 +716,8 @@
 				9DA7CB47171D9FE50045CC88 /* CSAutoCompleteViewController.m in Sources */,
 				9D8F319D171DC6AC006CFC6A /* NSObject+CSShortcuts.m in Sources */,
 				9D8F31A2171DEF73006CFC6A /* CSStyledTableViewStyleDark.m in Sources */,
+				9D7C6F991725D1130037E8CF /* FeedSort.m in Sources */,
+				9D7C6FA21725DEDB0037E8CF /* Feed.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

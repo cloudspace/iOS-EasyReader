@@ -4,15 +4,23 @@
         <attribute name="iconURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="isActiveFor" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="activeFeed" inverseEntity="User" syncable="YES"/>
-        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="feeds" inverseEntity="User" syncable="YES"/>
+        <relationship name="feedSorts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FeedSort" inverseName="feed" inverseEntity="FeedSort" syncable="YES"/>
+        <relationship name="isActiveFor" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="activeFeed" inverseEntity="User" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="feeds" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="FeedSort" representedClassName="FeedSort" syncable="YES">
+        <attribute name="sortValue" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="feed" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Feed" inverseName="feedSorts" inverseEntity="Feed" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="feedSorts" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <relationship name="activeFeed" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Feed" inverseName="isActiveFor" inverseEntity="Feed" syncable="YES"/>
-        <relationship name="feeds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feed" inverseName="user" inverseEntity="Feed" syncable="YES"/>
+        <relationship name="feeds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feed" inverseName="users" inverseEntity="Feed" syncable="YES"/>
+        <relationship name="feedSorts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FeedSort" inverseName="user" inverseEntity="FeedSort" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Feed" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="User" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="Feed" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="User" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="FeedSort" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>

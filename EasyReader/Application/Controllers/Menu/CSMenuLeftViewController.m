@@ -11,6 +11,7 @@
 
 #import "Feed.h"
 #import "User.h"
+#import "FeedSort.h"
 
 #import "CSAppDelegate.h"
 #import "CSRootViewController.h"
@@ -45,11 +46,24 @@
   [self.currentUser addObserver:self forKeyPath:@"feeds" options:NSKeyValueObservingOptionNew context:nil];
   
   // Get feeds from core data
-  self.feeds = [[self.currentUser feeds] allObjects];
+  NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user == %@", self.currentUser];
+  NSArray *feedSorts = [FeedSort findAllSortedBy:@"sortValue" ascending:NO withPredicate:userPredicate];
+  
+  NSMutableArray *feeds = [NSMutableArray new];
+
+  for (FeedSort *feedSort in feedSorts)
+  {
+    [feeds addObject:feedSort.feed];
+  }
+  
+  self.feeds = [feeds copy];
+  
+//  self.feeds = [[self.currentUser feeds] allObjects];
   
   CSRootViewController *rootVC = self.rootViewController;
   
   __weak CSMenuLeftViewController *weakSelf = self;
+  
   
   rootVC.sideMenu.menuStateEventBlock = ^(MFSideMenuStateEvent event) {
     switch (event) {
@@ -64,6 +78,7 @@
         break;
       case MFSideMenuStateEventMenuDidClose:
         [weakSelf.tableView_feeds setEditing:NO animated:YES];
+        [[weakSelf.rootViewController sideMenu] setPanMode:MFSideMenuPanModeDefault];
         [weakSelf.tableView_feeds reloadData];
         break;
     }
@@ -77,9 +92,28 @@
 {
   if ([keyPath isEqualToString:@"feeds"])
   {
-    self.feeds = [[self.currentUser feeds] allObjects];
+    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user == %@", self.currentUser];
+    NSArray *feedSorts = [FeedSort findAllSortedBy:@"sortValue" ascending:NO withPredicate:userPredicate];
+    
+    NSMutableArray *feeds = [NSMutableArray new];
+    
+    for (FeedSort *feedSort in feedSorts)
+    {
+      if (feedSort.feed)
+      {
+        [feeds addObject:feedSort.feed];
+      }
+    }
+    
+    self.feeds = [feeds copy];
+    
+    //self.feeds = [[self.currentUser feeds] allObjects];
     [self.tableView_feeds reloadData];
     
+  }
+  else if ([keyPath isEqualToString:@" v"])
+  {
+    [[self.navigationController sideMenu] setPanMode:MFSideMenuPanModeNone];
   }
 }
 
@@ -103,6 +137,7 @@
   if ([self.tableView_feeds isEditing]) {
     // Stop editing, delete the 'Add new feed' row
     [self.tableView_feeds setEditing:NO animated:YES];
+    [[self.rootViewController sideMenu] setPanMode:MFSideMenuPanModeDefault];
     [self.tableView_feeds deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self tableView:self.tableView_feeds numberOfRowsInSection:0]
                                                                       inSection:0]]
                                 withRowAnimation:UITableViewRowAnimationFade];
@@ -115,15 +150,10 @@
                                                                       inSection:0]]
                                 withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView_feeds setEditing:YES animated:YES];
+    [[self.rootViewController sideMenu] setPanMode:MFSideMenuPanModeNone];
   }
   
   [self.tableView_feeds endUpdates];
-}
-
-- (void)searchForFeeds:(id)sender
-{
-  NSLog(@"feedserach");
-  //  [CSFeedSearchViewController]
 }
 
 
@@ -285,8 +315,22 @@
   id feedToMove =  [reorderedFeeds objectAtIndex:sourceIndexPath.row];
   [reorderedFeeds removeObjectAtIndex:sourceIndexPath.row];
   [reorderedFeeds insertObject:feedToMove atIndex:destinationIndexPath.row];
+
+
+  for (NSInteger i = 0; i < [reorderedFeeds count]; i++)
+  {
+    Feed *currentFeed = reorderedFeeds[i];
+    
+    NSPredicate *userFeedPredicate = [NSPredicate predicateWithFormat:@"user == %@ AND feed == %@", [User current], currentFeed];
+    FeedSort *feedSort = [FeedSort findFirstWithPredicate:userFeedPredicate];
+    feedSort.sortValue = [NSNumber numberWithInteger:[reorderedFeeds count] - i];
+  }
+
+  [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
   
   self.feeds = [reorderedFeeds copy];
+  
+
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
@@ -329,9 +373,18 @@
     }];
     
     return;
-  } else if (editingStyle == UITableViewCellEditingStyleDelete)
+  }
+  else if (editingStyle == UITableViewCellEditingStyleDelete)
   {
     Feed *toDelete = self.feeds[indexPath.row];
+    
+    // Delete associated sorts
+    for (FeedSort *feedSort in toDelete.feedSorts)
+    {
+      [toDelete removeFeedSortsObject:feedSort];
+      [feedSort deleteEntity];
+    }
+    
     [toDelete deleteEntity];
     
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];

@@ -13,7 +13,7 @@
 // Models
 #import "Feed.h"
 #import "User.h"
-
+#import "FeedSort.h"
 
 // Libraries
 #import "MFSideMenu.h"
@@ -268,6 +268,11 @@
         Feed *feed = [Feed createEntity];
         feed.name  = availableFeed[@"name"];
         feed.url   = availableFeed[@"url"];
+        
+        FeedSort *sort = [FeedSort createEntity];
+        sort.user = currentUser;
+        sort.feed = feed;
+        
         [currentUser addFeedsObject:feed];
         [currentUser setActiveFeed:feed];
       }
@@ -519,6 +524,10 @@
     
     newFeed.name = _textFieldName.text;
     newFeed.url = _textFieldURL.text;
+    
+    FeedSort *sort = [FeedSort createEntity];
+    sort.user = currentUser;
+    sort.feed = newFeed;
     
     // Add the feed to the user and set it as active
     [[User current] addFeedsObject:newFeed];

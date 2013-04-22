@@ -24,7 +24,7 @@
 
 #import "User.h"
 #import "Feed.h"
-
+#import "FeedSort.h"
 
 
 
@@ -77,6 +77,11 @@
       Feed *feed = [Feed createEntity];
       feed.name = feedData[@"name"];
       feed.url  = feedData[@"url"];
+      
+      FeedSort *sort = [FeedSort createEntity];
+      sort.user = currentUser;
+      sort.feed = feed;
+      
       [currentUser addFeedsObject:feed];
     }
     

@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Feed;
+@class Feed, FeedSort;
 
 @interface User : NSManagedObject
 
 @property (nonatomic, retain) NSSet *feeds;
+@property (nonatomic, retain) NSSet *feedSorts;
 @property (nonatomic, retain) Feed *activeFeed;
 
 /**
@@ -32,5 +33,10 @@
 - (void)removeFeedsObject:(Feed *)value;
 - (void)addFeeds:(NSSet *)values;
 - (void)removeFeeds:(NSSet *)values;
+
+- (void)addFeedSortsObject:(FeedSort *)value;
+- (void)removeFeedSortsObject:(FeedSort *)value;
+- (void)addFeedSorts:(NSSet *)values;
+- (void)removeFeedSorts:(NSSet *)values;
 
 @end
