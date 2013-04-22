@@ -58,15 +58,22 @@
 
   [_gradientBackgroundLayer setFrame:self.backgroundView.bounds];
 
+  NSInteger textLabelWidthOffset = 0;
+  NSInteger textLabelXOffset = 0;
+
+  textLabelWidthOffset += self.imageView.image  ? self.frame.size.height : 0;
+  textLabelWidthOffset += self.isEditing        ? 44 : 0;
+  textLabelWidthOffset += self.showsReorderControl || self.accessoryType != UITableViewCellAccessoryNone ? 44 : 0;
+  
+  
   if (self.imageView.image)
   {
     [self.imageView setFrame:CGRectMake(5, 5, self.frame.size.height - 10, self.frame.size.height - 10)];
-    [self.textLabel setFrame:CGRectMake(self.frame.size.height, 0, self.frame.size.width - (self.frame.size.height) - 30, self.frame.size.height)];
+    textLabelXOffset += self.frame.size.height;
   }
-  else
-  {
-    [self.textLabel setFrame:CGRectMake(15, 0, self.frame.size.width - 59, self.frame.size.height)];
-  }
+
+  [self.textLabel setFrame:CGRectMake(15 + textLabelXOffset, 0, self.frame.size.width - 15 - textLabelWidthOffset, self.frame.size.height)];
+
   
 }
 

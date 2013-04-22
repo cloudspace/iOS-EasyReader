@@ -111,6 +111,9 @@
   
 }
 
+/**
+ * Sets up the menu button, observers, pull-to-refresh, and infinite scrolling
+ */
 - (void)viewDidLoad
 {
   [super viewDidLoad];
@@ -144,11 +147,9 @@
   // Set up back buttons that point to this view
   UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
   self.navigationItem.backBarButtonItem = backButton;
-
   
-  //
+  
   // Set up pull-to-refresh on tableview
-  //
   __weak CSHomeViewController *weakHomeController = self;
   [self.tableView_feed addPullToRefreshWithActionHandler:^{
     if (weakHomeController.currentUser.activeFeed)
@@ -157,7 +158,7 @@
     }
   }];
   
-
+  // Set up infinite scrolling on tableview
   [self.tableView_feed addInfiniteScrollingWithActionHandler:^{
     if (weakHomeController.currentUser.activeFeed)
     {
@@ -165,6 +166,7 @@
       [weakHomeController downloadFeedData:weakHomeController.currentUser.activeFeed limit:weakHomeController.feedLimit offset:weakHomeController.feedOffset];
     }
   }];
+  
   
   // Download either the active feed or the default feeds
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -182,22 +184,13 @@
 }
 
 /**
- * Load default feeds on first appearance
+ * Cancels image prefetching when the view disappears
  */
-- (void)viewDidAppear:(BOOL)animated
-{
-  [super viewDidAppear:animated];
-  
-
-}
-
 - (void)viewDidDisappear:(BOOL)animated
 {
   [[SDWebImagePrefetcher sharedImagePrefetcher] cancelPrefetching];
   [super viewDidDisappear:animated];
 }
-
-
 
 /**
  * Removes all observers
@@ -222,7 +215,7 @@
   {
     [self.navigationController popToRootViewControllerAnimated:YES];
     self.feedOffset = 0;
-    
+    [self.tableView_feed setShowsInfiniteScrolling:YES];
     if (_requestOperation)
     {
       [_requestOperation cancel];
@@ -236,7 +229,11 @@
     if (![change[@"old"] isEqual:newFeed])
     {
       self.feedData = @[];
-      //[self.tableView_feed triggerPullToRefresh];
+
+      // Show loading indicator
+      [self.tableView_feed.pullToRefreshView startAnimating];
+
+      // Download new data
       [self downloadFeedData:newFeed];      
     }
   }
@@ -265,9 +262,6 @@
   
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
   
-  // Show loading indicator
-  [self.tableView_feed.pullToRefreshView startAnimating];
-  
   // Execute and parse the request
   _requestOperation =[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -284,6 +278,11 @@
     else
     {
       [self setFeedData:[[[NSMutableArray arrayWithArray:self.feedData] arrayByAddingObjectsFromArray:JSON] copy]];
+    }
+    
+    if ([JSON count] == 0)
+    {
+      [self.tableView_feed setShowsInfiniteScrolling:NO];
     }
     
     _requestOperation = nil;

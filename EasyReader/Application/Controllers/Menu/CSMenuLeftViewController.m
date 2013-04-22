@@ -394,12 +394,18 @@
  */
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+  if (!tableView.isEditing)
+  {
+    return UITableViewCellEditingStyleNone;
+  }
+  
   if (indexPath.section == 0 && indexPath.row == [self tableView:self.tableView_feeds numberOfRowsInSection:0] - 1)
   {
     return UITableViewCellEditingStyleInsert;
   }
   else
   {
+    
     return UITableViewCellEditingStyleDelete;
   }
 }

@@ -370,7 +370,7 @@
   UIImage *image_textFieldsBackground = [UIImage imageNamed:@"control_dualEntryTextField.png"];
   UIImageView *imageView_textFieldsBackground = [[UIImageView alloc] initWithImage:image_textFieldsBackground];
   
-  UIView *view_TextInput = [[UIView alloc] initWithFrame:CGRectMake(0, 50, self.autoCompleteController.view.frame.size.width, 180)];
+  UIView *view_TextInput = [[UIView alloc] initWithFrame:CGRectMake(self.autoCompleteController.view.frame.size.width/2 - 160, 50, 320, 180)];
   [view_TextInput setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin];
   
   [_view_addCustomFeed addSubview:view_TextInput];
@@ -425,7 +425,7 @@
   
   
   // Show this instantly if there is an edit feed
-  NSInteger duration = .5;
+  CGFloat duration = .5;
   if (self.feed) duration = 0;
   
   [UIView animateWithDuration:duration animations:^{
