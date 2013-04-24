@@ -33,6 +33,7 @@
 @property (nonatomic, retain) User *currentUser;
 @property (nonatomic, retain) NSArray *feedData;
 @property (nonatomic, retain) NSArray *feedsByDay;
+
 @property NSInteger feedOffset;
 @property NSInteger feedLimit;
 

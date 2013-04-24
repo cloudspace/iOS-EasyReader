@@ -118,6 +118,12 @@
 {
   [super viewDidLoad];
   
+  // Create defaults if doesn't exist
+  if (![[NSUserDefaults standardUserDefaults] valueForKey:@"visitedURLs"])
+  {
+    [[NSUserDefaults standardUserDefaults] setValue:[[NSMutableArray alloc] init] forKey:@"visitedURLs"];
+  }
+  
   self.currentUser = [User current];
   
   //
@@ -270,6 +276,8 @@
       [self.tableView_feed.infiniteScrollingView stopAnimating];
     });
     
+    NSMutableArray *newFeedItems = [NSMutableArray new];
+    
     // Set the feed data if no errors
     if (!self.feedData)
     {
@@ -277,7 +285,26 @@
     }
     else
     {
-      [self setFeedData:[[[NSMutableArray arrayWithArray:self.feedData] arrayByAddingObjectsFromArray:JSON] copy]];
+      for (NSDictionary *currentFeedItem in JSON)
+      {
+        BOOL exists = NO;
+        
+        for (NSDictionary *feedItem in self.feedData)
+        {
+          if ([feedItem[@"id"] isEqual:currentFeedItem[@"id"]])
+          {
+            exists = YES;
+            break;
+          }
+        }
+
+        if (!exists)
+        {
+          [newFeedItems addObject:currentFeedItem];
+        }
+      }
+      
+      [self setFeedData:[[[NSMutableArray arrayWithArray:self.feedData] arrayByAddingObjectsFromArray:newFeedItems] copy]];
     }
     
     if ([JSON count] == 0)
@@ -434,8 +461,19 @@
   // Dequeue a reusable cell
   CSStyledTableViewCell *cell = (CSStyledTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"feedItem"];
   
+  if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"visitedURLs"] containsObject:item[@"url"]])
+  {
+    [cell.textLabel setTextColor:[UIColor lightGrayColor]];
+  }
+  else
+  {
+    [cell.textLabel setTextColor:[UIColor darkGrayColor]];
+  }
+  
   // Set the cell's properties
   [cell.textLabel setText:item[@"name"]];
+  
+  
   
   cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   
@@ -478,7 +516,18 @@
     [feedItemController.webView loadRequest:request];
   }
 
- 
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  NSMutableArray *visitedURLs = [[defaults valueForKey:@"visitedURLs"] mutableCopy];
+  
+  if (![visitedURLs containsObject:item[@"url"]])
+  {
+    [visitedURLs addObject:item[@"url"]];
+    [defaults setValue:[visitedURLs copy] forKey:@"visitedURLs"];
+    [defaults synchronize];
+  }
+  
+  [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+  
 
 }
 
