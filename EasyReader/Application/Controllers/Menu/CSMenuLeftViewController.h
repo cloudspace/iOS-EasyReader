@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
 
-@class Feed, User, CSStyledTableView;
+@class Feed, User, CSEnhancedTableView;
 
 @interface CSMenuLeftViewController : CSBaseViewController <
   UITableViewDataSource,
@@ -18,7 +18,7 @@
 
 
 #pragma mark - IBOutlet Properties
-@property (nonatomic, retain) IBOutlet CSStyledTableView *tableView_feeds;
+@property (nonatomic, retain) IBOutlet CSEnhancedTableView *tableView_feeds;
 
 
 #pragma mark - Properties

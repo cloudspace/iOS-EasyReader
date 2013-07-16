@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
 
-@class User, AFJSONRequestOperation, CSStyledTableView;
+@class User, AFJSONRequestOperation, CSEnhancedTableView;
 
 /**
  * The home view controller for the feed parser
@@ -25,7 +25,7 @@
 }
 
 #pragma mark - UI Properties
-@property (nonatomic, retain) IBOutlet CSStyledTableView *tableView_feed;
+@property (nonatomic, retain) IBOutlet CSEnhancedTableView *tableView_feed;
 @property (nonatomic, retain) UIBarButtonItem *barButton_menu;
 
 

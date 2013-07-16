@@ -77,7 +77,7 @@
 }
 
 
-#pragma mark UIWebView delegate methods
+#pragma mark - UIWebView delegate methods
 /**
  * Shows a loading indicatior on load start
  */

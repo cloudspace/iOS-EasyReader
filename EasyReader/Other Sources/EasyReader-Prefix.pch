@@ -36,7 +36,7 @@
 
 
 #ifdef DEBUG
-#define host @"http://33.33.33.107:3000"
+#define host @"http://rss.cloudspace.com:8080"//@"http://33.33.33.107:3000"
 #else
 #define host @"http://rss.cloudspace.com:8080"
 #endif

@@ -20,10 +20,10 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-#import "CSStyledTableView.h"
-#import "CSStyledTableViewCell.h"
-#import "CSStyledTableViewHeaderFooterView.h"
-#import "CSStyledTableViewStyleDark.h"
+#import "CSEnhancedTableView.h"
+#import "CSEnhancedTableViewCell.h"
+#import "CSEnhancedTableViewHeaderFooterView.h"
+#import "CSEnhancedTableViewStyleDark.h"
 
 @interface CSMenuLeftViewController ()
 
@@ -39,7 +39,7 @@
   [super viewDidLoad];
   
   // Set tableViewStyle
-  self.tableView_feeds.tableViewStyle =[[CSStyledTableViewStyleDark alloc] init];
+  self.tableView_feeds.tableViewStyle =[[CSEnhancedTableViewStyleDark alloc] init];
   
   // Add observer
   self.currentUser = [User current];
@@ -211,7 +211,7 @@
   //
   // Dequeue the header view
   //
-  CSStyledTableViewHeaderFooterView *header = [self.tableView_feeds dequeueReusableHeaderFooterViewWithIdentifier:@"leftMenuHeader"];
+  CSEnhancedTableViewHeaderFooterView *header = [self.tableView_feeds dequeueReusableHeaderFooterViewWithIdentifier:@"leftMenuHeader"];
   
   NSInteger headerWidth  = tableView.frame.size.width;
   
@@ -251,7 +251,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   // Dequeue a styled cell
-  CSStyledTableViewCell *cell;
+  CSEnhancedTableViewCell *cell;
   
   // Set the content
   if (tableView.editing && indexPath.row == [self tableView:self.tableView_feeds numberOfRowsInSection:0] - 1)

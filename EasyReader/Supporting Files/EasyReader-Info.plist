@@ -24,7 +24,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.cloudspace.easyreader</string>
+	<string>com.cloudspace.EasyReaderFree</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -47,7 +47,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0.12</string>
+	<string>1.0.14</string>
 	<key>FacebookAppID</key>
 	<string>456979891044426</string>
 	<key>GoogleMapsAPIKey</key>

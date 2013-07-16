@@ -1,5 +1,5 @@
 //
-//  CSFeedCreateViewController.m
+//  CSFeedAddViewController.m
 //  EasyReader
 //
 //  Created by Joseph Lorich on 4/9/13.

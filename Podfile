@@ -33,3 +33,6 @@ pod 'AFNetworking', '~> 1.2.0'
 # Private CS repos
 pod 'HPSocialNetworkManager', '~> 0.0.1'
 #pod 'MCSegmentedControl', '~> 0.0.1'
+pod 'CSEnhancedTableView', '~> 0.0.1'
+pod 'CSStandardViewControllers', '~> 0.0.1'
+pod 'CSShortcuts', '~> 0.0.1'

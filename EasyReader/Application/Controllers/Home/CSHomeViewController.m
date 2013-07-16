@@ -19,9 +19,9 @@
 #import "AFNetworking.h"
 #import "SDWebImagePrefetcher.h"
 
-#import "CSStyledTableView.h"
-#import "CSStyledTableViewCell.h"
-#import "CSStyledTableViewHeaderFooterView.h"
+#import "CSEnhancedTableView.h"
+#import "CSEnhancedTableViewCell.h"
+#import "CSEnhancedTableViewHeaderFooterView.h"
 
 #import "User.h"
 #import "Feed.h"
@@ -182,8 +182,8 @@
   }
   else
   {
-    Feed *activeFeed = [[User current] activeFeed];
-    [self downloadFeedData:activeFeed];
+    [[User current] activeFeed];  // Enough to trigger KVO
+//    [self downloadFeedData:activeFeed];
   }
   
   return;
@@ -442,7 +442,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
   //
-  CSStyledTableViewHeaderFooterView* header = [self.tableView_feed dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
+  CSEnhancedTableViewHeaderFooterView* header = [self.tableView_feed dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
   
   // Set the label text
   [header.titleLabel setText:self.feedsByDay[section][@"date"]];
@@ -459,7 +459,7 @@
   NSDictionary *item = self.feedsByDay[indexPath.section][@"items"][indexPath.row];
   
   // Dequeue a reusable cell
-  CSStyledTableViewCell *cell = (CSStyledTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"feedItem"];
+  CSEnhancedTableViewCell *cell = (CSEnhancedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"feedItem"];
   
   if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"visitedURLs"] containsObject:item[@"url"]])
   {
