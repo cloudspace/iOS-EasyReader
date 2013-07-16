@@ -16,6 +16,8 @@
 		9D429777170E168A00E73BFE /* CSMenuRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D429776170E168A00E73BFE /* CSMenuRightViewController.m */; };
 		9D42977D170E190700E73BFE /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42977C170E190600E73BFE /* CSHomeViewController.m */; };
 		9D429783170E283A00E73BFE /* CSHome_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D429782170E283A00E73BFE /* CSHome_iPhone.xib */; };
+		9D4355741795C708002C6657 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4355731795C708002C6657 /* Social.framework */; };
+		9D4355761795C9B4002C6657 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4355751795C9B3002C6657 /* MessageUI.framework */; };
 		9D6C2B61170F39710087D8F8 /* CSMenuLeft_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C2B60170F39710087D8F8 /* CSMenuLeft_iPhone.xib */; };
 		9D7C6F991725D1130037E8CF /* FeedSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C6F981725D1130037E8CF /* FeedSort.m */; };
 		9D7C6FA21725DEDB0037E8CF /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C6FA11725DEDB0037E8CF /* Feed.m */; };
@@ -89,6 +91,8 @@
 		9D42977B170E190600E73BFE /* CSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSHomeViewController.h; path = Home/CSHomeViewController.h; sourceTree = "<group>"; };
 		9D42977C170E190600E73BFE /* CSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSHomeViewController.m; path = Home/CSHomeViewController.m; sourceTree = "<group>"; };
 		9D429782170E283A00E73BFE /* CSHome_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSHome_iPhone.xib; path = Home/CSHome_iPhone.xib; sourceTree = "<group>"; };
+		9D4355731795C708002C6657 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		9D4355751795C9B3002C6657 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9D6C2B60170F39710087D8F8 /* CSMenuLeft_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSMenuLeft_iPhone.xib; path = Menu/CSMenuLeft_iPhone.xib; sourceTree = "<group>"; };
 		9D7C6F971725D1130037E8CF /* FeedSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedSort.h; sourceTree = "<group>"; };
 		9D7C6F981725D1130037E8CF /* FeedSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedSort.m; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4355761795C9B4002C6657 /* MessageUI.framework in Frameworks */,
+				9D4355741795C708002C6657 /* Social.framework in Frameworks */,
 				9DA7CB26171C8B5E0045CC88 /* iAd.framework in Frameworks */,
 				9DAC16C81709D48E00383722 /* UIKit.framework in Frameworks */,
 				9DAC16CA1709D48E00383722 /* Foundation.framework in Frameworks */,
@@ -280,6 +286,8 @@
 		9DAC16BB1709D48E00383722 = {
 			isa = PBXGroup;
 			children = (
+				9D4355751795C9B3002C6657 /* MessageUI.framework */,
+				9D4355731795C708002C6657 /* Social.framework */,
 				9DA7CB35171CAD020045CC88 /* iOS Resources */,
 				9DAC16CF1709D48E00383722 /* EasyReader */,
 				9DAC16F11709D48E00383722 /* EasyReaderTests */,
@@ -745,6 +753,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				INFOPLIST_FILE = "EasyReader/Supporting Files/EasyReader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "Easy Reader";
 				PROVISIONING_PROFILE = "1515F9BA-E615-4215-A1E9-D9C35CC9E667";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1515F9BA-E615-4215-A1E9-D9C35CC9E667";
@@ -763,6 +772,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				INFOPLIST_FILE = "EasyReader/Supporting Files/EasyReader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "Easy Reader";
 				PROVISIONING_PROFILE = "695DFFDA-701D-49EA-AAD5-B961B13DB6D3";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "695DFFDA-701D-49EA-AAD5-B961B13DB6D3";

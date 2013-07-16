@@ -8,11 +8,12 @@
 
 #import "CSBaseViewController.h"
 #import <iAd/iAd.h>
-
+#import <MessageUI/MessageUI.h>
 
 @interface CSFeedItemViewController : CSBaseViewController <
   UIActionSheetDelegate,
   UIWebViewDelegate,
+  MFMailComposeViewControllerDelegate,
   ADBannerViewDelegate
 >
 
@@ -34,7 +35,7 @@
 //- (IBAction) browseBack: (id) sender;
 //- (IBAction) browseForward: (id) sender;
 //- (IBAction) stopOrReLoadWeb: (id) sender;
-- (void) launchSafari: (id) sender;
+- (void) share: (id) sender;
 //- (void) loadBrowser: (NSURL *) url;
 
 

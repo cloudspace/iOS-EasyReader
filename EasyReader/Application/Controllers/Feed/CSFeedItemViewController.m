@@ -5,6 +5,9 @@
 //  Created by Joseph Lorich on 4/9/13.
 //  Copyright (c) 2013 Cloudspace. All rights reserved.
 //
+#import <Social/Social.h>
+#import <MessageUI/MessageUI.h>
+
 #import "MBProgressHUD.h"
 #import "CSFeedItemViewController.h"
 
@@ -23,7 +26,7 @@
   [super viewDidLoad];
   _barButton_action = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
                                                                     target:self
-                                                                    action:@selector(launchSafari:)];
+                                                                    action:@selector(share:)];
   self.webView.delegate = self;
   self.navigationItem.rightBarButtonItem = _barButton_action;
 }
@@ -40,27 +43,16 @@
 }
 
 /**
- * Launches safari with the curren tURL
- */
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-	if (buttonIndex == 0 && self.destinationUrl){
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.destinationUrl]];
-	}
-	
-}
-
-/**
  * Shows a UIActionSheet with the option to view in safari
  */
-- (void) launchSafari: (id) sender{
+- (void) share: (id) sender{
 	
 	UIActionSheet *menu = [[UIActionSheet alloc]
                          initWithTitle: nil
                          delegate:self
                          cancelButtonTitle:@"Cancel"
                          destructiveButtonTitle:nil
-                         otherButtonTitles:@"View in Safari", nil];
+                         otherButtonTitles:@"View in Safari", @"Share via Mail", @"Share on Facebook", @"Share on Twitter", nil];
   [menu showInView:self.view];
 }
 
@@ -75,6 +67,180 @@
                             otherButtonTitles:@"OK", nil];
 	[baseAlert show];
 }
+
+
+#pragma mark - UIActionSheetDelegate Methods
+/**
+ * Launches safari with the curren tURL
+ */
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  switch (buttonIndex)
+  {
+    case 0: //Open in safari
+      if (self.destinationUrl)
+      {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.destinationUrl]];
+      }
+      break;
+    case 1: // Mail
+    {
+      [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+      
+      dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+        
+        mailController.mailComposeDelegate = self;
+        
+        [mailController setSubject:@"Check out this article!"];
+        NSString *messageBody = @"";
+        if (self.destinationUrl)
+        {
+          messageBody = [messageBody stringByAppendingString:@"<a href=\""];
+          messageBody = [messageBody stringByAppendingString:self.destinationUrl];
+          messageBody = [messageBody stringByAppendingString:@"\">"];
+          messageBody = [messageBody stringByAppendingString:self.destinationUrl];
+          messageBody = [messageBody stringByAppendingString:@"</a><br /><br /> Discovered with Easy Reader for iOS by Cloudspace!"];
+        }
+        
+        [mailController setMessageBody:messageBody isHTML:YES];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+          [MBProgressHUD hideHUDForView:self.view animated:YES];
+          [self presentViewController:mailController animated:YES completion:nil];
+        });
+      });
+
+      break;
+    }
+    case 2: //Facebook
+    {
+      [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+      
+      if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+      {
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+          SLComposeViewController *fbController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+          
+          SLComposeViewControllerCompletionHandler __block completionHandler=^(SLComposeViewControllerResult result){
+            
+            [fbController dismissViewControllerAnimated:YES completion:nil];
+            
+            switch(result){
+              case SLComposeViewControllerResultCancelled:
+              default:
+              {
+                NSLog(@"Cancelled.....");
+                
+              }
+                break;
+              case SLComposeViewControllerResultDone:
+              {
+                [[[UIAlertView alloc] initWithTitle:@"Posted!"
+                                            message:@"This article has successfully been posted to Facebook."
+                                           delegate:nil
+                                  cancelButtonTitle:nil
+                                  otherButtonTitles:@"Thanks!", nil
+                  ] show];
+              }
+                break;
+            }};
+          if (self.destinationUrl)
+          {
+            [fbController addURL:[NSURL URLWithString:self.destinationUrl]];
+          }
+          
+          [fbController setInitialText:@"Discovered with Easy Reader for iOS by Cloudspace!"];
+          [fbController setCompletionHandler:completionHandler];
+          
+          dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self presentViewController:fbController animated:YES completion:nil];
+          });
+        });
+      }
+      else
+      {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [[[UIAlertView alloc] initWithTitle:@"Oops!"
+                                    message:@"It looks like Facebook integration isn't set up on this device.  You can enable it in your device settings."
+                                   delegate:nil
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"Okay!", nil
+          ] show];
+      }
+      
+      break;
+    }
+    case 3: //Twitter
+    {
+      [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+      
+      if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+      {
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+          SLComposeViewController *twitterController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+          
+          SLComposeViewControllerCompletionHandler __block completionHandler=^(SLComposeViewControllerResult result){
+            
+            [twitterController dismissViewControllerAnimated:YES completion:nil];
+            
+            switch(result){
+              case SLComposeViewControllerResultCancelled:
+              default:
+              {
+                NSLog(@"Tweet Cancelled");
+                
+              }
+                break;
+              case SLComposeViewControllerResultDone:
+              {
+                [[[UIAlertView alloc] initWithTitle:@"Posted!"
+                                            message:@"This article has successfully been posted to Twitter."
+                                           delegate:nil
+                                  cancelButtonTitle:nil
+                                  otherButtonTitles:@"Thanks!", nil
+                  ] show];
+              }
+                break;
+            }};
+          
+          if (self.destinationUrl)
+            [twitterController addURL:[NSURL URLWithString:self.destinationUrl]];
+          
+          [twitterController setInitialText:@"Discovered with Easy Reader for iOS by Cloudspace!"];
+          [twitterController setCompletionHandler:completionHandler];
+          
+          dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self presentViewController:twitterController animated:YES completion:nil];
+          });
+        });
+      }
+      else
+      {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [[[UIAlertView alloc] initWithTitle:@"Oops!"
+                                    message:@"It looks like Twitter integration isn't set up on this device.  You can enable it in your device settings."
+                                   delegate:nil
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"Okay!", nil
+          ] show];
+      }
+      break;
+    }
+  }
+}
+
+#pragma mark - MFMailComposeViewController Delegate Methods
+/*!
+ * Dismisses the mail view on completion
+ */
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+  [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 
 #pragma mark - UIWebView delegate methods
