@@ -69,27 +69,5 @@
   }
 }
 
-/**
- * If the right menu is open, it closes it
- * Otherwise it opens to the right menu
- */
-- (void) toggleRightMenu
-{
-  if (self.sideMenu.menuState == MFSideMenuStateRightMenuOpen)
-  {
-    [self.sideMenu setMenuState:MFSideMenuStateClosed];
-  }
-  else
-  {
-    [self.sideMenu setMenuState:MFSideMenuStateRightMenuOpen];
-  }
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
-}
 
 @end

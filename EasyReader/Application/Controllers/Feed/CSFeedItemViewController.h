@@ -16,18 +16,22 @@
   MFMailComposeViewControllerDelegate,
   ADBannerViewDelegate
 >
+{
+  BOOL _adAvailable;
+}
 
 
 #pragma mark - IBOutlet Properties
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
 @property (nonatomic, retain) IBOutlet ADBannerView *adView;
-
+@property (nonatomic, retain) IBOutlet NSLayoutConstraint *adViewBottomSpace;
 
 #pragma mark - Properties
 
 @property (nonatomic, retain) UIActivityIndicatorView *busyWebIcon;
 @property (nonatomic, retain) UIBarButtonItem *barButton_action;
 @property (nonatomic, retain) NSString *destinationUrl;
+
 
 
 #pragma mark - Methods

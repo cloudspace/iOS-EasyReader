@@ -7,7 +7,6 @@
 //
 #import <Social/Social.h>
 #import <MessageUI/MessageUI.h>
-
 #import "MBProgressHUD.h"
 #import "CSFeedItemViewController.h"
 
@@ -29,6 +28,21 @@
                                                                     action:@selector(share:)];
   self.webView.delegate = self;
   self.navigationItem.rightBarButtonItem = _barButton_action;
+  self.adView.delegate = self;
+  [self.adView setAutoresizingMask: UIViewAutoresizingFlexibleHeight & UIViewAutoresizingFlexibleWidth];
+  
+  _adAvailable = NO;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  
+  if (UIInterfaceOrientationIsLandscape([[UIDevice currentDevice] orientation]))
+  {
+    [self.adViewBottomSpace setConstant: self.adView.frame.size.height];
+    [self.adView setHidden:YES];
+  }
 }
 
 /**
@@ -300,20 +314,29 @@
   return YES;
 }
 
+
+
 /**
  * Hides the banner ad when an error occurs loading it
  */
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
+  _adAvailable = NO;
   NSLog(@"Failed to load iAD: %@", error.localizedDescription);
   
-	self.adView.hidden = YES;
-//  [self.webView setFrame:CGRectMake(
-//    self.webView.frame.origin.x,
-//    self.webView.frame.origin.y,
-//    self.webView.frame.size.width,
-//    self.webView.frame.size.height + self.adView.frame.size.height
-//  )];
+	
+  [UIView animateWithDuration:0.5f animations:^{
+    [self.adViewBottomSpace setConstant: self.adView.frame.size.height];
+//    
+//    CGRect webViewFrame = self.webView.frame;
+//    webViewFrame.size.height = self.view.frame.size.height;
+//    
+//    [self.webView setFrame:webViewFrame];
+    
+  } completion:^(BOOL finished) {
+    [self.adView setHidden:YES];
+  }];
+
 }
 
 /**
@@ -321,15 +344,80 @@
  */
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-  NSLog(@"Successfully loaded iAD");
+  _adAvailable = YES;
+  [self.adView setHidden:NO];
   
-  self.adView.hidden = NO;
-  [self.webView setFrame:CGRectMake(
-    self.webView.frame.origin.x,
-    self.webView.frame.origin.y,
-    self.webView.frame.size.width,
-    self.webView.frame.size.height - self.adView.frame.size.height
-  )];
+  if (UIInterfaceOrientationIsPortrait([[UIDevice currentDevice] orientation]))
+  {
+    [UIView animateWithDuration:0.5f animations:^{
+        [self.adViewBottomSpace setConstant: 0];
+//      [self.adView setAlpha:1.0];
+    }];
+  }
+  
+//  NSLog(@"Successfully loaded iAD");
+//  
+//  [self.adView setHidden:NO];
+//  
+//  [UIView animateWithDuration:0.5f animations:^{
+//    CGRect webViewFrame = self.webView.frame;
+//    webViewFrame.size.height = self.view.frame.size.height - self.adView.frame.size.height;
+//    NSLog(@"%f   -    %f     -     %f", self.view.frame.size.height, self.adView.frame.size.height, self.webView.frame.size.height);
+//    
+//    [self.webView setFrame:webViewFrame];
+//    [self.adViewBottomSpace setConstant: 0];
+//  }];
 }
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+  
+//  if (!self.adView.hidden)
+//  {
+//    CGRect adFrame = self.adView.frame;
+//    CGRect webViewFrame = self.webView.frame;
+//
+//    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+//    {
+//      adFrame.origin.y = (self.view.frame.size.height - adFrame.size.height);
+//      webViewFrame.size.height = (self.view.frame.size.height - adFrame.size.height);
+//
+//      [UIView animateWithDuration:0.5f animations:^{
+//        [self.adView setFrame:adFrame];
+//        [self.webView setFrame:webViewFrame];
+//        
+//      }];
+//    }
+//    [UIView animateWithDuration:0.5f animations:^{
+//      [self.webViewBottomSpace setConstant: -self.adView.frame.size.height];
+//      [self.adViewBottomSpace setConstant:0.0f];
+//      
+//      self.adView.current
+//    }];
+//  }
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+  if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation))
+  {
+    [UIView animateWithDuration:duration animations:^{
+      [self.adViewBottomSpace setConstant: self.adView.frame.size.height];
+    } completion:^(BOOL finished) {
+      [self.adView setHidden:YES];
+    }];
+  }
+  else
+  {
+    if (_adAvailable)
+    {
+      [self.adView setHidden:NO];
+      [UIView animateWithDuration:duration animations:^{
+        [self.adViewBottomSpace setConstant: 0];
+      }];
+    }
+  }
+}
+
 
 @end

@@ -22,9 +22,6 @@
 /// The left side swipe menu
 @property (nonatomic, retain) UIViewController *viewController_menuLeft;
 
-/// The right side swipe menu
-@property (nonatomic, retain) UIViewController *viewController_menuRight;
-
 /// The main controller that sits at the top of the app
 @property (nonatomic, retain) UIViewController *viewController_main;
 
@@ -37,11 +34,6 @@
  * Toggles the left side menu
  */
 - (void) toggleLeftMenu;
-
-/**
- * Toggles the right side menu
- */
-- (void) toggleRightMenu;
 
 
 @end

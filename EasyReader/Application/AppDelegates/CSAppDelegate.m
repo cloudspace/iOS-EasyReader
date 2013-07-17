@@ -9,8 +9,6 @@
 #import "CSAppDelegate.h"
 #import "CSRootViewController.h"
 
-#import "HPAccountManager.h"
-
 #import "User.h"
 #import "Feed.h"
 
@@ -55,8 +53,6 @@
   //
   [MagicalRecord setupAutoMigratingCoreDataStack];
   
-  
-
 
   //
   // Set up root view controller
@@ -65,45 +61,10 @@
   self.window.rootViewController = rootVC;
   [self.window makeKeyAndVisible];
   
-  //
-  // Get Bundle information
-  //
-  NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
-  
-  //
-  // Set up google maps
-  //
-  //[GMSServices provideAPIKey:info[@"GoogleMapsAPIKey"]];
-  
-  //
-  // Set up HPAccountManager for facebook and twitter auth
-  //
-  [[HPAccountManager sharedManager] setupWithFacebookAppID:info[@"FacebookAppID"]
-                                    facebookAppPermissions:@[@"email"]
-                                      facebookSchemeSuffix:@""
-                                        twitterConsumerKey:info[@"TwitterConsumerKey"]
-                                     twitterConsumerSecret:info[@"TwitterConsumerSecret"]];
-  
-
-  
-//  [[HPAccountManager sharedManager] authenticateAccountOfType:HPAccountTypeTwitter
-//                                                  withHandler:^(HPAccount *authenticatedAccount, NSDictionary *profileInfo, NSError *error) {
-//                                                    if (error) {
-//                                                      NSLog(@"Failed to authenticate: %@", error);
-//                                                    } else {
-//                                                      NSLog(@"Authenticated: %@", authenticatedAccount.identifier);
-//                                                    }
-//                                                  }];
-  
-  
 
   return YES;
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-  return [[HPAccountManager sharedManager] handleOpenURL:url];
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

@@ -36,15 +36,6 @@
 
 @implementation CSHomeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
-    //self.hasNavigationBar = NO;
-    // Custom initialization
-  }
-  return self;
-}
 
 /**
  * Loads the default rss feeds and creates feed objects in core data
@@ -250,7 +241,15 @@
  */
 - (void) downloadFeedData:(Feed *)activeFeed
 {
-  [self downloadFeedData:activeFeed limit:10 offset:0];
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+  {
+    [self downloadFeedData:activeFeed limit:20 offset:0];
+  }
+  else
+  {
+    [self downloadFeedData:activeFeed limit:10 offset:0];
+  }
+
 }
 
 
@@ -460,6 +459,7 @@
   
   // Dequeue a reusable cell
   CSEnhancedTableViewCell *cell = (CSEnhancedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"feedItem"];
+  [cell setOpaque:YES];
   
   if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"visitedURLs"] containsObject:item[@"url"]])
   {
