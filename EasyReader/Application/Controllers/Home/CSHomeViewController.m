@@ -101,52 +101,6 @@
     NSLog(@"nooooooo feeds");
   }];
   [operation start];
-  
-//  [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//      [self.tableView_feed setShowsPullToRefresh:YES];
-//      [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-//    });
-//    
-//    User *currentUser = [User current];
-//    
-//    // Create default feeds
-//    for (NSDictionary *feedData in JSON[@"feeds"])
-//    {
-//      Feed *feed = [Feed createEntity];
-//      feed.name = feedData[@"name"];
-//      feed.url  = feedData[@"url"];
-//      
-//      FeedSort *sort = [FeedSort createEntity];
-//      sort.user = currentUser;
-//      sort.feed = feed;
-//      
-//      [currentUser addFeedsObject:feed];
-//    }
-//    
-//    // Set the first feed as active
-//    if ([currentUser.feeds count] > 0)
-//    {
-//      [currentUser setActiveFeed:[currentUser.feeds allObjects][0]];
-//    }
-//    
-//    // Mark database as seeded
-//    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
-//    
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"seeded"];
-//    
-//  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//      [self.tableView_feed setShowsPullToRefresh:YES];
-//      [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-//    });
-//    
-//    //something went wrong
-//    NSLog(@"nooooooo feeds");
-//    
-//  }] start];
-  
 }
 
 /**
@@ -176,7 +130,7 @@
   //
   UIButton *buttonMenu = [UIButton buttonWithType:UIButtonTypeCustom];
   [buttonMenu setFrame:CGRectMake(0, 0, 44, 44)];
-  [buttonMenu addTarget:self.rootViewController action:@selector(toggleLeftMenu) forControlEvents:UIControlEventTouchUpInside];
+  [buttonMenu addTarget:self.menuContainerViewController.centerViewController action:@selector(toggleLeftMenu) forControlEvents:UIControlEventTouchUpInside];
   [buttonMenu setImage:[UIImage imageNamed:@"button_menu@2x.png"] forState:UIControlStateNormal];
 
   [buttonMenu.imageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -318,6 +272,7 @@
   _requestOperation = [[AFHTTPRequestOperation alloc]
                        initWithRequest:request];
   _requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
+  
   [_requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
     dispatch_async(dispatch_get_main_queue(), ^{
       //[MBProgressHUD hideAllHUDsForView:self.tableView_feed animated:YES];

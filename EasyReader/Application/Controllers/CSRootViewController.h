@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MFSideMenu;
+#import "MFSideMenu.h"
 
 /**
  * A root view controller
@@ -24,9 +24,6 @@
 
 /// The main controller that sits at the top of the app
 @property (nonatomic, retain) UIViewController *viewController_main;
-
-/// The main controller that sits at the top of the app
-@property (nonatomic, retain) MFSideMenu *sideMenu;
 
 
 #pragma mark - Methods

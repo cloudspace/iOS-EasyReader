@@ -8,6 +8,8 @@
 
 #import "CSAppDelegate.h"
 #import "CSRootViewController.h"
+#import "CSMenuLeftViewController.h"
+#import "CSHomeViewController.h"
 
 #import "User.h"
 #import "Feed.h"
@@ -35,7 +37,6 @@
 }
 
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -55,10 +56,17 @@
   
 
   //
-  // Set up root view controller
+  // Set up root view controller and menu container
   //
+  CSMenuLeftViewController *leftMenuViewController = [[CSMenuLeftViewController alloc] init];
   CSRootViewController *rootVC = [[CSRootViewController alloc] init];
-  self.window.rootViewController = rootVC;
+  
+  MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
+                                                  containerWithCenterViewController:rootVC
+                                                  leftMenuViewController:leftMenuViewController
+                                                  rightMenuViewController:nil];
+
+  self.window.rootViewController = container;
   [self.window makeKeyAndVisible];
   
 
