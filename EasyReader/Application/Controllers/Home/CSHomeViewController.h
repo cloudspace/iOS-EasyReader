@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
+#import "AFNetworking.h"
 
-@class User, AFJSONRequestOperation, CSEnhancedTableView;
+@class User, CSEnhancedTableView;
 
 /**
  * The home view controller for the feed parser
@@ -21,7 +22,7 @@
 >
 
 {
-  AFJSONRequestOperation *_requestOperation;
+  AFHTTPRequestOperation *_requestOperation;
 }
 
 #pragma mark - UI Properties

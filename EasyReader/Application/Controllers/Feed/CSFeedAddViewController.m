@@ -19,7 +19,6 @@
 #import "MFSideMenu.h"
 #import "MBProgressHUD.h"
 #import "CSAutoCompleteViewController.h"
-#import "AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -117,7 +116,11 @@
   
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
   
-  _requestOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+  
+  _requestOperation = [[AFHTTPRequestOperation alloc]
+                       initWithRequest:request];
+  _requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
+  [_requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
     _requestOperation = nil;
     
     // Set the feed data if no errors
@@ -149,16 +152,13 @@
     _availableFeeds = [availableNewFeeds copy];;
     
     setAutoCompleteData(@[
-      @{
-        @"title": @"Results",
-        @"items": [feedNames copy],
-        @"image": [UIImage imageNamed:@"button_add@2x.png"]
-      }
-     ]);
-    
-    
-    
-  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                          @{
+                            @"title": @"Results",
+                            @"items": [feedNames copy],
+                            @"image": [UIImage imageNamed:@"button_add@2x.png"]
+                            }
+                          ]);
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     _requestOperation = nil;
     setAutoCompleteData(@[]);
     
@@ -189,7 +189,10 @@
   
   [MBProgressHUD showHUDAddedTo:self.autoCompleteController.view animated:YES];
   
-  _requestOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+  _requestOperation = [[AFHTTPRequestOperation alloc]
+                       initWithRequest:request];
+  _requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
+  [_requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
     // Remove request operation and hide HUD
     _requestOperation = nil;
     [MBProgressHUD hideAllHUDsForView:self.autoCompleteController.view animated:YES];
@@ -218,28 +221,27 @@
                        @"image": [UIImage imageNamed:@"button_add@2x.png"]
                      }
                    ]);
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //Remove request operation and hide HUD
+        _requestOperation = nil;
+        [MBProgressHUD hideAllHUDsForView:self.autoCompleteController.view animated:YES];
     
-  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-    // Remove request operation and hide HUD
-    _requestOperation = nil;
-    [MBProgressHUD hideAllHUDsForView:self.autoCompleteController.view animated:YES];
+        self.availableFeeds = nil;
     
-    self.availableFeeds = nil;
+        setDefaultList(@[
+                         @{
+                           @"title": @"Custom Feeds",
+                           @"items": @[@"Add a custom feed"],
+                           @"image": [UIImage imageNamed:@"button_add@2x.png"]
+                         }
+                       ]);
     
-    setDefaultList(@[
-                     @{
-                       @"title": @"Custom Feeds",
-                       @"items": @[@"Add a custom feed"],
-                       @"image": [UIImage imageNamed:@"button_add@2x.png"]
-                     }
-                   ]);
+        //something went wrong
+        NSLog(@"nooooooo");
     
-    //something went wrong
-    NSLog(@"nooooooo");
-    
-    _requestOperation = nil;
+        _requestOperation = nil;
   }];
-  
+
   [_requestOperation start];
 }
 

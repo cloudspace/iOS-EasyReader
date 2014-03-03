@@ -55,7 +55,10 @@
   hud.labelText = @"Loading Feeds";
   
   // Execute and parse the request
-  [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+  AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]
+                                       initWithRequest:request];
+  operation.responseSerializer = [AFJSONResponseSerializer serializer];
+  [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
     dispatch_async(dispatch_get_main_queue(), ^{
       [self.tableView_feed setShowsPullToRefresh:YES];
       [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -88,8 +91,7 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"seeded"];
-    
-  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     dispatch_async(dispatch_get_main_queue(), ^{
       [self.tableView_feed setShowsPullToRefresh:YES];
       [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -97,8 +99,53 @@
     
     //something went wrong
     NSLog(@"nooooooo feeds");
-    
-  }] start];
+  }];
+  [operation start];
+  
+//  [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//      [self.tableView_feed setShowsPullToRefresh:YES];
+//      [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//    });
+//    
+//    User *currentUser = [User current];
+//    
+//    // Create default feeds
+//    for (NSDictionary *feedData in JSON[@"feeds"])
+//    {
+//      Feed *feed = [Feed createEntity];
+//      feed.name = feedData[@"name"];
+//      feed.url  = feedData[@"url"];
+//      
+//      FeedSort *sort = [FeedSort createEntity];
+//      sort.user = currentUser;
+//      sort.feed = feed;
+//      
+//      [currentUser addFeedsObject:feed];
+//    }
+//    
+//    // Set the first feed as active
+//    if ([currentUser.feeds count] > 0)
+//    {
+//      [currentUser setActiveFeed:[currentUser.feeds allObjects][0]];
+//    }
+//    
+//    // Mark database as seeded
+//    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+//    
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"seeded"];
+//    
+//  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//      [self.tableView_feed setShowsPullToRefresh:YES];
+//      [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//    });
+//    
+//    //something went wrong
+//    NSLog(@"nooooooo feeds");
+//    
+//  }] start];
   
 }
 
@@ -268,7 +315,10 @@
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
   
   // Execute and parse the request
-  _requestOperation =[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+  _requestOperation = [[AFHTTPRequestOperation alloc]
+                       initWithRequest:request];
+  _requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
+  [_requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
     dispatch_async(dispatch_get_main_queue(), ^{
       //[MBProgressHUD hideAllHUDsForView:self.tableView_feed animated:YES];
       [self.tableView_feed.pullToRefreshView stopAnimating];
@@ -313,7 +363,7 @@
     
     _requestOperation = nil;
     
-  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     dispatch_async(dispatch_get_main_queue(), ^{
       //[MBProgressHUD hideAllHUDsForView:self.tableView_feed animated:YES];
       [self.tableView_feed.pullToRefreshView stopAnimating];
