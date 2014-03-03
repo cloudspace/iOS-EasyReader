@@ -9,7 +9,6 @@
 #import "CSAppDelegate.h"
 #import "CSRootViewController.h"
 #import "CSMenuLeftViewController.h"
-#import "CSHomeViewController.h"
 
 #import "User.h"
 #import "Feed.h"

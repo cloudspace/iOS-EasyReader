@@ -47,15 +47,15 @@
  */
 - (void) toggleLeftMenu
 {
-    if (self.menuContainerViewController.menuState == MFSideMenuStateLeftMenuOpen)
-    {
-      [self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
+  if (self.menuContainerViewController.menuState == MFSideMenuStateLeftMenuOpen)
+  {
+    [self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
   
-    }
-    else
-    {
-      [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-    }
+  }
+  else
+  {
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
+  }
 }
 
 
