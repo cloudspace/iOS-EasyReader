@@ -21,6 +21,8 @@ pod 'MTLabel', '~> 0.0.1'
 pod 'SVPullToRefresh'
 pod 'AFNetworking', '~> 1.2.0'
 
+pod 'NSDate+TimeAgo', '~> 1.0.2'
+
 
 
 
