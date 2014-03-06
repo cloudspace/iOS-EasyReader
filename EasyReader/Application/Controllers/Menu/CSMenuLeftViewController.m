@@ -16,7 +16,6 @@
 #import "CSAppDelegate.h"
 #import "CSRootViewController.h"
 #import "MFSideMenu.h"
-#import "UINavigationController+MFSideMenu.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -57,13 +56,18 @@
   }
   
   self.feeds = [feeds copy];
-    
-  CSRootViewController *rootVC = self.rootViewController;
   
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(menuStateEventOccurred:)
+                                               name:MFSideMenuStateNotificationEvent
+                                             object:nil];
+}
+
+- (void)menuStateEventOccurred:(NSNotification *)notification {
+  MFSideMenuStateEvent event = [[[notification userInfo] objectForKey:@"eventType"] intValue];
+
   __weak CSMenuLeftViewController *weakSelf = self;
   
-  
-  rootVC.sideMenu.menuStateEventBlock = ^(MFSideMenuStateEvent event) {
     switch (event) {
       case MFSideMenuStateEventMenuWillOpen:
         // the menu will open
@@ -76,11 +80,10 @@
         break;
       case MFSideMenuStateEventMenuDidClose:
         [weakSelf.tableView_feeds setEditing:NO animated:YES];
-        [[weakSelf.rootViewController sideMenu] setPanMode:MFSideMenuPanModeDefault];
+        weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
         [weakSelf.tableView_feeds reloadData];
         break;
     }
-  };
 }
 
 /**
@@ -111,7 +114,7 @@
   }
   else if ([keyPath isEqualToString:@" v"])
   {
-    [[self.navigationController sideMenu] setPanMode:MFSideMenuPanModeNone];
+    self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
   }
 }
 
@@ -135,7 +138,7 @@
   if ([self.tableView_feeds isEditing]) {
     // Stop editing, delete the 'Add new feed' row
     [self.tableView_feeds setEditing:NO animated:YES];
-    [[self.rootViewController sideMenu] setPanMode:MFSideMenuPanModeDefault];
+    self.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
     [self.tableView_feeds deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self tableView:self.tableView_feeds numberOfRowsInSection:0]
                                                                       inSection:0]]
                                 withRowAnimation:UITableViewRowAnimationFade];
@@ -148,7 +151,7 @@
                                                                       inSection:0]]
                                 withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView_feeds setEditing:YES animated:YES];
-    [[self.rootViewController sideMenu] setPanMode:MFSideMenuPanModeNone];
+    self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
   }
   
   [self.tableView_feeds endUpdates];
@@ -366,7 +369,7 @@
     navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
     [self.rootViewController presentViewController:navController animated:YES completion:^{
-      [((CSRootViewController *)self.rootViewController).sideMenu setMenuState:MFSideMenuStateClosed];
+      [self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
       [self toggleEditMode:nil];
     }];
     
@@ -430,7 +433,7 @@
   user.activeFeed = self.feeds[indexPath.row];
   
   [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
-  [((CSRootViewController *)self.rootViewController).sideMenu setMenuState:MFSideMenuStateClosed];
+  [self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
 }
 
 

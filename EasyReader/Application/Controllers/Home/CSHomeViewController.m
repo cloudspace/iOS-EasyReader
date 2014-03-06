@@ -55,7 +55,10 @@
   hud.labelText = @"Loading Feeds";
   
   // Execute and parse the request
-  [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+  AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]
+                                       initWithRequest:request];
+  operation.responseSerializer = [AFJSONResponseSerializer serializer];
+  [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
     dispatch_async(dispatch_get_main_queue(), ^{
       [self.tableView_feed setShowsPullToRefresh:YES];
       [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -88,8 +91,7 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"seeded"];
-    
-  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     dispatch_async(dispatch_get_main_queue(), ^{
       [self.tableView_feed setShowsPullToRefresh:YES];
       [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -97,9 +99,8 @@
     
     //something went wrong
     NSLog(@"nooooooo feeds");
-    
-  }] start];
-  
+  }];
+  [operation start];
 }
 
 /**
@@ -129,7 +130,7 @@
   //
   UIButton *buttonMenu = [UIButton buttonWithType:UIButtonTypeCustom];
   [buttonMenu setFrame:CGRectMake(0, 0, 44, 44)];
-  [buttonMenu addTarget:self.rootViewController action:@selector(toggleLeftMenu) forControlEvents:UIControlEventTouchUpInside];
+  [buttonMenu addTarget:self.menuContainerViewController.centerViewController action:@selector(toggleLeftMenu) forControlEvents:UIControlEventTouchUpInside];
   [buttonMenu setImage:[UIImage imageNamed:@"button_menu@2x.png"] forState:UIControlStateNormal];
 
   [buttonMenu.imageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -268,7 +269,11 @@
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
   
   // Execute and parse the request
-  _requestOperation =[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+  _requestOperation = [[AFHTTPRequestOperation alloc]
+                       initWithRequest:request];
+  _requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
+  
+  [_requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
     dispatch_async(dispatch_get_main_queue(), ^{
       //[MBProgressHUD hideAllHUDsForView:self.tableView_feed animated:YES];
       [self.tableView_feed.pullToRefreshView stopAnimating];
@@ -313,7 +318,7 @@
     
     _requestOperation = nil;
     
-  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     dispatch_async(dispatch_get_main_queue(), ^{
       //[MBProgressHUD hideAllHUDsForView:self.tableView_feed animated:YES];
       [self.tableView_feed.pullToRefreshView stopAnimating];

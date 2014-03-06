@@ -9,7 +9,8 @@
 #import "CSBaseViewController.h"
 #import "CSAutoCompleteViewController.h"
 
-@class Feed, AFJSONRequestOperation;
+#import "AFNetworking.h"
+@class Feed;
 
 
 @interface CSFeedAddViewController : CSBaseViewController <CSAutoCompleteDelegate, UIActionSheetDelegate>
@@ -26,7 +27,7 @@
 
 
 @property (nonatomic, retain) CSAutoCompleteViewController *autoCompleteController;
-@property (nonatomic, retain) AFJSONRequestOperation *requestOperation;
+@property (nonatomic, retain) AFHTTPRequestOperation *requestOperation;
 @property (nonatomic, retain) NSArray *availableFeeds;
 @property (nonatomic, retain) NSArray *defaultData;
 

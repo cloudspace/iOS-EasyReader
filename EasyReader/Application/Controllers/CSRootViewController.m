@@ -14,9 +14,6 @@
 
 //#import "UIViewController+NibLoader.h"
 
-#import "MFSideMenu.h"
-#import "UINavigationController+MFSideMenu.h"
-
 @interface CSRootViewController ()
 
 @end
@@ -33,19 +30,10 @@
   if (self) {
     //[self.view setBackgroundColor:[UIColor blackColor]];
     
-    // Create view controllers
-    _viewController_menuLeft  = [CSMenuLeftViewController new];
+    // Create view controller
     _viewController_main      = [CSHomeViewController new];
 
     [self setViewControllers:@[_viewController_main]];
-    
-    _sideMenu = [MFSideMenu menuWithNavigationController:self
-                                 leftSideMenuController:_viewController_menuLeft
-                                rightSideMenuController:nil];
-    
-    
-    [self setSideMenu:_sideMenu];
-    
 
   }
   
@@ -59,13 +47,14 @@
  */
 - (void) toggleLeftMenu
 {
-  if (self.sideMenu.menuState == MFSideMenuStateLeftMenuOpen)
+  if (self.menuContainerViewController.menuState == MFSideMenuStateLeftMenuOpen)
   {
-    [self.sideMenu setMenuState:MFSideMenuStateClosed];
+    [self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
+  
   }
   else
   {
-    [self.sideMenu setMenuState:MFSideMenuStateLeftMenuOpen];
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
   }
 }
 
