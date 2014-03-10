@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DE51F9618C90A2300454E51 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE51F9518C90A2300454E51 /* Main_iPhone.storyboard */; };
+		0DE51FA018C92B3E00454E51 /* FeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */; };
+		0DE51FA318CA07C800454E51 /* CSFeedItemContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FA218CA07C800454E51 /* CSFeedItemContainerViewController.m */; };
+		0DE51FA918CA5F4500454E51 /* 1231_loca_heathers_favori_5_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DE51FA618CA5F4500454E51 /* 1231_loca_heathers_favori_5_0.jpg */; };
+		0DE51FAA18CA5F4500454E51 /* NEWS_restweek_StorImg+.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DE51FA718CA5F4500454E51 /* NEWS_restweek_StorImg+.jpg */; };
+		0DE51FAB18CA5F4500454E51 /* tncolorpeanutslede_t440.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DE51FA818CA5F4500454E51 /* tncolorpeanutslede_t440.jpg */; };
+		0DE51FAD18CA609F00454E51 /* NEWS_restweek_StorImg+.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DE51FAC18CA609F00454E51 /* NEWS_restweek_StorImg+.jpg */; };
 		1884EDB920EE4720B254D07C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
 		9D140BF5171F68E000CDD319 /* button_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D140BF4171F68E000CDD319 /* button_add@2x.png */; };
 		9D27B1DF1715DECB001C39CF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D27B1DE1715DECB001C39CF /* Default-568h@2x.png */; };
@@ -83,6 +90,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DE51F9518C90A2300454E51 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		0DE51F9E18C92B3E00454E51 /* FeedItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItemViewController.h; sourceTree = "<group>"; };
+		0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItemViewController.m; sourceTree = "<group>"; };
+		0DE51FA118CA07C800454E51 /* CSFeedItemContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItemContainerViewController.h; sourceTree = "<group>"; };
+		0DE51FA218CA07C800454E51 /* CSFeedItemContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItemContainerViewController.m; sourceTree = "<group>"; };
+		0DE51FA618CA5F4500454E51 /* 1231_loca_heathers_favori_5_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1231_loca_heathers_favori_5_0.jpg; path = ../../../../../Documents/1231_loca_heathers_favori_5_0.jpg; sourceTree = "<group>"; };
+		0DE51FA718CA5F4500454E51 /* NEWS_restweek_StorImg+.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "NEWS_restweek_StorImg+.jpg"; path = "../../../../../Documents/NEWS_restweek_StorImg+.jpg"; sourceTree = "<group>"; };
+		0DE51FA818CA5F4500454E51 /* tncolorpeanutslede_t440.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tncolorpeanutslede_t440.jpg; path = ../../../../../Documents/tncolorpeanutslede_t440.jpg; sourceTree = "<group>"; };
+		0DE51FAC18CA609F00454E51 /* NEWS_restweek_StorImg+.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "NEWS_restweek_StorImg+.jpg"; sourceTree = "<group>"; };
 		5CECD14CAE964A1994399D15 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		9D140BF4171F68E000CDD319 /* button_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_add@2x.png"; sourceTree = "<group>"; };
 		9D27B1DE1715DECB001C39CF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -192,6 +208,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DE51F9718C9291D00454E51 /* FeedItemContainer */ = {
+			isa = PBXGroup;
+			children = (
+				0DE51FA118CA07C800454E51 /* CSFeedItemContainerViewController.h */,
+				0DE51FA218CA07C800454E51 /* CSFeedItemContainerViewController.m */,
+			);
+			path = FeedItemContainer;
+			sourceTree = "<group>";
+		};
+		0DE51F9D18C92B3E00454E51 /* FeedItem */ = {
+			isa = PBXGroup;
+			children = (
+				0DE51F9E18C92B3E00454E51 /* FeedItemViewController.h */,
+				0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */,
+			);
+			path = FeedItem;
+			sourceTree = "<group>";
+		};
 		9D429774170E166E00E73BFE /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +267,9 @@
 		9D8F318D171DB3CE006CFC6A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0DE51FA618CA5F4500454E51 /* 1231_loca_heathers_favori_5_0.jpg */,
+				0DE51FA718CA5F4500454E51 /* NEWS_restweek_StorImg+.jpg */,
+				0DE51FA818CA5F4500454E51 /* tncolorpeanutslede_t440.jpg */,
 				9DCAE7551720957300034DF8 /* control_dualEntryTextField@2x.png */,
 				9D8F318E171DB410006CFC6A /* Buttons */,
 				9D8F3190171DB410006CFC6A /* Default */,
@@ -296,6 +333,7 @@
 		9DAC16BB1709D48E00383722 = {
 			isa = PBXGroup;
 			children = (
+				0DE51FAC18CA609F00454E51 /* NEWS_restweek_StorImg+.jpg */,
 				9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */,
 				9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */,
 				9DA7CB35171CAD020045CC88 /* iOS Resources */,
@@ -385,6 +423,8 @@
 		9DAC171B170A043200383722 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0DE51F9D18C92B3E00454E51 /* FeedItem */,
+				0DE51F9718C9291D00454E51 /* FeedItemContainer */,
 				9DFBC0961714955D006BF840 /* Feed */,
 				9D42977E170E191500E73BFE /* Home */,
 				9D429774170E166E00E73BFE /* Menu */,
@@ -448,6 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				9DAC172C170A043200383722 /* EasyReader-Info.plist */,
+				0DE51F9518C90A2300454E51 /* Main_iPhone.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -557,9 +598,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE51FAD18CA609F00454E51 /* NEWS_restweek_StorImg+.jpg in Resources */,
 				9D429783170E283A00E73BFE /* CSHome_iPhone.xib in Resources */,
 				9D6C2B61170F39710087D8F8 /* CSMenuLeft_iPhone.xib in Resources */,
 				9DFBC09E1714A98D006BF840 /* CSFeedItem_iPhone.xib in Resources */,
+				0DE51F9618C90A2300454E51 /* Main_iPhone.storyboard in Resources */,
 				9D27B1DF1715DECB001C39CF /* Default-568h@2x.png in Resources */,
 				9DA7CB36171CAD020045CC88 /* Icon-72.png in Resources */,
 				9DA7CB37171CAD020045CC88 /* Icon-72@2x.png in Resources */,
@@ -572,11 +615,14 @@
 				9DA7CB3E171CAD020045CC88 /* iTunesArtwork.png in Resources */,
 				9DA7CB3F171CAD020045CC88 /* iTunesArtwork@2x.png in Resources */,
 				9D8F3196171DB410006CFC6A /* button_menu@2x.png in Resources */,
+				0DE51FA918CA5F4500454E51 /* 1231_loca_heathers_favori_5_0.jpg in Resources */,
+				0DE51FAB18CA5F4500454E51 /* tncolorpeanutslede_t440.jpg in Resources */,
 				9D8F3197171DB410006CFC6A /* icon_back.png in Resources */,
 				9D8F3198171DB410006CFC6A /* icon_forward.png in Resources */,
 				9D8F3199171DB410006CFC6A /* icon_pencil@2x.png in Resources */,
 				9D8F319A171DB410006CFC6A /* icon_rss@2x.png in Resources */,
 				9D8F319F171DE908006CFC6A /* icon_disclosure@2x.png in Resources */,
+				0DE51FAA18CA5F4500454E51 /* NEWS_restweek_StorImg+.jpg in Resources */,
 				9D8F31A4171ED4BE006CFC6A /* placeholder.png in Resources */,
 				9DF355CC171F3D4300A720AA /* icon_search@2x.png in Resources */,
 				9DF355CE171F450200A720AA /* CSFeedAdd_iPhone.xib in Resources */,
@@ -659,7 +705,9 @@
 				9DAC172D170A043200383722 /* CSAppDelegate.m in Sources */,
 				9DAC172E170A043200383722 /* main.m in Sources */,
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,
+				0DE51FA018C92B3E00454E51 /* FeedItemViewController.m in Sources */,
 				9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */,
+				0DE51FA318CA07C800454E51 /* CSFeedItemContainerViewController.m in Sources */,
 				9D429777170E168A00E73BFE /* CSMenuRightViewController.m in Sources */,
 				9D42977D170E190700E73BFE /* CSHomeViewController.m in Sources */,
 				9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */,
@@ -769,7 +817,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				INFOPLIST_FILE = "EasyReader/Supporting Files/EasyReader-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Easy Reader";
 				PROVISIONING_PROFILE = "1515F9BA-E615-4215-A1E9-D9C35CC9E667";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1515F9BA-E615-4215-A1E9-D9C35CC9E667";
@@ -788,7 +836,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				INFOPLIST_FILE = "EasyReader/Supporting Files/EasyReader-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Easy Reader";
 				PROVISIONING_PROFILE = "695DFFDA-701D-49EA-AAD5-B961B13DB6D3";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "695DFFDA-701D-49EA-AAD5-B961B13DB6D3";

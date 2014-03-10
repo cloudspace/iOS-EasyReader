@@ -45,7 +45,7 @@
   // This is important, if something changes we need to check authentication settingsi
   //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(canTweetStatus) name:ACAccountStoreDidChangeNotification object:nil];
   
-  [self applyStyles];
+//  [self applyStyles];
   
   
   //
@@ -57,15 +57,16 @@
   //
   // Set up root view controller and menu container
   //
-  CSMenuLeftViewController *leftMenuViewController = [[CSMenuLeftViewController alloc] init];
+//  CSMenuLeftViewController *leftMenuViewController = [[CSMenuLeftViewController alloc] init];
   CSRootViewController *rootVC = [[CSRootViewController alloc] init];
+//  
+//  MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
+//                                                  containerWithCenterViewController:rootVC
+//                                                  leftMenuViewController:leftMenuViewController
+//                                                  rightMenuViewController:nil];
+//
   
-  MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
-                                                  containerWithCenterViewController:rootVC
-                                                  leftMenuViewController:leftMenuViewController
-                                                  rightMenuViewController:nil];
-
-  self.window.rootViewController = container;
+  self.window.rootViewController = rootVC;
   [self.window makeKeyAndVisible];
   
 
