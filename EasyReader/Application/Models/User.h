@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "CSBaseObject.h"
 
 @class Feed;
 
-@interface User : NSManagedObject
+@interface User : CSBaseObject
 
 @property (nonatomic, retain) NSSet *feeds;
 @end

@@ -16,7 +16,7 @@
 @dynamic icon;
 @dynamic name;
 @dynamic url;
-@dynamic externalID;
+@dynamic id;
 @dynamic user;
 @dynamic feedItems;
 
