@@ -21,6 +21,6 @@
 - (BOOL)movingVisibleViewLeft;
 
 - (void)updateViews:(NSInteger)direction;
-//- (void)loadPageWithId:(int)index onPage:(int)page;
+- (void)loadPageWithId:(int)index onPage:(int)page;
 
 @end

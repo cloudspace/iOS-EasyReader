@@ -72,95 +72,86 @@ static NSInteger WIDTH;
   }
   
 }
-//
+
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
-//  NSLog(@"%f",self.scrollView.contentOffset.x);
-//  // User scrolled right
-//  if([self movingRight]){
-//    
-//    // Are we updating or moving the view
-//    if([self movingVisibleViewRight]){
-//      // Move the view
-//      _visibleView = _visibleView+1;
-//    }
-//    else{
-//      // Update view content
-//      [self updateViews:RIGHT];
-//    }
-//  }
-//  
-//  // User scrolled left
-//  else if([self movingLeft]){
-//    if([self movingVisibleViewLeft]){
-//      _visibleView --;
-//    }
-//    else{
-//      [self updateViews:LEFT];
-//    }
-//  }
-}
-//
-//// Detect direction of motion
-//// >= and <= are used to keep views moving in case of fast scrolling
-//- (BOOL)movingRight
-//{
-//  return ((self.scrollView.contentOffset.x == self.scrollView.frame.size.width && _visibleView == (int)PREV) ||
-//          ((self.scrollView.contentOffset.x >= (self.scrollView.frame.size.width*2)) && _visibleView <= (int)CURR));
-//}
-//
-//- (BOOL)movingLeft
-//{
-//  return ((self.scrollView.contentOffset.x <= 0 && _visibleView >= (int)CURR) ||
-//          (self.scrollView.contentOffset.x == self.scrollView.frame.size.width && _visibleView == (int)NEXT));
-//}
-//
-//// Check if moving off of the first feedItem or moving to the last feedItem
-//- (BOOL)movingVisibleViewRight
-//{
-//  return ((_currIndex == 1 && _visibleView == (int)PREV) ||
-//          (_currIndex == (int)_contentList.count-2 && _visibleView == (int)CURR));
-//}
-//
-//// Check if moving off of the last feedItem or moving to the first feedItem
-//- (BOOL)movingVisibleViewLeft
-//{
-//  return ((_currIndex == 1 && _visibleView == (int)CURR) ||
-//          (_currIndex == (int)_contentList.count-2 && _visibleView == (int)NEXT));
-//}
-//
-//- (void)updateViews:(NSInteger)direction
-//{
-//  // Update currIndex left or right
-//  _currIndex += direction;
-//  
-//  [self loadPages];
-//  
-//  // Reposition scrollView to CURR view
-//  [self.scrollView scrollRectToVisible:CGRectMake(WIDTH,0,WIDTH,HEIGHT) animated:NO];
-//}
-//
-//- (void)loadPageWithId:(int)index onPage:(int)page {
-//  if (index < (int)_contentList.count) {
-//    // Parse feedItem
-//    NSDictionary *numberItem = [_contentList objectAtIndex:index];
-//    
-//    // Update view with feed info
-//    FeedItemViewController *controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:page]);
-//  }
-//}
-//
-- (void)loadPages {
-  FeedItemViewController *controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:0]);
+  NSLog(@"%f",self.scrollView.contentOffset.x);
+  // User scrolled right
+  if([self movingRight]){
+    
+    // Are we updating or moving the view
+    if([self movingVisibleViewRight]){
+      // Move the view
+      _visibleView = _visibleView+1;
+    }
+    else{
+      // Update view content
+      [self updateViews:RIGHT];
+    }
+  }
   
-  controller.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"NEWS_restweek_StorImg+.jpg"]];
-  controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:1]);
-  controller.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tncolorpeanutslede_t440.jpg"]];
-  controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:2]);
-  controller.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"1231_loca_heathers_favori_5_0.jpg"]];
+  // User scrolled left
+  else if([self movingLeft]){
+    if([self movingVisibleViewLeft]){
+      _visibleView --;
+    }
+    else{
+      [self updateViews:LEFT];
+    }
+  }
+}
+
+// Detect direction of motion
+// >= and <= are used to keep views moving in case of fast scrolling
+- (BOOL)movingRight
+{
+  return ((self.scrollView.contentOffset.x == self.scrollView.frame.size.width && _visibleView == (int)PREV) ||
+          ((self.scrollView.contentOffset.x >= (self.scrollView.frame.size.width*2)) && _visibleView <= (int)CURR));
+}
+
+- (BOOL)movingLeft
+{
+  return ((self.scrollView.contentOffset.x <= 0 && _visibleView >= (int)CURR) ||
+          (self.scrollView.contentOffset.x == self.scrollView.frame.size.width && _visibleView == (int)NEXT));
+}
+
+// Check if moving off of the first feedItem or moving to the last feedItem
+- (BOOL)movingVisibleViewRight
+{
+  return ((_currIndex == 1 && _visibleView == (int)PREV) ||
+          (_currIndex == (int)_feedItemArray.count-2 && _visibleView == (int)CURR));
+}
+
+// Check if moving off of the last feedItem or moving to the first feedItem
+- (BOOL)movingVisibleViewLeft
+{
+  return ((_currIndex == 1 && _visibleView == (int)CURR) ||
+          (_currIndex == (int)_feedItemArray.count-2 && _visibleView == (int)NEXT));
+}
+
+- (void)updateViews:(NSInteger)direction
+{
+  // Update currIndex left or right
+  _currIndex += direction;
+  
+  [self loadPages];
+  
+  // Reposition scrollView to CURR view
+  [self.scrollView scrollRectToVisible:CGRectMake(WIDTH,0,WIDTH,HEIGHT) animated:NO];
+}
+
+- (void)loadPageWithId:(int)index onPage:(int)page {
+  if (index < (int)_feedItemArray.count) {
+    // Parse feedItem
+    NSDictionary *feedItem = [_feedItemArray objectAtIndex:index];
+    // Pass feedItem to feedItemViewController update method
+  }
+}
+
+- (void)loadPages {
   // Load feed info for each of the views
-//	[self loadPageWithId:_currIndex - 1 onPage:PREV];
-//  [self loadPageWithId:_currIndex onPage:CURR];
-//  [self loadPageWithId:_currIndex + 1 onPage:NEXT];
+	[self loadPageWithId:_currIndex - 1 onPage:PREV];
+  [self loadPageWithId:_currIndex onPage:CURR];
+  [self loadPageWithId:_currIndex + 1 onPage:NEXT];
 }
 
 @end
