@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSBaseViewController.h"
 
-@interface CSFeedItemContainerViewController : UIViewController <UIScrollViewDelegate>
+@interface CSFeedItemContainerViewController : CSBaseViewController  <UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewController;
 
 @property (nonatomic, strong) NSMutableArray *feedItemArray;
 @property (nonatomic, strong) NSMutableArray *viewControllers;
+
 @property (nonatomic) int currIndex;
 @property (nonatomic) int visibleView;
 

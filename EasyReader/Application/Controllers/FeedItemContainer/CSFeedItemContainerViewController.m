@@ -26,7 +26,6 @@ static NSInteger HEIGHT;
 static NSInteger WIDTH;
 
 @interface CSFeedItemContainerViewController ()
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @end
 
 @implementation CSFeedItemContainerViewController
@@ -36,14 +35,14 @@ static NSInteger WIDTH;
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  
+
   // Set default index and view
   _currIndex = 1;
   _visibleView = PREV;
   
   // Define view height and width
-  WIDTH = self.scrollView.frame.size.width;
-  HEIGHT = self.scrollView.frame.size.height;
+  WIDTH = self.scrollViewController.frame.size.width;
+  HEIGHT = self.scrollViewController.frame.size.height;
   
   // Initalize controller array
   _viewControllers = [[NSMutableArray alloc] init];
@@ -52,7 +51,7 @@ static NSInteger WIDTH;
   // Reposition views to have be left center and right
   for (NSInteger i = 0; i < 3; i++)
   {
-    [_viewControllers addObject:[[FeedItemViewController alloc] init]];
+    [_viewControllers addObject:[self.storyboard instantiateViewControllerWithIdentifier:@"FeedItem"]];
     ((FeedItemViewController *) [_viewControllers objectAtIndex:i]).view.frame= CGRectMake(WIDTH*i, 0, WIDTH, HEIGHT);
   }
   
@@ -60,21 +59,20 @@ static NSInteger WIDTH;
   [self loadPages];
   
   // Set the scrollView large enough to fit all 3 views
-  self.scrollView.contentSize = CGSizeMake(WIDTH*3, HEIGHT);
+  self.scrollViewController.contentSize = CGSizeMake(WIDTH*3, HEIGHT);
   
   // Hide the horizontal navbar and enable paging
-  [self.scrollView setShowsHorizontalScrollIndicator:NO];
-  self.scrollView.pagingEnabled = YES;
+  [self.scrollViewController setShowsHorizontalScrollIndicator:NO];
+  self.scrollViewController.pagingEnabled = YES;
   
   // Add each controllers view to the scrollView
   for (FeedItemViewController *controller in _viewControllers) {
-    [self.scrollView addSubview:controller.view];
+    [self.scrollViewController addSubview:controller.view];
   }
   
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
-  NSLog(@"%f",self.scrollView.contentOffset.x);
   // User scrolled right
   if([self movingRight]){
     
@@ -104,14 +102,14 @@ static NSInteger WIDTH;
 // >= and <= are used to keep views moving in case of fast scrolling
 - (BOOL)movingRight
 {
-  return ((self.scrollView.contentOffset.x == self.scrollView.frame.size.width && _visibleView == (int)PREV) ||
-          ((self.scrollView.contentOffset.x >= (self.scrollView.frame.size.width*2)) && _visibleView <= (int)CURR));
+  return ((self.scrollViewController.contentOffset.x == self.scrollViewController.frame.size.width && _visibleView == (int)PREV) ||
+          ((self.scrollViewController.contentOffset.x >= (self.scrollViewController.frame.size.width*2)) && _visibleView <= (int)CURR));
 }
 
 - (BOOL)movingLeft
 {
-  return ((self.scrollView.contentOffset.x <= 0 && _visibleView >= (int)CURR) ||
-          (self.scrollView.contentOffset.x == self.scrollView.frame.size.width && _visibleView == (int)NEXT));
+  return ((self.scrollViewController.contentOffset.x <= 0 && _visibleView >= (int)CURR) ||
+          (self.scrollViewController.contentOffset.x == self.scrollViewController.frame.size.width && _visibleView == (int)NEXT));
 }
 
 // Check if moving off of the first feedItem or moving to the last feedItem
@@ -136,7 +134,7 @@ static NSInteger WIDTH;
   [self loadPages];
   
   // Reposition scrollView to CURR view
-  [self.scrollView scrollRectToVisible:CGRectMake(WIDTH,0,WIDTH,HEIGHT) animated:NO];
+  [self.scrollViewController scrollRectToVisible:CGRectMake(WIDTH,0,WIDTH,HEIGHT) animated:NO];
 }
 
 - (void)loadPageWithId:(int)index onPage:(int)page {

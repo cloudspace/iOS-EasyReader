@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Feed Item Container View Controller-->
         <scene sceneID="VO6-dV-PXL">
             <objects>
-                <viewController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" id="qGv-9x-CGI" customClass="CSHomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" id="qGv-9x-CGI" customClass="CSFeedItemContainerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gos-xS-nOk"/>
                         <viewControllerLayoutGuide type="bottom" id="Nbh-YM-1tB"/>
@@ -21,14 +21,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="qGv-9x-CGI" id="Has-7T-5cC"/>
+                                    <outlet property="delegate" destination="qGv-9x-CGI" id="AZK-tR-pjA"/>
                                 </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="scrollViewController" destination="wpl-YE-Ruu" id="zkl-GD-jY7"/>
+                        <outlet property="scrollViewController" destination="wpl-YE-Ruu" id="mtm-b2-dZc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DmO-s8-rPX" userLabel="First Responder" sceneMemberID="firstResponder"/>

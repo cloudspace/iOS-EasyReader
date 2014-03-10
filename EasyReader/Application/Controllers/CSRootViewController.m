@@ -10,7 +10,6 @@
 
 #import "CSMenuLeftViewController.h"
 #import "CSMenuRightViewController.h"
-#import "CSHomeViewController.h"
 #import "CSFeedItemContainerViewController.h"
 
 //#import "UIViewController+NibLoader.h"
@@ -29,15 +28,12 @@
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   
   if (self) {
-    //[self.view setBackgroundColor:[UIColor blackColor]];
-    
     // Create view controller
     UIStoryboard *storyboard_home = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
-    CSHomeViewController *homeVC = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
-    _viewController_main      = homeVC;
+    CSFeedItemContainerViewController *homeVC = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
+    _viewController_main = homeVC;
 
     [self setViewControllers:@[_viewController_main]];
-
   }
   
   return self;
