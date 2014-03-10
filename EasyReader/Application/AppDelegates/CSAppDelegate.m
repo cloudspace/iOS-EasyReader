@@ -45,7 +45,7 @@
   // This is important, if something changes we need to check authentication settingsi
   //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(canTweetStatus) name:ACAccountStoreDidChangeNotification object:nil];
   
-  [self applyStyles];
+//  [self applyStyles];
   
   
   //
@@ -65,6 +65,7 @@
                                                   leftMenuViewController:leftMenuViewController
                                                   rightMenuViewController:nil];
 
+  
   self.window.rootViewController = container;
   [self.window makeKeyAndVisible];
   

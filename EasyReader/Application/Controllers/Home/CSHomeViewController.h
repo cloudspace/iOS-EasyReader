@@ -18,7 +18,8 @@
 @interface CSHomeViewController : CSBaseViewController <
 //  UICollectionViewDataSource,
   UITableViewDataSource,
-  UITableViewDelegate
+  UITableViewDelegate,
+  UIScrollViewDelegate
 >
 
 {
@@ -29,7 +30,6 @@
 @property (nonatomic, retain) IBOutlet CSEnhancedTableView *tableView_feed;
 @property (nonatomic, retain) UIBarButtonItem *barButton_menu;
 
-
 #pragma mark - Properties
 @property (nonatomic, retain) User *currentUser;
 @property (nonatomic, retain) NSArray *feedData;
@@ -37,6 +37,7 @@
 
 @property NSInteger feedOffset;
 @property NSInteger feedLimit;
+
 
 
 @end
