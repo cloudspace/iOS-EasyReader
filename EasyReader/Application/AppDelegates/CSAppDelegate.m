@@ -57,16 +57,16 @@
   //
   // Set up root view controller and menu container
   //
-//  CSMenuLeftViewController *leftMenuViewController = [[CSMenuLeftViewController alloc] init];
+  CSMenuLeftViewController *leftMenuViewController = [[CSMenuLeftViewController alloc] init];
   CSRootViewController *rootVC = [[CSRootViewController alloc] init];
-//  
-//  MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
-//                                                  containerWithCenterViewController:rootVC
-//                                                  leftMenuViewController:leftMenuViewController
-//                                                  rightMenuViewController:nil];
-//
   
-  self.window.rootViewController = rootVC;
+  MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
+                                                  containerWithCenterViewController:rootVC
+                                                  leftMenuViewController:leftMenuViewController
+                                                  rightMenuViewController:nil];
+
+  
+  self.window.rootViewController = container;
   [self.window makeKeyAndVisible];
   
 
