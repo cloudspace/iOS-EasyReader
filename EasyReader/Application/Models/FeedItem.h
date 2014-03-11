@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSString * createdAt;
 @property (nonatomic, retain) NSString * image;
 @property (nonatomic, retain) NSString * url;
+@property (nonatomic, retain) NSNumber * externalFeedItemID;
 @property (nonatomic, retain) Feed *feed;
 
 @end

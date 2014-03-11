@@ -20,5 +20,6 @@
 @dynamic image;
 @dynamic url;
 @dynamic feed;
+@dynamic externalFeedItemID;
 
 @end
