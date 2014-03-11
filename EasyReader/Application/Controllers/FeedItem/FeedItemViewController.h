@@ -18,6 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *feedItemSummary;
 @property (weak, nonatomic) IBOutlet UIImageView *feedItemImage;
 
-- (void)setFeedItemInfo:(FeedItem *)feedItem;
+- (void)updateFeedItemInfo:(FeedItem *)feedItem;
 
 @end

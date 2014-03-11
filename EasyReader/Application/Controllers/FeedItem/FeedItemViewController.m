@@ -29,7 +29,7 @@
 /**
  * Takes in a feedItem and calls methods to update the view
  */
-- (void)setFeedItemInfo:(FeedItem *)feedItem
+- (void)updateFeedItemInfo:(FeedItem *)feedItem
 {
   [self updateFeedName:[feedItem getFeedName] andDate:[FeedItem convertDateToTimeAgo:feedItem.updatedAt]];
   [self updateFeedItemHeader:feedItem.title];
