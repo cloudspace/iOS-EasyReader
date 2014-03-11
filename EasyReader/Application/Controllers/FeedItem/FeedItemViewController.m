@@ -30,6 +30,7 @@
     [super didReceiveMemoryWarning];
 }
 
+// This will take a param of FeedItem
 - (void)setFeedItemInfo
 {
   [self setFeedNameAndDate];
@@ -40,33 +41,27 @@
 
 - (void)setFeedNameAndDate
 {
-  //Parse out feed name
-  [self parseFeedItemKey];
-  //Parse out feed date
-  [self parseFeedItemKey];
-  //Convert feed date to time since
-  
-  //Format field data
+  // takes in a string and a date
+  // converts date to time since
+  // format and set the feedName
 }
 
 - (void)setFeedItemHeader
 {
-    [self parseFeedItemKey];
+  // takes in a string
+  // sets the feedItemHeadline
 }
 
 - (void)setFeedItemSmummary
 {
-  [self parseFeedItemKey];
+  // takes in a string
+  // sets the feedItemSummary
 }
 
 - (void)setFeedItemImage
 {
-  [self parseFeedItemKey];
-}
-
-- (void)parseFeedItemKey
-{
-
+  // takes in a image resource
+  // sets the feedItemImage
 }
 
 - (void)applyGradient
