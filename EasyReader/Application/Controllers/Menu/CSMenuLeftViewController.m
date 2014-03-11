@@ -37,30 +37,30 @@
 {
   [super viewDidLoad];
   
-  // Set tableViewStyle
-  self.tableView_feeds.tableViewStyle =[[CSEnhancedTableViewStyleDark alloc] init];
-  
-  // Add observer
-  self.currentUser = [User current];
-  [self.currentUser addObserver:self forKeyPath:@"feeds" options:NSKeyValueObservingOptionNew context:nil];
-  
-  // Get feeds from core data
-  NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user == %@", self.currentUser];
-  NSArray *feedSorts = [FeedSort findAllSortedBy:@"sortValue" ascending:NO withPredicate:userPredicate];
-  
-  NSMutableArray *feeds = [NSMutableArray new];
-
-  for (FeedSort *feedSort in feedSorts)
-  {
-    [feeds addObject:feedSort.feed];
-  }
-  
-  self.feeds = [feeds copy];
-  
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(menuStateEventOccurred:)
-                                               name:MFSideMenuStateNotificationEvent
-                                             object:nil];
+//  // Set tableViewStyle
+//  self.tableView_feeds.tableViewStyle =[[CSEnhancedTableViewStyleDark alloc] init];
+//  
+//  // Add observer
+//  self.currentUser = [User current];
+//  [self.currentUser addObserver:self forKeyPath:@"feeds" options:NSKeyValueObservingOptionNew context:nil];
+//  
+//  // Get feeds from core data
+//  NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user == %@", self.currentUser];
+//  NSArray *feedSorts = [FeedSort findAllSortedBy:@"sortValue" ascending:NO withPredicate:userPredicate];
+//  
+//  NSMutableArray *feeds = [NSMutableArray new];
+//
+//  for (FeedSort *feedSort in feedSorts)
+//  {
+//    [feeds addObject:feedSort.feed];
+//  }
+//  
+//  self.feeds = [feeds copy];
+//  
+//  [[NSNotificationCenter defaultCenter] addObserver:self
+//                                           selector:@selector(menuStateEventOccurred:)
+//                                               name:MFSideMenuStateNotificationEvent
+//                                             object:nil];
 }
 
 - (void)menuStateEventOccurred:(NSNotification *)notification {
@@ -379,13 +379,6 @@
   {
     Feed *toDelete = self.feeds[indexPath.row];
     
-    // Delete associated sorts
-    for (FeedSort *feedSort in toDelete.feedSorts)
-    {
-      [toDelete removeFeedSortsObject:feedSort];
-      [feedSort deleteEntity];
-    }
-    
     [toDelete deleteEntity];
     
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
@@ -430,7 +423,6 @@
 
   // Handle normal select
   User *user = [User current];
-  user.activeFeed = self.feeds[indexPath.row];
   
   [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
   [self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
