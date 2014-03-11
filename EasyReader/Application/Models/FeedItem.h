@@ -22,4 +22,7 @@
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) Feed *feed;
 
+- (NSString *)getFeedName;
++ (NSString *)convertDateToTimeAgo:(NSString *)updatedAt;
+
 @end
