@@ -1,23 +1,23 @@
 //
 //  Feed.m
-//  EasyReader
+//  
 //
-//  Created by Joseph Lorich on 4/22/13.
-//  Copyright (c) 2013 Cloudspace. All rights reserved.
+//  Created by Michael Beattie on 3/11/14.
+//
 //
 
 #import "Feed.h"
-#import "FeedSort.h"
+#import "FeedItem.h"
 #import "User.h"
 
 
 @implementation Feed
 
-@dynamic iconURL;
+@dynamic icon;
 @dynamic name;
 @dynamic url;
-@dynamic isActiveFor;
-@dynamic users;
-@dynamic feedSorts;
+@dynamic externalID;
+@dynamic user;
+@dynamic feedItems;
 
 @end

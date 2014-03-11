@@ -276,7 +276,6 @@
         sort.feed = feed;
         
         [currentUser addFeedsObject:feed];
-        [currentUser setActiveFeed:feed];
       }
       
       
@@ -507,7 +506,6 @@
     // Save an existing feed
     self.feed.name = _textFieldName.text;
     self.feed.url = _textFieldURL.text;
-    [currentUser setActiveFeed:self.feed];
   }
   else
   {
@@ -533,7 +531,6 @@
     
     // Add the feed to the user and set it as active
     [[User current] addFeedsObject:newFeed];
-    [[User current] setActiveFeed:newFeed];
   }
   
   // Save the data

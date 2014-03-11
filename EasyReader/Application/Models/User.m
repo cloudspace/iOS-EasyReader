@@ -1,28 +1,25 @@
 //
 //  User.m
-//  EasyReader
+//  
 //
-//  Created by Joseph Lorich on 4/9/13.
-//  Copyright (c) 2013 Cloudspace. All rights reserved.
+//  Created by Michael Beattie on 3/11/14.
+//
 //
 
 #import "User.h"
 #import "Feed.h"
-#import "FeedSort.h"
+
 
 @implementation User
 
 @dynamic feeds;
-@dynamic activeFeed;
-@dynamic feedSorts;
-
 
 + (User *)current
 {
   NSArray *users = [User findAll];
   
   if ([users count] > 0)
-  {    
+  {
     return users[0];
   }
   else
