@@ -14,6 +14,10 @@
 
 @dynamic feeds;
 
+/**
+ * Returns the current user.
+ * Creates a new one if none exist.
+ */
 + (User *)current
 {
   NSArray *users = [User findAll];
