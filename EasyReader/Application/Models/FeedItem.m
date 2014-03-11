@@ -47,6 +47,4 @@
   NSString *timeAgo = [date timeAgo];
   return timeAgo;
 }
-
-
 @end
