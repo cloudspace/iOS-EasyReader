@@ -19,12 +19,4 @@
 @property (nonatomic) int currIndex;
 @property (nonatomic) int visibleView;
 
-- (BOOL)movingRight;
-- (BOOL)movingLeft;
-- (BOOL)movingVisibleViewRight;
-- (BOOL)movingVisibleViewLeft;
-
-- (void)updateViews:(NSInteger)direction;
-- (void)loadPageWithId:(int)index onPage:(int)page;
-
 @end
