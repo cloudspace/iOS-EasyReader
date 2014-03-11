@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FeedItem.h"
 
 @interface FeedItemViewController : UIViewController
 
@@ -16,5 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *feedItemInfoContainer;
 @property (weak, nonatomic) IBOutlet UILabel *feedItemSummary;
 @property (weak, nonatomic) IBOutlet UIImageView *feedItemImage;
+
+- (void)updateFeedItemInfo:(FeedItem *)feedItem;
 
 @end

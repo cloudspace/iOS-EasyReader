@@ -23,10 +23,6 @@
 - (void)addFeeds:(NSSet *)values;
 - (void)removeFeeds:(NSSet *)values;
 
-/**
- * Returns the current user.
- * Creates a new one if none exist.
- */
 + (User *)current;
 
 @end

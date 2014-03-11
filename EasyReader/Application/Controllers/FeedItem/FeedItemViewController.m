@@ -18,11 +18,7 @@
 {
     [super viewDidLoad];
   
-    // Add the gradient to the feedItemInfoContainer
     [self applyGradient];
-  
-    // Set the feed item fields
-    [self setFeedItemInfo];
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,40 +26,53 @@
     [super didReceiveMemoryWarning];
 }
 
-// This will take a param of FeedItem
-- (void)setFeedItemInfo
+/**
+ * Takes in a feedItem and calls methods to update the view
+ */
+- (void)updateFeedItemInfo:(FeedItem *)feedItem
 {
-  [self setFeedNameAndDate];
-  [self setFeedItemHeader];
-  [self setFeedItemSmummary];
-  [self setFeedItemImage];
+  [self updateFeedName:[feedItem getFeedName] andDate:[FeedItem convertDateToTimeAgo:feedItem.updatedAt]];
+  [self updateFeedItemHeader:feedItem.title];
+  [self updateFeedItemSmummary:feedItem.summary];
+  [self updateFeedItemImage:feedItem.image];
 }
 
-- (void)setFeedNameAndDate
+/**
+ * Format and set the text for the feedName label
+ * Format: feedName • timeAgo
+ */
+- (void)updateFeedName:(NSString *)feedName andDate:(NSString *)timeAgo
 {
-  // takes in a string and a date
-  // converts date to time since
-  // format and set the feedName
+  _feedName.text = [NSString stringWithFormat:@"%@ \u00b7 %@",feedName,timeAgo];
 }
 
-- (void)setFeedItemHeader
+/**
+ * Set the text for the headline label
+ */
+- (void)updateFeedItemHeader:(NSString *)title
 {
-  // takes in a string
-  // sets the feedItemHeadline
+  _feedItemHeadline.text = title;
 }
 
-- (void)setFeedItemSmummary
+/**
+ * Set the text for the summary label
+ */
+- (void)updateFeedItemSmummary:(NSString *)summary
 {
-  // takes in a string
-  // sets the feedItemSummary
+  _feedItemSummary.text = summary;
 }
 
-- (void)setFeedItemImage
+/**
+ * Set the image resource for imageView
+ */
+- (void)updateFeedItemImage:(NSString *)image
 {
-  // takes in a image resource
-  // sets the feedItemImage
+  _feedItemImage.image = [UIImage imageNamed:image];
 }
 
+/**
+ * Create and apply a gradient to the feedItem text area
+ */
 - (void)applyGradient
 {
   // Create a new gradient object
@@ -72,13 +81,17 @@
   // Set the dimensions equal to the info container
   gradient.frame = self.feedItemInfoContainer.bounds;
   
-  // Create three colors with varying opacity
+  // Define and set array of gradient colors
   UIColor *lightColor = [UIColor colorWithRed:39/255.0f green:42/255.0f blue:44/255.0f alpha:0.7f];
   UIColor *mediumColor = [UIColor colorWithRed:39/255.0f green:42/255.0f blue:44/255.0f alpha:0.9f];
   UIColor *darkColor = [UIColor colorWithRed:39/255.0f green:41/255.0f blue:45/255.0f alpha:1.0f];
+  gradient.colors = [NSArray arrayWithObjects:(id)[lightColor CGColor],(id)[mediumColor CGColor],(id)[darkColor CGColor],nil];
   
-  // Create array of colors to form gradient
-  gradient.colors = [NSArray arrayWithObjects:(id)[lightColor CGColor],(id)[mediumColor CGColor],(id)[darkColor CGColor],(id)[darkColor CGColor],(id)[darkColor CGColor],(id)[darkColor CGColor],(id)[darkColor CGColor],(id)[darkColor CGColor],(id)[darkColor CGColor], nil];
+  // Define and set array of color stop positions
+  NSNumber *stopLight = [NSNumber numberWithFloat:0.05];
+  NSNumber *stopMedium = [NSNumber numberWithFloat:0.10];
+  NSNumber *stopDark = [NSNumber numberWithFloat:0.20];
+  gradient.locations = [NSArray arrayWithObjects:stopLight, stopMedium, stopDark, nil];
   
   // Apply the gradient
   [self.feedItemInfoContainer.layer insertSublayer:gradient atIndex:0];
