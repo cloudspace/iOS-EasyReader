@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>api_url</key>
-	<string>http://dev.api.cloudspacerss.com/v2</string>
+	<string>http://stage.api.cloudspacerss.com/v2</string>
 	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>UIViewControllerBasedStatusBarAppearance</key>

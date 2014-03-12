@@ -29,7 +29,11 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
         }
         sharedInstance = [[CSResponsiveApiRouter alloc] init];
         //todo: replace this line with code that checks the environment and sets the correct requestor
-        sharedInstance.requestor = [[CSFakedDataRequestor alloc] init];
+#ifdef DEVELOPMENT = 1
+      sharedInstance.requestor = [[CSFakedDataRequestor alloc] init];
+#elseif
+      sharedInstance.requestor = [[CSRealDataRequestor alloc] init];
+#endif
     });
     return sharedInstance;
 }
@@ -105,7 +109,7 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
 //this should be converted into a constant whose value is determined by the environment
 - (NSString *) baseUrl
 {
-    return @"http://api.cloudspacerss.com/v2";
+  return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"api_url"];
 }
 
 //adds the base url onto the given path
