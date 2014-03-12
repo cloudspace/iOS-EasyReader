@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DE51F9618C90A2300454E51 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE51F9518C90A2300454E51 /* Main_iPhone.storyboard */; };
+		0D8FF1A918D0D8C0005155E6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */; };
 		0DE51FA018C92B3E00454E51 /* FeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */; };
 		0DE51FA318CA07C800454E51 /* CSFeedItemContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FA218CA07C800454E51 /* CSFeedItemContainerViewController.m */; };
 		0DE51FF418CF911000454E51 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
@@ -86,7 +86,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DE51F9518C90A2300454E51 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		0DE51F9E18C92B3E00454E51 /* FeedItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItemViewController.h; sourceTree = "<group>"; };
 		0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItemViewController.m; sourceTree = "<group>"; };
 		0DE51FA118CA07C800454E51 /* CSFeedItemContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItemContainerViewController.h; sourceTree = "<group>"; };
@@ -441,6 +441,7 @@
 		9DAC171E170A043200383722 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */,
 				9DF355CF171F450600A720AA /* FeedItem */,
 				9DFBC09A17149586006BF840 /* Feed */,
 				9D6C2B5F170F39540087D8F8 /* Menu */,
@@ -479,7 +480,6 @@
 			isa = PBXGroup;
 			children = (
 				9DAC172C170A043200383722 /* EasyReader-Info.plist */,
-				0DE51F9518C90A2300454E51 /* Main_iPhone.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -592,7 +592,6 @@
 				9D429783170E283A00E73BFE /* CSHome_iPhone.xib in Resources */,
 				9D6C2B61170F39710087D8F8 /* CSMenuLeft_iPhone.xib in Resources */,
 				9DFBC09E1714A98D006BF840 /* CSFeedItem_iPhone.xib in Resources */,
-				0DE51F9618C90A2300454E51 /* Main_iPhone.storyboard in Resources */,
 				9D27B1DF1715DECB001C39CF /* Default-568h@2x.png in Resources */,
 				9DA7CB36171CAD020045CC88 /* Icon-72.png in Resources */,
 				9DA7CB37171CAD020045CC88 /* Icon-72@2x.png in Resources */,
@@ -603,6 +602,7 @@
 				9DA7CB3C171CAD020045CC88 /* Icon.png in Resources */,
 				9DA7CB3D171CAD020045CC88 /* Icon@2x.png in Resources */,
 				9DA7CB3E171CAD020045CC88 /* iTunesArtwork.png in Resources */,
+				0D8FF1A918D0D8C0005155E6 /* Main_iPhone.storyboard in Resources */,
 				9DA7CB3F171CAD020045CC88 /* iTunesArtwork@2x.png in Resources */,
 				9D8F3196171DB410006CFC6A /* button_menu@2x.png in Resources */,
 				9D8F3197171DB410006CFC6A /* icon_back.png in Resources */,
