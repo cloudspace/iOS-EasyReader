@@ -54,19 +54,6 @@
   // Set up core data
   //
   [MagicalRecord setupAutoMigratingCoreDataStack];
-    
-   
-  //TODO: remove this after api response testing is complete
-  NSArray *feedIds = @[@1, @2];
-  NSDate *now = [NSDate date];
-  [[CSResponsiveApiRouter sharedRouter] requestRoute: @"feedDefaults"
-                                          withParams: @{
-                                                       @"feed_ids": feedIds,
-                                                       @"since": now
-                                                      }
-                                             success: nil
-                                             failure: nil
-   ];
   
   //
   // Set up root view controller and menu container
