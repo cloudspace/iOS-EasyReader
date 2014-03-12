@@ -21,7 +21,7 @@
 @dynamic image;
 @dynamic url;
 @dynamic feed;
-@dynamic externalID;
+@dynamic id;
 
 /**
  * Get the name of the associated Feed

@@ -23,7 +23,10 @@ pod 'AFNetworking', '~> 2.0.3'
 
 pod 'NSDate+TimeAgo', '~> 1.0.2'
 
+pod 'NSDate+TimeAgo', '~> 1.0.2'
 
+#Rails-like inflections
+pod 'Inflections', '~> 1.0.0'
 
 
 # Private CS repos

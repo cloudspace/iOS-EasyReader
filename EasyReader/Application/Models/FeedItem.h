@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "CSBaseObject.h"
 
 @class Feed;
 
-@interface FeedItem : NSManagedObject
+@interface FeedItem : CSBaseObject
 
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * summary;
@@ -20,7 +21,7 @@
 @property (nonatomic, retain) NSString * createdAt;
 @property (nonatomic, retain) NSString * image;
 @property (nonatomic, retain) NSString * url;
-@property (nonatomic, retain) NSNumber * externalID;
+@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) Feed *feed;
 
 - (NSString *)getFeedName;

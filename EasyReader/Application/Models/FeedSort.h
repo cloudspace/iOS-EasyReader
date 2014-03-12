@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "CSBaseObject.h"
 
 @class Feed, User;
 
-@interface FeedSort : NSManagedObject
+@interface FeedSort : CSBaseObject
 
 @property (nonatomic, retain) NSNumber * sortValue;
 @property (nonatomic, retain) User *user;
