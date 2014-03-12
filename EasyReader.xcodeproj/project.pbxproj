@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D8FF1A918D0D8C0005155E6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */; };
+		0D8FF1AB18D0DA3F005155E6 /* control_dualEntryTextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */; };
 		0DE51FA018C92B3E00454E51 /* FeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */; };
 		0DE51FA318CA07C800454E51 /* CSFeedItemContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FA218CA07C800454E51 /* CSFeedItemContainerViewController.m */; };
 		0DE51FF418CF911000454E51 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
@@ -93,6 +94,7 @@
 
 /* Begin PBXFileReference section */
 		0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "control_dualEntryTextField@2x.png"; sourceTree = "<group>"; };
 		0DE51F9E18C92B3E00454E51 /* FeedItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItemViewController.h; sourceTree = "<group>"; };
 		0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItemViewController.m; sourceTree = "<group>"; };
 		0DE51FA118CA07C800454E51 /* CSFeedItemContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItemContainerViewController.h; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 		9D8F318D171DB3CE006CFC6A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */,
 				9D8F318E171DB410006CFC6A /* Buttons */,
 				9D8F3190171DB410006CFC6A /* Default */,
 				9D8F3191171DB410006CFC6A /* Icons */,
@@ -650,6 +653,7 @@
 				9DA7CB3C171CAD020045CC88 /* Icon.png in Resources */,
 				9DA7CB3D171CAD020045CC88 /* Icon@2x.png in Resources */,
 				9DA7CB3E171CAD020045CC88 /* iTunesArtwork.png in Resources */,
+				0D8FF1AB18D0DA3F005155E6 /* control_dualEntryTextField@2x.png in Resources */,
 				0D8FF1A918D0D8C0005155E6 /* Main_iPhone.storyboard in Resources */,
 				9DA7CB3F171CAD020045CC88 /* iTunesArtwork@2x.png in Resources */,
 				9D8F3196171DB410006CFC6A /* button_menu@2x.png in Resources */,
