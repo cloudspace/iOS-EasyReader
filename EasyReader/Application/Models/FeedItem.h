@@ -16,9 +16,9 @@
 
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * summary;
-@property (nonatomic, retain) NSString * updatedAt;
-@property (nonatomic, retain) NSString * publishedAt;
-@property (nonatomic, retain) NSString * createdAt;
+@property (nonatomic, retain) NSDate * updatedAt;
+@property (nonatomic, retain) NSDate * publishedAt;
+@property (nonatomic, retain) NSDate * createdAt;
 @property (nonatomic, retain) NSString * image;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSNumber * id;

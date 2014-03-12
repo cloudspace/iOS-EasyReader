@@ -50,7 +50,7 @@
   else
   {
     // Date only
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss+00:00"];
   }
   
   [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
