@@ -29,11 +29,7 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
         }
         sharedInstance = [[CSResponsiveApiRouter alloc] init];
         //todo: replace this line with code that checks the environment and sets the correct requestor
-#ifdef DEVELOPMENT = 1
-      sharedInstance.requestor = [[CSFakedDataRequestor alloc] init];
-#elseif
-      sharedInstance.requestor = [[CSRealDataRequestor alloc] init];
-#endif
+        sharedInstance.requestor = [[CSFakedDataRequestor alloc] init];
     });
     return sharedInstance;
 }
