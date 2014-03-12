@@ -14,9 +14,9 @@
 		0DE51FF518CF911000454E51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		1884EDB920EE4720B254D07C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
-		2767394618CFA5D600110C33 /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767394218CFA5D600110C33 /* CSFakedDataRequestor.m */; };
-		2767394718CFA5D600110C33 /* CSResponsiveApiRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767394418CFA5D600110C33 /* CSResponsiveApiRouter.m */; };
-		2767394B18D095C800110C33 /* CSApiRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767394A18D095C800110C33 /* CSApiRequestor.m */; };
+		274D540118D0E5C20096831A /* CSApiRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D53FB18D0E5C20096831A /* CSApiRequestor.m */; };
+		274D540218D0E5C20096831A /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */; };
+		274D540318D0E5C20096831A /* CSResponsiveApiRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540018D0E5C20096831A /* CSResponsiveApiRouter.m */; };
 		8E7F81F018D0BF8500BC50C2 /* CSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */; };
 		8E7F81F418D0C44200BC50C2 /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81F318D0C44200BC50C2 /* NSObject+CSNilAdditions.m */; };
 		8E7F81F718D0C50200BC50C2 /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81F618D0C50200BC50C2 /* NSObject+CSReflectionAdditions.m */; };
@@ -105,13 +105,13 @@
 		0DE51FF218CF911000454E51 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0DE51FF618CF919900454E51 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
 		0DE51FF718CF919900454E51 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
-		2767394118CFA5D600110C33 /* CSFakedDataRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFakedDataRequestor.h; sourceTree = "<group>"; };
-		2767394218CFA5D600110C33 /* CSFakedDataRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFakedDataRequestor.m; sourceTree = "<group>"; };
-		2767394318CFA5D600110C33 /* CSResponsiveApiRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSResponsiveApiRouter.h; sourceTree = "<group>"; };
-		2767394418CFA5D600110C33 /* CSResponsiveApiRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSResponsiveApiRouter.m; sourceTree = "<group>"; };
-		2767394518CFA5D600110C33 /* CSResponsiveApiRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSResponsiveApiRequestor.h; sourceTree = "<group>"; };
-		2767394918D095C800110C33 /* CSApiRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSApiRequestor.h; sourceTree = "<group>"; };
-		2767394A18D095C800110C33 /* CSApiRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSApiRequestor.m; sourceTree = "<group>"; };
+		274D53FA18D0E5C20096831A /* CSApiRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSApiRequestor.h; path = Api/CSApiRequestor.h; sourceTree = "<group>"; };
+		274D53FB18D0E5C20096831A /* CSApiRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSApiRequestor.m; path = Api/CSApiRequestor.m; sourceTree = "<group>"; };
+		274D53FC18D0E5C20096831A /* CSFakedDataRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFakedDataRequestor.h; path = Api/CSFakedDataRequestor.h; sourceTree = "<group>"; };
+		274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFakedDataRequestor.m; path = Api/CSFakedDataRequestor.m; sourceTree = "<group>"; };
+		274D53FE18D0E5C20096831A /* CSResponsiveApiRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSResponsiveApiRequestor.h; path = Api/CSResponsiveApiRequestor.h; sourceTree = "<group>"; };
+		274D53FF18D0E5C20096831A /* CSResponsiveApiRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSResponsiveApiRouter.h; path = Api/CSResponsiveApiRouter.h; sourceTree = "<group>"; };
+		274D540018D0E5C20096831A /* CSResponsiveApiRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSResponsiveApiRouter.m; path = Api/CSResponsiveApiRouter.m; sourceTree = "<group>"; };
 		5CECD14CAE964A1994399D15 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8E7F81EE18D0BF8500BC50C2 /* CSBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseObject.h; sourceTree = "<group>"; };
 		8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBaseObject.m; sourceTree = "<group>"; };
@@ -241,18 +241,18 @@
 			path = FeedItem;
 			sourceTree = "<group>";
 		};
-		2767394818CFA6AC00110C33 /* API */ = {
+		2767394818CFA6AC00110C33 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				2767394318CFA5D600110C33 /* CSResponsiveApiRouter.h */,
-				2767394418CFA5D600110C33 /* CSResponsiveApiRouter.m */,
-				2767394518CFA5D600110C33 /* CSResponsiveApiRequestor.h */,
-				2767394218CFA5D600110C33 /* CSFakedDataRequestor.m */,
-				2767394118CFA5D600110C33 /* CSFakedDataRequestor.h */,
-				2767394918D095C800110C33 /* CSApiRequestor.h */,
-				2767394A18D095C800110C33 /* CSApiRequestor.m */,
+				274D53FA18D0E5C20096831A /* CSApiRequestor.h */,
+				274D53FB18D0E5C20096831A /* CSApiRequestor.m */,
+				274D53FC18D0E5C20096831A /* CSFakedDataRequestor.h */,
+				274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */,
+				274D53FE18D0E5C20096831A /* CSResponsiveApiRequestor.h */,
+				274D53FF18D0E5C20096831A /* CSResponsiveApiRouter.h */,
+				274D540018D0E5C20096831A /* CSResponsiveApiRouter.m */,
 			);
-			name = API;
+			name = Api;
 			sourceTree = "<group>";
 		};
 		8E7F81F118D0C3C600BC50C2 /* Categories */ = {
@@ -440,7 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				8E7F81F118D0C3C600BC50C2 /* Categories */,
-				2767394818CFA6AC00110C33 /* API */,
+				2767394818CFA6AC00110C33 /* Api */,
 				9DAC1718170A043200383722 /* AppDelegates */,
 				9DAC171B170A043200383722 /* Controllers */,
 				9DAC171D170A043200383722 /* Models */,
@@ -746,17 +746,17 @@
 				8E7F81F718D0C50200BC50C2 /* NSObject+CSReflectionAdditions.m in Sources */,
 				8E7F81F418D0C44200BC50C2 /* NSObject+CSNilAdditions.m in Sources */,
 				8E7F81F018D0BF8500BC50C2 /* CSBaseObject.m in Sources */,
+				274D540118D0E5C20096831A /* CSApiRequestor.m in Sources */,
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,
 				0DE51FF418CF911000454E51 /* FeedItem.m in Sources */,
 				0DE51FF518CF911000454E51 /* User.m in Sources */,
-				2767394618CFA5D600110C33 /* CSFakedDataRequestor.m in Sources */,
+				274D540218D0E5C20096831A /* CSFakedDataRequestor.m in Sources */,
 				0DE51FA018C92B3E00454E51 /* FeedItemViewController.m in Sources */,
 				9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */,
-				2767394718CFA5D600110C33 /* CSResponsiveApiRouter.m in Sources */,
 				0DE51FA318CA07C800454E51 /* CSFeedItemContainerViewController.m in Sources */,
-				2767394B18D095C800110C33 /* CSApiRequestor.m in Sources */,
 				9D429777170E168A00E73BFE /* CSMenuRightViewController.m in Sources */,
 				9D42977D170E190700E73BFE /* CSHomeViewController.m in Sources */,
+				274D540318D0E5C20096831A /* CSResponsiveApiRouter.m in Sources */,
 				9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */,
 				9DFBC0991714957E006BF840 /* CSFeedAddViewController.m in Sources */,
 				9DFBC0A21714A9B3006BF840 /* CSFeedItemViewController.m in Sources */,
