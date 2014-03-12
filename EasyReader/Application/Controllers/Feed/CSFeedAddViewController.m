@@ -120,8 +120,9 @@
   _requestOperation = [[AFHTTPRequestOperation alloc]
                        initWithRequest:request];
   _requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
+  CSFeedAddViewController __weak *__self = self;
   [_requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
-    _requestOperation = nil;
+    __self.requestOperation = nil;
     
     // Set the feed data if no errors
     
@@ -149,7 +150,7 @@
       }
     }
     
-    _availableFeeds = [availableNewFeeds copy];;
+    __self.availableFeeds = [availableNewFeeds copy];;
     
     setAutoCompleteData(@[
                           @{
@@ -159,13 +160,13 @@
                             }
                           ]);
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    _requestOperation = nil;
+    __self.requestOperation = nil;
     setAutoCompleteData(@[]);
     
     //something went wrong
     NSLog(@"nooooooo");
     
-    _requestOperation = nil;
+    __self.requestOperation = nil;
   }];
   
   [_requestOperation start];
@@ -192,10 +193,11 @@
   _requestOperation = [[AFHTTPRequestOperation alloc]
                        initWithRequest:request];
   _requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
+  CSFeedAddViewController __weak *__self = self;
   [_requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
     // Remove request operation and hide HUD
-    _requestOperation = nil;
-    [MBProgressHUD hideAllHUDsForView:self.autoCompleteController.view animated:YES];
+    __self.requestOperation = nil;
+    [MBProgressHUD hideAllHUDsForView:__self.autoCompleteController.view animated:YES];
     
     // Set the feed data if no errors
     NSMutableArray *feedNames = [NSMutableArray new];
@@ -207,7 +209,7 @@
       [availableNewFeeds addObject:feed];
     }
     
-    _availableFeeds = [availableNewFeeds copy];;
+    __self.availableFeeds = [availableNewFeeds copy];;
     
     setDefaultList(@[
                      @{
@@ -223,10 +225,10 @@
                    ]);
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         //Remove request operation and hide HUD
-        _requestOperation = nil;
-        [MBProgressHUD hideAllHUDsForView:self.autoCompleteController.view animated:YES];
+        __self.requestOperation = nil;
+        [MBProgressHUD hideAllHUDsForView:__self.autoCompleteController.view animated:YES];
     
-        self.availableFeeds = nil;
+        __self.availableFeeds = nil;
     
         setDefaultList(@[
                          @{
@@ -239,7 +241,7 @@
         //something went wrong
         NSLog(@"nooooooo");
     
-        _requestOperation = nil;
+        __self.requestOperation = nil;
   }];
 
   [_requestOperation start];

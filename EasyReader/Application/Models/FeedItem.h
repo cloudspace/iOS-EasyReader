@@ -25,6 +25,6 @@
 @property (nonatomic, retain) Feed *feed;
 
 - (NSString *)getFeedName;
-+ (NSString *)convertDateToTimeAgo:(NSString *)updatedAt;
++ (NSString *)convertDateToTimeAgo:(NSDate *)updatedAt;
 
 @end

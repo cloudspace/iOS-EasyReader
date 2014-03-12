@@ -422,7 +422,7 @@
   }
 
   // Handle normal select
-  User *user = [User current];
+  //User *user = [User current];
   
   [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
   [self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];

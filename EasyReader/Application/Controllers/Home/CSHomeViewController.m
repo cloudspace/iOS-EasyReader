@@ -380,18 +380,18 @@ static NSInteger WIDTH;
 ///**
 // * Number of sections in the tableView
 // */
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//  return [self.feedsByDay count];
-//}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+  return [self.feedsByDay count];
+}
 //
 ///**
 // * Number of rows in each section
 // */
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//  return [self.feedsByDay[section][@"items"] count];
-//}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+  return [self.feedsByDay[section][@"items"] count];
+}
 //
 ///**
 // * Height of the header in each section
@@ -426,41 +426,41 @@ static NSInteger WIDTH;
 ///**
 // * Generates a view for the cell for a given index path
 // */
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//  // Get the RSS item related to this cell's position
-//  NSDictionary *item = self.feedsByDay[indexPath.section][@"items"][indexPath.row];
-//  
-//  // Dequeue a reusable cell
-//  CSEnhancedTableViewCell *cell = (CSEnhancedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"feedItem"];
-//  [cell setOpaque:YES];
-//  
-//  if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"visitedURLs"] containsObject:item[@"url"]])
-//  {
-//    [cell.textLabel setTextColor:[UIColor lightGrayColor]];
-//  }
-//  else
-//  {
-//    [cell.textLabel setTextColor:[UIColor darkGrayColor]];
-//  }
-//  
-//  // Set the cell's properties
-//  [cell.textLabel setText:item[@"name"]];
-//  
-//  
-//  
-//  cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//  
-//  NSString *thumbnailURL = [NSString stringWithFormat:@"%@/feed_items/%@/thumbnail", host, item[@"id"]];
-//  
-//  
-//  cell.imageView.layer.cornerRadius = 4;
-//  cell.imageView.layer.masksToBounds = YES;
-//  [cell.imageView setImageWithURL:[NSURL URLWithString:thumbnailURL] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-//    
-//  // Return the cell
-//  return cell;
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  // Get the RSS item related to this cell's position
+  NSDictionary *item = self.feedsByDay[indexPath.section][@"items"][indexPath.row];
+  
+  // Dequeue a reusable cell
+  CSEnhancedTableViewCell *cell = (CSEnhancedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"feedItem"];
+  [cell setOpaque:YES];
+  
+  if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"visitedURLs"] containsObject:item[@"url"]])
+  {
+    [cell.textLabel setTextColor:[UIColor lightGrayColor]];
+  }
+  else
+  {
+    [cell.textLabel setTextColor:[UIColor darkGrayColor]];
+  }
+  
+  // Set the cell's properties
+  [cell.textLabel setText:item[@"name"]];
+  
+  
+  
+  cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+  
+  NSString *thumbnailURL = [NSString stringWithFormat:@"%@/feed_items/%@/thumbnail", host, item[@"id"]];
+  
+  
+  cell.imageView.layer.cornerRadius = 4;
+  cell.imageView.layer.masksToBounds = YES;
+  [cell.imageView setImageWithURL:[NSURL URLWithString:thumbnailURL] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    
+  // Return the cell
+  return cell;
+}
 //
 //#pragma mark - UITableViewDelegate Methods
 ///**
