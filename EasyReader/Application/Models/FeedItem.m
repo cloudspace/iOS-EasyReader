@@ -36,15 +36,10 @@
  * Convert the feedItem updatedAt date into 
  * a human readable time ago string
  */
-+ (NSString *)convertDateToTimeAgo:(NSString *)updatedAt
++ (NSString *)convertDateToTimeAgo:(NSDate *)updatedAt
 {
-  // Convert updatedAt into NSDate
-  NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-  [dateFormat setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
-  NSDate *date = [dateFormat dateFromString: updatedAt];
-  
   // Convert NSDate into readable time ago
-  NSString *timeAgo = [date timeAgo];
+  NSString *timeAgo = [updatedAt timeAgo];
   return timeAgo;
 }
 @end
