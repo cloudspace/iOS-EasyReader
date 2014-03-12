@@ -10,9 +10,6 @@
 		0DE51F9618C90A2300454E51 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE51F9518C90A2300454E51 /* Main_iPhone.storyboard */; };
 		0DE51FA018C92B3E00454E51 /* FeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */; };
 		0DE51FA318CA07C800454E51 /* CSFeedItemContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FA218CA07C800454E51 /* CSFeedItemContainerViewController.m */; };
-		0DE51FA918CA5F4500454E51 /* 1231_loca_heathers_favori_5_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DE51FA618CA5F4500454E51 /* 1231_loca_heathers_favori_5_0.jpg */; };
-		0DE51FAA18CA5F4500454E51 /* NEWS_restweek_StorImg+.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DE51FA718CA5F4500454E51 /* NEWS_restweek_StorImg+.jpg */; };
-		0DE51FAB18CA5F4500454E51 /* tncolorpeanutslede_t440.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DE51FA818CA5F4500454E51 /* tncolorpeanutslede_t440.jpg */; };
 		0DE51FF418CF911000454E51 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		0DE51FF518CF911000454E51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
@@ -70,7 +67,6 @@
 		9DB47D8D1795B9CF006B99BA /* CSAutoComplete_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB47D8C1795B9CF006B99BA /* CSAutoComplete_iPad.xib */; };
 		9DB47D8F1795BA71006B99BA /* CSFeedAdd_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB47D8E1795BA71006B99BA /* CSFeedAdd_iPad.xib */; };
 		9DB47D951795BC21006B99BA /* CSFeedItem_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB47D941795BC21006B99BA /* CSFeedItem_iPad.xib */; };
-		9DCAE7561720957300034DF8 /* control_dualEntryTextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DCAE7551720957300034DF8 /* control_dualEntryTextField@2x.png */; };
 		9DF355CC171F3D4300A720AA /* icon_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CB171F3D4300A720AA /* icon_search@2x.png */; };
 		9DF355CE171F450200A720AA /* CSFeedAdd_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CD171F450200A720AA /* CSFeedAdd_iPhone.xib */; };
 		9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
@@ -95,10 +91,7 @@
 		0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItemViewController.m; sourceTree = "<group>"; };
 		0DE51FA118CA07C800454E51 /* CSFeedItemContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItemContainerViewController.h; sourceTree = "<group>"; };
 		0DE51FA218CA07C800454E51 /* CSFeedItemContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItemContainerViewController.m; sourceTree = "<group>"; };
-		0DE51FA618CA5F4500454E51 /* 1231_loca_heathers_favori_5_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1231_loca_heathers_favori_5_0.jpg; path = ../../../../../Documents/1231_loca_heathers_favori_5_0.jpg; sourceTree = "<group>"; };
-		0DE51FA718CA5F4500454E51 /* NEWS_restweek_StorImg+.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "NEWS_restweek_StorImg+.jpg"; path = "../../../../../Documents/NEWS_restweek_StorImg+.jpg"; sourceTree = "<group>"; };
-		0DE51FA818CA5F4500454E51 /* tncolorpeanutslede_t440.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tncolorpeanutslede_t440.jpg; path = ../../../../../Documents/tncolorpeanutslede_t440.jpg; sourceTree = "<group>"; };
-		0DE51FE318CF8BDE00454E51 /* api_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = api_v2.xcdatamodel; sourceTree = "<group>"; };
+		0DE51FE318CF8BDE00454E51 /* api_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = api_v2.xcdatamodel; sourceTree = "<group>"; };
 		0DE51FEF18CF911000454E51 /* FeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItem.h; sourceTree = "<group>"; };
 		0DE51FF018CF911000454E51 /* FeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItem.m; sourceTree = "<group>"; };
 		0DE51FF118CF911000454E51 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -168,7 +161,6 @@
 		9DB47D8C1795B9CF006B99BA /* CSAutoComplete_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSAutoComplete_iPad.xib; path = Feed/CSAutoComplete_iPad.xib; sourceTree = "<group>"; };
 		9DB47D8E1795BA71006B99BA /* CSFeedAdd_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSFeedAdd_iPad.xib; path = Feed/CSFeedAdd_iPad.xib; sourceTree = "<group>"; };
 		9DB47D941795BC21006B99BA /* CSFeedItem_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSFeedItem_iPad.xib; path = FeedItem/CSFeedItem_iPad.xib; sourceTree = "<group>"; };
-		9DCAE7551720957300034DF8 /* control_dualEntryTextField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "control_dualEntryTextField@2x.png"; sourceTree = "<group>"; };
 		9DF355CB171F3D4300A720AA /* icon_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_search@2x.png"; sourceTree = "<group>"; };
 		9DF355CD171F450200A720AA /* CSFeedAdd_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSFeedAdd_iPhone.xib; path = Feed/CSFeedAdd_iPhone.xib; sourceTree = "<group>"; };
 		9DF4BB1E17130E99001DCC88 /* EasyReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyReader.xcdatamodel; sourceTree = "<group>"; };
@@ -269,10 +261,6 @@
 		9D8F318D171DB3CE006CFC6A /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				0DE51FA618CA5F4500454E51 /* 1231_loca_heathers_favori_5_0.jpg */,
-				0DE51FA718CA5F4500454E51 /* NEWS_restweek_StorImg+.jpg */,
-				0DE51FA818CA5F4500454E51 /* tncolorpeanutslede_t440.jpg */,
-				9DCAE7551720957300034DF8 /* control_dualEntryTextField@2x.png */,
 				9D8F318E171DB410006CFC6A /* Buttons */,
 				9D8F3190171DB410006CFC6A /* Default */,
 				9D8F3191171DB410006CFC6A /* Icons */,
@@ -617,19 +605,15 @@
 				9DA7CB3E171CAD020045CC88 /* iTunesArtwork.png in Resources */,
 				9DA7CB3F171CAD020045CC88 /* iTunesArtwork@2x.png in Resources */,
 				9D8F3196171DB410006CFC6A /* button_menu@2x.png in Resources */,
-				0DE51FA918CA5F4500454E51 /* 1231_loca_heathers_favori_5_0.jpg in Resources */,
-				0DE51FAB18CA5F4500454E51 /* tncolorpeanutslede_t440.jpg in Resources */,
 				9D8F3197171DB410006CFC6A /* icon_back.png in Resources */,
 				9D8F3198171DB410006CFC6A /* icon_forward.png in Resources */,
 				9D8F3199171DB410006CFC6A /* icon_pencil@2x.png in Resources */,
 				9D8F319A171DB410006CFC6A /* icon_rss@2x.png in Resources */,
 				9D8F319F171DE908006CFC6A /* icon_disclosure@2x.png in Resources */,
-				0DE51FAA18CA5F4500454E51 /* NEWS_restweek_StorImg+.jpg in Resources */,
 				9D8F31A4171ED4BE006CFC6A /* placeholder.png in Resources */,
 				9DF355CC171F3D4300A720AA /* icon_search@2x.png in Resources */,
 				9DF355CE171F450200A720AA /* CSFeedAdd_iPhone.xib in Resources */,
 				9D140BF5171F68E000CDD319 /* button_add@2x.png in Resources */,
-				9DCAE7561720957300034DF8 /* control_dualEntryTextField@2x.png in Resources */,
 				9D2FDF881721EE4400535763 /* Default@2x.png in Resources */,
 				9D2FDF8A1721EE4800535763 /* Default.png in Resources */,
 				9DB47D871795A68E006B99BA /* CSAutoComplete_iPhone.xib in Resources */,
