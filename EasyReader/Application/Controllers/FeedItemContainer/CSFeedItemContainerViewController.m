@@ -13,13 +13,13 @@ static NSString *kNameKey = @"nameKey";
 static NSString *kImageKey = @"imageKey";
 
 // Direction based increment
-static const NSInteger LEFT = -1;
-static const NSInteger RIGHT = 1;
+//static const NSInteger LEFT = -1;
+//static const NSInteger RIGHT = 1;
 
 // ControllerView ids
 static const NSInteger PREV = 0;
-static const NSInteger CURR = 1;
-static const NSInteger NEXT = 2;
+//static const NSInteger CURR = 1;
+//static const NSInteger NEXT = 2;
 
 // View dimensions
 static NSInteger HEIGHT;

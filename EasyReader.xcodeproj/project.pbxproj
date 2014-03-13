@@ -15,9 +15,6 @@
 		0DE51FF518CF911000454E51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		1884EDB920EE4720B254D07C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
-		2767394618CFA5D600110C33 /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767394218CFA5D600110C33 /* CSFakedDataRequestor.m */; };
-		2767394718CFA5D600110C33 /* CSResponsiveApiRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767394418CFA5D600110C33 /* CSResponsiveApiRouter.m */; };
-		2767394B18D095C800110C33 /* CSApiRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767394A18D095C800110C33 /* CSApiRequestor.m */; };
 		8E056D1518D101E5001FF6DF /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		8E056D1618D101E5001FF6DF /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC171A170A043200383722 /* CSAppDelegate.m */; };
 		8E056D1718D101E5001FF6DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC1721170A043200383722 /* main.m */; };
@@ -27,12 +24,12 @@
 		8E056D1B18D101E5001FF6DF /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		8E056D1C18D101E5001FF6DF /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		8E056D1D18D101E5001FF6DF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
-		8E056D1E18D101E5001FF6DF /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767394218CFA5D600110C33 /* CSFakedDataRequestor.m */; };
+		8E056D1E18D101E5001FF6DF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8E056D1F18D101E5001FF6DF /* FeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */; };
 		8E056D2018D101E5001FF6DF /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
-		8E056D2118D101E5001FF6DF /* CSResponsiveApiRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767394418CFA5D600110C33 /* CSResponsiveApiRouter.m */; };
+		8E056D2118D101E5001FF6DF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8E056D2218D101E5001FF6DF /* CSFeedItemContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FA218CA07C800454E51 /* CSFeedItemContainerViewController.m */; };
-		8E056D2318D101E5001FF6DF /* CSApiRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767394A18D095C800110C33 /* CSApiRequestor.m */; };
+		8E056D2318D101E5001FF6DF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8E056D2418D101E5001FF6DF /* CSMenuRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D429776170E168A00E73BFE /* CSMenuRightViewController.m */; };
 		8E056D2518D101E5001FF6DF /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42977C170E190600E73BFE /* CSHomeViewController.m */; };
 		8E056D2618D101E5001FF6DF /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
@@ -50,7 +47,7 @@
 		8E056D3418D101E5001FF6DF /* CSHome_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D429782170E283A00E73BFE /* CSHome_iPhone.xib */; };
 		8E056D3518D101E5001FF6DF /* CSMenuLeft_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C2B60170F39710087D8F8 /* CSMenuLeft_iPhone.xib */; };
 		8E056D3618D101E5001FF6DF /* CSFeedItem_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DFBC09D1714A98D006BF840 /* CSFeedItem_iPhone.xib */; };
-		8E056D3718D101E5001FF6DF /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE51F9518C90A2300454E51 /* Main_iPhone.storyboard */; };
+		8E056D3718D101E5001FF6DF /* (null) in Resources */ = {isa = PBXBuildFile; };
 		8E056D3818D101E5001FF6DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D27B1DE1715DECB001C39CF /* Default-568h@2x.png */; };
 		8E056D3918D101E5001FF6DF /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2B171CAD020045CC88 /* Icon-72.png */; };
 		8E056D3A18D101E5001FF6DF /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2C171CAD020045CC88 /* Icon-72@2x.png */; };
@@ -72,7 +69,7 @@
 		8E056D4A18D101E5001FF6DF /* icon_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CB171F3D4300A720AA /* icon_search@2x.png */; };
 		8E056D4B18D101E5001FF6DF /* CSFeedAdd_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CD171F450200A720AA /* CSFeedAdd_iPhone.xib */; };
 		8E056D4C18D101E5001FF6DF /* button_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D140BF4171F68E000CDD319 /* button_add@2x.png */; };
-		8E056D4D18D101E5001FF6DF /* control_dualEntryTextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DCAE7551720957300034DF8 /* control_dualEntryTextField@2x.png */; };
+		8E056D4D18D101E5001FF6DF /* (null) in Resources */ = {isa = PBXBuildFile; };
 		8E056D4E18D101E5001FF6DF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF871721EE4400535763 /* Default@2x.png */; };
 		8E056D4F18D101E5001FF6DF /* EasyReader-Stage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EBF82A418D0F7630027C21C /* EasyReader-Stage-Info.plist */; };
 		8E056D5018D101E5001FF6DF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF891721EE4700535763 /* Default.png */; };
@@ -99,12 +96,12 @@
 		8EBF82AE18D0F9A10027C21C /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		8EBF82AF18D0F9A10027C21C /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		8EBF82B018D0F9A10027C21C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
-		8EBF82B118D0F9A10027C21C /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767394218CFA5D600110C33 /* CSFakedDataRequestor.m */; };
+		8EBF82B118D0F9A10027C21C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8EBF82B218D0F9A10027C21C /* FeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */; };
 		8EBF82B318D0F9A10027C21C /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
-		8EBF82B418D0F9A10027C21C /* CSResponsiveApiRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767394418CFA5D600110C33 /* CSResponsiveApiRouter.m */; };
+		8EBF82B418D0F9A10027C21C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8EBF82B518D0F9A10027C21C /* CSFeedItemContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FA218CA07C800454E51 /* CSFeedItemContainerViewController.m */; };
-		8EBF82B618D0F9A10027C21C /* CSApiRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767394A18D095C800110C33 /* CSApiRequestor.m */; };
+		8EBF82B618D0F9A10027C21C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8EBF82B718D0F9A10027C21C /* CSMenuRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D429776170E168A00E73BFE /* CSMenuRightViewController.m */; };
 		8EBF82B818D0F9A10027C21C /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42977C170E190600E73BFE /* CSHomeViewController.m */; };
 		8EBF82B918D0F9A10027C21C /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
@@ -122,7 +119,7 @@
 		8EBF82C718D0F9A10027C21C /* CSHome_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D429782170E283A00E73BFE /* CSHome_iPhone.xib */; };
 		8EBF82C818D0F9A10027C21C /* CSMenuLeft_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C2B60170F39710087D8F8 /* CSMenuLeft_iPhone.xib */; };
 		8EBF82C918D0F9A10027C21C /* CSFeedItem_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DFBC09D1714A98D006BF840 /* CSFeedItem_iPhone.xib */; };
-		8EBF82CA18D0F9A10027C21C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE51F9518C90A2300454E51 /* Main_iPhone.storyboard */; };
+		8EBF82CA18D0F9A10027C21C /* (null) in Resources */ = {isa = PBXBuildFile; };
 		8EBF82CB18D0F9A10027C21C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D27B1DE1715DECB001C39CF /* Default-568h@2x.png */; };
 		8EBF82CC18D0F9A10027C21C /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2B171CAD020045CC88 /* Icon-72.png */; };
 		8EBF82CD18D0F9A10027C21C /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2C171CAD020045CC88 /* Icon-72@2x.png */; };
@@ -144,9 +141,8 @@
 		8EBF82DD18D0F9A10027C21C /* icon_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CB171F3D4300A720AA /* icon_search@2x.png */; };
 		8EBF82DE18D0F9A10027C21C /* CSFeedAdd_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CD171F450200A720AA /* CSFeedAdd_iPhone.xib */; };
 		8EBF82DF18D0F9A10027C21C /* button_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D140BF4171F68E000CDD319 /* button_add@2x.png */; };
-		8EBF82E018D0F9A10027C21C /* control_dualEntryTextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DCAE7551720957300034DF8 /* control_dualEntryTextField@2x.png */; };
+		8EBF82E018D0F9A10027C21C /* (null) in Resources */ = {isa = PBXBuildFile; };
 		8EBF82E118D0F9A10027C21C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF871721EE4400535763 /* Default@2x.png */; };
-		8EBF82E218D0F9A10027C21C /* EasyReader-Stage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EBF82A418D0F7630027C21C /* EasyReader-Stage-Info.plist */; };
 		8EBF82E318D0F9A10027C21C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF891721EE4700535763 /* Default.png */; };
 		8EBF82E418D0F9A10027C21C /* CSAutoComplete_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB47D861795A68E006B99BA /* CSAutoComplete_iPhone.xib */; };
 		8EBF82E518D0F9A10027C21C /* CSHome_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB47D881795B84E006B99BA /* CSHome_iPad.xib */; };
@@ -830,7 +826,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CS;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Cloudspace;
 			};
 			buildConfigurationList = 9DAC16BF1709D48E00383722 /* Build configuration list for PBXProject "EasyReader" */;
@@ -861,7 +857,7 @@
 				8E056D3418D101E5001FF6DF /* CSHome_iPhone.xib in Resources */,
 				8E056D3518D101E5001FF6DF /* CSMenuLeft_iPhone.xib in Resources */,
 				8E056D3618D101E5001FF6DF /* CSFeedItem_iPhone.xib in Resources */,
-				8E056D3718D101E5001FF6DF /* Main_iPhone.storyboard in Resources */,
+				8E056D3718D101E5001FF6DF /* (null) in Resources */,
 				8E056D3818D101E5001FF6DF /* Default-568h@2x.png in Resources */,
 				8E056D3918D101E5001FF6DF /* Icon-72.png in Resources */,
 				8E056D3A18D101E5001FF6DF /* Icon-72@2x.png in Resources */,
@@ -883,7 +879,7 @@
 				8E056D4A18D101E5001FF6DF /* icon_search@2x.png in Resources */,
 				8E056D4B18D101E5001FF6DF /* CSFeedAdd_iPhone.xib in Resources */,
 				8E056D4C18D101E5001FF6DF /* button_add@2x.png in Resources */,
-				8E056D4D18D101E5001FF6DF /* control_dualEntryTextField@2x.png in Resources */,
+				8E056D4D18D101E5001FF6DF /* (null) in Resources */,
 				8E056D4E18D101E5001FF6DF /* Default@2x.png in Resources */,
 				8E056D4F18D101E5001FF6DF /* EasyReader-Stage-Info.plist in Resources */,
 				8E056D5018D101E5001FF6DF /* Default.png in Resources */,
@@ -907,7 +903,7 @@
 				8EBF82C718D0F9A10027C21C /* CSHome_iPhone.xib in Resources */,
 				8EBF82C818D0F9A10027C21C /* CSMenuLeft_iPhone.xib in Resources */,
 				8EBF82C918D0F9A10027C21C /* CSFeedItem_iPhone.xib in Resources */,
-				8EBF82CA18D0F9A10027C21C /* Main_iPhone.storyboard in Resources */,
+				8EBF82CA18D0F9A10027C21C /* (null) in Resources */,
 				8EBF82CB18D0F9A10027C21C /* Default-568h@2x.png in Resources */,
 				8EBF82CC18D0F9A10027C21C /* Icon-72.png in Resources */,
 				8EBF82CD18D0F9A10027C21C /* Icon-72@2x.png in Resources */,
@@ -929,9 +925,8 @@
 				8EBF82DD18D0F9A10027C21C /* icon_search@2x.png in Resources */,
 				8EBF82DE18D0F9A10027C21C /* CSFeedAdd_iPhone.xib in Resources */,
 				8EBF82DF18D0F9A10027C21C /* button_add@2x.png in Resources */,
-				8EBF82E018D0F9A10027C21C /* control_dualEntryTextField@2x.png in Resources */,
+				8EBF82E018D0F9A10027C21C /* (null) in Resources */,
 				8EBF82E118D0F9A10027C21C /* Default@2x.png in Resources */,
-				8EBF82E218D0F9A10027C21C /* EasyReader-Stage-Info.plist in Resources */,
 				8EBF82E318D0F9A10027C21C /* Default.png in Resources */,
 				8EBF82E418D0F9A10027C21C /* CSAutoComplete_iPhone.xib in Resources */,
 				8EBF82E518D0F9A10027C21C /* CSHome_iPad.xib in Resources */,
@@ -1117,12 +1112,12 @@
 				8E056D1B18D101E5001FF6DF /* CSRootViewController.m in Sources */,
 				8E056D1C18D101E5001FF6DF /* FeedItem.m in Sources */,
 				8E056D1D18D101E5001FF6DF /* User.m in Sources */,
-				8E056D1E18D101E5001FF6DF /* CSFakedDataRequestor.m in Sources */,
+				8E056D1E18D101E5001FF6DF /* (null) in Sources */,
 				8E056D1F18D101E5001FF6DF /* FeedItemViewController.m in Sources */,
 				8E056D2018D101E5001FF6DF /* CSMenuLeftViewController.m in Sources */,
-				8E056D2118D101E5001FF6DF /* CSResponsiveApiRouter.m in Sources */,
+				8E056D2118D101E5001FF6DF /* (null) in Sources */,
 				8E056D2218D101E5001FF6DF /* CSFeedItemContainerViewController.m in Sources */,
-				8E056D2318D101E5001FF6DF /* CSApiRequestor.m in Sources */,
+				8E056D2318D101E5001FF6DF /* (null) in Sources */,
 				8E056D2418D101E5001FF6DF /* CSMenuRightViewController.m in Sources */,
 				8E056D2518D101E5001FF6DF /* CSHomeViewController.m in Sources */,
 				8E056D2618D101E5001FF6DF /* Easy Reader.xcdatamodeld in Sources */,
@@ -1145,12 +1140,12 @@
 				8EBF82AE18D0F9A10027C21C /* CSRootViewController.m in Sources */,
 				8EBF82AF18D0F9A10027C21C /* FeedItem.m in Sources */,
 				8EBF82B018D0F9A10027C21C /* User.m in Sources */,
-				8EBF82B118D0F9A10027C21C /* CSFakedDataRequestor.m in Sources */,
+				8EBF82B118D0F9A10027C21C /* (null) in Sources */,
 				8EBF82B218D0F9A10027C21C /* FeedItemViewController.m in Sources */,
 				8EBF82B318D0F9A10027C21C /* CSMenuLeftViewController.m in Sources */,
-				8EBF82B418D0F9A10027C21C /* CSResponsiveApiRouter.m in Sources */,
+				8EBF82B418D0F9A10027C21C /* (null) in Sources */,
 				8EBF82B518D0F9A10027C21C /* CSFeedItemContainerViewController.m in Sources */,
-				8EBF82B618D0F9A10027C21C /* CSApiRequestor.m in Sources */,
+				8EBF82B618D0F9A10027C21C /* (null) in Sources */,
 				8EBF82B718D0F9A10027C21C /* CSMenuRightViewController.m in Sources */,
 				8EBF82B818D0F9A10027C21C /* CSHomeViewController.m in Sources */,
 				8EBF82B918D0F9A10027C21C /* Easy Reader.xcdatamodeld in Sources */,
@@ -1170,17 +1165,14 @@
 				8E7F81F718D0C50200BC50C2 /* NSObject+CSReflectionAdditions.m in Sources */,
 				8E7F81F418D0C44200BC50C2 /* NSObject+CSNilAdditions.m in Sources */,
 				8E7F81F018D0BF8500BC50C2 /* CSBaseObject.m in Sources */,
-				274D540118D0E5C20096831A /* CSApiRequestor.m in Sources */,
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,
 				0DE51FF418CF911000454E51 /* FeedItem.m in Sources */,
 				0DE51FF518CF911000454E51 /* User.m in Sources */,
-				274D540218D0E5C20096831A /* CSFakedDataRequestor.m in Sources */,
 				0DE51FA018C92B3E00454E51 /* FeedItemViewController.m in Sources */,
 				9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */,
 				0DE51FA318CA07C800454E51 /* CSFeedItemContainerViewController.m in Sources */,
 				9D429777170E168A00E73BFE /* CSMenuRightViewController.m in Sources */,
 				9D42977D170E190700E73BFE /* CSHomeViewController.m in Sources */,
-				274D540318D0E5C20096831A /* CSResponsiveApiRouter.m in Sources */,
 				9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */,
 				9DFBC0991714957E006BF840 /* CSFeedAddViewController.m in Sources */,
 				9DFBC0A21714A9B3006BF840 /* CSFeedItemViewController.m in Sources */,
