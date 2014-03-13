@@ -105,7 +105,7 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
 //this should be converted into a constant whose value is determined by the environment
 - (NSString *) baseUrl
 {
-    return @"http://api.cloudspacerss.com/v2";
+  return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"api_url"];
 }
 
 //adds the base url onto the given path
