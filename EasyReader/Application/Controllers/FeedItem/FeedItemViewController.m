@@ -67,9 +67,9 @@
 /**
  * Set the image resource for imageView
  */
-- (void)updateFeedItemImage:(NSString *)image
+- (void)updateFeedItemImage:(NSString *)imageUrl
 {
-  NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:image]];
+  NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]];
   [self.feedItemImage setImageWithURLRequest:imageRequest
                               placeholderImage:nil
                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
