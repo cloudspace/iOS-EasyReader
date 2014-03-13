@@ -12,6 +12,10 @@
 
 
 @interface CSFeedItemContainerViewController ()
+{
+    CSHorizontalScrollView *scrollViewDelegate;
+}
+
 @end
 
 @implementation CSFeedItemContainerViewController
@@ -20,11 +24,9 @@
 {
   [super viewDidLoad];
   
-  CSHorizontalScrollView *scrollViewDelegate = [[CSHorizontalScrollView alloc] init];
-  [scrollViewDelegate setup:self.scrollViewController
-                 storyboard:[UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]]
-                 identifier:@"FeedItem"];
-  
+  scrollViewDelegate = [[CSHorizontalScrollView alloc] initWithScrollView:self.scrollViewController
+                                                               storyboard:[UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]]
+                                                            andIdentifier:@"FeedItem"];
   [self.scrollViewController setDelegate:scrollViewDelegate];
 
   _currentUser = [User current];

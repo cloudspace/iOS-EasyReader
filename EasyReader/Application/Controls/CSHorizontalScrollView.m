@@ -26,16 +26,21 @@ static NSInteger HEIGHT;
 static NSInteger WIDTH;
 
 @implementation CSHorizontalScrollView
-- (void) setup:(UIScrollView *)scrollView storyboard:(UIStoryboard *)storyboard identifier:(NSString *)identifier
+
+- (id)initWithScrollView:(UIScrollView *)scrollView
+              storyboard:(UIStoryboard *)storyboard
+           andIdentifier:(NSString *)identifier
 {
-  self.scrollViewController = scrollView;
+  self = [super init];
+  if( !self ) return nil;
+  _scrollViewController = scrollView;
   // Set default index and view
   _currIndex = 1;
   _visibleView = PREV;
   
   // Define view height and width
-  WIDTH = self.scrollViewController.frame.size.width;
-  HEIGHT = self.scrollViewController.frame.size.height;
+  WIDTH = _scrollViewController.frame.size.width;
+  HEIGHT = _scrollViewController.frame.size.height;
   
   // Initalize controller array
   _viewControllers = [[NSMutableArray alloc] init];
@@ -52,21 +57,43 @@ static NSInteger WIDTH;
   [self loadPages];
   
   // Set the scrollView large enough to fit all 3 views
-  self.scrollViewController.contentSize = CGSizeMake(WIDTH*3, HEIGHT);
+  _scrollViewController.contentSize = CGSizeMake(WIDTH*3, HEIGHT);
   
   // Hide the horizontal navbar and enable paging
-  [self.scrollViewController setShowsHorizontalScrollIndicator:NO];
-  self.scrollViewController.pagingEnabled = YES;
+  [_scrollViewController setShowsHorizontalScrollIndicator:NO];
+  _scrollViewController.pagingEnabled = YES;
   
   // Add each controllers view to the scrollView
   for (FeedItemViewController *controller in _viewControllers) {
-    [self.scrollViewController addSubview:controller.view];
+    [_scrollViewController addSubview:controller.view];
   }
-
+  return self;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
-
+  //  // User scrolled right
+  //  if([self movingRight]){
+  //
+  //    // Are we updating or moving the view
+  //    if([self movingVisibleViewRight]){
+  //      // Move the view
+  //      _visibleView = _visibleView+1;
+  //    }
+  //    else{
+  //      // Update view content
+  //      [self updateViews:RIGHT];
+  //    }
+  //  }
+  //
+  //  // User scrolled left
+  //  else if([self movingLeft]){
+  //    if([self movingVisibleViewLeft]){
+  //      _visibleView --;
+  //    }
+  //    else{
+  //      [self updateViews:LEFT];
+  //    }
+  //  }
 }
 
 // Detect direction of motion

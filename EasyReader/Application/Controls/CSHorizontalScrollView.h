@@ -19,8 +19,10 @@
 @property (nonatomic) int visibleView;
 
 
-- (void) setup:(UIScrollView *)scrollView storyboard:(UIStoryboard *)storyboard identifier:(NSString *)identifier;
-//- (void)scrollViewDidScroll:(UIScrollView *)sender;
+- (id)initWithScrollView:(UIScrollView *)scrollView
+              storyboard:(UIStoryboard *)storyboard
+           andIdentifier:(NSString *)identifier;
+
 //- (void)populateScrollView:(NSArray *)feedItemArray;
 
 @end
