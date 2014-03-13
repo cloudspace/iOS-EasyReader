@@ -17,20 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpl-YE-Ruu">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpl-YE-Ruu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="qGv-9x-CGI" id="AZK-tR-pjA"/>
                                 </connections>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="wZl-sw-D3e">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="wZl-sw-D3e">
                                 <rect key="frame" x="0.0" y="531" width="320" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.15294117647058825" green="0.16470588235294117" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="wZl-sw-D3e" secondAttribute="bottom" id="3kE-yr-ilD"/>
+                            <constraint firstItem="wZl-sw-D3e" firstAttribute="top" secondItem="wpl-YE-Ruu" secondAttribute="bottom" id="7pJ-0d-LoA"/>
+                            <constraint firstItem="wZl-sw-D3e" firstAttribute="leading" secondItem="mm8-vJ-Gag" secondAttribute="leading" id="86e-QC-kXN"/>
+                            <constraint firstAttribute="trailing" secondItem="wpl-YE-Ruu" secondAttribute="trailing" id="fqs-1C-Bln"/>
+                            <constraint firstItem="wpl-YE-Ruu" firstAttribute="leading" secondItem="mm8-vJ-Gag" secondAttribute="leading" id="ocJ-8g-nDc"/>
+                            <constraint firstAttribute="trailing" secondItem="wZl-sw-D3e" secondAttribute="trailing" id="taZ-nA-j3U"/>
+                            <constraint firstItem="wpl-YE-Ruu" firstAttribute="top" secondItem="mm8-vJ-Gag" secondAttribute="top" id="to3-Qg-7LS"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="scrollViewController" destination="wpl-YE-Ruu" id="mtm-b2-dZc"/>
@@ -38,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DmO-s8-rPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076" y="573"/>
+            <point key="canvasLocation" x="820" y="-735"/>
         </scene>
         <!--Feed Item View Controller-->
         <scene sceneID="rfc-l9-Ly6">
@@ -52,13 +61,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tLc-3T-FbG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tLc-3T-FbG">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="qUe-Tt-7HN"/>
+                                </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7w-hK-Usu">
-                                <rect key="frame" x="0.0" y="340" width="320" height="194"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7w-hK-Usu">
+                                <rect key="frame" x="0.0" y="368" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Bo-Mp-BOx">
@@ -91,8 +103,8 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="LKn-o9-DWV">
-                                        <rect key="frame" x="20" y="100" width="280" height="67"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="LKn-o9-DWV">
+                                        <rect key="frame" x="20" y="100" width="280" height="89"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment>
@@ -103,12 +115,32 @@
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="charWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25"/>
                                                 </attributes>
                                             </fragment>
+                                            <fragment>
+                                                <string key="content">Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem </string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="charWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25"/>
+                                                </attributes>
+                                            </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
+                                        <string key="userLabel">Label - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem</string>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="dJr-ie-Zaa"/>
+                                </constraints>
                             </view>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="tLc-3T-FbG" firstAttribute="top" secondItem="sH3-bV-kLa" secondAttribute="top" id="CXu-h2-KQJ"/>
+                            <constraint firstItem="c7w-hK-Usu" firstAttribute="leading" secondItem="sH3-bV-kLa" secondAttribute="leading" id="NlS-Z7-JJj"/>
+                            <constraint firstItem="tLc-3T-FbG" firstAttribute="leading" secondItem="sH3-bV-kLa" secondAttribute="leading" id="TWQ-1X-h7c"/>
+                            <constraint firstAttribute="trailing" secondItem="tLc-3T-FbG" secondAttribute="trailing" id="ckN-Ge-ODd"/>
+                            <constraint firstAttribute="trailing" secondItem="c7w-hK-Usu" secondAttribute="trailing" id="fVz-VG-wH5"/>
+                            <constraint firstAttribute="bottom" secondItem="c7w-hK-Usu" secondAttribute="bottom" id="s5E-mX-gEN"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="feedItemHeadline" destination="Mhk-h5-QWv" id="Oo4-82-ILg"/>
@@ -121,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYn-dQ-TNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2787" y="573"/>
+            <point key="canvasLocation" x="1223" y="-735"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

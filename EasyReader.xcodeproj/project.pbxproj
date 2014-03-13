@@ -73,7 +73,6 @@
 		9DB47D8D1795B9CF006B99BA /* CSAutoComplete_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB47D8C1795B9CF006B99BA /* CSAutoComplete_iPad.xib */; };
 		9DB47D8F1795BA71006B99BA /* CSFeedAdd_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB47D8E1795BA71006B99BA /* CSFeedAdd_iPad.xib */; };
 		9DB47D951795BC21006B99BA /* CSFeedItem_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB47D941795BC21006B99BA /* CSFeedItem_iPad.xib */; };
-		9DCAE7561720957300034DF8 /* control_dualEntryTextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DCAE7551720957300034DF8 /* control_dualEntryTextField@2x.png */; };
 		9DF355CC171F3D4300A720AA /* icon_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CB171F3D4300A720AA /* icon_search@2x.png */; };
 		9DF355CE171F450200A720AA /* CSFeedAdd_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CD171F450200A720AA /* CSFeedAdd_iPhone.xib */; };
 		9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
@@ -181,7 +180,6 @@
 		9DB47D8C1795B9CF006B99BA /* CSAutoComplete_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSAutoComplete_iPad.xib; path = Feed/CSAutoComplete_iPad.xib; sourceTree = "<group>"; };
 		9DB47D8E1795BA71006B99BA /* CSFeedAdd_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSFeedAdd_iPad.xib; path = Feed/CSFeedAdd_iPad.xib; sourceTree = "<group>"; };
 		9DB47D941795BC21006B99BA /* CSFeedItem_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSFeedItem_iPad.xib; path = FeedItem/CSFeedItem_iPad.xib; sourceTree = "<group>"; };
-		9DCAE7551720957300034DF8 /* control_dualEntryTextField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "control_dualEntryTextField@2x.png"; sourceTree = "<group>"; };
 		9DF355CB171F3D4300A720AA /* icon_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_search@2x.png"; sourceTree = "<group>"; };
 		9DF355CD171F450200A720AA /* CSFeedAdd_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSFeedAdd_iPhone.xib; path = Feed/CSFeedAdd_iPhone.xib; sourceTree = "<group>"; };
 		9DF4BB1E17130E99001DCC88 /* EasyReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyReader.xcdatamodel; sourceTree = "<group>"; };
@@ -307,7 +305,6 @@
 		9D8F318D171DB3CE006CFC6A /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				9DCAE7551720957300034DF8 /* control_dualEntryTextField@2x.png */,
 				9D8F318E171DB410006CFC6A /* Buttons */,
 				9D8F3190171DB410006CFC6A /* Default */,
 				9D8F3191171DB410006CFC6A /* Icons */,
@@ -665,7 +662,6 @@
 				9DF355CC171F3D4300A720AA /* icon_search@2x.png in Resources */,
 				9DF355CE171F450200A720AA /* CSFeedAdd_iPhone.xib in Resources */,
 				9D140BF5171F68E000CDD319 /* button_add@2x.png in Resources */,
-				9DCAE7561720957300034DF8 /* control_dualEntryTextField@2x.png in Resources */,
 				9D2FDF881721EE4400535763 /* Default@2x.png in Resources */,
 				9D2FDF8A1721EE4800535763 /* Default.png in Resources */,
 				9DB47D871795A68E006B99BA /* CSAutoComplete_iPhone.xib in Resources */,
