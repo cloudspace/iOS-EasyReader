@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
   
-    [self applyGradient];
+    [self applyInfoGradient];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,6 +60,7 @@
 - (void)updateFeedItemSmummary:(NSString *)summary
 {
   _feedItemSummary.text = summary;
+  [self applySummaryGradient];
 }
 
 /**
@@ -73,7 +74,7 @@
 /**
  * Create and apply a gradient to the feedItem text area
  */
-- (void)applyGradient
+- (void)applyInfoGradient
 {
   // Create a new gradient object
   CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -96,5 +97,29 @@
   // Apply the gradient
   [self.feedItemInfoContainer.layer insertSublayer:gradient atIndex:0];
 }
+
+/**
+ * Create and apply a gradient ask a mask to the feedItemSummary
+ */
+- (void)applySummaryGradient
+{
+  // Create a new gradient object
+  CAGradientLayer *gradient = [CAGradientLayer layer];
+  
+  // Set the dimensions equal to the info container
+  gradient.frame = _feedItemSummary.bounds;
+  
+  // Define and set array of gradient colors
+  gradient.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor, (id)[UIColor clearColor].CGColor,nil];
+  
+  // Define and set array of color stop positions
+  NSNumber *stopWhite = [NSNumber numberWithFloat:0.60];
+  NSNumber *stopClear = [NSNumber numberWithFloat:0.95];
+  gradient.locations = [NSArray arrayWithObjects:stopWhite, stopClear, nil];
+  
+  // Apply the gradient
+  _feedItemSummary.layer.mask = gradient;
+}
+
 
 @end
