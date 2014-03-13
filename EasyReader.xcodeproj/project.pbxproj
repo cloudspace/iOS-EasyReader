@@ -9,14 +9,18 @@
 /* Begin PBXBuildFile section */
 		0D8FF1A918D0D8C0005155E6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */; };
 		0D8FF1AB18D0DA3F005155E6 /* control_dualEntryTextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */; };
+		0D8FF1BD18D23B5F005155E6 /* CSHorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8FF1BC18D23B5F005155E6 /* CSHorizontalScrollView.m */; };
 		0DE51FA018C92B3E00454E51 /* FeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */; };
 		0DE51FA318CA07C800454E51 /* CSFeedItemContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FA218CA07C800454E51 /* CSFeedItemContainerViewController.m */; };
 		0DE51FF418CF911000454E51 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		0DE51FF518CF911000454E51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		1884EDB920EE4720B254D07C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
+<<<<<<< HEAD
 		274D540218D0E5C20096831A /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */; };
 		274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
+=======
+>>>>>>> [#67499024] moved code out of containerViewController
 		8E056D1518D101E5001FF6DF /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		8E056D1618D101E5001FF6DF /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC171A170A043200383722 /* CSAppDelegate.m */; };
 		8E056D1718D101E5001FF6DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC1721170A043200383722 /* main.m */; };
@@ -232,6 +236,8 @@
 /* Begin PBXFileReference section */
 		0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "control_dualEntryTextField@2x.png"; sourceTree = "<group>"; };
+		0D8FF1BB18D23B5F005155E6 /* CSHorizontalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSHorizontalScrollView.h; sourceTree = "<group>"; };
+		0D8FF1BC18D23B5F005155E6 /* CSHorizontalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSHorizontalScrollView.m; sourceTree = "<group>"; };
 		0DE51F9E18C92B3E00454E51 /* FeedItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItemViewController.h; sourceTree = "<group>"; };
 		0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItemViewController.m; sourceTree = "<group>"; };
 		0DE51FA118CA07C800454E51 /* CSFeedItemContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItemContainerViewController.h; sourceTree = "<group>"; };
@@ -397,6 +403,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D8FF1BA18D23B3D005155E6 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				0D8FF1BB18D23B5F005155E6 /* CSHorizontalScrollView.h */,
+				0D8FF1BC18D23B5F005155E6 /* CSHorizontalScrollView.m */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 		0DE51F9718C9291D00454E51 /* FeedItemContainer */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +633,11 @@
 		9DAC1717170A043200383722 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+=======
+				0D8FF1BA18D23B3D005155E6 /* Controls */,
+				8E7F81F118D0C3C600BC50C2 /* Categories */,
+>>>>>>> [#67499024] moved code out of containerViewController
 				2767394818CFA6AC00110C33 /* Api */,
 				9DAC1718170A043200383722 /* AppDelegates */,
 				8E7F81F118D0C3C600BC50C2 /* Categories */,
@@ -1175,14 +1195,21 @@
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,
 				0DE51FF418CF911000454E51 /* FeedItem.m in Sources */,
 				0DE51FF518CF911000454E51 /* User.m in Sources */,
+<<<<<<< HEAD
 				274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */,
 				274D540218D0E5C20096831A /* CSFakedDataRequestor.m in Sources */,
+=======
+				0D8FF1BD18D23B5F005155E6 /* CSHorizontalScrollView.m in Sources */,
+>>>>>>> [#67499024] moved code out of containerViewController
 				0DE51FA018C92B3E00454E51 /* FeedItemViewController.m in Sources */,
 				9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */,
 				0DE51FA318CA07C800454E51 /* CSFeedItemContainerViewController.m in Sources */,
 				9D429777170E168A00E73BFE /* CSMenuRightViewController.m in Sources */,
 				9D42977D170E190700E73BFE /* CSHomeViewController.m in Sources */,
+<<<<<<< HEAD
 				8E7F403218D3596C00A6FED6 /* CSResponsiveApiRouter.m in Sources */,
+=======
+>>>>>>> [#67499024] moved code out of containerViewController
 				9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */,
 				9DFBC0991714957E006BF840 /* CSFeedAddViewController.m in Sources */,
 				9DFBC0A21714A9B3006BF840 /* CSFeedItemViewController.m in Sources */,
