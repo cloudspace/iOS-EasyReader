@@ -7,6 +7,7 @@
 //
 
 #import "FeedItemViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface FeedItemViewController ()
 
@@ -68,7 +69,12 @@
  */
 - (void)updateFeedItemImage:(NSString *)image
 {
-  _feedItemImage.image = [UIImage imageNamed:image];
+  NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:image]];
+  [self.feedItemImage setImageWithURLRequest:imageRequest
+                              placeholderImage:nil
+                                       success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                         self.feedItemImage.image = image;
+                                       }failure:nil];
 }
 
 /**
