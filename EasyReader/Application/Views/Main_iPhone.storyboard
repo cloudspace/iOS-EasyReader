@@ -80,7 +80,7 @@
                                             <fragment content="BUZZFEED • 5 MINUTES AGO">
                                                 <attributes>
                                                     <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                    <color key="NSColor" white="0.70064438868613144" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="NSColor" red="1" green="1" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="11" name="HelveticaNeue-Medium"/>
                                                     <font key="NSOriginalFont" size="11" name="HelveticaNeue-Medium"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -103,33 +103,30 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="LKn-o9-DWV">
-                                        <rect key="frame" x="20" y="100" width="280" height="89"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="LKn-o9-DWV" userLabel="Label">
+                                        <rect key="frame" x="20" y="100" width="280" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="500" constant="22" id="Mjc-NQ-oZI"/>
+                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <string key="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem </string>
+                                                <mutableString key="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</mutableString>
                                                 <attributes>
-                                                    <color key="NSColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <color key="NSColor" red="0.85490196078431369" green="0.90980392156862744" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="charWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment>
-                                                <string key="content">Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem </string>
-                                                <attributes>
-                                                    <color key="NSColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="charWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
-                                        <string key="userLabel">Label - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem</string>
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="LKn-o9-DWV" firstAttribute="leading" secondItem="c7w-hK-Usu" secondAttribute="leading" constant="20" id="2Ah-ij-ggb"/>
+                                    <constraint firstItem="LKn-o9-DWV" firstAttribute="top" secondItem="c7w-hK-Usu" secondAttribute="top" constant="100" id="cKM-Zm-yZ2"/>
                                     <constraint firstAttribute="height" constant="200" id="hzs-eJ-vmO"/>
+                                    <constraint firstAttribute="trailing" secondItem="LKn-o9-DWV" secondAttribute="trailing" constant="20" id="rdJ-Yb-ndw"/>
                                 </constraints>
                             </view>
                         </subviews>
