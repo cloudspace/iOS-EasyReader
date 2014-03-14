@@ -47,9 +47,6 @@ static NSInteger WIDTH;
     // Add controllers to the scrollView
     [self initScrollViewWithControllers];
     
-    // Load the content of the views
-    [self loadPages];
-    
     return self;
 }
 
@@ -88,94 +85,90 @@ static NSInteger WIDTH;
     }
 }
 
+- (void)populateFeeds:(NSMutableSet *)feedItemSet
+{
+    _feedItemsSet = feedItemSet;
+    // Load the content of the views
+    [self loadPages];
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
-//    // User scrolled right
-//    if([self movingRight]){
-//        // Are we updating or moving the view
-//        if([self movingVisibleViewRight]){
-//            // Move the view
-//            _visibleView = _visibleView+1;
-//        }
-//        else{
-//            // Update view content
-//            [self updateViews:RIGHT];
-//        }
-//    }
-//    
-//    // User scrolled left
-//    else if([self movingLeft]){
-//        if([self movingVisibleViewLeft]){
-//            _visibleView --;
-//        }
-//        else{
-//            [self updateViews:LEFT];
-//        }
-//    }
+    // User scrolled right
+    if([self movingRight]){
+        // Are we updating or moving the view
+        if([self movingVisibleViewRight]){
+            // Move the view
+            _visibleView = _visibleView+1;
+        }
+        else{
+            // Update view content
+            [self updateViews:RIGHT];
+        }
+    }
+    
+    // User scrolled left
+    else if([self movingLeft]){
+        if([self movingVisibleViewLeft]){
+            _visibleView --;
+        }
+        else{
+            [self updateViews:LEFT];
+        }
+    }
 }
 
 // Detect direction of motion
 // >= and <= are used to keep views moving in case of fast scrolling
 - (BOOL)movingRight
 {
-//    return ((self.scrollViewController.contentOffset.x == self.scrollViewController.frame.size.width && _visibleView == (int)PREV) ||
-//            ((self.scrollViewController.contentOffset.x >= (self.scrollViewController.frame.size.width*2)) && _visibleView <= (int)CURR));
-    return FALSE;
+    return ((self.scrollViewController.contentOffset.x == self.scrollViewController.frame.size.width && _visibleView == (int)PREV) ||
+            ((self.scrollViewController.contentOffset.x >= (self.scrollViewController.frame.size.width*2)) && _visibleView <= (int)CURR));
 }
 
 - (BOOL)movingLeft
 {
-//    return ((self.scrollViewController.contentOffset.x <= 0 && _visibleView >= (int)CURR) ||
-//            (self.scrollViewController.contentOffset.x == self.scrollViewController.frame.size.width && _visibleView == (int)NEXT));
-      return FALSE;
+    return ((self.scrollViewController.contentOffset.x <= 0 && _visibleView >= (int)CURR) ||
+            (self.scrollViewController.contentOffset.x == self.scrollViewController.frame.size.width && _visibleView == (int)NEXT));
 }
 
 // Check if moving off of the first feedItem or moving to the last feedItem
 - (BOOL)movingVisibleViewRight
 {
-//    return ((_currIndex == 1 && _visibleView == (int)PREV) ||
-//            (_currIndex == (int)_feedItemArray.count-2 && _visibleView == (int)CURR));
-      return FALSE;
+    return ((_currIndex == 1 && _visibleView == (int)PREV) ||
+            (_currIndex == (int)_feedItemsSet.count-2 && _visibleView == (int)CURR));
 }
 
 // Check if moving off of the last feedItem or moving to the first feedItem
 - (BOOL)movingVisibleViewLeft
 {
-//    return ((_currIndex == 1 && _visibleView == (int)CURR) ||
-//            (_currIndex == (int)_feedItemArray.count-2 && _visibleView == (int)NEXT));
-      return FALSE;
+    return ((_currIndex == 1 && _visibleView == (int)CURR) ||
+            (_currIndex == (int)_feedItemsSet.count-2 && _visibleView == (int)NEXT));
 }
 
 - (void)updateViews:(NSInteger)direction
 {
-//    // Update currIndex left or right
-//    _currIndex += direction;
-//
-//    [self loadPages];
-//
-//    // Reposition scrollView to CURR view
-//    [self.scrollViewController scrollRectToVisible:CGRectMake(WIDTH,0,WIDTH,HEIGHT) animated:NO];
+    // Update currIndex left or right
+    _currIndex += direction;
+
+    [self loadPages];
+
+    // Reposition scrollView to CURR view
+    [self.scrollViewController scrollRectToVisible:CGRectMake(WIDTH,0,WIDTH,HEIGHT) animated:NO];
 }
 
 - (void)loadPageWithId:(int)index onPage:(int)page {
-//    if (index < (int)_feedItemArray.count) {
-//      // Parse feedItem
-//      NSDictionary *feedItem = [_feedItemArray objectAtIndex:index];
-//      // Pass feedItem to feedItemViewController update method
-//    }
+    if (index < (int)_feedItemsSet.count) {
+        FeedItemViewController *controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:page]);
+        FeedItem *feedItem = [[_feedItemsSet allObjects] objectAtIndex:index];
+        [controller updateFeedItemInfo:feedItem];
+    }
 }
 
 - (void)loadPages {
-    FeedItemViewController *controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:0]);
-      
     // Load feed info for each of the views
-    controller.feedItemImage.image = [UIImage imageNamed:@""];
-    controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:1]);
-    controller.feedItemImage.image = [UIImage imageNamed:@""];
-    controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:2]);
-    controller.feedItemImage.image = [UIImage imageNamed:@""];
-//	  [self loadPageWithId:_currIndex - 1 onPage:PREV];
-//    [self loadPageWithId:_currIndex onPage:CURR];
-//    [self loadPageWithId:_currIndex + 1 onPage:NEXT];
+    [self loadPageWithId:_currIndex - 1 onPage:PREV];
+    [self loadPageWithId:_currIndex onPage:CURR];
+    [self loadPageWithId:_currIndex + 1 onPage:NEXT];
 }
 
 @end
