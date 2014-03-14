@@ -40,12 +40,12 @@
 - (NSDictionary *) feedsResponse
 {
     NSArray *items = [NSArray arrayWithObjects:@{@"id": @1,
-                                                 @"name": @"Test Feed 1 AKA Engadget",
+                                                 @"name": @"Cloudspace Feed",
                                                  @"url": @"http://www.engadget.com/rss.xml",
                                                  @"icon": @"http://s3.amazonaws.com/rss.cloudspace.com/feed/1/icon.png", //note: this image does not work on 3-11-2014
                                                  @"feed_items": @[]},
                                                @{@"id": @2,
-                                                 @"name": @"Test Feed 2 AKA Engadget",
+                                                 @"name": @"EasyReader Feed",
                                                  @"url": @"http://www.engadget.com/rss.xml",
                                                  @"icon": @"http://s3.amazonaws.com/rss.cloudspace.com/feed/2/icon.png", //note: this image does not work on 3-11-2014
                                                  @"feed_items": @[]}, nil];
@@ -126,7 +126,7 @@
                         @"created_at": @"2014-03-05T22:32:39+00:00",
                         @"updated_at": @"2014-03-05T22:32:39+00:00",
                         @"published_at": @"2014-03-04T19:52:19+00:00"},
-                      @{@"id": @8,
+                      @{@"id": @9,
                         @"feed_id": @1,
                         @"title": @"iOS 7.1",
                         @"summary": @"iOS 7.1 is packed with interface refinements, bug fixes, improvements, and new features. Apple CarPlay introduces a better way to use iPhone while driving. And you can now control exactly how long Siri listens and more. Getting the update is easy. Go to Settings. Select General. And tap Software Update.",
@@ -135,7 +135,7 @@
                         @"created_at": @"2014-03-05T22:32:40+00:00",
                         @"updated_at": @"2014-03-05T22:32:40+00:00",
                         @"published_at": @"2014-03-04T19:52:20+00:00"},
-                      @{@"id": @8,
+                      @{@"id": @10,
                         @"feed_id": @2,
                         @"title": @"The Flying Phantom: US$40k sailboat levitates two feet above the waves",
                         @"summary": @"'It’s like removing the handbrake – suddenly everything gets smoother and faster in pure silence.' This gravity-defying US$40k catamaran rises completely out of the water at speed on a pair of hook-shaped hydrofoils. It looks like the work of David Copperfield, but it’s real, and it’s set to start a revolution in the sailing world.",
@@ -144,7 +144,17 @@
                         @"created_at": @"2014-03-05T22:32:41+00:00",
                         @"updated_at": @"2014-03-05T22:32:41+00:00",
                         @"published_at": @"2014-03-04T19:52:21+00:00"}, nil];
-    return @{@"feed_items": items};
+  
+  NSRange subarrayRange;
+  if ( !self.requestCounter ) self.requestCounter = 1;
+  if ( self.requestCounter == 1 ){
+    subarrayRange = NSMakeRange(0,4);
+  } else {
+    subarrayRange = NSMakeRange(self.requestCounter*2,2);
+  }
+  self.requestCounter++;
+  
+  return @{@"feed_items": [items subarrayWithRange:subarrayRange]};
 }
 
 

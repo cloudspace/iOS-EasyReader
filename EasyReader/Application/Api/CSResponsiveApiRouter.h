@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CSResponsiveApiRequestor.h"
 #import "AFHTTPRequestOperation.h"
+#import "User.h"
 
 @interface CSResponsiveApiRouter : NSObject
 

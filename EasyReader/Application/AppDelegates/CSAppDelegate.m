@@ -55,6 +55,9 @@
   //
   [MagicalRecord setupAutoMigratingCoreDataStack];
   
+  CSFeedItemUpdater *updater = [[CSFeedItemUpdater alloc]  init];
+  [updater start];
+  
   //
   // Set up root view controller and menu container
   //
@@ -65,11 +68,8 @@
                                                   containerWithCenterViewController:rootVC
                                                   leftMenuViewController:leftMenuViewController
                                                   rightMenuViewController:nil];
-
-  
   self.window.rootViewController = container;
   [self.window makeKeyAndVisible];
-  
 
   return YES;
 }

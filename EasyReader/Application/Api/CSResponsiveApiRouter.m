@@ -13,6 +13,9 @@
 #import "Feed.h"
 
 @implementation CSResponsiveApiRouter
+{
+  NSNumber *itemFeedsNum;
+}
 
 @synthesize requestor;
 
@@ -50,7 +53,7 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
 }
 
 - (void) requestRoute:(NSString *)routeName
-           withParams:(NSDictionary*)params
+           withParams:(NSDictionary *)params
               success:(void(^)())successBlock
               failure:(void(^)())failureBlock
 {
@@ -58,12 +61,15 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
   NSString *method = route[@"method"];
   NSString *fullUrl = [self buildUrlByPath:route[@"path"]];
   
+  itemFeedsNum = params[@"this_is_for_testing"];
+  
   [requestor requestEndpointResponse:fullUrl
                           withMethod:method
                           withParams:params
                              success:[self requestSuccessful:successBlock]
                              failure:[self requestSuccessful:failureBlock]
    ];
+  
 }
 
 - (CallbackBlock) requestSuccessful:(void(^)())successBlock {
@@ -71,12 +77,16 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
     //object mapping for feed items, feeds, and bad feed ids
     if([responseObject objectForKey:@"feed_items"]) {
       for(NSDictionary *record in responseObject[@"feed_items"]) {
-        [FeedItem createOrUpdateFirstFromAPIData:record];
+        for( Feed *currentFeed in [[User current] feeds] ){
+          if( record[@"feed_id"] == currentFeed.id ){
+            [currentFeed addFeedItemsObject:[FeedItem createOrUpdateFirstFromAPIData:record]];
+          }
+        }
       }
     }
     if([responseObject objectForKey:@"feeds"]) {
       for(NSDictionary *record in responseObject[@"feeds"]) {
-        [Feed createOrUpdateFirstFromAPIData:record];
+        [[User current] addFeedsObject:[Feed createOrUpdateFirstFromAPIData:record]];
       }
     }
     if([responseObject objectForKey:@"bad_feed_ids"]) {

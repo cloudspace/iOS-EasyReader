@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FeedItem.h"
+#import "NSDate+TimeAgo.h"
 
 @interface FeedItemViewController : UIViewController
 
