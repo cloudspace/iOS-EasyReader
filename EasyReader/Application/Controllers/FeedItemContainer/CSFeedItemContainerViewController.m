@@ -9,9 +9,6 @@
 #import "CSFeedItemContainerViewController.h"
 #import "FeedItemViewController.h"
 
-static NSString *kNameKey = @"nameKey";
-static NSString *kImageKey = @"imageKey";
-
 // Direction based increment
 static const NSInteger LEFT = -1;
 static const NSInteger RIGHT = 1;
@@ -26,16 +23,23 @@ static NSInteger HEIGHT;
 static NSInteger WIDTH;
 
 @interface CSFeedItemContainerViewController ()
+{
+    CSHorizontalScrollView *scrollViewDelegate;
+}
+
 @end
 
 @implementation CSFeedItemContainerViewController
-// currIndex is always the index at view CURR
-// visibleView is the currently visible view
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
+  scrollViewDelegate = [[CSHorizontalScrollView alloc] initWithScrollView:self.scrollViewController
+                                                               storyboard:[UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]]
+                                                            andIdentifier:@"FeedItem"];
+  [self.scrollViewController setDelegate:scrollViewDelegate];
+
   _currentUser = [User current];
   _feedItemsSet = [[NSMutableSet alloc] init];
 

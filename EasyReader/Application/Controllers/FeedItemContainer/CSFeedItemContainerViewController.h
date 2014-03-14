@@ -12,8 +12,9 @@
 #import "CSAppDelegate.h"
 #import "User.h"
 #import "Feed.h"
+#import "CSHorizontalScrollView.h"
 
-@interface CSFeedItemContainerViewController : CSBaseViewController  <UIScrollViewDelegate>
+@interface CSFeedItemContainerViewController : CSBaseViewController
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewController;
 
@@ -24,6 +25,5 @@
 @property (nonatomic) int visibleView;
 
 @property User* currentUser;
-
 
 @end
