@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qGv-9x-CGI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ozt-tZ-Qbx">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Feed Item Container View Controller-->
         <scene sceneID="VO6-dV-PXL">
             <objects>
-                <viewController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" id="qGv-9x-CGI" customClass="CSFeedItemContainerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Container" automaticallyAdjustsScrollViewInsets="NO" id="qGv-9x-CGI" customClass="CSFeedItemContainerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gos-xS-nOk"/>
                         <viewControllerLayoutGuide type="bottom" id="Nbh-YM-1tB"/>
@@ -47,7 +47,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DmO-s8-rPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820" y="-735"/>
+            <point key="canvasLocation" x="1156" y="-735"/>
+        </scene>
+        <!--Web Scroll View Controller-->
+        <scene sceneID="BAr-Sv-CpL">
+            <objects>
+                <viewController storyboardIdentifier="Home" id="Ozt-tZ-Qbx" customClass="CSWebScrollViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Nl-1o-ers"/>
+                        <viewControllerLayoutGuide type="bottom" id="O1P-4J-RYJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f2l-nV-f1k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lIT-94-5VV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollViewController" destination="lIT-94-5VV" id="IEk-mw-MDF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="njK-AP-M1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="647" y="-735"/>
+        </scene>
+        <!--Feed Item Article View Controller-->
+        <scene sceneID="0Gp-a1-FBz">
+            <objects>
+                <viewController storyboardIdentifier="WebArticle" id="fV3-mq-Nhw" customClass="CSFeedItemArticleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Na-4e-MbM"/>
+                        <viewControllerLayoutGuide type="bottom" id="mWv-Sa-mcE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QYr-f1-ygz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jjo-B8-Fpn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="articleWebView" destination="jjo-B8-Fpn" id="xSZ-RW-YEh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XlD-U4-CXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="647" y="0.0"/>
         </scene>
         <!--Feed Item View Controller-->
         <scene sceneID="rfc-l9-Ly6">
@@ -150,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYn-dQ-TNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223" y="-735"/>
+            <point key="canvasLocation" x="1695" y="-735"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -19,11 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewController;
 
 @property (nonatomic, strong) NSMutableSet *feedItemsSet;
-@property (nonatomic, strong) NSMutableArray *viewControllers;
-
-@property (nonatomic) int currIndex;
-@property (nonatomic) int visibleView;
-
 @property User* currentUser;
 
 @end

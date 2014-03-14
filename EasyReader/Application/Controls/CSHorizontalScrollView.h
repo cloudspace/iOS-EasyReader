@@ -25,5 +25,6 @@
            andIdentifier:(NSString *)identifier;
 
 - (void)populateFeeds:(NSMutableSet *)feedItemSet;
+- (FeedItem *) currentFeedItem;
 
 @end

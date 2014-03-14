@@ -50,6 +50,13 @@ static NSInteger WIDTH;
     return self;
 }
 
+
+
+- (FeedItem *) currentFeedItem
+{
+    return [[_feedItemsSet allObjects] objectAtIndex:_currIndex];
+}
+
 - (void)customizeScrollView{
     // Define view height and width
     WIDTH = _scrollViewController.frame.size.width;
@@ -161,6 +168,7 @@ static NSInteger WIDTH;
         FeedItemViewController *controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:page]);
         FeedItem *feedItem = [[_feedItemsSet allObjects] objectAtIndex:index];
         [controller updateFeedItemInfo:feedItem];
+
     }
 }
 
