@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSArray *feedItemArray;
 @property (nonatomic, strong) NSMutableArray *viewControllers;
 @property (nonatomic, strong) UIScrollView *scrollViewController;
+@property (nonatomic, strong) UIStoryboard *storyboard;
 
 @property (nonatomic) int currIndex;
 @property (nonatomic) int visibleView;
@@ -22,7 +23,5 @@
 - (id)initWithScrollView:(UIScrollView *)scrollView
               storyboard:(UIStoryboard *)storyboard
            andIdentifier:(NSString *)identifier;
-
-//- (void)populateScrollView:(NSArray *)feedItemArray;
 
 @end
