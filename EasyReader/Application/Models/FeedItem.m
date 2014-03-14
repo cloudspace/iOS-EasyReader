@@ -32,4 +32,8 @@
   return feed.name;
 }
 
+- (NSComparisonResult)compareUpdatedAt:(FeedItem *)otherItem {
+  return (-1)*[self.updatedAt compare:otherItem.updatedAt];
+}
+
 @end

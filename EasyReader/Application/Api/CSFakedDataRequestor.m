@@ -157,5 +157,4 @@
   return @{@"feed_items": [items subarrayWithRange:subarrayRange]};
 }
 
-
 @end

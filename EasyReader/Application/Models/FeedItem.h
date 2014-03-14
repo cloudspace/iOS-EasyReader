@@ -25,5 +25,6 @@
 @property (nonatomic, retain) Feed *feed;
 
 - (NSString *)getFeedName;
-
+- (NSComparisonResult)compareUpdatedAt:(FeedItem *)otherItem;
+  
 @end

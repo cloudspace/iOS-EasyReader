@@ -63,6 +63,7 @@
                                       [item removeAllObservations];
                                     }
                                     
+                                    
                                     for ( FeedItem *item in addedFeedItems ){
                                       [_feedItemsSet addObject:item];
                                     }
