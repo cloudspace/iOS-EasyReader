@@ -54,7 +54,7 @@ static NSInteger WIDTH;
 
 - (FeedItem *) currentFeedItem
 {
-    return [[_feedItemsSet allObjects] objectAtIndex:_currIndex];
+    return [[_feedItemsSet allObjects] objectAtIndex:(_currIndex + (_visibleView -1))];
 }
 
 - (void)customizeScrollView{
