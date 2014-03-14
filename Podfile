@@ -25,9 +25,9 @@ pod 'NSDate+TimeAgo', '~> 1.0.2'
 
 pod 'NSDate+TimeAgo', '~> 1.0.2'
 
-#Rails-like inflections
 pod 'Inflections', '~> 1.0.0'
 
+pod 'Block-KVO', '~> 2.2.1'
 
 # Private CS repos
 pod 'CSEnhancedTableView', '~> 0.0.1'

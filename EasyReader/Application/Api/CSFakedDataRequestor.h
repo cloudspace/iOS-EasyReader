@@ -11,4 +11,6 @@
 
 @interface CSFakedDataRequestor : NSObject <CSResponsiveApiRequestor>
 
+@property int requestCounter;
+
 @end

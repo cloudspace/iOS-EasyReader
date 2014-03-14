@@ -15,6 +15,8 @@
 		0DE51FF518CF911000454E51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		1884EDB920EE4720B254D07C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
+		274D540218D0E5C20096831A /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */; };
+		274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
 		8E056D1518D101E5001FF6DF /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		8E056D1618D101E5001FF6DF /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC171A170A043200383722 /* CSAppDelegate.m */; };
 		8E056D1718D101E5001FF6DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC1721170A043200383722 /* main.m */; };
@@ -83,6 +85,7 @@
 		8E056D5818D101E5001FF6DF /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */; };
 		8E056D5918D101E5001FF6DF /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */; };
 		8E056D5A18D101E5001FF6DF /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */; };
+		8E7F403218D3596C00A6FED6 /* CSResponsiveApiRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F403118D3596C00A6FED6 /* CSResponsiveApiRouter.m */; };
 		8E7F81F018D0BF8500BC50C2 /* CSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */; };
 		8E7F81F418D0C44200BC50C2 /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81F318D0C44200BC50C2 /* NSObject+CSNilAdditions.m */; };
 		8E7F81F718D0C50200BC50C2 /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81F618D0C50200BC50C2 /* NSObject+CSReflectionAdditions.m */; };
@@ -245,11 +248,13 @@
 		274D53FC18D0E5C20096831A /* CSFakedDataRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFakedDataRequestor.h; path = Api/CSFakedDataRequestor.h; sourceTree = "<group>"; };
 		274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFakedDataRequestor.m; path = Api/CSFakedDataRequestor.m; sourceTree = "<group>"; };
 		274D53FE18D0E5C20096831A /* CSResponsiveApiRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSResponsiveApiRequestor.h; path = Api/CSResponsiveApiRequestor.h; sourceTree = "<group>"; };
-		274D53FF18D0E5C20096831A /* CSResponsiveApiRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSResponsiveApiRouter.h; path = Api/CSResponsiveApiRouter.h; sourceTree = "<group>"; };
-		274D540018D0E5C20096831A /* CSResponsiveApiRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSResponsiveApiRouter.m; path = Api/CSResponsiveApiRouter.m; sourceTree = "<group>"; };
+		274D540418D0E8D80096831A /* CSFeedItemUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedItemUpdater.h; path = Api/CSFeedItemUpdater.h; sourceTree = "<group>"; };
+		274D540518D0E8D80096831A /* CSFeedItemUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedItemUpdater.m; path = Api/CSFeedItemUpdater.m; sourceTree = "<group>"; };
 		5CECD14CAE964A1994399D15 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8E056D6018D101E5001FF6DF /* EasyReader-Stage copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyReader-Stage copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1CE42418D0F5A00090028E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8E7F403018D3596C00A6FED6 /* CSResponsiveApiRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSResponsiveApiRouter.h; path = Api/CSResponsiveApiRouter.h; sourceTree = "<group>"; };
+		8E7F403118D3596C00A6FED6 /* CSResponsiveApiRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSResponsiveApiRouter.m; path = Api/CSResponsiveApiRouter.m; sourceTree = "<group>"; };
 		8E7F81EE18D0BF8500BC50C2 /* CSBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseObject.h; sourceTree = "<group>"; };
 		8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBaseObject.m; sourceTree = "<group>"; };
 		8E7F81F218D0C44200BC50C2 /* NSObject+CSNilAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+CSNilAdditions.h"; path = "Categories/NSObject+CSNilAdditions.h"; sourceTree = "<group>"; };
@@ -413,13 +418,15 @@
 		2767394818CFA6AC00110C33 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				8E7F403018D3596C00A6FED6 /* CSResponsiveApiRouter.h */,
+				8E7F403118D3596C00A6FED6 /* CSResponsiveApiRouter.m */,
 				274D53FA18D0E5C20096831A /* CSApiRequestor.h */,
 				274D53FB18D0E5C20096831A /* CSApiRequestor.m */,
 				274D53FC18D0E5C20096831A /* CSFakedDataRequestor.h */,
 				274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */,
 				274D53FE18D0E5C20096831A /* CSResponsiveApiRequestor.h */,
-				274D53FF18D0E5C20096831A /* CSResponsiveApiRouter.h */,
-				274D540018D0E5C20096831A /* CSResponsiveApiRouter.m */,
+				274D540418D0E8D80096831A /* CSFeedItemUpdater.h */,
+				274D540518D0E8D80096831A /* CSFeedItemUpdater.m */,
 			);
 			name = Api;
 			sourceTree = "<group>";
@@ -611,9 +618,9 @@
 		9DAC1717170A043200383722 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				8E7F81F118D0C3C600BC50C2 /* Categories */,
 				2767394818CFA6AC00110C33 /* Api */,
 				9DAC1718170A043200383722 /* AppDelegates */,
+				8E7F81F118D0C3C600BC50C2 /* Categories */,
 				9DAC171B170A043200383722 /* Controllers */,
 				9DAC171D170A043200383722 /* Models */,
 				9DAC171E170A043200383722 /* Views */,
@@ -1168,11 +1175,14 @@
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,
 				0DE51FF418CF911000454E51 /* FeedItem.m in Sources */,
 				0DE51FF518CF911000454E51 /* User.m in Sources */,
+				274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */,
+				274D540218D0E5C20096831A /* CSFakedDataRequestor.m in Sources */,
 				0DE51FA018C92B3E00454E51 /* FeedItemViewController.m in Sources */,
 				9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */,
 				0DE51FA318CA07C800454E51 /* CSFeedItemContainerViewController.m in Sources */,
 				9D429777170E168A00E73BFE /* CSMenuRightViewController.m in Sources */,
 				9D42977D170E190700E73BFE /* CSHomeViewController.m in Sources */,
+				8E7F403218D3596C00A6FED6 /* CSResponsiveApiRouter.m in Sources */,
 				9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */,
 				9DFBC0991714957E006BF840 /* CSFeedAddViewController.m in Sources */,
 				9DFBC0A21714A9B3006BF840 /* CSFeedItemViewController.m in Sources */,

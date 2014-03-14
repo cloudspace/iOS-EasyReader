@@ -17,6 +17,7 @@ PODS:
   - AFNetworking/Serialization (2.0.3)
   - AFNetworking/UIKit (2.0.3):
     - AFNetworking/NSURLConnection
+  - Block-KVO (2.2.1)
   - CSEnhancedTableView (0.0.1)
   - CSShortcuts (0.0.1)
   - CSStandardViewControllers (0.0.1):
@@ -49,6 +50,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0.3)
+  - Block-KVO (~> 2.2.1)
   - CSEnhancedTableView (~> 0.0.1)
   - CSShortcuts (~> 0.0.1)
   - CSStandardViewControllers (~> 0.0.1)
@@ -73,6 +75,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
+  Block-KVO: 7b298fb4617e948179b4c7725569feff7bd58337
   CSEnhancedTableView: 1e41e8e94529f19fb8f4f827b0e68ea908e26b69
   CSShortcuts: 0bd6b5f939bfbad0422ce7e07b52a8e47e938e8e
   CSStandardViewControllers: 40b3fbc88a2f30278969283c9dd22e345b855788

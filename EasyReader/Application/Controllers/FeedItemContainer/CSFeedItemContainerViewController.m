@@ -13,13 +13,13 @@ static NSString *kNameKey = @"nameKey";
 static NSString *kImageKey = @"imageKey";
 
 // Direction based increment
-//static const NSInteger LEFT = -1;
-//static const NSInteger RIGHT = 1;
+static const NSInteger LEFT = -1;
+static const NSInteger RIGHT = 1;
 
 // ControllerView ids
 static const NSInteger PREV = 0;
-//static const NSInteger CURR = 1;
-//static const NSInteger NEXT = 2;
+static const NSInteger CURR = 1;
+static const NSInteger NEXT = 2;
 
 // View dimensions
 static NSInteger HEIGHT;
@@ -35,6 +35,9 @@ static NSInteger WIDTH;
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  _currentUser = [User current];
+  _feedItemsSet = [[NSMutableSet alloc] init];
 
   // Set default index and view
   _currIndex = 1;
@@ -70,97 +73,137 @@ static NSInteger WIDTH;
     [self.scrollViewController addSubview:controller.view];
   }
   
+  [self observeRelationship:@keypath(self.currentUser.feeds)
+                changeBlock:^(__weak CSFeedItemContainerViewController *self, NSSet *old, NSSet *new) {
+                  NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
+                  NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
+                  
+                  [addedFeeds removeObjectsInArray:[old allObjects]];
+                  [removedFeeds removeObjectsInArray:[new allObjects]];
+                  
+                  for ( Feed *feed in removedFeeds ){
+                    [feed removeAllObservations];
+                  }
+                  
+                  for ( Feed *feed in addedFeeds ){
+                    [feed observeRelationship:@"feedItems"
+                                  changeBlock:^(__weak Feed *feed, NSSet *new, NSSet *old) {
+                                    NSMutableArray *addedFeedItems;
+                                    NSMutableArray *removedFeedItems;
+                                    
+                                    if( new != nil ){
+                                      addedFeedItems = [[new allObjects] mutableCopy];
+                                      removedFeedItems = [[old allObjects] mutableCopy];
+                                      
+                                      [addedFeedItems removeObjectsInArray:[old allObjects]];
+                                      [removedFeedItems removeObjectsInArray:[new allObjects]];
+                                    } else {
+                                      addedFeedItems = [[old allObjects] mutableCopy];
+                                      removedFeedItems = [[new allObjects] mutableCopy];
+                                    }
+                                    
+                                    for ( FeedItem *item in removedFeedItems ){
+                                      [item removeAllObservations];
+                                    }
+                                    
+                                    for ( FeedItem *item in addedFeedItems ){
+                                      [_feedItemsSet addObject:item];
+                                    }
+                                    
+                                    [self loadPages];
+                                  }
+                               insertionBlock:nil
+                                 removalBlock:nil
+                             replacementBlock:nil];
+                  }
+                  
+                  //properties:@[@"title", @"summary", @"updatedAt", @"publishedAt", @"createdAt", @"image", @"url"]
+                }
+             insertionBlock:nil
+               removalBlock:nil
+           replacementBlock:nil
+   ];
+  
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
-//  // User scrolled right
-//  if([self movingRight]){
-//    
-//    // Are we updating or moving the view
-//    if([self movingVisibleViewRight]){
-//      // Move the view
-//      _visibleView = _visibleView+1;
-//    }
-//    else{
-//      // Update view content
-//      [self updateViews:RIGHT];
-//    }
-//  }
-//  
-//  // User scrolled left
-//  else if([self movingLeft]){
-//    if([self movingVisibleViewLeft]){
-//      _visibleView --;
-//    }
-//    else{
-//      [self updateViews:LEFT];
-//    }
-//  }
+  // User scrolled right
+  if([self movingRight]){
+    
+    // Are we updating or moving the view
+    if([self movingVisibleViewRight]){
+      // Move the view
+      _visibleView = _visibleView+1;
+    }
+    else{
+      // Update view content
+      [self updateViews:RIGHT];
+    }
+  }
+  
+  // User scrolled left
+  else if([self movingLeft]){
+    if([self movingVisibleViewLeft]){
+      _visibleView --;
+    }
+    else{
+      [self updateViews:LEFT];
+    }
+  }
 }
 
 // Detect direction of motion
 // >= and <= are used to keep views moving in case of fast scrolling
 - (BOOL)movingRight
 {
-//  return ((self.scrollViewController.contentOffset.x == self.scrollViewController.frame.size.width && _visibleView == (int)PREV) ||
-//          ((self.scrollViewController.contentOffset.x >= (self.scrollViewController.frame.size.width*2)) && _visibleView <= (int)CURR));
-  return FALSE;
+  return ((self.scrollViewController.contentOffset.x == self.scrollViewController.frame.size.width && _visibleView == (int)PREV) ||
+          ((self.scrollViewController.contentOffset.x >= (self.scrollViewController.frame.size.width*2)) && _visibleView <= (int)CURR));
 }
 
 - (BOOL)movingLeft
 {
-//  return ((self.scrollViewController.contentOffset.x <= 0 && _visibleView >= (int)CURR) ||
-//          (self.scrollViewController.contentOffset.x == self.scrollViewController.frame.size.width && _visibleView == (int)NEXT));
-  return FALSE;
+  return ((self.scrollViewController.contentOffset.x <= 0 && _visibleView >= (int)CURR) ||
+          (self.scrollViewController.contentOffset.x == self.scrollViewController.frame.size.width && _visibleView == (int)NEXT));
 }
 
 // Check if moving off of the first feedItem or moving to the last feedItem
 - (BOOL)movingVisibleViewRight
 {
-//  return ((_currIndex == 1 && _visibleView == (int)PREV) ||
-//          (_currIndex == (int)_feedItemArray.count-2 && _visibleView == (int)CURR));
-  return FALSE;
+  return ((_currIndex == 1 && _visibleView == (int)PREV) ||
+          (_currIndex == (int)_feedItemsSet.count-2 && _visibleView == (int)CURR));
 }
 
 // Check if moving off of the last feedItem or moving to the first feedItem
 - (BOOL)movingVisibleViewLeft
 {
-//  return ((_currIndex == 1 && _visibleView == (int)CURR) ||
-//          (_currIndex == (int)_feedItemArray.count-2 && _visibleView == (int)NEXT));
-  return FALSE;
+  return ((_currIndex == 1 && _visibleView == (int)CURR) ||
+          (_currIndex == (int)_feedItemsSet.count-2 && _visibleView == (int)NEXT));
 }
 
 - (void)updateViews:(NSInteger)direction
 {
-//  // Update currIndex left or right
-//  _currIndex += direction;
-//  
-//  [self loadPages];
-//  
-//  // Reposition scrollView to CURR view
-//  [self.scrollViewController scrollRectToVisible:CGRectMake(WIDTH,0,WIDTH,HEIGHT) animated:NO];
+  // Update currIndex left or right
+  _currIndex += direction;
+  
+  [self loadPages];
+  
+  // Reposition scrollView to CURR view
+  [self.scrollViewController scrollRectToVisible:CGRectMake(WIDTH,0,WIDTH,HEIGHT) animated:NO];
 }
 
 - (void)loadPageWithId:(int)index onPage:(int)page {
-//  if (index < (int)_feedItemArray.count) {
-//    // Parse feedItem
-//    NSDictionary *feedItem = [_feedItemArray objectAtIndex:index];
-//    // Pass feedItem to feedItemViewController update method
-//  }
+  if (index < (int)_feedItemsSet.count) {
+    FeedItemViewController *controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:page]);
+    FeedItem *feedItem = [[_feedItemsSet allObjects] objectAtIndex:index];
+    [controller updateFeedItemInfo:feedItem];
+  }
 }
 
 - (void)loadPages {
-  FeedItemViewController *controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:0]);
-  
   // Load feed info for each of the views
-  controller.feedItemImage.image = [UIImage imageNamed:@""];
-  controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:1]);
-  controller.feedItemImage.image = [UIImage imageNamed:@""];
-  controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:2]);
-  controller.feedItemImage.image = [UIImage imageNamed:@""];
-//	[self loadPageWithId:_currIndex - 1 onPage:PREV];
-//  [self loadPageWithId:_currIndex onPage:CURR];
-//  [self loadPageWithId:_currIndex + 1 onPage:NEXT];
+	[self loadPageWithId:_currIndex - 1 onPage:PREV];
+  [self loadPageWithId:_currIndex onPage:CURR];
+  [self loadPageWithId:_currIndex + 1 onPage:NEXT];
 }
 
 @end

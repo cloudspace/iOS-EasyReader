@@ -32,9 +32,9 @@
  */
 - (void)updateFeedItemInfo:(FeedItem *)feedItem
 {
-  [self updateFeedName:[feedItem getFeedName] andDate:[FeedItem convertDateToTimeAgo:feedItem.updatedAt]];
+  [self updateFeedName:[feedItem getFeedName] andDate:[feedItem.updatedAt timeAgo]];
   [self updateFeedItemHeader:feedItem.title];
-  [self updateFeedItemSmummary:feedItem.summary];
+  [self updateFeedItemSummary:feedItem.summary];
   [self updateFeedItemImage:feedItem.image];
 }
 
@@ -58,7 +58,7 @@
 /**
  * Set the text for the summary label
  */
-- (void)updateFeedItemSmummary:(NSString *)summary
+- (void)updateFeedItemSummary:(NSString *)summary
 {
   _feedItemSummary.text = summary;
   [self applySummaryGradient];

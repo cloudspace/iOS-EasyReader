@@ -32,14 +32,4 @@
   return feed.name;
 }
 
-/**
- * Convert the feedItem updatedAt date into 
- * a human readable time ago string
- */
-+ (NSString *)convertDateToTimeAgo:(NSDate *)updatedAt
-{
-  // Convert NSDate into readable time ago
-  NSString *timeAgo = [updatedAt timeAgo];
-  return timeAgo;
-}
 @end
