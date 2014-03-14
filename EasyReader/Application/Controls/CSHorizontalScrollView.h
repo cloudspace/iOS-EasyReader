@@ -12,7 +12,7 @@
 @interface CSHorizontalScrollView : NSObject <UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *viewControllers;
-@property (nonatomic, strong) NSMutableSet *feedItemsSet;
+@property (nonatomic, strong) NSMutableArray *feedItemArray;
 @property (nonatomic, strong) UIScrollView *scrollViewController;
 @property (nonatomic, strong) UIStoryboard *storyboard;
 

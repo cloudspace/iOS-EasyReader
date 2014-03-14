@@ -35,9 +35,10 @@ static NSInteger WIDTH;
     _storyboard = storyboard;
     
     // Set default index and view
-    _currIndex = 1;
-    _visibleView = PREV;
-    
+    //_currIndex = 1;
+    //_visibleView = PREV;
+    [self setCurrentIndex:0];
+  
     // Define dimensions of scrollView
     [self customizeScrollView];
     
@@ -85,11 +86,65 @@ static NSInteger WIDTH;
     }
 }
 
+//the currently viewed item is normally stored at currIndex
+//if on the left or right edge, the visible view is changed
+//left edge: currIndex = 1, visibleView = 0, return the element at (1 - 1)
+//middle: currIndex = 5, visibleView = 1, return the element at (5 - 0)
+//ridge edge: currIndex = length - 2, visibleView = 2, return the element at (length - 2 + 1)
+- (FeedItem *) currentFeedItem
+{
+  return [_feedItemArray objectAtIndex:(_currIndex + (_visibleView - 1))];
+}
+
+//replace the old feed list with the new feed list and make sure the user stays on the same item even if it's location shifts
+//
+//save a reference to the currently viewed item
+//update the list
+//check the new list for the save item and set the current index
+//if it isn't found, put the currently viewed item at the end of the list and update the current index
 - (void)populateFeeds:(NSMutableSet *)feedItemSet
 {
-    _feedItemsSet = feedItemSet;
+  FeedItem *currentItem = [self currentFeedItem];
+  
+  _feedItemArray = [[[feedItemSet allObjects] sortedArrayUsingSelector:@selector(compareUpdatedAt:)] mutableCopy];
+  
+  if (currentItem) {
+    bool itemFound = false;
+    for(int i = 0; i < _feedItemArray.count; i++) {
+      if ( [_feedItemArray[i] id] == [currentItem id] ) {
+        [self setCurrentIndex:i];
+        itemFound = true;
+      }
+    }
+    if (!itemFound) {
+      [_feedItemArray addObject:currentItem];
+      [self setCurrentIndex:_feedItemArray.count - 1];
+      itemFound = true;
+    }
+  }
     // Load the content of the views
     [self loadPages];
+  NSLog(@"hello");
+}
+
+//fun rules for setting the current index
+//the edge cases require some explanation
+//the current index references the index of feedItemsSet currently displayed by the middle feed item view (CURR)
+//when you hit the edges of the feed items set, you move to the PREV or NEXT view without changing the view shown in the
+//middle (CURR) view
+//that is why the math looks a little weird with off by one changes
+- (void) setCurrentIndex:(int)newIndex
+{
+  if(newIndex == 0) {
+    _currIndex = 1;
+    _visibleView = PREV;
+  } else if(newIndex == _feedItemArray.count - 1) {
+    _currIndex = _feedItemArray.count - 2;
+    _visibleView = NEXT;
+  } else {
+    _currIndex = newIndex;
+    _visibleView = CURR;
+  }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
@@ -135,14 +190,14 @@ static NSInteger WIDTH;
 - (BOOL)movingVisibleViewRight
 {
     return ((_currIndex == 1 && _visibleView == (int)PREV) ||
-            (_currIndex == (int)_feedItemsSet.count-2 && _visibleView == (int)CURR));
+            (_currIndex == (int)_feedItemArray.count-2 && _visibleView == (int)CURR));
 }
 
 // Check if moving off of the last feedItem or moving to the first feedItem
 - (BOOL)movingVisibleViewLeft
 {
     return ((_currIndex == 1 && _visibleView == (int)CURR) ||
-            (_currIndex == (int)_feedItemsSet.count-2 && _visibleView == (int)NEXT));
+            (_currIndex == (int)_feedItemArray.count-2 && _visibleView == (int)NEXT));
 }
 
 - (void)updateViews:(NSInteger)direction
@@ -157,9 +212,9 @@ static NSInteger WIDTH;
 }
 
 - (void)loadPageWithId:(int)index onPage:(int)page {
-    if (index < (int)_feedItemsSet.count) {
+    if (index < (int)_feedItemArray.count) {
         FeedItemViewController *controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:page]);
-        FeedItem *feedItem = [[_feedItemsSet allObjects] objectAtIndex:index];
+        FeedItem *feedItem = [_feedItemArray objectAtIndex:index];
         [controller updateFeedItemInfo:feedItem];
     }
 }

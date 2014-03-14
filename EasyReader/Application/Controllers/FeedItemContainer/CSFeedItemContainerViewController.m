@@ -68,7 +68,8 @@
                                       [_feedItemsSet addObject:item];
                                     }
                                     
-                                      [scrollViewDelegate populateFeeds:_feedItemsSet];
+                                    [scrollViewDelegate populateFeeds:_feedItemsSet];
+                                    NSLog(@"populate feeds finished");
                                   }
                                insertionBlock:nil
                                  removalBlock:nil
