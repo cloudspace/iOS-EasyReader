@@ -32,14 +32,14 @@
 
 - (void)setUpCollectionView
 {
-//    NSArray *feedItems = [FeedItem MR_findAll];
-//    
-//    FeedCollectionViewDataSource *feedCollectionViewDataSource =
-//        [[FeedCollectionViewDataSource alloc] initWithFeedItems:feedItems
-//                                         reusableCellIdentifier:@"feedItemCell"
-//                                                 configureBlock:[self configureFeedItem]];
-//    
-//    self.collectionView_feedItems.dataSource = feedCollectionViewDataSource;
+    NSArray *feedItems = [FeedItem MR_findAll];
+    
+    FeedCollectionViewDataSource *feedCollectionViewDataSource =
+        [[FeedCollectionViewDataSource alloc] initWithFeedItems:feedItems
+                                         reusableCellIdentifier:@"feedItemCell"
+                                                 configureBlock:[self configureFeedItem]];
+    
+ //   self.collectionView_feedItems.dataSource = feedCollectionViewDataSource;
 }
 
 - (configureFeedItemCell)configureFeedItem
