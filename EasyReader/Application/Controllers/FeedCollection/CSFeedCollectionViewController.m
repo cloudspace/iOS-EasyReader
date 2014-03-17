@@ -7,6 +7,7 @@
 //
 
 #import "CSFeedCollectionViewController.h"
+#import "CSFeedItemCollectionView.h"
 #import "FeedCollectionViewDataSource.h"
 #import "FeedItem.h"
 #import "CSFeedItemCell.h"
@@ -15,21 +16,12 @@
 @interface CSFeedCollectionViewController ()
 
 /// The collection view which holds the individual feed items
-@property (nonatomic, weak) IBOutlet UICollectionView *collectionView_feedItems;
+@property (nonatomic, weak) IBOutlet CSFeedItemCollectionView *collectionView_feedItems;
 
 @end
 
 
 @implementation CSFeedCollectionViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -40,15 +32,14 @@
 
 - (void)setUpCollectionView
 {
-    NSArray *feedItems = [FeedItem MR_findAll];
-    
-    FeedCollectionViewDataSource *feedCollectionViewDataSource =
-        [[FeedCollectionViewDataSource alloc] initWithFeedItems:feedItems
-                                         reusableCellIdentifier:@"feedItemCell"
-                                                 configureBlock:[self configureFeedItem]];
-    
-    self.collectionView_feedItems.dataSource = feedCollectionViewDataSource;
-    
+//    NSArray *feedItems = [FeedItem MR_findAll];
+//    
+//    FeedCollectionViewDataSource *feedCollectionViewDataSource =
+//        [[FeedCollectionViewDataSource alloc] initWithFeedItems:feedItems
+//                                         reusableCellIdentifier:@"feedItemCell"
+//                                                 configureBlock:[self configureFeedItem]];
+//    
+//    self.collectionView_feedItems.dataSource = feedCollectionViewDataSource;
 }
 
 - (configureFeedItemCell)configureFeedItem
@@ -64,16 +55,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

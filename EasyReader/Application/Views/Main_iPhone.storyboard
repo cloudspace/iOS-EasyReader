@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="Wt9-lj-qW6">
             <objects>
-                <viewController storyboardIdentifier="collectionViewTest" id="A5s-Ga-VlH" sceneMemberID="viewController">
+                <viewController id="A5s-Ga-VlH" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JrE-a8-3ie"/>
                         <viewControllerLayoutGuide type="bottom" id="cE7-18-NT3"/>
@@ -170,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="1223" y="-735"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed Collection View Controller-->
         <scene sceneID="Iy7-Le-XOV">
             <objects>
-                <viewController id="Hgn-0q-Z1W" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="collectionViewTest" id="Hgn-0q-Z1W" customClass="CSFeedCollectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u5l-1H-L35"/>
                         <viewControllerLayoutGuide type="bottom" id="lzz-HQ-Mp2"/>
@@ -186,22 +186,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xvT-99-V3u">
+                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xvT-99-V3u" customClass="CSFeedItemCollectionView">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="R8Z-28-5iI">
-                                            <size key="itemSize" width="319" height="568"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g2g-cS-GvP">
+                                            <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="feedItemCell" id="BLC-ou-GYj" customClass="CSFeedItemCell">
-                                                <rect key="frame" x="1" y="0.0" width="319" height="568"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="568"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwa-jG-ubQ">
@@ -214,6 +214,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <outlet property="label_headline" destination="Xwa-jG-ubQ" id="MZR-Ue-dvm"/>
                                                 </connections>
@@ -225,6 +226,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView_feedItems" destination="xvT-99-V3u" id="kb5-it-zd3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGN-P7-i1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
