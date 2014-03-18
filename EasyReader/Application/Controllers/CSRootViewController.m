@@ -11,6 +11,7 @@
 #import "CSMenuLeftViewController.h"
 #import "CSMenuRightViewController.h"
 #import "CSFeedItemContainerViewController.h"
+#import "CSFeedCollectionViewController.h"
 
 //#import "UIViewController+NibLoader.h"
 
@@ -30,8 +31,8 @@
   if (self) {
     // Create view controller
     UIStoryboard *storyboard_home = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
-    CSFeedItemContainerViewController *homeVC = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
-    _viewController_main = homeVC;
+    CSFeedCollectionViewController *collections = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
+    _viewController_main = collections;
 
     [self setViewControllers:@[_viewController_main]];
   }
