@@ -59,7 +59,8 @@
 {
     return ^void(CSFeedItemCell *cell, FeedItem *feedItem) {
         cell.label_headline.text = feedItem.title;
-        cell.label_source.text = feedItem.feed.name;
+        cell.label_source.text = feedItem.getHeadline;
+        cell.label_summary.text = feedItem.summary;
         cell.feedItem = feedItem;
     };
 }
@@ -68,6 +69,7 @@
     // Set contentSize to be twice the height of the scrollview
     NSInteger width = self.verticalScrollView.frame.size.width;
     NSInteger height = self.verticalScrollView.frame.size.height;
+    NSLog(@"%f",self.collectionView_feedItems.frame.size.height);
     self.verticalScrollView.contentSize = CGSizeMake(width, height*2);
     
     self.verticalScrollView.pagingEnabled =YES;

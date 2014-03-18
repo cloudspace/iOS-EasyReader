@@ -32,4 +32,14 @@
   return feed.name;
 }
 
+- (NSString *)getTimeAgo
+{
+    return [self.updatedAt timeAgo];
+}
+
+- (NSString *)getHeadline
+{
+    return[NSString stringWithFormat:@"%@ \u00b7 %@",[self getFeedName],[self getTimeAgo]];
+}
+
 @end

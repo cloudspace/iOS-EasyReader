@@ -14,6 +14,9 @@
 
 #pragma mark - IBOutlets
 
+/// The feed item information view
+@property (weak, nonatomic) IBOutlet UIView *info_view;
+
 /// The feed item headline
 @property (nonatomic, weak) IBOutlet UILabel *label_headline;
 
@@ -24,7 +27,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *imageView_background;
 
 /// The feed item summary
-@property (nonatomic, weak) IBOutlet UITextView *textView_summary;
+@property (weak, nonatomic) IBOutlet UILabel *label_summary;
 
 
 #pragma mark - Other Properties

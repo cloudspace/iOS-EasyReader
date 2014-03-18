@@ -24,6 +24,6 @@
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) Feed *feed;
 
-- (NSString *)getFeedName;
+- (NSString *)getHeadline;
 
 @end

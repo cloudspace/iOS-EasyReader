@@ -59,6 +59,9 @@
     // Set flowlayout minimum spacing to 0 in order to keep views centered
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
     flowLayout.minimumLineSpacing = 0.0;
+    
+    // Resize cells to match container
+    flowLayout.itemSize = CGSizeMake(self.frame.size.width, self.frame.size.height);
 }
 
 - (FeedItem *) currentFeedItem
