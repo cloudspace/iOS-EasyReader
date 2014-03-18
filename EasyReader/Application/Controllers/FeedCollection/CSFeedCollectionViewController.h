@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSBaseViewController.h"
 
-@interface CSFeedCollectionViewController : UIViewController
+@interface CSFeedCollectionViewController : CSBaseViewController<UICollectionViewDelegate>
 
 @end

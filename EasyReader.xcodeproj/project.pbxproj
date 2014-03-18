@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D60E0B018D79C190001B144 /* CSFeedItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D60E0AF18D79C190001B144 /* CSFeedItemCollectionView.m */; };
 		0D8FF1A918D0D8C0005155E6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */; };
 		0D8FF1AB18D0DA3F005155E6 /* control_dualEntryTextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */; };
 		0DE51FA018C92B3E00454E51 /* FeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */; };
@@ -230,6 +231,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D60E0AE18D79C190001B144 /* CSFeedItemCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedItemCollectionView.h; path = FeedCollection/CSFeedItemCollectionView.h; sourceTree = "<group>"; };
+		0D60E0AF18D79C190001B144 /* CSFeedItemCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedItemCollectionView.m; path = FeedCollection/CSFeedItemCollectionView.m; sourceTree = "<group>"; };
 		0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "control_dualEntryTextField@2x.png"; sourceTree = "<group>"; };
 		0DE51F9E18C92B3E00454E51 /* FeedItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItemViewController.h; sourceTree = "<group>"; };
@@ -532,6 +535,8 @@
 				9DECB93618D7628900C8EA1C /* CSFeedItemCell.m */,
 				9D94786218D2447900F07032 /* FeedCollectionViewDataSource.h */,
 				9D94786318D2447900F07032 /* FeedCollectionViewDataSource.m */,
+				0D60E0AE18D79C190001B144 /* CSFeedItemCollectionView.h */,
+				0D60E0AF18D79C190001B144 /* CSFeedItemCollectionView.m */,
 			);
 			name = FeedCollection;
 			sourceTree = "<group>";
@@ -1185,6 +1190,7 @@
 				0DE51FF818CF919900454E51 /* Feed.m in Sources */,
 				9DAC172D170A043200383722 /* CSAppDelegate.m in Sources */,
 				9DAC172E170A043200383722 /* main.m in Sources */,
+				0D60E0B018D79C190001B144 /* CSFeedItemCollectionView.m in Sources */,
 				8E7F81F718D0C50200BC50C2 /* NSObject+CSReflectionAdditions.m in Sources */,
 				9D94786818D2449600F07032 /* CSFeedCollectionViewController.m in Sources */,
 				8E7F81F418D0C44200BC50C2 /* NSObject+CSNilAdditions.m in Sources */,
