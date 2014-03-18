@@ -15,6 +15,7 @@
 
 @interface CSFeedCollectionViewController (){
     FeedCollectionViewDataSource *feedCollectionViewDataSource;
+    FeedItem *currentFeedItem;
 }
 
 /// The collection view which holds the individual feed items
@@ -54,10 +55,23 @@
     };
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    // Get the currentFeedItem on initial load
+    currentFeedItem = self.collectionView_feedItems.currentFeedItem;
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    // Update currentFeedItem if it has changed
+    if(self.collectionView_feedItems.currentFeedItem != currentFeedItem){
+        currentFeedItem = self.collectionView_feedItems.currentFeedItem;
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end
