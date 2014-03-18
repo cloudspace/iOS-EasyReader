@@ -35,7 +35,7 @@
   [self updateFeedName:[feedItem getFeedName] andDate:[feedItem.updatedAt timeAgo]];
   [self updateFeedItemHeader:feedItem.title];
   [self updateFeedItemSummary:feedItem.summary];
-  [self updateFeedItemImage:feedItem.image];
+  [self updateFeedItemImage:feedItem.images.iphoneRetina];
 }
 
 /**

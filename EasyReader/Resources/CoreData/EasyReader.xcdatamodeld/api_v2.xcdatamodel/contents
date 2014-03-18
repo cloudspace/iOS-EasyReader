@@ -11,13 +11,19 @@
     <entity name="FeedItem" representedClassName="FeedItem" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="publishedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="feed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Feed" inverseName="feedItems" inverseEntity="Feed" syncable="YES"/>
+        <relationship name="images" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FeedItemImage" inverseName="feedItem" inverseEntity="FeedItemImage" syncable="YES"/>
+    </entity>
+    <entity name="FeedItemImage" representedClassName="FeedItemImage" syncable="YES">
+        <attribute name="ipad" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ipadRetina" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iphoneRetina" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="feedItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FeedItem" inverseName="images" inverseEntity="FeedItem" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <relationship name="feeds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feed" inverseName="user" inverseEntity="Feed" syncable="YES"/>
@@ -26,5 +32,6 @@
         <element name="Feed" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FeedItem" positionX="0" positionY="0" width="0" height="0"/>
         <element name="User" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FeedItemImage" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

@@ -13,12 +13,13 @@
 		0D8FF1C018D259DF005155E6 /* CSVerticalScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8FF1BF18D259DF005155E6 /* CSVerticalScrollViewDelegate.m */; };
 		0DE51FA018C92B3E00454E51 /* FeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */; };
 		0DE51FA318CA07C800454E51 /* CSFeedItemContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FA218CA07C800454E51 /* CSFeedItemContainerViewController.m */; };
-		0DE51FF418CF911000454E51 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		0DE51FF518CF911000454E51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		1884EDB920EE4720B254D07C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
 		274D540218D0E5C20096831A /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */; };
 		274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
+		27E37B2918D87773009776EE /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E37B2818D87773009776EE /* FeedItem.m */; };
+		27E37B2C18D87774009776EE /* FeedItemImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E37B2B18D87774009776EE /* FeedItemImage.m */; };
 		8E056D1518D101E5001FF6DF /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		8E056D1618D101E5001FF6DF /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC171A170A043200383722 /* CSAppDelegate.m */; };
 		8E056D1718D101E5001FF6DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC1721170A043200383722 /* main.m */; };
@@ -26,7 +27,6 @@
 		8E056D1918D101E5001FF6DF /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81F318D0C44200BC50C2 /* NSObject+CSNilAdditions.m */; };
 		8E056D1A18D101E5001FF6DF /* CSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */; };
 		8E056D1B18D101E5001FF6DF /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
-		8E056D1C18D101E5001FF6DF /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		8E056D1D18D101E5001FF6DF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		8E056D1E18D101E5001FF6DF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8E056D1F18D101E5001FF6DF /* FeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */; };
@@ -99,7 +99,6 @@
 		8EBF82AC18D0F9A10027C21C /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81F318D0C44200BC50C2 /* NSObject+CSNilAdditions.m */; };
 		8EBF82AD18D0F9A10027C21C /* CSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */; };
 		8EBF82AE18D0F9A10027C21C /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
-		8EBF82AF18D0F9A10027C21C /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		8EBF82B018D0F9A10027C21C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		8EBF82B118D0F9A10027C21C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8EBF82B218D0F9A10027C21C /* FeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51F9F18C92B3E00454E51 /* FeedItemViewController.m */; };
@@ -243,8 +242,6 @@
 		0DE51FA118CA07C800454E51 /* CSFeedItemContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItemContainerViewController.h; sourceTree = "<group>"; };
 		0DE51FA218CA07C800454E51 /* CSFeedItemContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItemContainerViewController.m; sourceTree = "<group>"; };
 		0DE51FE318CF8BDE00454E51 /* api_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = api_v2.xcdatamodel; sourceTree = "<group>"; };
-		0DE51FEF18CF911000454E51 /* FeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItem.h; sourceTree = "<group>"; };
-		0DE51FF018CF911000454E51 /* FeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItem.m; sourceTree = "<group>"; };
 		0DE51FF118CF911000454E51 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		0DE51FF218CF911000454E51 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0DE51FF618CF919900454E51 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
@@ -256,6 +253,10 @@
 		274D53FE18D0E5C20096831A /* CSResponsiveApiRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSResponsiveApiRequestor.h; path = Api/CSResponsiveApiRequestor.h; sourceTree = "<group>"; };
 		274D540418D0E8D80096831A /* CSFeedItemUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedItemUpdater.h; path = Api/CSFeedItemUpdater.h; sourceTree = "<group>"; };
 		274D540518D0E8D80096831A /* CSFeedItemUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedItemUpdater.m; path = Api/CSFeedItemUpdater.m; sourceTree = "<group>"; };
+		27E37B2718D87773009776EE /* FeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItem.h; sourceTree = "<group>"; };
+		27E37B2818D87773009776EE /* FeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItem.m; sourceTree = "<group>"; };
+		27E37B2A18D87774009776EE /* FeedItemImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItemImage.h; sourceTree = "<group>"; };
+		27E37B2B18D87774009776EE /* FeedItemImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItemImage.m; sourceTree = "<group>"; };
 		5CECD14CAE964A1994399D15 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8E056D6018D101E5001FF6DF /* EasyReader-Stage copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyReader-Stage copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1CE42418D0F5A00090028E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -675,14 +676,16 @@
 			children = (
 				0DE51FF618CF919900454E51 /* Feed.h */,
 				0DE51FF718CF919900454E51 /* Feed.m */,
-				0DE51FEF18CF911000454E51 /* FeedItem.h */,
-				0DE51FF018CF911000454E51 /* FeedItem.m */,
 				0DE51FF118CF911000454E51 /* User.h */,
 				0DE51FF218CF911000454E51 /* User.m */,
 				9D7C6F971725D1130037E8CF /* FeedSort.h */,
 				9D7C6F981725D1130037E8CF /* FeedSort.m */,
 				8E7F81EE18D0BF8500BC50C2 /* CSBaseObject.h */,
 				8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */,
+				27E37B2718D87773009776EE /* FeedItem.h */,
+				27E37B2818D87773009776EE /* FeedItem.m */,
+				27E37B2A18D87774009776EE /* FeedItemImage.h */,
+				27E37B2B18D87774009776EE /* FeedItemImage.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1136,7 +1139,6 @@
 				8E056D1918D101E5001FF6DF /* NSObject+CSNilAdditions.m in Sources */,
 				8E056D1A18D101E5001FF6DF /* CSBaseObject.m in Sources */,
 				8E056D1B18D101E5001FF6DF /* CSRootViewController.m in Sources */,
-				8E056D1C18D101E5001FF6DF /* FeedItem.m in Sources */,
 				8E056D1D18D101E5001FF6DF /* User.m in Sources */,
 				8E056D1E18D101E5001FF6DF /* (null) in Sources */,
 				8E056D1F18D101E5001FF6DF /* FeedItemViewController.m in Sources */,
@@ -1164,7 +1166,6 @@
 				8EBF82AC18D0F9A10027C21C /* NSObject+CSNilAdditions.m in Sources */,
 				8EBF82AD18D0F9A10027C21C /* CSBaseObject.m in Sources */,
 				8EBF82AE18D0F9A10027C21C /* CSRootViewController.m in Sources */,
-				8EBF82AF18D0F9A10027C21C /* FeedItem.m in Sources */,
 				8EBF82B018D0F9A10027C21C /* User.m in Sources */,
 				8EBF82B118D0F9A10027C21C /* (null) in Sources */,
 				8EBF82B218D0F9A10027C21C /* FeedItemViewController.m in Sources */,
@@ -1189,10 +1190,10 @@
 				9DAC172D170A043200383722 /* CSAppDelegate.m in Sources */,
 				9DAC172E170A043200383722 /* main.m in Sources */,
 				8E7F81F718D0C50200BC50C2 /* NSObject+CSReflectionAdditions.m in Sources */,
+				27E37B2918D87773009776EE /* FeedItem.m in Sources */,
 				8E7F81F418D0C44200BC50C2 /* NSObject+CSNilAdditions.m in Sources */,
 				8E7F81F018D0BF8500BC50C2 /* CSBaseObject.m in Sources */,
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,
-				0DE51FF418CF911000454E51 /* FeedItem.m in Sources */,
 				0DE51FF518CF911000454E51 /* User.m in Sources */,
 				274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */,
 				274D540218D0E5C20096831A /* CSFakedDataRequestor.m in Sources */,
@@ -1201,6 +1202,7 @@
 				9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */,
 				0DE51FA318CA07C800454E51 /* CSFeedItemContainerViewController.m in Sources */,
 				9D429777170E168A00E73BFE /* CSMenuRightViewController.m in Sources */,
+				27E37B2C18D87774009776EE /* FeedItemImage.m in Sources */,
 				0D8FF1C018D259DF005155E6 /* CSVerticalScrollViewDelegate.m in Sources */,
 				9D42977D170E190700E73BFE /* CSHomeViewController.m in Sources */,
 				8E7F403218D3596C00A6FED6 /* CSResponsiveApiRouter.m in Sources */,
