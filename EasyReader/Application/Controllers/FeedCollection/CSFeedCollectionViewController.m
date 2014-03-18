@@ -15,7 +15,7 @@
 
 @interface CSFeedCollectionViewController (){
     FeedCollectionViewDataSource *feedCollectionViewDataSource;
-    NSString *currentFeedItemURL;
+    FeedItem *currentFeedItem;
 }
 
 /// The collection view which holds the individual feed items
@@ -88,7 +88,6 @@
     [self.verticalScrollView addSubview:self.feedItemWebView];
     
     // Set the url to nothing
-    currentFeedItemURL = @"";
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)sender {
@@ -98,12 +97,23 @@
     }
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
+    // If we are scrolling in the collectionView only
+    if([sender isMemberOfClass:[CSFeedItemCollectionView class]]) {
+        
+        // unload the webView if we have moved to a new feedItem
+        if(currentFeedItem != self.collectionView_feedItems.currentFeedItem){
+            [self.feedItemWebView loadHTMLString:@"<html><head></head><body></body></html>" baseURL:nil];
+        }
+    }
+}
+
 -(void)loadFeedItemWebView
 {
     // Check if this is a new url
-    if(currentFeedItemURL != self.collectionView_feedItems.currentFeedItem.url){
+    if(currentFeedItem != self.collectionView_feedItems.currentFeedItem){
         // update the current url
-        currentFeedItemURL = self.collectionView_feedItems.currentFeedItem.url;
+        currentFeedItem = self.collectionView_feedItems.currentFeedItem;
         
         // load the url in the webView
         NSURL *url = [NSURL URLWithString:self.collectionView_feedItems.currentFeedItem.url];
