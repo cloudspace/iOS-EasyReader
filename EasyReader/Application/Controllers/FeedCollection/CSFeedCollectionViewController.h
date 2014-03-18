@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
 
-@interface CSFeedCollectionViewController : CSBaseViewController<UICollectionViewDelegate>
+@interface CSFeedCollectionViewController : CSBaseViewController<UICollectionViewDelegate,UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIScrollView *verticalScrollView;
+@property (nonatomic, strong) UIWebView *feedItemWebView;
 
 @end
