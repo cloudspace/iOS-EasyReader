@@ -8,6 +8,7 @@
 
 #import "CSFeedItemCollectionView.h"
 #import "FeedCollectionViewDataSource.h"
+#import "CSFeedItemCell.h"
 
 @implementation CSFeedItemCollectionView
 
@@ -52,11 +53,20 @@
 
 - (void)setup
 {
+    // Our app uses paging
     self.pagingEnabled = YES;
+    
+    // Set flowlayout minimum spacing to 0 in order to keep views centered
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
+    flowLayout.minimumLineSpacing = 0.0;
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    _currentFeedItem = [self.indexPathsForSelectedItems objectAtIndex:0];
+- (FeedItem *) currentFeedItem
+{
+    // Get the array of visible feed cells
+    NSIndexPath *currentIndexPath = [self.indexPathsForVisibleItems objectAtIndex:0];
+    CSFeedItemCell *cell = (CSFeedItemCell *)[self cellForItemAtIndexPath:currentIndexPath];
+    return cell.feedItem;
 }
 
 @end

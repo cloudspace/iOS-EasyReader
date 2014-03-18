@@ -31,8 +31,7 @@
   if (self) {
     // Create view controller
     UIStoryboard *storyboard_home = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
-    CSFeedCollectionViewController *collections = [storyboard_home instantiateViewControllerWithIdentifier:@"collectionViewTest"];
-//    CSFeedItemContainerViewController *homeVC = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
+    CSFeedCollectionViewController *collections = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
     _viewController_main = collections;
 
     [self setViewControllers:@[_viewController_main]];
