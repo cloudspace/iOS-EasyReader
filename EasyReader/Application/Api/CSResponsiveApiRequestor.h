@@ -17,7 +17,7 @@
               success:(void(^)())successBlock
               failure:(void(^)())failureBlock;
 
-- (NSDictionary *) routes;
+@property NSDictionary *routes;
 
 - (NSString *) buildUrlByPath:(NSString *) path;
 

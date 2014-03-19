@@ -44,27 +44,41 @@
     return[NSString stringWithFormat:@"%@ \u00b7 %@",[self feedName],[self timeAgo]];
 }
 
-+ (void) createFeedItemsFromRoute:(NSString *)routeName
-                       withParams:(NSDictionary*)params
-                          success:(void(^)(NSDictionary *data))successBlock
-                          failure:(void(^)(NSDictionary *data))failureBlock
++ (void) requestFeedItemsFromFeeds:(NSSet  *)feeds
+                             Since:(NSDate *)startAt
+                           success:(void(^)(NSDictionary *data))successBlock
+                           failure:(void(^)(NSDictionary *data))failureBlock
 {
-  [[CSResponsiveApiRequestor sharedRequestor] requestRoute:routeName
+  NSMutableArray *feedIds = [[NSMutableArray alloc] init];
+  for( Feed *feed in feeds ){
+    [feedIds addObject:feed.id];
+  }
+  
+  NSDictionary *params = @{
+                           @"since": startAt,
+                           @"feed_ids": feedIds
+                           };
+  
+  [[CSResponsiveApiRequestor sharedRequestor] requestRoute:@"feedItems"
                                                 withParams:params
                                                    success:^(AFHTTPRequestOperation *operation, id responseData){
-                                                     for(NSDictionary *data in responseData[@"feed_items"]) {
-                                                       for( Feed *currentFeed in [[User current] feeds] ){
-                                                         if( data[@"feed_id"] == currentFeed.id ){
-                                                           [currentFeed addFeedItemsObject:[FeedItem createOrUpdateFirstFromAPIData:data]];
-                                                         }
-                                                       }
-                                                     }
-
-                                                     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+                                                     [self saveParsedResponseData:responseData];
                                                      if(successBlock) successBlock(responseData);
                                                    }failure:^(AFHTTPRequestOperation *operation, id responseData){
                                                      if(failureBlock) failureBlock(responseData);
                                                    }];
-  
+}
+
++ (void) saveParsedResponseData:(id)responseData
+{
+  for(NSDictionary *data in responseData[@"feed_items"]) {
+    for( Feed *currentFeed in [[User current] feeds] ){
+      if( data[@"feed_id"] == currentFeed.id ){
+        [currentFeed addFeedItemsObject:[FeedItem createOrUpdateFirstFromAPIData:data]];
+      }
+    }
+  }
+
+  [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
 }
 @end

@@ -29,8 +29,15 @@
 - (void)addFeedItems:(NSSet *)values;
 - (void)removeFeedItems:(NSSet *)values;
 
-+ (void) createFeedsFromRoute:(NSString *)routeName
-                   withParams:(NSDictionary*)params
-                      success:(void(^)(NSDictionary *data))successBlock
-                      failure:(void(^)(NSDictionary *data))failureBlock;
++ (void) createFeedWithUrl:(NSString *) url
+                   success:(void(^)(NSDictionary *data))successBlock
+                   failure:(void(^)(NSDictionary *data))failureBlock;
+
++ (void) requestDefaultFeedsWithSuccess:(void(^)(NSDictionary *data))successBlock
+                                failure:(void(^)(NSDictionary *data))failureBlock;
+
++ (void) requestFeedsByName:(NSString *) name
+                    success:(void(^)(NSDictionary *data))successBlock
+                    failure:(void(^)(NSDictionary *data))failureBlock;
+
 @end

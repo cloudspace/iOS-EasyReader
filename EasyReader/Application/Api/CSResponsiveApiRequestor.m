@@ -26,24 +26,28 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
       if (sharedInstance != nil) {
           return;
       }
-     sharedInstance = [[CSFakedDataRequestor alloc] init];
+      #ifdef DEBUG
+        sharedInstance = [[CSFakedDataRequestor alloc] init];
+      #else
+        sharedInstance = [[CSResponsiveApiRequestor alloc] init];
+      #endif
     });
     return sharedInstance;
 }
 
-//this should be replaced by the contents of a RKObjectManager routes property
-- (NSDictionary *) routes
+- (id)init
 {
-    NSDictionary *routes = @{@"feedDefaults": @{@"path": @"/feeds/defaults",
-                                                @"method": @"GET"},
-                             @"feedSearch": @{@"path": @"/feeds/search",
-                                              @"method": @"GET"},
-                             @"feedItems": @{@"path": @"/feed_items",
-                                             @"method": @"GET"},
-                             @"feedCreate": @{@"path": @"/feeds"}
-                             
-    };
-    return routes;
+  self = [super init];
+  
+  self.routes = @{@"feedDefaults": @{@"path": @"/feeds/defaults",
+                                     @"method": @"GET"},
+                  @"feedSearch": @{@"path": @"/feeds/search",
+                                   @"method": @"GET"},
+                  @"feedItems": @{@"path": @"/feed_items",
+                                  @"method": @"GET"},
+                  @"feedCreate": @{@"path": @"/feeds"}
+                  };
+  return self;
 }
 
 - (void) requestRoute:(NSString *)routeName
@@ -101,46 +105,5 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
     NSArray *urlParts = [NSArray arrayWithObjects: [self baseUrl], path, nil];
     return [urlParts componentsJoinedByString:@""];
 }
-
-
-//- (CallbackBlock) requestSuccessful:(void(^)())successBlock {
-//  return ^(AFHTTPRequestOperation *operation, id responseObject) {
-//    //object mapping for feed items, feeds, and bad feed ids
-//    if([responseObject objectForKey:@"feed_items"]) {
-//      for(NSDictionary *record in responseObject[@"feed_items"]) {
-//        for( Feed *currentFeed in [[User current] feeds] ){
-//          if( record[@"feed_id"] == currentFeed.id ){
-//            [currentFeed addFeedItemsObject:[FeedItem createOrUpdateFirstFromAPIData:record]];
-//          }
-//        }
-//      }
-//    }
-//    if([responseObject objectForKey:@"feeds"]) {
-//      for(NSDictionary *record in responseObject[@"feeds"]) {
-//        [[User current] addFeedsObject:[Feed createOrUpdateFirstFromAPIData:record]];
-//      }
-//    }
-//    if([responseObject objectForKey:@"bad_feed_ids"]) {
-//      NSLog(@"Found bad feed ids in a request.  This feature is not yet supported.");
-//    }
-//    
-//    //save changes
-//    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-//    
-//    //run success block
-//    if(successBlock) {
-//      successBlock(operation, responseObject);
-//    }
-//  };
-//}
-//
-//- (CallbackBlock) requestFailed:(void(^)())failureBlock {
-//  return ^(AFHTTPRequestOperation *operation, id responseObject) {
-//    //run failure block
-//    if(failureBlock) {
-//      failureBlock(operation, responseObject);
-//    }
-//  };
-//}
 
 @end

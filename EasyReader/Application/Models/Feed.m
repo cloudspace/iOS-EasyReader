@@ -25,23 +25,56 @@
 @dynamic feedItems;
 
 
-+ (void) createFeedsFromRoute:(NSString *)routeName
-                   withParams:(NSDictionary*)params
-                      success:(void(^)(NSDictionary *data))successBlock
-                      failure:(void(^)(NSDictionary *data))failureBlock
++ (void) createFeedWithUrl:(NSString *) url
+                   success:(void(^)(NSDictionary *data))successBlock
+                   failure:(void(^)(NSDictionary *data))failureBlock
 {
-  [[CSResponsiveApiRequestor sharedRequestor] requestRoute:routeName
+  NSDictionary * params = @{@"url": url};
+  
+  [[CSResponsiveApiRequestor sharedRequestor] requestRoute:@"feedCreate"
                                                 withParams:params
                                                    success:^(AFHTTPRequestOperation *operation, id responseData){
-                                                     for( NSDictionary *data in responseData[@"feeds"] ){
-                                                       [[User current] addFeedsObject:[Feed createOrUpdateFirstFromAPIData:data]];
-                                                     }
-                                                     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+                                                     [self saveParsedResponseData:responseData];
                                                      if(successBlock) successBlock(responseData);
-                                                   }failure:^(AFHTTPRequestOperation *operation, id responseData){
-                                                     if(failureBlock) failureBlock(responseData);
-                                                   }];
+                                                   }failure:failureBlock];
   
+}
+
++ (void) requestDefaultFeedsWithSuccess:(void(^)(NSDictionary *data))successBlock
+                                failure:(void(^)(NSDictionary *data))failureBlock
+
+{
+  [[CSResponsiveApiRequestor sharedRequestor] requestRoute:@"feedDefaults"
+                                                withParams:nil
+                                                   success:^(AFHTTPRequestOperation *operation, id responseData){
+                                                     [self saveParsedResponseData:responseData];
+                                                     if(successBlock) successBlock(responseData);
+                                                   }
+                                                   failure:failureBlock
+  ];
+  
+}
+
++ (void) requestFeedsByName:(NSString *) name
+                    success:(void(^)(NSDictionary *data))successBlock
+                    failure:(void(^)(NSDictionary *data))failureBlock
+{
+  NSDictionary * params = @{@"name": name};
+  
+  [[CSResponsiveApiRequestor sharedRequestor] requestRoute:@"feedSearch"
+                                                withParams:params
+                                                   success:successBlock
+                                                   failure:failureBlock
+   ];
+  
+}
+
++ (void) saveParsedResponseData:(id)responseData
+{
+  for( NSDictionary *data in responseData[@"feeds"] ){
+    [[User current] addFeedsObject:[Feed createOrUpdateFirstFromAPIData:data]];
+  }
+  [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
 }
 
 @end

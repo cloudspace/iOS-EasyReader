@@ -26,9 +26,9 @@
 
 - (NSString *)headline;
 
-+ (void) createFeedItemsFromRoute:(NSString *)routeName
-                       withParams:(NSDictionary*)params
-                          success:(void(^)(NSDictionary *data))successBlock
-                          failure:(void(^)(NSDictionary *data))failureBlock;
++ (void) requestFeedItemsFromFeeds:(NSSet *)feeds
+                             Since:(NSDate *)startAt
+                           success:(void(^)(NSDictionary *data))successBlock
+                           failure:(void(^)(NSDictionary *data))failureBlock;
 
 @end
