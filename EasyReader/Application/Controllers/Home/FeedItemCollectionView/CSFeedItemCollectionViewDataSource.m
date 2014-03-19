@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "FeedCollectionViewDataSource.h"
+#import "CSFeedItemCollectionViewDataSource.h"
 #import "FeedItem.h"
 #import "CSFeedItemCell.h"
 
-@implementation FeedCollectionViewDataSource
+@implementation CSFeedItemCollectionViewDataSource
 {  
   /// A block which will configure a cell based on a given FeedItem
   void (^_configureFeedItemCell)(CSFeedItemCell *, FeedItem *feedItem);

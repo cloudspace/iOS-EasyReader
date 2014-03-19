@@ -7,7 +7,7 @@
 //
 
 #import "CSFeedItemCollectionView.h"
-#import "FeedCollectionViewDataSource.h"
+#import "CSFeedItemCollectionViewDataSource.h"
 #import "CSFeedItemCell.h"
 
 @implementation CSFeedItemCollectionView

@@ -1,524 +1,182 @@
 //
-//  CSHomeViewController.m
+//  CSFeedCollectionViewController.m
 //  EasyReader
 //
-//  Created by Joseph Lorich on 4/4/13.
-//  Copyright (c) 2013 Cloudspace. All rights reserved.
+//  Created by Joseph Lorich on 3/13/14.
+//  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
 #import "CSHomeViewController.h"
-#import "CSRootViewController.h"
-#import "CSFeedItemViewController.h"
-#import "FeedItemViewController.h"
-
-
-#import "UIImageView+WebCache.h"
-#import "MTLabel.h"
-#import <MBProgressHUD/MBProgressHUD.h>
-#import "UIScrollView+SVPullToRefresh.h"
-#import "UIScrollView+SVInfiniteScrolling.h"
-#import "AFNetworking.h"
-#import "SDWebImagePrefetcher.h"
-
-#import "CSEnhancedTableView.h"
-#import "CSEnhancedTableViewCell.h"
-#import "CSEnhancedTableViewHeaderFooterView.h"
-
-#import "User.h"
+#import <Block-KVO/MTKObserving.h>
+#import "CSFeedItemCollectionView.h"
+#import "CSFeedItemCollectionViewDataSource.h"
+#import "FeedItem.h"
+#import "CSFeedItemCell.h"
 #import "Feed.h"
-#import "FeedSort.h"
+#import "User.h"
 
+@interface CSHomeViewController (){
+    CSFeedItemCollectionViewDataSource *feedCollectionViewDataSource;
+    FeedItem *currentFeedItem;
+}
 
-
-// View dimensions
-static NSInteger HEIGHT;
-static NSInteger WIDTH;
-
-@interface CSHomeViewController ()
-@property (nonatomic, strong) NSMutableArray *viewControllers;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewController;
-
+/// The collection view which holds the individual feed items
+@property (nonatomic, weak) IBOutlet CSFeedItemCollectionView *collectionView_feedItems;
 
 @end
 
-@implementation CSHomeViewController
-//
-//
-///**
-// * Loads the default rss feeds and creates feed objects in core data
-// */
-//- (void) loadDefaultFeeds
-//{
-//  
-//  // Build Request
-//  NSString *url = [NSString stringWithFormat:@"%@/feeds", host];
-//  
-//  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-//  
-//  [self.tableView_feed setShowsPullToRefresh:NO];
-//  
-//  // Show loading indicator
-//  MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//  hud.labelText = @"Loading Feeds";
-//  
-//  // Execute and parse the request
-//  AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]
-//                                       initWithRequest:request];
-//  operation.responseSerializer = [AFJSONResponseSerializer serializer];
-//  [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//      [self.tableView_feed setShowsPullToRefresh:YES];
-//      [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-//    });
-//    
-//    User *currentUser = [User current];
-//    
-//    // Create default feeds
-//    for (NSDictionary *feedData in JSON[@"feeds"])
-//    {
-//      Feed *feed = [Feed createEntity];
-//      feed.name = feedData[@"name"];
-//      feed.url  = feedData[@"url"];
-//      
-//      FeedSort *sort = [FeedSort createEntity];
-//      sort.user = currentUser;
-//      sort.feed = feed;
-//      
-//      [currentUser addFeedsObject:feed];
-//    }
-//    
-//    // Set the first feed as active
-//    if ([currentUser.feeds count] > 0)
-//    {
-//      [currentUser setActiveFeed:[currentUser.feeds allObjects][0]];
-//    }
-//    
-//    // Mark database as seeded
-//    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
-//    
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"seeded"];
-//  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//      [self.tableView_feed setShowsPullToRefresh:YES];
-//      [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-//    });
-//    
-//    //something went wrong
-//    NSLog(@"nooooooo feeds");
-//  }];
-//  [operation start];
-//}
 
-/**
- * Sets up the menu button, observers, pull-to-refresh, and infinite scrolling
- */
+@implementation CSHomeViewController
+
 - (void)viewDidLoad
 {
-  [super viewDidLoad];
-  // Define view height and width
-  WIDTH = self.scrollViewController.frame.size.width;
-  HEIGHT = self.scrollViewController.frame.size.height;
-  
-  // Initalize controller array
-  _viewControllers = [[NSMutableArray alloc] init];
-  
-  // Create 3 ViewControllers inside of the controller array
-  // Reposition views to have be left center and right
-  //  FeedItemViewController *item = [self.storyboard instantiateViewControllerWithIdentifier:@"FeedItem"];
-  for (NSInteger i = 0; i < 3; i++)
-  {
-    [self.viewControllers addObject:[self.storyboard instantiateViewControllerWithIdentifier:@"FeedItem"]];
-    ((FeedItemViewController *) [self.viewControllers objectAtIndex:i]).view.frame= CGRectMake(WIDTH*i, 0, WIDTH, HEIGHT);
-  }
-  
-  // Load the content of the views
-    [self loadPages];
-  
-  // Set the scrollView large enough to fit all 3 views
-  self.scrollViewController.contentSize = CGSizeMake(WIDTH*3, HEIGHT);
-  
-  // Hide the horizontal navbar and enable paging
-  [self.scrollViewController setShowsHorizontalScrollIndicator:NO];
-  self.scrollViewController.pagingEnabled = YES;
-  
-  // Add each controllers view to the scrollView
-  for (FeedItemViewController *controller in self.viewControllers) {
-    [self.scrollViewController addSubview:controller.view];
-  }
-  
-//  return;
+    [super viewDidLoad];
+    [self setUpCollectionView];
+    [self setUpWebView];
+    [self setupFeedItemObserver];
+    // Do any additional setup after loading the view.
 }
-//
-///**
-// * Cancels image prefetching when the view disappears
-// */
-//- (void)viewDidDisappear:(BOOL)animated
-//{
-//  [[SDWebImagePrefetcher sharedImagePrefetcher] cancelPrefetching];
-//  [super viewDidDisappear:animated];
-//}
-//
-///**
-// * Removes all observers
-// */
-//- (void)dealloc
-//{
-//  [self.currentUser removeObserver:self forKeyPath:@"activeFeed"];
-//  [self removeObserver:self forKeyPath:@"feedData"];
-//  
-//}
-//
-///**
-// * Observes values changes on feedData and activeFeed
-// */
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-//{
-//  if ([keyPath isEqualToString:@"feedData"])
-//  {
-//    [self processFeedData];
-//  }
-//  else if ([keyPath isEqualToString:@"activeFeed"])
-//  {
-//    [self.navigationController popToRootViewControllerAnimated:YES];
-//    self.feedOffset = 0;
-//    [self.tableView_feed setShowsInfiniteScrolling:YES];
-//    if (_requestOperation)
-//    {
-//      [_requestOperation cancel];
-//      _requestOperation = nil;
-//      [self.tableView_feed.pullToRefreshView stopAnimating];
-//    }
-//    
-//    // If the new feed is not the same as it used to be, load it
-//    Feed *newFeed = [[User current] activeFeed];
-//    
-//    if (![change[@"old"] isEqual:newFeed])
-//    {
-//      self.feedData = @[];
-//
-//      // Show loading indicator
-//      [self.tableView_feed.pullToRefreshView startAnimating];
-//
-//      // Download new data
-//      [self downloadFeedData:newFeed];      
-//    }
-//  }
-//}
-//
-///**
-// * Get the newest data from the RSS feed
-// */
-//- (void) downloadFeedData:(Feed *)activeFeed
-//{
-//  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-//  {
-//    [self downloadFeedData:activeFeed limit:20 offset:0];
-//  }
-//  else
-//  {
-//    [self downloadFeedData:activeFeed limit:10 offset:0];
-//  }
-//
-//}
-//
-//
-///**
-// * Get the data from the RSS feed
-// */
-//- (void) downloadFeedData:(Feed *)activeFeed limit:(NSInteger)limit offset:(NSInteger)offset
-//{
-//  if (!$exists(activeFeed)) return;
-//  
-//  // Build a request
-//  [self.navigationItem setTitle:[NSString stringWithFormat:@"%@", activeFeed.name]];
-//  
-//  NSString *url = [NSString stringWithFormat:@"%@/feeds?url=%@&limit=%d&offset=%d", host, activeFeed.url, limit, offset];
-//  
-//  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-//  
-//  // Execute and parse the request
-//  _requestOperation = [[AFHTTPRequestOperation alloc]
-//                       initWithRequest:request];
-//  _requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
-//  
-//  [_requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//      //[MBProgressHUD hideAllHUDsForView:self.tableView_feed animated:YES];
-//      [self.tableView_feed.pullToRefreshView stopAnimating];
-//      [self.tableView_feed.infiniteScrollingView stopAnimating];
-//    });
-//    
-//    NSMutableArray *newFeedItems = [NSMutableArray new];
-//    
-//    // Set the feed data if no errors
-//    if (!self.feedData)
-//    {
-//      [self setFeedData:JSON];
-//    }
-//    else
-//    {
-//      for (NSDictionary *currentFeedItem in JSON)
-//      {
-//        BOOL exists = NO;
-//        
-//        for (NSDictionary *feedItem in self.feedData)
-//        {
-//          if ([feedItem[@"id"] isEqual:currentFeedItem[@"id"]])
-//          {
-//            exists = YES;
-//            break;
-//          }
-//        }
-//
-//        if (!exists)
-//        {
-//          [newFeedItems addObject:currentFeedItem];
-//        }
-//      }
-//      
-//      [self setFeedData:[[[NSMutableArray arrayWithArray:self.feedData] arrayByAddingObjectsFromArray:newFeedItems] copy]];
-//    }
-//    
-//    if ([JSON count] == 0)
-//    {
-//      [self.tableView_feed setShowsInfiniteScrolling:NO];
-//    }
-//    
-//    _requestOperation = nil;
-//    
-//  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//      //[MBProgressHUD hideAllHUDsForView:self.tableView_feed animated:YES];
-//      [self.tableView_feed.pullToRefreshView stopAnimating];
-//    });
-//    
-//    //something went wrong
-//    NSLog(@"nooooooo");
-//    
-//    _requestOperation = nil;
-//  }];
-//  
-//  [_requestOperation start];
-//}
-//
-///**
-// * Processes the downloaded feed data
-// *
-// * Seperates the items into groups by dates and makes day-based sections in the table
-// */
-//- (void) processFeedData
-//{
-//  //
-//  // Seperate feed items by pubDate
-//  //
-//  NSDateFormatter *displayDateFormat = [[NSDateFormatter alloc] init];
-//  [displayDateFormat setDateFormat:@"EEEE, MMMM d, yyyy"];
-//  
-//  NSDateFormatter *feedDateFormat = [[NSDateFormatter alloc] init];
-//  [feedDateFormat setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
-//  
-//  NSMutableDictionary *feeds = [NSMutableDictionary new];
-//  NSMutableArray *days = [NSMutableArray new];
-//  
-//  
-//  NSMutableArray *urlsToPrefetch = [NSMutableArray new];
-//  
-//  for (NSDictionary *item in self.feedData)
-//  {
-//    // Prefetch image
-//    NSString *thumbnailURL = [NSString stringWithFormat:@"%@/feed_items/%@/thumbnail", host, item[@"id"]];
-//    [urlsToPrefetch addObject:[NSURL URLWithString:thumbnailURL]];
-//    
-//    if ([item[@"published"] isNull])
-//    {
-//      if (![[feeds allKeys] containsObject:@"Recent"])
-//      {
-//        feeds[@"Recent"] = [NSMutableArray new];
-//        [days addObject:@"Recent"];
-//      }
-//      [feeds[@"Recent"] addObject:item];
-//      continue;
-//    }
-//    
-//    NSDate *pubDate = [feedDateFormat dateFromString:item[@"published"]];
-//    NSString *dateString = [displayDateFormat stringFromDate:pubDate];
-//    
-//    if ([[feeds allKeys] containsObject:dateString])
-//    {
-//      [feeds[dateString] addObject:item];
-//    }
-//    else
-//    {
-//      feeds[dateString] = [@[item] mutableCopy];
-//      [days addObject:dateString];
-//    }
-//  }
-//  
-//  [[SDWebImagePrefetcher sharedImagePrefetcher] prefetchURLs:[urlsToPrefetch copy]];
-//  
-//  // Loop through keys and add the arrays of objects to keep the order right
-//  NSMutableArray *__feedsByDay = [NSMutableArray new];
-//  
-//  for (NSString *dateString in days)
-//  {
-//    [__feedsByDay addObject:@{@"date": dateString, @"items": feeds[dateString]}];
-//  }
-//  
-//  self.feedsByDay = [__feedsByDay copy];
-//  [self.tableView_feed reloadData];
-//}
-//
-///**
-// * Reloads the table data when the devices is turned
-// */
-//-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation) fromInterfaceOrientation {
-//  [self.tableView_feed reloadData];
-//}
-//
-//#pragma mark - UITableViewDataSource Methods
-///**
-// * Number of sections in the tableView
-// */
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-  return [self.feedsByDay count];
-}
-//
-///**
-// * Number of rows in each section
-// */
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-  return [self.feedsByDay[section][@"items"] count];
-}
-//
-///**
-// * Height of the header in each section
-// */
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
-//  return 30;
-//}
-//
-///**
-// * Height of all the cells
-// */
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//  return 54;
-//}
-//
-///**
-// * Generates a view for the header in each section
-// */
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//  //
-//  CSEnhancedTableViewHeaderFooterView* header = [self.tableView_feed dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
-//  
-//  // Set the label text
-//  [header.titleLabel setText:self.feedsByDay[section][@"date"]];
-//  
-//  return header;
-//}
-//
-///**
-// * Generates a view for the cell for a given index path
-// */
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  // Get the RSS item related to this cell's position
-  NSDictionary *item = self.feedsByDay[indexPath.section][@"items"][indexPath.row];
-  
-  // Dequeue a reusable cell
-  CSEnhancedTableViewCell *cell = (CSEnhancedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"feedItem"];
-  [cell setOpaque:YES];
-  
-  if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"visitedURLs"] containsObject:item[@"url"]])
-  {
-    [cell.textLabel setTextColor:[UIColor lightGrayColor]];
-  }
-  else
-  {
-    [cell.textLabel setTextColor:[UIColor darkGrayColor]];
-  }
-  
-  // Set the cell's properties
-  [cell.textLabel setText:item[@"name"]];
-  
-  
-  
-  cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-  
-  NSString *thumbnailURL = [NSString stringWithFormat:@"%@/feed_items/%@/thumbnail", host, item[@"id"]];
-  
-  
-  cell.imageView.layer.cornerRadius = 4;
-  cell.imageView.layer.masksToBounds = YES;
-  [cell.imageView setImageWithURL:[NSURL URLWithString:thumbnailURL] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-    
-  // Return the cell
-  return cell;
-}
-//
-//#pragma mark - UITableViewDelegate Methods
-///**
-// * Launches a CSFeedItemViewController with the page set to the RSS/atom link
-// */
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//  NSDictionary *item = self.feedsByDay[indexPath.section][@"items"][indexPath.row];
-//  
-//  CSFeedItemViewController *feedItemController = [CSFeedItemViewController new];
-//  
-//  feedItemController.destinationUrl = item[@"url"];
-//  
-//  feedItemController.title = item[@"name"];
-//  [feedItemController setTitle:self.navigationItem.title];
-//  
-//  [self.navigationController pushViewController:feedItemController animated:YES];
-//  
-//  if ($exists(item[@"readability_content"]))
-//  {
-//    [feedItemController.webView loadHTMLString:item[@"readability_content"] baseURL:nil];
-//  }
-//  else
-//  {
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:item[@"url"]]];
-//    
-//    [feedItemController.webView loadRequest:request];
-//  }
-//
-//  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//  NSMutableArray *visitedURLs = [[defaults valueForKey:@"visitedURLs"] mutableCopy];
-//  
-//  if (![visitedURLs containsObject:item[@"url"]])
-//  {
-//    [visitedURLs addObject:item[@"url"]];
-//    [defaults setValue:[visitedURLs copy] forKey:@"visitedURLs"];
-//    [defaults synchronize];
-//  }
-//  
-//  [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//  
-//
-//}
-//
-//
 
-- (void)loadPages {
-  FeedItemViewController *controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:0]);
-  
-  controller.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"NEWS_restweek_StorImg+.jpg"]];
-  controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:1]);
-  controller.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tncolorpeanutslede_t440.jpg"]];
-  controller = ((FeedItemViewController *) [_viewControllers objectAtIndex:2]);
-  controller.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"1231_loca_heathers_favori_5_0.jpg"]];
-  // Load feed info for each of the views
-  //	[self loadPageWithId:_currIndex - 1 onPage:PREV];
-  //  [self loadPageWithId:_currIndex onPage:CURR];
-  //  [self loadPageWithId:_currIndex + 1 onPage:NEXT];
+- (void)viewDidLayoutSubviews
+{
+    [self setUpVerticalScrollView];
+}
+
+- (void) setupFeedItemObserver
+{
+    _currentUser = [User current];
+    [self observeRelationship:@keypath(self.currentUser.feeds)
+                  changeBlock:^(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
+                      NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
+                      NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
+                          
+                      [addedFeeds removeObjectsInArray:[old allObjects]];
+                      [removedFeeds removeObjectsInArray:[new allObjects]];
+                      
+                      for ( Feed *feed in removedFeeds ){
+                          [feed removeAllObservations];
+                      }
+                      
+                      for ( Feed *feed in addedFeeds ){
+                          [feed observeRelationship:@"feedItems"
+                                        changeBlock:^(__weak Feed *feed, NSSet *old, NSSet *new) {
+                                          if(!new) {
+                                            NSLog(@"startup?");
+                                          } else {
+                                            NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
+                                            NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
+                                            
+                                            [addedFeedItems removeObjectsInArray:[old allObjects]];
+                                            [removedFeedItems removeObjectsInArray:[new allObjects]];
+                                            
+                                            for( FeedItem *item in removedFeedItems ){
+                                              [[(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems] removeObject:item];
+                                            }
+                                            
+                                            for( FeedItem *item in addedFeedItems ){
+                                              [[(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems] addObject:item];
+                                            }
+                                          }
+                                          
+                                          //redraw the collection with the changes to the feed items
+                                          [_collectionView_feedItems reloadData];
+                                          
+                                        }
+                                     insertionBlock:nil
+                                       removalBlock:nil
+                                   replacementBlock:nil];
+                      }
+                      
+                      //properties:@[@"title", @"summary", @"updatedAt", @"publishedAt", @"createdAt", @"image", @"url"]
+                  }
+               insertionBlock:nil
+                 removalBlock:nil
+             replacementBlock:nil
+     ];
+}
+
+- (void)setUpCollectionView
+{
+    NSArray *feedItems = [FeedItem MR_findAll]; 
+    
+    feedCollectionViewDataSource =
+        [[CSFeedItemCollectionViewDataSource alloc] initWithFeedItems:feedItems
+                                         reusableCellIdentifier:@"feedItemCell"
+                                                 configureBlock:[self configureFeedItem]];
+    
+    self.collectionView_feedItems.dataSource = feedCollectionViewDataSource;
+    self.collectionView_feedItems.delegate = self;
+}
+
+
+- (configureFeedItemCell)configureFeedItem
+{
+    return ^void(CSFeedItemCell *cell, FeedItem *feedItem) {
+        cell.label_headline.text = feedItem.title;
+        cell.label_source.text = feedItem.headline;
+        cell.label_summary.text = feedItem.summary;
+        cell.feedItem = feedItem;
+    };
+}
+
+-(void)setUpVerticalScrollView{
+    // Set contentSize to be twice the height of the scrollview
+    NSInteger width = self.verticalScrollView.frame.size.width;
+    NSInteger height = self.verticalScrollView.frame.size.height;
+    self.verticalScrollView.contentSize = CGSizeMake(width, height*2);
+    
+    self.verticalScrollView.pagingEnabled =YES;
+    self.verticalScrollView.delegate = self;
+}
+
+-(void)setUpWebView
+{
+    // Create a new webview and place it below the collectionView
+    self.feedItemWebView = [[UIWebView alloc] init];
+    NSInteger width = self.verticalScrollView.frame.size.width;
+    NSInteger height = self.verticalScrollView.frame.size.height;
+    self.feedItemWebView.frame= CGRectMake(0, height, width, height*2);
+
+    // Add it to the bottom of the scrollView
+    [self.verticalScrollView addSubview:self.feedItemWebView];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)sender {
+    // If we are scrolling in the scrollView only not a subclass
+    if([sender isMemberOfClass:[UIScrollView class]]) {
+        [self loadFeedItemWebView];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
+    // If we are scrolling in the collectionView only
+    if([sender isMemberOfClass:[CSFeedItemCollectionView class]]) {
+        
+        // unload the webView if we have moved to a new feedItem
+        if(currentFeedItem != self.collectionView_feedItems.currentFeedItem){
+            [self.feedItemWebView loadHTMLString:@"<html><head></head><body></body></html>" baseURL:nil];
+        }
+    }
+}
+
+-(void)loadFeedItemWebView
+{
+    // Check if this is a new url
+    if(currentFeedItem != self.collectionView_feedItems.currentFeedItem){
+        // update the current url
+        currentFeedItem = self.collectionView_feedItems.currentFeedItem;
+        
+        // load the url in the webView
+        NSURL *url = [NSURL URLWithString:self.collectionView_feedItems.currentFeedItem.url];
+        NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+        [self.feedItemWebView loadRequest:requestObj];
+    }
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end
