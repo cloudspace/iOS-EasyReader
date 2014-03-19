@@ -9,6 +9,7 @@
 #import "CSAppDelegate.h"
 #import "CSRootViewController.h"
 #import "CSMenuLeftViewController.h"
+#import "CSFeedItemUpdater.h"
 
 #import "CSResponsiveApiRequestor.h"
 
@@ -61,12 +62,12 @@
   //
   // Set up root view controller and menu container
   //
-  CSMenuLeftViewController *leftMenuViewController = [[CSMenuLeftViewController alloc] init];
+  //CSMenuLeftViewController *leftMenuViewController = [[CSMenuLeftViewController alloc] init];
   CSRootViewController *rootVC = [[CSRootViewController alloc] init];
   
   MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
                                                   containerWithCenterViewController:rootVC
-                                                  leftMenuViewController:leftMenuViewController
+                                                  leftMenuViewController:nil
                                                   rightMenuViewController:nil];
   self.window.rootViewController = container;
   [self.window makeKeyAndVisible];
