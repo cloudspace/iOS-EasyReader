@@ -26,10 +26,20 @@
 /**
  * Get the name of the associated Feed
  */
-- (NSString *)getFeedName
+- (NSString *)feedName
 {
   Feed *feed = self.feed;
   return feed.name;
+}
+
+- (NSString *)timeAgo
+{
+    return [self.updatedAt timeAgo];
+}
+
+- (NSString *)headline
+{
+    return[NSString stringWithFormat:@"%@ \u00b7 %@",[self feedName],[self timeAgo]];
 }
 
 @end
