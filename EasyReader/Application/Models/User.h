@@ -12,10 +12,32 @@
 
 @class Feed;
 
+#pragma mark - User -
+
+/**
+ * An EasyReader User generally one per project
+ */
 @interface User : CSBaseObject
 
+
+#pragma mark - Core Data Properties
+
+/// The users feeds
 @property (nonatomic, retain) NSSet *feeds;
+
+
+#pragma mark - Methods
+
+/**
+ * Gets the current user (a singleton shared user)
+ */
++ (User *)current;
+
+
 @end
+
+
+#pragma mark - Core Data Generated Accessors -
 
 @interface User (CoreDataGeneratedAccessors)
 
@@ -23,7 +45,5 @@
 - (void)removeFeedsObject:(Feed *)value;
 - (void)addFeeds:(NSSet *)values;
 - (void)removeFeeds:(NSSet *)values;
-
-+ (User *)current;
 
 @end

@@ -12,6 +12,9 @@
 
 @class Feed;
 
+
+#pragma mark - FeedItem -
+
 /**
  * A single feed item in a feed
  */
@@ -26,7 +29,7 @@
 /// The summary for this feed item
 @property (nonatomic, retain) NSString * summary;
 
-/// /// The time this feed item was updated
+/// The time this feed item was updated
 @property (nonatomic, retain) NSDate * updatedAt;
 
 /// The time this feed item's article was published
