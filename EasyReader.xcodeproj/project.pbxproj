@@ -578,14 +578,14 @@
 		9DAC171D170A043200383722 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8E7F81EE18D0BF8500BC50C2 /* CSBaseObject.h */,
+				8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */,
 				0DE51FF618CF919900454E51 /* Feed.h */,
 				0DE51FF718CF919900454E51 /* Feed.m */,
 				0DE51FEF18CF911000454E51 /* FeedItem.h */,
 				0DE51FF018CF911000454E51 /* FeedItem.m */,
 				0DE51FF118CF911000454E51 /* User.h */,
 				0DE51FF218CF911000454E51 /* User.m */,
-				8E7F81EE18D0BF8500BC50C2 /* CSBaseObject.h */,
-				8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
