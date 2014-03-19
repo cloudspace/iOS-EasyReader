@@ -26,4 +26,9 @@
 
 - (NSString *)headline;
 
++ (void) requestFeedItemsFromFeeds:(NSSet *)feeds
+                             Since:(NSDate *)startAt
+                           success:(void(^)(NSDictionary *data))successBlock
+                           failure:(void(^)(NSDictionary *data))failureBlock;
+
 @end

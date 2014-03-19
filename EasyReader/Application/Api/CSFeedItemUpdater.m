@@ -7,34 +7,37 @@
 //
 
 #import "CSFeedItemUpdater.h"
-#import "CSResponsiveApiRouter.h"
+#import "CSResponsiveApiRequestor.h"
+#import "FeedItem.h"
+#import "Feed.h"
+#import "User.h"
 
 @implementation CSFeedItemUpdater
 {
-  CSResponsiveApiRouter *router;
+  CSResponsiveApiRequestor *requestor;
 }
 
 - (void) start
 {
-  router = [CSResponsiveApiRouter sharedRouter];
-  [self getFeeds];
-  [self getOneWeekOfFeedItems];
+  requestor = [CSResponsiveApiRequestor sharedRequestor];
+  [self requestFeeds];
+  [self requestOneWeekOfFeedItems];
   
   NSMethodSignature *mySignature = [CSFeedItemUpdater
-                                     instanceMethodSignatureForSelector:@selector(getFiveMinutesOfFeedItems:)];
+                                     instanceMethodSignatureForSelector:@selector(requestFiveMinutesOfFeedItems:)];
 
   NSInvocation *myInvocation = [NSInvocation
                                  invocationWithMethodSignature:mySignature];
 
   [myInvocation setTarget:self];
-  [myInvocation setSelector:@selector(getFiveMinutesOfFeedItems:)];
+  [myInvocation setSelector:@selector(requestFiveMinutesOfFeedItems:)];
   
   int interval = 30 * 1;
   [NSTimer scheduledTimerWithTimeInterval:interval invocation:myInvocation repeats:YES];
 }
 
 
-- (void) getFiveMinutesOfFeedItems:(id)sender
+- (void) requestFiveMinutesOfFeedItems:(id)sender
 {
   NSCalendar *calendar = [NSCalendar currentCalendar];
   NSDate *today = [NSDate date];
@@ -43,13 +46,13 @@
   [fiveMinutesAgoComponents setMinute:-5];
   NSDate *fiveMinutesAgo = [calendar dateByAddingComponents:fiveMinutesAgoComponents toDate:today options:0];
   
-  [self getFeedItemsSince:fiveMinutesAgo];
+  [self requestFeedItemsSince:fiveMinutesAgo];
   
   NSLog(@"Invocation ran!");
 }
 
 
-- (void) getOneWeekOfFeedItems
+- (void) requestOneWeekOfFeedItems
 {
   NSCalendar *calendar = [NSCalendar currentCalendar];
   NSDate *today = [NSDate date];
@@ -58,37 +61,29 @@
   [oneWeekAgoComponents setWeek:-1];
   NSDate *oneWeekAgo = [calendar dateByAddingComponents:oneWeekAgoComponents toDate:today options:0];
   
-  [self getFeedItemsSince:oneWeekAgo];
+  [self requestFeedItemsSince:oneWeekAgo];
+  
+  NSLog(@"Setup Invocation");
 }
 
 //TODO: Remove 'this is for testing' functionality (in CSResponsiveApiRouter as well)
-- (void) getFeedItemsSince:(NSDate *)since
+- (void) requestFeedItemsSince:(NSDate *)since
 {
-  NSDictionary *params = @{
-                           @"feed_ids": [self userFeeds],
-                              @"since": since
-                           };
-  [router requestRoute:@"feedItems" withParams:params success:nil failure:nil];
+  [FeedItem requestFeedItemsFromFeeds:[[User current] feeds]
+                                Since:since
+                              success:^(id responseData){
+                                NSLog(@"Feed Items have been added");
+                              }failure:^(id responseData){}
+   ];
 }
 
 
-- (void) getFeeds
+- (void) requestFeeds
 {
-  NSDictionary *params = @{
-                           @"feed_ids": [self userFeeds]
-                           };
-  [router requestRoute:@"feedDefaults" withParams:params success:nil failure:nil];
-  NSLog(@"User should have feeds");
-}
-
-
-- (NSArray *) userFeeds
-{
-  NSMutableArray *ids = [[NSMutableArray alloc] init];
-  for( Feed *feed in [[User current] feeds] ){
-    [ids addObject:feed.id];
-  }
-  return ids;
+  [Feed requestDefaultFeedsWithSuccess:^(id responseData){
+    NSLog(@"Feeds have been added");
+  }failure:^(id responseData){}
+   ];
 }
 
 @end

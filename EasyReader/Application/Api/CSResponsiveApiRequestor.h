@@ -7,12 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFHTTPRequestOperation.h"
 
-@protocol CSResponsiveApiRequestor <NSObject>
-- (void) requestEndpointResponse:(NSString *) path
-                                withMethod:(NSString *) method
-                                withParams:(NSDictionary *) params
-                                   success:(void(^)(AFHTTPRequestOperation *operation, id responseObject)) successBlock
-                                   failure:(void(^)(AFHTTPRequestOperation *operation, id responseObject)) failureBlock;
+@interface CSResponsiveApiRequestor : NSObject
+
++ (CSResponsiveApiRequestor *) sharedRequestor;
+
+- (void) requestRoute:(NSString *)routeName
+           withParams:(NSDictionary*)params
+              success:(void(^)())successBlock
+              failure:(void(^)())failureBlock;
+
+@property NSDictionary *routes;
+
+- (NSString *) buildUrlByPath:(NSString *) path;
+
 @end

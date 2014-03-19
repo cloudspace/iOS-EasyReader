@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "CSResponsiveApiRequestor.h"
+#import "AFHTTPRequestOperation.h"
 
-@interface CSFakedDataRequestor : NSObject <CSResponsiveApiRequestor>
+@interface CSFakedDataRequestor : CSResponsiveApiRequestor
 
 @property int requestCounter;
 
+- (void) requestRoute:(NSString *) path
+           withParams:(NSDictionary *) params
+              success:(void(^)(AFHTTPRequestOperation *operation, id responseObject)) successBlock
+              failure:(void(^)(AFHTTPRequestOperation *operation, id responseObject)) failureBlock;
+  
 @end

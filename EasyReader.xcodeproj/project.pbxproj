@@ -88,7 +88,7 @@
 		8E056D5818D101E5001FF6DF /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */; };
 		8E056D5918D101E5001FF6DF /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */; };
 		8E056D5A18D101E5001FF6DF /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */; };
-		8E7F403218D3596C00A6FED6 /* CSResponsiveApiRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F403118D3596C00A6FED6 /* CSResponsiveApiRouter.m */; };
+		8E7F403218D3596C00A6FED6 /* CSResponsiveApiRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F403118D3596C00A6FED6 /* CSResponsiveApiRequestor.m */; };
 		8E7F81F018D0BF8500BC50C2 /* CSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */; };
 		8E7F81F418D0C44200BC50C2 /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81F318D0C44200BC50C2 /* NSObject+CSNilAdditions.m */; };
 		8E7F81F718D0C50200BC50C2 /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81F618D0C50200BC50C2 /* NSObject+CSReflectionAdditions.m */; };
@@ -255,18 +255,15 @@
 		0DE51FF218CF911000454E51 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0DE51FF618CF919900454E51 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
 		0DE51FF718CF919900454E51 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
-		274D53FA18D0E5C20096831A /* CSApiRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSApiRequestor.h; path = Api/CSApiRequestor.h; sourceTree = "<group>"; };
-		274D53FB18D0E5C20096831A /* CSApiRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSApiRequestor.m; path = Api/CSApiRequestor.m; sourceTree = "<group>"; };
 		274D53FC18D0E5C20096831A /* CSFakedDataRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFakedDataRequestor.h; path = Api/CSFakedDataRequestor.h; sourceTree = "<group>"; };
 		274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFakedDataRequestor.m; path = Api/CSFakedDataRequestor.m; sourceTree = "<group>"; };
-		274D53FE18D0E5C20096831A /* CSResponsiveApiRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSResponsiveApiRequestor.h; path = Api/CSResponsiveApiRequestor.h; sourceTree = "<group>"; };
 		274D540418D0E8D80096831A /* CSFeedItemUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedItemUpdater.h; path = Api/CSFeedItemUpdater.h; sourceTree = "<group>"; };
 		274D540518D0E8D80096831A /* CSFeedItemUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedItemUpdater.m; path = Api/CSFeedItemUpdater.m; sourceTree = "<group>"; };
 		5CECD14CAE964A1994399D15 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8E056D6018D101E5001FF6DF /* EasyReader-Stage copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyReader-Stage copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1CE42418D0F5A00090028E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		8E7F403018D3596C00A6FED6 /* CSResponsiveApiRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSResponsiveApiRouter.h; path = Api/CSResponsiveApiRouter.h; sourceTree = "<group>"; };
-		8E7F403118D3596C00A6FED6 /* CSResponsiveApiRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSResponsiveApiRouter.m; path = Api/CSResponsiveApiRouter.m; sourceTree = "<group>"; };
+		8E7F403018D3596C00A6FED6 /* CSResponsiveApiRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSResponsiveApiRequestor.h; path = Api/CSResponsiveApiRequestor.h; sourceTree = "<group>"; };
+		8E7F403118D3596C00A6FED6 /* CSResponsiveApiRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSResponsiveApiRequestor.m; path = Api/CSResponsiveApiRequestor.m; sourceTree = "<group>"; };
 		8E7F81EE18D0BF8500BC50C2 /* CSBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseObject.h; sourceTree = "<group>"; };
 		8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBaseObject.m; sourceTree = "<group>"; };
 		8E7F81F218D0C44200BC50C2 /* NSObject+CSNilAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+CSNilAdditions.h"; path = "Categories/NSObject+CSNilAdditions.h"; sourceTree = "<group>"; };
@@ -447,13 +444,10 @@
 		2767394818CFA6AC00110C33 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				8E7F403018D3596C00A6FED6 /* CSResponsiveApiRouter.h */,
-				8E7F403118D3596C00A6FED6 /* CSResponsiveApiRouter.m */,
-				274D53FA18D0E5C20096831A /* CSApiRequestor.h */,
-				274D53FB18D0E5C20096831A /* CSApiRequestor.m */,
+				8E7F403018D3596C00A6FED6 /* CSResponsiveApiRequestor.h */,
+				8E7F403118D3596C00A6FED6 /* CSResponsiveApiRequestor.m */,
 				274D53FC18D0E5C20096831A /* CSFakedDataRequestor.h */,
 				274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */,
-				274D53FE18D0E5C20096831A /* CSResponsiveApiRequestor.h */,
 				274D540418D0E8D80096831A /* CSFeedItemUpdater.h */,
 				274D540518D0E8D80096831A /* CSFeedItemUpdater.m */,
 			);
@@ -880,6 +874,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CS;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Cloudspace;
 			};
@@ -1235,7 +1230,7 @@
 				9D429777170E168A00E73BFE /* CSMenuRightViewController.m in Sources */,
 				0D8FF1C018D259DF005155E6 /* CSVerticalScrollViewDelegate.m in Sources */,
 				9D42977D170E190700E73BFE /* CSHomeViewController.m in Sources */,
-				8E7F403218D3596C00A6FED6 /* CSResponsiveApiRouter.m in Sources */,
+				8E7F403218D3596C00A6FED6 /* CSResponsiveApiRequestor.m in Sources */,
 				9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */,
 				9DFBC0991714957E006BF840 /* CSFeedAddViewController.m in Sources */,
 				9DFBC0A21714A9B3006BF840 /* CSFeedItemViewController.m in Sources */,

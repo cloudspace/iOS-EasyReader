@@ -10,17 +10,20 @@
 
 @implementation CSFakedDataRequestor
 
-- (void) requestEndpointResponse:(NSString *) path
-                                withMethod:(NSString *) method
-                                withParams:(NSDictionary *) params
-                                   success:(void(^)(AFHTTPRequestOperation *operation, id responseObject)) successBlock
-                                   failure:(void(^)(AFHTTPRequestOperation *operation, id responseObject)) failureBlock;
+- (void) requestRoute:(NSString *) routeName
+                     withParams:(NSDictionary *) params
+                        success:(void(^)(AFHTTPRequestOperation *operation, id responseObject)) successBlock
+                        failure:(void(^)(AFHTTPRequestOperation *operation, id responseObject)) failureBlock;
 {
+  NSDictionary *route = [self routes][routeName];
+  NSString *method = route[@"method"];
+  NSString *path = route[@"path"];
+  
   NSDictionary *data;
+  
   if([method isEqualToString:@"GET"]) {
     if ([path rangeOfString:@"feed_items"].location != NSNotFound) {
       data = [self feedItemsResponse];
-
     } else if ([path rangeOfString:@"feeds"].location != NSNotFound) {
       //for now, the feed defaults and search return the same values
       data = [self feedsResponse];
@@ -32,6 +35,7 @@
     //post/other requests not supported right now
     data = @{};
   }
+
   if (successBlock) successBlock(nil, data);
 }
 
@@ -39,7 +43,7 @@
 //their ids should match the feed_id fields on the feedItemsResponse
 - (NSDictionary *) feedsResponse
 {
-    NSArray *items = [NSArray arrayWithObjects:@{@"id": @1,
+  NSArray *items = [NSArray arrayWithObjects:@{@"id": @1,
                                                  @"name": @"Cloudspace Feed",
                                                  @"url": @"http://www.engadget.com/rss.xml",
                                                  @"icon": @"http://s3.amazonaws.com/rss.cloudspace.com/feed/1/icon.png", //note: this image does not work on 3-11-2014
