@@ -24,6 +24,8 @@
 		8E7F403218D3596C00A6FED6 /* CSResponsiveApiRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F403118D3596C00A6FED6 /* CSResponsiveApiRequestor.m */; };
 		8E7F81F018D0BF8500BC50C2 /* CSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */; };
 		9D140BF5171F68E000CDD319 /* button_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D140BF4171F68E000CDD319 /* button_add@2x.png */; };
+		9D16D30718DA2B3A001E9C38 /* CSBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D30618DA2B3A001E9C38 /* CSBaseTestCase.m */; };
+		9D16D30918DA2E43001E9C38 /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D30818DA2E43001E9C38 /* UserTests.m */; };
 		9D27B1DF1715DECB001C39CF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D27B1DE1715DECB001C39CF /* Default-568h@2x.png */; };
 		9D2FDF881721EE4400535763 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF871721EE4400535763 /* Default@2x.png */; };
 		9D2FDF8A1721EE4800535763 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF891721EE4700535763 /* Default.png */; };
@@ -153,7 +155,6 @@
 		9D7927C518DA279B00E1D3E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC16C91709D48E00383722 /* Foundation.framework */; };
 		9D7927C618DA279B00E1D3E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC16C71709D48E00383722 /* UIKit.framework */; };
 		9D7927CC18DA279B00E1D3E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D7927CA18DA279B00E1D3E1 /* InfoPlist.strings */; };
-		9D7927CE18DA279B00E1D3E1 /* EasyReader_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7927CD18DA279B00E1D3E1 /* EasyReader_Tests.m */; };
 		9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		9D8F3196171DB410006CFC6A /* button_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F318F171DB410006CFC6A /* button_menu@2x.png */; };
 		9D8F3197171DB410006CFC6A /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F3192171DB410006CFC6A /* icon_back.png */; };
@@ -228,6 +229,9 @@
 		8E7F81EE18D0BF8500BC50C2 /* CSBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseObject.h; sourceTree = "<group>"; };
 		8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBaseObject.m; sourceTree = "<group>"; };
 		9D140BF4171F68E000CDD319 /* button_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_add@2x.png"; sourceTree = "<group>"; };
+		9D16D30518DA2B3A001E9C38 /* CSBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseTestCase.h; sourceTree = "<group>"; };
+		9D16D30618DA2B3A001E9C38 /* CSBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBaseTestCase.m; sourceTree = "<group>"; };
+		9D16D30818DA2E43001E9C38 /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTests.m; path = Application/Models/UserTests.m; sourceTree = "<group>"; };
 		9D27B1DE1715DECB001C39CF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9D2FDF871721EE4400535763 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9D2FDF891721EE4700535763 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -248,7 +252,6 @@
 		9D7927C318DA279B00E1D3E1 /* EasyReader-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EasyReader-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7927C918DA279B00E1D3E1 /* EasyReader-Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EasyReader-Tests-Info.plist"; sourceTree = "<group>"; };
 		9D7927CB18DA279B00E1D3E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9D7927CD18DA279B00E1D3E1 /* EasyReader_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyReader_Tests.m; sourceTree = "<group>"; };
 		9D7927CF18DA279B00E1D3E1 /* EasyReader-Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EasyReader-Tests-Prefix.pch"; sourceTree = "<group>"; };
 		9D8C6C5B170CA12500B18012 /* CSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRootViewController.h; sourceTree = "<group>"; };
 		9D8C6C5C170CA12500B18012 /* CSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRootViewController.m; sourceTree = "<group>"; };
@@ -385,6 +388,30 @@
 			name = Api;
 			sourceTree = "<group>";
 		};
+		9D16D30A18DA2E49001E9C38 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9D16D30C18DA2E5B001E9C38 /* Controllers */,
+				9D16D30B18DA2E4E001E9C38 /* Models */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		9D16D30B18DA2E4E001E9C38 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9D16D30818DA2E43001E9C38 /* UserTests.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9D16D30C18DA2E5B001E9C38 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		9D429774170E166E00E73BFE /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,7 +443,9 @@
 		9D7927C718DA279B00E1D3E1 /* EasyReader-Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9D7927CD18DA279B00E1D3E1 /* EasyReader_Tests.m */,
+				9D16D30A18DA2E49001E9C38 /* Application */,
+				9D16D30518DA2B3A001E9C38 /* CSBaseTestCase.h */,
+				9D16D30618DA2B3A001E9C38 /* CSBaseTestCase.m */,
 				9D7927C818DA279B00E1D3E1 /* Supporting Files */,
 			);
 			path = "EasyReader-Tests";
@@ -1031,7 +1060,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D7927CE18DA279B00E1D3E1 /* EasyReader_Tests.m in Sources */,
+				9D16D30718DA2B3A001E9C38 /* CSBaseTestCase.m in Sources */,
+				9D16D30918DA2E43001E9C38 /* UserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1347,6 +1377,7 @@
 				9D7927D418DA279B00E1D3E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DAC16BF1709D48E00383722 /* Build configuration list for PBXProject "EasyReader" */ = {
 			isa = XCConfigurationList;
