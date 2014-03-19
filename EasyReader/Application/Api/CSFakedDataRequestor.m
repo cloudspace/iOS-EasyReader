@@ -142,7 +142,7 @@
                       @{@"id": @10,
                         @"feed_id": @2,
                         @"title": @"The Flying Phantom: US$40k sailboat levitates two feet above the waves",
-                        @"summary": @"'It’s like removing the handbrake – suddenly everything gets smoother and faster in pure silence.' This gravity-defying US$40k catamaran rises completely out of the water at speed on a pair of hook-shaped hydrofoils. It looks like the work of David Copperfield, but it’s real, and it’s set to start a revolution in the sailing world.",
+                        @"summary": @"'It’s like removing the 67864824_update_schemeshandbrake – suddenly everything gets smoother and faster in pure silence.' This gravity-defying US$40k catamaran rises completely out of the water at speed on a pair of hook-shaped hydrofoils. It looks like the work of David Copperfield, but it’s real, and it’s set to start a revolution in the sailing world.",
                         @"image": @"https://s3.amazonaws.com/easy-reader-images/sb1.png",
                         @"url": @"http://www.gizmag.com/flying-phantom-hydrofoil-catamaran-sailing/31143/",
                         @"created_at": @"2014-03-05T22:32:41+00:00",
