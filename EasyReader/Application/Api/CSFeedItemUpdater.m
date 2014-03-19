@@ -32,7 +32,7 @@
   [myInvocation setTarget:self];
   [myInvocation setSelector:@selector(requestFiveMinutesOfFeedItems:)];
   
-  int interval = 10 * 1;
+  int interval = 60 * 1;
   [NSTimer scheduledTimerWithTimeInterval:interval invocation:myInvocation repeats:YES];
 }
 
