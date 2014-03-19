@@ -200,14 +200,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HSH-zo-oed">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HSH-zo-oed">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="400" id="23x-uU-mbZ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GyA-VK-s4d">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GyA-VK-s4d">
                                                     <rect key="frame" x="0.0" y="331" width="320" height="200"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
@@ -266,7 +266,11 @@
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="GyA-VK-s4d" secondAttribute="trailing" id="DQG-A0-TuO"/>
                                             <constraint firstItem="HSH-zo-oed" firstAttribute="top" secondItem="BLC-ou-GYj" secondAttribute="top" id="EgT-su-K7E"/>
+                                            <constraint firstItem="HSH-zo-oed" firstAttribute="leading" secondItem="BLC-ou-GYj" secondAttribute="leading" id="HUs-E3-mEJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="HSH-zo-oed" secondAttribute="trailing" id="KFz-T0-yFX"/>
+                                            <constraint firstItem="GyA-VK-s4d" firstAttribute="leading" secondItem="BLC-ou-GYj" secondAttribute="leading" id="Xwl-PA-1dz"/>
                                             <constraint firstAttribute="bottom" secondItem="GyA-VK-s4d" secondAttribute="bottom" id="x1p-Se-kKC"/>
                                         </constraints>
                                         <connections>
@@ -279,7 +283,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vdW-Yb-aAb">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vdW-Yb-aAb">
                                 <rect key="frame" x="0.0" y="531" width="320" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -294,7 +298,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vdW-Yb-aAb" secondAttribute="trailing" id="1g6-UC-BC7"/>
                             <constraint firstAttribute="bottom" secondItem="vdW-Yb-aAb" secondAttribute="bottom" id="C7L-B9-YAl"/>
+                            <constraint firstItem="vdW-Yb-aAb" firstAttribute="leading" secondItem="8sx-gS-Wib" secondAttribute="leading" id="hmH-hd-mZf"/>
                         </constraints>
                     </view>
                     <connections>
