@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CSFeedItemUpdater.h"
+#import "CSMenuLeftViewController.h"
+#import "MFSideMenu.h"
 
 @class Feed;
 
@@ -16,5 +18,7 @@
 #pragma mark - Properties
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain) Feed *activeFeed;
+
+@property (strong, nonatomic) MFSideMenuContainerViewController *container;
 
 @end

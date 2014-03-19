@@ -38,6 +38,12 @@
   return self;
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  CSAppDelegate *delegate = (CSAppDelegate *)[UIApplication sharedApplication].delegate;
+  delegate.container.panMode = MFSideMenuPanModeNone;
+}
 
 /**
  * If the left menu is open, it closes it

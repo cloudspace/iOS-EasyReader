@@ -9,6 +9,8 @@
 #import "CSMenuLeftViewController.h"
 #import "CSFeedAddViewController.h"
 
+#import "UIImageView+AFNetworking.h"
+
 #import "Feed.h"
 #import "User.h"
 #import "CSAppDelegate.h"
@@ -16,6 +18,7 @@
 #import "MFSideMenu.h"
 
 #import <QuartzCore/QuartzCore.h>
+#import <Block-KVO/MTKObserving.h>
 
 #import "CSEnhancedTableView.h"
 #import "CSEnhancedTableViewCell.h"
@@ -34,31 +37,44 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  self.currentUser = [User current];
+  self.feeds = [[NSMutableSet alloc] init];
   
-//  // Set tableViewStyle
-//  self.tableView_feeds.tableViewStyle =[[CSEnhancedTableViewStyleDark alloc] init];
-//  
-//  // Add observer
-//  self.currentUser = [User current];
-//  [self.currentUser addObserver:self forKeyPath:@"feeds" options:NSKeyValueObservingOptionNew context:nil];
-//  
-//  // Get feeds from core data
-//  NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user == %@", self.currentUser];
-//  NSArray *feedSorts = [FeedSort findAllSortedBy:@"sortValue" ascending:NO withPredicate:userPredicate];
-//  
-//  NSMutableArray *feeds = [NSMutableArray new];
-//
-//  for (FeedSort *feedSort in feedSorts)
-//  {
-//    [feeds addObject:feedSort.feed];
-//  }
-//  
-//  self.feeds = [feeds copy];
-//  
-//  [[NSNotificationCenter defaultCenter] addObserver:self
-//                                           selector:@selector(menuStateEventOccurred:)
-//                                               name:MFSideMenuStateNotificationEvent
-//                                             object:nil];
+  // Set tableViewStyle
+  CSEnhancedTableViewStyle *tableViewStyle = [[CSEnhancedTableViewStyleDark alloc] init];
+  self.tableView_feeds.tableViewStyle = tableViewStyle;
+  
+  [[self.textField_searchInput superview] setBackgroundColor: [tableViewStyle tableBackgroundColor]];
+  [self.textField_searchInput setBackgroundColor: [tableViewStyle headerBackgroundTopColor]];
+  self.textField_searchInput.textColor = [tableViewStyle headerTitleLabelTextColor];
+   
+  // Add observer
+  //[self.currentUser addObserver:self forKeyPath:@"feeds" options:NSKeyValueObservingOptionNew context:nil];
+  [self observeRelationship:@keypath(self.currentUser.feeds)
+                changeBlock:^(__weak CSMenuLeftViewController *self, NSSet *old, NSSet *new) {
+                  NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
+                  NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
+                  
+                  [addedFeeds removeObjectsInArray:[old allObjects]];
+                  [removedFeeds removeObjectsInArray:[new allObjects]];
+                  
+                  for ( Feed *feed in removedFeeds ){
+                    [[self feeds] removeObject:feed];
+                  }
+                  
+                  for ( Feed *feed in addedFeeds ){
+                    [[self feeds] addObject:feed];
+                  }
+                }
+             insertionBlock:nil
+               removalBlock:nil
+           replacementBlock:nil
+   ];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(menuStateEventOccurred:)
+                                               name:MFSideMenuStateNotificationEvent
+                                             object:nil];
 }
 
 - (void)menuStateEventOccurred:(NSNotification *)notification {
@@ -72,91 +88,20 @@
         break;
       case MFSideMenuStateEventMenuDidOpen:
         // the menu finished opening
+        [weakSelf.tableView_feeds reloadData];
         break;
       case MFSideMenuStateEventMenuWillClose:
         // the menu will close
+        [self.textField_searchInput endEditing:YES];
         break;
       case MFSideMenuStateEventMenuDidClose:
+        
         [weakSelf.tableView_feeds setEditing:NO animated:YES];
         weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
-        [weakSelf.tableView_feeds reloadData];
         break;
     }
 }
 
-///**
-// * Watches for changes to the current users Feeds
-// */
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-//{
-//  if ([keyPath isEqualToString:@"feeds"])
-//  {
-//    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user == %@", self.currentUser];
-//    NSArray *feedSorts = [FeedSort findAllSortedBy:@"sortValue" ascending:NO withPredicate:userPredicate];
-//    
-//    NSMutableArray *feeds = [NSMutableArray new];
-//    
-//    for (FeedSort *feedSort in feedSorts)
-//    {
-//      if (feedSort.feed)
-//      {
-//        [feeds addObject:feedSort.feed];
-//      }
-//    }
-//    
-//    self.feeds = [feeds copy];
-//    
-//    //self.feeds = [[self.currentUser feeds] allObjects];
-//    [self.tableView_feeds reloadData];
-//    
-//  }
-//  else if ([keyPath isEqualToString:@" v"])
-//  {
-//    self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
-//  }
-//}
-
-/**
- * Removes all observers
- */
-- (void)dealloc
-{
-  [self.currentUser removeObserver:self forKeyPath:@"feeds"];
-}
-
-
-#pragma mark - Actions
-/**
- * Toggles edit mode for the table
- */
-- (void)toggleEditMode:(id)sender
-{
-  [self.tableView_feeds beginUpdates];
-  
-  if ([self.tableView_feeds isEditing]) {
-    // Stop editing, delete the 'Add new feed' row
-    [self.tableView_feeds setEditing:NO animated:YES];
-    self.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
-    [self.tableView_feeds deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self tableView:self.tableView_feeds numberOfRowsInSection:0]
-                                                                      inSection:0]]
-                                withRowAnimation:UITableViewRowAnimationFade];
-    
-    
-  }
-  else {
-    // Start editing, add the 'Add new feed' row
-    [self.tableView_feeds insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self tableView:self.tableView_feeds numberOfRowsInSection:0]
-                                                                      inSection:0]]
-                                withRowAnimation:UITableViewRowAnimationFade];
-    [self.tableView_feeds setEditing:YES animated:YES];
-    self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
-  }
-  
-  [self.tableView_feeds endUpdates];
-}
-
-
-#pragma mark -
 #pragma mark - UITableViewDataSource Methods -
 
 #pragma mark - Count Methods
@@ -173,15 +118,7 @@
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  if (tableView.isEditing)
-  {
-    return [self.feeds count] + 1;
-  }
-  else
-  {
-    return [self.feeds count];
-  }
-  
+  return [_feeds count] + 1;
 }
 
 
@@ -216,19 +153,6 @@
   
   NSInteger headerWidth  = tableView.frame.size.width;
   
-  //
-  // Add edit button to first section
-  //
-  UIButton *button_edit = [[UIButton alloc] initWithFrame:CGRectMake(headerWidth - 84, 0, 74, 44)];
-  [button_edit setTintColor:[UIColor colorWithRed:62/255.0 green:69/255.0 blue:88/255.0 alpha:1.0]];
-  [button_edit setImage:[UIImage imageNamed:@"icon_pencil.png" ] forState:UIControlStateNormal];
-  [button_edit addTarget:self action:@selector(toggleEditMode:) forControlEvents:UIControlEventTouchUpInside];
-
-  [button_edit.imageView setContentMode:UIViewContentModeScaleAspectFit];
-  [button_edit setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
-
-  [header.contentView addSubview: button_edit];
-  
   // Set label
   [header.titleLabel setText:[self tableView:tableView titleForHeaderInSection:section]];
   
@@ -255,7 +179,7 @@
   CSEnhancedTableViewCell *cell;
   
   // Set the content
-  if (tableView.editing && indexPath.row == [self tableView:self.tableView_feeds numberOfRowsInSection:0] - 1)
+  if (indexPath.row == [_feeds count])
   {
     cell = [self.tableView_feeds dequeueReusableCellWithIdentifier:@"leftMenuCellAdd"];
     
@@ -270,7 +194,7 @@
     cell = [self.tableView_feeds dequeueReusableCellWithIdentifier:@"leftMenuCell"];
     
     // Set data based on feed name
-    Feed *feed = self.feeds[indexPath.row];
+    Feed *feed = [self.feeds allObjects][indexPath.row];
     
     // Set the label text
     [cell.textLabel setText:feed.name];
@@ -281,72 +205,19 @@
     // Show feed icons
     [cell.imageView setHidden:NO];
     [cell.imageView setFrame:CGRectMake(0,0,44,44)];
-    [cell.imageView setImage:[UIImage imageNamed:@"icon_rss@2x.png"]];
+    
+    __weak CSEnhancedTableViewCell *currentCell = cell;
+    NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.icon]];
+    [currentCell.imageView setImageWithURLRequest:imageRequest
+                                 placeholderImage:nil
+                                          success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                            currentCell.imageView.image = image;
+                                          }failure:nil
+     ];
   }
 
   return cell;
 }
-
-
-#pragma mark - Editing
-/**
- * Determines which rows are editable
- */
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  return YES;
-}
-
-/**
- * Determines whether or not a row can be moved
- */
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  return indexPath.row < [self.feeds count];
-}
-
-/**
- * Handle moving rows
- */
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-  NSMutableArray *reorderedFeeds = [self.feeds mutableCopy];
-  
-  id feedToMove =  [reorderedFeeds objectAtIndex:sourceIndexPath.row];
-  [reorderedFeeds removeObjectAtIndex:sourceIndexPath.row];
-  [reorderedFeeds insertObject:feedToMove atIndex:destinationIndexPath.row];
-
-
-  for (NSInteger i = 0; i < [reorderedFeeds count]; i++)
-  {
-//    Feed *currentFeed = reorderedFeeds[i];
-    
-//    NSPredicate *userFeedPredicate = [NSPredicate predicateWithFormat:@"user == %@ AND feed == %@", [User current], currentFeed];
-//    FeedSort *feedSort = [FeedSort findFirstWithPredicate:userFeedPredicate];
-//    feedSort.sortValue = [NSNumber numberWithInteger:[reorderedFeeds count] - i];
-  }
-
-  [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
-  
-  self.feeds = [reorderedFeeds copy];
-  
-
-}
-
-- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
-       toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath {
-  if (proposedDestinationIndexPath.row < [self.feeds count] - 1)
-  {
-    return proposedDestinationIndexPath;
-  }
-  else
-  {
-    NSIndexPath *lastIndexPathInSection = [NSIndexPath indexPathForRow:[tableView numberOfRowsInSection:sourceIndexPath.section]-2
-                                                             inSection:sourceIndexPath.section];
-    
-    return lastIndexPathInSection;
-  }
-}
-
 
 /**
  * Commits each editing action
@@ -360,7 +231,7 @@
     
     if (indexPath.row < [self.feeds count])
     {
-      feedAddController.feed = self.feeds[indexPath.row];
+      feedAddController.feed = [self.feeds allObjects][indexPath.row];
     }
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:feedAddController];
@@ -368,14 +239,13 @@
     
     [self.rootViewController presentViewController:navController animated:YES completion:^{
       [self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
-      [self toggleEditMode:nil];
     }];
     
     return;
   }
   else if (editingStyle == UITableViewCellEditingStyleDelete)
   {
-    Feed *toDelete = self.feeds[indexPath.row];
+    Feed *toDelete = [self.feeds allObjects][indexPath.row];
     
     [toDelete deleteEntity];
     
@@ -399,7 +269,6 @@
   }
   else
   {
-    
     return UITableViewCellEditingStyleDelete;
   }
 }
@@ -411,19 +280,14 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  // Handle select while in edit mode
-  if (tableView.isEditing)
+  if (indexPath.row == [_feeds count])
   {
-    [self tableView:tableView commitEditingStyle:UITableViewCellEditingStyleInsert forRowAtIndexPath:indexPath];
-
-    return;
+    //Add new feed controller change
+  } else {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
   }
-
-  // Handle normal select
-  //User *user = [User current];
   
-  [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
-  [self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
+  //[self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
 }
 
 @end

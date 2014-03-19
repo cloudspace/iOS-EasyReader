@@ -16,10 +16,11 @@
 
 #pragma mark - IBOutlet Properties
 @property (nonatomic, retain) IBOutlet CSEnhancedTableView *tableView_feeds;
+@property (strong, nonatomic) IBOutlet UITextField *textField_searchInput;
 
 
 #pragma mark - Properties
-@property (nonatomic, retain) NSArray *feeds;
+@property (nonatomic, retain) NSMutableSet *feeds;
 @property (nonatomic, retain) User *currentUser;
 
 
