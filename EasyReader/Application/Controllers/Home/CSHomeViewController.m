@@ -11,6 +11,7 @@
 #import "CSFeedItemCollectionView.h"
 #import "CSFeedItemCollectionViewDataSource.h"
 #import "FeedItem.h"
+#import "MFSideMenu.h"
 #import "CSFeedItemCell.h"
 #import "Feed.h"
 #import "User.h"
@@ -106,6 +107,14 @@
     
     self.collectionView_feedItems.dataSource = feedCollectionViewDataSource;
     self.collectionView_feedItems.delegate = self;
+}
+
+
+#pragma mark - IBActions
+
+// Receives left menu link click
+- (IBAction)buttonLeftMenu_touchUpInside_goToMenu:(id)sender {
+  [[self rootViewController] toggleLeftSideMenuCompletion:^{}];
 }
 
 
