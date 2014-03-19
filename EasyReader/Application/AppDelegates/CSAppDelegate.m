@@ -10,7 +10,7 @@
 #import "CSRootViewController.h"
 #import "CSMenuLeftViewController.h"
 
-#import "CSResponsiveApiRouter.h"
+#import "CSResponsiveApiRequestor.h"
 
 #import "User.h"
 #import "Feed.h"

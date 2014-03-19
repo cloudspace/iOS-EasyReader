@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Feed.h"
 
 @interface CSFeedItemUpdater : NSObject
 - (void) start;

@@ -7,16 +7,19 @@
 //
 
 #import "CSFeedItemUpdater.h"
-#import "CSResponsiveApiRouter.h"
+#import "CSResponsiveApiRequestor.h"
+#import "FeedItem.h"
+#import "Feed.h"
+#import "User.h"
 
 @implementation CSFeedItemUpdater
 {
-  CSResponsiveApiRouter *router;
+  CSResponsiveApiRequestor *requestor;
 }
 
 - (void) start
 {
-  router = [CSResponsiveApiRouter sharedRouter];
+  requestor = [CSResponsiveApiRequestor sharedRequestor];
   [self getFeeds];
   [self getOneWeekOfFeedItems];
   
@@ -59,6 +62,8 @@
   NSDate *oneWeekAgo = [calendar dateByAddingComponents:oneWeekAgoComponents toDate:today options:0];
   
   [self getFeedItemsSince:oneWeekAgo];
+  
+  NSLog(@"Setup Invocation");
 }
 
 //TODO: Remove 'this is for testing' functionality (in CSResponsiveApiRouter as well)
@@ -68,7 +73,14 @@
                            @"feed_ids": [self userFeeds],
                               @"since": since
                            };
-  [router requestRoute:@"feedItems" withParams:params success:nil failure:nil];
+  
+  [FeedItem createFeedItemsFromRoute:@"feedItems"
+                          withParams:(NSDictionary*)params
+                             success:^(id responseData){
+                               NSLog(@"Feed Items have been added");
+                             }failure:^(id responseData){
+                             }
+   ];
 }
 
 
@@ -77,7 +89,15 @@
   NSDictionary *params = @{
                            @"feed_ids": [self userFeeds]
                            };
-  [router requestRoute:@"feedDefaults" withParams:params success:nil failure:nil];
+  
+  [Feed createFeedsFromRoute:@"feedDefaults"
+                  withParams:(NSDictionary*)params
+                     success:^(id responseData){
+                       NSLog(@"Feeds have been added");
+                     }failure:^(id responseData){
+                     }
+   ];
+  
   NSLog(@"User should have feeds");
 }
 
