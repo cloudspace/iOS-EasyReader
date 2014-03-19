@@ -15,7 +15,7 @@
 
 @interface CSFeedCollectionViewController (){
     FeedCollectionViewDataSource *feedCollectionViewDataSource;
-    NSString *currentFeedItemURL;
+    FeedItem *currentFeedItem;
 }
 
 /// The collection view which holds the individual feed items
@@ -29,10 +29,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setUpVerticalScrollView];
     [self setUpCollectionView];
     [self setUpWebView];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [self setUpVerticalScrollView];
 }
 
 - (void)setUpCollectionView
@@ -46,12 +50,6 @@
     
     self.collectionView_feedItems.dataSource = feedCollectionViewDataSource;
     self.collectionView_feedItems.delegate = self;
-    
-    // Add it to the top of the scrollView
-    NSInteger width = self.collectionView_feedItems.frame.size.width;
-    NSInteger height = self.collectionView_feedItems.frame.size.height;
-    self.collectionView_feedItems.frame= CGRectMake(0, 0, width, height);
-    [self.verticalScrollView addSubview:self.collectionView_feedItems];
 }
 
 
@@ -59,7 +57,8 @@
 {
     return ^void(CSFeedItemCell *cell, FeedItem *feedItem) {
         cell.label_headline.text = feedItem.title;
-        cell.label_source.text = feedItem.feed.name;
+        cell.label_source.text = feedItem.headline;
+        cell.label_summary.text = feedItem.summary;
         cell.feedItem = feedItem;
     };
 }
@@ -84,9 +83,6 @@
 
     // Add it to the bottom of the scrollView
     [self.verticalScrollView addSubview:self.feedItemWebView];
-    
-    // Set the url to nothing
-    currentFeedItemURL = @"";
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)sender {
@@ -96,12 +92,23 @@
     }
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
+    // If we are scrolling in the collectionView only
+    if([sender isMemberOfClass:[CSFeedItemCollectionView class]]) {
+        
+        // unload the webView if we have moved to a new feedItem
+        if(currentFeedItem != self.collectionView_feedItems.currentFeedItem){
+            [self.feedItemWebView loadHTMLString:@"<html><head></head><body></body></html>" baseURL:nil];
+        }
+    }
+}
+
 -(void)loadFeedItemWebView
 {
     // Check if this is a new url
-    if(currentFeedItemURL != self.collectionView_feedItems.currentFeedItem.url){
+    if(currentFeedItem != self.collectionView_feedItems.currentFeedItem){
         // update the current url
-        currentFeedItemURL = self.collectionView_feedItems.currentFeedItem.url;
+        currentFeedItem = self.collectionView_feedItems.currentFeedItem;
         
         // load the url in the webView
         NSURL *url = [NSURL URLWithString:self.collectionView_feedItems.currentFeedItem.url];

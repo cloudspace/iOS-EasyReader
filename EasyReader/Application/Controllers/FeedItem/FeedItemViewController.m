@@ -32,7 +32,7 @@
  */
 - (void)updateFeedItemInfo:(FeedItem *)feedItem
 {
-  [self updateFeedName:[feedItem getFeedName] andDate:[feedItem.updatedAt timeAgo]];
+//  [self updateFeedName:[feedItem getFeedName] andDate:[feedItem.updatedAt timeAgo]];
   [self updateFeedItemHeader:feedItem.title];
   [self updateFeedItemSummary:feedItem.summary];
   [self updateFeedItemImage:feedItem.image];
