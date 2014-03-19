@@ -19,6 +19,7 @@
 @interface CSHomeViewController (){
     CSFeedItemCollectionViewDataSource *feedCollectionViewDataSource;
     FeedItem *currentFeedItem;
+    NSString *currentURL;
 }
 
 /// The collection view which holds the individual feed items
@@ -183,12 +184,12 @@
 -(void)loadFeedItemWebView
 {
     // Check if this is a new url
-    if(currentFeedItem != self.collectionView_feedItems.currentFeedItem){
+    if(currentURL != self.collectionView_feedItems.currentFeedItem.url){
         // update the current url
-        currentFeedItem = self.collectionView_feedItems.currentFeedItem;
+        currentURL = self.collectionView_feedItems.currentFeedItem.url;
         
         // load the url in the webView
-        NSURL *url = [NSURL URLWithString:self.collectionView_feedItems.currentFeedItem.url];
+        NSURL *url = [NSURL URLWithString:currentURL];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
         [self.feedItemWebView loadRequest:requestObj];
     }
