@@ -169,6 +169,7 @@
 		9D429783170E283A00E73BFE /* CSHome_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D429782170E283A00E73BFE /* CSHome_iPhone.xib */; };
 		9D4355741795C708002C6657 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4355731795C708002C6657 /* Social.framework */; };
 		9D4355761795C9B4002C6657 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4355751795C9B3002C6657 /* MessageUI.framework */; };
+		9D4AD83518D8EF310057C5E0 /* CSObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4AD83418D8EF310057C5E0 /* CSObjectMapping.m */; };
 		9D4FA6E417971D56001E2A65 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E317971D56001E2A65 /* Default-Portrait~ipad.png */; };
 		9D4FA6E617971D5B001E2A65 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */; };
 		9D4FA6E817971E88001E2A65 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */; };
@@ -284,6 +285,8 @@
 		9D429782170E283A00E73BFE /* CSHome_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSHome_iPhone.xib; path = Home/CSHome_iPhone.xib; sourceTree = "<group>"; };
 		9D4355731795C708002C6657 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9D4355751795C9B3002C6657 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9D4AD83318D8EF310057C5E0 /* CSObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSObjectMapping.h; sourceTree = "<group>"; };
+		9D4AD83418D8EF310057C5E0 /* CSObjectMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSObjectMapping.m; sourceTree = "<group>"; };
 		9D4FA6E317971D56001E2A65 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -674,6 +677,8 @@
 		9DAC171D170A043200383722 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9D4AD83318D8EF310057C5E0 /* CSObjectMapping.h */,
+				9D4AD83418D8EF310057C5E0 /* CSObjectMapping.m */,
 				0DE51FF618CF919900454E51 /* Feed.h */,
 				0DE51FF718CF919900454E51 /* Feed.m */,
 				0DE51FF118CF911000454E51 /* User.h */,
@@ -1193,6 +1198,7 @@
 				27E37B2918D87773009776EE /* FeedItem.m in Sources */,
 				8E7F81F418D0C44200BC50C2 /* NSObject+CSNilAdditions.m in Sources */,
 				8E7F81F018D0BF8500BC50C2 /* CSBaseObject.m in Sources */,
+				9D4AD83518D8EF310057C5E0 /* CSObjectMapping.m in Sources */,
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,
 				0DE51FF518CF911000454E51 /* User.m in Sources */,
 				274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */,

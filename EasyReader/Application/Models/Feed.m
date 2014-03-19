@@ -20,4 +20,8 @@
 @dynamic user;
 @dynamic feedItems;
 
+@class CSObjectMapping;
+
+
+
 @end
