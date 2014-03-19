@@ -80,8 +80,11 @@
                                           }
                                           
                                           //redraw the collection with the changes to the feed items
+                                          [feedCollectionViewDataSource sortFeedItems];
                                           [_collectionView_feedItems reloadData];
-                                          
+                                          if(currentFeedItem){
+                                            [self scrollToCurrentFeedItem];
+                                          }
                                         }
                                      insertionBlock:nil
                                        removalBlock:nil
@@ -98,13 +101,9 @@
 
 - (void)setUpCollectionView
 {
-//    User *current = [User current];
-//    
-//    NSSet *feedItems = current.feedItems;
+    User *current = [User current];
+    NSSet *feedItems = current.feedItems;
 
-    NSArray *feedItems = [FeedItem MR_findAll];
-    FeedItem *first = feedItems[0];
-    NSLog(@"%@", first.name);
     feedCollectionViewDataSource =
         [[CSFeedItemCollectionViewDataSource alloc] initWithFeedItems:feedItems
                                          reusableCellIdentifier:@"feedItemCell"
@@ -171,6 +170,14 @@
             [self.feedItemWebView loadHTMLString:@"<html><head></head><body></body></html>" baseURL:nil];
         }
     }
+}
+
+// Scroll to the currentFeedItem when the feedItems update
+- (void)scrollToCurrentFeedItem
+{
+    NSUInteger index = [feedCollectionViewDataSource.sortedFeedItems indexOfObject:currentFeedItem];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    [_collectionView_feedItems scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
 
 -(void)loadFeedItemWebView

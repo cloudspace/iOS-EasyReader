@@ -22,7 +22,7 @@
 /**
  * Sets each instance variable to the values in the given parameters
  */
-- (id)initWithFeedItems:(NSArray *)feedItems
+- (id)initWithFeedItems:(NSSet *)feedItems
  reusableCellIdentifier:(NSString *)reusableCellIdentifier
          configureBlock:(void (^)(CSFeedItemCell *, FeedItem *))configureFeedItemCell
 {
@@ -30,24 +30,27 @@
   
   if (self)
   {
-    _feedItems = [NSMutableSet setWithArray:feedItems];
+    _feedItems = [NSMutableSet setWithSet:feedItems];
     _reusableCellIdentifier = reusableCellIdentifier;
     _configureFeedItemCell = configureFeedItemCell;
+    
+    _sortedFeedItems = [[NSArray alloc] init];
+    [self sortFeedItems];
   }
-  
+    
   return self;
 }
 
+// Sort feedItems by updatedAt
 - (void)sortFeedItems
 {
-    NSMutableArray *sortableArray = [NSMutableArray arrayWithArray:[self.feedItems allObjects]];
+    NSArray *sortableArray = [NSArray arrayWithArray:[self.feedItems allObjects]];
     
     NSSortDescriptor *sortDescriptor;
     sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"updatedAt"
                                                  ascending:NO];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    NSArray *sortedArray;
-    sortedArray = [sortableArray sortedArrayUsingDescriptors:sortDescriptors];
+    self.sortedFeedItems = [sortableArray sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 /**
@@ -69,7 +72,7 @@
  */
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-  return [_feedItems count];
+  return [_sortedFeedItems count];
 }
 
 /**
@@ -83,7 +86,7 @@
   CSFeedItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:_reusableCellIdentifier
                                                                          forIndexPath:indexPath];
   
-  FeedItem *item = [_feedItems allObjects][indexPath.row];
+  FeedItem *item = [_sortedFeedItems objectAtIndex:indexPath.row];
   
   _configureFeedItemCell(cell, item);
   
