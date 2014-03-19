@@ -29,10 +29,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setUpVerticalScrollView];
     [self setUpCollectionView];
     [self setUpWebView];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [self setUpVerticalScrollView];
 }
 
 - (void)setUpCollectionView
@@ -46,12 +50,6 @@
     
     self.collectionView_feedItems.dataSource = feedCollectionViewDataSource;
     self.collectionView_feedItems.delegate = self;
-    
-    // Add it to the top of the scrollView
-    NSInteger width = self.collectionView_feedItems.frame.size.width;
-    NSInteger height = self.collectionView_feedItems.frame.size.height;
-    self.collectionView_feedItems.frame= CGRectMake(0, 0, width, height);
-    [self.verticalScrollView addSubview:self.collectionView_feedItems];
 }
 
 
@@ -69,7 +67,6 @@
     // Set contentSize to be twice the height of the scrollview
     NSInteger width = self.verticalScrollView.frame.size.width;
     NSInteger height = self.verticalScrollView.frame.size.height;
-    NSLog(@"%f",self.collectionView_feedItems.frame.size.height);
     self.verticalScrollView.contentSize = CGSizeMake(width, height*2);
     
     self.verticalScrollView.pagingEnabled =YES;
@@ -86,8 +83,6 @@
 
     // Add it to the bottom of the scrollView
     [self.verticalScrollView addSubview:self.feedItemWebView];
-    
-    // Set the url to nothing
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)sender {
