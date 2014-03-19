@@ -28,6 +28,6 @@ typedef void (^configureFeedItemCell)(CSFeedItemCell *, FeedItem *);
          configureBlock:(configureFeedItemCell)configureFeedItemCell;
 
 /// The FeedItems for this data source
-@property (nonatomic, strong) NSMutableArray *feedItems;
+@property (nonatomic, strong) NSMutableSet *feedItems;
 
 @end

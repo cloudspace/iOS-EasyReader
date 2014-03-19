@@ -30,7 +30,7 @@
   
   if (self)
   {
-    _feedItems = [NSMutableArray arrayWithArray:feedItems];
+    _feedItems = [NSMutableSet setWithArray:feedItems];
     _reusableCellIdentifier = reusableCellIdentifier;
     _configureFeedItemCell = configureFeedItemCell;
   }
@@ -71,7 +71,7 @@
   CSFeedItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:_reusableCellIdentifier
                                                                          forIndexPath:indexPath];
   
-  FeedItem *item = _feedItems[indexPath.row];
+  FeedItem *item = [_feedItems allObjects][indexPath.row];
   
   _configureFeedItemCell(cell, item);
   

@@ -50,8 +50,7 @@
                   changeBlock:^(__weak CSFeedCollectionViewController *self, NSSet *old, NSSet *new) {
                       NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
                       NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
-                      
-                      
+                          
                       [addedFeeds removeObjectsInArray:[old allObjects]];
                       [removedFeeds removeObjectsInArray:[new allObjects]];
                       
@@ -62,17 +61,27 @@
                       for ( Feed *feed in addedFeeds ){
                           [feed observeRelationship:@"feedItems"
                                         changeBlock:^(__weak Feed *feed, NSSet *old, NSSet *new) {
-                                            if([old  count] > 0 && [new count] <= 0) {
-                                                [(FeedCollectionViewDataSource *)_collectionView_feedItems.dataSource setFeedItems:[[old allObjects] mutableCopy]];
-                                                
-                                                //redraw the collection with the changes to the feed items
-                                                [_collectionView_feedItems reloadData];
-                                            } else if([new count] > 0) {
-                                                [(FeedCollectionViewDataSource *)_collectionView_feedItems.dataSource setFeedItems:[[new allObjects] mutableCopy]];
+                                          if(!new) {
+                                            NSLog(@"startup?");
+                                          } else {
+                                            NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
+                                            NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
                                             
-                                                //redraw the collection with the changes to the feed items
-                                                [_collectionView_feedItems reloadData];
+                                            [addedFeedItems removeObjectsInArray:[old allObjects]];
+                                            [removedFeedItems removeObjectsInArray:[new allObjects]];
+                                            
+                                            for( FeedItem *item in removedFeedItems ){
+                                              [[(FeedCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems] removeObject:item];
                                             }
+                                            
+                                            for( FeedItem *item in addedFeedItems ){
+                                              [[(FeedCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems] addObject:item];
+                                            }
+                                          }
+                                          
+                                          //redraw the collection with the changes to the feed items
+                                          [_collectionView_feedItems reloadData];
+                                          
                                         }
                                      insertionBlock:nil
                                        removalBlock:nil
