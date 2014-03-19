@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
 
+@class User;
+
 @interface CSFeedCollectionViewController : CSBaseViewController<UICollectionViewDelegate,UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *verticalScrollView;
 @property (nonatomic, strong) UIWebView *feedItemWebView;
+@property (nonatomic, strong) NSMutableArray *feedItems;
+@property User* currentUser;
 
 @end

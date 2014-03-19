@@ -27,4 +27,7 @@ typedef void (^configureFeedItemCell)(CSFeedItemCell *, FeedItem *);
  reusableCellIdentifier:(NSString *)reusableCellIdentifier
          configureBlock:(configureFeedItemCell)configureFeedItemCell;
 
+/// The FeedItems for this data source
+@property (nonatomic, strong) NSMutableSet *feedItems;
+
 @end

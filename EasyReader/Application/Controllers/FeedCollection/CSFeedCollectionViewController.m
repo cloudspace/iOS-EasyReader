@@ -7,11 +7,14 @@
 //
 
 #import "CSFeedCollectionViewController.h"
+#import <Block-KVO/MTKObserving.h>
 #import "CSFeedItemCollectionView.h"
+#import "FeedCollectionViewDataSource.h"
 #import "FeedCollectionViewDataSource.h"
 #import "FeedItem.h"
 #import "CSFeedItemCell.h"
 #import "Feed.h"
+#import "User.h"
 
 @interface CSFeedCollectionViewController (){
     FeedCollectionViewDataSource *feedCollectionViewDataSource;
@@ -31,12 +34,66 @@
     [super viewDidLoad];
     [self setUpCollectionView];
     [self setUpWebView];
+    [self setupFeedItemObserver];
     // Do any additional setup after loading the view.
 }
 
 - (void)viewDidLayoutSubviews
 {
     [self setUpVerticalScrollView];
+}
+
+- (void) setupFeedItemObserver
+{
+    _currentUser = [User current];
+    [self observeRelationship:@keypath(self.currentUser.feeds)
+                  changeBlock:^(__weak CSFeedCollectionViewController *self, NSSet *old, NSSet *new) {
+                      NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
+                      NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
+                          
+                      [addedFeeds removeObjectsInArray:[old allObjects]];
+                      [removedFeeds removeObjectsInArray:[new allObjects]];
+                      
+                      for ( Feed *feed in removedFeeds ){
+                          [feed removeAllObservations];
+                      }
+                      
+                      for ( Feed *feed in addedFeeds ){
+                          [feed observeRelationship:@"feedItems"
+                                        changeBlock:^(__weak Feed *feed, NSSet *old, NSSet *new) {
+                                          if(!new) {
+                                            NSLog(@"startup?");
+                                          } else {
+                                            NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
+                                            NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
+                                            
+                                            [addedFeedItems removeObjectsInArray:[old allObjects]];
+                                            [removedFeedItems removeObjectsInArray:[new allObjects]];
+                                            
+                                            for( FeedItem *item in removedFeedItems ){
+                                              [[(FeedCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems] removeObject:item];
+                                            }
+                                            
+                                            for( FeedItem *item in addedFeedItems ){
+                                              [[(FeedCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems] addObject:item];
+                                            }
+                                          }
+                                          
+                                          //redraw the collection with the changes to the feed items
+                                          [_collectionView_feedItems reloadData];
+                                          
+                                        }
+                                     insertionBlock:nil
+                                       removalBlock:nil
+                                   replacementBlock:nil];
+                      }
+                      
+                      //properties:@[@"title", @"summary", @"updatedAt", @"publishedAt", @"createdAt", @"image", @"url"]
+                  }
+               insertionBlock:nil
+                 removalBlock:nil
+             replacementBlock:nil
+     ];
 }
 
 - (void)setUpCollectionView
