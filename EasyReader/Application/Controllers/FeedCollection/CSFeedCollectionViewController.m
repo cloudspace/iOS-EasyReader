@@ -57,7 +57,7 @@
 {
     return ^void(CSFeedItemCell *cell, FeedItem *feedItem) {
         cell.label_headline.text = feedItem.title;
-        cell.label_source.text = feedItem.setHeadline;
+        cell.label_source.text = feedItem.headline;
         cell.label_summary.text = feedItem.summary;
         cell.feedItem = feedItem;
     };
