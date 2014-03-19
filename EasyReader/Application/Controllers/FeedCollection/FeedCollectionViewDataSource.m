@@ -11,10 +11,7 @@
 #import "CSFeedItemCell.h"
 
 @implementation FeedCollectionViewDataSource
-{
-  /// The FeedItems for this data source
-  NSArray *_feedItems;
-  
+{  
   /// A block which will configure a cell based on a given FeedItem
   void (^_configureFeedItemCell)(CSFeedItemCell *, FeedItem *feedItem);
   
@@ -33,7 +30,7 @@
   
   if (self)
   {
-    _feedItems = feedItems;
+    _feedItems = [NSMutableArray arrayWithArray:feedItems];
     _reusableCellIdentifier = reusableCellIdentifier;
     _configureFeedItemCell = configureFeedItemCell;
   }
