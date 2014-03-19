@@ -11,10 +11,7 @@
 
 @class Feed, User, CSEnhancedTableView;
 
-@interface CSMenuLeftViewController : CSBaseViewController <
-  UITableViewDataSource,
-  UITableViewDelegate
->
+@interface CSMenuLeftViewController : CSBaseViewController
 
 
 #pragma mark - IBOutlet Properties

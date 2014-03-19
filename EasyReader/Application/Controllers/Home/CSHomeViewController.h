@@ -1,43 +1,21 @@
 //
-//  CSHomeViewController.h
+//  CSFeedCollectionViewController.h
 //  EasyReader
 //
-//  Created by Joseph Lorich on 4/4/13.
-//  Copyright (c) 2013 Cloudspace. All rights reserved.
+//  Created by Joseph Lorich on 3/13/14.
+//  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
-#import "AFNetworking.h"
 
-@class User, CSEnhancedTableView;
+@class User;
 
-/**
- * The home view controller for the feed parser
- */
-@interface CSHomeViewController : CSBaseViewController <
-//  UICollectionViewDataSource,
-  UITableViewDataSource,
-  UITableViewDelegate,
-  UIScrollViewDelegate
->
+@interface CSHomeViewController : CSBaseViewController<UICollectionViewDelegate,UIScrollViewDelegate>
 
-{
-  AFHTTPRequestOperation *_requestOperation;
-}
-
-#pragma mark - UI Properties
-@property (nonatomic, retain) IBOutlet CSEnhancedTableView *tableView_feed;
-@property (nonatomic, retain) UIBarButtonItem *barButton_menu;
-
-#pragma mark - Properties
-@property (nonatomic, retain) User *currentUser;
-@property (nonatomic, retain) NSArray *feedData;
-@property (nonatomic, retain) NSArray *feedsByDay;
-
-@property NSInteger feedOffset;
-@property NSInteger feedLimit;
-
-
+@property (weak, nonatomic) IBOutlet UIScrollView *verticalScrollView;
+@property (nonatomic, strong) UIWebView *feedItemWebView;
+@property (nonatomic, strong) NSMutableArray *feedItems;
+@property User* currentUser;
 
 @end

@@ -13,7 +13,7 @@
 @class Feed;
 
 
-@interface CSFeedAddViewController : CSBaseViewController <CSAutoCompleteDelegate, UIActionSheetDelegate>
+@interface CSFeedAddViewController : CSBaseViewController
 
 #pragma mark - Properties
 @property (nonatomic, retain) UIBarButtonItem *barButton_save;

@@ -15,7 +15,7 @@ typedef void (^configureFeedItemCell)(CSFeedItemCell *, FeedItem *);
 /**
  * The data source for the FeedCollectionView's UICollectionView
  */
-@interface FeedCollectionViewDataSource : NSObject <UICollectionViewDataSource>
+@interface CSFeedItemCollectionViewDataSource : NSObject <UICollectionViewDataSource>
 
 /**
  * Initializes the data source with a reusable cell identifier
