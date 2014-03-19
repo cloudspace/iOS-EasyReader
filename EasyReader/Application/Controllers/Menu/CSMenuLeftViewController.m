@@ -318,7 +318,7 @@
 
   for (NSInteger i = 0; i < [reorderedFeeds count]; i++)
   {
-    Feed *currentFeed = reorderedFeeds[i];
+//    Feed *currentFeed = reorderedFeeds[i];
     
 //    NSPredicate *userFeedPredicate = [NSPredicate predicateWithFormat:@"user == %@ AND feed == %@", [User current], currentFeed];
 //    FeedSort *feedSort = [FeedSort findFirstWithPredicate:userFeedPredicate];

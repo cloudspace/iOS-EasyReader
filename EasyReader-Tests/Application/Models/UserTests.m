@@ -1,18 +1,19 @@
 //
-//  EasyReader_Tests.m
-//  EasyReader-Tests
+//  UserTests.m
+//  EasyReader
 //
 //  Created by Joseph Lorich on 3/19/14.
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+#import "CSBaseTestCase.h"
 
-@interface EasyReader_Tests : XCTestCase
+@interface UserTests : CSBaseTestCase
 
 @end
 
-@implementation EasyReader_Tests
+@implementation UserTests
 
 - (void)setUp
 {
