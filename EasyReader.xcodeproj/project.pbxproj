@@ -149,6 +149,11 @@
 		9D79278618DA1D3800E1D3E1 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */; };
 		9D79278718DA1D3800E1D3E1 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */; };
 		9D79278818DA1D3800E1D3E1 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */; };
+		9D7927C418DA279B00E1D3E1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1CE42418D0F5A00090028E /* XCTest.framework */; };
+		9D7927C518DA279B00E1D3E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC16C91709D48E00383722 /* Foundation.framework */; };
+		9D7927C618DA279B00E1D3E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC16C71709D48E00383722 /* UIKit.framework */; };
+		9D7927CC18DA279B00E1D3E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D7927CA18DA279B00E1D3E1 /* InfoPlist.strings */; };
+		9D7927CE18DA279B00E1D3E1 /* EasyReader_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7927CD18DA279B00E1D3E1 /* EasyReader_Tests.m */; };
 		9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		9D8F3196171DB410006CFC6A /* button_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F318F171DB410006CFC6A /* button_menu@2x.png */; };
 		9D8F3197171DB410006CFC6A /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F3192171DB410006CFC6A /* icon_back.png */; };
@@ -179,6 +184,16 @@
 		9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
 		9DFBC0991714957E006BF840 /* CSFeedAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9D7927D018DA279B00E1D3E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DAC16BC1709D48E00383722 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DAC16C31709D48E00383722;
+			remoteInfo = Development;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -230,6 +245,11 @@
 		9D79279018DA1D9200E1D3E1 /* Development-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Development-Info.plist"; sourceTree = "<group>"; };
 		9D79279118DA1D9200E1D3E1 /* Production-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Production-Info.plist"; sourceTree = "<group>"; };
 		9D79279218DA1D9200E1D3E1 /* Staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
+		9D7927C318DA279B00E1D3E1 /* EasyReader-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EasyReader-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D7927C918DA279B00E1D3E1 /* EasyReader-Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EasyReader-Tests-Info.plist"; sourceTree = "<group>"; };
+		9D7927CB18DA279B00E1D3E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9D7927CD18DA279B00E1D3E1 /* EasyReader_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyReader_Tests.m; sourceTree = "<group>"; };
+		9D7927CF18DA279B00E1D3E1 /* EasyReader-Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EasyReader-Tests-Prefix.pch"; sourceTree = "<group>"; };
 		9D8C6C5B170CA12500B18012 /* CSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRootViewController.h; sourceTree = "<group>"; };
 		9D8C6C5C170CA12500B18012 /* CSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRootViewController.m; sourceTree = "<group>"; };
 		9D8F318F171DB410006CFC6A /* button_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_menu@2x.png"; sourceTree = "<group>"; };
@@ -296,6 +316,16 @@
 				9D79276718DA1D3800E1D3E1 /* CoreGraphics.framework in Frameworks */,
 				9D79276818DA1D3800E1D3E1 /* CoreData.framework in Frameworks */,
 				9D79276918DA1D3800E1D3E1 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D7927C018DA279B00E1D3E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D7927C418DA279B00E1D3E1 /* XCTest.framework in Frameworks */,
+				9D7927C618DA279B00E1D3E1 /* UIKit.framework in Frameworks */,
+				9D7927C518DA279B00E1D3E1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +413,25 @@
 			name = Menu;
 			sourceTree = "<group>";
 		};
+		9D7927C718DA279B00E1D3E1 /* EasyReader-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9D7927CD18DA279B00E1D3E1 /* EasyReader_Tests.m */,
+				9D7927C818DA279B00E1D3E1 /* Supporting Files */,
+			);
+			path = "EasyReader-Tests";
+			sourceTree = "<group>";
+		};
+		9D7927C818DA279B00E1D3E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9D7927C918DA279B00E1D3E1 /* EasyReader-Tests-Info.plist */,
+				9D7927CA18DA279B00E1D3E1 /* InfoPlist.strings */,
+				9D7927CF18DA279B00E1D3E1 /* EasyReader-Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		9D8F318D171DB3CE006CFC6A /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,6 +502,7 @@
 				9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */,
 				9DA7CB35171CAD020045CC88 /* iOS Resources */,
 				9DAC16CF1709D48E00383722 /* EasyReader */,
+				9D7927C718DA279B00E1D3E1 /* EasyReader-Tests */,
 				9DAC16C61709D48E00383722 /* Frameworks */,
 				9DAC16C51709D48E00383722 /* Products */,
 				5CECD14CAE964A1994399D15 /* Pods.xcconfig */,
@@ -465,6 +515,7 @@
 				9DAC16C41709D48E00383722 /* Development.app */,
 				9D79274A18DA1D0300E1D3E1 /* Staging.app */,
 				9D79278E18DA1D3800E1D3E1 /* Easy Reader.app */,
+				9D7927C318DA279B00E1D3E1 /* EasyReader-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -641,6 +692,24 @@
 			productReference = 9D79278E18DA1D3800E1D3E1 /* Easy Reader.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9D7927C218DA279B00E1D3E1 /* EasyReader-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D7927D218DA279B00E1D3E1 /* Build configuration list for PBXNativeTarget "EasyReader-Tests" */;
+			buildPhases = (
+				9D7927BF18DA279B00E1D3E1 /* Sources */,
+				9D7927C018DA279B00E1D3E1 /* Frameworks */,
+				9D7927C118DA279B00E1D3E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D7927D118DA279B00E1D3E1 /* PBXTargetDependency */,
+			);
+			name = "EasyReader-Tests";
+			productName = "EasyReader-Tests";
+			productReference = 9D7927C318DA279B00E1D3E1 /* EasyReader-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9DAC16C31709D48E00383722 /* Development */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DAC16FC1709D48E00383722 /* Build configuration list for PBXNativeTarget "Development" */;
@@ -670,6 +739,11 @@
 				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Cloudspace;
+				TargetAttributes = {
+					9D7927C218DA279B00E1D3E1 = {
+						TestTargetID = 9DAC16C31709D48E00383722;
+					};
+				};
 			};
 			buildConfigurationList = 9DAC16BF1709D48E00383722 /* Build configuration list for PBXProject "EasyReader" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -686,6 +760,7 @@
 				9DAC16C31709D48E00383722 /* Development */,
 				9D79270818DA1D0300E1D3E1 /* Staging */,
 				9D79274C18DA1D3800E1D3E1 /* Production */,
+				9D7927C218DA279B00E1D3E1 /* EasyReader-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -762,6 +837,14 @@
 				9D79278618DA1D3800E1D3E1 /* Default-Portrait@2x~ipad.png in Resources */,
 				9D79278718DA1D3800E1D3E1 /* Default-Landscape~ipad.png in Resources */,
 				9D79278818DA1D3800E1D3E1 /* Default-Landscape@2x~ipad.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D7927C118DA279B00E1D3E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D7927CC18DA279B00E1D3E1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,6 +1027,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9D7927BF18DA279B00E1D3E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D7927CE18DA279B00E1D3E1 /* EasyReader_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DAC16C01709D48E00383722 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -972,6 +1063,25 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9D7927D118DA279B00E1D3E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DAC16C31709D48E00383722 /* Development */;
+			targetProxy = 9D7927D018DA279B00E1D3E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9D7927CA18DA279B00E1D3E1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D7927CB18DA279B00E1D3E1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		9D79274818DA1D0300E1D3E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -982,6 +1092,11 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"STAGING=1",
+				);
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Staging;
@@ -1017,6 +1132,11 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"PRODUCTION=1",
+				);
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Production-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Easy Reader";
@@ -1040,6 +1160,68 @@
 				PROVISIONING_PROFILE = "E41143CF-D6B6-4CE1-8493-853B58EB0910";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9D7927D318DA279B00E1D3E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Development.app/Development";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyReader-Tests/EasyReader-Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"TEST=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "EasyReader-Tests/EasyReader-Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9D7927D418DA279B00E1D3E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Development.app/Development";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyReader-Tests/EasyReader-Tests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "EasyReader-Tests/EasyReader-Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -1157,6 +1339,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		9D7927D218DA279B00E1D3E1 /* Build configuration list for PBXNativeTarget "EasyReader-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D7927D318DA279B00E1D3E1 /* Debug */,
+				9D7927D418DA279B00E1D3E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		9DAC16BF1709D48E00383722 /* Build configuration list for PBXProject "EasyReader" */ = {
 			isa = XCConfigurationList;

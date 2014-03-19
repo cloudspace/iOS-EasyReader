@@ -1,5 +1,7 @@
 platform :ios, '7.0'
 
+link_with ['Development', 'Staging', 'E', 'uwithus-production', 'uwithus-staging']
+
 # Hide cocoapods project warnings
 inhibit_all_warnings!
 
