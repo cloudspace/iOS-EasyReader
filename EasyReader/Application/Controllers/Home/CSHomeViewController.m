@@ -160,9 +160,9 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
     // If we are scrolling in the collectionView only
     if([sender isMemberOfClass:[CSFeedItemCollectionView class]]) {
-        
         // unload the webView if we have moved to a new feedItem
         if(currentFeedItem != self.collectionView_feedItems.currentFeedItem){
+            currentFeedItem = self.collectionView_feedItems.currentFeedItem;
             [self.feedItemWebView loadHTMLString:@"<html><head></head><body></body></html>" baseURL:nil];
         }
     }

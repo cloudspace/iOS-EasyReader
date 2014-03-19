@@ -38,6 +38,18 @@
   return self;
 }
 
+- (void)sortFeedItems
+{
+    NSMutableArray *sortableArray = [NSMutableArray arrayWithArray:[self.feedItems allObjects]];
+    
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"updatedAt"
+                                                 ascending:NO];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray;
+    sortedArray = [sortableArray sortedArrayUsingDescriptors:sortDescriptors];
+}
+
 /**
  * Determines the number of sections in the collection view (in this case it's always 1)
  *
