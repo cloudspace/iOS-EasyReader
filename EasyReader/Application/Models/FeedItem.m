@@ -34,14 +34,11 @@
   return feed.name;
 }
 
-- (NSString *)timeAgo
-{
-    return [self.updatedAt timeAgo];
-}
-
 - (NSString *)headline
 {
-    return[NSString stringWithFormat:@"%@ \u00b7 %@",[self feedName],[self timeAgo]];
+    NSString *timeAgo = [self.updatedAt timeAgo];
+    
+    return[NSString stringWithFormat:@"%@ \u00b7 %@", self.feed.name, timeAgo];
 }
 
 + (void) requestFeedItemsFromFeeds:(NSSet  *)feeds
