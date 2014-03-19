@@ -25,6 +25,9 @@
 /// The users feeds
 @property (nonatomic, retain) NSSet *feeds;
 
+/// The items in a users feeds
+@property (nonatomic, readonly) NSSet *feedItems;
+
 
 #pragma mark - Methods
 

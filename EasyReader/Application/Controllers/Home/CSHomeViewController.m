@@ -98,8 +98,13 @@
 
 - (void)setUpCollectionView
 {
-    NSArray *feedItems = [FeedItem MR_findAll]; 
-    
+//    User *current = [User current];
+//    
+//    NSSet *feedItems = current.feedItems;
+
+    NSArray *feedItems = [FeedItem MR_findAll];
+    FeedItem *first = feedItems[0];
+    NSLog(@"%@", first.name);
     feedCollectionViewDataSource =
         [[CSFeedItemCollectionViewDataSource alloc] initWithFeedItems:feedItems
                                          reusableCellIdentifier:@"feedItemCell"
