@@ -28,10 +28,13 @@
 #import "CSMenuUserFeedDataSource.h"
 #import "CSMenuSearchFeedDataSource.h"
 
+#import "CSFeedSearcher.h"
+
 @interface CSMenuLeftViewController ()
 {
     CSMenuUserFeedDataSource *userFeedDataSource;
     CSMenuSearchFeedDataSource *searchFeedDataSource;
+    CSFeedSearcher *feedSearcher;
 }
 
 @end
@@ -46,9 +49,11 @@
   [super viewDidLoad];
   self.currentUser = [User current];
   self.feeds = [[NSMutableSet alloc] init];
-  self.usersFeeds = [[NSMutableSet alloc] init];
   [self setUpDataSources];
   
+  // Setup feedSearch API
+  feedSearcher = [[CSFeedSearcher alloc] init];
+    
   // Set tableViewStyle
   CSEnhancedTableViewStyle *tableViewStyle = [[CSEnhancedTableViewStyleDark alloc] init];
   self.tableView_feeds.tableViewStyle = tableViewStyle;
@@ -70,13 +75,15 @@
                   [removedFeeds removeObjectsInArray:[new allObjects]];
                   
                   for ( Feed *feed in removedFeeds ){
-                    [[self usersFeeds] removeObject:feed];
+                    [[self feeds] removeObject:feed];
                   }
                   
                   for ( Feed *feed in addedFeeds ){
-                    [[self usersFeeds] addObject:feed];
+                    [[self feeds] addObject:feed];
                   }
-                  self.feeds = self.usersFeeds;
+                  self.tableView_feeds.dataSource = userFeedDataSource;
+                  [userFeedDataSource updateWithFeeds:self.feeds];
+                    
                   [self.tableView_feeds reloadData];
                 }
              insertionBlock:nil
@@ -93,8 +100,6 @@
     
     [userFeedDataSource updateWithFeeds:self.feeds];
     self.tableView_feeds.dataSource = userFeedDataSource;
-    
-    self.searchingFeeds = NO;
 }
 
 - (void)setUpDataSources
@@ -124,6 +129,8 @@
         weakSelf.textField_searchInput.text = @"";
         [weakSelf.tableView_feeds setEditing:NO animated:YES];
         weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
+        weakSelf.tableView_feeds.dataSource = userFeedDataSource;
+        [weakSelf.tableView_feeds reloadData];
         break;
     }
 }
@@ -131,26 +138,29 @@
 - (void)searchFieldDidChange
 {
     if(self.textField_searchInput.text && self.textField_searchInput.text.length > 0){
-        [searchFeedDataSource updateWithFeeds:self.feeds];
-        self.tableView_feeds.dataSource = searchFeedDataSource;
-        [self.tableView_feeds reloadData];
-        
         NSMutableSet *searchedFeeds = [[NSMutableSet alloc] init];
+        [searchFeedDataSource updateWithFeeds:searchedFeeds];
+        self.tableView_feeds.dataSource = searchFeedDataSource;
+        
         if([self.textField_searchInput.text hasPrefix:@"http"]){
-            NSLog(@"ADDING A URL");
+            // Get the local context
+            NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
+            
+            // Create a new Feed in the current thread context
+            Feed *customFeed = [Feed MR_createInContext:localContext];
+            customFeed.name = self.textField_searchInput.text;
+            customFeed.url = self.textField_searchInput.text;
+
+            [searchedFeeds addObject:customFeed];
         }
         else{
-             NSLog(@"SEARCHING");
+            [feedSearcher feedsLike:self.textField_searchInput.text];
         }
-        
-        self.feeds = searchedFeeds;
+
         [self.tableView_feeds reloadData];
     }
     else{
         self.tableView_feeds.dataSource = userFeedDataSource;
-        [self.tableView_feeds reloadData];
-
-        self.feeds = self.usersFeeds;
         [self.tableView_feeds reloadData];
     }
 }
@@ -178,8 +188,6 @@
   } else {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
   }
-  
-  //[self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
 }
 
 @end

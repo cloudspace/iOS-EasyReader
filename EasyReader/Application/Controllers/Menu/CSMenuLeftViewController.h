@@ -21,9 +21,6 @@
 
 #pragma mark - Properties
 @property (nonatomic, retain) NSMutableSet *feeds;
-@property (nonatomic, retain) NSMutableSet *usersFeeds;
 @property (nonatomic, retain) User *currentUser;
-@property (nonatomic) BOOL searchingFeeds;
-
 
 @end

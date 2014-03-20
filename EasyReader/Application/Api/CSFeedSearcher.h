@@ -10,4 +10,6 @@
 
 @interface CSFeedSearcher : NSObject
 
+- (void)feedsLike:(NSString *)name;
+
 @end
