@@ -13,6 +13,22 @@
 @implementation User
 
 @dynamic feeds;
+@dynamic feedItems;
+
+/**
+ * Gathers all the items in a users feeds
+ */
+- (NSSet *)feedItems
+{
+    NSMutableSet *feedItems = [[NSMutableSet alloc] init];
+
+    for (Feed *feed in self.feeds)
+    {
+        [feedItems setByAddingObjectsFromSet:feed.feedItems];
+    }
+    
+    return feedItems;
+}
 
 /**
  * Returns the current user.

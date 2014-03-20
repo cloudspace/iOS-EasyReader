@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *verticalScrollView;
 @property (strong, nonatomic) IBOutlet UIButton *button_leftMenu;
 @property (nonatomic, strong) UIWebView *feedItemWebView;
-@property (nonatomic, strong) NSMutableArray *feedItems;
+@property (nonatomic, strong) NSSet *feedItems;
 @property User* currentUser;
 
 @end

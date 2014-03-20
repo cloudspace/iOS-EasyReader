@@ -19,6 +19,7 @@
 @interface CSHomeViewController (){
     CSFeedItemCollectionViewDataSource *feedCollectionViewDataSource;
     FeedItem *currentFeedItem;
+    NSString *currentURL;
 }
 
 /// The collection view which holds the individual feed items
@@ -80,8 +81,11 @@
                                           }
                                           
                                           //redraw the collection with the changes to the feed items
+                                          [feedCollectionViewDataSource sortFeedItems];
                                           [_collectionView_feedItems reloadData];
-                                          
+                                          if(currentFeedItem){
+                                            [self scrollToCurrentFeedItem];
+                                          }
                                         }
                                      insertionBlock:nil
                                        removalBlock:nil
@@ -98,8 +102,9 @@
 
 - (void)setUpCollectionView
 {
-    NSArray *feedItems = [FeedItem MR_findAll]; 
-    
+    User *current = [User current];
+    NSSet *feedItems = current.feedItems;
+
     feedCollectionViewDataSource =
         [[CSFeedItemCollectionViewDataSource alloc] initWithFeedItems:feedItems
                                          reusableCellIdentifier:@"feedItemCell"
@@ -160,23 +165,31 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
     // If we are scrolling in the collectionView only
     if([sender isMemberOfClass:[CSFeedItemCollectionView class]]) {
-        
         // unload the webView if we have moved to a new feedItem
         if(currentFeedItem != self.collectionView_feedItems.currentFeedItem){
+            currentFeedItem = self.collectionView_feedItems.currentFeedItem;
             [self.feedItemWebView loadHTMLString:@"<html><head></head><body></body></html>" baseURL:nil];
         }
     }
 }
 
+// Scroll to the currentFeedItem when the feedItems update
+- (void)scrollToCurrentFeedItem
+{
+    NSUInteger index = [feedCollectionViewDataSource.sortedFeedItems indexOfObject:currentFeedItem];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    [_collectionView_feedItems scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+}
+
 -(void)loadFeedItemWebView
 {
     // Check if this is a new url
-    if(currentFeedItem != self.collectionView_feedItems.currentFeedItem){
+    if(currentURL != self.collectionView_feedItems.currentFeedItem.url){
         // update the current url
-        currentFeedItem = self.collectionView_feedItems.currentFeedItem;
+        currentURL = self.collectionView_feedItems.currentFeedItem.url;
         
         // load the url in the webView
-        NSURL *url = [NSURL URLWithString:self.collectionView_feedItems.currentFeedItem.url];
+        NSURL *url = [NSURL URLWithString:currentURL];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
         [self.feedItemWebView loadRequest:requestObj];
     }

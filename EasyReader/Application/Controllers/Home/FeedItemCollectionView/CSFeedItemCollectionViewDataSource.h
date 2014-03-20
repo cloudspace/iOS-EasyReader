@@ -23,11 +23,14 @@ typedef void (^configureFeedItemCell)(CSFeedItemCell *, FeedItem *);
  * @param The identifier to use to dequeue reusable cells for the collection view
  * @param configureFeedItemCell A block which will configure the cell based on the given FeedItem
  */
-- (id)initWithFeedItems:(NSArray *)feedItems
+- (id)initWithFeedItems:(NSSet *)feedItems
  reusableCellIdentifier:(NSString *)reusableCellIdentifier
          configureBlock:(configureFeedItemCell)configureFeedItemCell;
 
+- (void)sortFeedItems;
+
 /// The FeedItems for this data source
 @property (nonatomic, strong) NSMutableSet *feedItems;
+@property (nonatomic, strong) NSArray *sortedFeedItems;
 
 @end
