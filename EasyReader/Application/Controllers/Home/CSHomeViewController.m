@@ -47,62 +47,65 @@
 
 - (void) setupFeedItemObserver
 {
-    _currentUser = [User current];
-    [self observeRelationship:@keypath(self.currentUser.feeds)
-                  changeBlock:^(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
-                      NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
-                      NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
-                          
-                      [addedFeeds removeObjectsInArray:[old allObjects]];
-                      [removedFeeds removeObjectsInArray:[new allObjects]];
-                      
-                      for ( Feed *feed in removedFeeds ){
-                          [feed removeAllObservations];
-                      }
-                      
-                      for ( Feed *feed in addedFeeds ){
-                          [feed observeRelationship:@"feedItems"
-                                        changeBlock:^(__weak Feed *feed, NSSet *old, NSSet *new) {
+  _currentUser = [User current];
+
+  [self observeRelationship:@keypath(self.currentUser.feeds)
+                changeBlock:^(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
+                    NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
+                    NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
+                        
+                    [addedFeeds removeObjectsInArray:[old allObjects]];
+                    [removedFeeds removeObjectsInArray:[new allObjects]];
+                    
+                    for ( Feed *feed in removedFeeds ){
+                        [feed removeAllObservations];
+                    }
+                    
+                    for ( Feed *feed in addedFeeds ){
+                        [feed observeRelationship:@"feedItems"
+                                      changeBlock:^(__weak Feed *feed, NSSet *old, NSSet *new) {
+                                        
+                                        _feedItems = [(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems];
+                                        
+                                        if(!new) {
+                                          NSLog(@"startup?");
+                                        } else {
+                                          NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
+                                          NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
                                           
-                                          _feedItems = [(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems];
+                                          [addedFeedItems removeObjectsInArray:[old allObjects]];
+                                          [removedFeedItems removeObjectsInArray:[new allObjects]];
                                           
-                                          if(!new) {
-                                            NSLog(@"startup?");
-                                          } else {
-                                            NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
-                                            NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
-                                            
-                                            [addedFeedItems removeObjectsInArray:[old allObjects]];
-                                            [removedFeedItems removeObjectsInArray:[new allObjects]];
-                                            
-                                            for( FeedItem *item in removedFeedItems ){
-                                              [_feedItems removeObject:item];
-                                            }
-                                            
-                                            for( FeedItem *item in addedFeedItems ){
-                                              [_feedItems addObject:item];
-                                            }
+                                          for( FeedItem *item in removedFeedItems ){
+                                            [_feedItems removeObject:item];
                                           }
                                           
-                                          //redraw the collection with the changes to the feed items
-                                          [feedCollectionViewDataSource sortFeedItems];
-                                          [_collectionView_feedItems reloadData];
-                                          _pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
-                                          
-                                          if(currentFeedItem){
-                                            [self scrollToCurrentFeedItem];
-                                            [self setPageControllerPageAtIndex:[feedCollectionViewDataSource.sortedFeedItems indexOfObject:currentFeedItem]];
+                                          for( FeedItem *item in addedFeedItems ){
+                                            [_feedItems addObject:item];
                                           }
+                                          
+                                          //Add call to button on custom page controller
                                         }
-                                     insertionBlock:nil
-                                       removalBlock:nil
-                                   replacementBlock:nil];
-                      }
-                  }
-               insertionBlock:nil
-                 removalBlock:nil
-             replacementBlock:nil
-     ];
+                                        
+                                        //redraw the collection with the changes to the feed items
+                                        [feedCollectionViewDataSource sortFeedItems];
+                                        [_collectionView_feedItems reloadData];
+                                        _pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
+                                        
+                                        if(currentFeedItem){
+                                          [self scrollToCurrentFeedItem];
+                                          [self setPageControllerPageAtIndex:[feedCollectionViewDataSource.sortedFeedItems indexOfObject:currentFeedItem]];
+                                        }
+                                      }
+                                   insertionBlock:nil
+                                     removalBlock:nil
+                                 replacementBlock:nil];
+                    }
+                }
+             insertionBlock:nil
+               removalBlock:nil
+           replacementBlock:nil
+   ];
 }
 
 // Sets up collection view on controller start up
@@ -121,8 +124,50 @@
   
   self.collectionView_feedItems.pagingEnabled = YES;
   self.pageControl_itemIndicator.currentPage = 0;
+  
+  UIButton *dot = [UIButton buttonWithType:UIButtonTypeInfoLight];
+  dot.frame = CGRectMake(10,(self.pageControl_itemIndicator.frame.size.height/2)-5, 12, 12);
+  
+  UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(newItemButton:)];
+  [dot addGestureRecognizer:singleTap];
+  
+  UIView *leftFade = [[UIView alloc] init];
+  leftFade.frame = CGRectMake(90, 10, 70, 20);
+  leftFade.backgroundColor = [UIColor blackColor];
+  
+  CAGradientLayer *leftLayer = [CAGradientLayer layer];
+  leftLayer.frame = leftFade.bounds;
+  leftLayer.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor, (id)[UIColor clearColor].CGColor, nil];
+  leftLayer.startPoint = CGPointMake(0.0f, 1.0f);
+  leftLayer.endPoint = CGPointMake(1.0f, 1.0f);
+  leftFade.layer.mask = leftLayer;
+  
+  UIView *rightFade = [[UIView alloc] init];
+  rightFade.frame = CGRectMake(160, 10, 70, 20);
+  rightFade.backgroundColor = [UIColor blackColor];
+  
+  CAGradientLayer *rightLayer = [CAGradientLayer layer];
+  rightLayer.frame = rightFade.bounds;
+  rightLayer.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor, (id)[UIColor clearColor].CGColor, nil];
+  rightLayer.startPoint = CGPointMake(1.0f, 1.0f);
+  rightLayer.endPoint = CGPointMake(0.0f, 1.0f);
+  rightFade.layer.mask = rightLayer;
+  
+  
+  [self.pageControl_itemIndicator addSubview:dot];
+  UIView *pageControllerMask = [self.pageControl_itemIndicator superview];
+  [pageControllerMask addSubview:leftFade];
+  [pageControllerMask addSubview:rightFade];
 }
 
+-(void)newItemButton:(id)sender
+{
+  currentFeedItem = [feedCollectionViewDataSource.sortedFeedItems firstObject];
+  [self scrollToCurrentFeedItem];
+  self.collectionCellGoingTo = 0;
+  [self setPageControllerPageAtIndex:[feedCollectionViewDataSource.sortedFeedItems indexOfObject:currentFeedItem]];
+  [sender setHidden:YES];
+}
 
 #pragma mark - IBActions
 
