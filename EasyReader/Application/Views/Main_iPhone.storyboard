@@ -216,7 +216,7 @@
                                             <outlet property="label_name" destination="5ZZ-QY-D11" id="oK3-gx-5rG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchFeedCell" id="Vg0-Ic-Bi4">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CSEnhancedTableViewCell-SearchFeedCell" id="Vg0-Ic-Bi4">
                                         <rect key="frame" x="0.0" y="126" width="270" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vg0-Ic-Bi4" id="7zu-BD-50m">

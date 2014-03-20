@@ -11,6 +11,7 @@
 		0D7987A218DB6AE4004440C3 /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
 		0D7987A518DB6AF4004440C3 /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		0D7987A818DB8328004440C3 /* CSMenuUserFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A718DB8328004440C3 /* CSMenuUserFeedDataSource.m */; };
+		0D7987AB18DB8B9D004440C3 /* CSMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AA18DB8B9D004440C3 /* CSMenuSearchFeedDataSource.m */; };
 		0D8FF1A918D0D8C0005155E6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */; };
 		0D8FF1AB18D0DA3F005155E6 /* control_dualEntryTextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */; };
 		0DE51FF418CF911000454E51 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
@@ -227,6 +228,8 @@
 		0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSearchFeedCell.m; sourceTree = "<group>"; };
 		0D7987A618DB8328004440C3 /* CSMenuUserFeedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMenuUserFeedDataSource.h; path = Menu/CSMenuUserFeedDataSource.h; sourceTree = "<group>"; };
 		0D7987A718DB8328004440C3 /* CSMenuUserFeedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMenuUserFeedDataSource.m; path = Menu/CSMenuUserFeedDataSource.m; sourceTree = "<group>"; };
+		0D7987A918DB8B9D004440C3 /* CSMenuSearchFeedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMenuSearchFeedDataSource.h; path = Menu/CSMenuSearchFeedDataSource.h; sourceTree = "<group>"; };
+		0D7987AA18DB8B9D004440C3 /* CSMenuSearchFeedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMenuSearchFeedDataSource.m; path = Menu/CSMenuSearchFeedDataSource.m; sourceTree = "<group>"; };
 		0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "control_dualEntryTextField@2x.png"; sourceTree = "<group>"; };
 		0DE51FE318CF8BDE00454E51 /* api_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = api_v2.xcdatamodel; sourceTree = "<group>"; };
@@ -522,6 +525,8 @@
 				0D79879F18DB6ABC004440C3 /* MenuCells */,
 				0D7987A618DB8328004440C3 /* CSMenuUserFeedDataSource.h */,
 				0D7987A718DB8328004440C3 /* CSMenuUserFeedDataSource.m */,
+				0D7987A918DB8B9D004440C3 /* CSMenuSearchFeedDataSource.h */,
+				0D7987AA18DB8B9D004440C3 /* CSMenuSearchFeedDataSource.m */,
 				9D42976E170E164D00E73BFE /* CSMenuLeftViewController.h */,
 				9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */,
 			);
@@ -1187,6 +1192,7 @@
 				2751F4E418DA0D3000339C96 /* CSFeedItemCollectionView.m in Sources */,
 				2751F4D718DA02C100339C96 /* NSObject+CSReflectionAdditions.m in Sources */,
 				8E7F81F018D0BF8500BC50C2 /* CSBaseObject.m in Sources */,
+				0D7987AB18DB8B9D004440C3 /* CSMenuSearchFeedDataSource.m in Sources */,
 				2751F4E318DA0D3000339C96 /* CSFeedItemCell.m in Sources */,
 				0D7987A818DB8328004440C3 /* CSMenuUserFeedDataSource.m in Sources */,
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,

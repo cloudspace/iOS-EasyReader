@@ -26,10 +26,12 @@
 #import "CSEnhancedTableViewStyleDark.h"
 
 #import "CSMenuUserFeedDataSource.h"
+#import "CSMenuSearchFeedDataSource.h"
 
 @interface CSMenuLeftViewController ()
 {
     CSMenuUserFeedDataSource *userFeedDataSource;
+    CSMenuSearchFeedDataSource *searchFeedDataSource;
 }
 
 @end
@@ -88,8 +90,9 @@
                                              object:nil];
 
     self.tableView_feeds.delegate = self;
-    self.tableView_feeds.dataSource = userFeedDataSource;
+    
     [userFeedDataSource updateWithFeeds:self.feeds];
+    self.tableView_feeds.dataSource = userFeedDataSource;
     
     self.searchingFeeds = NO;
 }
@@ -97,6 +100,7 @@
 - (void)setUpDataSources
 {
     userFeedDataSource = [[CSMenuUserFeedDataSource alloc] init];
+    searchFeedDataSource = [[CSMenuSearchFeedDataSource alloc] init];
 }
 
 - (void)menuStateEventOccurred:(NSNotification *)notification {
@@ -127,7 +131,9 @@
 - (void)searchFieldDidChange
 {
     if(self.textField_searchInput.text && self.textField_searchInput.text.length > 0){
-        self.searchingFeeds = YES;
+        self.tableView_feeds.dataSource = searchFeedDataSource;
+        [self.tableView_feeds reloadData];
+        
         NSMutableSet *searchedFeeds = [[NSMutableSet alloc] init];
         if([self.textField_searchInput.text hasPrefix:@"http"]){
             NSLog(@"ADDING A URL");
@@ -140,7 +146,9 @@
         [self.tableView_feeds reloadData];
     }
     else{
-        self.searchingFeeds = NO;
+        self.tableView_feeds.dataSource = userFeedDataSource;
+        [self.tableView_feeds reloadData];
+
         self.feeds = self.usersFeeds;
         [self.tableView_feeds reloadData];
     }

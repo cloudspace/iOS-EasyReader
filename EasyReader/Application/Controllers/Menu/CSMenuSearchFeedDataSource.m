@@ -1,17 +1,18 @@
 //
-//  CSMenuUserFeedDataSource.m
+//  CSMenuSearchFeedDataSource.m
 //  EasyReader
 //
 //  Created by Michael Beattie on 3/20/14.
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSMenuUserFeedDataSource.h"
+#import "CSMenuSearchFeedDataSource.h"
 #import "CSUserFeedCell.h"
 #import "Feed.h"
 #import "UIImageView+AFNetworking.h"
 
-@implementation CSMenuUserFeedDataSource
+@implementation CSMenuSearchFeedDataSource
+
 
 /**
  * Sets each instance variable to the values in the given parameters
@@ -69,7 +70,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Dequeue a styled cell
-    CSUserFeedCell *cell = (CSUserFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"UserFeedCell"];
+    CSUserFeedCell *cell = (CSUserFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
     
     Feed *feed = [self.feeds allObjects][indexPath.row];
     
