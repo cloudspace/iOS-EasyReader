@@ -11,7 +11,7 @@
 
 @class Feed, User, CSEnhancedTableView;
 
-@interface CSMenuLeftViewController : CSBaseViewController
+@interface CSMenuLeftViewController : CSBaseViewController<UITableViewDelegate>
 
 
 #pragma mark - IBOutlet Properties
@@ -21,7 +21,9 @@
 
 #pragma mark - Properties
 @property (nonatomic, retain) NSMutableSet *feeds;
+@property (nonatomic, retain) NSMutableSet *usersFeeds;
 @property (nonatomic, retain) User *currentUser;
+@property (nonatomic) BOOL searchingFeeds;
 
 
 @end
