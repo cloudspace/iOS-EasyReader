@@ -131,6 +131,7 @@
 - (void)searchFieldDidChange
 {
     if(self.textField_searchInput.text && self.textField_searchInput.text.length > 0){
+        [searchFeedDataSource updateWithFeeds:self.feeds];
         self.tableView_feeds.dataSource = searchFeedDataSource;
         [self.tableView_feeds reloadData];
         

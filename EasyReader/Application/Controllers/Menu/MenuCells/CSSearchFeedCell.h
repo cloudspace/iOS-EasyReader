@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSEnhancedTableViewCell.h"
 
-@interface CSSearchFeedCell : UITableViewCell
+@interface CSSearchFeedCell : CSEnhancedTableViewCell
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon;
+@property (weak, nonatomic) IBOutlet UILabel *label_name;
 
 @end
