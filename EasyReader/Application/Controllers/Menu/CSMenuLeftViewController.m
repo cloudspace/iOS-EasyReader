@@ -11,8 +11,10 @@
 
 #import "UIImageView+AFNetworking.h"
 
-#import "Feed.h"
+
 #import "User.h"
+#import "Feed.h"
+#import "FeedItem.h"
 #import "CSAppDelegate.h"
 #import "CSRootViewController.h"
 #import "MFSideMenu.h"
@@ -97,7 +99,7 @@
       case MFSideMenuStateEventMenuDidClose:
         
         [weakSelf.tableView_feeds setEditing:NO animated:YES];
-        weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
+        weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeNone;
         break;
     }
 }
@@ -118,7 +120,7 @@
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return [_feeds count] + 1;
+  return [_feeds count];// + 1;
 }
 
 
@@ -214,6 +216,8 @@
                                             currentCell.imageView.image = image;
                                           }failure:nil
      ];
+    
+    //[cell setUserInteractionEnabled:NO];
   }
 
   return cell;
@@ -247,8 +251,11 @@
   {
     Feed *toDelete = [self.feeds allObjects][indexPath.row];
     
-    [toDelete deleteEntity];
+    [self.feeds removeObject:toDelete];
+    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     
+    for( FeedItem *item in toDelete.feedItems ) [item deleteEntity];
+    [toDelete deleteEntity];
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
   }
 }
@@ -258,12 +265,7 @@
  */
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  if (!tableView.isEditing)
-  {
-    return UITableViewCellEditingStyleNone;
-  }
-  
-  if (indexPath.section == 0 && indexPath.row == [self tableView:self.tableView_feeds numberOfRowsInSection:0] - 1)
+  if ( indexPath.row == [_feeds count] )
   {
     return UITableViewCellEditingStyleInsert;
   }
