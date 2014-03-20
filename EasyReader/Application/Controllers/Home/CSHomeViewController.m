@@ -32,11 +32,12 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    [self setUpCollectionView];
-    [self setUpWebView];
-    [self setupFeedItemObserver];
-    // Do any additional setup after loading the view.
+  _feedItems = [[NSMutableSet alloc] init];
+  [super viewDidLoad];
+  [self setUpCollectionView];
+  [self setUpWebView];
+  [self setupFeedItemObserver];
+  // Do any additional setup after loading the view.
 }
 
 - (void)viewDidLayoutSubviews
@@ -62,6 +63,9 @@
                       for ( Feed *feed in addedFeeds ){
                           [feed observeRelationship:@"feedItems"
                                         changeBlock:^(__weak Feed *feed, NSSet *old, NSSet *new) {
+                                          
+                                          _feedItems = [(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems];
+                                          
                                           if(!new) {
                                             NSLog(@"startup?");
                                           } else {
@@ -72,27 +76,28 @@
                                             [removedFeedItems removeObjectsInArray:[new allObjects]];
                                             
                                             for( FeedItem *item in removedFeedItems ){
-                                              [[(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems] removeObject:item];
+                                              [_feedItems removeObject:item];
                                             }
                                             
                                             for( FeedItem *item in addedFeedItems ){
-                                              [[(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems] addObject:item];
+                                              [_feedItems addObject:item];
                                             }
                                           }
                                           
                                           //redraw the collection with the changes to the feed items
                                           [feedCollectionViewDataSource sortFeedItems];
                                           [_collectionView_feedItems reloadData];
+                                          _pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
+                                          
                                           if(currentFeedItem){
                                             [self scrollToCurrentFeedItem];
+                                            [self setPageControllerPageAtIndex:[feedCollectionViewDataSource.sortedFeedItems indexOfObject:currentFeedItem]];
                                           }
                                         }
                                      insertionBlock:nil
                                        removalBlock:nil
                                    replacementBlock:nil];
                       }
-                      
-                      //properties:@[@"title", @"summary", @"updatedAt", @"publishedAt", @"createdAt", @"image", @"url"]
                   }
                insertionBlock:nil
                  removalBlock:nil
@@ -100,18 +105,22 @@
      ];
 }
 
+// Sets up collection view on controller start up
 - (void)setUpCollectionView
 {
-    User *current = [User current];
-    NSSet *feedItems = current.feedItems;
+  User *current = [User current];
+  NSSet *feedItems = current.feedItems;
 
-    feedCollectionViewDataSource =
-        [[CSFeedItemCollectionViewDataSource alloc] initWithFeedItems:feedItems
-                                         reusableCellIdentifier:@"feedItemCell"
-                                                 configureBlock:[self configureFeedItem]];
-    
-    self.collectionView_feedItems.dataSource = feedCollectionViewDataSource;
-    self.collectionView_feedItems.delegate = self;
+  feedCollectionViewDataSource =
+      [[CSFeedItemCollectionViewDataSource alloc] initWithFeedItems:feedItems
+                                       reusableCellIdentifier:@"feedItemCell"
+                                               configureBlock:[self configureFeedItem]];
+  
+  self.collectionView_feedItems.dataSource = feedCollectionViewDataSource;
+  self.collectionView_feedItems.delegate = self;
+  
+  self.collectionView_feedItems.pagingEnabled = YES;
+  self.pageControl_itemIndicator.currentPage = 0;
 }
 
 
@@ -181,7 +190,29 @@
     [_collectionView_feedItems scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
 
--(void)loadFeedItemWebView
+
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
+{
+  int newIndex = indexPath.row+((indexPath.row-self.collectionCellGoingTo)*-1);
+  [self setPageControllerPageAtIndex:newIndex];
+}
+
+- (void)setPageControllerPageAtIndex:(int)index
+{
+  if ([_feedItems count] < 6){
+    _pageControl_itemIndicator.currentPage = index;
+  } else {
+    if( index < 3 ){
+      _pageControl_itemIndicator.currentPage = index;
+    } else if(index > ([_feedItems count]-3) ){
+      _pageControl_itemIndicator.currentPage = 5-([_feedItems count]-index);
+    } else {
+      _pageControl_itemIndicator.currentPage = 2;
+    }
+  }
+}
+
+- (void)loadFeedItemWebView
 {
     // Check if this is a new url
     if(currentURL != self.collectionView_feedItems.currentFeedItem.url){

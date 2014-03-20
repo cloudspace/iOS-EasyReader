@@ -132,7 +132,7 @@
                                             <action selector="buttonLeftMenu_touchUpInside_goToMenu:" destination="Hgn-0q-Z1W" eventType="touchUpInside" id="hMD-Og-FDZ"/>
                                         </connections>
                                     </button>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vdW-Yb-aAb">
+                                    <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="vdW-Yb-aAb">
                                         <rect key="frame" x="0.0" y="531" width="320" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -152,6 +152,7 @@
                     <connections>
                         <outlet property="button_leftMenu" destination="wb1-Na-kaO" id="0oK-RY-cyj"/>
                         <outlet property="collectionView_feedItems" destination="xvT-99-V3u" id="kb5-it-zd3"/>
+                        <outlet property="pageControl_itemIndicator" destination="vdW-Yb-aAb" id="8X6-MF-OZ3"/>
                         <outlet property="verticalScrollView" destination="EWA-9Z-pb1" id="yj7-Ir-WAm"/>
                     </connections>
                 </viewController>
