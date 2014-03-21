@@ -149,17 +149,21 @@
                         @"created_at": @"2014-03-05T22:32:41+00:00",
                         @"updated_at": @"2014-03-05T22:32:41+00:00",
                         @"published_at": @"2014-03-04T19:52:21+00:00"}, nil];
-    
-    NSRange subarrayRange;
-    if ( !self.requestCounter ) self.requestCounter = 1;
-    if ( self.requestCounter == 1 ){
-        subarrayRange = NSMakeRange(0,4);
-    } else {
-        subarrayRange = NSMakeRange(self.requestCounter*2,2);
-    }
-    self.requestCounter++;
-    
-    return @{@"feed_items": [items subarrayWithRange:subarrayRange]};
+  
+  NSRange subarrayRange;
+  if ( !self.requestCounter ) self.requestCounter = 1;
+  if ( self.requestCounter == 1 ){
+    subarrayRange = NSMakeRange(0,4);
+  } else {
+      if( self.requestCounter*2 < [items count]){
+          subarrayRange = NSMakeRange(self.requestCounter*2,2);
+      } else {
+          subarrayRange = NSMakeRange(8,2);
+      }
+  }
+  self.requestCounter++;
+  
+  return @{@"feed_items": [items subarrayWithRange:subarrayRange]};
 }
 
 

@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
 
-@class Feed, User, CSEnhancedTableView;
+@class User, CSEnhancedTableView;
 
-@interface CSMenuLeftViewController : CSBaseViewController
+@interface CSMenuLeftViewController : CSBaseViewController<UITableViewDelegate>
 
 
 #pragma mark - IBOutlet Properties
@@ -22,6 +22,5 @@
 #pragma mark - Properties
 @property (nonatomic, retain) NSMutableSet *feeds;
 @property (nonatomic, retain) User *currentUser;
-
 
 @end

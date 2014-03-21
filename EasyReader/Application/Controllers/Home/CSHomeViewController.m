@@ -17,9 +17,7 @@
 #import "User.h"
 
 @interface CSHomeViewController (){
-    CSFeedItemCollectionViewDataSource *feedCollectionViewDataSource;
-    FeedItem *currentFeedItem;
-    NSString *currentURL;
+  NSString *currentURL;
 }
 
 /// The collection view which holds the individual feed items
@@ -32,11 +30,14 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    [self setUpCollectionView];
-    [self setUpWebView];
-    [self setupFeedItemObserver];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+  _feedItems = [[NSMutableSet alloc] init];
+  [_pageControl_itemIndicator setUpFadesOnView:[_pageControl_itemIndicator superview]];
+  _pageControl_itemIndicator.controller_owner = self;
+  [self setUpCollectionView];
+  [self setUpWebView];
+  [self setupFeedItemObserver];
+  // Do any additional setup after loading the view.
 }
 
 - (void)viewDidLayoutSubviews
@@ -46,74 +47,87 @@
 
 - (void) setupFeedItemObserver
 {
-    _currentUser = [User current];
-    [self observeRelationship:@keypath(self.currentUser.feeds)
-                  changeBlock:^(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
-                      NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
-                      NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
-                          
-                      [addedFeeds removeObjectsInArray:[old allObjects]];
-                      [removedFeeds removeObjectsInArray:[new allObjects]];
-                      
-                      for ( Feed *feed in removedFeeds ){
-                          [feed removeAllObservations];
-                      }
-                      
-                      for ( Feed *feed in addedFeeds ){
-                          [feed observeRelationship:@"feedItems"
-                                        changeBlock:^(__weak Feed *feed, NSSet *old, NSSet *new) {
-                                          if(!new) {
-                                            NSLog(@"startup?");
-                                          } else {
-                                            NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
-                                            NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
-                                            
-                                            [addedFeedItems removeObjectsInArray:[old allObjects]];
-                                            [removedFeedItems removeObjectsInArray:[new allObjects]];
-                                            
-                                            for( FeedItem *item in removedFeedItems ){
-                                              [[(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems] removeObject:item];
-                                            }
-                                            
-                                            for( FeedItem *item in addedFeedItems ){
-                                              [[(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems] addObject:item];
-                                            }
+  _currentUser = [User current];
+
+  [self observeRelationship:@keypath(self.currentUser.feeds)
+                changeBlock:^(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
+                    NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
+                    NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
+                        
+                    [addedFeeds removeObjectsInArray:[old allObjects]];
+                    [removedFeeds removeObjectsInArray:[new allObjects]];
+                    
+                    for ( Feed *feed in removedFeeds ){
+                        [feed removeAllObservations];
+                    }
+                    
+                    for ( Feed *feed in addedFeeds ){
+                        [feed observeRelationship:@"feedItems"
+                                      changeBlock:^(__weak Feed *feed, NSSet *old, NSSet *new) {
+                                        
+                                        _feedItems = [(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems];
+                                        
+                                        if(!new) {
+                                          NSLog(@"There are no feeds here");
+                                        } else {
+                                          NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
+                                          NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
+                                          
+                                          [addedFeedItems removeObjectsInArray:[old allObjects]];
+                                          [removedFeedItems removeObjectsInArray:[new allObjects]];
+                                          
+                                          for( FeedItem *item in removedFeedItems ){
+                                            [_feedItems removeObject:item];
                                           }
                                           
-                                          //redraw the collection with the changes to the feed items
-                                          [feedCollectionViewDataSource sortFeedItems];
-                                          [_collectionView_feedItems reloadData];
-                                          if(currentFeedItem){
-                                            [self scrollToCurrentFeedItem];
+                                          for( FeedItem *item in addedFeedItems ){
+                                            [_feedItems addObject:item];
                                           }
+                                          
+                                          [_pageControl_itemIndicator.button_newItem setHidden:NO];
                                         }
-                                     insertionBlock:nil
-                                       removalBlock:nil
-                                   replacementBlock:nil];
-                      }
-                      
-                      //properties:@[@"title", @"summary", @"updatedAt", @"publishedAt", @"createdAt", @"image", @"url"]
-                  }
-               insertionBlock:nil
-                 removalBlock:nil
-             replacementBlock:nil
-     ];
+                                        
+                                        //redraw the collection with the changes to the feed items
+                                        [_feedCollectionViewDataSource sortFeedItems];
+                                        [_collectionView_feedItems reloadData];
+                                        _pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
+                                        
+                                        if(_currentFeedItem){
+                                          [self scrollToCurrentFeedItem];
+                                          [_pageControl_itemIndicator setPageControllerPageAtIndex:[_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem]
+                                                                                     forCollection:_feedItems];
+                                        } else {
+                                          [_pageControl_itemIndicator setPageControllerPageAtIndex:0 forCollection:_feedItems];
+                                        }
+                                      }
+                                   insertionBlock:nil
+                                     removalBlock:nil
+                                 replacementBlock:nil];
+                    }
+                }
+             insertionBlock:nil
+               removalBlock:nil
+           replacementBlock:nil
+   ];
+  NSLog(@"observer added");
 }
 
+// Sets up collection view on controller start up
 - (void)setUpCollectionView
 {
-    User *current = [User current];
-    NSSet *feedItems = current.feedItems;
+  User *current = [User current];
+  NSSet *feedItems = current.feedItems;
 
-    feedCollectionViewDataSource =
-        [[CSFeedItemCollectionViewDataSource alloc] initWithFeedItems:feedItems
-                                         reusableCellIdentifier:@"feedItemCell"
-                                                 configureBlock:[self configureFeedItem]];
-    
-    self.collectionView_feedItems.dataSource = feedCollectionViewDataSource;
-    self.collectionView_feedItems.delegate = self;
+  _feedCollectionViewDataSource =
+      [[CSFeedItemCollectionViewDataSource alloc] initWithFeedItems:feedItems
+                                       reusableCellIdentifier:@"feedItemCell"
+                                               configureBlock:[self configureFeedItem]];
+  
+  self.collectionView_feedItems.dataSource = _feedCollectionViewDataSource;
+  self.collectionView_feedItems.delegate = self;
+  
+  
 }
-
 
 #pragma mark - IBActions
 
@@ -166,8 +180,8 @@
     // If we are scrolling in the collectionView only
     if([sender isMemberOfClass:[CSFeedItemCollectionView class]]) {
         // unload the webView if we have moved to a new feedItem
-        if(currentFeedItem != self.collectionView_feedItems.currentFeedItem){
-            currentFeedItem = self.collectionView_feedItems.currentFeedItem;
+        if(_currentFeedItem != self.collectionView_feedItems.currentFeedItem){
+            _currentFeedItem = self.collectionView_feedItems.currentFeedItem;
             [self.feedItemWebView loadHTMLString:@"<html><head></head><body></body></html>" baseURL:nil];
         }
     }
@@ -176,12 +190,20 @@
 // Scroll to the currentFeedItem when the feedItems update
 - (void)scrollToCurrentFeedItem
 {
-    NSUInteger index = [feedCollectionViewDataSource.sortedFeedItems indexOfObject:currentFeedItem];
+    NSUInteger index = [_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [_collectionView_feedItems scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
 
--(void)loadFeedItemWebView
+
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
+{
+  int newIndex = indexPath.row+((indexPath.row-self.collectionCellGoingTo)*-1);
+  [_pageControl_itemIndicator setPageControllerPageAtIndex:newIndex
+                                             forCollection:_feedItems];
+}
+
+- (void)loadFeedItemWebView
 {
     // Check if this is a new url
     if(currentURL != self.collectionView_feedItems.currentFeedItem.url){

@@ -12,6 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 
 #import "Feed.h"
+#import "FeedItem.h"
 #import "User.h"
 #import "CSAppDelegate.h"
 #import "CSRootViewController.h"
@@ -25,7 +26,17 @@
 #import "CSEnhancedTableViewHeaderFooterView.h"
 #import "CSEnhancedTableViewStyleDark.h"
 
+#import "CSMenuUserFeedDataSource.h"
+#import "CSMenuSearchFeedDataSource.h"
+
+#import "CSFeedSearcher.h"
+
 @interface CSMenuLeftViewController ()
+{
+    CSMenuUserFeedDataSource *userFeedDataSource;
+    CSMenuSearchFeedDataSource *searchFeedDataSource;
+    CSFeedSearcher *feedSearcher;
+}
 
 @end
 
@@ -36,73 +47,147 @@
  */
 - (void)viewDidLoad
 {
-  [super viewDidLoad];
-  self.currentUser = [User current];
-  self.feeds = [[NSMutableSet alloc] init];
-  
-  // Set tableViewStyle
-  CSEnhancedTableViewStyle *tableViewStyle = [[CSEnhancedTableViewStyleDark alloc] init];
-  self.tableView_feeds.tableViewStyle = tableViewStyle;
-  
-  [[self.textField_searchInput superview] setBackgroundColor: [tableViewStyle tableBackgroundColor]];
-  [self.textField_searchInput setBackgroundColor: [tableViewStyle headerBackgroundTopColor]];
-  self.textField_searchInput.textColor = [tableViewStyle headerTitleLabelTextColor];
-   
-  // Add observer
-  //[self.currentUser addObserver:self forKeyPath:@"feeds" options:NSKeyValueObservingOptionNew context:nil];
-  [self observeRelationship:@keypath(self.currentUser.feeds)
-                changeBlock:^(__weak CSMenuLeftViewController *self, NSSet *old, NSSet *new) {
-                  NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
-                  NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
-                  
-                  [addedFeeds removeObjectsInArray:[old allObjects]];
-                  [removedFeeds removeObjectsInArray:[new allObjects]];
-                  
-                  for ( Feed *feed in removedFeeds ){
-                    [[self feeds] removeObject:feed];
+    [super viewDidLoad];
+    self.currentUser = [User current];
+    self.feeds = [[NSMutableSet alloc] init];
+    
+    // Setup the user and search datasources
+    [self setUpDataSources];
+    
+    // Setup feedSearch API requestor
+    feedSearcher = [[CSFeedSearcher alloc] init];
+    
+    // Set tableViewStyle
+    CSEnhancedTableViewStyle *tableViewStyle = [[CSEnhancedTableViewStyleDark alloc] init];
+    self.tableView_feeds.tableViewStyle = tableViewStyle;
+    
+    [[self.textField_searchInput superview] setBackgroundColor: [tableViewStyle tableBackgroundColor]];
+    [self.textField_searchInput setBackgroundColor: [tableViewStyle headerBackgroundTopColor]];
+    self.textField_searchInput.textColor = [tableViewStyle headerTitleLabelTextColor];
+    
+    // Added search method to the user input field
+    [self.textField_searchInput addTarget:self action:@selector(searchFieldDidChange)forControlEvents:UIControlEventEditingChanged];
+    
+    // Add observer
+    //[self.currentUser addObserver:self forKeyPath:@"feeds" options:NSKeyValueObservingOptionNew context:nil];
+    [self observeRelationship:@keypath(self.currentUser.feeds)
+                  changeBlock:^(__weak CSMenuLeftViewController *self, NSSet *old, NSSet *new) {
+                      NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
+                      NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
+                      
+                      [addedFeeds removeObjectsInArray:[old allObjects]];
+                      [removedFeeds removeObjectsInArray:[new allObjects]];
+                      
+                      for ( Feed *feed in removedFeeds ){
+                          [[self feeds] removeObject:feed];
+                      }
+                      
+                      for ( Feed *feed in addedFeeds ){
+                          [[self feeds] addObject:feed];
+                      }
+                      
+                      // Update and switch to the userFeed data source
+                      self.tableView_feeds.dataSource = userFeedDataSource;
+                      [userFeedDataSource updateWithFeeds:self.feeds];
+                      
+                      [self.tableView_feeds reloadData];
                   }
-                  
-                  for ( Feed *feed in addedFeeds ){
-                    [[self feeds] addObject:feed];
-                  }
-                }
-             insertionBlock:nil
-               removalBlock:nil
-           replacementBlock:nil
-   ];
-  
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(menuStateEventOccurred:)
-                                               name:MFSideMenuStateNotificationEvent
-                                             object:nil];
+               insertionBlock:nil
+                 removalBlock:nil
+             replacementBlock:nil
+     ];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(menuStateEventOccurred:)
+                                                 name:MFSideMenuStateNotificationEvent
+                                               object:nil];
+    
+    self.tableView_feeds.delegate = self;
+    
+    [userFeedDataSource updateWithFeeds:self.feeds];
+    self.tableView_feeds.dataSource = userFeedDataSource;
+}
+
+- (void)setUpDataSources
+{
+    // Lists feeds in the database
+    userFeedDataSource = [[CSMenuUserFeedDataSource alloc] init];
+    
+    // Lists feeds returned by the search API
+    searchFeedDataSource = [[CSMenuSearchFeedDataSource alloc] init];
 }
 
 - (void)menuStateEventOccurred:(NSNotification *)notification {
-  MFSideMenuStateEvent event = [[[notification userInfo] objectForKey:@"eventType"] intValue];
-
-  __weak CSMenuLeftViewController *weakSelf = self;
-  
+    MFSideMenuStateEvent event = [[[notification userInfo] objectForKey:@"eventType"] intValue];
+    
+    __weak CSMenuLeftViewController *weakSelf = self;
+    
     switch (event) {
-      case MFSideMenuStateEventMenuWillOpen:
-        // the menu will open
-        break;
-      case MFSideMenuStateEventMenuDidOpen:
-        // the menu finished opening
-        [weakSelf.tableView_feeds reloadData];
-        break;
-      case MFSideMenuStateEventMenuWillClose:
-        // the menu will close
-        [self.textField_searchInput endEditing:YES];
-        break;
-      case MFSideMenuStateEventMenuDidClose:
-        
-        [weakSelf.tableView_feeds setEditing:NO animated:YES];
-        weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
-        break;
+        case MFSideMenuStateEventMenuWillOpen:
+            // the menu will open
+            break;
+        case MFSideMenuStateEventMenuDidOpen:
+            // the menu finished opening
+            [weakSelf.tableView_feeds reloadData];
+            break;
+        case MFSideMenuStateEventMenuWillClose:
+            // the menu will close
+            [self.textField_searchInput endEditing:YES];
+            break;
+        case MFSideMenuStateEventMenuDidClose:
+            weakSelf.textField_searchInput.text = @"";
+            [weakSelf.tableView_feeds setEditing:NO animated:YES];
+            weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeNone;
+            
+            // Reset to the users feeds
+            weakSelf.tableView_feeds.dataSource = userFeedDataSource;
+            [weakSelf.tableView_feeds reloadData];
+            break;
     }
 }
 
-#pragma mark - UITableViewDataSource Methods -
+/**
+ * Update the feeds in the menu when a user begins or ends a search
+ */
+- (void)searchFieldDidChange
+{
+    // If the searchInput has text
+    if (self.textField_searchInput.text && self.textField_searchInput.text.length > 0) {
+        
+        // Create empty searchFeed set
+        NSMutableSet *searchedFeeds = [[NSMutableSet alloc] init];
+        
+        // Switch to the searchFeed datasource and update the table
+        [searchFeedDataSource updateWithFeeds:searchedFeeds];
+        self.tableView_feeds.dataSource = searchFeedDataSource;
+        
+        // If the user is typing a url
+        if ([self.textField_searchInput.text hasPrefix:@"http"]) {
+            // Get the local context
+            NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
+            
+            // Create a new Feed in the current thread context
+            Feed *customFeed = [Feed MR_createInContext:localContext];
+            customFeed.name = self.textField_searchInput.text;
+            customFeed.url = self.textField_searchInput.text;
+            
+            // Add custom feed to the searchFeeds
+            [searchedFeeds addObject:customFeed];
+        } else {
+            // Return feeds from the API similar to user input
+            // Add these feeds to the searchFeed datasource
+            [feedSearcher feedsLike:self.textField_searchInput.text];
+        }
+        
+        // Reload the table with new searchFeeds
+        [self.tableView_feeds reloadData];
+    } else {
+        // Switch to the userFeeds datasource
+        self.tableView_feeds.dataSource = userFeedDataSource;
+        [self.tableView_feeds reloadData];
+    }
+}
+
 
 #pragma mark - Count Methods
 /**
@@ -110,165 +195,7 @@
  */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-  return 1;
-}
-
-/**
- * Determines the number of rows in each section
- */
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-  return [_feeds count] + 1;
-}
-
-
-#pragma mark - Size Methods
-/**
- * Height of the header in each section
- */
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-  return 44;
-}
-
-/**
- * Height of all the cells
- */
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  return 44;
-}
-
-
-#pragma mark - Header View
-/**
- * Generates a view for the header in each section
- */
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-  //
-  // Dequeue the header view
-  //
-  CSEnhancedTableViewHeaderFooterView *header = [self.tableView_feeds dequeueReusableHeaderFooterViewWithIdentifier:@"leftMenuHeader"];
-  
-  // Set label
-  [header.titleLabel setText:[self tableView:tableView titleForHeaderInSection:section]];
-  
-  // Return the header
-  return header;
-}
-
-/**
- * Determines the header title for each section
- */
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-  return @"MY FEEDS";
-}
-
-
-#pragma mark - Cell View
-/**
- * Generates a cell for a given index path
- */
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  // Dequeue a styled cell
-  CSEnhancedTableViewCell *cell;
-  
-  // Set the content
-  if (indexPath.row == [_feeds count])
-  {
-    cell = [self.tableView_feeds dequeueReusableCellWithIdentifier:@"leftMenuCellAdd"];
-    
-    // Set the label text
-    [cell.textLabel setText:@"Add a new feed"];
-    [cell.textLabel setFont:[UIFont fontWithName:@"Avenir-Black" size:14.0f]];
-    [cell.textLabel setFrame:CGRectMake(15, 0, tableView.frame.size.width-44, 44)];
-    [cell.imageView setHidden:YES];
-  }
-  else
-  {
-    cell = [self.tableView_feeds dequeueReusableCellWithIdentifier:@"leftMenuCell"];
-    
-    // Set data based on feed name
-    Feed *feed = [self.feeds allObjects][indexPath.row];
-    
-    // Set the label text
-    [cell.textLabel setText:feed.name];
-    //cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    [cell.textLabel setFrame:CGRectMake(40, 0, tableView.frame.size.width, 44)];
-    
-    // Show feed icons
-    [cell.imageView setHidden:NO];
-    [cell.imageView setFrame:CGRectMake(0,0,44,44)];
-    
-    __weak CSEnhancedTableViewCell *currentCell = cell;
-    NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.icon]];
-    [currentCell.imageView setImageWithURLRequest:imageRequest
-                                 placeholderImage:nil
-                                          success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                            currentCell.imageView.image = image;
-                                          }failure:nil
-     ];
-  }
-
-  return cell;
-}
-
-/**
- * Commits each editing action
- */
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  if (editingStyle == UITableViewCellEditingStyleInsert)
-  {    
-    // Create (or edit) a feed
-    CSFeedAddViewController *feedAddController = [CSFeedAddViewController new];
-    
-    if (indexPath.row < [self.feeds count])
-    {
-      feedAddController.feed = [self.feeds allObjects][indexPath.row];
-    }
-    
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:feedAddController];
-    navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    
-    [self.rootViewController presentViewController:navController animated:YES completion:^{
-      [self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
-    }];
-    
-    return;
-  }
-  else if (editingStyle == UITableViewCellEditingStyleDelete)
-  {
-    Feed *toDelete = [self.feeds allObjects][indexPath.row];
-    
-    [toDelete deleteEntity];
-    
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
-  }
-}
-
-/**
- * Determines the editing style for each row
- */
-- (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  if (!tableView.isEditing)
-  {
-    return UITableViewCellEditingStyleNone;
-  }
-  
-  if (indexPath.section == 0 && indexPath.row == [self tableView:self.tableView_feeds numberOfRowsInSection:0] - 1)
-  {
-    return UITableViewCellEditingStyleInsert;
-  }
-  else
-  {
-    return UITableViewCellEditingStyleDelete;
-  }
+    return 1;
 }
 
 
@@ -278,14 +205,7 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  if (indexPath.row == [_feeds count])
-  {
-    //Add new feed controller change
-  } else {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-  }
-  
-  //[self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
 }
 
 @end
