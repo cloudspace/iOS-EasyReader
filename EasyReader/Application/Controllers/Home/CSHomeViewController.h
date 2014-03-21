@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
 #import "CSCollectionPageControl.h"
+#import "CSFeedItemCollectionViewDataSource.h"
 
 @class User;
 
@@ -19,8 +20,12 @@
 @property (strong, nonatomic) IBOutlet CSCollectionPageControl *pageControl_itemIndicator;
 @property (nonatomic, strong) UIWebView *feedItemWebView;
 @property (nonatomic, strong) NSMutableSet *feedItems;
-@property User* currentUser;
 
+@property User* currentUser;
+@property CSFeedItemCollectionViewDataSource *feedCollectionViewDataSource;
+@property FeedItem *currentFeedItem;
 @property int collectionCellGoingTo;
+
+- (void)scrollToCurrentFeedItem;
 
 @end
