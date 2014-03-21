@@ -80,7 +80,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>api_url</key>
-	<string>http://dev.uwithus.com</string>
+	<key>apiHost</key>
+	<string>http://rss.cloudspace.com</string>
+	<key>apiBasePath</key>
+	<string>/v2</string>
 </dict>
 </plist>

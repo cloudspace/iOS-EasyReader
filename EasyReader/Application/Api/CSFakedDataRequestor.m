@@ -7,52 +7,53 @@
 //
 
 #import "CSFakedDataRequestor.h"
+#import "AKRouter.h"
 
 @implementation CSFakedDataRequestor
 
 - (void) requestRoute:(NSString *) routeName
-                     withParams:(NSDictionary *) params
-                        success:(void(^)(AFHTTPRequestOperation *operation, id responseObject)) successBlock
-                        failure:(void(^)(AFHTTPRequestOperation *operation, id responseObject)) failureBlock;
+           withParams:(NSDictionary *) params
+              success:(void(^)(AFHTTPRequestOperation *operation, id responseObject)) successBlock
+              failure:(void(^)(AFHTTPRequestOperation *operation, id responseObject)) failureBlock;
 {
-  NSDictionary *route = [self routes][routeName];
-  NSString *method = route[@"method"];
-  NSString *path = route[@"path"];
-  
-  NSDictionary *data;
-  
-  if([method isEqualToString:@"GET"]) {
-    if ([path rangeOfString:@"feed_items"].location != NSNotFound) {
-      data = [self feedItemsResponse];
-    } else if ([path rangeOfString:@"feeds"].location != NSNotFound) {
-      //for now, the feed defaults and search return the same values
-      data = [self feedsResponse];
-    } else {
-      //this path is not handled by the response faker
-      data = @{};
-    }
-  } else {
-    //post/other requests not supported right now
-    data = @{};
-  }
 
-  if (successBlock) successBlock(nil, data);
+    NSString *path = [[AKRouter shared] pathFor:routeName params:params];
+    AKRequestMethod method = [[AKRouter shared] methodFor:routeName];
+    
+    NSDictionary *data;
+    
+    if(method == kAKRequestMethodGET) {
+        if ([path rangeOfString:@"feed_items"].location != NSNotFound) {
+            data = [self feedItemsResponse];
+        } else if ([path rangeOfString:@"feeds"].location != NSNotFound) {
+            //for now, the feed defaults and search return the same values
+            data = [self feedsResponse];
+        } else {
+            //this path is not handled by the response faker
+            data = @{};
+        }
+    } else {
+        //post/other requests not supported right now
+        data = @{};
+    }
+    
+    if (successBlock) successBlock(nil, data);
 }
 
 //these feeds are used for both the search and the defaults endpoints
 //their ids should match the feed_id fields on the feedItemsResponse
 - (NSDictionary *) feedsResponse
 {
-  NSArray *items = [NSArray arrayWithObjects:@{@"id": @1,
+    NSArray *items = [NSArray arrayWithObjects:@{@"id": @1,
                                                  @"name": @"Cloudspace Feed",
                                                  @"url": @"http://www.engadget.com/rss.xml",
                                                  @"icon": @"http://s3.amazonaws.com/rss.cloudspace.com/feed/1/icon.png", //note: this image does not work on 3-11-2014
                                                  @"feed_items": @[]},
-                                               @{@"id": @2,
-                                                 @"name": @"EasyReader Feed",
-                                                 @"url": @"http://www.engadget.com/rss.xml",
-                                                 @"icon": @"http://s3.amazonaws.com/rss.cloudspace.com/feed/2/icon.png", //note: this image does not work on 3-11-2014
-                                                 @"feed_items": @[]}, nil];
+                      @{@"id": @2,
+                        @"name": @"EasyReader Feed",
+                        @"url": @"http://www.engadget.com/rss.xml",
+                        @"icon": @"http://s3.amazonaws.com/rss.cloudspace.com/feed/2/icon.png", //note: this image does not work on 3-11-2014
+                        @"feed_items": @[]}, nil];
     return @{@"feeds": items};
 }
 
@@ -148,17 +149,17 @@
                         @"created_at": @"2014-03-05T22:32:41+00:00",
                         @"updated_at": @"2014-03-05T22:32:41+00:00",
                         @"published_at": @"2014-03-04T19:52:21+00:00"}, nil];
-  
-  NSRange subarrayRange;
-  if ( !self.requestCounter ) self.requestCounter = 1;
-  if ( self.requestCounter == 1 ){
-    subarrayRange = NSMakeRange(0,4);
-  } else {
-    subarrayRange = NSMakeRange(self.requestCounter*2,2);
-  }
-  self.requestCounter++;
-  
-  return @{@"feed_items": [items subarrayWithRange:subarrayRange]};
+    
+    NSRange subarrayRange;
+    if ( !self.requestCounter ) self.requestCounter = 1;
+    if ( self.requestCounter == 1 ){
+        subarrayRange = NSMakeRange(0,4);
+    } else {
+        subarrayRange = NSMakeRange(self.requestCounter*2,2);
+    }
+    self.requestCounter++;
+    
+    return @{@"feed_items": [items subarrayWithRange:subarrayRange]};
 }
 
 

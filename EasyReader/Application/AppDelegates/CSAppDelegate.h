@@ -7,18 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CSFeedItemUpdater.h"
 #import "CSMenuLeftViewController.h"
 #import "MFSideMenu.h"
+#import "SOApplicationDelegate.h"
 
-@class Feed;
 
-@interface CSAppDelegate : UIResponder <UIApplicationDelegate>
+/**
+ * The main delegate for the application
+ */
+@interface CSAppDelegate : SOApplicationDelegate <UIApplicationDelegate>
+
 
 #pragma mark - Properties
-@property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, retain) Feed *activeFeed;
 
+/// The side menu container controller
 @property (strong, nonatomic) MFSideMenuContainerViewController *container;
+
 
 @end

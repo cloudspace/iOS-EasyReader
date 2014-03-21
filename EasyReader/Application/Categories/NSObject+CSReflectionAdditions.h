@@ -16,6 +16,8 @@
 
 /**
  * Reflects over an NSObject calling block once per property with a dictionary of information about that property
+ *
+ * @param block the block that will get called once per property with the property info
  */
 - (void)reflectOverPropertyDataWithBlock:(void (^)(NSDictionary *propertyData))block;
 

@@ -66,10 +66,19 @@
 
 - (FeedItem *) currentFeedItem
 {
-    // Get the array of visible feed cells
-    NSIndexPath *currentIndexPath = [self.indexPathsForVisibleItems objectAtIndex:0];
-    CSFeedItemCell *cell = (CSFeedItemCell *)[self cellForItemAtIndexPath:currentIndexPath];
-    return cell.feedItem;
+    NSArray *visibleIndexPaths = self.indexPathsForVisibleItems;
+    FeedItem *feeditem;
+    
+    if ([visibleIndexPaths count] > 0)
+    {
+        // Get the array of visible feed cells
+        NSIndexPath *currentIndexPath = [self.indexPathsForVisibleItems objectAtIndex:0];
+        CSFeedItemCell *cell = (CSFeedItemCell *)[self cellForItemAtIndexPath:currentIndexPath];
+        
+        feeditem = cell.feedItem;
+    }
+    
+    return feeditem;
 }
 
 @end
