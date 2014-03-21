@@ -57,6 +57,7 @@
 		9D4FA6E617971D5B001E2A65 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */; };
 		9D4FA6E817971E88001E2A65 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */; };
 		9D4FA6EA17971E8D001E2A65 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */; };
+		9D607E4618DCE0FD004DF7F3 /* Development-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D607E4518DCE0FD004DF7F3 /* Development-Info.plist */; };
 		9D6C2B61170F39710087D8F8 /* CSMenuLeft_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C2B60170F39710087D8F8 /* CSMenuLeft_iPhone.xib */; };
 		9D79270A18DA1D0300E1D3E1 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		9D79270B18DA1D0300E1D3E1 /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC171A170A043200383722 /* CSAppDelegate.m */; };
@@ -187,6 +188,71 @@
 		9D9CBABF18DC826700532F8C /* CSApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */; };
 		9D9CBAC318DCC52900532F8C /* CSApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */; };
 		9D9CBAC418DCC52A00532F8C /* CSApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */; };
+		9D9CBAC718DCC68A00532F8C /* CSFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */; };
+		9D9CBAC818DCC68A00532F8C /* CSApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */; };
+		9D9CBAC918DCC68A00532F8C /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
+		9D9CBACA18DCC68A00532F8C /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC171A170A043200383722 /* CSAppDelegate.m */; };
+		9D9CBACB18DCC68A00532F8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC1721170A043200383722 /* main.m */; };
+		9D9CBACC18DCC68A00532F8C /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D918DA0A6B00339C96 /* CSHomeViewController.m */; };
+		9D9CBACD18DCC68A00532F8C /* CSFeedItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */; };
+		9D9CBACE18DCC68A00532F8C /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D518DA02C100339C96 /* NSObject+CSReflectionAdditions.m */; };
+		9D9CBACF18DCC68A00532F8C /* CSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */; };
+		9D9CBAD018DCC68A00532F8C /* CSFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* CSFeedItemCell.m */; };
+		9D9CBAD118DCC68A00532F8C /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
+		9D9CBAD218DCC68A00532F8C /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
+		9D9CBAD318DCC68A00532F8C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
+		9D9CBAD418DCC68A00532F8C /* AKRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* AKRouter.m */; };
+		9D9CBAD518DCC68A00532F8C /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
+		9D9CBAD618DCC68A00532F8C /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */; };
+		9D9CBAD718DCC68A00532F8C /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
+		9D9CBAD818DCC68A00532F8C /* CSResponsiveApiRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F403118D3596C00A6FED6 /* CSResponsiveApiRequestor.m */; };
+		9D9CBAD918DCC68A00532F8C /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
+		9D9CBADA18DCC68A00532F8C /* CSRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */; };
+		9D9CBADB18DCC68A00532F8C /* CSFeedAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */; };
+		9D9CBADC18DCC68A00532F8C /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */; };
+		9D9CBADD18DCC68A00532F8C /* CSCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */; };
+		9D9CBADE18DCC68A00532F8C /* AKRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* AKRoute.m */; };
+		9D9CBADF18DCC68A00532F8C /* CSFeedItemCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DD18DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m */; };
+		9D9CBAE018DCC68A00532F8C /* SOApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */; };
+		9D9CBAE118DCC68A00532F8C /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
+		9D9CBAE318DCC68A00532F8C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4355751795C9B3002C6657 /* MessageUI.framework */; };
+		9D9CBAE418DCC68A00532F8C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4355731795C708002C6657 /* Social.framework */; };
+		9D9CBAE518DCC68A00532F8C /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA7CB25171C8B5E0045CC88 /* iAd.framework */; };
+		9D9CBAE618DCC68A00532F8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC16C71709D48E00383722 /* UIKit.framework */; };
+		9D9CBAE718DCC68A00532F8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC16C91709D48E00383722 /* Foundation.framework */; };
+		9D9CBAE818DCC68A00532F8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC16CB1709D48E00383722 /* CoreGraphics.framework */; };
+		9D9CBAE918DCC68A00532F8C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC16CD1709D48E00383722 /* CoreData.framework */; };
+		9D9CBAEA18DCC68A00532F8C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
+		9D9CBAEC18DCC68A00532F8C /* CSMenuLeft_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C2B60170F39710087D8F8 /* CSMenuLeft_iPhone.xib */; };
+		9D9CBAED18DCC68A00532F8C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D27B1DE1715DECB001C39CF /* Default-568h@2x.png */; };
+		9D9CBAEE18DCC68A00532F8C /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2B171CAD020045CC88 /* Icon-72.png */; };
+		9D9CBAEF18DCC68A00532F8C /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2C171CAD020045CC88 /* Icon-72@2x.png */; };
+		9D9CBAF018DCC68A00532F8C /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2D171CAD020045CC88 /* Icon-Small-50.png */; };
+		9D9CBAF118DCC68A00532F8C /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2E171CAD020045CC88 /* Icon-Small-50@2x.png */; };
+		9D9CBAF218DCC68A00532F8C /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2F171CAD020045CC88 /* Icon-Small.png */; };
+		9D9CBAF318DCC68A00532F8C /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB30171CAD020045CC88 /* Icon-Small@2x.png */; };
+		9D9CBAF418DCC68A00532F8C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB31171CAD020045CC88 /* Icon.png */; };
+		9D9CBAF518DCC68A00532F8C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB32171CAD020045CC88 /* Icon@2x.png */; };
+		9D9CBAF618DCC68A00532F8C /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB33171CAD020045CC88 /* iTunesArtwork.png */; };
+		9D9CBAF718DCC68A00532F8C /* control_dualEntryTextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */; };
+		9D9CBAF818DCC68A00532F8C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */; };
+		9D9CBAF918DCC68A00532F8C /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB34171CAD020045CC88 /* iTunesArtwork@2x.png */; };
+		9D9CBAFA18DCC68A00532F8C /* button_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F318F171DB410006CFC6A /* button_menu@2x.png */; };
+		9D9CBAFB18DCC68A00532F8C /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F3192171DB410006CFC6A /* icon_back.png */; };
+		9D9CBAFC18DCC68A00532F8C /* icon_forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F3193171DB410006CFC6A /* icon_forward.png */; };
+		9D9CBAFD18DCC68A00532F8C /* icon_pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F3194171DB410006CFC6A /* icon_pencil@2x.png */; };
+		9D9CBAFE18DCC68A00532F8C /* icon_rss@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F3195171DB410006CFC6A /* icon_rss@2x.png */; };
+		9D9CBAFF18DCC68A00532F8C /* icon_disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F319E171DE908006CFC6A /* icon_disclosure@2x.png */; };
+		9D9CBB0018DCC68A00532F8C /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F31A3171ED4BE006CFC6A /* placeholder.png */; };
+		9D9CBB0118DCC68A00532F8C /* icon_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CB171F3D4300A720AA /* icon_search@2x.png */; };
+		9D9CBB0218DCC68A00532F8C /* button_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D140BF4171F68E000CDD319 /* button_add@2x.png */; };
+		9D9CBB0318DCC68A00532F8C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF871721EE4400535763 /* Default@2x.png */; };
+		9D9CBB0418DCC68A00532F8C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF891721EE4700535763 /* Default.png */; };
+		9D9CBB0518DCC68A00532F8C /* CSMenuLeft_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB47D8A1795B948006B99BA /* CSMenuLeft_iPad.xib */; };
+		9D9CBB0618DCC68A00532F8C /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E317971D56001E2A65 /* Default-Portrait~ipad.png */; };
+		9D9CBB0718DCC68A00532F8C /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */; };
+		9D9CBB0818DCC68A00532F8C /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */; };
+		9D9CBB0918DCC68A00532F8C /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */; };
 		9DA7CB26171C8B5E0045CC88 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA7CB25171C8B5E0045CC88 /* iAd.framework */; };
 		9DA7CB36171CAD020045CC88 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2B171CAD020045CC88 /* Icon-72.png */; };
 		9DA7CB37171CAD020045CC88 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2C171CAD020045CC88 /* Icon-72@2x.png */; };
@@ -281,10 +347,10 @@
 		9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		9D607E4518DCE0FD004DF7F3 /* Development-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Development-Info.plist"; sourceTree = "<group>"; };
 		9D6C2B60170F39710087D8F8 /* CSMenuLeft_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSMenuLeft_iPhone.xib; path = Menu/CSMenuLeft_iPhone.xib; sourceTree = "<group>"; };
 		9D79274A18DA1D0300E1D3E1 /* Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Staging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D79278E18DA1D3800E1D3E1 /* Easy Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D79279018DA1D9200E1D3E1 /* Development-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Development-Info.plist"; sourceTree = "<group>"; };
 		9D79279118DA1D9200E1D3E1 /* Production-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Production-Info.plist"; sourceTree = "<group>"; };
 		9D79279218DA1D9200E1D3E1 /* Staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
 		9D7927C318DA279B00E1D3E1 /* EasyReader-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EasyReader-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,6 +368,8 @@
 		9D8F31A3171ED4BE006CFC6A /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		9D9CBABD18DC826700532F8C /* CSApplicationStyleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSApplicationStyleService.h; sourceTree = "<group>"; };
 		9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSApplicationStyleService.m; sourceTree = "<group>"; };
+		9D9CBB0F18DCC68A00532F8C /* Development copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Development copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D9CBB1018DCC68A00532F8C /* Development copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Development copy-Info.plist"; path = "/Users/jlorich/projects/iOS-EasyReader/Development copy-Info.plist"; sourceTree = "<absolute>"; };
 		9DA7CB25171C8B5E0045CC88 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		9DA7CB2B171CAD020045CC88 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		9DA7CB2C171CAD020045CC88 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
@@ -369,6 +437,21 @@
 				9D7927C418DA279B00E1D3E1 /* XCTest.framework in Frameworks */,
 				9D7927C618DA279B00E1D3E1 /* UIKit.framework in Frameworks */,
 				9D7927C518DA279B00E1D3E1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D9CBAE218DCC68A00532F8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D9CBAE318DCC68A00532F8C /* MessageUI.framework in Frameworks */,
+				9D9CBAE418DCC68A00532F8C /* Social.framework in Frameworks */,
+				9D9CBAE518DCC68A00532F8C /* iAd.framework in Frameworks */,
+				9D9CBAE618DCC68A00532F8C /* UIKit.framework in Frameworks */,
+				9D9CBAE718DCC68A00532F8C /* Foundation.framework in Frameworks */,
+				9D9CBAE818DCC68A00532F8C /* CoreGraphics.framework in Frameworks */,
+				9D9CBAE918DCC68A00532F8C /* CoreData.framework in Frameworks */,
+				9D9CBAEA18DCC68A00532F8C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +704,7 @@
 				9DAC16C61709D48E00383722 /* Frameworks */,
 				9DAC16C51709D48E00383722 /* Products */,
 				5CECD14CAE964A1994399D15 /* Pods.xcconfig */,
+				9D9CBB1018DCC68A00532F8C /* Development copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -631,6 +715,7 @@
 				9D79274A18DA1D0300E1D3E1 /* Staging.app */,
 				9D79278E18DA1D3800E1D3E1 /* Easy Reader.app */,
 				9D7927C318DA279B00E1D3E1 /* EasyReader-Tests.xctest */,
+				9D9CBB0F18DCC68A00532F8C /* Development copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -752,7 +837,7 @@
 		9DAC172B170A043200383722 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9D79279018DA1D9200E1D3E1 /* Development-Info.plist */,
+				9D607E4518DCE0FD004DF7F3 /* Development-Info.plist */,
 				9D79279218DA1D9200E1D3E1 /* Staging-Info.plist */,
 				9D79279118DA1D9200E1D3E1 /* Production-Info.plist */,
 			);
@@ -827,6 +912,25 @@
 			productReference = 9D7927C318DA279B00E1D3E1 /* EasyReader-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		9D9CBAC518DCC68A00532F8C /* Mocked Development */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D9CBB0C18DCC68A00532F8C /* Build configuration list for PBXNativeTarget "Mocked Development" */;
+			buildPhases = (
+				9D9CBAC618DCC68A00532F8C /* Sources */,
+				9D9CBAE218DCC68A00532F8C /* Frameworks */,
+				9D9CBAEB18DCC68A00532F8C /* Resources */,
+				9D9CBB0A18DCC68A00532F8C /* Auto Increment Version */,
+				9D9CBB0B18DCC68A00532F8C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mocked Development";
+			productName = EasyReader;
+			productReference = 9D9CBB0F18DCC68A00532F8C /* Development copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 		9DAC16C31709D48E00383722 /* Development */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DAC16FC1709D48E00383722 /* Build configuration list for PBXNativeTarget "Development" */;
@@ -875,6 +979,7 @@
 			projectRoot = "";
 			targets = (
 				9DAC16C31709D48E00383722 /* Development */,
+				9D9CBAC518DCC68A00532F8C /* Mocked Development */,
 				9D79270818DA1D0300E1D3E1 /* Staging */,
 				9D79274C18DA1D3800E1D3E1 /* Production */,
 				9D7927C218DA279B00E1D3E1 /* EasyReader-Tests */,
@@ -965,6 +1070,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9D9CBAEB18DCC68A00532F8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D9CBAEC18DCC68A00532F8C /* CSMenuLeft_iPhone.xib in Resources */,
+				9D9CBAED18DCC68A00532F8C /* Default-568h@2x.png in Resources */,
+				9D9CBAEE18DCC68A00532F8C /* Icon-72.png in Resources */,
+				9D9CBAEF18DCC68A00532F8C /* Icon-72@2x.png in Resources */,
+				9D9CBAF018DCC68A00532F8C /* Icon-Small-50.png in Resources */,
+				9D9CBAF118DCC68A00532F8C /* Icon-Small-50@2x.png in Resources */,
+				9D9CBAF218DCC68A00532F8C /* Icon-Small.png in Resources */,
+				9D9CBAF318DCC68A00532F8C /* Icon-Small@2x.png in Resources */,
+				9D9CBAF418DCC68A00532F8C /* Icon.png in Resources */,
+				9D9CBAF518DCC68A00532F8C /* Icon@2x.png in Resources */,
+				9D9CBAF618DCC68A00532F8C /* iTunesArtwork.png in Resources */,
+				9D9CBAF718DCC68A00532F8C /* control_dualEntryTextField@2x.png in Resources */,
+				9D9CBAF818DCC68A00532F8C /* Main_iPhone.storyboard in Resources */,
+				9D9CBAF918DCC68A00532F8C /* iTunesArtwork@2x.png in Resources */,
+				9D9CBAFA18DCC68A00532F8C /* button_menu@2x.png in Resources */,
+				9D9CBAFB18DCC68A00532F8C /* icon_back.png in Resources */,
+				9D9CBAFC18DCC68A00532F8C /* icon_forward.png in Resources */,
+				9D9CBAFD18DCC68A00532F8C /* icon_pencil@2x.png in Resources */,
+				9D9CBAFE18DCC68A00532F8C /* icon_rss@2x.png in Resources */,
+				9D9CBAFF18DCC68A00532F8C /* icon_disclosure@2x.png in Resources */,
+				9D9CBB0018DCC68A00532F8C /* placeholder.png in Resources */,
+				9D9CBB0118DCC68A00532F8C /* icon_search@2x.png in Resources */,
+				9D9CBB0218DCC68A00532F8C /* button_add@2x.png in Resources */,
+				9D9CBB0318DCC68A00532F8C /* Default@2x.png in Resources */,
+				9D9CBB0418DCC68A00532F8C /* Default.png in Resources */,
+				9D9CBB0518DCC68A00532F8C /* CSMenuLeft_iPad.xib in Resources */,
+				9D9CBB0618DCC68A00532F8C /* Default-Portrait~ipad.png in Resources */,
+				9D9CBB0718DCC68A00532F8C /* Default-Portrait@2x~ipad.png in Resources */,
+				9D9CBB0818DCC68A00532F8C /* Default-Landscape~ipad.png in Resources */,
+				9D9CBB0918DCC68A00532F8C /* Default-Landscape@2x~ipad.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DAC16C21709D48E00383722 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -985,6 +1127,7 @@
 				9DA7CB3F171CAD020045CC88 /* iTunesArtwork@2x.png in Resources */,
 				9D8F3196171DB410006CFC6A /* button_menu@2x.png in Resources */,
 				9D8F3197171DB410006CFC6A /* icon_back.png in Resources */,
+				9D607E4618DCE0FD004DF7F3 /* Development-Info.plist in Resources */,
 				9D8F3198171DB410006CFC6A /* icon_forward.png in Resources */,
 				9D8F3199171DB410006CFC6A /* icon_pencil@2x.png in Resources */,
 				9D8F319A171DB410006CFC6A /* icon_rss@2x.png in Resources */,
@@ -1062,6 +1205,34 @@
 			shellScript = "def get_file_as_string(filename)\ndata = ''\nf = File.open(filename, \"r\")\nf.each_line do |line|\ndata += line\nend\nreturn data\nend\n\n\ndef handle_alpha_beta(old_value, letter, infoplist, start_of_value, end_of_value)\nparts = old_value.split(letter)\nversion_num = parts[0]\nalpha_num = parts[1].to_i\n\nalpha_num = alpha_num + 1\nnew_version = version_num.to_s + letter + alpha_num.to_s\nprint \"Assigning new version: \" + new_version + \"\\n\"\nnew_key = \"<string>#{new_version}</string>\"\n\npart_1 = infoplist[0, start_of_value - '<string>'.length]\npart_2 = new_key\npart_3 = infoplist[end_of_value + \"</string>\".length, infoplist.length - (end_of_value - start_of_value + (new_key.length - 1))]\n\nnew_info_plist = part_1 + part_2 + part_3\nnew_info_plist\nend\n\ndef find_and_increment_version_number_with_key(key, infoplist)\n\nstart_of_key = infoplist.index(key)\nstart_of_value = infoplist.index(\"<string>\", start_of_key) + \"<string>\".length\nend_of_value = infoplist.index(\"</string>\", start_of_value)\nold_value = infoplist[start_of_value, end_of_value - start_of_value]\n\nprint \"Old version for \" + key + \": \" + old_value + \"\\n\"\nprint old_value.class.to_s + \"\\n\"\nold_value_int = old_value.to_i\nprint old_value_int.class.to_s + \"\\n\"\nif (old_value.index(\"a\") != nil) # alpha\ninfoplist = handle_alpha_beta(old_value, \"a\", infoplist, start_of_value, end_of_value)\nelsif (old_value.index(\"b\") != nil) # beta\ninfoplist = handle_alpha_beta(old_value, \"b\", infoplist, start_of_value, end_of_value)\nelsif (old_value.index(\".\") != nil) # release dot version\nparts = old_value.split(\".\")\nlast_part = parts.last.to_i\nlast_part = last_part + 1\nparts.delete(parts.last)\n\nnew_version = \"\"\nfirst = true\nparts.each do |one_part|\nif (first)\nfirst = false\nelse\nnew_version = new_version + \".\"\nend\nnew_version = new_version + one_part\nend\nnew_version = new_version.to_s + \".\" + last_part.to_s\nprint \"New version: \" + new_version.to_s + \"\\n\"\nnew_key = \"<string>#{new_version}</string>\"\ninfoplist = \"#{infoplist[0, start_of_value - '<string>'.length]}#{new_key}#{infoplist[end_of_value + '</string>'.length, infoplist.length - (end_of_value+1)]}\"\nelsif (old_value.to_i != nil) # straight integer build number\nnew_version = old_value.to_i + 1\nprint \"New version: \" + new_version.to_s + \"\\n\"\nnew_key = \"<string>#{new_version}</string>\"\n\npart_1 = infoplist[0, start_of_value - '<string>'.length]\npart_2 = new_key\npart_3 = infoplist[end_of_value + \"</string>\".length, infoplist.length - (end_of_value+1)]\ninfoplist = part_1 + part_2 + part_3\nend\ninfoplist\nend\n\n\n\nconfig = ENV['CONFIGURATION'].upcase\nconfig_build_dir = ENV['CONFIGURATION_BUILD_DIR']\n\narchive_action = false\nif (config_build_dir.include?(\"ArchiveIntermediates\"))\narchive_action = true\nend\n\nprint \"Archive: \" + archive_action.to_s + \"\\n\"\n\n\nprint config\n\nif (config == \"RELEASE\")\nprint \" incrementing build numbers\\n\"\nproject_dir = ENV['PROJECT_DIR']\ninfoplist_file = ENV['INFOPLIST_FILE']\nplist_filename = \"#{project_dir}/#{infoplist_file}\"\n\ninfoplist = get_file_as_string(plist_filename)\ninfoplist = find_and_increment_version_number_with_key(\"CFBundleVersion\", infoplist)\n#if (archive_action)\n#infoplist = find_and_increment_version_number_with_key(\"CFBundleShortVersionString\", infoplist)\n#end\nFile.open(plist_filename, 'w') {|f| f.write(infoplist) }\nelse\nprint \" not incrementing build numbers\"\nend";
 		};
 		9D79278A18DA1D3800E1D3E1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		9D9CBB0A18DCC68A00532F8C /* Auto Increment Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Auto Increment Version";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /usr/bin/ruby;
+			shellScript = "def get_file_as_string(filename)\ndata = ''\nf = File.open(filename, \"r\")\nf.each_line do |line|\ndata += line\nend\nreturn data\nend\n\n\ndef handle_alpha_beta(old_value, letter, infoplist, start_of_value, end_of_value)\nparts = old_value.split(letter)\nversion_num = parts[0]\nalpha_num = parts[1].to_i\n\nalpha_num = alpha_num + 1\nnew_version = version_num.to_s + letter + alpha_num.to_s\nprint \"Assigning new version: \" + new_version + \"\\n\"\nnew_key = \"<string>#{new_version}</string>\"\n\npart_1 = infoplist[0, start_of_value - '<string>'.length]\npart_2 = new_key\npart_3 = infoplist[end_of_value + \"</string>\".length, infoplist.length - (end_of_value - start_of_value + (new_key.length - 1))]\n\nnew_info_plist = part_1 + part_2 + part_3\nnew_info_plist\nend\n\ndef find_and_increment_version_number_with_key(key, infoplist)\n\nstart_of_key = infoplist.index(key)\nstart_of_value = infoplist.index(\"<string>\", start_of_key) + \"<string>\".length\nend_of_value = infoplist.index(\"</string>\", start_of_value)\nold_value = infoplist[start_of_value, end_of_value - start_of_value]\n\nprint \"Old version for \" + key + \": \" + old_value + \"\\n\"\nprint old_value.class.to_s + \"\\n\"\nold_value_int = old_value.to_i\nprint old_value_int.class.to_s + \"\\n\"\nif (old_value.index(\"a\") != nil) # alpha\ninfoplist = handle_alpha_beta(old_value, \"a\", infoplist, start_of_value, end_of_value)\nelsif (old_value.index(\"b\") != nil) # beta\ninfoplist = handle_alpha_beta(old_value, \"b\", infoplist, start_of_value, end_of_value)\nelsif (old_value.index(\".\") != nil) # release dot version\nparts = old_value.split(\".\")\nlast_part = parts.last.to_i\nlast_part = last_part + 1\nparts.delete(parts.last)\n\nnew_version = \"\"\nfirst = true\nparts.each do |one_part|\nif (first)\nfirst = false\nelse\nnew_version = new_version + \".\"\nend\nnew_version = new_version + one_part\nend\nnew_version = new_version.to_s + \".\" + last_part.to_s\nprint \"New version: \" + new_version.to_s + \"\\n\"\nnew_key = \"<string>#{new_version}</string>\"\ninfoplist = \"#{infoplist[0, start_of_value - '<string>'.length]}#{new_key}#{infoplist[end_of_value + '</string>'.length, infoplist.length - (end_of_value+1)]}\"\nelsif (old_value.to_i != nil) # straight integer build number\nnew_version = old_value.to_i + 1\nprint \"New version: \" + new_version.to_s + \"\\n\"\nnew_key = \"<string>#{new_version}</string>\"\n\npart_1 = infoplist[0, start_of_value - '<string>'.length]\npart_2 = new_key\npart_3 = infoplist[end_of_value + \"</string>\".length, infoplist.length - (end_of_value+1)]\ninfoplist = part_1 + part_2 + part_3\nend\ninfoplist\nend\n\n\n\nconfig = ENV['CONFIGURATION'].upcase\nconfig_build_dir = ENV['CONFIGURATION_BUILD_DIR']\n\narchive_action = false\nif (config_build_dir.include?(\"ArchiveIntermediates\"))\narchive_action = true\nend\n\nprint \"Archive: \" + archive_action.to_s + \"\\n\"\n\n\nprint config\n\nif (config == \"RELEASE\")\nprint \" incrementing build numbers\\n\"\nproject_dir = ENV['PROJECT_DIR']\ninfoplist_file = ENV['INFOPLIST_FILE']\nplist_filename = \"#{project_dir}/#{infoplist_file}\"\n\ninfoplist = get_file_as_string(plist_filename)\ninfoplist = find_and_increment_version_number_with_key(\"CFBundleVersion\", infoplist)\n#if (archive_action)\n#infoplist = find_and_increment_version_number_with_key(\"CFBundleShortVersionString\", infoplist)\n#end\nFile.open(plist_filename, 'w') {|f| f.write(infoplist) }\nelse\nprint \" not incrementing build numbers\"\nend";
+		};
+		9D9CBB0B18DCC68A00532F8C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1166,6 +1337,40 @@
 			files = (
 				9D16D30718DA2B3A001E9C38 /* CSBaseTestCase.m in Sources */,
 				9D16D30918DA2E43001E9C38 /* UserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D9CBAC618DCC68A00532F8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D9CBAC718DCC68A00532F8C /* CSFeedUpdateService.m in Sources */,
+				9D9CBAC818DCC68A00532F8C /* CSApplicationStyleService.m in Sources */,
+				9D9CBAC918DCC68A00532F8C /* Feed.m in Sources */,
+				9D9CBACA18DCC68A00532F8C /* CSAppDelegate.m in Sources */,
+				9D9CBACB18DCC68A00532F8C /* main.m in Sources */,
+				9D9CBACC18DCC68A00532F8C /* CSHomeViewController.m in Sources */,
+				9D9CBACD18DCC68A00532F8C /* CSFeedItemCollectionView.m in Sources */,
+				9D9CBACE18DCC68A00532F8C /* NSObject+CSReflectionAdditions.m in Sources */,
+				9D9CBACF18DCC68A00532F8C /* CSBaseObject.m in Sources */,
+				9D9CBAD018DCC68A00532F8C /* CSFeedItemCell.m in Sources */,
+				9D9CBAD118DCC68A00532F8C /* CSRootViewController.m in Sources */,
+				9D9CBAD218DCC68A00532F8C /* FeedItem.m in Sources */,
+				9D9CBAD318DCC68A00532F8C /* User.m in Sources */,
+				9D9CBAD418DCC68A00532F8C /* AKRouter.m in Sources */,
+				9D9CBAD518DCC68A00532F8C /* CSFeedItemUpdater.m in Sources */,
+				9D9CBAD618DCC68A00532F8C /* CSFakedDataRequestor.m in Sources */,
+				9D9CBAD718DCC68A00532F8C /* CSMenuLeftViewController.m in Sources */,
+				9D9CBAD818DCC68A00532F8C /* CSResponsiveApiRequestor.m in Sources */,
+				9D9CBAD918DCC68A00532F8C /* Easy Reader.xcdatamodeld in Sources */,
+				9D9CBADA18DCC68A00532F8C /* CSRegisterRoutesService.m in Sources */,
+				9D9CBADB18DCC68A00532F8C /* CSFeedAddViewController.m in Sources */,
+				9D9CBADC18DCC68A00532F8C /* NSObject+CSNilAdditions.m in Sources */,
+				9D9CBADD18DCC68A00532F8C /* CSCoreDataService.m in Sources */,
+				9D9CBADE18DCC68A00532F8C /* AKRoute.m in Sources */,
+				9D9CBADF18DCC68A00532F8C /* CSFeedItemCollectionViewDataSource.m in Sources */,
+				9D9CBAE018DCC68A00532F8C /* SOApplicationDelegate.m in Sources */,
+				9D9CBAE118DCC68A00532F8C /* SOApplicationDelegateService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,6 +1572,47 @@
 			};
 			name = Release;
 		};
+		9D9CBB0D18DCC68A00532F8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CECD14CAE964A1994399D15 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Lorich (G28849DAB7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Lorich (G28849DAB7)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"MOCKED=1",
+				);
+				INFOPLIST_FILE = "EasyReader/Supporting Files/Development-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "Development copy";
+				PROVISIONING_PROFILE = "0B1685CC-627C-4832-97D4-79736E8FE8EE";
+				VALID_ARCHS = armv7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9D9CBB0E18DCC68A00532F8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CECD14CAE964A1994399D15 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
+				INFOPLIST_FILE = "EasyReader/Supporting Files/Development-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "Development copy";
+				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = armv7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		9DAC16FA1709D48E00383722 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1487,6 +1733,15 @@
 			buildConfigurations = (
 				9D7927D318DA279B00E1D3E1 /* Debug */,
 				9D7927D418DA279B00E1D3E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D9CBB0C18DCC68A00532F8C /* Build configuration list for PBXNativeTarget "Mocked Development" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D9CBB0D18DCC68A00532F8C /* Debug */,
+				9D9CBB0E18DCC68A00532F8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

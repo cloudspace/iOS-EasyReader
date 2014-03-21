@@ -29,7 +29,7 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
             return;
         }
         
-        #ifdef DEBUG
+        #ifdef MOCKED
             sharedInstance = [[CSFakedDataRequestor alloc] init];
         #else
             sharedInstance = [[CSResponsiveApiRequestor alloc] init];
@@ -68,7 +68,7 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
 - (NSDictionary *) getRequest:(NSString *) path withParams:(NSDictionary *) params
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -79,7 +79,7 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
 - (NSDictionary *) postRequest:(NSString *) path withParams:(NSDictionary *) params
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);

@@ -1,6 +1,6 @@
 //
 //  FeedItem.m
-//  
+//
 //
 //  Created by Michael Beattie on 3/11/14.
 //
@@ -30,8 +30,8 @@
  */
 - (NSString *)feedName
 {
-  Feed *feed = self.feed;
-  return feed.name;
+    Feed *feed = self.feed;
+    return feed.name;
 }
 
 - (NSString *)headline
@@ -46,36 +46,43 @@
                            success:(void(^)(NSDictionary *data))successBlock
                            failure:(void(^)(NSDictionary *data))failureBlock
 {
-  NSMutableArray *feedIds = [[NSMutableArray alloc] init];
-  for( Feed *feed in feeds ){
-    [feedIds addObject:feed.id];
-  }
-  
-  NSDictionary *params = @{
-                           @"since": startAt,
-                           @"feed_ids": feedIds
-                           };
-  
-  [[CSResponsiveApiRequestor sharedRequestor] requestRoute:@"feedItems"
-                                                withParams:params
-                                                   success:^(AFHTTPRequestOperation *operation, id responseData){
-                                                     [self saveParsedResponseData:responseData];
-                                                     if(successBlock) successBlock(responseData);
-                                                   }failure:^(AFHTTPRequestOperation *operation, id responseData){
-                                                     if(failureBlock) failureBlock(responseData);
-                                                   }];
+    if ([feeds count] == 0)
+    {
+        if (successBlock) successBlock(nil);
+        return;
+    }
+    
+    
+    NSMutableArray *feedIds = [[NSMutableArray alloc] init];
+    for( Feed *feed in feeds ){
+        [feedIds addObject:feed.id];
+    }
+    
+    NSDictionary *params = @{
+                             @"since": startAt,
+                             @"feed_ids": feedIds
+                             };
+    
+    [[CSResponsiveApiRequestor sharedRequestor] requestRoute:@"feedItems"
+                                                  withParams:params
+                                                     success:^(AFHTTPRequestOperation *operation, id responseData){
+                                                         [self saveParsedResponseData:responseData];
+                                                         if(successBlock) successBlock(responseData);
+                                                     }failure:^(AFHTTPRequestOperation *operation, id responseData){
+                                                         if(failureBlock) failureBlock(responseData);
+                                                     }];
 }
 
 + (void) saveParsedResponseData:(id)responseData
 {
-  for(NSDictionary *data in responseData[@"feed_items"]) {
-    for( Feed *currentFeed in [[User current] feeds] ){
-      if( data[@"feed_id"] == currentFeed.id ){
-        [currentFeed addFeedItemsObject:[FeedItem createOrUpdateFirstFromAPIData:data]];
-      }
+    for(NSDictionary *data in responseData[@"feed_items"]) {
+        for( Feed *currentFeed in [[User current] feeds] ){
+            if( data[@"feed_id"] == currentFeed.id ){
+                [currentFeed addFeedItemsObject:[FeedItem createOrUpdateFirstFromAPIData:data]];
+            }
+        }
     }
-  }
-
-  [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
 }
 @end
