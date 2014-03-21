@@ -185,6 +185,8 @@
 		9D8F319F171DE908006CFC6A /* icon_disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F319E171DE908006CFC6A /* icon_disclosure@2x.png */; };
 		9D8F31A4171ED4BE006CFC6A /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F31A3171ED4BE006CFC6A /* placeholder.png */; };
 		9D9CBABF18DC826700532F8C /* CSApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */; };
+		9D9CBAC318DCC52900532F8C /* CSApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */; };
+		9D9CBAC418DCC52A00532F8C /* CSApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */; };
 		9DA7CB26171C8B5E0045CC88 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA7CB25171C8B5E0045CC88 /* iAd.framework */; };
 		9DA7CB36171CAD020045CC88 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2B171CAD020045CC88 /* Icon-72.png */; };
 		9DA7CB37171CAD020045CC88 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7CB2C171CAD020045CC88 /* Icon-72@2x.png */; };
@@ -1095,6 +1097,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D16D33E18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
+				9D9CBAC318DCC52900532F8C /* CSApplicationStyleService.m in Sources */,
 				9D79270A18DA1D0300E1D3E1 /* Feed.m in Sources */,
 				9D79270B18DA1D0300E1D3E1 /* CSAppDelegate.m in Sources */,
 				9D79270C18DA1D0300E1D3E1 /* main.m in Sources */,
@@ -1128,6 +1131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D16D33F18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
+				9D9CBAC418DCC52A00532F8C /* CSApplicationStyleService.m in Sources */,
 				9D79274E18DA1D3800E1D3E1 /* Feed.m in Sources */,
 				9D79274F18DA1D3800E1D3E1 /* CSAppDelegate.m in Sources */,
 				9D79275018DA1D3800E1D3E1 /* main.m in Sources */,

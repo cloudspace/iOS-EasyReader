@@ -151,8 +151,6 @@
   //
   CSEnhancedTableViewHeaderFooterView *header = [self.tableView_feeds dequeueReusableHeaderFooterViewWithIdentifier:@"leftMenuHeader"];
   
-  NSInteger headerWidth  = tableView.frame.size.width;
-  
   // Set label
   [header.titleLabel setText:[self tableView:tableView titleForHeaderInSection:section]];
   
