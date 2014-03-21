@@ -7,9 +7,13 @@
 //
 
 #import "CSMenuUserFeedDataSource.h"
-#import "CSUserFeedCell.h"
-#import "Feed.h"
+
 #import "UIImageView+AFNetworking.h"
+
+#import "CSUserFeedCell.h"
+
+#import "Feed.h"
+#import "FeedItem.h"
 
 @implementation CSMenuUserFeedDataSource
 
@@ -20,8 +24,7 @@
 {
     self = [super init];
     
-    if (self)
-    {
+    if (self) {
         _feeds = [[NSMutableSet alloc] init];
     }
     
@@ -76,6 +79,7 @@
     
     Feed *feed = [self.feeds allObjects][indexPath.row];
     cell.feed = feed;
+    
     // Set the label text
     cell.label_name.text = feed.name;
     cell.label_name.textColor = [UIColor whiteColor];
@@ -91,6 +95,7 @@
                                               currentCell.imageView.image = image;
                                           }failure:nil
      ];
+    
     UIView *selectedBackgroundView = [[UIView alloc] init];
     [selectedBackgroundView setBackgroundColor: [UIColor colorWithRed:39/255.0 green:45/255.0 blue:58/255.0 alpha:1.0]];
     cell.selectedBackgroundView = selectedBackgroundView;
@@ -102,8 +107,7 @@
  */
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
         Feed *toDelete = [self.feeds allObjects][indexPath.row];
         
         [toDelete deleteEntity];
@@ -117,12 +121,9 @@
  */
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ( indexPath.row == [_feeds count] )
-    {
+    if ( indexPath.row == [_feeds count] ) {
         return UITableViewCellEditingStyleInsert;
-    }
-    else
-    {
+    } else {
         return UITableViewCellEditingStyleDelete;
     }
 }

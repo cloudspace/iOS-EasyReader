@@ -7,10 +7,13 @@
 //
 
 #import "CSMenuSearchFeedDataSource.h"
-#import "CSUserFeedCell.h"
+
+#import "UIImageView+AFNetworking.h"
+
+#import "CSSearchFeedCell.h"
+
 #import "Feed.h"
 #import "FeedItem.h"
-#import "UIImageView+AFNetworking.h"
 
 @implementation CSMenuSearchFeedDataSource
 
@@ -22,8 +25,7 @@
 {
     self = [super init];
     
-    if (self)
-    {
+    if (self) {
         _feeds = [[NSMutableSet alloc] init];
     }
     
@@ -75,10 +77,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Dequeue a styled cell
-    CSUserFeedCell *cell = (CSUserFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
+    CSSearchFeedCell *cell = (CSSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
     
     Feed *feed = [self.feeds allObjects][indexPath.row];
     cell.feed = feed;
+    
     // Set the label text
     cell.label_name.text = feed.name;
     cell.label_name.textColor = [UIColor whiteColor];
@@ -86,7 +89,7 @@
     // Show feed icons
     [cell.imageView_icon setHidden:NO];
     
-    __weak CSUserFeedCell *currentCell = cell;
+    __weak CSSearchFeedCell *currentCell = cell;
     NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.icon]];
     [currentCell.imageView setImageWithURLRequest:imageRequest
                                  placeholderImage:nil
@@ -94,6 +97,7 @@
                                               currentCell.imageView.image = image;
                                           }failure:nil
      ];
+    
     UIView *selectedBackgroundView = [[UIView alloc] init];
     [selectedBackgroundView setBackgroundColor: [UIColor colorWithRed:39/255.0 green:45/255.0 blue:58/255.0 alpha:1.0]];
     cell.selectedBackgroundView = selectedBackgroundView;
@@ -105,14 +109,13 @@
  */
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
         Feed *toDelete = [self.feeds allObjects][indexPath.row];
         
         [self.feeds removeObject:toDelete];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
-        for( FeedItem *item in toDelete.feedItems ) [item deleteEntity];
+        for ( FeedItem *item in toDelete.feedItems ) [item deleteEntity];
         [toDelete deleteEntity];
         
         [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
@@ -124,12 +127,9 @@
  */
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ( indexPath.row == [_feeds count] )
-    {
+    if ( indexPath.row == [_feeds count] ) {
         return UITableViewCellEditingStyleInsert;
-    }
-    else
-    {
+    } else {
         return UITableViewCellEditingStyleDelete;
     }
 }

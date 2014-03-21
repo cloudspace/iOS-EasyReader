@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
 
-@class Feed, User, CSEnhancedTableView;
+@class User, CSEnhancedTableView;
 
 @interface CSMenuLeftViewController : CSBaseViewController<UITableViewDelegate>
 
