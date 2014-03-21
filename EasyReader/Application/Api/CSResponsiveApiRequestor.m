@@ -13,6 +13,8 @@
 #import "Feed.h"
 #import "User.h"
 
+#import "AKRouter.h"
+
 @implementation CSResponsiveApiRequestor
 
 static dispatch_once_t pred;
@@ -23,87 +25,66 @@ typedef void (^CallbackBlock)(AFHTTPRequestOperation *operation, id responseObje
 + (CSResponsiveApiRequestor *) sharedRequestor
 {
     dispatch_once(&pred, ^{
-      if (sharedInstance != nil) {
-          return;
-      }
-      #ifdef DEBUG
-        sharedInstance = [[CSFakedDataRequestor alloc] init];
-      #else
-        sharedInstance = [[CSResponsiveApiRequestor alloc] init];
-      #endif
+        if (sharedInstance != nil) {
+            return;
+        }
+        
+        #ifdef DEBUG
+            sharedInstance = [[CSFakedDataRequestor alloc] init];
+        #else
+            sharedInstance = [[CSResponsiveApiRequestor alloc] init];
+        #endif
     });
     return sharedInstance;
 }
 
-- (id)init
-{
-  self = [super init];
-  
-  self.routes = @{@"feedDefaults": @{@"path": @"/feeds/defaults",
-                                     @"method": @"GET"},
-                  @"feedSearch": @{@"path": @"/feeds/search",
-                                   @"method": @"GET"},
-                  @"feedItems": @{@"path": @"/feed_items",
-                                  @"method": @"GET"},
-                  @"feedCreate": @{@"path": @"/feeds"}
-                  };
-  return self;
-}
 
 - (void) requestRoute:(NSString *)routeName
            withParams:(NSDictionary *)params
               success:(void(^)())successBlock
               failure:(void(^)())failureBlock
 {
-  NSDictionary *route = [self routes][routeName];
-  NSString *method = route[@"method"];
-  NSString *fullUrl = [self buildUrlByPath:route[@"path"]];
-  
-  NSDictionary *data;
-  if( [method isEqualToString:@"GET"] ) {
-    data = [self getRequest:fullUrl withParams:params];
-  } else if([method isEqualToString:@"POST"]) {
-    data = [self postRequest:fullUrl withParams:params];
-  } else {
-    data = @{};
-  }
-  
-  if (successBlock) successBlock(nil, data);
+    
+    AKRoute *route = [[AKRouter shared] routeForName:routeName];
+    NSString *fullUrl = [[[AKRouter shared] urlFor:routeName params:params] absoluteString];
+    
+    NSDictionary *data;
+    
+    switch (route.requestMethod)
+    {
+        case kAKRequestMethodGET:
+            data = [self getRequest:fullUrl withParams:params];
+            break;
+        case kAKRequestMethodPOST:
+            data = [self postRequest:fullUrl withParams:params];
+            break;
+        default:
+            data = @{};
+    }
+    
+    if (successBlock) successBlock(nil, data);
 }
 
 - (NSDictionary *) getRequest:(NSString *) path withParams:(NSDictionary *) params
 {
-  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-  [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    NSLog(@"JSON: %@", responseObject);
-  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    NSLog(@"Error: %@", error);
-  }];
-  return @{};
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    return @{};
 }
 
 - (NSDictionary *) postRequest:(NSString *) path withParams:(NSDictionary *) params
 {
-  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-  [manager POST:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    NSLog(@"JSON: %@", responseObject);
-  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    NSLog(@"Error: %@", error);
-  }];
-  return @{};
-}
-
-//this should be converted into a constant whose value is determined by the environment
-- (NSString *) baseUrl
-{
-  return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"api_url"];
-}
-
-//adds the base url onto the given path
-- (NSString *) buildUrlByPath:(NSString *) path
-{
-    NSArray *urlParts = [NSArray arrayWithObjects: [self baseUrl], path, nil];
-    return [urlParts componentsJoinedByString:@""];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    return @{};
 }
 
 @end

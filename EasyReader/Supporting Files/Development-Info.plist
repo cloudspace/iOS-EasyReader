@@ -74,7 +74,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>api_url</key>
+	<key>ApiHost</key>
 	<string>http://dev.rss.cloudspace.com</string>
+	<key>ApiBasePath</key>
+	<string>/v2</string>
 </dict>
 </plist>

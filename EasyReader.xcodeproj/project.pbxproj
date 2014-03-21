@@ -26,6 +26,27 @@
 		9D140BF5171F68E000CDD319 /* button_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D140BF4171F68E000CDD319 /* button_add@2x.png */; };
 		9D16D30718DA2B3A001E9C38 /* CSBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D30618DA2B3A001E9C38 /* CSBaseTestCase.m */; };
 		9D16D30918DA2E43001E9C38 /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D30818DA2E43001E9C38 /* UserTests.m */; };
+		9D16D32818DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */; };
+		9D16D32918DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */; };
+		9D16D32A18DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */; };
+		9D16D33818DB75D9001E9C38 /* CSCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */; };
+		9D16D33918DB75D9001E9C38 /* CSCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */; };
+		9D16D33A18DB75D9001E9C38 /* CSCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */; };
+		9D16D33D18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */; };
+		9D16D33E18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */; };
+		9D16D33F18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */; };
+		9D16D34B18DBA9E9001E9C38 /* AKRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* AKRoute.m */; };
+		9D16D34C18DBA9E9001E9C38 /* AKRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* AKRoute.m */; };
+		9D16D34D18DBA9E9001E9C38 /* AKRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* AKRoute.m */; };
+		9D16D34E18DBA9E9001E9C38 /* AKRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* AKRouter.m */; };
+		9D16D34F18DBA9E9001E9C38 /* AKRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* AKRouter.m */; };
+		9D16D35018DBA9E9001E9C38 /* AKRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* AKRouter.m */; };
+		9D16D35118DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
+		9D16D35218DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
+		9D16D35318DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
+		9D16D35418DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */; };
+		9D16D35518DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */; };
+		9D16D35618DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */; };
 		9D27B1DF1715DECB001C39CF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D27B1DE1715DECB001C39CF /* Default-568h@2x.png */; };
 		9D2FDF881721EE4400535763 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF871721EE4400535763 /* Default@2x.png */; };
 		9D2FDF8A1721EE4800535763 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF891721EE4700535763 /* Default.png */; };
@@ -232,6 +253,20 @@
 		9D16D30518DA2B3A001E9C38 /* CSBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseTestCase.h; sourceTree = "<group>"; };
 		9D16D30618DA2B3A001E9C38 /* CSBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBaseTestCase.m; sourceTree = "<group>"; };
 		9D16D30818DA2E43001E9C38 /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTests.m; path = Application/Models/UserTests.m; sourceTree = "<group>"; };
+		9D16D32618DB57D0001E9C38 /* CSRegisterRoutesService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRegisterRoutesService.h; sourceTree = "<group>"; };
+		9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRegisterRoutesService.m; sourceTree = "<group>"; };
+		9D16D33618DB75D9001E9C38 /* CSCoreDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSCoreDataService.h; sourceTree = "<group>"; };
+		9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCoreDataService.m; sourceTree = "<group>"; };
+		9D16D33B18DB7767001E9C38 /* CSFeedUpdateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedUpdateService.h; sourceTree = "<group>"; };
+		9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedUpdateService.m; sourceTree = "<group>"; };
+		9D16D34218DBA9E9001E9C38 /* AKRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRoute.h; sourceTree = "<group>"; };
+		9D16D34318DBA9E9001E9C38 /* AKRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRoute.m; sourceTree = "<group>"; };
+		9D16D34418DBA9E9001E9C38 /* AKRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRouter.h; sourceTree = "<group>"; };
+		9D16D34518DBA9E9001E9C38 /* AKRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRouter.m; sourceTree = "<group>"; };
+		9D16D34718DBA9E9001E9C38 /* SOApplicationDelegateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOApplicationDelegateService.h; sourceTree = "<group>"; };
+		9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOApplicationDelegateService.m; sourceTree = "<group>"; };
+		9D16D34918DBA9E9001E9C38 /* SOApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOApplicationDelegate.h; sourceTree = "<group>"; };
+		9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOApplicationDelegate.m; sourceTree = "<group>"; };
 		9D27B1DE1715DECB001C39CF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9D2FDF871721EE4400535763 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9D2FDF891721EE4700535763 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -412,6 +447,50 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		9D16D33518DB75BF001E9C38 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9D16D32618DB57D0001E9C38 /* CSRegisterRoutesService.h */,
+				9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */,
+				9D16D33618DB75D9001E9C38 /* CSCoreDataService.h */,
+				9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */,
+				9D16D33B18DB7767001E9C38 /* CSFeedUpdateService.h */,
+				9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		9D16D34018DBA9E9001E9C38 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				9D16D34118DBA9E9001E9C38 /* apikit */,
+				9D16D34618DBA9E9001E9C38 /* ServiceOrientedAppDelegate */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		9D16D34118DBA9E9001E9C38 /* apikit */ = {
+			isa = PBXGroup;
+			children = (
+				9D16D34218DBA9E9001E9C38 /* AKRoute.h */,
+				9D16D34318DBA9E9001E9C38 /* AKRoute.m */,
+				9D16D34418DBA9E9001E9C38 /* AKRouter.h */,
+				9D16D34518DBA9E9001E9C38 /* AKRouter.m */,
+			);
+			path = apikit;
+			sourceTree = "<group>";
+		};
+		9D16D34618DBA9E9001E9C38 /* ServiceOrientedAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9D16D34718DBA9E9001E9C38 /* SOApplicationDelegateService.h */,
+				9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */,
+				9D16D34918DBA9E9001E9C38 /* SOApplicationDelegate.h */,
+				9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */,
+			);
+			path = ServiceOrientedAppDelegate;
+			sourceTree = "<group>";
+		};
 		9D429774170E166E00E73BFE /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +648,7 @@
 		9DAC16CF1709D48E00383722 /* EasyReader */ = {
 			isa = PBXGroup;
 			children = (
+				9D16D34018DBA9E9001E9C38 /* Library */,
 				9DAC1717170A043200383722 /* Application */,
 				9DAC171F170A043200383722 /* Other Sources */,
 				9DAC1722170A043200383722 /* Resources */,
@@ -593,6 +673,7 @@
 		9DAC1718170A043200383722 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				9D16D33518DB75BF001E9C38 /* Services */,
 				9DAC1719170A043200383722 /* CSAppDelegate.h */,
 				9DAC171A170A043200383722 /* CSAppDelegate.m */,
 			);
@@ -1008,6 +1089,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D16D33E18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
 				9D79270A18DA1D0300E1D3E1 /* Feed.m in Sources */,
 				9D79270B18DA1D0300E1D3E1 /* CSAppDelegate.m in Sources */,
 				9D79270C18DA1D0300E1D3E1 /* main.m in Sources */,
@@ -1019,14 +1101,20 @@
 				9D79271218DA1D0300E1D3E1 /* CSRootViewController.m in Sources */,
 				9D79271318DA1D0300E1D3E1 /* FeedItem.m in Sources */,
 				9D79271418DA1D0300E1D3E1 /* User.m in Sources */,
+				9D16D34F18DBA9E9001E9C38 /* AKRouter.m in Sources */,
 				9D79271518DA1D0300E1D3E1 /* CSFeedItemUpdater.m in Sources */,
 				9D79271618DA1D0300E1D3E1 /* CSFakedDataRequestor.m in Sources */,
 				9D79271718DA1D0300E1D3E1 /* CSMenuLeftViewController.m in Sources */,
 				9D79271818DA1D0300E1D3E1 /* CSResponsiveApiRequestor.m in Sources */,
 				9D79271918DA1D0300E1D3E1 /* Easy Reader.xcdatamodeld in Sources */,
+				9D16D32918DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */,
 				9D79271A18DA1D0300E1D3E1 /* CSFeedAddViewController.m in Sources */,
 				9D79271B18DA1D0300E1D3E1 /* NSObject+CSNilAdditions.m in Sources */,
+				9D16D33918DB75D9001E9C38 /* CSCoreDataService.m in Sources */,
+				9D16D34C18DBA9E9001E9C38 /* AKRoute.m in Sources */,
 				9D79271C18DA1D0300E1D3E1 /* CSFeedItemCollectionViewDataSource.m in Sources */,
+				9D16D35518DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
+				9D16D35218DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,6 +1122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D16D33F18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
 				9D79274E18DA1D3800E1D3E1 /* Feed.m in Sources */,
 				9D79274F18DA1D3800E1D3E1 /* CSAppDelegate.m in Sources */,
 				9D79275018DA1D3800E1D3E1 /* main.m in Sources */,
@@ -1045,14 +1134,20 @@
 				9D79275618DA1D3800E1D3E1 /* CSRootViewController.m in Sources */,
 				9D79275718DA1D3800E1D3E1 /* FeedItem.m in Sources */,
 				9D79275818DA1D3800E1D3E1 /* User.m in Sources */,
+				9D16D35018DBA9E9001E9C38 /* AKRouter.m in Sources */,
 				9D79275918DA1D3800E1D3E1 /* CSFeedItemUpdater.m in Sources */,
 				9D79275A18DA1D3800E1D3E1 /* CSFakedDataRequestor.m in Sources */,
 				9D79275B18DA1D3800E1D3E1 /* CSMenuLeftViewController.m in Sources */,
 				9D79275C18DA1D3800E1D3E1 /* CSResponsiveApiRequestor.m in Sources */,
 				9D79275D18DA1D3800E1D3E1 /* Easy Reader.xcdatamodeld in Sources */,
+				9D16D32A18DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */,
 				9D79275E18DA1D3800E1D3E1 /* CSFeedAddViewController.m in Sources */,
 				9D79275F18DA1D3800E1D3E1 /* NSObject+CSNilAdditions.m in Sources */,
+				9D16D33A18DB75D9001E9C38 /* CSCoreDataService.m in Sources */,
+				9D16D34D18DBA9E9001E9C38 /* AKRoute.m in Sources */,
 				9D79276018DA1D3800E1D3E1 /* CSFeedItemCollectionViewDataSource.m in Sources */,
+				9D16D35618DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
+				9D16D35318DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1069,6 +1164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D16D33D18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
 				0DE51FF818CF919900454E51 /* Feed.m in Sources */,
 				9DAC172D170A043200383722 /* CSAppDelegate.m in Sources */,
 				9DAC172E170A043200383722 /* main.m in Sources */,
@@ -1080,14 +1176,20 @@
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,
 				0DE51FF418CF911000454E51 /* FeedItem.m in Sources */,
 				0DE51FF518CF911000454E51 /* User.m in Sources */,
+				9D16D34E18DBA9E9001E9C38 /* AKRouter.m in Sources */,
 				274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */,
 				274D540218D0E5C20096831A /* CSFakedDataRequestor.m in Sources */,
 				9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */,
 				8E7F403218D3596C00A6FED6 /* CSResponsiveApiRequestor.m in Sources */,
 				9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */,
+				9D16D32818DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */,
 				9DFBC0991714957E006BF840 /* CSFeedAddViewController.m in Sources */,
 				2751F4D618DA02C100339C96 /* NSObject+CSNilAdditions.m in Sources */,
+				9D16D33818DB75D9001E9C38 /* CSCoreDataService.m in Sources */,
+				9D16D34B18DBA9E9001E9C38 /* AKRoute.m in Sources */,
 				2751F4E218DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m in Sources */,
+				9D16D35418DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
+				9D16D35118DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,6 +27,7 @@ PODS:
   - Inflections (1.0.0):
     - RegexKitLite
   - MagicalRecord (2.2)
+  - MAObjCRuntime (0.0.1)
   - MBProgressHUD (0.8)
   - MFSideMenu (0.5.4)
   - MTLabel (0.0.1)
@@ -58,6 +59,7 @@ DEPENDENCIES:
   - Facebook-iOS-SDK (~> 3.11.0)
   - Inflections (~> 1.0.0)
   - MagicalRecord (from `https://github.com/magicalpanda/MagicalRecord`, commit `98ec121bf767c495a2e887adeade7383b74a62f4`)
+  - MAObjCRuntime (~> 0.0)
   - MBProgressHUD (~> 0.8)
   - MFSideMenu (~> 0.5.4)
   - MTLabel (~> 0.0.1)
@@ -83,6 +85,7 @@ SPEC CHECKSUMS:
   Facebook-iOS-SDK: 42a1de39170b858d675c2453d8aace55c51be2bb
   Inflections: e77c455409381402163911a75835892fd406ff99
   MagicalRecord: 565156bae4de961860fad200a5c52e21e7933ebe
+  MAObjCRuntime: 284004079156d10cb8237bc3ffcfa3a0e1a0af22
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   MFSideMenu: f59e25c080097a701e108459c207fb22e1f62c30
   MTLabel: 5b326c677b5df074e844a5d2840387b9048257a7

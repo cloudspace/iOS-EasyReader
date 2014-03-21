@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CSFeedItemUpdater.h"
+#import "SOApplicationDelegate.h"
 
-@class Feed;
 
-@interface CSAppDelegate : UIResponder <UIApplicationDelegate>
+@interface CSAppDelegate : SOApplicationDelegate <UIApplicationDelegate>
+
+/// The main application window
 
 #pragma mark - Properties
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, retain) Feed *activeFeed;
 
 @end

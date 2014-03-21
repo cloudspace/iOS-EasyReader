@@ -32,6 +32,8 @@ pod 'Inflections', '~> 1.0.0'
 
 pod 'Block-KVO', '~> 2.2.1'
 
+pod 'MAObjCRuntime', '~> 0.0'
+
 # Private CS repos
 pod 'CSEnhancedTableView', '~> 0.0.1'
 pod 'CSStandardViewControllers', '~> 0.0.1'
