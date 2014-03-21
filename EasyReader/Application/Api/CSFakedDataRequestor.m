@@ -155,8 +155,8 @@
   if ( self.requestCounter == 1 ){
     subarrayRange = NSMakeRange(0,6);
   } else {
-    if( [items count] > self.requestCounter*2 ){
-      subarrayRange = NSMakeRange(self.requestCounter*2,2);
+    if( [items count] > (self.requestCounter+1)*2 ){
+      subarrayRange = NSMakeRange((self.requestCounter+1)*2,2);
     } else {
       subarrayRange = NSMakeRange(8,2);
     }

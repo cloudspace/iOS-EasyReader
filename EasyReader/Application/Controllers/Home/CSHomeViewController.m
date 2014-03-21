@@ -17,9 +17,9 @@
 #import "User.h"
 
 @interface CSHomeViewController (){
-    CSFeedItemCollectionViewDataSource *feedCollectionViewDataSource;
-    FeedItem *currentFeedItem;
-    NSString *currentURL;
+  CSFeedItemCollectionViewDataSource *feedCollectionViewDataSource;
+  FeedItem *currentFeedItem;
+  NSString *currentURL;
 }
 
 /// The collection view which holds the individual feed items
@@ -32,8 +32,9 @@
 
 - (void)viewDidLoad
 {
-  _feedItems = [[NSMutableSet alloc] init];
   [super viewDidLoad];
+  _feedItems = [[NSMutableSet alloc] init];
+  [_pageControl_itemIndicator setUpFadesOnView:[_pageControl_itemIndicator superview]];
   [self setUpCollectionView];
   [self setUpWebView];
   [self setupFeedItemObserver];
@@ -68,7 +69,7 @@
                                         _feedItems = [(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems];
                                         
                                         if(!new) {
-                                          NSLog(@"startup?");
+                                          NSLog(@"There are no feeds here");
                                         } else {
                                           NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
                                           NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
@@ -84,7 +85,7 @@
                                             [_feedItems addObject:item];
                                           }
                                           
-                                          //Add call to button on custom page controller
+                                          [_pageControl_itemIndicator.button_newItem setHidden:NO];
                                         }
                                         
                                         //redraw the collection with the changes to the feed items
@@ -94,7 +95,8 @@
                                         
                                         if(currentFeedItem){
                                           [self scrollToCurrentFeedItem];
-                                          [self setPageControllerPageAtIndex:[feedCollectionViewDataSource.sortedFeedItems indexOfObject:currentFeedItem]];
+                                          [_pageControl_itemIndicator setPageControllerPageAtIndex:[feedCollectionViewDataSource.sortedFeedItems indexOfObject:currentFeedItem]
+                                                                                     forCollection:_feedItems];
                                         }
                                       }
                                    insertionBlock:nil
@@ -106,6 +108,7 @@
                removalBlock:nil
            replacementBlock:nil
    ];
+  NSLog(@"observer added");
 }
 
 // Sets up collection view on controller start up
@@ -122,42 +125,7 @@
   self.collectionView_feedItems.dataSource = feedCollectionViewDataSource;
   self.collectionView_feedItems.delegate = self;
   
-  self.collectionView_feedItems.pagingEnabled = YES;
-  self.pageControl_itemIndicator.currentPage = 0;
   
-  UIButton *dot = [UIButton buttonWithType:UIButtonTypeInfoLight];
-  dot.frame = CGRectMake(10,(self.pageControl_itemIndicator.frame.size.height/2)-5, 12, 12);
-  
-  UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(newItemButton:)];
-  [dot addGestureRecognizer:singleTap];
-  
-  UIView *leftFade = [[UIView alloc] init];
-  leftFade.frame = CGRectMake(90, 10, 70, 20);
-  leftFade.backgroundColor = [UIColor blackColor];
-  
-  CAGradientLayer *leftLayer = [CAGradientLayer layer];
-  leftLayer.frame = leftFade.bounds;
-  leftLayer.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor, (id)[UIColor clearColor].CGColor, nil];
-  leftLayer.startPoint = CGPointMake(0.0f, 1.0f);
-  leftLayer.endPoint = CGPointMake(1.0f, 1.0f);
-  leftFade.layer.mask = leftLayer;
-  
-  UIView *rightFade = [[UIView alloc] init];
-  rightFade.frame = CGRectMake(160, 10, 70, 20);
-  rightFade.backgroundColor = [UIColor blackColor];
-  
-  CAGradientLayer *rightLayer = [CAGradientLayer layer];
-  rightLayer.frame = rightFade.bounds;
-  rightLayer.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor, (id)[UIColor clearColor].CGColor, nil];
-  rightLayer.startPoint = CGPointMake(1.0f, 1.0f);
-  rightLayer.endPoint = CGPointMake(0.0f, 1.0f);
-  rightFade.layer.mask = rightLayer;
-  
-  
-  [self.pageControl_itemIndicator addSubview:dot];
-  UIView *pageControllerMask = [self.pageControl_itemIndicator superview];
-  [pageControllerMask addSubview:leftFade];
-  [pageControllerMask addSubview:rightFade];
 }
 
 -(void)newItemButton:(id)sender
@@ -165,8 +133,8 @@
   currentFeedItem = [feedCollectionViewDataSource.sortedFeedItems firstObject];
   [self scrollToCurrentFeedItem];
   self.collectionCellGoingTo = 0;
-  [self setPageControllerPageAtIndex:[feedCollectionViewDataSource.sortedFeedItems indexOfObject:currentFeedItem]];
-  [sender setHidden:YES];
+  [_pageControl_itemIndicator setPageControllerPageAtIndex:[feedCollectionViewDataSource.sortedFeedItems indexOfObject:currentFeedItem]
+                                             forCollection:_feedItems];
 }
 
 #pragma mark - IBActions
@@ -239,22 +207,8 @@
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
   int newIndex = indexPath.row+((indexPath.row-self.collectionCellGoingTo)*-1);
-  [self setPageControllerPageAtIndex:newIndex];
-}
-
-- (void)setPageControllerPageAtIndex:(int)index
-{
-  if ([_feedItems count] < 6){
-    _pageControl_itemIndicator.currentPage = index;
-  } else {
-    if( index < 3 ){
-      _pageControl_itemIndicator.currentPage = index;
-    } else if(index > ([_feedItems count]-3) ){
-      _pageControl_itemIndicator.currentPage = 5-([_feedItems count]-index);
-    } else {
-      _pageControl_itemIndicator.currentPage = 2;
-    }
-  }
+  [_pageControl_itemIndicator setPageControllerPageAtIndex:newIndex
+                                             forCollection:_feedItems];
 }
 
 - (void)loadFeedItemWebView

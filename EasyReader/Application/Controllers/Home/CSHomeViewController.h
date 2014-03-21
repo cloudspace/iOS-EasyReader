@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
+#import "CSCollectionPageControl.h"
 
 @class User;
 
@@ -15,7 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *verticalScrollView;
 @property (strong, nonatomic) IBOutlet UIButton *button_leftMenu;
-@property (strong, nonatomic) IBOutlet UIPageControl *pageControl_itemIndicator;
+@property (strong, nonatomic) IBOutlet CSCollectionPageControl *pageControl_itemIndicator;
 @property (nonatomic, strong) UIWebView *feedItemWebView;
 @property (nonatomic, strong) NSMutableSet *feedItems;
 @property User* currentUser;
