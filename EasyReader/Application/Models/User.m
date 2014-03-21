@@ -24,7 +24,7 @@
 
     for (Feed *feed in self.feeds)
     {
-        [feedItems setByAddingObjectsFromSet:feed.feedItems];
+        [feedItems addObjectsFromArray:[feed.feedItems allObjects]];
     }
     
     return feedItems;
