@@ -198,7 +198,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
-  int newIndex = indexPath.row+((indexPath.row-self.collectionCellGoingTo)*-1);
+  NSInteger newIndex = indexPath.row+((indexPath.row-self.collectionCellGoingTo)*-1);
+
   [_pageControl_itemIndicator setPageControllerPageAtIndex:newIndex
                                              forCollection:_feedItems];
 }

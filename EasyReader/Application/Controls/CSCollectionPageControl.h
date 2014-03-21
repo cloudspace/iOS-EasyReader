@@ -17,7 +17,7 @@
 @property UIView *view_leftFade;
 @property UIView *view_rightFade;
 
-- (void)setPageControllerPageAtIndex:(int)index forCollection:(NSSet*)collection;
+- (void)setPageControllerPageAtIndex:(NSInteger)index forCollection:(NSSet*)collection;
 - (void)setUpFadesOnView:(UIView*)mask;
 
 @end

@@ -78,7 +78,7 @@
   [mask addSubview:_view_maskLayer];
 }
 
-- (void)setPageControllerPageAtIndex:(int)index forCollection:(NSSet*)collection
+- (void)setPageControllerPageAtIndex:(NSInteger)index forCollection:(NSSet*)collection
 {
   if ([collection count] < 6){
     self.currentPage = index;

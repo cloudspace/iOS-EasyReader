@@ -24,7 +24,7 @@
 @property User* currentUser;
 @property CSFeedItemCollectionViewDataSource *feedCollectionViewDataSource;
 @property FeedItem *currentFeedItem;
-@property int collectionCellGoingTo;
+@property NSInteger collectionCellGoingTo;
 
 - (void)scrollToCurrentFeedItem;
 

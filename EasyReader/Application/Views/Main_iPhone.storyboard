@@ -39,14 +39,11 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HSH-zo-oed">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HSH-zo-oed">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="400" id="23x-uU-mbZ"/>
-                                                            </constraints>
                                                         </imageView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GyA-VK-s4d">
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GyA-VK-s4d">
                                                             <rect key="frame" x="0.0" y="331" width="320" height="200"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -96,22 +93,11 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="200" id="qGN-qN-8c2"/>
-                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="GyA-VK-s4d" secondAttribute="trailing" id="DQG-A0-TuO"/>
-                                                    <constraint firstItem="HSH-zo-oed" firstAttribute="top" secondItem="BLC-ou-GYj" secondAttribute="top" id="EgT-su-K7E"/>
-                                                    <constraint firstItem="HSH-zo-oed" firstAttribute="leading" secondItem="BLC-ou-GYj" secondAttribute="leading" id="HUs-E3-mEJ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="HSH-zo-oed" secondAttribute="trailing" id="KFz-T0-yFX"/>
-                                                    <constraint firstItem="GyA-VK-s4d" firstAttribute="leading" secondItem="BLC-ou-GYj" secondAttribute="leading" id="Xwl-PA-1dz"/>
-                                                    <constraint firstAttribute="bottom" secondItem="GyA-VK-s4d" secondAttribute="bottom" id="x1p-Se-kKC"/>
-                                                </constraints>
                                                 <connections>
                                                     <outlet property="imageView_background" destination="HSH-zo-oed" id="4O6-c6-XkW"/>
                                                     <outlet property="info_view" destination="GyA-VK-s4d" id="D8t-dc-C8Q"/>
@@ -132,17 +118,14 @@
                                             <action selector="buttonLeftMenu_touchUpInside_goToMenu:" destination="Hgn-0q-Z1W" eventType="touchUpInside" id="hMD-Og-FDZ"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KCf-YN-pPo">
-                                        <rect key="frame" x="0.0" y="531" width="320" height="284"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ted-dg-wrP">
+                                        <rect key="frame" x="0.0" y="532" width="320" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vdW-Yb-aAb" customClass="CSCollectionPageControl">
+                                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hvt-eP-rs6" customClass="CSCollectionPageControl">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="37" id="mCV-Zv-Iwk"/>
-                                                </constraints>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </pageControl>
                                         </subviews>
                                     </view>
@@ -154,7 +137,7 @@
                     <connections>
                         <outlet property="button_leftMenu" destination="wb1-Na-kaO" id="0oK-RY-cyj"/>
                         <outlet property="collectionView_feedItems" destination="xvT-99-V3u" id="kb5-it-zd3"/>
-                        <outlet property="pageControl_itemIndicator" destination="vdW-Yb-aAb" id="8X6-MF-OZ3"/>
+                        <outlet property="pageControl_itemIndicator" destination="hvt-eP-rs6" id="4QN-hB-imH"/>
                         <outlet property="verticalScrollView" destination="EWA-9Z-pb1" id="yj7-Ir-WAm"/>
                     </connections>
                 </viewController>

@@ -9,13 +9,11 @@
 #import "SOApplicationDelegateService.h"
 
 
-static SOApplicationDelegateService *shared = nil;
-
 static NSMutableDictionary *sharedDispatchPredicates = nil;
 static NSMutableDictionary *sharedInstances = nil;
 
-static long predicateDictionaryPredicate;
-static long instanceDictionaryPredicate;
+static dispatch_once_t predicateDictionaryPredicate;
+static dispatch_once_t instanceDictionaryPredicate;
 
 
 @implementation SOApplicationDelegateService
