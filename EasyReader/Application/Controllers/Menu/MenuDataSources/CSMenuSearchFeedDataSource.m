@@ -29,11 +29,14 @@
     return self;
 }
 
-
+/**
+ * Sets the feeds to those returned by the search
+ */
 - (void)updateWithFeeds:(NSMutableSet *)feeds
 {
     self.feeds = feeds;
 }
+
 
 #pragma mark - Count Methods
 /**

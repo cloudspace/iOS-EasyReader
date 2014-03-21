@@ -7,16 +7,21 @@
 //
 
 #import "CSFeedSearcher.h"
-#import "FeedItem.h"
 #import "Feed.h"
 
 @implementation CSFeedSearcher
 
+/**
+ * API requestor for feeds similar to user input
+ */
 - (void)feedsLike:(NSString *)name
 {
     [self searchForFeedsLike:name];
 }
 
+/**
+ * Call to the API that returns feeds similar to user input
+ */
 - (void)searchForFeedsLike:(NSString *)name
 {
     [Feed requestFeedsByName:name

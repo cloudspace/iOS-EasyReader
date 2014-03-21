@@ -49,9 +49,11 @@
   [super viewDidLoad];
   self.currentUser = [User current];
   self.feeds = [[NSMutableSet alloc] init];
+    
+  // Setup the user and search datasources
   [self setUpDataSources];
   
-  // Setup feedSearch API
+  // Setup feedSearch API requestor
   feedSearcher = [[CSFeedSearcher alloc] init];
     
   // Set tableViewStyle
@@ -81,6 +83,8 @@
                   for ( Feed *feed in addedFeeds ){
                     [[self feeds] addObject:feed];
                   }
+                    
+                  // Update and switch to the userFeed data source
                   self.tableView_feeds.dataSource = userFeedDataSource;
                   [userFeedDataSource updateWithFeeds:self.feeds];
                     
@@ -104,7 +108,10 @@
 
 - (void)setUpDataSources
 {
+    // Lists feeds in the database
     userFeedDataSource = [[CSMenuUserFeedDataSource alloc] init];
+    
+    // Lists feeds returned by the search API
     searchFeedDataSource = [[CSMenuSearchFeedDataSource alloc] init];
 }
 
@@ -129,6 +136,8 @@
         weakSelf.textField_searchInput.text = @"";
         [weakSelf.tableView_feeds setEditing:NO animated:YES];
         weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
+            
+        // Reset to the users feeds
         weakSelf.tableView_feeds.dataSource = userFeedDataSource;
         [weakSelf.tableView_feeds reloadData];
         break;
@@ -137,11 +146,17 @@
 
 - (void)searchFieldDidChange
 {
+    // If the searchInput has text
     if(self.textField_searchInput.text && self.textField_searchInput.text.length > 0){
+        
+        // Create empty searchFeed set
         NSMutableSet *searchedFeeds = [[NSMutableSet alloc] init];
+        
+        // Switch to the searchFeed datasource and update the table
         [searchFeedDataSource updateWithFeeds:searchedFeeds];
         self.tableView_feeds.dataSource = searchFeedDataSource;
         
+        // If the user is typing a url
         if([self.textField_searchInput.text hasPrefix:@"http"]){
             // Get the local context
             NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
@@ -151,15 +166,20 @@
             customFeed.name = self.textField_searchInput.text;
             customFeed.url = self.textField_searchInput.text;
 
+            // Add custom feed to the searchFeeds
             [searchedFeeds addObject:customFeed];
         }
         else{
+            // Return feeds from the API similar to user input
+            // Add these feeds to the searchFeed datasource
             [feedSearcher feedsLike:self.textField_searchInput.text];
         }
 
+        // Reload the table with new searchFeeds
         [self.tableView_feeds reloadData];
     }
     else{
+        // Switch to the userFeeds datasource
         self.tableView_feeds.dataSource = userFeedDataSource;
         [self.tableView_feeds reloadData];
     }

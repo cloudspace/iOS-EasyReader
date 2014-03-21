@@ -28,11 +28,14 @@
     return self;
 }
 
-
+/**
+ * Sets the feeds to those in the database
+ */
 - (void)updateWithFeeds:(NSMutableSet *)feeds
 {
     self.feeds = feeds;
 }
+
 
 #pragma mark - Count Methods
 /**
