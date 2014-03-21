@@ -72,7 +72,7 @@
     CSUserFeedCell *cell = (CSUserFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"UserFeedCell"];
     
     Feed *feed = [self.feeds allObjects][indexPath.row];
-    
+    cell.feed = feed;
     // Set the label text
     cell.label_name.text = feed.name;
     cell.label_name.textColor = [UIColor whiteColor];

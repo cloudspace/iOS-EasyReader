@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class Feed, User, CSEnhancedTableView;
-
 @interface CSMenuUserFeedDataSource : NSObject<UITableViewDataSource>
 
 @property (nonatomic, retain) NSMutableSet *feeds;

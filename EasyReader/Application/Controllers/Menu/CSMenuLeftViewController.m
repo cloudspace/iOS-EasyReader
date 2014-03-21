@@ -182,12 +182,7 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  if (indexPath.row == [_feeds count])
-  {
-    //Add new feed controller change
-  } else {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-  }
 }
 
 @end
