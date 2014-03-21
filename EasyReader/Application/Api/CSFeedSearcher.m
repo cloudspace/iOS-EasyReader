@@ -12,7 +12,7 @@
 @implementation CSFeedSearcher
 
 /**
- * API requestor for feeds similar to user input
+ * Returns a set of Feeds and associated FeedItems
  */
 - (void)feedsLike:(NSString *)name
 {

@@ -10,6 +10,9 @@
 
 @interface CSFeedSearcher : NSObject
 
+/**
+ * API requestor for feeds similar to user input
+ */
 - (void)feedsLike:(NSString *)name;
 
 @end

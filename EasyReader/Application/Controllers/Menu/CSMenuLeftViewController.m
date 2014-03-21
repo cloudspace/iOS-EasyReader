@@ -12,6 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 
 #import "Feed.h"
+#import "FeedItem.h"
 #import "User.h"
 #import "CSAppDelegate.h"
 #import "CSRootViewController.h"
@@ -135,7 +136,7 @@
       case MFSideMenuStateEventMenuDidClose:
         weakSelf.textField_searchInput.text = @"";
         [weakSelf.tableView_feeds setEditing:NO animated:YES];
-        weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
+        weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeNone;
             
         // Reset to the users feeds
         weakSelf.tableView_feeds.dataSource = userFeedDataSource;

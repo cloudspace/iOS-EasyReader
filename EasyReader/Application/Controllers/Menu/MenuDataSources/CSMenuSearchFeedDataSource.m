@@ -9,6 +9,7 @@
 #import "CSMenuSearchFeedDataSource.h"
 #import "CSUserFeedCell.h"
 #import "Feed.h"
+#import "FeedItem.h"
 #import "UIImageView+AFNetworking.h"
 
 @implementation CSMenuSearchFeedDataSource
@@ -30,7 +31,8 @@
 }
 
 /**
- * Sets the feeds to those returned by the search
+ * Sets the feeds to those returned by the search API or
+ * The custom feed being created by the user
  */
 - (void)updateWithFeeds:(NSMutableSet *)feeds
 {
@@ -107,6 +109,10 @@
     {
         Feed *toDelete = [self.feeds allObjects][indexPath.row];
         
+        [self.feeds removeObject:toDelete];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        for( FeedItem *item in toDelete.feedItems ) [item deleteEntity];
         [toDelete deleteEntity];
         
         [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
@@ -118,12 +124,7 @@
  */
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!tableView.isEditing)
-    {
-        return UITableViewCellEditingStyleNone;
-    }
-    
-    if (indexPath.section == 0 && indexPath.row == [self tableView:tableView numberOfRowsInSection:0] - 1)
+    if ( indexPath.row == [_feeds count] )
     {
         return UITableViewCellEditingStyleInsert;
     }

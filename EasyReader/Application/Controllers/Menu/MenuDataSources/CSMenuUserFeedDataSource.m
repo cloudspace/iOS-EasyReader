@@ -117,12 +117,7 @@
  */
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!tableView.isEditing)
-    {
-        return UITableViewCellEditingStyleNone;
-    }
-    
-    if (indexPath.section == 0 && indexPath.row == [self tableView:tableView numberOfRowsInSection:0] - 1)
+    if ( indexPath.row == [_feeds count] )
     {
         return UITableViewCellEditingStyleInsert;
     }
