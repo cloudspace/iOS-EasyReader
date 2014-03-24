@@ -23,6 +23,9 @@
  */
 @interface CSHomeViewController : CSBaseViewController<UICollectionViewDelegate,UIScrollViewDelegate>
 
+
+# pragma mark - IBOutlet
+
 /// Vertical scroll view holding collection view and webviews
 @property (weak, nonatomic) IBOutlet UIScrollView *verticalScrollView;
 
@@ -34,6 +37,9 @@
 
 /// The collection view which holds the individual feed items
 @property (strong, nonatomic) IBOutlet CSFeedItemCollectionView *collectionView_feedItems;
+
+
+# pragma mark - Properties
 
 /// Displays website that hosts article
 @property (nonatomic, strong) UIWebView *feedItemWebView;
@@ -53,7 +59,12 @@
 /// Integer id for the Collection cell that user is scrolling to
 @property NSInteger collectionCellGoingTo;
 
-/// Scrolls through collection view to display whatever item is set to currentItem
+
+# pragma mark - Methods
+
+/** 
+ * Scrolls through collection view to display whatever item is set to currentItem
+ */
 - (void)scrollToCurrentFeedItem;
 
 @end
