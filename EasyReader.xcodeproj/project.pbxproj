@@ -15,6 +15,15 @@
 		0D7987B218DB8F69004440C3 /* CSMenuUserFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987B018DB8F69004440C3 /* CSMenuUserFeedDataSource.m */; };
 		0D8FF1A918D0D8C0005155E6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */; };
 		0D8FF1AB18D0DA3F005155E6 /* control_dualEntryTextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */; };
+		0D9A835318E0AA2900D8376E /* UIColor+EZRSharedColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */; };
+		0D9A835418E0AA2A00D8376E /* UIColor+EZRSharedColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */; };
+		0D9A835518E0AA2A00D8376E /* UIColor+EZRSharedColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */; };
+		0D9A835618E0AA3F00D8376E /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
+		0D9A835718E0AA4000D8376E /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
+		0D9A835818E0AA4000D8376E /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
+		0D9A835918E0AA4300D8376E /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
+		0D9A835A18E0AA4300D8376E /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
+		0D9A835B18E0AA4400D8376E /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		0DE51FF418CF911000454E51 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		0DE51FF518CF911000454E51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
@@ -1363,6 +1372,9 @@
 				9D639E6C18E0934800350B5F /* CSUserFeedCell.m in Sources */,
 				9D639E7218E0A4E000350B5F /* APIClient.m in Sources */,
 				9D16D34F18DBA9E9001E9C38 /* APIRouter.m in Sources */,
+				0D9A835A18E0AA4300D8376E /* CSSearchFeedCell.m in Sources */,
+				0D9A835718E0AA4000D8376E /* CSUserFeedCell.m in Sources */,
+				9D16D34F18DBA9E9001E9C38 /* AKRouter.m in Sources */,
 				9D096C3418DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */,
 				9D79271518DA1D0300E1D3E1 /* CSFeedItemUpdater.m in Sources */,
 				9D639E7E18E0A53100350B5F /* APIMockResponse.m in Sources */,
@@ -1377,6 +1389,7 @@
 				9D16D34C18DBA9E9001E9C38 /* APIRoute.m in Sources */,
 				9D79271C18DA1D0300E1D3E1 /* CSFeedItemCollectionViewDataSource.m in Sources */,
 				9D16D35518DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
+				0D9A835418E0AA2A00D8376E /* UIColor+EZRSharedColorAdditions.m in Sources */,
 				9D16D35218DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1404,6 +1417,9 @@
 				9D639E6D18E0934800350B5F /* CSUserFeedCell.m in Sources */,
 				9D639E7318E0A4E000350B5F /* APIClient.m in Sources */,
 				9D16D35018DBA9E9001E9C38 /* APIRouter.m in Sources */,
+				0D9A835B18E0AA4400D8376E /* CSSearchFeedCell.m in Sources */,
+				0D9A835818E0AA4000D8376E /* CSUserFeedCell.m in Sources */,
+				9D16D35018DBA9E9001E9C38 /* AKRouter.m in Sources */,
 				9D096C3518DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */,
 				9D79275918DA1D3800E1D3E1 /* CSFeedItemUpdater.m in Sources */,
 				9D639E7F18E0A53100350B5F /* APIMockResponse.m in Sources */,
@@ -1418,6 +1434,7 @@
 				9D16D34D18DBA9E9001E9C38 /* APIRoute.m in Sources */,
 				9D79276018DA1D3800E1D3E1 /* CSFeedItemCollectionViewDataSource.m in Sources */,
 				9D16D35618DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
+				0D9A835518E0AA2A00D8376E /* UIColor+EZRSharedColorAdditions.m in Sources */,
 				9D16D35318DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1454,6 +1471,8 @@
 				9D9CBAD418DCC68A00532F8C /* APIRouter.m in Sources */,
 				9D9CBAD518DCC68A00532F8C /* CSFeedItemUpdater.m in Sources */,
 				9D639E6B18E0934700350B5F /* CSUserFeedCell.m in Sources */,
+				0D9A835918E0AA4300D8376E /* CSSearchFeedCell.m in Sources */,
+				0D9A835618E0AA3F00D8376E /* CSUserFeedCell.m in Sources */,
 				9D096C3318DCE9D40043423B /* CSMenuSearchFeedDataSource.m in Sources */,
 				9D9CBAD718DCC68A00532F8C /* CSMenuLeftViewController.m in Sources */,
 				9D9CBAD918DCC68A00532F8C /* Easy Reader.xcdatamodeld in Sources */,
@@ -1468,6 +1487,7 @@
 				9D639E8318E0A54300350B5F /* APIMockedDataClient.m in Sources */,
 				9D9CBAE018DCC68A00532F8C /* SOApplicationDelegate.m in Sources */,
 				9D9CBAE118DCC68A00532F8C /* SOApplicationDelegateService.m in Sources */,
+				0D9A835318E0AA2900D8376E /* UIColor+EZRSharedColorAdditions.m in Sources */,
 				9D096C3618DCE9D70043423B /* CSMenuUserFeedDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

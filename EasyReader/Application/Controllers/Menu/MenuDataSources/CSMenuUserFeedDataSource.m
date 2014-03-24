@@ -103,8 +103,8 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Feed *toDelete = [self.feeds allObjects][indexPath.row];
-        
         [toDelete deleteEntity];
+        [self.feeds removeObject:toDelete];
         
         [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
     }
