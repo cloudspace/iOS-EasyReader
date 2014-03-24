@@ -13,6 +13,7 @@
 #import "UIColor+EZRSharedColorAdditions.h"
 
 #import "CSSearchFeedCell.h"
+#import "EZRCustomFeedCell.h"
 
 #import "Feed.h"
 #import "FeedItem.h"
@@ -89,53 +90,38 @@
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Dequeue a styled cell
-    CSSearchFeedCell *cell = (CSSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
-    
-    Feed *feed = [self.sortedFeeds objectAtIndex:indexPath.row];
-    cell.feed = feed;
-    
-    // Set the label text
-    cell.label_name.text = feed.name;
-    cell.label_name.textColor = [UIColor whiteColor];
-    
-    // Show feed icons
-    [cell.imageView_icon setHidden:NO];
-    [cell.imageView setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:nil];
-    
-    UIView *selectedBackgroundView = [[UIView alloc] init];
-    [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
-    cell.selectedBackgroundView = selectedBackgroundView;
-    return cell;
-}
+    if ([[self.sortedFeeds objectAtIndex:indexPath.row] isKindOfClass:[Feed class]]) {
+        // Dequeue a styled cell
+        CSSearchFeedCell *cell = (CSSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
 
-/**
- * Commits each editing action
- */
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Feed *toDelete = [self.sortedFeeds objectAtIndex:indexPath.row];
+        Feed *feed = [self.sortedFeeds objectAtIndex:indexPath.row];
+        cell.feed = feed;
         
-        [self.feeds removeObject:toDelete];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        // Set the label text
+        cell.label_name.text = feed.name;
         
-        for ( FeedItem *item in toDelete.feedItems ) [item deleteEntity];
-        [toDelete deleteEntity];
+        // Show feed icons
+        [cell.imageView_icon setHidden:NO];
+        [cell.imageView setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:nil];
         
-        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+        UIView *selectedBackgroundView = [[UIView alloc] init];
+        [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
+        cell.selectedBackgroundView = selectedBackgroundView;
+        return cell;
     }
-}
-
-/**
- * Determines the editing style for each row
- */
-- (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ( indexPath.row == [self.sortedFeeds count] ) {
-        return UITableViewCellEditingStyleInsert;
-    } else {
-        return UITableViewCellEditingStyleDelete;
+    else{
+        // Dequeue a styled cell
+        EZRCustomFeedCell *cell = (EZRCustomFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"CustomFeedCell"];
+        
+        NSDictionary *customFeed = [self.sortedFeeds objectAtIndex:indexPath.row];
+        
+        cell.label_url.text = [customFeed objectForKey:@"url"];
+        
+        UIView *selectedBackgroundView = [[UIView alloc] init];
+        [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
+        cell.selectedBackgroundView = selectedBackgroundView;
+        
+        return cell;
     }
 }
 
