@@ -13,9 +13,15 @@
  */
 @interface UIColor (EZRSharedColorAdditions)
 
+#pragma mark - Color Methods
+
+/// The menu background color
 + (UIColor *) EZR_menuBackground;
+
+/// The menu input background color
 + (UIColor *) EZR_menuInputBackground;
 
+/// The gradient background color
 + (UIColor *) EZR_charcoal;
 + (UIColor *) EZR_charcoalWithOpacity:(float)opacity;
 
