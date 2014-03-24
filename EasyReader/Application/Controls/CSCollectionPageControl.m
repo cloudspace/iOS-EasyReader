@@ -18,22 +18,41 @@
   float fadeMovement;
 }
 
+/**
+ * Sets up views to be loaded when storyboard starts up
+ */
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
   self = [super initWithCoder:aDecoder];
   if (self) {
-    UIButton *dot = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    dot.frame = CGRectMake(10,(self.frame.size.height/2)-5, 12, 12);
+    _view_maskLayer = [[UIView alloc] init];
+    _view_leftFade = [[UIView alloc] init];
+    _view_rightFade = [[UIView alloc] init];
+    
+    _button_newItem = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    _button_newItem.frame = CGRectMake(10,(self.frame.size.height/2)-5, 12, 12);
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(newItemButton:)];
-    [dot addGestureRecognizer:singleTap];
+    [_button_newItem addGestureRecognizer:singleTap];
     
-    [self addSubview:dot];
+    [self addSubview:_button_newItem];
   }
   return self;
 }
 
+/**
+ * Properly layers gradients over page control dots
+ */
+-(void)layoutSubviews
+{
+  [self insertSubview:_view_maskLayer atIndex:0];
+  NSLog(@"something");
+}
 
+
+/**
+ * Sets up button that takes user to newest item added to collection
+ */
 -(void)newItemButton:(id)sender
 {
   CSFeedItemCollectionViewDataSource *dataSource = [_controller_owner feedCollectionViewDataSource];
@@ -41,19 +60,20 @@
   [_controller_owner scrollToCurrentFeedItem];
   _controller_owner.collectionCellGoingTo = 0;
   [self setPageControllerPageAtIndex:[[dataSource sortedFeedItems]indexOfObject:_controller_owner.currentFeedItem]
-                       forCollection:_controller_owner.feedItems];
+                   forCollectionSize:[_controller_owner.feedItems count]];
 }
 
--(void)setUpFadesOnView:(UIView*)mask
+/**
+ * Sets up fade views for page controller
+ */
+-(void)setUpFades
 {
-  _view_maskLayer = [[UIView alloc] init];
   gradientWidth = 40;
   fadeMovement = 10;
   
-  _view_leftFade = [[UIView alloc] init];
   _view_leftFade.frame = CGRectMake(110, 10, gradientWidth, 20);
   leftFadeOrigin = 110;
-  _view_leftFade.backgroundColor = [UIColor blackColor];
+  _view_leftFade.backgroundColor = [UIColor blueColor];
   
   CAGradientLayer *leftLayer = [CAGradientLayer layer];
   leftLayer.frame = _view_leftFade.bounds;
@@ -61,11 +81,10 @@
   leftLayer.startPoint = CGPointMake(0.0f, 1.0f);
   leftLayer.endPoint = CGPointMake(1.0f, 1.0f);
   _view_leftFade.layer.mask = leftLayer;
-  
-  _view_rightFade = [[UIView alloc] init];
+
   _view_rightFade.frame = CGRectMake(170, 10, gradientWidth, 20);
   rightFadeOrigin = 170;
-  _view_rightFade.backgroundColor = [UIColor blackColor];
+  _view_rightFade.backgroundColor = [UIColor blueColor];
   
   CAGradientLayer *rightLayer = [CAGradientLayer layer];
   rightLayer.frame = _view_rightFade.bounds;
@@ -76,12 +95,16 @@
   
   [_view_maskLayer addSubview:_view_leftFade];
   [_view_maskLayer addSubview:_view_rightFade];
-  [mask addSubview:_view_maskLayer];
 }
 
-- (void)setPageControllerPageAtIndex:(NSInteger)index forCollection:(NSSet*)collection
+/**
+ * Sets page to given index
+ * Will display first, second, second to last, and last.. everything in the middle is on third page indicator
+ * Also animates fades in and out when approaching ends
+ */
+- (void)setPageControllerPageAtIndex:(NSInteger)index forCollectionSize:(NSInteger)size
 {
-  if ([collection count] < 6){
+  if (size < 6){
     self.currentPage = index;
   } else {
     if( index < 2 ){
@@ -89,10 +112,10 @@
       [UIView animateWithDuration:.75 animations:^{
         _view_leftFade.frame = CGRectMake(leftFadeOrigin-(fadeMovement*(2-index)), 10, gradientWidth, 20);
       }];
-    } else if(index > ([collection count]-3) ){
-      self.currentPage = 5-([collection count]-index);
+    } else if(index > (size-3) ){
+      self.currentPage = 5-(size-index);
       [UIView animateWithDuration:.75 animations:^{
-        _view_rightFade.frame = CGRectMake(rightFadeOrigin+(fadeMovement*(3-([collection count]-index))), 10, gradientWidth, 20);
+        _view_rightFade.frame = CGRectMake(rightFadeOrigin+(fadeMovement*(3-(size-index))), 10, gradientWidth, 20);
       }];
     } else {
       self.currentPage = 2;
@@ -102,12 +125,6 @@
       }];
     }
   }
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    NSLog(@"break");
 }
 
 @end

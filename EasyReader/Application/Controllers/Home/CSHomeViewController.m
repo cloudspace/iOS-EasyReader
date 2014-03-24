@@ -38,7 +38,7 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
     [super viewDidLoad];
     _feedItems = [[NSMutableSet alloc] init];
     
-    [_pageControl_itemIndicator setUpFadesOnView:[_pageControl_itemIndicator superview]];
+    [_pageControl_itemIndicator setUpFades];
     _pageControl_itemIndicator.controller_owner = self;
     
     self.currentUser = [User current];
@@ -307,9 +307,9 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger newIndex = indexPath.row+((indexPath.row-self.collectionCellGoingTo)*-1);
-    
+
     [_pageControl_itemIndicator setPageControllerPageAtIndex:newIndex
-                                               forCollection:_feedItems];
+                                         forCollectionSize:[_feedItems count]];
 }
 
 @end
