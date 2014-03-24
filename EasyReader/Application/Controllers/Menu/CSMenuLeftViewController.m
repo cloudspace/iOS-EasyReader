@@ -156,10 +156,6 @@
         // Create empty searchFeed set
         NSMutableSet *searchedFeeds = [[NSMutableSet alloc] init];
         
-        // Switch to the searchFeed datasource and update the table
-        [searchFeedDataSource updateWithFeeds:searchedFeeds];
-        self.tableView_feeds.dataSource = searchFeedDataSource;
-        
         // If the user is typing a url
         if ([self.textField_searchInput.text hasPrefix:@"http"]) {
             // Get the local context
@@ -177,6 +173,10 @@
             // Add these feeds to the searchFeed datasource
             [feedSearcher feedsLike:self.textField_searchInput.text];
         }
+    
+        // Switch to the searchFeed datasource and update the table
+        [searchFeedDataSource updateWithFeeds:searchedFeeds];
+        self.tableView_feeds.dataSource = searchFeedDataSource;
         
         // Reload the table with new searchFeeds
         [self.tableView_feeds reloadData];
