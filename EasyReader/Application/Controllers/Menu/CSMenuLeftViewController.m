@@ -73,12 +73,10 @@
                       
                       for ( Feed *feed in removedFeeds ){
                           [[self feeds] removeObject:feed];
-                          self.currentUser.feeds = self.feeds;
                       }
                       
                       for ( Feed *feed in addedFeeds ){
                           [[self feeds] addObject:feed];
-                          self.currentUser.feeds = self.feeds;
                       }
                       
                       // Update and switch to the userFeed data source
