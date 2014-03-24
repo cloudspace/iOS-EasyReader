@@ -25,6 +25,9 @@
 		0D9A835A18E0AA4300D8376E /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		0D9A835B18E0AA4400D8376E /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		0D9A835E18E0C82200D8376E /* EZRCustomFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */; };
+		0D9A835F18E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */; };
+		0D9A836018E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */; };
+		0D9A836118E0CE5000D8376E /* EZRCustomFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */; };
 		0DE51FF418CF911000454E51 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		0DE51FF518CF911000454E51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
@@ -1326,6 +1329,7 @@
 			files = (
 				9D16D33E18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
 				9D9CBAC318DCC52900532F8C /* CSApplicationStyleService.m in Sources */,
+				0D9A836018E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */,
 				9D79270A18DA1D0300E1D3E1 /* Feed.m in Sources */,
 				9D79270B18DA1D0300E1D3E1 /* CSAppDelegate.m in Sources */,
 				9D79270C18DA1D0300E1D3E1 /* main.m in Sources */,
@@ -1367,6 +1371,7 @@
 			files = (
 				9D16D33F18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
 				9D9CBAC418DCC52A00532F8C /* CSApplicationStyleService.m in Sources */,
+				0D9A836118E0CE5000D8376E /* EZRCustomFeedCell.m in Sources */,
 				9D79274E18DA1D3800E1D3E1 /* Feed.m in Sources */,
 				9D79274F18DA1D3800E1D3E1 /* CSAppDelegate.m in Sources */,
 				9D79275018DA1D3800E1D3E1 /* main.m in Sources */,
@@ -1417,6 +1422,7 @@
 			files = (
 				9D9CBAC718DCC68A00532F8C /* CSFeedUpdateService.m in Sources */,
 				9D9CBAC818DCC68A00532F8C /* CSApplicationStyleService.m in Sources */,
+				0D9A835F18E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */,
 				9D9CBAC918DCC68A00532F8C /* Feed.m in Sources */,
 				9D9CBACA18DCC68A00532F8C /* CSAppDelegate.m in Sources */,
 				9D9CBACB18DCC68A00532F8C /* main.m in Sources */,
