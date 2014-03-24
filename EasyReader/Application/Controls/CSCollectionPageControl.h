@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 @class CSHomeViewController;
 
+/**
+ * Page control for multiple
+ */
 @interface CSCollectionPageControl : UIPageControl
 
 @property CSHomeViewController *controller_owner;
