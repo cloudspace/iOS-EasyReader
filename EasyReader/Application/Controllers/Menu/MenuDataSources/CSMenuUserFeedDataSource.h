@@ -15,6 +15,7 @@
  * Feeds used to populate the menu table
  */
 @property (nonatomic, retain) NSMutableSet *feeds;
+@property (nonatomic, strong) NSArray *sortedFeeds;
 
 
 #pragma mark - Methods
