@@ -1,0 +1,1 @@
+PODS_MTLABEL_OTHER_LDFLAGS = -framework CoreText

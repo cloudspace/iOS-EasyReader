@@ -1,0 +1,1 @@
+../../Inflections/NSString+Inflections.h

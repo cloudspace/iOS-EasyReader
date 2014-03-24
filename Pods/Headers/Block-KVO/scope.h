@@ -1,0 +1,1 @@
+../../Block-KVO/Sources/Utilities/scope.h
