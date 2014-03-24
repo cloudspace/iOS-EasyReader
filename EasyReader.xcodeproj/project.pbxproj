@@ -24,6 +24,7 @@
 		0D9A835918E0AA4300D8376E /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		0D9A835A18E0AA4300D8376E /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		0D9A835B18E0AA4400D8376E /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
+		0D9A835E18E0C82200D8376E /* EZRCustomFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */; };
 		0DE51FF418CF911000454E51 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		0DE51FF518CF911000454E51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
@@ -334,6 +335,8 @@
 		0D7987B018DB8F69004440C3 /* CSMenuUserFeedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMenuUserFeedDataSource.m; sourceTree = "<group>"; };
 		0D8FF1A818D0D8C0005155E6 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "control_dualEntryTextField@2x.png"; sourceTree = "<group>"; };
+		0D9A835C18E0C82100D8376E /* EZRCustomFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRCustomFeedCell.h; sourceTree = "<group>"; };
+		0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRCustomFeedCell.m; sourceTree = "<group>"; };
 		0DE51FE318CF8BDE00454E51 /* api_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = api_v2.xcdatamodel; sourceTree = "<group>"; };
 		0DE51FEF18CF911000454E51 /* FeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItem.h; sourceTree = "<group>"; };
 		0DE51FF018CF911000454E51 /* FeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItem.m; sourceTree = "<group>"; };
@@ -525,6 +528,8 @@
 		0D79879F18DB6ABC004440C3 /* MenuCells */ = {
 			isa = PBXGroup;
 			children = (
+				0D9A835C18E0C82100D8376E /* EZRCustomFeedCell.h */,
+				0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */,
 				0D7987A018DB6AE4004440C3 /* CSUserFeedCell.h */,
 				0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */,
 				0D7987A318DB6AF4004440C3 /* CSSearchFeedCell.h */,
@@ -1499,6 +1504,7 @@
 				9D16D33D18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
 				9D9CBABF18DC826700532F8C /* CSApplicationStyleService.m in Sources */,
 				9D639E7618E0A52300350B5F /* APIMockRequest.m in Sources */,
+				0D9A835E18E0C82200D8376E /* EZRCustomFeedCell.m in Sources */,
 				0DE51FF818CF919900454E51 /* Feed.m in Sources */,
 				9DAC172D170A043200383722 /* CSAppDelegate.m in Sources */,
 				9DAC172E170A043200383722 /* main.m in Sources */,

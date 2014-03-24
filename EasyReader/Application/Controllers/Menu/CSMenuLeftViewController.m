@@ -152,13 +152,8 @@
         
         // If the user is typing a url
         if ([self.textField_searchInput.text hasPrefix:@"http"]) {
-            // Get the local context
-            NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
-            
-            // Create a new Feed in the current thread context
-            Feed *customFeed = [Feed MR_createInContext:localContext];
-            customFeed.name = self.textField_searchInput.text;
-            customFeed.url = self.textField_searchInput.text;
+            // Create a dictionary containing the new Feed url
+            NSDictionary *customFeed = @{@"url" : self.textField_searchInput.text};
             
             // Add custom feed to the searchFeeds
             [searchedFeeds addObject:customFeed];
