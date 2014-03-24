@@ -1,9 +1,9 @@
 //
 //  APIRouter.h
-//  APIKit Router
 //
 //  Created by Joseph Lorich on 3/19/14.
 //  Copyright (c) 2014 Joseph Lorich.
+//  Contributions by Cloudspace (http://www.cloudspace.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal

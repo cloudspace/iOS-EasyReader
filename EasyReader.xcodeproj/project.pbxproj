@@ -1033,6 +1033,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Cloudspace;
 				TargetAttributes = {
+					9D79270818DA1D0300E1D3E1 = {
+						DevelopmentTeam = 34V4E5MT6Z;
+					};
 					9D7927C218DA279B00E1D3E1 = {
 						TestTargetID = 9DAC16C31709D48E00383722;
 					};
@@ -1528,8 +1531,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5CECD14CAE964A1994399D15 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Lorich (G28849DAB7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Lorich (G28849DAB7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
@@ -1541,7 +1543,7 @@
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Staging;
-				PROVISIONING_PROFILE = "69FD30FF-426E-4BD8-8941-A0A741F92746";
+				PROVISIONING_PROFILE = "C2BF26AF-B141-402C-BABC-89CE7C730512";
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1552,14 +1554,13 @@
 			baseConfigurationReference = 5CECD14CAE964A1994399D15 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Staging;
-				PROVISIONING_PROFILE = "21F890E2-92A0-495B-B0DD-1B718FF193D8";
+				PROVISIONING_PROFILE = "A926550A-0F74-4C33-88F8-92CED490A97B";
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

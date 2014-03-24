@@ -85,6 +85,10 @@
 - (void) loadDefaultFeeds
 {
     [Feed requestDefaultFeedsWithSuccess:^(id responseObject, NSInteger httpStatus) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"defaultFeedsLoaded"];
+        [defaults synchronize];
+        
         NSLog(@"Default feeds have been added");
     } failure:^(id responseObject, NSInteger httpStatus, NSError *error) {
         NSLog(@"Default feed load failure");
