@@ -29,13 +29,10 @@
 #import "CSMenuUserFeedDataSource.h"
 #import "CSMenuSearchFeedDataSource.h"
 
-#import "CSFeedSearcher.h"
-
 @interface CSMenuLeftViewController ()
 {
     CSMenuUserFeedDataSource *userFeedDataSource;
     CSMenuSearchFeedDataSource *searchFeedDataSource;
-    CSFeedSearcher *feedSearcher;
 }
 
 @end
@@ -53,9 +50,6 @@
     
     // Setup the user and search datasources
     [self setUpDataSources];
-    
-    // Setup feedSearch API requestor
-    feedSearcher = [[CSFeedSearcher alloc] init];
     
     // Set tableViewStyle
     CSEnhancedTableViewStyle *tableViewStyle = [[CSEnhancedTableViewStyleDark alloc] init];
@@ -176,7 +170,14 @@
         } else {
             // Return feeds from the API similar to user input
             // Add these feeds to the searchFeed datasource
-            [feedSearcher feedsLike:self.textField_searchInput.text];
+
+            [Feed requestFeedsByName:self.textField_searchInput.text
+                             success:^(id responseData, NSInteger httpStatus){
+                                 NSLog(@"Search for feeds successful");
+                             }
+                             failure:^(id responseData, NSInteger httpStatus, NSError *error){
+                                 NSLog(@"Error searching for feeds");
+                             }];
         }
         
         // Reload the table with new searchFeeds

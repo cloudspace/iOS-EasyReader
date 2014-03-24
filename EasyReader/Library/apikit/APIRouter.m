@@ -1,5 +1,5 @@
 //
-//  AKRouter.m
+//  APIRouter.m
 //  APIKit Router
 //
 //  Created by Joseph Lorich on 3/19/14.
@@ -23,12 +23,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AKRouter.h"
+#import "APIRouter.h"
 
 static dispatch_once_t pred;
-static AKRouter *shared = nil;
+static APIRouter *shared = nil;
 
-@implementation AKRouter
+@implementation APIRouter
 {
     /// Internal route storage dictionary
     NSMutableDictionary *_routes;
@@ -40,7 +40,7 @@ static AKRouter *shared = nil;
     NSString *_basePath;
 }
 
-+ (AKRouter *)shared
++ (APIRouter *)shared
 {
     dispatch_once(&pred, ^{
         // Ensure we don't overwrite a manually set client
@@ -52,7 +52,7 @@ static AKRouter *shared = nil;
         NSString *apiHost  = [bundle objectForInfoDictionaryKey:@"ApiHost"];
         NSString *basePath  = [bundle objectForInfoDictionaryKey:@"ApiBasePath"];
         
-        shared = [[AKRouter alloc] initWithAPIHost:apiHost basePath:basePath];
+        shared = [[APIRouter alloc] initWithAPIHost:apiHost basePath:basePath];
     });
     
     return shared;
@@ -72,7 +72,7 @@ static AKRouter *shared = nil;
     return self;
 }
 
-- (void)registerRoute:(NSString *)routeName path:(NSString *)path requestMethod:(AKRequestMethod)requestMethod
+- (void)registerRoute:(NSString *)routeName path:(NSString *)path requestMethod:(APIRequestMethod)requestMethod
 {
     if ([[_routes allKeys] containsObject:routeName])
     {
@@ -80,12 +80,12 @@ static AKRouter *shared = nil;
         return;
     }
     
-    AKRoute *route = [[AKRoute alloc] initWithPath:path requestMethod:requestMethod];
+    APIRoute *route = [[APIRoute alloc] initWithPath:path requestMethod:requestMethod];
     
     [_routes setValue:route forKey:routeName];
 }
 
-- (NSURL *)urlFor:(NSString *)routeName params:(NSDictionary *)params
+- (NSURL *)urlFor:(NSString *)routeName parameters:(NSDictionary *)params
 {
     NSString *path = [self pathFor:routeName params:params];
     
@@ -99,22 +99,28 @@ static AKRouter *shared = nil;
 
 - (NSString *)pathFor:(NSString *)routeName params:(NSDictionary *)params
 {
-    AKRoute *route = [self routeForName:routeName];
-    NSString *pathString = [route pathStringForParams:params];
+    APIRoute *route = [self routeNamed:routeName];
+    NSString *pathString = [route pathStringForParameters:params];
 
    return [NSString stringWithFormat:@"%@/%@",
           [self stripTrainingSlashes:_basePath],
            [self stripLeadingSlashes:pathString]];
 }
 
-- (AKRequestMethod)methodFor:(NSString *)routeName
+- (APIRequestMethod)methodFor:(NSString *)routeName
 {
-    AKRoute *route = [self routeForName:routeName];
+    APIRoute *route = [self routeNamed:routeName];
     
     return [route requestMethod];
 }
 
-- (AKRoute *)routeForName:(NSString *)routeName
+- (NSString *)methodStringFor:(NSString *)routeName
+{
+    APIRoute *route = [self routeNamed:routeName];
+    return route.requestMethodString;
+}
+
+- (APIRoute *)routeNamed:(NSString *)routeName
 {
     return [_routes valueForKey:routeName];
 }

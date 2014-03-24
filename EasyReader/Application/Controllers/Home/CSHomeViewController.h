@@ -21,7 +21,7 @@
 @property (nonatomic, strong) UIWebView *feedItemWebView;
 @property (nonatomic, strong) NSMutableSet *feedItems;
 
-@property User* currentUser;
+@property (nonatomic, retain) User* currentUser;
 @property CSFeedItemCollectionViewDataSource *feedCollectionViewDataSource;
 @property FeedItem *currentFeedItem;
 @property NSInteger collectionCellGoingTo;

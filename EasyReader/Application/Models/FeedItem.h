@@ -38,8 +38,10 @@
 /// The time this feed item was created
 @property (nonatomic, retain) NSDate * createdAt;
 
-/// The image for this feed item
-@property (nonatomic, retain) NSString * image;
+
+@property (nonatomic, retain) NSString * iphone_retina_image;
+@property (nonatomic, retain) NSString * ipad_image;
+@property (nonatomic, retain) NSString * ipad_retina_image;
 
 /// The article URL for this feed item
 @property (nonatomic, retain) NSString * url;
@@ -69,8 +71,8 @@
  */
 + (void) requestFeedItemsFromFeeds:(NSSet *)feeds
                              Since:(NSDate *)startAt
-                           success:(void(^)(NSDictionary *data))successBlock
-                           failure:(void(^)(NSDictionary *data))failureBlock;
+                           success:(APISuccessBlock)successBlock
+                           failure:(APIFailureBlock)failureBlock;
 
 
 @end

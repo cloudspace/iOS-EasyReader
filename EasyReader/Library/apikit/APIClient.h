@@ -1,6 +1,6 @@
 //
-//  AKRoute.h
-//  APIKit Router
+//  APIClient.h
+//  APIKit API Client
 //
 //  Created by Joseph Lorich on 3/19/14.
 //  Copyright (c) 2014 Joseph Lorich.
@@ -25,45 +25,44 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum {
-    kAKRequestMethodGET,
-    kAKRequestMethodPOST,
-    kAKRequestMethodPUT,
-    kAKRequestMethodDELETE
-} AKRequestMethod;
+#pragma mark - Block definitions
 
+/// An APIKit request success block
+typedef void (^APISuccessBlock)(id responseObject, NSInteger httpStatus);
+
+/// An APIKit request failure block
+typedef void (^APIFailureBlock)(id responseObject, NSInteger httpStatus, NSError *error);
+
+
+#pragma mark - APIClient Interface
 
 /**
- * An API Route
+ * A client interface to an API
  */
-@interface AKRoute : NSObject
+@interface APIClient : NSObject
 
 
-#pragma mark - Properties
-
-/// The string representation for the url for this route
-@property (nonatomic, readonly) NSString *path;
-
-/// The request method for this route
-@property (nonatomic, readonly) AKRequestMethod requestMethod;
-
-
-#pragma mark - Initializers
+#pragma mark - Class methods
 
 /**
- * Initializes a new CSApiRoute
+ * Returns a shared APIClient instance
+ */
++ (APIClient *) shared;
+
+
+#pragma mark - Instance methods
+
+/**
+ * Makes a request to a named route
  *
- * @param path the path for this URL
- * @param requestMethod the request method for this route
+ * @param routeName The route name to use for this request
+ * @param parameters The params to use in the API request
+ * @param success The block to be executed on request success
+ * @param failure The block to be executed on request failure
  */
-- (id)initWithPath:(NSString *)path requestMethod:(AKRequestMethod)requestMethod;
-
-
-/**
- * Builds a URL String for a given set of params
- *
- * @param params The URL Parameters
- */
-- (NSString *)pathStringForParams:(NSDictionary *)params;
+- (void) requestRoute:(NSString*)routeName
+           parameters:(NSDictionary *)parameters
+              success:(APISuccessBlock)success
+              failure:(APIFailureBlock)failure;
 
 @end

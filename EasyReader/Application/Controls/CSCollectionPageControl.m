@@ -33,6 +33,7 @@
   return self;
 }
 
+
 -(void)newItemButton:(id)sender
 {
   CSFeedItemCollectionViewDataSource *dataSource = [_controller_owner feedCollectionViewDataSource];
@@ -101,6 +102,12 @@
       }];
     }
   }
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    NSLog(@"break");
 }
 
 @end

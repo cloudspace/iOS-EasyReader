@@ -89,8 +89,10 @@
     // Show feed icons
     [cell.imageView_icon setHidden:NO];
     
+
     __weak CSSearchFeedCell *currentCell = cell;
     NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.icon]];
+    
     [currentCell.imageView setImageWithURLRequest:imageRequest
                                  placeholderImage:nil
                                           success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {

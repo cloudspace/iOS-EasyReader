@@ -14,6 +14,7 @@
 #import "CSApplicationStyleService.h"
 
 #import "CSRootViewController.h"
+#import "User.h"
 
 @implementation CSAppDelegate
 
@@ -27,8 +28,8 @@
  */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self registerService:[CSRegisterRoutesService shared]];
     [self registerService:[CSCoreDataService shared]];
+    [self registerService:[CSRegisterRoutesService shared]];
     [self registerService:[CSApplicationStyleService shared]];
     [self registerService:[CSFeedUpdateService shared]];
     

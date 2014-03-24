@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D79879E18DB4AE1004440C3 /* CSFeedSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D79879D18DB4AE1004440C3 /* CSFeedSearcher.m */; };
 		0D7987A218DB6AE4004440C3 /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
 		0D7987A518DB6AF4004440C3 /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		0D7987B118DB8F69004440C3 /* CSMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AE18DB8F69004440C3 /* CSMenuSearchFeedDataSource.m */; };
@@ -18,7 +17,6 @@
 		0DE51FF518CF911000454E51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		1884EDB920EE4720B254D07C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
-		274D540218D0E5C20096831A /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */; };
 		274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
 		2751F4D618DA02C100339C96 /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */; };
 		2751F4D718DA02C100339C96 /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D518DA02C100339C96 /* NSObject+CSReflectionAdditions.m */; };
@@ -29,7 +27,6 @@
 		8E685AA718DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E685AA818DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E685AA918DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
-		8E7F403218D3596C00A6FED6 /* CSResponsiveApiRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F403118D3596C00A6FED6 /* CSResponsiveApiRequestor.m */; };
 		8E7F81F018D0BF8500BC50C2 /* CSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */; };
 		9D096C3318DCE9D40043423B /* CSMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AE18DB8F69004440C3 /* CSMenuSearchFeedDataSource.m */; };
 		9D096C3418DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AE18DB8F69004440C3 /* CSMenuSearchFeedDataSource.m */; };
@@ -37,9 +34,6 @@
 		9D096C3618DCE9D70043423B /* CSMenuUserFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987B018DB8F69004440C3 /* CSMenuUserFeedDataSource.m */; };
 		9D096C3718DCE9D70043423B /* CSMenuUserFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987B018DB8F69004440C3 /* CSMenuUserFeedDataSource.m */; };
 		9D096C3818DCE9D80043423B /* CSMenuUserFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987B018DB8F69004440C3 /* CSMenuUserFeedDataSource.m */; };
-		9D096C3918DCEA0D0043423B /* CSFeedSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D79879D18DB4AE1004440C3 /* CSFeedSearcher.m */; };
-		9D096C3A18DCEA0E0043423B /* CSFeedSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D79879D18DB4AE1004440C3 /* CSFeedSearcher.m */; };
-		9D096C3B18DCEA0E0043423B /* CSFeedSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D79879D18DB4AE1004440C3 /* CSFeedSearcher.m */; };
 		9D096C3C18DCEDB40043423B /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		9D140BF5171F68E000CDD319 /* button_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D140BF4171F68E000CDD319 /* button_add@2x.png */; };
 		9D16D30718DA2B3A001E9C38 /* CSBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D30618DA2B3A001E9C38 /* CSBaseTestCase.m */; };
@@ -53,12 +47,12 @@
 		9D16D33D18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */; };
 		9D16D33E18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */; };
 		9D16D33F18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */; };
-		9D16D34B18DBA9E9001E9C38 /* AKRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* AKRoute.m */; };
-		9D16D34C18DBA9E9001E9C38 /* AKRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* AKRoute.m */; };
-		9D16D34D18DBA9E9001E9C38 /* AKRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* AKRoute.m */; };
-		9D16D34E18DBA9E9001E9C38 /* AKRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* AKRouter.m */; };
-		9D16D34F18DBA9E9001E9C38 /* AKRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* AKRouter.m */; };
-		9D16D35018DBA9E9001E9C38 /* AKRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* AKRouter.m */; };
+		9D16D34B18DBA9E9001E9C38 /* APIRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* APIRoute.m */; };
+		9D16D34C18DBA9E9001E9C38 /* APIRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* APIRoute.m */; };
+		9D16D34D18DBA9E9001E9C38 /* APIRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* APIRoute.m */; };
+		9D16D34E18DBA9E9001E9C38 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
+		9D16D34F18DBA9E9001E9C38 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
+		9D16D35018DBA9E9001E9C38 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
 		9D16D35118DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
 		9D16D35218DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
 		9D16D35318DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
@@ -75,6 +69,30 @@
 		9D4FA6E617971D5B001E2A65 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */; };
 		9D4FA6E817971E88001E2A65 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */; };
 		9D4FA6EA17971E8D001E2A65 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */; };
+		9D639E6818E08CED00350B5F /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
+		9D639E6918E08CED00350B5F /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
+		9D639E6A18E08CED00350B5F /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
+		9D639E6B18E0934700350B5F /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
+		9D639E6C18E0934800350B5F /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
+		9D639E6D18E0934800350B5F /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
+		9D639E7018E0A4E000350B5F /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E6F18E0A4E000350B5F /* APIClient.m */; };
+		9D639E7118E0A4E000350B5F /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E6F18E0A4E000350B5F /* APIClient.m */; };
+		9D639E7218E0A4E000350B5F /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E6F18E0A4E000350B5F /* APIClient.m */; };
+		9D639E7318E0A4E000350B5F /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E6F18E0A4E000350B5F /* APIClient.m */; };
+		9D639E7618E0A52300350B5F /* APIMockRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E7518E0A52300350B5F /* APIMockRequest.m */; };
+		9D639E7718E0A52300350B5F /* APIMockRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E7518E0A52300350B5F /* APIMockRequest.m */; };
+		9D639E7818E0A52300350B5F /* APIMockRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E7518E0A52300350B5F /* APIMockRequest.m */; };
+		9D639E7918E0A52300350B5F /* APIMockRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E7518E0A52300350B5F /* APIMockRequest.m */; };
+		9D639E7C18E0A53100350B5F /* APIMockResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E7B18E0A53100350B5F /* APIMockResponse.m */; };
+		9D639E7D18E0A53100350B5F /* APIMockResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E7B18E0A53100350B5F /* APIMockResponse.m */; };
+		9D639E7E18E0A53100350B5F /* APIMockResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E7B18E0A53100350B5F /* APIMockResponse.m */; };
+		9D639E7F18E0A53100350B5F /* APIMockResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E7B18E0A53100350B5F /* APIMockResponse.m */; };
+		9D639E8218E0A54300350B5F /* APIMockedDataClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E8118E0A54300350B5F /* APIMockedDataClient.m */; };
+		9D639E8318E0A54300350B5F /* APIMockedDataClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E8118E0A54300350B5F /* APIMockedDataClient.m */; };
+		9D639E8418E0A54300350B5F /* APIMockedDataClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E8118E0A54300350B5F /* APIMockedDataClient.m */; };
+		9D639E8518E0A54300350B5F /* APIMockedDataClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E8118E0A54300350B5F /* APIMockedDataClient.m */; };
+		9D639E8918E0BAD500350B5F /* feeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D639E8718E0BAD500350B5F /* feeds.json */; };
+		9D639E8C18E0C94B00350B5F /* feeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D639E8718E0BAD500350B5F /* feeds.json */; };
 		9D79270A18DA1D0300E1D3E1 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		9D79270B18DA1D0300E1D3E1 /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC171A170A043200383722 /* CSAppDelegate.m */; };
 		9D79270C18DA1D0300E1D3E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC1721170A043200383722 /* main.m */; };
@@ -87,9 +105,7 @@
 		9D79271318DA1D0300E1D3E1 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		9D79271418DA1D0300E1D3E1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		9D79271518DA1D0300E1D3E1 /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
-		9D79271618DA1D0300E1D3E1 /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */; };
 		9D79271718DA1D0300E1D3E1 /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
-		9D79271818DA1D0300E1D3E1 /* CSResponsiveApiRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F403118D3596C00A6FED6 /* CSResponsiveApiRequestor.m */; };
 		9D79271918DA1D0300E1D3E1 /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
 		9D79271A18DA1D0300E1D3E1 /* CSFeedAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */; };
 		9D79271B18DA1D0300E1D3E1 /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */; };
@@ -142,9 +158,7 @@
 		9D79275718DA1D3800E1D3E1 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		9D79275818DA1D3800E1D3E1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		9D79275918DA1D3800E1D3E1 /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
-		9D79275A18DA1D3800E1D3E1 /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */; };
 		9D79275B18DA1D3800E1D3E1 /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
-		9D79275C18DA1D3800E1D3E1 /* CSResponsiveApiRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F403118D3596C00A6FED6 /* CSResponsiveApiRequestor.m */; };
 		9D79275D18DA1D3800E1D3E1 /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
 		9D79275E18DA1D3800E1D3E1 /* CSFeedAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */; };
 		9D79275F18DA1D3800E1D3E1 /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */; };
@@ -213,17 +227,15 @@
 		9D9CBAD118DCC68A00532F8C /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		9D9CBAD218DCC68A00532F8C /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		9D9CBAD318DCC68A00532F8C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
-		9D9CBAD418DCC68A00532F8C /* AKRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* AKRouter.m */; };
+		9D9CBAD418DCC68A00532F8C /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
 		9D9CBAD518DCC68A00532F8C /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
-		9D9CBAD618DCC68A00532F8C /* CSFakedDataRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */; };
 		9D9CBAD718DCC68A00532F8C /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
-		9D9CBAD818DCC68A00532F8C /* CSResponsiveApiRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F403118D3596C00A6FED6 /* CSResponsiveApiRequestor.m */; };
 		9D9CBAD918DCC68A00532F8C /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
 		9D9CBADA18DCC68A00532F8C /* CSRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */; };
 		9D9CBADB18DCC68A00532F8C /* CSFeedAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */; };
 		9D9CBADC18DCC68A00532F8C /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */; };
 		9D9CBADD18DCC68A00532F8C /* CSCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */; };
-		9D9CBADE18DCC68A00532F8C /* AKRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* AKRoute.m */; };
+		9D9CBADE18DCC68A00532F8C /* APIRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* APIRoute.m */; };
 		9D9CBADF18DCC68A00532F8C /* CSFeedItemCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DD18DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m */; };
 		9D9CBAE018DCC68A00532F8C /* SOApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */; };
 		9D9CBAE118DCC68A00532F8C /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
@@ -297,8 +309,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D79879C18DB4AE1004440C3 /* CSFeedSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedSearcher.h; path = Api/CSFeedSearcher.h; sourceTree = "<group>"; };
-		0D79879D18DB4AE1004440C3 /* CSFeedSearcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedSearcher.m; path = Api/CSFeedSearcher.m; sourceTree = "<group>"; };
 		0D7987A018DB6AE4004440C3 /* CSUserFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSUserFeedCell.h; sourceTree = "<group>"; };
 		0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUserFeedCell.m; sourceTree = "<group>"; };
 		0D7987A318DB6AF4004440C3 /* CSSearchFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSearchFeedCell.h; sourceTree = "<group>"; };
@@ -316,8 +326,6 @@
 		0DE51FF218CF911000454E51 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0DE51FF618CF919900454E51 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
 		0DE51FF718CF919900454E51 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
-		274D53FC18D0E5C20096831A /* CSFakedDataRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFakedDataRequestor.h; path = Api/CSFakedDataRequestor.h; sourceTree = "<group>"; };
-		274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFakedDataRequestor.m; path = Api/CSFakedDataRequestor.m; sourceTree = "<group>"; };
 		274D540418D0E8D80096831A /* CSFeedItemUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedItemUpdater.h; path = Api/CSFeedItemUpdater.h; sourceTree = "<group>"; };
 		274D540518D0E8D80096831A /* CSFeedItemUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedItemUpdater.m; path = Api/CSFeedItemUpdater.m; sourceTree = "<group>"; };
 		2751F4D218DA02C100339C96 /* NSObject+CSNilAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CSNilAdditions.h"; sourceTree = "<group>"; };
@@ -336,8 +344,6 @@
 		8E1CE42418D0F5A00090028E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8E685AA518DC733B00309270 /* CSCollectionPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSCollectionPageControl.h; path = EasyReader/Application/Controls/CSCollectionPageControl.h; sourceTree = SOURCE_ROOT; };
 		8E685AA618DC733B00309270 /* CSCollectionPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSCollectionPageControl.m; path = EasyReader/Application/Controls/CSCollectionPageControl.m; sourceTree = SOURCE_ROOT; };
-		8E7F403018D3596C00A6FED6 /* CSResponsiveApiRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSResponsiveApiRequestor.h; path = Api/CSResponsiveApiRequestor.h; sourceTree = "<group>"; };
-		8E7F403118D3596C00A6FED6 /* CSResponsiveApiRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSResponsiveApiRequestor.m; path = Api/CSResponsiveApiRequestor.m; sourceTree = "<group>"; };
 		8E7F81EE18D0BF8500BC50C2 /* CSBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseObject.h; sourceTree = "<group>"; };
 		8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBaseObject.m; sourceTree = "<group>"; };
 		9D140BF4171F68E000CDD319 /* button_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_add@2x.png"; sourceTree = "<group>"; };
@@ -350,10 +356,10 @@
 		9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCoreDataService.m; sourceTree = "<group>"; };
 		9D16D33B18DB7767001E9C38 /* CSFeedUpdateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedUpdateService.h; sourceTree = "<group>"; };
 		9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedUpdateService.m; sourceTree = "<group>"; };
-		9D16D34218DBA9E9001E9C38 /* AKRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRoute.h; sourceTree = "<group>"; };
-		9D16D34318DBA9E9001E9C38 /* AKRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRoute.m; sourceTree = "<group>"; };
-		9D16D34418DBA9E9001E9C38 /* AKRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRouter.h; sourceTree = "<group>"; };
-		9D16D34518DBA9E9001E9C38 /* AKRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRouter.m; sourceTree = "<group>"; };
+		9D16D34218DBA9E9001E9C38 /* APIRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRoute.h; sourceTree = "<group>"; };
+		9D16D34318DBA9E9001E9C38 /* APIRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRoute.m; sourceTree = "<group>"; };
+		9D16D34418DBA9E9001E9C38 /* APIRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRouter.h; sourceTree = "<group>"; };
+		9D16D34518DBA9E9001E9C38 /* APIRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRouter.m; sourceTree = "<group>"; };
 		9D16D34718DBA9E9001E9C38 /* SOApplicationDelegateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOApplicationDelegateService.h; sourceTree = "<group>"; };
 		9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOApplicationDelegateService.m; sourceTree = "<group>"; };
 		9D16D34918DBA9E9001E9C38 /* SOApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOApplicationDelegate.h; sourceTree = "<group>"; };
@@ -370,6 +376,15 @@
 		9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		9D607E4518DCE0FD004DF7F3 /* Development-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Development-Info.plist"; sourceTree = "<group>"; };
+		9D639E6E18E0A4E000350B5F /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		9D639E6F18E0A4E000350B5F /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		9D639E7418E0A52300350B5F /* APIMockRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIMockRequest.h; sourceTree = "<group>"; };
+		9D639E7518E0A52300350B5F /* APIMockRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIMockRequest.m; sourceTree = "<group>"; };
+		9D639E7A18E0A53100350B5F /* APIMockResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIMockResponse.h; sourceTree = "<group>"; };
+		9D639E7B18E0A53100350B5F /* APIMockResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIMockResponse.m; sourceTree = "<group>"; };
+		9D639E8018E0A54300350B5F /* APIMockedDataClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIMockedDataClient.h; sourceTree = "<group>"; };
+		9D639E8118E0A54300350B5F /* APIMockedDataClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIMockedDataClient.m; sourceTree = "<group>"; };
+		9D639E8718E0BAD500350B5F /* feeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feeds.json; sourceTree = "<group>"; };
 		9D79274A18DA1D0300E1D3E1 /* Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Staging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D79278E18DA1D3800E1D3E1 /* Easy Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D79279118DA1D9200E1D3E1 /* Production-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Production-Info.plist"; sourceTree = "<group>"; };
@@ -544,14 +559,8 @@
 		2767394818CFA6AC00110C33 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				8E7F403018D3596C00A6FED6 /* CSResponsiveApiRequestor.h */,
-				8E7F403118D3596C00A6FED6 /* CSResponsiveApiRequestor.m */,
-				274D53FC18D0E5C20096831A /* CSFakedDataRequestor.h */,
-				274D53FD18D0E5C20096831A /* CSFakedDataRequestor.m */,
 				274D540418D0E8D80096831A /* CSFeedItemUpdater.h */,
 				274D540518D0E8D80096831A /* CSFeedItemUpdater.m */,
-				0D79879C18DB4AE1004440C3 /* CSFeedSearcher.h */,
-				0D79879D18DB4AE1004440C3 /* CSFeedSearcher.m */,
 			);
 			name = Api;
 			sourceTree = "<group>";
@@ -616,10 +625,18 @@
 		9D16D34118DBA9E9001E9C38 /* apikit */ = {
 			isa = PBXGroup;
 			children = (
-				9D16D34218DBA9E9001E9C38 /* AKRoute.h */,
-				9D16D34318DBA9E9001E9C38 /* AKRoute.m */,
-				9D16D34418DBA9E9001E9C38 /* AKRouter.h */,
-				9D16D34518DBA9E9001E9C38 /* AKRouter.m */,
+				9D16D34218DBA9E9001E9C38 /* APIRoute.h */,
+				9D16D34318DBA9E9001E9C38 /* APIRoute.m */,
+				9D16D34418DBA9E9001E9C38 /* APIRouter.h */,
+				9D16D34518DBA9E9001E9C38 /* APIRouter.m */,
+				9D639E6E18E0A4E000350B5F /* APIClient.h */,
+				9D639E6F18E0A4E000350B5F /* APIClient.m */,
+				9D639E8018E0A54300350B5F /* APIMockedDataClient.h */,
+				9D639E8118E0A54300350B5F /* APIMockedDataClient.m */,
+				9D639E7418E0A52300350B5F /* APIMockRequest.h */,
+				9D639E7518E0A52300350B5F /* APIMockRequest.m */,
+				9D639E7A18E0A53100350B5F /* APIMockResponse.h */,
+				9D639E7B18E0A53100350B5F /* APIMockResponse.m */,
 			);
 			path = apikit;
 			sourceTree = "<group>";
@@ -654,6 +671,14 @@
 				2751F4D918DA0A6B00339C96 /* CSHomeViewController.m */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		9D639E8618E0BAD500350B5F /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				9D639E8718E0BAD500350B5F /* feeds.json */,
+			);
+			path = Fixtures;
 			sourceTree = "<group>";
 		};
 		9D7927C718DA279B00E1D3E1 /* EasyReader-Tests */ = {
@@ -786,8 +811,9 @@
 		9DAC16CF1709D48E00383722 /* EasyReader */ = {
 			isa = PBXGroup;
 			children = (
-				9D16D34018DBA9E9001E9C38 /* Library */,
 				9DAC1717170A043200383722 /* Application */,
+				9D16D34018DBA9E9001E9C38 /* Library */,
+				9D639E8618E0BAD500350B5F /* Fixtures */,
 				9DAC171F170A043200383722 /* Other Sources */,
 				9DAC1722170A043200383722 /* Resources */,
 				9DAC172B170A043200383722 /* Supporting Files */,
@@ -1109,6 +1135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D7927CC18DA279B00E1D3E1 /* InfoPlist.strings in Resources */,
+				9D639E8C18E0C94B00350B5F /* feeds.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1139,6 +1166,7 @@
 				9D9CBB0118DCC68A00532F8C /* icon_search@2x.png in Resources */,
 				9D9CBB0218DCC68A00532F8C /* button_add@2x.png in Resources */,
 				9D9CBB0318DCC68A00532F8C /* Default@2x.png in Resources */,
+				9D639E8918E0BAD500350B5F /* feeds.json in Resources */,
 				9D9CBB0418DCC68A00532F8C /* Default.png in Resources */,
 				9D9CBB0518DCC68A00532F8C /* (null) in Resources */,
 				9D9CBB0618DCC68A00532F8C /* Default-Portrait~ipad.png in Resources */,
@@ -1307,6 +1335,7 @@
 			files = (
 				9D16D33E18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
 				9D9CBAC318DCC52900532F8C /* CSApplicationStyleService.m in Sources */,
+				9D639E7818E0A52300350B5F /* APIMockRequest.m in Sources */,
 				9D79270A18DA1D0300E1D3E1 /* Feed.m in Sources */,
 				9D79270B18DA1D0300E1D3E1 /* CSAppDelegate.m in Sources */,
 				9D79270C18DA1D0300E1D3E1 /* main.m in Sources */,
@@ -1320,19 +1349,21 @@
 				9D79271318DA1D0300E1D3E1 /* FeedItem.m in Sources */,
 				9D79271418DA1D0300E1D3E1 /* User.m in Sources */,
 				9D096C3718DCE9D70043423B /* CSMenuUserFeedDataSource.m in Sources */,
-				9D16D34F18DBA9E9001E9C38 /* AKRouter.m in Sources */,
+				9D639E6C18E0934800350B5F /* CSUserFeedCell.m in Sources */,
+				9D639E7218E0A4E000350B5F /* APIClient.m in Sources */,
+				9D16D34F18DBA9E9001E9C38 /* APIRouter.m in Sources */,
 				9D096C3418DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */,
 				9D79271518DA1D0300E1D3E1 /* CSFeedItemUpdater.m in Sources */,
-				9D79271618DA1D0300E1D3E1 /* CSFakedDataRequestor.m in Sources */,
+				9D639E7E18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D79271718DA1D0300E1D3E1 /* CSMenuLeftViewController.m in Sources */,
-				9D79271818DA1D0300E1D3E1 /* CSResponsiveApiRequestor.m in Sources */,
+				9D639E6918E08CED00350B5F /* CSSearchFeedCell.m in Sources */,
 				9D79271918DA1D0300E1D3E1 /* Easy Reader.xcdatamodeld in Sources */,
 				9D16D32918DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */,
 				9D79271A18DA1D0300E1D3E1 /* CSFeedAddViewController.m in Sources */,
-				9D096C3A18DCEA0E0043423B /* CSFeedSearcher.m in Sources */,
+				9D639E8418E0A54300350B5F /* APIMockedDataClient.m in Sources */,
 				9D79271B18DA1D0300E1D3E1 /* NSObject+CSNilAdditions.m in Sources */,
 				9D16D33918DB75D9001E9C38 /* CSCoreDataService.m in Sources */,
-				9D16D34C18DBA9E9001E9C38 /* AKRoute.m in Sources */,
+				9D16D34C18DBA9E9001E9C38 /* APIRoute.m in Sources */,
 				9D79271C18DA1D0300E1D3E1 /* CSFeedItemCollectionViewDataSource.m in Sources */,
 				9D16D35518DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
 				9D16D35218DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */,
@@ -1345,6 +1376,7 @@
 			files = (
 				9D16D33F18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
 				9D9CBAC418DCC52A00532F8C /* CSApplicationStyleService.m in Sources */,
+				9D639E7918E0A52300350B5F /* APIMockRequest.m in Sources */,
 				9D79274E18DA1D3800E1D3E1 /* Feed.m in Sources */,
 				9D79274F18DA1D3800E1D3E1 /* CSAppDelegate.m in Sources */,
 				9D79275018DA1D3800E1D3E1 /* main.m in Sources */,
@@ -1358,19 +1390,21 @@
 				9D79275718DA1D3800E1D3E1 /* FeedItem.m in Sources */,
 				9D79275818DA1D3800E1D3E1 /* User.m in Sources */,
 				9D096C3818DCE9D80043423B /* CSMenuUserFeedDataSource.m in Sources */,
-				9D16D35018DBA9E9001E9C38 /* AKRouter.m in Sources */,
+				9D639E6D18E0934800350B5F /* CSUserFeedCell.m in Sources */,
+				9D639E7318E0A4E000350B5F /* APIClient.m in Sources */,
+				9D16D35018DBA9E9001E9C38 /* APIRouter.m in Sources */,
 				9D096C3518DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */,
 				9D79275918DA1D3800E1D3E1 /* CSFeedItemUpdater.m in Sources */,
-				9D79275A18DA1D3800E1D3E1 /* CSFakedDataRequestor.m in Sources */,
+				9D639E7F18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D79275B18DA1D3800E1D3E1 /* CSMenuLeftViewController.m in Sources */,
-				9D79275C18DA1D3800E1D3E1 /* CSResponsiveApiRequestor.m in Sources */,
+				9D639E6A18E08CED00350B5F /* CSSearchFeedCell.m in Sources */,
 				9D79275D18DA1D3800E1D3E1 /* Easy Reader.xcdatamodeld in Sources */,
 				9D16D32A18DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */,
 				9D79275E18DA1D3800E1D3E1 /* CSFeedAddViewController.m in Sources */,
-				9D096C3B18DCEA0E0043423B /* CSFeedSearcher.m in Sources */,
+				9D639E8518E0A54300350B5F /* APIMockedDataClient.m in Sources */,
 				9D79275F18DA1D3800E1D3E1 /* NSObject+CSNilAdditions.m in Sources */,
 				9D16D33A18DB75D9001E9C38 /* CSCoreDataService.m in Sources */,
-				9D16D34D18DBA9E9001E9C38 /* AKRoute.m in Sources */,
+				9D16D34D18DBA9E9001E9C38 /* APIRoute.m in Sources */,
 				9D79276018DA1D3800E1D3E1 /* CSFeedItemCollectionViewDataSource.m in Sources */,
 				9D16D35618DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
 				9D16D35318DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */,
@@ -1397,27 +1431,30 @@
 				9D9CBACB18DCC68A00532F8C /* main.m in Sources */,
 				9D9CBACC18DCC68A00532F8C /* CSHomeViewController.m in Sources */,
 				9D9CBACD18DCC68A00532F8C /* CSFeedItemCollectionView.m in Sources */,
+				9D639E7D18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D9CBACE18DCC68A00532F8C /* NSObject+CSReflectionAdditions.m in Sources */,
 				9D9CBACF18DCC68A00532F8C /* CSBaseObject.m in Sources */,
+				9D639E7118E0A4E000350B5F /* APIClient.m in Sources */,
 				9D9CBAD018DCC68A00532F8C /* CSFeedItemCell.m in Sources */,
 				9D9CBAD118DCC68A00532F8C /* CSRootViewController.m in Sources */,
 				9D9CBAD218DCC68A00532F8C /* FeedItem.m in Sources */,
 				9D9CBAD318DCC68A00532F8C /* User.m in Sources */,
-				9D9CBAD418DCC68A00532F8C /* AKRouter.m in Sources */,
+				9D639E7718E0A52300350B5F /* APIMockRequest.m in Sources */,
+				9D9CBAD418DCC68A00532F8C /* APIRouter.m in Sources */,
 				9D9CBAD518DCC68A00532F8C /* CSFeedItemUpdater.m in Sources */,
+				9D639E6B18E0934700350B5F /* CSUserFeedCell.m in Sources */,
 				9D096C3318DCE9D40043423B /* CSMenuSearchFeedDataSource.m in Sources */,
-				9D9CBAD618DCC68A00532F8C /* CSFakedDataRequestor.m in Sources */,
 				9D9CBAD718DCC68A00532F8C /* CSMenuLeftViewController.m in Sources */,
-				9D9CBAD818DCC68A00532F8C /* CSResponsiveApiRequestor.m in Sources */,
 				9D9CBAD918DCC68A00532F8C /* Easy Reader.xcdatamodeld in Sources */,
-				9D096C3918DCEA0D0043423B /* CSFeedSearcher.m in Sources */,
+				9D639E6818E08CED00350B5F /* CSSearchFeedCell.m in Sources */,
 				9D9CBADA18DCC68A00532F8C /* CSRegisterRoutesService.m in Sources */,
 				9D9CBADB18DCC68A00532F8C /* CSFeedAddViewController.m in Sources */,
 				9D9CBADC18DCC68A00532F8C /* NSObject+CSNilAdditions.m in Sources */,
 				9D9CBADD18DCC68A00532F8C /* CSCoreDataService.m in Sources */,
-				9D9CBADE18DCC68A00532F8C /* AKRoute.m in Sources */,
+				9D9CBADE18DCC68A00532F8C /* APIRoute.m in Sources */,
 				9D9CBADF18DCC68A00532F8C /* CSFeedItemCollectionViewDataSource.m in Sources */,
 				9D096C3C18DCEDB40043423B /* CSCollectionPageControl.m in Sources */,
+				9D639E8318E0A54300350B5F /* APIMockedDataClient.m in Sources */,
 				9D9CBAE018DCC68A00532F8C /* SOApplicationDelegate.m in Sources */,
 				9D9CBAE118DCC68A00532F8C /* SOApplicationDelegateService.m in Sources */,
 				9D096C3618DCE9D70043423B /* CSMenuUserFeedDataSource.m in Sources */,
@@ -1430,6 +1467,7 @@
 			files = (
 				9D16D33D18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
 				9D9CBABF18DC826700532F8C /* CSApplicationStyleService.m in Sources */,
+				9D639E7618E0A52300350B5F /* APIMockRequest.m in Sources */,
 				0DE51FF818CF919900454E51 /* Feed.m in Sources */,
 				9DAC172D170A043200383722 /* CSAppDelegate.m in Sources */,
 				9DAC172E170A043200383722 /* main.m in Sources */,
@@ -1441,22 +1479,22 @@
 				8E685AA718DC733B00309270 /* CSCollectionPageControl.m in Sources */,
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,
 				0DE51FF418CF911000454E51 /* FeedItem.m in Sources */,
-				0D79879E18DB4AE1004440C3 /* CSFeedSearcher.m in Sources */,
 				0DE51FF518CF911000454E51 /* User.m in Sources */,
-				9D16D34E18DBA9E9001E9C38 /* AKRouter.m in Sources */,
+				9D16D34E18DBA9E9001E9C38 /* APIRouter.m in Sources */,
+				9D639E7018E0A4E000350B5F /* APIClient.m in Sources */,
 				274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */,
 				0D7987A218DB6AE4004440C3 /* CSUserFeedCell.m in Sources */,
 				0D7987B218DB8F69004440C3 /* CSMenuUserFeedDataSource.m in Sources */,
-				274D540218D0E5C20096831A /* CSFakedDataRequestor.m in Sources */,
+				9D639E7C18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */,
-				8E7F403218D3596C00A6FED6 /* CSResponsiveApiRequestor.m in Sources */,
 				9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */,
 				9D16D32818DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */,
 				9DFBC0991714957E006BF840 /* CSFeedAddViewController.m in Sources */,
 				0D7987B118DB8F69004440C3 /* CSMenuSearchFeedDataSource.m in Sources */,
 				2751F4D618DA02C100339C96 /* NSObject+CSNilAdditions.m in Sources */,
+				9D639E8218E0A54300350B5F /* APIMockedDataClient.m in Sources */,
 				9D16D33818DB75D9001E9C38 /* CSCoreDataService.m in Sources */,
-				9D16D34B18DBA9E9001E9C38 /* AKRoute.m in Sources */,
+				9D16D34B18DBA9E9001E9C38 /* APIRoute.m in Sources */,
 				2751F4E218DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m in Sources */,
 				9D16D35418DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
 				9D16D35118DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */,
@@ -1504,7 +1542,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Staging;
 				PROVISIONING_PROFILE = "69FD30FF-426E-4BD8-8941-A0A741F92746";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1522,7 +1560,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Staging;
 				PROVISIONING_PROFILE = "21F890E2-92A0-495B-B0DD-1B718FF193D8";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1544,7 +1582,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Easy Reader";
 				PROVISIONING_PROFILE = "69FD30FF-426E-4BD8-8941-A0A741F92746";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1561,7 +1599,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Easy Reader";
 				PROVISIONING_PROFILE = "E41143CF-D6B6-4CE1-8493-853B58EB0910";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

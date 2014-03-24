@@ -9,11 +9,42 @@
 #import "User.h"
 #import "Feed.h"
 
+#pragma mark - Static declarations
+
+
+/// The shared instance
+static User *sharedInstance = nil;
 
 @implementation User
 
 @dynamic feeds;
 @dynamic feedItems;
+
+#pragma mark - Public Methods
+
++ (User *) current
+{
+    @synchronized(self)
+    {
+        if (!sharedInstance)
+        {
+            NSArray *users = [User MR_findAll];
+            
+            if ([users count] > 0)
+            {
+                sharedInstance = [users firstObject];
+            }
+            else
+            {
+                sharedInstance = [User createEntity];
+                [[NSManagedObjectContext MR_defaultContext] saveToPersistentStoreAndWait];
+            }
+        }
+        
+        return sharedInstance;
+    }
+}
+
 
 /**
  * Gathers all the items in a users feeds
@@ -30,24 +61,5 @@
     return feedItems;
 }
 
-/**
- * Returns the current user.
- * Creates a new one if none exist.
- */
-+ (User *)current
-{
-  NSArray *users = [User findAll];
-  
-  if ([users count] > 0)
-  {
-    return users[0];
-  }
-  else
-  {
-    User *user = [User createEntity];
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
-    return user;
-  }
-}
 
 @end

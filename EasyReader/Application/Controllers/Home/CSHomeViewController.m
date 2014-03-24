@@ -15,6 +15,8 @@
 #import "CSFeedItemCell.h"
 #import "Feed.h"
 #import "User.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
+
 
 @interface CSHomeViewController (){
   NSString *currentURL;
@@ -34,6 +36,9 @@
   _feedItems = [[NSMutableSet alloc] init];
   [_pageControl_itemIndicator setUpFadesOnView:[_pageControl_itemIndicator superview]];
   _pageControl_itemIndicator.controller_owner = self;
+  
+    self.currentUser = [User current];
+    
   [self setUpCollectionView];
   [self setUpWebView];
   [self setupFeedItemObserver];
@@ -47,8 +52,6 @@
 
 - (void) setupFeedItemObserver
 {
-  _currentUser = [User current];
-
   [self observeRelationship:@keypath(self.currentUser.feeds)
                 changeBlock:^(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
                     NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
@@ -109,14 +112,15 @@
                removalBlock:nil
            replacementBlock:nil
    ];
+    
   NSLog(@"observer added");
 }
 
 // Sets up collection view on controller start up
 - (void)setUpCollectionView
 {
-  User *current = [User current];
-  NSSet *feedItems = current.feedItems;
+//    NSArray *feedItems = [FeedItem MR_findAll];
+  NSSet *feedItems = _currentUser.feedItems;
 
   _feedCollectionViewDataSource =
       [[CSFeedItemCollectionViewDataSource alloc] initWithFeedItems:feedItems
@@ -144,6 +148,8 @@
         cell.label_source.text = feedItem.headline;
         cell.label_summary.text = feedItem.summary;
         cell.feedItem = feedItem;
+
+        [cell.imageView_background setImageWithURL:[NSURL URLWithString:feedItem.iphone_retina_image]];
     };
 }
 

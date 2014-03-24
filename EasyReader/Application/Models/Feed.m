@@ -1,6 +1,6 @@
-//
+ //
 //  Feed.m
-//  
+//
 //
 //  Created by Michael Beattie on 3/11/14.
 //
@@ -9,13 +9,13 @@
 #import "Feed.h"
 #import "FeedItem.h"
 #import "User.h"
-#import "CSResponsiveApiRequestor.h"
-#import "AFHTTPRequestOperation.h"
+//#import "CSResponsiveApiRequestor.h"
+//#import "AFHTTPRequestOperation.h"
+
+#import "APIClient.h"
 
 @implementation Feed
-{
-  CSResponsiveApiRequestor *requestor;
-}
+
 
 @dynamic icon;
 @dynamic name;
@@ -26,55 +26,55 @@
 
 
 + (void) createFeedWithUrl:(NSString *) url
-                   success:(void(^)(NSDictionary *data))successBlock
-                   failure:(void(^)(NSDictionary *data))failureBlock
+                   success:(APISuccessBlock)successBlock
+                   failure:(APIFailureBlock)failureBlock
 {
-  NSDictionary * params = @{@"url": url};
-  
-  [[CSResponsiveApiRequestor sharedRequestor] requestRoute:@"feedCreate"
-                                                withParams:params
-                                                   success:^(AFHTTPRequestOperation *operation, id responseData){
-                                                     [self saveParsedResponseData:responseData];
-                                                     if(successBlock) successBlock(responseData);
-                                                   }failure:failureBlock];
-  
+    NSDictionary * params = @{@"url": url};
+
+
+    [[self client] requestRoute:@"feedCreate"
+                      parameters:params
+                        success:^(id responseObject, NSInteger httpStatus) {
+                            [self saveParsedResponseData:responseObject];
+                            if(successBlock) successBlock(responseObject, httpStatus);
+                        }
+                        failure:failureBlock];
 }
 
-+ (void) requestDefaultFeedsWithSuccess:(void(^)(NSDictionary *data))successBlock
-                                failure:(void(^)(NSDictionary *data))failureBlock
++ (void) requestDefaultFeedsWithSuccess:(APISuccessBlock)successBlock
+                                failure:(APIFailureBlock)failureBlock
 
 {
-  [[CSResponsiveApiRequestor sharedRequestor] requestRoute:@"feedDefaults"
-                                                withParams:nil
-                                                   success:^(AFHTTPRequestOperation *operation, id responseData){
-                                                     [self saveParsedResponseData:responseData];
-                                                     if(successBlock) successBlock(responseData);
-                                                   }
-                                                   failure:failureBlock
-  ];
-  
+    [[self client] requestRoute:@"feedDefaults"
+                     parameters:nil
+                        success:^(id responseObject, NSInteger httpStatus) {
+                            NSLog(@"FEED COUNT %ld", (long)[[[User current] feeds] count]);
+                            [self saveParsedResponseData:responseObject];
+                            if(successBlock) successBlock(responseObject, httpStatus);
+                        }
+                        failure:failureBlock];
 }
 
 + (void) requestFeedsByName:(NSString *) name
-                    success:(void(^)(NSDictionary *data))successBlock
-                    failure:(void(^)(NSDictionary *data))failureBlock
+                    success:(APISuccessBlock)successBlock
+                    failure:(APIFailureBlock)failureBlock
 {
-  NSDictionary * params = @{@"name": name};
-  
-  [[CSResponsiveApiRequestor sharedRequestor] requestRoute:@"feedSearch"
-                                                withParams:params
-                                                   success:successBlock
-                                                   failure:failureBlock
-   ];
-  
+    NSDictionary * params = @{@"name": name};
+    
+    [[self client] requestRoute:@"feedSearch"
+                     parameters:params
+                        success:successBlock
+                        failure:failureBlock];
 }
 
 + (void) saveParsedResponseData:(id)responseData
 {
-  for( NSDictionary *data in responseData[@"feeds"] ){
-    [[User current] addFeedsObject:[Feed createOrUpdateFirstFromAPIData:data]];
-  }
-  [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    User *currentUser = [User current];
+    
+    for( NSDictionary *data in responseData[@"feeds"] ){
+        [currentUser addFeedsObject:[Feed createOrUpdateFirstFromAPIData:data]];
+    }
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
 }
 
 @end
