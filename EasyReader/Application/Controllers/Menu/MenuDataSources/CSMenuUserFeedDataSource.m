@@ -28,6 +28,7 @@
     
     if (self) {
         _feeds = [[NSMutableSet alloc] init];
+        _sortedFeeds = [[NSArray alloc] init];
     }
     
     return self;
@@ -39,6 +40,16 @@
 - (void)updateWithFeeds:(NSMutableSet *)feeds
 {
     self.feeds = feeds;
+    [self sortFeeds];
+}
+
+/**
+ * Sort the feeds alphabetically
+ */
+- (void)sortFeeds
+{
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    self.sortedFeeds = [[NSArray arrayWithArray:[_feeds allObjects]] sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
 }
 
 
@@ -48,7 +59,7 @@
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_feeds count];
+    return [self.sortedFeeds count];
 }
 
 
@@ -79,7 +90,7 @@
     // Dequeue a styled cell
     CSUserFeedCell *cell = (CSUserFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"UserFeedCell"];
     
-    Feed *feed = [self.feeds allObjects][indexPath.row];
+    Feed *feed = [self.sortedFeeds objectAtIndex:indexPath.row];
     cell.feed = feed;
     
     // Set the label text
@@ -102,7 +113,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Feed *toDelete = [self.feeds allObjects][indexPath.row];
+        Feed *toDelete = [self.sortedFeeds objectAtIndex:indexPath.row];
         [toDelete deleteEntity];
         [self.feeds removeObject:toDelete];
         
@@ -115,7 +126,7 @@
  */
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ( indexPath.row == [_feeds count] ) {
+    if ( indexPath.row == [self.sortedFeeds count] ) {
         return UITableViewCellEditingStyleInsert;
     } else {
         return UITableViewCellEditingStyleDelete;
