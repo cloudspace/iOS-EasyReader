@@ -50,6 +50,7 @@
     
     // Setup the user and search datasources
     [self setUpDataSources];
+    self.tableView_feeds.delegate = self;
     
     // Setup feedSearch API requestor
     feedSearcher = [[CSFeedSearcher alloc] init];
@@ -72,10 +73,12 @@
                       
                       for ( Feed *feed in removedFeeds ){
                           [[self feeds] removeObject:feed];
+                          self.currentUser.feeds = self.feeds;
                       }
                       
                       for ( Feed *feed in addedFeeds ){
                           [[self feeds] addObject:feed];
+                          self.currentUser.feeds = self.feeds;
                       }
                       
                       // Update and switch to the userFeed data source
@@ -94,17 +97,16 @@
                                                  name:MFSideMenuStateNotificationEvent
                                                object:nil];
     
-    self.tableView_feeds.delegate = self;
-    
     [userFeedDataSource updateWithFeeds:self.feeds];
     self.tableView_feeds.dataSource = userFeedDataSource;
 }
 
 - (void)applyMenuStyles
 {
-    [[self.textField_searchInput superview] setBackgroundColor: [UIColor EZR_charcoal]];
-    [self.textField_searchInput setBackgroundColor: [UIColor EZR_charcoal]];
-    self.textField_searchInput.textColor = [UIColor whiteColor];
+    [self.tableView_feeds setBackgroundColor: [UIColor EZR_menuBackground]];
+    [self.textField_searchInput setBackgroundColor: [UIColor EZR_menuInputBackground]];
+    [self.textField_searchInput setTextColor: [UIColor whiteColor]];
+    [self.tableView_feeds setSeparatorColor: [UIColor EZR_charcoal]];
 }
 
 - (void)setUpDataSources
@@ -196,7 +198,6 @@
 {
     return 1;
 }
-
 
 #pragma mark - UITableViewDelegate Methods
 /**
