@@ -7,44 +7,46 @@
 //
 
 #import "CSHomeViewController.h"
+
+// Pods
 #import <Block-KVO/MTKObserving.h>
-#import "CSFeedItemCollectionView.h"
-#import "CSFeedItemCollectionViewDataSource.h"
-#import "FeedItem.h"
 #import "MFSideMenu.h"
-#import "CSFeedItemCell.h"
+
+// Models
+#import "FeedItem.h"
 #import "Feed.h"
 #import "User.h"
 
-@interface CSHomeViewController (){
+#import "CSFeedItemCell.h"
+
+@interface CSHomeViewController ()
+{
   NSString *currentURL;
 }
-
-/// The collection view which holds the individual feed items
-@property (nonatomic, weak) IBOutlet CSFeedItemCollectionView *collectionView_feedItems;
-
 @end
-
 
 @implementation CSHomeViewController
 
+/**
+ * Set up data sctructures, controller views, add observers
+ */
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   _feedItems = [[NSMutableSet alloc] init];
+  
   [_pageControl_itemIndicator setUpFadesOnView:[_pageControl_itemIndicator superview]];
   _pageControl_itemIndicator.controller_owner = self;
+  
+  [self setUpVerticalScrollView];
   [self setUpCollectionView];
   [self setUpWebView];
   [self setupFeedItemObserver];
-  // Do any additional setup after loading the view.
 }
 
-- (void)viewDidLayoutSubviews
-{
-    [self setUpVerticalScrollView];
-}
-
+/**
+ * Assigns observers for feeds and feed items, puts page controller at start
+ */
 - (void) setupFeedItemObserver
 {
   _currentUser = [User current];
@@ -109,10 +111,32 @@
                removalBlock:nil
            replacementBlock:nil
    ];
-  NSLog(@"observer added");
 }
 
-// Sets up collection view on controller start up
+#pragma mark - IBActions
+
+// Receives left menu link click
+- (IBAction)buttonLeftMenu_touchUpInside_goToMenu:(id)sender {
+  [[self rootViewController] toggleLeftSideMenuCompletion:^{}];
+}
+
+
+/**
+ * Sets up vertical scroll view on controller start up
+ */
+-(void)setUpVerticalScrollView{
+  // Set contentSize to be twice the height of the scrollview
+  NSInteger width = self.verticalScrollView.frame.size.width;
+  NSInteger height = self.verticalScrollView.frame.size.height;
+  self.verticalScrollView.contentSize = CGSizeMake(width, height*2);
+  
+  self.verticalScrollView.pagingEnabled =YES;
+  self.verticalScrollView.delegate = self;
+}
+
+/**
+ * Sets up collection view on controller start up
+ */
 - (void)setUpCollectionView
 {
   User *current = [User current];
@@ -125,18 +149,26 @@
   
   self.collectionView_feedItems.dataSource = _feedCollectionViewDataSource;
   self.collectionView_feedItems.delegate = self;
-  
-  
 }
 
-#pragma mark - IBActions
-
-// Receives left menu link click
-- (IBAction)buttonLeftMenu_touchUpInside_goToMenu:(id)sender {
-  [[self rootViewController] toggleLeftSideMenuCompletion:^{}];
+/**
+ * Sets up collection view on controller start up
+ */
+-(void)setUpWebView
+{
+  // Create a new webview and place it below the collectionView
+  self.feedItemWebView = [[UIWebView alloc] init];
+  NSInteger width = self.verticalScrollView.frame.size.width;
+  NSInteger height = self.verticalScrollView.frame.size.height;
+  self.feedItemWebView.frame= CGRectMake(0, height, width, height*2);
+  
+  // Add it to the bottom of the scrollView
+  [self.verticalScrollView addSubview:self.feedItemWebView];
 }
 
-
+/**
+ * Sets up collection cell to given feed item data
+ */
 - (configureFeedItemCell)configureFeedItem
 {
     return ^void(CSFeedItemCell *cell, FeedItem *feedItem) {
@@ -147,28 +179,37 @@
     };
 }
 
--(void)setUpVerticalScrollView{
-    // Set contentSize to be twice the height of the scrollview
-    NSInteger width = self.verticalScrollView.frame.size.width;
-    NSInteger height = self.verticalScrollView.frame.size.height;
-    self.verticalScrollView.contentSize = CGSizeMake(width, height*2);
-    
-    self.verticalScrollView.pagingEnabled =YES;
-    self.verticalScrollView.delegate = self;
-}
-
--(void)setUpWebView
+- (void)loadFeedItemWebView
 {
-    // Create a new webview and place it below the collectionView
-    self.feedItemWebView = [[UIWebView alloc] init];
-    NSInteger width = self.verticalScrollView.frame.size.width;
-    NSInteger height = self.verticalScrollView.frame.size.height;
-    self.feedItemWebView.frame= CGRectMake(0, height, width, height*2);
-
-    // Add it to the bottom of the scrollView
-    [self.verticalScrollView addSubview:self.feedItemWebView];
+  // Check if this is a new url
+  if(currentURL != self.collectionView_feedItems.currentFeedItem.url){
+    // update the current url
+    currentURL = self.collectionView_feedItems.currentFeedItem.url;
+    
+    // load the url in the webView
+    NSURL *url = [NSURL URLWithString:currentURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.feedItemWebView loadRequest:requestObj];
+  }
 }
 
+# pragma mark - ScrollView methods
+
+/**
+ * Scroll to the currentFeedItem when the feedItems update
+ */
+- (void)scrollToCurrentFeedItem
+{
+  NSUInteger index = [_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem];
+  NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+  [_collectionView_feedItems scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+}
+
+# pragma mark - ScrollView Delegate methods
+
+/**
+ * Scroll view delegate method for dragging view up into webview
+ */
 - (void)scrollViewWillBeginDragging:(UIScrollView *)sender {
     // If we are scrolling in the scrollView only not a subclass
     if([sender isMemberOfClass:[UIScrollView class]]) {
@@ -176,6 +217,11 @@
     }
 }
 
+# pragma mark - CollectionView Delegate methods
+
+/**
+ * Collection view delegate method for updating current feed item webview url
+ */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
     // If we are scrolling in the collectionView only
     if([sender isMemberOfClass:[CSFeedItemCollectionView class]]) {
@@ -187,41 +233,16 @@
     }
 }
 
-// Scroll to the currentFeedItem when the feedItems update
-- (void)scrollToCurrentFeedItem
-{
-    NSUInteger index = [_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-    [_collectionView_feedItems scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
-}
-
-
+/**
+ * Collection view delegate method for when a cell ends display
+ * Sets page control indicator
+ */
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
   NSInteger newIndex = indexPath.row+((indexPath.row-self.collectionCellGoingTo)*-1);
 
   [_pageControl_itemIndicator setPageControllerPageAtIndex:newIndex
                                              forCollection:_feedItems];
-}
-
-- (void)loadFeedItemWebView
-{
-    // Check if this is a new url
-    if(currentURL != self.collectionView_feedItems.currentFeedItem.url){
-        // update the current url
-        currentURL = self.collectionView_feedItems.currentFeedItem.url;
-        
-        // load the url in the webView
-        NSURL *url = [NSURL URLWithString:currentURL];
-        NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-        [self.feedItemWebView loadRequest:requestObj];
-    }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
