@@ -8,6 +8,12 @@
 
 #import "UIColor+EZRSharedColorAdditions.h"
 
-@implementation UIColor_EZRSharedColorAdditions
+@implementation UIColor (EZRSharedColorAdditions)
+
++ (UIColor *) EZR_charcoal { return [UIColor EZR_charcoalWithOpacity:1]; }
+
++ (UIColor *) EZR_charcoalWithOpacity:(float)opacity {
+    return [UIColor colorWithRed:39/255.0f green:42/255.0f blue:44/255.0f alpha:opacity];
+}
 
 @end

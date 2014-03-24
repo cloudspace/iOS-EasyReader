@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1F71DE18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */; };
+		0D79879E18DB4AE1004440C3 /* CSFeedSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D79879D18DB4AE1004440C3 /* CSFeedSearcher.m */; };
 		0D7987A218DB6AE4004440C3 /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
 		0D7987A518DB6AF4004440C3 /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		0D7987B118DB8F69004440C3 /* CSMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AE18DB8F69004440C3 /* CSMenuSearchFeedDataSource.m */; };
@@ -309,6 +311,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1F71DC18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EZRSharedColorAdditions.h"; sourceTree = "<group>"; };
+		0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EZRSharedColorAdditions.m"; sourceTree = "<group>"; };
+		0D79879C18DB4AE1004440C3 /* CSFeedSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedSearcher.h; path = Api/CSFeedSearcher.h; sourceTree = "<group>"; };
+		0D79879D18DB4AE1004440C3 /* CSFeedSearcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedSearcher.m; path = Api/CSFeedSearcher.m; sourceTree = "<group>"; };
 		0D7987A018DB6AE4004440C3 /* CSUserFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSUserFeedCell.h; sourceTree = "<group>"; };
 		0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUserFeedCell.m; sourceTree = "<group>"; };
 		0D7987A318DB6AF4004440C3 /* CSSearchFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSearchFeedCell.h; sourceTree = "<group>"; };
@@ -538,6 +544,8 @@
 				2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */,
 				2751F4D418DA02C100339C96 /* NSObject+CSReflectionAdditions.h */,
 				2751F4D518DA02C100339C96 /* NSObject+CSReflectionAdditions.m */,
+				0D1F71DC18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.h */,
+				0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1499,6 +1507,7 @@
 				9D16D33818DB75D9001E9C38 /* CSCoreDataService.m in Sources */,
 				9D16D34B18DBA9E9001E9C38 /* APIRoute.m in Sources */,
 				2751F4E218DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m in Sources */,
+				0D1F71DE18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m in Sources */,
 				9D16D35418DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
 				9D16D35118DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */,
 				0D7987A518DB6AF4004440C3 /* CSSearchFeedCell.m in Sources */,

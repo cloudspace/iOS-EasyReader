@@ -6,8 +6,14 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface UIColor_EZRSharedColorAdditions : NSObject
+/**
+ * Extends UIColor to provide a set of standard colors used across the application
+ */
+@interface UIColor (EZRSharedColorAdditions)
+
++ (UIColor *) EZR_charcoal;
++ (UIColor *) EZR_charcoalWithOpacity:(float)opacity;
 
 @end
