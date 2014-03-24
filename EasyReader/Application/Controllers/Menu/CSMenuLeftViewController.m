@@ -11,6 +11,8 @@
 
 #import "UIImageView+AFNetworking.h"
 
+#import "UIColor+EZRSharedColorAdditions.h"
+
 #import "Feed.h"
 #import "FeedItem.h"
 #import "User.h"
@@ -20,11 +22,6 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <Block-KVO/MTKObserving.h>
-
-#import "CSEnhancedTableView.h"
-#import "CSEnhancedTableViewCell.h"
-#import "CSEnhancedTableViewHeaderFooterView.h"
-#import "CSEnhancedTableViewStyleDark.h"
 
 #import "CSMenuUserFeedDataSource.h"
 #import "CSMenuSearchFeedDataSource.h"
@@ -52,12 +49,7 @@
     [self setUpDataSources];
     
     // Set tableViewStyle
-    CSEnhancedTableViewStyle *tableViewStyle = [[CSEnhancedTableViewStyleDark alloc] init];
-    self.tableView_feeds.tableViewStyle = tableViewStyle;
-    
-    [[self.textField_searchInput superview] setBackgroundColor: [tableViewStyle tableBackgroundColor]];
-    [self.textField_searchInput setBackgroundColor: [tableViewStyle headerBackgroundTopColor]];
-    self.textField_searchInput.textColor = [tableViewStyle headerTitleLabelTextColor];
+    [self applyMenuStyles];
     
     // Added search method to the user input field
     [self.textField_searchInput addTarget:self action:@selector(searchFieldDidChange)forControlEvents:UIControlEventEditingChanged];
@@ -100,6 +92,13 @@
     
     [userFeedDataSource updateWithFeeds:self.feeds];
     self.tableView_feeds.dataSource = userFeedDataSource;
+}
+
+- (void)applyMenuStyles
+{
+    [[self.textField_searchInput superview] setBackgroundColor: [UIColor EZR_charcoal]];
+    [self.textField_searchInput setBackgroundColor: [UIColor EZR_charcoal]];
+    self.textField_searchInput.textColor = [UIColor whiteColor];
 }
 
 - (void)setUpDataSources
