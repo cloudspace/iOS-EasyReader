@@ -86,16 +86,8 @@
     
     // Show feed icons
     [cell.imageView_icon setHidden:NO];
-    
-    __weak CSUserFeedCell *currentCell = cell;
-    NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.icon]];
-    [currentCell.imageView setImageWithURLRequest:imageRequest
-                                 placeholderImage:nil
-                                          success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                              currentCell.imageView.image = image;
-                                          }failure:nil
-     ];
-    
+    [cell.imageView setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:nil];
+
     UIView *selectedBackgroundView = [[UIView alloc] init];
     [selectedBackgroundView setBackgroundColor: [UIColor colorWithRed:39/255.0 green:45/255.0 blue:58/255.0 alpha:1.0]];
     cell.selectedBackgroundView = selectedBackgroundView;
