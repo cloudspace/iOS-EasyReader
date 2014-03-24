@@ -47,7 +47,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    CSMenuLeftViewController *leftMenuViewController = [[CSMenuLeftViewController alloc] init];
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+
+    CSMenuLeftViewController *leftMenuViewController = (CSMenuLeftViewController*)[mainStoryBoard instantiateViewControllerWithIdentifier:@"LeftMenu"];
+    
     CSRootViewController *rootVC = [[CSRootViewController alloc] init];
     
     MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController

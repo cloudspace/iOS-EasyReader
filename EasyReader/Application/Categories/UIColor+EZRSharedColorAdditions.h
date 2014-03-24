@@ -13,6 +13,9 @@
  */
 @interface UIColor (EZRSharedColorAdditions)
 
++ (UIColor *) EZR_menuBackground;
++ (UIColor *) EZR_menuInputBackground;
+
 + (UIColor *) EZR_charcoal;
 + (UIColor *) EZR_charcoalWithOpacity:(float)opacity;
 

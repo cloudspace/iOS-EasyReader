@@ -36,9 +36,9 @@
     gradient.frame = self.info_view.bounds;
     
     // Define and set array of gradient colors
-    gradient.colors = [NSArray arrayWithObjects:(id)[UIColor EZR_charcoalWithOpacity:0.7].CGColor,
-                                                (id)[UIColor EZR_charcoalWithOpacity:0.9].CGColor,
-                                                (id)[UIColor EZR_charcoal].CGColor,nil];
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor EZR_charcoalWithOpacity:0.7] CGColor],
+                                                (id)[[UIColor EZR_charcoalWithOpacity:0.9] CGColor],
+                                                (id)[[UIColor EZR_charcoal] CGColor],nil];
     
     // Define and set array of color stop positions
     gradient.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.02],
@@ -61,7 +61,7 @@
     gradient.frame = self.label_summary.bounds;
     
     // Define and set array of gradient colors
-    gradient.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor, (id)[UIColor clearColor].CGColor,nil];
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor] CGColor], (id)[[UIColor clearColor] CGColor],nil];
     
     // Define and set array of color stop positions
     gradient.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.30],
