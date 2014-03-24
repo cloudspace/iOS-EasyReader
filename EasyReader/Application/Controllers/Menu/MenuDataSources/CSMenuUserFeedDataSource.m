@@ -10,6 +10,8 @@
 
 #import "UIImageView+AFNetworking.h"
 
+#import "UIColor+EZRSharedColorAdditions.h"
+
 #import "CSUserFeedCell.h"
 
 #import "Feed.h"
@@ -89,7 +91,7 @@
     [cell.imageView setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:nil];
 
     UIView *selectedBackgroundView = [[UIView alloc] init];
-    [selectedBackgroundView setBackgroundColor: [UIColor colorWithRed:39/255.0 green:45/255.0 blue:58/255.0 alpha:1.0]];
+    [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
     cell.selectedBackgroundView = selectedBackgroundView;
     return cell;
 }

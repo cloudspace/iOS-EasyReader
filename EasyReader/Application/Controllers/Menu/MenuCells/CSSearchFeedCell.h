@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CSEnhancedTableViewCell.h"
 
 @class Feed;
 
-@interface CSSearchFeedCell : CSEnhancedTableViewCell
+@interface CSSearchFeedCell : UITableViewCell
 
 #pragma mark - IBOutlets
 
