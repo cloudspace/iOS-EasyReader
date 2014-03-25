@@ -74,7 +74,7 @@
                       }
                       
                       // Update and switch to the userFeed data source
-                      self.tableView_feeds.dataSource = userFeedDataSource;
+                      [userFeedDataSource updateWithFeeds:self.feeds];
                       [self updateUserFeedDataSource];
                   }
                insertionBlock:nil
