@@ -16,6 +16,9 @@
   float rightFadeOrigin;
   float gradientWidth;
   float fadeMovement;
+  float xOrigin;
+  float xLastOrigin;
+  float yOrigin;
 }
 
 /**
@@ -25,6 +28,8 @@
 {
   self = [super initWithCoder:aDecoder];
   if (self) {
+    yOrigin = self.frame.origin.y;
+    
     _view_maskLayer = [[UIView alloc] init];
     _view_leftFade = [[UIView alloc] init];
     _view_rightFade = [[UIView alloc] init];
@@ -34,8 +39,6 @@
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(newItemButton:)];
     [_button_newItem addGestureRecognizer:singleTap];
-    
-    [self addSubview:_button_newItem];
   }
   return self;
 }
@@ -45,7 +48,20 @@
  */
 -(void)layoutSubviews
 {
-  [self insertSubview:_view_maskLayer atIndex:0];
+  [super layoutSubviews];
+  
+  NSMutableArray *subviews = [[self subviews] mutableCopy];
+
+  [self insertSubview:_view_maskLayer atIndex:[[self subviews] count]];
+  [self insertSubview:_button_newItem atIndex:[[self subviews] count]];
+  
+  int count = [subviews count] < 5 ? [subviews count] : 5;
+  xOrigin = (self.frame.size.width/2)-( 3.5 + ((float)count/2)*12 );
+  xLastOrigin = xOrigin + ([subviews count]*10.5);
+  
+  [self setUpFades];
+  [self setPageControllerPageAtIndex:[self currentPage]
+                   forCollectionSize:[_controller_owner.feedItems count]];
   NSLog(@"something");
 }
 
@@ -71,9 +87,9 @@
   gradientWidth = 40;
   fadeMovement = 10;
   
-  _view_leftFade.frame = CGRectMake(110, 10, gradientWidth, 20);
-  leftFadeOrigin = 110;
-  _view_leftFade.backgroundColor = [UIColor blueColor];
+  _view_leftFade.frame = CGRectMake(xOrigin-15, 10, gradientWidth, 20);
+  leftFadeOrigin = 115;
+  _view_leftFade.backgroundColor = [UIColor blackColor];
   
   CAGradientLayer *leftLayer = [CAGradientLayer layer];
   leftLayer.frame = _view_leftFade.bounds;
@@ -82,9 +98,9 @@
   leftLayer.endPoint = CGPointMake(1.0f, 1.0f);
   _view_leftFade.layer.mask = leftLayer;
 
-  _view_rightFade.frame = CGRectMake(170, 10, gradientWidth, 20);
-  rightFadeOrigin = 170;
-  _view_rightFade.backgroundColor = [UIColor blueColor];
+  _view_rightFade.frame = CGRectMake(xLastOrigin-8.5, 10, gradientWidth, 20);
+  rightFadeOrigin = 165;
+  _view_rightFade.backgroundColor = [UIColor blackColor];
   
   CAGradientLayer *rightLayer = [CAGradientLayer layer];
   rightLayer.frame = _view_rightFade.bounds;
@@ -104,25 +120,40 @@
  */
 - (void)setPageControllerPageAtIndex:(NSInteger)index forCollectionSize:(NSInteger)size
 {
-  if (size < 6){
+  if (size < 5){
     self.currentPage = index;
+    [UIView animateWithDuration:.75 animations:^{
+      _view_leftFade.frame = CGRectMake(leftFadeOrigin-(fadeMovement*(2-index)), 10, gradientWidth, 20);
+      _view_rightFade.frame = CGRectMake(rightFadeOrigin+(fadeMovement*(3-(size-index))), 10, gradientWidth, 20);
+    }];
   } else {
-    if( index < 2 ){
+    if( index < 3 ){
       self.currentPage = index;
       [UIView animateWithDuration:.75 animations:^{
+        if( self.frame.origin.y != yOrigin ){
+          self.frame = CGRectMake(0, yOrigin, self.frame.size.width, self.frame.size.height);
+        }
         _view_leftFade.frame = CGRectMake(leftFadeOrigin-(fadeMovement*(2-index)), 10, gradientWidth, 20);
       }];
-    } else if(index > (size-3) ){
+    } else if(index > (size-4) ){
       self.currentPage = 5-(size-index);
       [UIView animateWithDuration:.75 animations:^{
+        if( self.frame.origin.y != yOrigin ){
+          self.frame = CGRectMake(0, yOrigin, self.frame.size.width, self.frame.size.height);
+        }
         _view_rightFade.frame = CGRectMake(rightFadeOrigin+(fadeMovement*(3-(size-index))), 10, gradientWidth, 20);
       }];
     } else {
       self.currentPage = 2;
-      [UIView animateWithDuration:.75 animations:^{
-        _view_leftFade.frame = CGRectMake(leftFadeOrigin, 10, gradientWidth, 20);
-        _view_rightFade.frame = CGRectMake(rightFadeOrigin, 10, gradientWidth, 20);
-      }];
+      
+      if( self.frame.origin.y == yOrigin ){
+        [UIView animateWithDuration:.75 animations:^{
+          self.frame = CGRectMake(0, yOrigin+self.frame.size.height, self.frame.size.width, self.frame.size.height);
+        }];
+      }
+      
+      _view_leftFade.frame = CGRectMake(leftFadeOrigin, 10, gradientWidth, 20);
+      _view_rightFade.frame = CGRectMake(rightFadeOrigin, 10, gradientWidth, 20);
     }
   }
 }
