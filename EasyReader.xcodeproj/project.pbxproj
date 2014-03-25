@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D1F71DE18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */; };
-		0D79879E18DB4AE1004440C3 /* CSFeedSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D79879D18DB4AE1004440C3 /* CSFeedSearcher.m */; };
 		0D7987A218DB6AE4004440C3 /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
 		0D7987A518DB6AF4004440C3 /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		0D7987B118DB8F69004440C3 /* CSMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AE18DB8F69004440C3 /* CSMenuSearchFeedDataSource.m */; };
@@ -19,11 +18,9 @@
 		0D9A835418E0AA2A00D8376E /* UIColor+EZRSharedColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */; };
 		0D9A835518E0AA2A00D8376E /* UIColor+EZRSharedColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */; };
 		0D9A835618E0AA3F00D8376E /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
-		0D9A835718E0AA4000D8376E /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
 		0D9A835818E0AA4000D8376E /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
 		0D9A835918E0AA4300D8376E /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		0D9A835A18E0AA4300D8376E /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
-		0D9A835B18E0AA4400D8376E /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		0D9A835E18E0C82200D8376E /* EZRCustomFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */; };
 		0D9A835F18E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */; };
 		0D9A836018E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */; };
@@ -66,7 +63,6 @@
 		9D16D34C18DBA9E9001E9C38 /* APIRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* APIRoute.m */; };
 		9D16D34D18DBA9E9001E9C38 /* APIRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* APIRoute.m */; };
 		9D16D34E18DBA9E9001E9C38 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
-		9D16D34F18DBA9E9001E9C38 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
 		9D16D35018DBA9E9001E9C38 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
 		9D16D35118DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
 		9D16D35218DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
@@ -84,12 +80,8 @@
 		9D4FA6E617971D5B001E2A65 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */; };
 		9D4FA6E817971E88001E2A65 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */; };
 		9D4FA6EA17971E8D001E2A65 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */; };
-		9D639E6818E08CED00350B5F /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
-		9D639E6918E08CED00350B5F /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		9D639E6A18E08CED00350B5F /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
-		9D639E6B18E0934700350B5F /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
 		9D639E6C18E0934800350B5F /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
-		9D639E6D18E0934800350B5F /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
 		9D639E7018E0A4E000350B5F /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E6F18E0A4E000350B5F /* APIClient.m */; };
 		9D639E7118E0A4E000350B5F /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E6F18E0A4E000350B5F /* APIClient.m */; };
 		9D639E7218E0A4E000350B5F /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E6F18E0A4E000350B5F /* APIClient.m */; };
@@ -326,8 +318,6 @@
 /* Begin PBXFileReference section */
 		0D1F71DC18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EZRSharedColorAdditions.h"; sourceTree = "<group>"; };
 		0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EZRSharedColorAdditions.m"; sourceTree = "<group>"; };
-		0D79879C18DB4AE1004440C3 /* CSFeedSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedSearcher.h; path = Api/CSFeedSearcher.h; sourceTree = "<group>"; };
-		0D79879D18DB4AE1004440C3 /* CSFeedSearcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedSearcher.m; path = Api/CSFeedSearcher.m; sourceTree = "<group>"; };
 		0D7987A018DB6AE4004440C3 /* CSUserFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSUserFeedCell.h; sourceTree = "<group>"; };
 		0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUserFeedCell.m; sourceTree = "<group>"; };
 		0D7987A318DB6AF4004440C3 /* CSSearchFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSearchFeedCell.h; sourceTree = "<group>"; };
@@ -1380,9 +1370,7 @@
 				9D096C3718DCE9D70043423B /* CSMenuUserFeedDataSource.m in Sources */,
 				9D639E6C18E0934800350B5F /* CSUserFeedCell.m in Sources */,
 				9D639E7218E0A4E000350B5F /* APIClient.m in Sources */,
-				9D16D34F18DBA9E9001E9C38 /* APIRouter.m in Sources */,
 				0D9A835A18E0AA4300D8376E /* CSSearchFeedCell.m in Sources */,
-				9D16D34F18DBA9E9001E9C38 /* AKRouter.m in Sources */,
 				9D096C3418DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */,
 				9D79271518DA1D0300E1D3E1 /* CSFeedItemUpdater.m in Sources */,
 				9D639E7E18E0A53100350B5F /* APIMockResponse.m in Sources */,
@@ -1424,7 +1412,7 @@
 				9D096C3818DCE9D80043423B /* CSMenuUserFeedDataSource.m in Sources */,
 				9D639E7318E0A4E000350B5F /* APIClient.m in Sources */,
 				0D9A835818E0AA4000D8376E /* CSUserFeedCell.m in Sources */,
-				9D16D35018DBA9E9001E9C38 /* AKRouter.m in Sources */,
+				9D16D35018DBA9E9001E9C38 /* APIRouter.m in Sources */,
 				9D096C3518DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */,
 				9D79275918DA1D3800E1D3E1 /* CSFeedItemUpdater.m in Sources */,
 				9D639E7F18E0A53100350B5F /* APIMockResponse.m in Sources */,
