@@ -75,9 +75,7 @@
                       
                       // Update and switch to the userFeed data source
                       self.tableView_feeds.dataSource = userFeedDataSource;
-                      [userFeedDataSource updateWithFeeds:self.feeds];
-                      
-                      [self.tableView_feeds reloadData];
+                      [self updateUserFeedDataSource];
                   }
                insertionBlock:nil
                  removalBlock:nil
@@ -90,7 +88,7 @@
                                                object:nil];
     
     [userFeedDataSource updateWithFeeds:self.feeds];
-    self.tableView_feeds.dataSource = userFeedDataSource;
+    [self updateUserFeedDataSource];
 }
 
 - (void)applyMenuStyles
@@ -204,6 +202,10 @@
  */
 - (void)updateUserFeedDataSource
 {
+    // Clear the input field and dismiss the keyboard
+    self.textField_searchInput.text = @"";
+    [self.textField_searchInput endEditing:YES];
+    
     // Switch to the searchFeed datasource
     self.tableView_feeds.dataSource = userFeedDataSource;
     
