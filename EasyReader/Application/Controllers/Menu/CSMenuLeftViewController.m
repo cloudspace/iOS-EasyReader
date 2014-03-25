@@ -139,6 +139,8 @@
     }
 }
 
+
+#pragma mark - DataSource Methods
 /**
  * Update the feeds in the menu when a user begins or ends a search
  */
@@ -157,32 +159,57 @@
             
             // Add custom feed to the searchFeeds
             [searchedFeeds addObject:customFeed];
+            
+            // Update the searchFeed datasource
+            [searchFeedDataSource updateWithFeeds:searchedFeeds];
+            [self updateSearchFeedDataSource];
         } else {
             // Return feeds from the API similar to user input
             // Add these feeds to the searchFeed datasource
 
             [Feed requestFeedsByName:self.textField_searchInput.text
                              success:^(id responseData, NSInteger httpStatus){
-                                 NSLog(@"Search for feeds successful");
+                                NSDictionary *feeds = [responseData objectForKey:@"feeds"];
+                                for ( NSDictionary *feed in feeds){
+                                    [searchedFeeds addObject:feed];
+                                }
+                                // Update the searchFeed datasource
+                                [searchFeedDataSource updateWithFeeds:searchedFeeds];
+                                [self updateSearchFeedDataSource];
                              }
                              failure:^(id responseData, NSInteger httpStatus, NSError *error){
                                  NSLog(@"Error searching for feeds");
                              }];
         }
-    
-        // Switch to the searchFeed datasource and update the table
-        [searchFeedDataSource updateWithFeeds:searchedFeeds];
-        self.tableView_feeds.dataSource = searchFeedDataSource;
-        
-        // Reload the table with new searchFeeds
-        [self.tableView_feeds reloadData];
     } else {
         // Switch to the userFeeds datasource
-        self.tableView_feeds.dataSource = userFeedDataSource;
-        [self.tableView_feeds reloadData];
+        [self updateUserFeedDataSource];
     }
 }
 
+/**
+ * Switch to and reload the menu from the searchFeedDataSource
+ */
+- (void)updateSearchFeedDataSource
+{
+    // Switch to the searchFeed datasource
+    self.tableView_feeds.dataSource = searchFeedDataSource;
+    
+    // Reload the table with new searchFeeds
+    [self.tableView_feeds reloadData];
+}
+
+/**
+ * Switch to and reload the menu from the userFeedDataSource
+ */
+- (void)updateUserFeedDataSource
+{
+    // Switch to the searchFeed datasource
+    self.tableView_feeds.dataSource = userFeedDataSource;
+    
+    // Reload the table with new searchFeeds
+    [self.tableView_feeds reloadData];
+}
 
 #pragma mark - Count Methods
 /**

@@ -90,19 +90,20 @@
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[self.sortedFeeds objectAtIndex:indexPath.row] isKindOfClass:[Feed class]]) {
+    if ([[self.sortedFeeds objectAtIndex:indexPath.row] objectForKey:@"feed_items"]) {
         // Dequeue a styled cell
         CSSearchFeedCell *cell = (CSSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
-
-        Feed *feed = [self.sortedFeeds objectAtIndex:indexPath.row];
-        cell.feed = feed;
+        
+        NSDictionary *searchedFeed = [self.sortedFeeds objectAtIndex:indexPath.row];
         
         // Set the label text
-        cell.label_name.text = feed.name;
+        cell.label_name.text = [searchedFeed objectForKey:@"name"];
         
         // Show feed icons
-        [cell.imageView_icon setHidden:NO];
-        [cell.imageView setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:nil];
+        NSString *iconUrl = [searchedFeed objectForKey:@"icon"];
+        if (!iconUrl.isBlank) {
+         [cell.imageView setImageWithURL:[NSURL URLWithString:[searchedFeed objectForKey:@"icon"]] placeholderImage:nil];
+        }
         
         UIView *selectedBackgroundView = [[UIView alloc] init];
         [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
