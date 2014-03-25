@@ -114,8 +114,12 @@
         EZRCustomFeedCell *cell = (EZRCustomFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"CustomFeedCell"];
         
         NSDictionary *customFeed = [self.sortedFeeds objectAtIndex:indexPath.row];
+        NSString *customUrl = [customFeed objectForKey:@"url"];
+        cell.label_url.text = customUrl;
         
-        cell.label_url.text = [customFeed objectForKey:@"url"];
+        if([self isValidUrl:customUrl]){
+            // Display create button
+        }
         
         UIView *selectedBackgroundView = [[UIView alloc] init];
         [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
@@ -123,6 +127,24 @@
         
         return cell;
     }
+}
+
+/**
+ * Check for a letter followed by a dot
+ */
+- (BOOL)isValidUrl:(NSString *)url
+{
+    NSError *error = NULL;
+    NSString *pattern = @"[a-z][.]";
+    NSString *string = url;
+    NSRange range = NSMakeRange(0, string.length);
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
+    NSArray *matches = [regex matchesInString:string options:NSMatchingReportCompletion range:range];
+    
+    if (matches.count > 0) {
+        return TRUE;
+    }
+    return FALSE;
 }
 
 @end
