@@ -229,6 +229,9 @@
                                                     <state key="normal" title="+">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addFeedToUser:" destination="Vg0-Ic-Bi4" eventType="touchUpInside" id="vVw-rK-cbR"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>

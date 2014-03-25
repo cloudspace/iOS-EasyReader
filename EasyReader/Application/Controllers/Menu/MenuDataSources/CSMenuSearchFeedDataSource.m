@@ -96,6 +96,9 @@
         
         NSDictionary *searchedFeed = [self.sortedFeeds objectAtIndex:indexPath.row];
         
+        // Associate the feed to the cell
+        cell.feed = searchedFeed;
+        
         // Set the label text
         cell.label_name.text = [searchedFeed objectForKey:@"name"];
         
