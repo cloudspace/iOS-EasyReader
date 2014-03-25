@@ -121,8 +121,10 @@
         NSString *customUrl = [customFeed objectForKey:@"url"];
         cell.label_url.text = customUrl;
         
+        // Hide the add button unless the user types a valid url
+        [cell.button_addFeed setHidden:YES];
         if([self isValidUrl:customUrl]){
-            // Display create button
+            [cell.button_addFeed setHidden:NO];
         }
         
         UIView *selectedBackgroundView = [[UIView alloc] init];

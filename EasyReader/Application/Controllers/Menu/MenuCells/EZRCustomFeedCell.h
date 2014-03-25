@@ -15,4 +15,10 @@
 /// The custom feed url
 @property (weak, nonatomic) IBOutlet UILabel *label_url;
 
+/// Button to add the custom feed
+@property (weak, nonatomic) IBOutlet UIButton *button_addFeed;
+
+/// The add feed action
+- (IBAction)addFeedToUser:(id)sender;
+
 @end
