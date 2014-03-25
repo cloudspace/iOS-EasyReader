@@ -63,6 +63,15 @@
                     
                     for ( Feed *feed in removedFeeds ){
                         [feed removeAllObservations];
+                        
+                        // Remove feed items associated to the feed
+                        for( FeedItem *item in feed.feedItems ){
+                            [_feedItems removeObject:item];
+                        }
+                        
+                        // Delete feed which will cascade delete feed items
+                        [feed deleteEntity];
+                        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
                     }
                     
                     for ( Feed *feed in addedFeeds ){
@@ -90,23 +99,22 @@
                                           
                                           [_pageControl_itemIndicator.button_newItem setHidden:NO];
                                         }
-                                        
-                                        //redraw the collection with the changes to the feed items
-                                        [_feedCollectionViewDataSource sortFeedItems];
-                                        [_collectionView_feedItems reloadData];
-                                        _pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
-                                        
-                                        if(_currentFeedItem){
-                                          [self scrollToCurrentFeedItem];
-                                          [_pageControl_itemIndicator setPageControllerPageAtIndex:[_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem]
-                                                                                     forCollection:_feedItems];
-                                        } else {
-                                          [_pageControl_itemIndicator setPageControllerPageAtIndex:0 forCollection:_feedItems];
-                                        }
                                       }
                                    insertionBlock:nil
                                      removalBlock:nil
                                  replacementBlock:nil];
+                    }
+                    //redraw the collection with the changes to the feed items
+                    [_feedCollectionViewDataSource sortFeedItems];
+                    [_collectionView_feedItems reloadData];
+                    _pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
+                    
+                    if(_currentFeedItem){
+                        [self scrollToCurrentFeedItem];
+                        [_pageControl_itemIndicator setPageControllerPageAtIndex:[_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem]
+                                                                   forCollection:_feedItems];
+                    } else {
+                        [_pageControl_itemIndicator setPageControllerPageAtIndex:0 forCollection:_feedItems];
                     }
                 }
              insertionBlock:nil

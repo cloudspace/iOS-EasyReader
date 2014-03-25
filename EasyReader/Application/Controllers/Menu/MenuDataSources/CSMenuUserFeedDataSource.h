@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class User;
+
 @interface CSMenuUserFeedDataSource : NSObject<UITableViewDataSource>
 
 #pragma mark - Properties
@@ -17,6 +19,8 @@
 @property (nonatomic, retain) NSMutableSet *feeds;
 @property (nonatomic, strong) NSArray *sortedFeeds;
 
+
+@property (nonatomic, retain) User *currentUser;
 
 #pragma mark - Methods
 /**

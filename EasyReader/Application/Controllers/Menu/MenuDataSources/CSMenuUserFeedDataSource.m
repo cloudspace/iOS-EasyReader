@@ -16,6 +16,7 @@
 
 #import "Feed.h"
 #import "FeedItem.h"
+#import "User.h"
 
 @implementation CSMenuUserFeedDataSource
 
@@ -29,6 +30,7 @@
     if (self) {
         _feeds = [[NSMutableSet alloc] init];
         _sortedFeeds = [[NSArray alloc] init];
+        _currentUser = [User current];
     }
     
     return self;
@@ -113,10 +115,10 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Feed *toDelete = [self.sortedFeeds objectAtIndex:indexPath.row];
-        [toDelete deleteEntity];
-        [self.feeds removeObject:toDelete];
         
-        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+        NSMutableSet *mutableSet = [NSMutableSet setWithSet:self.currentUser.feeds];
+        [mutableSet removeObject:toDelete];
+        self.currentUser.feeds = mutableSet;
     }
 }
 

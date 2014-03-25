@@ -28,6 +28,7 @@
 		0DE51FF418CF911000454E51 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		0DE51FF518CF911000454E51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
+		0DEBD8CB18E202F200284B33 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
 		1884EDB920EE4720B254D07C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
 		274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
 		2751F4D618DA02C100339C96 /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */; };
@@ -337,6 +338,7 @@
 		0DE51FF218CF911000454E51 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0DE51FF618CF919900454E51 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
 		0DE51FF718CF919900454E51 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
+		0DEBD8CA18E201FB00284B33 /* APIRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = APIRouter.m; path = EasyReader/Library/apikit/APIRouter.m; sourceTree = "<group>"; };
 		274D540418D0E8D80096831A /* CSFeedItemUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedItemUpdater.h; path = Api/CSFeedItemUpdater.h; sourceTree = "<group>"; };
 		274D540518D0E8D80096831A /* CSFeedItemUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedItemUpdater.m; path = Api/CSFeedItemUpdater.m; sourceTree = "<group>"; };
 		2751F4D218DA02C100339C96 /* NSObject+CSNilAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CSNilAdditions.h"; sourceTree = "<group>"; };
@@ -783,6 +785,7 @@
 		9DAC16BB1709D48E00383722 = {
 			isa = PBXGroup;
 			children = (
+				0DEBD8CA18E201FB00284B33 /* APIRouter.m */,
 				9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */,
 				9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */,
 				9DA7CB35171CAD020045CC88 /* iOS Resources */,
@@ -1356,6 +1359,7 @@
 				9D639E7818E0A52300350B5F /* APIMockRequest.m in Sources */,
 				0D9A836018E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */,
 				9D79270A18DA1D0300E1D3E1 /* Feed.m in Sources */,
+				0DEBD8CB18E202F200284B33 /* APIRouter.m in Sources */,
 				9D79270B18DA1D0300E1D3E1 /* CSAppDelegate.m in Sources */,
 				9D79270C18DA1D0300E1D3E1 /* main.m in Sources */,
 				9D79270D18DA1D0300E1D3E1 /* CSHomeViewController.m in Sources */,
@@ -1488,6 +1492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D16D34E18DBA9E9001E9C38 /* APIRouter.m in Sources */,
 				9D16D33D18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
 				9D9CBABF18DC826700532F8C /* CSApplicationStyleService.m in Sources */,
 				9D639E7618E0A52300350B5F /* APIMockRequest.m in Sources */,
@@ -1504,7 +1509,6 @@
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,
 				0DE51FF418CF911000454E51 /* FeedItem.m in Sources */,
 				0DE51FF518CF911000454E51 /* User.m in Sources */,
-				9D16D34E18DBA9E9001E9C38 /* APIRouter.m in Sources */,
 				9D639E7018E0A4E000350B5F /* APIClient.m in Sources */,
 				274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */,
 				0D7987A218DB6AE4004440C3 /* CSUserFeedCell.m in Sources */,
