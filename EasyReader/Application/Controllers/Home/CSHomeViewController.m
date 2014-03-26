@@ -260,18 +260,6 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
     [self.collectionView_feedItems scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]
                                           atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
                                                   animated:YES];
-//    self setCurrentFeedItem:_co
-//    
-//    
-//    [self.delegate setCurrentFeedItem:[_collection firstObject]];
-//    [self.delegate scrollToCurrentFeedItem];
-//    [self setPageControllerPageAtIndex:[_collection indexOfObject:[self.delegate currentFeedItem]]];
-
-}
-
-- (NSInteger)numberOfPagesForPageControl:(CSCollectionPageControl *)pageControl
-{
-    return [self.feedItems count];
 }
 
 # pragma mark - ScrollView methods
