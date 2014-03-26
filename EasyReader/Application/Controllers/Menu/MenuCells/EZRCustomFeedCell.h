@@ -8,11 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A UITableViewCell for custom feed data
+ */
 @interface EZRCustomFeedCell : UITableViewCell
 
 #pragma mark - IBOutlets
 
 /// The custom feed url
 @property (weak, nonatomic) IBOutlet UILabel *label_url;
+
+/// Button to add the custom feed
+@property (weak, nonatomic) IBOutlet UIButton *button_addCustomFeed;
+
+
+#pragma mark - Other Properties
+
+/// The NSDictionary of the feed this cell is based on
+@property (nonatomic, weak) NSDictionary *feedData;
 
 @end

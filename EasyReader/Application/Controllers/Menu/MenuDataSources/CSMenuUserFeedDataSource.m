@@ -8,8 +8,6 @@
 
 #import "CSMenuUserFeedDataSource.h"
 
-#import "UIImageView+AFNetworking.h"
-
 #import "UIColor+EZRSharedColorAdditions.h"
 
 #import "CSUserFeedCell.h"
@@ -92,20 +90,33 @@
     // Dequeue a styled cell
     CSUserFeedCell *cell = (CSUserFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"UserFeedCell"];
     
+    // Get the feed
     Feed *feed = [self.sortedFeeds objectAtIndex:indexPath.row];
+    
+    // Set the cell data
+    [self setFeed:feed forUserFeedCell:cell];
+    return cell;
+}
+
+/**
+ * Set the feed for a user cell
+ */
+- (void)setFeed:(Feed *)feed forUserFeedCell:(CSUserFeedCell *)cell
+{
     cell.feed = feed;
     
-    // Set the label text
-    cell.label_name.text = feed.name;
+    [self setSelectedBackgroundForCell:cell];
     
-    // Show feed icons
-    [cell.imageView_icon setHidden:NO];
-    [cell.imageView setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:nil];
+}
 
+/**
+ * Set the selectedBackgroundView for a cell
+ */
+- (void)setSelectedBackgroundForCell:(UITableViewCell *)cell
+{
     UIView *selectedBackgroundView = [[UIView alloc] init];
     [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
     cell.selectedBackgroundView = selectedBackgroundView;
-    return cell;
 }
 
 /**
@@ -115,10 +126,8 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Feed *toDelete = [self.sortedFeeds objectAtIndex:indexPath.row];
-        
-        NSMutableSet *mutableSet = [NSMutableSet setWithSet:self.currentUser.feeds];
-        [mutableSet removeObject:toDelete];
-        self.currentUser.feeds = mutableSet;
+
+        [self.currentUser removeFeedsObject:toDelete];
     }
 }
 

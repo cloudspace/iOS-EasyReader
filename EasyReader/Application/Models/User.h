@@ -36,6 +36,12 @@
  */
 + (User *)current;
 
+/**
+ * Check if the feed already exists for the user
+ *
+ * @param url The url of the feed to check for
+ */
+- (BOOL)hasFeedWithURL:(NSString *)url;
 
 @end
 

@@ -19,6 +19,13 @@
 @property (strong, nonatomic) IBOutlet UITextField *textField_searchInput;
 
 
+#pragma mark - IBAction Properties
+/// The add custom feed action
+- (IBAction)button_addCustomFeed_touchUpInside:(id)sender;
+
+/// The add searched feed action
+- (IBAction)button_addSearchedFeed_touchUpInside:(id)sender;
+
 #pragma mark - Properties
 @property (nonatomic, retain) NSMutableSet *feeds;
 @property (nonatomic, retain) User *currentUser;

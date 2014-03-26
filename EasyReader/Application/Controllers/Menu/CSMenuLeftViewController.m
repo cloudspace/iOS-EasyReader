@@ -26,6 +26,9 @@
 #import "CSMenuUserFeedDataSource.h"
 #import "CSMenuSearchFeedDataSource.h"
 
+#import "EZRCustomFeedCell.h"
+#import "CSSearchFeedCell.h"
+
 @interface CSMenuLeftViewController ()
 {
     CSMenuUserFeedDataSource *userFeedDataSource;
@@ -74,10 +77,8 @@
                       }
                       
                       // Update and switch to the userFeed data source
-                      self.tableView_feeds.dataSource = userFeedDataSource;
                       [userFeedDataSource updateWithFeeds:self.feeds];
-                      
-                      [self.tableView_feeds reloadData];
+                      [self updateUserFeedDataSource];
                   }
                insertionBlock:nil
                  removalBlock:nil
@@ -90,7 +91,7 @@
                                                object:nil];
     
     [userFeedDataSource updateWithFeeds:self.feeds];
-    self.tableView_feeds.dataSource = userFeedDataSource;
+    [self updateUserFeedDataSource];
 }
 
 - (void)applyMenuStyles
@@ -169,10 +170,15 @@
 
             [Feed requestFeedsByName:self.textField_searchInput.text
                              success:^(id responseData, NSInteger httpStatus){
-                                NSDictionary *feeds = [responseData objectForKey:@"feeds"];
+                                NSDictionary *feeds = responseData[@"feeds"];
+                                 
+                                // Don't show feed the user has already added
                                 for ( NSDictionary *feed in feeds){
-                                    [searchedFeeds addObject:feed];
+                                    if ([self.currentUser hasFeedWithURL:feed[@"url"]] == NO) {
+                                        [searchedFeeds addObject:feed];
+                                    }
                                 }
+                                 
                                 // Update the searchFeed datasource
                                 [searchFeedDataSource updateWithFeeds:searchedFeeds];
                                 [self updateSearchFeedDataSource];
@@ -204,12 +210,17 @@
  */
 - (void)updateUserFeedDataSource
 {
+    // Clear the input field and dismiss the keyboard
+    self.textField_searchInput.text = @"";
+    [self.textField_searchInput endEditing:YES];
+    
     // Switch to the searchFeed datasource
     self.tableView_feeds.dataSource = userFeedDataSource;
     
     // Reload the table with new searchFeeds
     [self.tableView_feeds reloadData];
 }
+
 
 #pragma mark - Count Methods
 /**
@@ -227,6 +238,45 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
+#pragma mark - UITableViewCell IBAction Methods
+
+/**
+ * Attempts to create a new feed and save it to the user
+ *
+ * @param sender The button that sent the action
+ */
+- (IBAction)button_addCustomFeed_touchUpInside:(id)sender {
+    EZRCustomFeedCell *cell = (EZRCustomFeedCell *)[[[sender superview] superview] superview];
+    
+    [Feed createFeedWithUrl:cell.label_url.text
+                    success:^(id responseData, NSInteger httpStatus){
+                        // Notify user that feeds can take time to populate
+                    }
+                    failure:^(id responseData, NSInteger httpStatus, NSError *error){
+                        // Notify user of error
+                    }
+     ];
+}
+
+/**
+ * Add the feed to the user and save it in the database
+ *
+ * @param sender The button that sent the action
+ */
+- (IBAction)button_addSearchedFeed_touchUpInside:(id)sender {
+    CSSearchFeedCell *cell = (CSSearchFeedCell *)[[[sender superview] superview] superview];
+    
+    // Create a new Feed object and associated FeedItem objects
+    Feed *newFeed = [Feed createOrUpdateFirstFromAPIData:cell.feedData];
+    
+    // Add the feed to the currentUsers feeds
+    [self.currentUser addFeedsObject:newFeed];
+    
+    // Save the feed and feed items in the database
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
 }
 
 @end
