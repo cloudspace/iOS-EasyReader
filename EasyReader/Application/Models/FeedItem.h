@@ -39,9 +39,9 @@
 @property (nonatomic, retain) NSDate * createdAt;
 
 
-@property (nonatomic, retain) NSString * iphone_retina_image;
-@property (nonatomic, retain) NSString * ipad_image;
-@property (nonatomic, retain) NSString * ipad_retina_image;
+@property (nonatomic, retain) NSString * image_iphone_retina;
+@property (nonatomic, retain) NSString * image_ipad;
+@property (nonatomic, retain) NSString * image_ipad_retina;
 
 /// The article URL for this feed item
 @property (nonatomic, retain) NSString * url;

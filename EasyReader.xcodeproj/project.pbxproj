@@ -304,6 +304,10 @@
 		9DF355CC171F3D4300A720AA /* icon_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF355CB171F3D4300A720AA /* icon_search@2x.png */; };
 		9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
 		9DFBC0991714957E006BF840 /* CSFeedAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */; };
+		9DFE0CD318E272F7002A0FE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFE0CD218E272F7002A0FE9 /* Images.xcassets */; };
+		9DFE0CD418E272F7002A0FE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFE0CD218E272F7002A0FE9 /* Images.xcassets */; };
+		9DFE0CD518E272F7002A0FE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFE0CD218E272F7002A0FE9 /* Images.xcassets */; };
+		9DFE0CD618E272F7002A0FE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFE0CD218E272F7002A0FE9 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,7 +342,6 @@
 		0DE51FF218CF911000454E51 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0DE51FF618CF919900454E51 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
 		0DE51FF718CF919900454E51 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
-		0DEBD8CA18E201FB00284B33 /* APIRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = APIRouter.m; path = EasyReader/Library/apikit/APIRouter.m; sourceTree = "<group>"; };
 		274D540418D0E8D80096831A /* CSFeedItemUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedItemUpdater.h; path = Api/CSFeedItemUpdater.h; sourceTree = "<group>"; };
 		274D540518D0E8D80096831A /* CSFeedItemUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedItemUpdater.m; path = Api/CSFeedItemUpdater.m; sourceTree = "<group>"; };
 		2751F4D218DA02C100339C96 /* NSObject+CSNilAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CSNilAdditions.h"; sourceTree = "<group>"; };
@@ -384,6 +387,7 @@
 		9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMenuLeftViewController.m; path = Menu/CSMenuLeftViewController.m; sourceTree = "<group>"; };
 		9D4355731795C708002C6657 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9D4355751795C9B3002C6657 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9D458C6A18E320B100BC17D6 /* rename_feeditem_images.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = rename_feeditem_images.xcdatamodel; sourceTree = "<group>"; };
 		9D4FA6E317971D56001E2A65 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -443,6 +447,7 @@
 		9DF4BB1E17130E99001DCC88 /* EasyReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyReader.xcdatamodel; sourceTree = "<group>"; };
 		9DFBC0971714957E006BF840 /* CSFeedAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedAddViewController.h; path = Feed/CSFeedAddViewController.h; sourceTree = "<group>"; };
 		9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedAddViewController.m; path = Feed/CSFeedAddViewController.m; sourceTree = "<group>"; };
+		9DFE0CD218E272F7002A0FE9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A7ACF08D0CD54248B25E110A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -785,14 +790,13 @@
 		9DAC16BB1709D48E00383722 = {
 			isa = PBXGroup;
 			children = (
-				0DEBD8CA18E201FB00284B33 /* APIRouter.m */,
-				9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */,
-				9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */,
-				9DA7CB35171CAD020045CC88 /* iOS Resources */,
 				9DAC16CF1709D48E00383722 /* EasyReader */,
 				9D7927C718DA279B00E1D3E1 /* EasyReader-Tests */,
 				9DAC16C61709D48E00383722 /* Frameworks */,
 				9DAC16C51709D48E00383722 /* Products */,
+				9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */,
+				9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */,
+				9DA7CB35171CAD020045CC88 /* iOS Resources */,
 				5CECD14CAE964A1994399D15 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -912,6 +916,7 @@
 			children = (
 				9D8F318D171DB3CE006CFC6A /* Images */,
 				9DAC1723170A043200383722 /* CoreData */,
+				9DFE0CD218E272F7002A0FE9 /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1111,6 +1116,7 @@
 				9D79273F18DA1D0300E1D3E1 /* Default.png in Resources */,
 				9D79274118DA1D0300E1D3E1 /* Default-Portrait~ipad.png in Resources */,
 				9D79274218DA1D0300E1D3E1 /* Default-Portrait@2x~ipad.png in Resources */,
+				9DFE0CD518E272F7002A0FE9 /* Images.xcassets in Resources */,
 				9D79274318DA1D0300E1D3E1 /* Default-Landscape~ipad.png in Resources */,
 				9D79274418DA1D0300E1D3E1 /* Default-Landscape@2x~ipad.png in Resources */,
 			);
@@ -1146,6 +1152,7 @@
 				9D79278318DA1D3800E1D3E1 /* Default.png in Resources */,
 				9D79278518DA1D3800E1D3E1 /* Default-Portrait~ipad.png in Resources */,
 				9D79278618DA1D3800E1D3E1 /* Default-Portrait@2x~ipad.png in Resources */,
+				9DFE0CD618E272F7002A0FE9 /* Images.xcassets in Resources */,
 				9D79278718DA1D3800E1D3E1 /* Default-Landscape~ipad.png in Resources */,
 				9D79278818DA1D3800E1D3E1 /* Default-Landscape@2x~ipad.png in Resources */,
 			);
@@ -1169,6 +1176,7 @@
 				9D9CBAEF18DCC68A00532F8C /* Icon-72@2x.png in Resources */,
 				9D9CBAF018DCC68A00532F8C /* Icon-Small-50.png in Resources */,
 				9D9CBAF118DCC68A00532F8C /* Icon-Small-50@2x.png in Resources */,
+				9DFE0CD418E272F7002A0FE9 /* Images.xcassets in Resources */,
 				9D9CBAF218DCC68A00532F8C /* Icon-Small.png in Resources */,
 				9D9CBAF318DCC68A00532F8C /* Icon-Small@2x.png in Resources */,
 				9D9CBAF418DCC68A00532F8C /* Icon.png in Resources */,
@@ -1227,6 +1235,7 @@
 				9D2FDF8A1721EE4800535763 /* Default.png in Resources */,
 				9D4FA6E417971D56001E2A65 /* Default-Portrait~ipad.png in Resources */,
 				9D4FA6E617971D5B001E2A65 /* Default-Portrait@2x~ipad.png in Resources */,
+				9DFE0CD318E272F7002A0FE9 /* Images.xcassets in Resources */,
 				9D4FA6E817971E88001E2A65 /* Default-Landscape~ipad.png in Resources */,
 				9D4FA6EA17971E8D001E2A65 /* Default-Landscape@2x~ipad.png in Resources */,
 			);
@@ -1891,10 +1900,11 @@
 		9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				9D458C6A18E320B100BC17D6 /* rename_feeditem_images.xcdatamodel */,
 				0DE51FE318CF8BDE00454E51 /* api_v2.xcdatamodel */,
 				9DF4BB1E17130E99001DCC88 /* EasyReader.xcdatamodel */,
 			);
-			currentVersion = 0DE51FE318CF8BDE00454E51 /* api_v2.xcdatamodel */;
+			currentVersion = 9D458C6A18E320B100BC17D6 /* rename_feeditem_images.xcdatamodel */;
 			name = "Easy Reader.xcdatamodeld";
 			path = EasyReader.xcdatamodeld;
 			sourceTree = "<group>";

@@ -38,6 +38,16 @@
   return self;
 }
 
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationPortrait;
+}
+
 /**
  * If the left menu is open, it closes it
  * Otherwise it opens to the left menu

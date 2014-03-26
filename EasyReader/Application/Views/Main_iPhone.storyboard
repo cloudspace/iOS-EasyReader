@@ -17,123 +17,185 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWA-9Z-pb1">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWA-9Z-pb1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xvT-99-V3u" customClass="CSFeedItemCollectionView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g2g-cS-GvP">
-                                            <size key="itemSize" width="320" height="531"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="feedItemCell" id="BLC-ou-GYj" customClass="CSFeedItemCell">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HSH-zo-oed">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        </imageView>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GyA-VK-s4d">
-                                                            <rect key="frame" x="0.0" y="331" width="320" height="231"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwa-jG-ubQ">
-                                                                    <rect key="frame" x="20" y="8" width="280" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <attributedString key="attributedText">
-                                                                        <fragment content="label">
-                                                                            <attributes>
-                                                                                <color key="NSColor" red="1" green="1" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <font key="NSFont" size="11" name="HelveticaNeue-Medium"/>
-                                                                                <font key="NSOriginalFont" size="11" name="HelveticaNeue-Medium"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-v3-acz">
-                                                                    <rect key="frame" x="20" y="32" width="280" height="70"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <attributedString key="attributedText">
-                                                                        <fragment content="This is the title of an article and can be long sometimes.">
-                                                                            <attributes>
-                                                                                <color key="NSColor" red="0.40392156862745099" green="0.74509803921568629" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <font key="NSFont" size="32" name="Futura-Medium"/>
-                                                                                <font key="NSOriginalFont" size="32" name="Futura-Medium"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="0.75"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Hbm-RM-Vyr">
-                                                                    <rect key="frame" x="20" y="100" width="280" height="88"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <attributedString key="attributedText">
-                                                                        <fragment>
-                                                                            <string key="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
-                                                                            <attributes>
-                                                                                <color key="NSColor" red="0.85490196078431369" green="0.90980392156862744" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </view>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <connections>
-                                                    <outlet property="imageView_background" destination="HSH-zo-oed" id="4O6-c6-XkW"/>
-                                                    <outlet property="info_view" destination="GyA-VK-s4d" id="D8t-dc-C8Q"/>
-                                                    <outlet property="label_headline" destination="5IB-v3-acz" id="F15-Jk-Z0d"/>
-                                                    <outlet property="label_source" destination="Xwa-jG-ubQ" id="FlB-zN-gUy"/>
-                                                    <outlet property="label_summary" destination="Hbm-RM-Vyr" id="Pqj-fM-MTd"/>
-                                                </connections>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wb1-Na-kaO">
-                                        <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wv0-Kq-lEd">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="=">
+                                        <subviews>
+                                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xvT-99-V3u" customClass="CSFeedItemCollectionView">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g2g-cS-GvP">
+                                                    <size key="itemSize" width="320" height="531"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="feedItemCell" id="BLC-ou-GYj" customClass="CSFeedItemCell">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HSH-zo-oed">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="400" id="UTY-Fy-oos"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GyA-VK-s4d">
+                                                                    <rect key="frame" x="0.0" y="331" width="320" height="200"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwa-jG-ubQ">
+                                                                            <rect key="frame" x="20" y="8" width="274" height="16"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <attributedString key="attributedText">
+                                                                                <fragment content="label">
+                                                                                    <attributes>
+                                                                                        <color key="NSColor" red="1" green="1" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        <font key="NSFont" size="11" name="HelveticaNeue-Medium"/>
+                                                                                        <font key="NSOriginalFont" size="11" name="HelveticaNeue-Medium"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                            </attributedString>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="274" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-v3-acz">
+                                                                            <rect key="frame" x="20" y="27" width="274" height="75"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="75" id="Ev7-IU-V7M"/>
+                                                                            </constraints>
+                                                                            <attributedString key="attributedText">
+                                                                                <fragment content="This is the title of an article and can be long sometimes.">
+                                                                                    <attributes>
+                                                                                        <color key="NSColor" red="0.40392156862745099" green="0.74509803921568629" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        <font key="NSFont" size="28" name="Futura-Medium"/>
+                                                                                        <font key="NSOriginalFont" size="32" name="Futura-Medium"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="0.75"/>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                            </attributedString>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="274" translatesAutoresizingMaskIntoConstraints="NO" id="Hbm-RM-Vyr">
+                                                                            <rect key="frame" x="20" y="95" width="274" height="93"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <attributedString key="attributedText">
+                                                                                <fragment>
+                                                                                    <string key="content">Sometimes article summaries can be short and sometimes they can be very long. We need to prepare for both situations. To do this we should top align the summary in a text view and make it fade as it goes off the end of the box.</string>
+                                                                                    <attributes>
+                                                                                        <color key="NSColor" red="0.85490196078431369" green="0.90980392156862744" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                            </attributedString>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="5IB-v3-acz" secondAttribute="bottom" constant="98" id="2tv-1M-IpA"/>
+                                                                        <constraint firstItem="Hbm-RM-Vyr" firstAttribute="top" secondItem="Xwa-jG-ubQ" secondAttribute="bottom" constant="71" id="78o-Gp-T4g"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="Hbm-RM-Vyr" secondAttribute="bottom" constant="12" id="HYI-R8-UVE"/>
+                                                                        <constraint firstItem="5IB-v3-acz" firstAttribute="top" secondItem="Xwa-jG-ubQ" secondAttribute="bottom" constant="3" id="HsL-9c-Met"/>
+                                                                        <constraint firstItem="5IB-v3-acz" firstAttribute="trailing" secondItem="Xwa-jG-ubQ" secondAttribute="trailing" id="N85-xK-ynM"/>
+                                                                        <constraint firstItem="5IB-v3-acz" firstAttribute="trailing" secondItem="Hbm-RM-Vyr" secondAttribute="trailing" id="QVP-D1-cx3"/>
+                                                                        <constraint firstItem="Xwa-jG-ubQ" firstAttribute="top" secondItem="GyA-VK-s4d" secondAttribute="top" constant="8" id="aGJ-J5-SGh"/>
+                                                                        <constraint firstItem="Xwa-jG-ubQ" firstAttribute="leading" secondItem="GyA-VK-s4d" secondAttribute="leading" constant="20" symbolic="YES" id="cy7-Uz-ggM"/>
+                                                                        <constraint firstItem="Xwa-jG-ubQ" firstAttribute="leading" secondItem="5IB-v3-acz" secondAttribute="leading" id="uVe-Jm-o0H"/>
+                                                                        <constraint firstItem="5IB-v3-acz" firstAttribute="leading" secondItem="Hbm-RM-Vyr" secondAttribute="leading" id="z0B-cy-ZrK"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="HSH-zo-oed" firstAttribute="top" secondItem="BLC-ou-GYj" secondAttribute="top" id="3TG-U0-cg8"/>
+                                                            <constraint firstItem="GyA-VK-s4d" firstAttribute="leading" secondItem="BLC-ou-GYj" secondAttribute="leading" id="FTa-I2-E2h"/>
+                                                            <constraint firstAttribute="bottom" secondItem="GyA-VK-s4d" secondAttribute="bottom" id="hUm-47-7Vr"/>
+                                                            <constraint firstAttribute="trailing" secondItem="GyA-VK-s4d" secondAttribute="trailing" id="k28-h8-Wjf"/>
+                                                            <constraint firstItem="HSH-zo-oed" firstAttribute="leading" secondItem="GyA-VK-s4d" secondAttribute="leading" id="lpm-Ct-afP"/>
+                                                            <constraint firstItem="GyA-VK-s4d" firstAttribute="top" secondItem="BLC-ou-GYj" secondAttribute="top" constant="331" id="mRS-oL-Gby"/>
+                                                            <constraint firstItem="HSH-zo-oed" firstAttribute="trailing" secondItem="GyA-VK-s4d" secondAttribute="trailing" id="v1F-nw-O8N"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="imageView_background" destination="HSH-zo-oed" id="4O6-c6-XkW"/>
+                                                            <outlet property="info_view" destination="GyA-VK-s4d" id="D8t-dc-C8Q"/>
+                                                            <outlet property="label_headline" destination="5IB-v3-acz" id="F15-Jk-Z0d"/>
+                                                            <outlet property="label_source" destination="Xwa-jG-ubQ" id="FlB-zN-gUy"/>
+                                                            <outlet property="label_summary" destination="Hbm-RM-Vyr" id="Pqj-fM-MTd"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gi-cb-ilH">
+                                                <rect key="frame" x="0.0" y="531" width="320" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hvt-eP-rs6" customClass="CSCollectionPageControl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="37" id="Bwb-IP-miu"/>
+                                                        </constraints>
+                                                    </pageControl>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="hvt-eP-rs6" secondAttribute="trailing" id="8mJ-BS-ERk"/>
+                                                    <constraint firstItem="hvt-eP-rs6" firstAttribute="leading" secondItem="5gi-cb-ilH" secondAttribute="leading" id="AfA-2o-rZ9"/>
+                                                    <constraint firstAttribute="centerY" secondItem="hvt-eP-rs6" secondAttribute="centerY" id="icd-ST-JOx"/>
+                                                    <constraint firstAttribute="height" constant="37" id="zxN-5i-fZ0"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="5gi-cb-ilH" secondAttribute="trailing" id="Cbh-9f-dPY"/>
+                                            <constraint firstItem="5gi-cb-ilH" firstAttribute="leading" secondItem="wv0-Kq-lEd" secondAttribute="leading" id="Wf5-CZ-LhS"/>
+                                            <constraint firstAttribute="bottom" secondItem="5gi-cb-ilH" secondAttribute="bottom" id="tDz-bM-IsV"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wb1-Na-kaO">
+                                        <rect key="frame" x="20" y="20" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="button_menu">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="buttonLeftMenu_touchUpInside_goToMenu:" destination="Hgn-0q-Z1W" eventType="touchUpInside" id="hMD-Og-FDZ"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ted-dg-wrP">
-                                        <rect key="frame" x="0.0" y="531" width="320" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hvt-eP-rs6" customClass="CSCollectionPageControl">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </pageControl>
-                                        </subviews>
-                                    </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="wv0-Kq-lEd" secondAttribute="bottom" constant="37" id="9Qt-QL-hrN"/>
+                                    <constraint firstItem="wv0-Kq-lEd" firstAttribute="top" secondItem="EWA-9Z-pb1" secondAttribute="top" id="g2i-IR-Xfl"/>
+                                    <constraint firstAttribute="trailing" secondItem="wv0-Kq-lEd" secondAttribute="trailing" id="khT-1j-PHs"/>
+                                    <constraint firstItem="wv0-Kq-lEd" firstAttribute="leading" secondItem="EWA-9Z-pb1" secondAttribute="leading" id="wh3-fI-UQy"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wv0-Kq-lEd" firstAttribute="width" secondItem="8sx-gS-Wib" secondAttribute="width" id="FjT-9R-6Wt"/>
+                            <constraint firstItem="EWA-9Z-pb1" firstAttribute="leading" secondItem="8sx-gS-Wib" secondAttribute="leading" id="GLA-9c-NmZ"/>
+                            <constraint firstItem="EWA-9Z-pb1" firstAttribute="top" secondItem="u5l-1H-L35" secondAttribute="bottom" id="R3e-Eb-s6m"/>
+                            <constraint firstItem="lzz-HQ-Mp2" firstAttribute="top" secondItem="EWA-9Z-pb1" secondAttribute="bottom" id="XH9-7e-hB0"/>
+                            <constraint firstAttribute="trailing" secondItem="EWA-9Z-pb1" secondAttribute="trailing" id="otM-Jz-ztm"/>
+                            <constraint firstItem="wv0-Kq-lEd" firstAttribute="height" secondItem="8sx-gS-Wib" secondAttribute="height" id="xJM-P3-M8C"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="button_leftMenu" destination="wb1-Na-kaO" id="0oK-RY-cyj"/>
                         <outlet property="collectionView_feedItems" destination="xvT-99-V3u" id="kb5-it-zd3"/>
@@ -292,6 +354,9 @@
             <point key="canvasLocation" x="516" y="-735"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_menu" width="44" height="44"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
