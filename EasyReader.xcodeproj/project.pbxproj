@@ -374,6 +374,9 @@
 		8E685AA618DC733B00309270 /* CSCollectionPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSCollectionPageControl.m; path = EasyReader/Application/Controls/CSCollectionPageControl.m; sourceTree = SOURCE_ROOT; };
 		8E7F81EE18D0BF8500BC50C2 /* CSRemoteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRemoteObject.h; sourceTree = "<group>"; };
 		8E7F81EF18D0BF8500BC50C2 /* CSRemoteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRemoteObject.m; sourceTree = "<group>"; };
+		8E7F81EE18D0BF8500BC50C2 /* CSBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseObject.h; sourceTree = "<group>"; };
+		8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBaseObject.m; sourceTree = "<group>"; };
+		8ECE064F18E292DB00D33721 /* CSCollectionPageControlDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSCollectionPageControlDelegate.h; path = Controls/CSCollectionPageControlDelegate.h; sourceTree = "<group>"; };
 		9D140BF4171F68E000CDD319 /* button_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_add@2x.png"; sourceTree = "<group>"; };
 		9D16D30518DA2B3A001E9C38 /* CSBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseTestCase.h; sourceTree = "<group>"; };
 		9D16D30618DA2B3A001E9C38 /* CSBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBaseTestCase.m; sourceTree = "<group>"; };
@@ -598,6 +601,7 @@
 			children = (
 				8E685AA518DC733B00309270 /* CSCollectionPageControl.h */,
 				8E685AA618DC733B00309270 /* CSCollectionPageControl.m */,
+				8ECE064F18E292DB00D33721 /* CSCollectionPageControlDelegate.h */,
 			);
 			name = Controls;
 			sourceTree = "<group>";

@@ -39,7 +39,7 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
     _feedItems = [[NSMutableSet alloc] init];
     
     [_pageControl_itemIndicator setUpFades];
-    _pageControl_itemIndicator.controller_owner = self;
+    _pageControl_itemIndicator.delegate = self;
     
     self.currentUser = [User current];
     
@@ -79,7 +79,6 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
  */
 - (void) setupFeedsObserver
 {
-    
     [self observeRelationship:@keypath(self.currentUser.feeds)
                   changeBlock:[self feedsDidChange]
                insertionBlock:nil
@@ -296,20 +295,11 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
         if(_currentFeedItem != self.collectionView_feedItems.currentFeedItem){
             _currentFeedItem = self.collectionView_feedItems.currentFeedItem;
             [self.feedItemWebView loadHTMLString:@"<html><head></head><body style=\"background-color: #000000;\"></body></html>" baseURL:nil];
+          
+            NSInteger newIndex = [_feedCollectionViewDataSource.sortedFeedItems indexOfObject:self.collectionView_feedItems.currentFeedItem];
+            [_pageControl_itemIndicator setPageControllerPageAtIndex:newIndex];
         }
     }
-}
-
-/**
- * Collection view delegate method for when a cell ends display
- * Sets page control indicator
- */
-- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger newIndex = indexPath.row+((indexPath.row-self.collectionCellGoingTo)*-1);
-
-    [_pageControl_itemIndicator setPageControllerPageAtIndex:newIndex
-                                         forCollectionSize:[_feedItems count]];
 }
 
 @end

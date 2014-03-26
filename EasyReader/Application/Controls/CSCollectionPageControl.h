@@ -14,23 +14,15 @@
  */
 @interface CSCollectionPageControl : UIPageControl
 
-# pragma mark - Property
+/**
+ * The delegate for this class
+ */
+@property (nonatomic, retain) id delegate;
 
-/// Reference to controller that owns page control
-@property CSHomeViewController *controller_owner;
+# pragma mark - Properties
 
-/// Button that pops up when new items are added to collection
-@property UIButton *button_newItem;
-
-/// View to layer over buttons for gradients
-@property UIView *view_maskLayer;
-
-/// View for left fade gradient
-@property UIView *view_leftFade;
-
-/// View for right fade gradient
-@property UIView *view_rightFade;
-
+/// Sorted Collection of items set from main view's datasource
+@property NSArray *collection;
 
 # pragma mark - Methods
 
@@ -39,11 +31,16 @@
  * Will display first, second, second to last, and last.. everything in the middle is on third page indicator
  * Also animates fades in and out when approaching ends
  */
-- (void)setPageControllerPageAtIndex:(NSInteger)index forCollectionSize:(NSInteger)size;
+- (void)setPageControllerPageAtIndex:(NSInteger)index;
 
 /**
- * Sets up fade views for page controller
+ * Alters Frame origin to slide page control up to its place at bottom of screen
  */
-- (void)setUpFades;
+- (void)showPageControl;
+
+/**
+ * Sets hidden on new item button to true
+ */
+- (void)showNewItemButton;
 
 @end

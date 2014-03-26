@@ -10,15 +10,38 @@
 #import "CSFeedItemCollectionViewDataSource.h"
 #import "CSHomeViewController.h"
 
+
+// Width of gradients
+double const gradientWidth = 40.0;
+
+// How much the gradients move when animated
+double const fadeMovement = 10.0;
+
 @implementation CSCollectionPageControl
 {
+  // Gets set once to calculated origin for fade views
   float leftFadeOrigin;
   float rightFadeOrigin;
-  float gradientWidth;
-  float fadeMovement;
+  
+  // x origin value for first indicator dot
   float xOrigin;
+  // x origin value for last indicator dot
   float xLastOrigin;
+  
+  // y origin used to hide and show page control
   float yOrigin;
+  
+  /// Button that pops up when new items are added to collection
+  UIButton *button_newItem;
+  
+  /// View to layer over buttons for gradients
+  UIView *view_maskLayer;
+  
+  /// View for left fade gradient
+  UIView *view_leftFade;
+  
+  /// View for right fade gradient
+  UIView *view_rightFade;
 }
 
 /**
@@ -30,15 +53,15 @@
   if (self) {
     yOrigin = self.frame.origin.y;
     
-    _view_maskLayer = [[UIView alloc] init];
-    _view_leftFade = [[UIView alloc] init];
-    _view_rightFade = [[UIView alloc] init];
+    view_maskLayer = [[UIView alloc] init];
+    view_leftFade = [[UIView alloc] init];
+    view_rightFade = [[UIView alloc] init];
     
-    _button_newItem = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    _button_newItem.frame = CGRectMake(10,(self.frame.size.height/2)-5, 12, 12);
+    button_newItem = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    button_newItem.frame = CGRectMake(10,(self.frame.size.height/2)-5, 12, 12);
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(newItemButton:)];
-    [_button_newItem addGestureRecognizer:singleTap];
+    [button_newItem addGestureRecognizer:singleTap];
   }
   return self;
 }
@@ -52,16 +75,15 @@
   
   NSMutableArray *subviews = [[self subviews] mutableCopy];
 
-  [self insertSubview:_view_maskLayer atIndex:[[self subviews] count]];
-  [self insertSubview:_button_newItem atIndex:[[self subviews] count]];
+  [self insertSubview:view_maskLayer atIndex:[[self subviews] count]];
+  [self insertSubview:button_newItem atIndex:[[self subviews] count]];
   
   int count = [subviews count] < 5 ? [subviews count] : 5;
   xOrigin = (self.frame.size.width/2)-( 3.5 + ((float)count/2)*12 );
   xLastOrigin = xOrigin + ([subviews count]*10.5);
   
   [self setUpFades];
-  [self setPageControllerPageAtIndex:[self currentPage]
-                   forCollectionSize:[_controller_owner.feedItems count]];
+  [self setPageControllerPageAtIndex:[self currentPage]];
   NSLog(@"something");
 }
 
@@ -71,12 +93,10 @@
  */
 -(void)newItemButton:(id)sender
 {
-  CSFeedItemCollectionViewDataSource *dataSource = [_controller_owner feedCollectionViewDataSource];
-  [_controller_owner setCurrentFeedItem:[[dataSource sortedFeedItems] firstObject]];
-  [_controller_owner scrollToCurrentFeedItem];
-  _controller_owner.collectionCellGoingTo = 0;
-  [self setPageControllerPageAtIndex:[[dataSource sortedFeedItems]indexOfObject:_controller_owner.currentFeedItem]
-                   forCollectionSize:[_controller_owner.feedItems count]];
+  [self hideNewItemButton];
+  [self.delegate setCurrentFeedItem:[_collection firstObject]];
+  [self.delegate scrollToCurrentFeedItem];
+  [self setPageControllerPageAtIndex:[_collection indexOfObject:[self.delegate currentFeedItem]]];
 }
 
 /**
@@ -84,33 +104,30 @@
  */
 -(void)setUpFades
 {
-  gradientWidth = 40;
-  fadeMovement = 10;
-  
-  _view_leftFade.frame = CGRectMake(xOrigin-15, 10, gradientWidth, 20);
-  leftFadeOrigin = 115;
-  _view_leftFade.backgroundColor = [UIColor blackColor];
+  if ( !leftFadeOrigin ) leftFadeOrigin = xOrigin-15;
+  view_leftFade.frame = CGRectMake(leftFadeOrigin, 10, gradientWidth, 20);
+  view_leftFade.backgroundColor = [UIColor blackColor];
   
   CAGradientLayer *leftLayer = [CAGradientLayer layer];
-  leftLayer.frame = _view_leftFade.bounds;
+  leftLayer.frame = view_leftFade.bounds;
   leftLayer.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor, (id)[UIColor clearColor].CGColor, nil];
   leftLayer.startPoint = CGPointMake(0.0f, 1.0f);
   leftLayer.endPoint = CGPointMake(1.0f, 1.0f);
-  _view_leftFade.layer.mask = leftLayer;
+  view_leftFade.layer.mask = leftLayer;
 
-  _view_rightFade.frame = CGRectMake(xLastOrigin-8.5, 10, gradientWidth, 20);
-  rightFadeOrigin = 165;
-  _view_rightFade.backgroundColor = [UIColor blackColor];
+  if ( !rightFadeOrigin ) rightFadeOrigin = xLastOrigin-8.5;
+  view_rightFade.frame = CGRectMake(rightFadeOrigin-8.5, 10, gradientWidth, 20);
+  view_rightFade.backgroundColor = [UIColor blackColor];
   
   CAGradientLayer *rightLayer = [CAGradientLayer layer];
-  rightLayer.frame = _view_rightFade.bounds;
+  rightLayer.frame = view_rightFade.bounds;
   rightLayer.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor, (id)[UIColor clearColor].CGColor, nil];
   rightLayer.startPoint = CGPointMake(1.0f, 1.0f);
   rightLayer.endPoint = CGPointMake(0.0f, 1.0f);
-  _view_rightFade.layer.mask = rightLayer;
+  view_rightFade.layer.mask = rightLayer;
   
-  [_view_maskLayer addSubview:_view_leftFade];
-  [_view_maskLayer addSubview:_view_rightFade];
+  [view_maskLayer addSubview:view_leftFade];
+  [view_maskLayer addSubview:view_rightFade];
 }
 
 /**
@@ -118,44 +135,80 @@
  * Will display first, second, second to last, and last.. everything in the middle is on third page indicator
  * Also animates fades in and out when approaching ends
  */
-- (void)setPageControllerPageAtIndex:(NSInteger)index forCollectionSize:(NSInteger)size
+- (void)setPageControllerPageAtIndex:(NSInteger)index
 {
-  if (size < 5){
+  if ([_collection count] < 5){
     self.currentPage = index;
     [UIView animateWithDuration:.75 animations:^{
-      _view_leftFade.frame = CGRectMake(leftFadeOrigin-(fadeMovement*(2-index)), 10, gradientWidth, 20);
-      _view_rightFade.frame = CGRectMake(rightFadeOrigin+(fadeMovement*(3-(size-index))), 10, gradientWidth, 20);
+      view_leftFade.frame = CGRectMake(leftFadeOrigin-(fadeMovement*(2-index)), 10, gradientWidth, 20);
+      view_rightFade.frame = CGRectMake(rightFadeOrigin+(fadeMovement*(3-([_collection count]-index))), 10, gradientWidth, 20);
     }];
   } else {
     if( index < 3 ){
       self.currentPage = index;
       [UIView animateWithDuration:.75 animations:^{
         if( self.frame.origin.y != yOrigin ){
-          self.frame = CGRectMake(0, yOrigin, self.frame.size.width, self.frame.size.height);
+          [self showPageControl];
         }
-        _view_leftFade.frame = CGRectMake(leftFadeOrigin-(fadeMovement*(2-index)), 10, gradientWidth, 20);
+        view_leftFade.frame = CGRectMake(leftFadeOrigin-(fadeMovement*(2-index)), 10, gradientWidth, 20);
       }];
-    } else if(index > (size-4) ){
-      self.currentPage = 5-(size-index);
+    } else if(index > ([_collection count]-4) ){
+      self.currentPage = 5-([_collection count]-index);
       [UIView animateWithDuration:.75 animations:^{
         if( self.frame.origin.y != yOrigin ){
-          self.frame = CGRectMake(0, yOrigin, self.frame.size.width, self.frame.size.height);
+          [self showPageControl];
         }
-        _view_rightFade.frame = CGRectMake(rightFadeOrigin+(fadeMovement*(3-(size-index))), 10, gradientWidth, 20);
+        view_rightFade.frame = CGRectMake(rightFadeOrigin+(fadeMovement*(3-([_collection count]-index))), 10, gradientWidth, 20);
       }];
     } else {
       self.currentPage = 2;
       
       if( self.frame.origin.y == yOrigin ){
         [UIView animateWithDuration:.75 animations:^{
-          self.frame = CGRectMake(0, yOrigin+self.frame.size.height, self.frame.size.width, self.frame.size.height);
+          [self hidePageControl];
         }];
       }
       
-      _view_leftFade.frame = CGRectMake(leftFadeOrigin, 10, gradientWidth, 20);
-      _view_rightFade.frame = CGRectMake(rightFadeOrigin, 10, gradientWidth, 20);
+      view_leftFade.frame = CGRectMake(leftFadeOrigin, 10, gradientWidth, 20);
+      view_rightFade.frame = CGRectMake(rightFadeOrigin, 10, gradientWidth, 20);
     }
   }
+}
+
+/**
+ * Alters Frame origin to slide page control down the screen until out of sight
+ */
+- (void) hidePageControl
+{
+  self.frame = CGRectMake(0, yOrigin+self.frame.size.height, self.frame.size.width, self.frame.size.height);
+}
+
+/**
+ * Alters Frame origin to slide page control up to its place at bottom of screen
+ */
+- (void) showPageControl
+{
+  self.frame = CGRectMake(0, yOrigin, self.frame.size.width, self.frame.size.height);
+}
+
+/**
+ * Shows new item button
+ */
+- (void) showNewItemButton
+{
+  [UIView animateWithDuration:.25 animations:^{
+    [button_newItem setAlpha:1];
+  }];
+}
+
+/**
+ * Hides new item button
+ */
+- (void) hideNewItemButton
+{
+  [UIView animateWithDuration:.25 animations:^{
+    [button_newItem setAlpha:0];
+  }];
 }
 
 @end
