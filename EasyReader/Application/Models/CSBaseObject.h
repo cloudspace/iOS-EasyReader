@@ -13,17 +13,16 @@
 #import "APIClient.h"
 
 
-#pragma mark - CSBaseObject -
+#pragma mark - CSBaseObject
 
 /**
  * A base for NSManagedObjects that represent objects in a remote API object
  */
 @interface CSBaseObject : NSManagedObject
 
-
 #pragma mark - Instance creation from API Data helpers
 
-/*
+/**
  * Creates or updates an object base on API data
  *
  * @param remoteObjectData the api data to update/create based on
@@ -31,8 +30,14 @@
 + (id)createOrUpdateFirstFromAPIData:(NSDictionary *)remoteObjectData;
 
 
+#pragma mark - API Client access helpers
+
+/// Returns a shared singleton API client for this object
 @property (nonatomic, readonly) APIClient *client;
 
+/**
+ * Returns a shared singleton API Client for this class
+ */
 + (APIClient *)client;
 
 @end

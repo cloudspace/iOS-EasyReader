@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSCoreDataService.h"
+#import "EZRCoreDataService.h"
 #import "MagicalRecord.h"
 
-@implementation CSCoreDataService
+@implementation EZRCoreDataService
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSApplicationStyleService.h"
+#import "EZRApplicationStyleService.h"
 
-@implementation CSApplicationStyleService
+@implementation EZRApplicationStyleService
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

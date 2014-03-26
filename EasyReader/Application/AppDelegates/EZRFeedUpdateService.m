@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSFeedUpdateService.h"
+#import "EZRFeedUpdateService.h"
 #import "EZRFeedItemUpdateService.h"
 
-@implementation CSFeedUpdateService
+@implementation EZRFeedUpdateService
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

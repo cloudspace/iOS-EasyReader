@@ -8,6 +8,9 @@
 
 #import "SOApplicationDelegateService.h"
 
-@interface CSFeedUpdateService : SOApplicationDelegateService
+/**
+ * An AppDelegate service used to handle feed updating
+ */
+@interface EZRFeedUpdateService : SOApplicationDelegateService
 
 @end

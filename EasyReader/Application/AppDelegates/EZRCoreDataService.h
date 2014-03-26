@@ -8,6 +8,9 @@
 
 #import "SOApplicationDelegateService.h"
 
-@interface CSCoreDataService : SOApplicationDelegateService
+/**
+ * An AppDelegate service used to manage core data functionality
+ */
+@interface EZRCoreDataService : SOApplicationDelegateService
 
 @end

@@ -8,10 +8,10 @@
 
 #import "CSAppDelegate.h"
 
-#import "CSRegisterRoutesService.h"
-#import "CSCoreDataService.h"
-#import "CSFeedUpdateService.h"
-#import "CSApplicationStyleService.h"
+#import "EZRRegisterRoutesService.h"
+#import "EZRCoreDataService.h"
+#import "EZRFeedUpdateService.h"
+#import "EZRApplicationStyleService.h"
 
 #import "CSRootViewController.h"
 #import "User.h"
@@ -28,10 +28,10 @@
  */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self registerService:[CSCoreDataService shared]];
-    [self registerService:[CSRegisterRoutesService shared]];
-    [self registerService:[CSApplicationStyleService shared]];
-    [self registerService:[CSFeedUpdateService shared]];
+    [self registerService:[EZRCoreDataService shared]];
+    [self registerService:[EZRRegisterRoutesService shared]];
+    [self registerService:[EZRApplicationStyleService shared]];
+    [self registerService:[EZRFeedUpdateService shared]];
     
     [self invokeServiceMethodWithSelector:@selector(application:didFinishLaunchingWithOptions:) withArgument:&launchOptions];
     

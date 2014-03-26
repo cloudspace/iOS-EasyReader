@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSRegisterRoutesService.h"
+#import "EZRRegisterRoutesService.h"
 #import "APIRouter.h"
 
-@implementation CSRegisterRoutesService
+@implementation EZRRegisterRoutesService
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

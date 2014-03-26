@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SOApplicationDelegateService.h"
 
-@interface CSApplicationStyleService : SOApplicationDelegateService
+/**
+ * An AppDelegate service that handles application styling
+ */
+@interface EZRApplicationStyleService : SOApplicationDelegateService
 
 @end

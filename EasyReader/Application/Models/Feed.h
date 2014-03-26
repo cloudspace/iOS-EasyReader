@@ -47,7 +47,7 @@
 /**
  * Creates a new feed based on a given url
  *
- * @param url
+ * @param url The URL of the feed to create
  * @param successBlock A block to be run on API call success
  * @param failureBlock A block to be run on API call failure
  */
@@ -67,6 +67,7 @@
 /**
  * Requests a list of feeds by name (search)
  *
+ * @param name The name to search feeds by
  * @param successBlock A block to be run on API call success
  * @param failureBlock A block to be run on API call failure
  */
@@ -79,11 +80,37 @@
 
 #pragma mark - Core Data Generated Accessors -
 
+/**
+ * Core data generated accessors
+ */
 @interface Feed (CoreDataGeneratedAccessors)
 
+/**
+ * Adds a FeedItem object to feedItems
+ *
+ * @param value The FeedItem to add
+ */
 - (void)addFeedItemsObject:(FeedItem *)value;
+
+/**
+ * Removes a FeedItem object from feedItems
+ *
+ * @param value The FeedItem to remove
+ */
 - (void)removeFeedItemsObject:(FeedItem *)value;
+
+/**
+ * Adds a set of FeedItem objects to feedItems
+ *
+ * @param values The FeedItems to add
+ */
 - (void)addFeedItems:(NSSet *)values;
+
+/**
+ * Removes a set of FeedItem objects from feedItems
+ *
+ * @param values The FeedItems to remove
+ */
 - (void)removeFeedItems:(NSSet *)values;
 
 @end

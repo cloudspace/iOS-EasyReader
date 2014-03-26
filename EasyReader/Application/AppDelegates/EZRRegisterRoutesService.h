@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "SOApplicationDelegateService.h"
 
-@interface CSRegisterRoutesService : SOApplicationDelegateService
+/**
+ * An AppDelegate service used to register named API routes and their paths
+ */
+@interface EZRRegisterRoutesService : SOApplicationDelegateService
 
 @end
