@@ -74,6 +74,14 @@
                     success:(APISuccessBlock)successBlock
                     failure:(APIFailureBlock)failureBlock;
 
+
+#pragma mark - Other Methods
+
+/**
+ * Delete all but the 10 newest feed items related to a feed
+ */
+- (void) purgeOldFeedItems;
+
 @end
 
 
