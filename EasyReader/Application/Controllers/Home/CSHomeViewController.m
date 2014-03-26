@@ -20,6 +20,7 @@
 
 #import "CSFeedItemCell.h"
 
+typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSSet *new);
 
 @interface CSHomeViewController ()
 {
@@ -76,9 +77,7 @@
 {
     
     [self observeRelationship:@keypath(self.currentUser.feeds)
-                  changeBlock:^(__weak CSHomeViewController *self, NSSet *old, NSSet *new){
-                    [self feedsDidChange:old new:new];
-                  }
+                  changeBlock:[self feedsDidChange]
                insertionBlock:nil
                  removalBlock:nil
              replacementBlock:nil
@@ -88,8 +87,9 @@
 /**
  * Assigns observers for feedsItems when feeds array on current user changes
  */
--(void) feedsDidChange:(NSSet*)old new:(NSSet*)new
+-(ObserverBlock) feedsDidChange
 {
+  ObserverBlock block = ^void(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
     NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
     NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
     
@@ -111,9 +111,7 @@
     
     for ( Feed *feed in addedFeeds ){
       [feed observeRelationship:@"feedItems"
-                    changeBlock:^(__weak Feed *feed, NSSet *old, NSSet *new) {
-                      [self feedItemsDidChange:old new:new];
-                    }
+                    changeBlock:[self feedItemsDidChange]
                  insertionBlock:nil
                    removalBlock:nil
                replacementBlock:nil];
@@ -130,34 +128,41 @@
     } else {
       [_pageControl_itemIndicator setPageControllerPageAtIndex:0 forCollection:_feedItems];
     }
+  };
+  
+  return block;
 }
 
 /**
  * Called when feedItems array on observed feeds change, shows new item button on page control
  */
--(void) feedItemsDidChange:(NSSet*)old new:(NSSet*)new
+-(ObserverBlock) feedItemsDidChange
 {
-  _feedItems = [(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems];
+  ObserverBlock block = ^void(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
+    _feedItems = [(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems];
 
-  if(!new) {
-    NSLog(@"There are no feeds here");
-  } else {
-    NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
-    NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
-    
-    [addedFeedItems removeObjectsInArray:[old allObjects]];
-    [removedFeedItems removeObjectsInArray:[new allObjects]];
-    
-    for( FeedItem *item in removedFeedItems ){
-      [_feedItems removeObject:item];
+    if(!new) {
+      NSLog(@"There are no feeds here");
+    } else {
+      NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
+      NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
+      
+      [addedFeedItems removeObjectsInArray:[old allObjects]];
+      [removedFeedItems removeObjectsInArray:[new allObjects]];
+      
+      for( FeedItem *item in removedFeedItems ){
+        [_feedItems removeObject:item];
+      }
+      
+      for( FeedItem *item in addedFeedItems ){
+        [_feedItems addObject:item];
+      }
+      
+      [_pageControl_itemIndicator.button_newItem setHidden:NO];
     }
-    
-    for( FeedItem *item in addedFeedItems ){
-      [_feedItems addObject:item];
-    }
-    
-    [_pageControl_itemIndicator.button_newItem setHidden:NO];
-  }
+  };
+  
+  return block;
 }
 
 #pragma mark - IBActions
