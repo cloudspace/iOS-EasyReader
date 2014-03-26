@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ApiBasePath</key>
+	<string>/v2</string>
+	<key>ApiHost</key>
+	<string>http://staging.rss.cloudspace.com</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -47,9 +51,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2.0.18</string>
-	<key>FacebookAppID</key>
-	<string>456979891044426</string>
+	<string>2.0.22</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
@@ -74,9 +76,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>ApiHost</key>
-	<string>http://staging.rss.cloudspace.com</string>
-	<key>ApiBasePath</key>
-	<string>/v2</string>
 </dict>
 </plist>

@@ -10,7 +10,10 @@
 
 #import "UIImageView+AFNetworking.h"
 
+#import "UIColor+EZRSharedColorAdditions.h"
+
 #import "CSSearchFeedCell.h"
+#import "EZRCustomFeedCell.h"
 
 #import "Feed.h"
 #import "FeedItem.h"
@@ -27,6 +30,7 @@
     
     if (self) {
         _feeds = [[NSMutableSet alloc] init];
+        _sortedFeeds = [[NSArray alloc] init];
     }
     
     return self;
@@ -39,6 +43,16 @@
 - (void)updateWithFeeds:(NSMutableSet *)feeds
 {
     self.feeds = feeds;
+    [self sortFeeds];
+}
+
+/**
+ * Sort the feeds alphabetically
+ */
+- (void)sortFeeds
+{
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    self.sortedFeeds = [[NSArray arrayWithArray:[_feeds allObjects]] sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
 }
 
 
@@ -48,7 +62,7 @@
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_feeds count];
+    return [self.sortedFeeds count];
 }
 
 
@@ -76,62 +90,65 @@
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Dequeue a styled cell
-    CSSearchFeedCell *cell = (CSSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
-    
-    Feed *feed = [self.feeds allObjects][indexPath.row];
-    cell.feed = feed;
-    
-    // Set the label text
-    cell.label_name.text = feed.name;
-    cell.label_name.textColor = [UIColor whiteColor];
-    
-    // Show feed icons
-    [cell.imageView_icon setHidden:NO];
-    
-    __weak CSSearchFeedCell *currentCell = cell;
-    NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.icon]];
-    [currentCell.imageView setImageWithURLRequest:imageRequest
-                                 placeholderImage:nil
-                                          success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                              currentCell.imageView.image = image;
-                                          }failure:nil
-     ];
-    
-    UIView *selectedBackgroundView = [[UIView alloc] init];
-    [selectedBackgroundView setBackgroundColor: [UIColor colorWithRed:39/255.0 green:45/255.0 blue:58/255.0 alpha:1.0]];
-    cell.selectedBackgroundView = selectedBackgroundView;
-    return cell;
-}
-
-/**
- * Commits each editing action
- */
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Feed *toDelete = [self.feeds allObjects][indexPath.row];
+    if ([[self.sortedFeeds objectAtIndex:indexPath.row] objectForKey:@"feed_items"]) {
+        // Dequeue a styled cell
+        CSSearchFeedCell *cell = (CSSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
         
-        [self.feeds removeObject:toDelete];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSDictionary *searchedFeed = [self.sortedFeeds objectAtIndex:indexPath.row];
         
-        for ( FeedItem *item in toDelete.feedItems ) [item deleteEntity];
-        [toDelete deleteEntity];
+        // Associate the feed to the cell
+        cell.feed = searchedFeed;
         
-        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+        // Set the label text
+        cell.label_name.text = [searchedFeed objectForKey:@"name"];
+        
+        // Show feed icons
+        NSString *iconUrl = [searchedFeed objectForKey:@"icon"];
+        if (!iconUrl.isBlank) {
+         [cell.imageView setImageWithURL:[NSURL URLWithString:[searchedFeed objectForKey:@"icon"]] placeholderImage:nil];
+        }
+        
+        UIView *selectedBackgroundView = [[UIView alloc] init];
+        [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
+        cell.selectedBackgroundView = selectedBackgroundView;
+        return cell;
+    }
+    else{
+        // Dequeue a styled cell
+        EZRCustomFeedCell *cell = (EZRCustomFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"CustomFeedCell"];
+        
+        NSDictionary *customFeed = [self.sortedFeeds objectAtIndex:indexPath.row];
+        NSString *customUrl = [customFeed objectForKey:@"url"];
+        cell.label_url.text = customUrl;
+        
+        if([self isValidUrl:customUrl]){
+            // Display create button
+        }
+        
+        UIView *selectedBackgroundView = [[UIView alloc] init];
+        [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
+        cell.selectedBackgroundView = selectedBackgroundView;
+        
+        return cell;
     }
 }
 
 /**
- * Determines the editing style for each row
+ * Check for a letter followed by a dot
  */
-- (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)isValidUrl:(NSString *)url
 {
-    if ( indexPath.row == [_feeds count] ) {
-        return UITableViewCellEditingStyleInsert;
-    } else {
-        return UITableViewCellEditingStyleDelete;
+    NSError *error = NULL;
+    NSString *pattern = @"[a-z][.]";
+    NSString *string = url;
+    NSRange range = NSMakeRange(0, string.length);
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
+    NSArray *matches = [regex matchesInString:string options:NSMatchingReportCompletion range:range];
+    
+    if (matches.count > 0) {
+        return TRUE;
     }
+    return FALSE;
 }
 
 @end

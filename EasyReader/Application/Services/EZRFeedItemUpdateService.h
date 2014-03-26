@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CSFeedItemUpdater : NSObject
+/**
+ * A service that polls for feed item update every few minutes
+ */
+@interface EZRFeedItemUpdateService : NSObject
+
+/**
+ * Starts the feed update service
+ */
 - (void) start;
+
 @end

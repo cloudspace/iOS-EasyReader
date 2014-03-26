@@ -1,9 +1,9 @@
 //
-//  AKRoute.h
-//  APIKit Router
+//  APIMockedDataClient.h
 //
 //  Created by Joseph Lorich on 3/19/14.
 //  Copyright (c) 2014 Joseph Lorich.
+//  Contributions by Cloudspace (http://www.cloudspace.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,47 +23,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-
-typedef enum {
-    kAKRequestMethodGET,
-    kAKRequestMethodPOST,
-    kAKRequestMethodPUT,
-    kAKRequestMethodDELETE
-} AKRequestMethod;
-
+#import "APIClient.h"
 
 /**
- * An API Route
+ * A subclass of APIClient which responds with mocked data loaded from JSON fixtures
  */
-@interface AKRoute : NSObject
-
-
-#pragma mark - Properties
-
-/// The string representation for the url for this route
-@property (nonatomic, readonly) NSString *path;
-
-/// The request method for this route
-@property (nonatomic, readonly) AKRequestMethod requestMethod;
-
-
-#pragma mark - Initializers
-
-/**
- * Initializes a new CSApiRoute
- *
- * @param path the path for this URL
- * @param requestMethod the request method for this route
- */
-- (id)initWithPath:(NSString *)path requestMethod:(AKRequestMethod)requestMethod;
-
-
-/**
- * Builds a URL String for a given set of params
- *
- * @param params The URL Parameters
- */
-- (NSString *)pathStringForParams:(NSDictionary *)params;
+@interface APIMockedDataClient : APIClient
 
 @end

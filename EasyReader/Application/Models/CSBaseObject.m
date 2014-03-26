@@ -10,6 +10,16 @@
 
 @implementation CSBaseObject
 
+- (APIClient *)client
+{
+    return [APIClient shared];
+}
+
++ (APIClient *)client
+{
+    return [APIClient shared];
+}
+
 + (id)createOrUpdateFirstFromAPIData:(NSDictionary *)remoteObjectData
 {
   return [self createOrUpdateFirstFromAPIData:remoteObjectData byAttribute:@"id"];
@@ -50,8 +60,7 @@
   }
   else
   {
-    // Date only
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss+00:00"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
   }
   
   [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];

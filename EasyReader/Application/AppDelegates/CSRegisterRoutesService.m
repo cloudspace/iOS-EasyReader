@@ -7,16 +7,16 @@
 //
 
 #import "CSRegisterRoutesService.h"
-#import "AKRouter.h"
+#import "APIRouter.h"
 
 @implementation CSRegisterRoutesService
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[AKRouter shared] registerRoute:@"feedDefaults" path:@"/feeds/default/"  requestMethod:kAKRequestMethodGET];
-    [[AKRouter shared] registerRoute:@"feedCreate"   path:@"/feeds/"          requestMethod:kAKRequestMethodPOST];
-    [[AKRouter shared] registerRoute:@"feedSearch"   path:@"/feeds/search/"   requestMethod:kAKRequestMethodGET];
-    [[AKRouter shared] registerRoute:@"feedItems"    path:@"/feeds/"          requestMethod:kAKRequestMethodGET];
+    [[APIRouter shared] registerRoute:@"feedDefaults" path:@"/feeds/default/"  requestMethod:kAPIRequestMethodGET];
+    [[APIRouter shared] registerRoute:@"feedCreate"   path:@"/feeds/"          requestMethod:kAPIRequestMethodPOST];
+    [[APIRouter shared] registerRoute:@"feedSearch"   path:@"/feeds/search/"   requestMethod:kAPIRequestMethodGET];
+    [[APIRouter shared] registerRoute:@"feedItems"    path:@"/feed_items/"          requestMethod:kAPIRequestMethodGET];
 
     return YES;
 }

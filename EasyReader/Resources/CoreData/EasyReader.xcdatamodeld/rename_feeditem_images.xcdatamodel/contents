@@ -11,9 +11,9 @@
     <entity name="FeedItem" representedClassName="FeedItem" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="ipad_image" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="ipad_retina_image" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="iphone_retina_image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image_ipad" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image_ipad_retina" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image_iphone_retina" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="publishedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>

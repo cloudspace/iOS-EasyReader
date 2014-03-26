@@ -14,6 +14,7 @@
 #import "CSApplicationStyleService.h"
 
 #import "CSRootViewController.h"
+#import "User.h"
 
 @implementation CSAppDelegate
 
@@ -27,8 +28,8 @@
  */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self registerService:[CSRegisterRoutesService shared]];
     [self registerService:[CSCoreDataService shared]];
+    [self registerService:[CSRegisterRoutesService shared]];
     [self registerService:[CSApplicationStyleService shared]];
     [self registerService:[CSFeedUpdateService shared]];
     
@@ -46,7 +47,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    CSMenuLeftViewController *leftMenuViewController = [[CSMenuLeftViewController alloc] init];
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+
+    CSMenuLeftViewController *leftMenuViewController = (CSMenuLeftViewController*)[mainStoryBoard instantiateViewControllerWithIdentifier:@"LeftMenu"];
+    
     CSRootViewController *rootVC = [[CSRootViewController alloc] init];
     
     MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController

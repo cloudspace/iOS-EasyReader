@@ -10,7 +10,6 @@
 #import "NSDate+TimeAgo.h"
 #import "Feed.h"
 #import "User.h"
-#import "CSResponsiveApiRequestor.h"
 #import "AFHTTPRequestOperation.h"
 
 @implementation FeedItem
@@ -20,7 +19,9 @@
 @dynamic updatedAt;
 @dynamic publishedAt;
 @dynamic createdAt;
-@dynamic image;
+@dynamic image_iphone_retina;
+@dynamic image_ipad;
+@dynamic image_ipad_retina;
 @dynamic url;
 @dynamic feed;
 @dynamic id;
@@ -43,12 +44,12 @@
 
 + (void) requestFeedItemsFromFeeds:(NSSet  *)feeds
                              Since:(NSDate *)startAt
-                           success:(void(^)(NSDictionary *data))successBlock
-                           failure:(void(^)(NSDictionary *data))failureBlock
+                           success:(APISuccessBlock)successBlock
+                           failure:(APIFailureBlock)failureBlock
 {
     if ([feeds count] == 0)
     {
-        if (successBlock) successBlock(nil);
+        if (successBlock) successBlock(nil, 0);
         return;
     }
     
@@ -63,14 +64,12 @@
                              @"feed_ids": feedIds
                              };
     
-    [[CSResponsiveApiRequestor sharedRequestor] requestRoute:@"feedItems"
-                                                  withParams:params
-                                                     success:^(AFHTTPRequestOperation *operation, id responseData){
-                                                         [self saveParsedResponseData:responseData];
-                                                         if(successBlock) successBlock(responseData);
-                                                     }failure:^(AFHTTPRequestOperation *operation, id responseData){
-                                                         if(failureBlock) failureBlock(responseData);
-                                                     }];
+    [[self client] requestRoute:@"feedItems"
+                     parameters:params success:^(id responseObject, NSInteger httpStatus) {
+                         [self saveParsedResponseData:responseObject];
+                         if(successBlock) successBlock(responseObject, httpStatus);
+                      }
+                        failure:failureBlock];
 }
 
 + (void) saveParsedResponseData:(id)responseData

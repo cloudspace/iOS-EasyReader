@@ -1,9 +1,9 @@
 //
-//  AKRoute.m
-//  APIKit Router
+//  APIRoute.m
 //
 //  Created by Joseph Lorich on 3/19/14.
 //  Copyright (c) 2014 Joseph Lorich.
+//  Contributions by Cloudspace (http://www.cloudspace.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,15 +23,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AKRoute.h"
+#import "APIRoute.h"
 
-@implementation AKRoute
+@implementation APIRoute
 {
     NSString *_path;
-    AKRequestMethod _requestMethod;
+    APIRequestMethod _requestMethod;
 }
 
-- (id)initWithPath:(NSString *)path requestMethod:(AKRequestMethod)requestMethod
+#pragma mark - Public
+
+- (id)initWithPath:(NSString *)path requestMethod:(APIRequestMethod)requestMethod
 {
     self = [super init];
     
@@ -44,10 +46,32 @@
     return self;
 }
 
-- (NSString *)pathStringForParams:(NSDictionary *)params
+- (NSString *)pathStringForParameters:(NSDictionary *)parameters
 {
-    return [self replaceTokensInPath:_path params:params];
+    return [self replaceTokensInPath:_path params:parameters];
 }
+
+- (NSString *)requestMethodString
+{
+    switch (self.requestMethod)
+    {
+        case kAPIRequestMethodGET:
+            return @"GET";
+        case kAPIRequestMethodPOST:
+            return @"POST";
+        case kAPIRequestMethodPUT:
+            return @"PUT";
+        case kAPIRequestMethodPATCH:
+            return @"PATCH";
+        case kAPIRequestMethodDELETE:
+            return @"DELETE";
+        case kAPIRequestMethodHEAD:
+            return @"HEAD";
+    }
+}
+
+#pragma mark - Private
+
 
 /**
  * Replaces all slug tokens (e.g. ":first_name") in a path with their appropriate param

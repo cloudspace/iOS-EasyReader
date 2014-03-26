@@ -10,6 +10,7 @@
 #import "NSObject+CSReflectionAdditions.h"
 #import "NSObject+CSNilAdditions.h"
 #import "NSString+Inflections.h"
+#import "APIClient.h"
 
 
 #pragma mark - CSBaseObject -
@@ -29,5 +30,9 @@
  */
 + (id)createOrUpdateFirstFromAPIData:(NSDictionary *)remoteObjectData;
 
+
+@property (nonatomic, readonly) APIClient *client;
+
++ (APIClient *)client;
 
 @end

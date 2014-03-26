@@ -52,8 +52,8 @@
  * @param failureBlock A block to be run on API call failure
  */
 + (void) createFeedWithUrl:(NSString *) url
-                   success:(void(^)(NSDictionary *data))successBlock
-                   failure:(void(^)(NSDictionary *data))failureBlock;
+                   success:(APISuccessBlock)successBlock
+                   failure:(APIFailureBlock)failureBlock;
 
 /**
  * Requests the default feeds list (called once on the first app run)
@@ -61,8 +61,8 @@
  * @param successBlock A block to be run on API call success
  * @param failureBlock A block to be run on API call failure
  */
-+ (void) requestDefaultFeedsWithSuccess:(void(^)(NSDictionary *data))successBlock
-                                failure:(void(^)(NSDictionary *data))failureBlock;
++ (void) requestDefaultFeedsWithSuccess:(APISuccessBlock)successBlock
+                                failure:(APIFailureBlock)failureBlock;
 
 /**
  * Requests a list of feeds by name (search)
@@ -71,8 +71,8 @@
  * @param failureBlock A block to be run on API call failure
  */
 + (void) requestFeedsByName:(NSString *) name
-                    success:(void(^)(NSDictionary *data))successBlock
-                    failure:(void(^)(NSDictionary *data))failureBlock;
+                    success:(APISuccessBlock)successBlock
+                    failure:(APIFailureBlock)failureBlock;
 
 @end
 

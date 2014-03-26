@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
 
-@class User, CSEnhancedTableView;
+@class User;
 
 @interface CSMenuLeftViewController : CSBaseViewController<UITableViewDelegate>
 
 
 #pragma mark - IBOutlet Properties
-@property (nonatomic, retain) IBOutlet CSEnhancedTableView *tableView_feeds;
+@property (nonatomic, retain) IBOutlet UITableView *tableView_feeds;
 @property (strong, nonatomic) IBOutlet UITextField *textField_searchInput;
 
 

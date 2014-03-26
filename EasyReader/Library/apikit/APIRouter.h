@@ -1,9 +1,9 @@
 //
-//  AKRouter.h
-//  APIKit Router
+//  APIRouter.h
 //
 //  Created by Joseph Lorich on 3/19/14.
 //  Copyright (c) 2014 Joseph Lorich.
+//  Contributions by Cloudspace (http://www.cloudspace.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,18 +24,18 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "AKRoute.h"
+#import "APIRoute.h"
 
 /**
  * An interface to create and process named routes for URLs
  */
-@interface AKRouter : NSObject
+@interface APIRouter : NSObject
 
 
 /**
  * Returns a shared singleton router instance
  */
-+ (AKRouter *) shared;
++ (APIRouter *) shared;
 
 /**
  * Registers a new route with the router
@@ -44,7 +44,7 @@
  * @param path The path for the route
  * @param requestMethod the Request Method
  */
-- (void)registerRoute:(NSString *)routeName path:(NSString *)path requestMethod:(AKRequestMethod)requestMethod;
+- (void)registerRoute:(NSString *)routeName path:(NSString *)path requestMethod:(APIRequestMethod)requestMethod;
 
 
 /**
@@ -53,7 +53,7 @@
  * @param routeName the API Route Name
  * @param params paramaters to be used in building the API route
  */
-- (NSURL *)urlFor:(NSString *)routeName params:(NSDictionary *)params;
+- (NSURL *)urlFor:(NSString *)routeName parameters:(NSDictionary *)params;
 
 /**
  * Builds an NSString path based on the route name and parameters
@@ -68,13 +68,20 @@
  *
  * @param routeName the API Route Name
  */
-- (AKRequestMethod)methodFor:(NSString *)routeName;
+- (APIRequestMethod)methodFor:(NSString *)routeName;
+
+/**
+ * Returns the request method string for the given route
+ *
+ * @param routeName the API Route Name
+ */
+- (NSString *)methodStringFor:(NSString *)routeName;
 
 /**
  * Gets the route object for the given route name
  *
  * @param routeName The routes name
  */
-- (AKRoute *)routeForName:(NSString*)routeName;
+- (APIRoute *)routeNamed:(NSString*)routeName;
 
 @end

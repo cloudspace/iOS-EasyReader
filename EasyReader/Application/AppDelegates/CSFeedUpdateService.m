@@ -7,13 +7,13 @@
 //
 
 #import "CSFeedUpdateService.h"
-#import "CSFeedItemUpdater.h"
+#import "EZRFeedItemUpdateService.h"
 
 @implementation CSFeedUpdateService
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    CSFeedItemUpdater *updater = [[CSFeedItemUpdater alloc]  init];
+    EZRFeedItemUpdateService *updater = [[EZRFeedItemUpdateService alloc]  init];
     [updater start];
     
     return YES;
