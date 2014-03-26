@@ -35,10 +35,7 @@
             while (sortedFeedItems.count > 10) {
                 
                 // Delete the oldest feed item
-                FeedItem *toDelete = [sortedFeedItems objectAtIndex:sortedFeedItems.count-1];
-                [toDelete deleteEntity];
-                [sortedFeedItems removeObjectAtIndex:sortedFeedItems.count-1];
-                [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+                [self purgeOldestFeedItem:sortedFeedItems];
             }
         }
     }
@@ -56,6 +53,17 @@
                                                  ascending:NO];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     return [NSMutableArray arrayWithArray:[sortableArray sortedArrayUsingDescriptors:sortDescriptors]];
+}
+
+/**
+ * Delete the oldest feed item associated with a feed
+ */
+- (void)purgeOldestFeedItem:(NSMutableArray *)feedItems
+{
+    FeedItem *toDelete = [feedItems objectAtIndex:feedItems.count-1];
+    [toDelete deleteEntity];
+    [feedItems removeObjectAtIndex:feedItems.count-1];
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
 }
 
 @end
