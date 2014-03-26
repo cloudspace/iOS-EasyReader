@@ -387,6 +387,7 @@
 		9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMenuLeftViewController.m; path = Menu/CSMenuLeftViewController.m; sourceTree = "<group>"; };
 		9D4355731795C708002C6657 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9D4355751795C9B3002C6657 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9D458C6A18E320B100BC17D6 /* rename_feeditem_images.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = rename_feeditem_images.xcdatamodel; sourceTree = "<group>"; };
 		9D4FA6E317971D56001E2A65 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -1899,10 +1900,11 @@
 		9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				9D458C6A18E320B100BC17D6 /* rename_feeditem_images.xcdatamodel */,
 				0DE51FE318CF8BDE00454E51 /* api_v2.xcdatamodel */,
 				9DF4BB1E17130E99001DCC88 /* EasyReader.xcdatamodel */,
 			);
-			currentVersion = 0DE51FE318CF8BDE00454E51 /* api_v2.xcdatamodel */;
+			currentVersion = 9D458C6A18E320B100BC17D6 /* rename_feeditem_images.xcdatamodel */;
 			name = "Easy Reader.xcdatamodeld";
 			path = EasyReader.xcdatamodeld;
 			sourceTree = "<group>";

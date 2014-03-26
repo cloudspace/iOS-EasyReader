@@ -202,7 +202,7 @@
         cell.label_summary.text = feedItem.summary;
         cell.feedItem = feedItem;
         
-        [cell.imageView_background setImageWithURL:[NSURL URLWithString:feedItem.iphone_retina_image]];
+        [cell.imageView_background setImageWithURL:[NSURL URLWithString:feedItem.image_iphone_retina]];
     };
 }
 

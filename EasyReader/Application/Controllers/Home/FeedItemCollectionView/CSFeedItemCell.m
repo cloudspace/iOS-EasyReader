@@ -29,6 +29,8 @@
 
 - (void)applyInfoGradient
 {
+    [self.info_view setBackgroundColor:[UIColor clearColor]];
+    
     // Create a new gradient object
     CAGradientLayer *gradient = [CAGradientLayer layer];
     
