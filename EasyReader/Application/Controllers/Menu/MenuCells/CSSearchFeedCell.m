@@ -37,11 +37,9 @@
  * Add the feed to the user and save it in the database
  */
 - (IBAction)addFeedToUser:(id)sender {
-    // Create a new Feed object and associated FeedItem objetcs
-    NSLog(@"TESTING!!!!!!!!!!! %@",self.feed);
+    // Create a new Feed object and associated FeedItem objects
     Feed *newFeed = [Feed createOrUpdateFirstFromAPIData:self.feed];
-    NSLog(@"NEW!!!!!!!!!!! %@",newFeed.feedItems);
-    NSLog(@"%@",newFeed.url);
+    
     // Add the feed to the currentUsers feeds
     User *currentUser = [User current];
     NSMutableSet *mutableSet = [NSMutableSet setWithSet:currentUser.feeds];

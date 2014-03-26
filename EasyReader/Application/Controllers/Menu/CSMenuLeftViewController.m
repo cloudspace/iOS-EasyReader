@@ -168,9 +168,14 @@
             [Feed requestFeedsByName:self.textField_searchInput.text
                              success:^(id responseData, NSInteger httpStatus){
                                 NSDictionary *feeds = [responseData objectForKey:@"feeds"];
+                                 
+                                // Don't show feed the user has already added
                                 for ( NSDictionary *feed in feeds){
-                                    [searchedFeeds addObject:feed];
+                                    if ([self isInUserFeed:feed] == FALSE) {
+                                        [searchedFeeds addObject:feed];
+                                    }
                                 }
+                                 
                                 // Update the searchFeed datasource
                                 [searchFeedDataSource updateWithFeeds:searchedFeeds];
                                 [self updateSearchFeedDataSource];
@@ -211,6 +216,20 @@
     
     // Reload the table with new searchFeeds
     [self.tableView_feeds reloadData];
+}
+
+
+/**
+ * Check if the feed already exists in the database
+ */
+- (BOOL)isInUserFeed:(NSDictionary *)searchedFeed
+{
+    for (Feed *feed in self.currentUser.feeds) {
+        if ([feed.name isEqualToString:[searchedFeed objectForKey:@"name"]]) {
+            return TRUE;
+        }
+    }
+    return FALSE;
 }
 
 #pragma mark - Count Methods
