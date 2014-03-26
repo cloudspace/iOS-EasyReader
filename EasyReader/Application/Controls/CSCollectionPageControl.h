@@ -29,6 +29,26 @@
 @end
 
 
+#pragma mark - CSCollectionPageControlDataSource
+
+/**
+ * This protocol represents the data source for this page control
+ */
+@protocol CSCollectionPageControlDataSource <NSObject>
+
+@required
+
+/**
+ * Datasource sets pages count for page control
+ *
+ * @param pageControl A Page Control informing the delegate about a new page selection
+ * @param pages for count of items for page control
+ */
+- (NSInteger)numberOfPagesForPageControl;
+
+@end
+
+
 #pragma mark - CSCollectionPageControl
 
 /**
@@ -41,6 +61,9 @@
 
 /// The object that acts as the delegate of the receiving page control
 @property (nonatomic, assign) id<CSCollectionPageControlDelegate> delegate;
+
+/// The object that acts as the delegate of the receiving page control
+@property (nonatomic, assign) id<CSCollectionPageControlDataSource> datasource;
 
 
 # pragma mark - Methods
@@ -56,10 +79,5 @@
  * Alters Frame origin to slide page control up to its place at bottom of screen
  */
 - (void)showPageControl;
-
-/**
- * Sets hidden on new item button to true
- */
-- (void)showNewItemButton;
 
 @end

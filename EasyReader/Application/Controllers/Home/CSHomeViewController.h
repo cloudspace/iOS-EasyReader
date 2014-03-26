@@ -24,7 +24,8 @@
 @interface CSHomeViewController : CSBaseViewController <
     UICollectionViewDelegate,
     UIScrollViewDelegate,
-    CSCollectionPageControlDelegate
+    CSCollectionPageControlDelegate,
+    CSCollectionPageControlDataSource
 >
 
 

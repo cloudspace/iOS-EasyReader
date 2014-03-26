@@ -40,6 +40,7 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
     
     [_pageControl_itemIndicator setUpFades];
     _pageControl_itemIndicator.delegate = self;
+    _pageControl_itemIndicator.datasource = self;
     
     self.currentUser = [User current];
     
@@ -132,7 +133,7 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
             [_pageControl_itemIndicator setPageControllerPageAtIndex:0 forCollection:_feedItems];
         }
     };
-    
+
     return block;
 }
 
@@ -262,6 +263,13 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
                                                   animated:YES];
 }
 
+#pragma mark - CSCollectionPageControlDatasource methods
+
+- (NSInteger)numberOfPagesForPageControl
+{
+  return [[_feedCollectionViewDataSource feedItems] count];
+}
+
 # pragma mark - ScrollView methods
 
 /**
@@ -305,7 +313,7 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
         // the page currently under the leftmost position of the view
         NSInteger pageIndex = ((scrollView.contentOffset.x + pageWidth/2.0) / pageWidth);
         
-        [self.pageControl_itemIndicator setCurrentPage:(int)pageIndex];
+        [self.pageControl_itemIndicator setPageControllerPageAtIndex:(int)pageIndex];
     }
 }
 

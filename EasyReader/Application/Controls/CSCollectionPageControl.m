@@ -146,8 +146,8 @@ CGFloat const kAnimationDuration = 0.75;
  */
 - (void)setPageControllerPageAtIndex:(NSInteger)index
 {
-    NSInteger pageCount = self.numberOfPages;//[self.dataSource numberOfPagesForPageControl:self];
-    
+    NSInteger pageCount = [self.datasource numberOfPagesForPageControl];
+  
     if (pageCount < 5){
         self.currentPage = index;
         [UIView animateWithDuration:kAnimationDuration animations:^{
@@ -200,16 +200,6 @@ CGFloat const kAnimationDuration = 0.75;
 - (void) showPageControl
 {
     self.frame = CGRectMake(0, yOrigin, self.frame.size.width, self.frame.size.height);
-}
-
-/**
- * Shows new item button
- */
-- (void) showNewItemButton
-{
-    [UIView animateWithDuration:.25 animations:^{
-        [button_newItem setAlpha:1];
-    }];
 }
 
 /**
