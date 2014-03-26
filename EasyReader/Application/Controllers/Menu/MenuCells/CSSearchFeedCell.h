@@ -7,24 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CSEnhancedTableViewCell.h"
 
-@class Feed;
-
-@interface CSSearchFeedCell : CSEnhancedTableViewCell
+@interface CSSearchFeedCell : UITableViewCell
 
 #pragma mark - IBOutlets
 
-// The feed's icon
+/// The feed's icon
 @property (weak, nonatomic) IBOutlet UIImageView *imageView_icon;
 
-// The feed's name
+/// The feed's name
 @property (weak, nonatomic) IBOutlet UILabel *label_name;
 
+/// The add feed action
+- (IBAction)addFeedToUser:(id)sender;
 
 #pragma mark - Other Properties
 
-// The feed item this cell is based on
-@property (nonatomic, weak) Feed *feed;
+// The NSDictionary of the feed this cell is based on
+@property (nonatomic, weak) NSDictionary *feed;
 
 @end

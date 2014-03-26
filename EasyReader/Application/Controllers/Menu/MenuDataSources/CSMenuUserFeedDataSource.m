@@ -10,10 +10,13 @@
 
 #import "UIImageView+AFNetworking.h"
 
+#import "UIColor+EZRSharedColorAdditions.h"
+
 #import "CSUserFeedCell.h"
 
 #import "Feed.h"
 #import "FeedItem.h"
+#import "User.h"
 
 @implementation CSMenuUserFeedDataSource
 
@@ -26,6 +29,8 @@
     
     if (self) {
         _feeds = [[NSMutableSet alloc] init];
+        _sortedFeeds = [[NSArray alloc] init];
+        _currentUser = [User current];
     }
     
     return self;
@@ -37,6 +42,16 @@
 - (void)updateWithFeeds:(NSMutableSet *)feeds
 {
     self.feeds = feeds;
+    [self sortFeeds];
+}
+
+/**
+ * Sort the feeds alphabetically
+ */
+- (void)sortFeeds
+{
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    self.sortedFeeds = [[NSArray arrayWithArray:[_feeds allObjects]] sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
 }
 
 
@@ -46,7 +61,7 @@
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_feeds count];
+    return [self.sortedFeeds count];
 }
 
 
@@ -77,27 +92,18 @@
     // Dequeue a styled cell
     CSUserFeedCell *cell = (CSUserFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"UserFeedCell"];
     
-    Feed *feed = [self.feeds allObjects][indexPath.row];
+    Feed *feed = [self.sortedFeeds objectAtIndex:indexPath.row];
     cell.feed = feed;
     
     // Set the label text
     cell.label_name.text = feed.name;
-    cell.label_name.textColor = [UIColor whiteColor];
     
     // Show feed icons
     [cell.imageView_icon setHidden:NO];
-    
-    __weak CSUserFeedCell *currentCell = cell;
-    NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.icon]];
-    [currentCell.imageView setImageWithURLRequest:imageRequest
-                                 placeholderImage:nil
-                                          success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                              currentCell.imageView.image = image;
-                                          }failure:nil
-     ];
-    
+    [cell.imageView setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:nil];
+
     UIView *selectedBackgroundView = [[UIView alloc] init];
-    [selectedBackgroundView setBackgroundColor: [UIColor colorWithRed:39/255.0 green:45/255.0 blue:58/255.0 alpha:1.0]];
+    [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
     cell.selectedBackgroundView = selectedBackgroundView;
     return cell;
 }
@@ -108,11 +114,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Feed *toDelete = [self.feeds allObjects][indexPath.row];
+        Feed *toDelete = [self.sortedFeeds objectAtIndex:indexPath.row];
         
-        [toDelete deleteEntity];
-        
-        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+        NSMutableSet *mutableSet = [NSMutableSet setWithSet:self.currentUser.feeds];
+        [mutableSet removeObject:toDelete];
+        self.currentUser.feeds = mutableSet;
     }
 }
 
@@ -121,7 +127,7 @@
  */
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ( indexPath.row == [_feeds count] ) {
+    if ( indexPath.row == [self.sortedFeeds count] ) {
         return UITableViewCellEditingStyleInsert;
     } else {
         return UITableViewCellEditingStyleDelete;

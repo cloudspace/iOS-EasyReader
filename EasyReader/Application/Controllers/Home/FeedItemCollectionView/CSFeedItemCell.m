@@ -7,6 +7,7 @@
 //
 
 #import "CSFeedItemCell.h"
+#import "UIColor+EZRSharedColorAdditions.h"
 
 @implementation CSFeedItemCell
 
@@ -35,16 +36,14 @@
     gradient.frame = self.info_view.bounds;
     
     // Define and set array of gradient colors
-    UIColor *lightColor = [UIColor colorWithRed:39/255.0f green:42/255.0f blue:44/255.0f alpha:0.7f];
-    UIColor *mediumColor = [UIColor colorWithRed:39/255.0f green:42/255.0f blue:44/255.0f alpha:0.9f];
-    UIColor *darkColor = [UIColor colorWithRed:39/255.0f green:41/255.0f blue:45/255.0f alpha:1.0f];
-    gradient.colors = [NSArray arrayWithObjects:(id)[lightColor CGColor],(id)[mediumColor CGColor],(id)[darkColor CGColor],nil];
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor EZR_charcoalWithOpacity:0.7] CGColor],
+                                                (id)[[UIColor EZR_charcoalWithOpacity:0.9] CGColor],
+                                                (id)[[UIColor EZR_charcoal] CGColor],nil];
     
     // Define and set array of color stop positions
-    NSNumber *stopLight = [NSNumber numberWithFloat:0.02];
-    NSNumber *stopMedium = [NSNumber numberWithFloat:0.05];
-    NSNumber *stopDark = [NSNumber numberWithFloat:0.1];
-    gradient.locations = [NSArray arrayWithObjects:stopLight, stopMedium, stopDark, nil];
+    gradient.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.02],
+                                                   [NSNumber numberWithFloat:0.05],
+                                                   [NSNumber numberWithFloat:0.1], nil];
     
     // Apply the gradient
     [self.info_view.layer insertSublayer:gradient atIndex:0];
@@ -62,12 +61,11 @@
     gradient.frame = self.label_summary.bounds;
     
     // Define and set array of gradient colors
-    gradient.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor, (id)[UIColor clearColor].CGColor,nil];
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor] CGColor], (id)[[UIColor clearColor] CGColor],nil];
     
     // Define and set array of color stop positions
-    NSNumber *stopWhite = [NSNumber numberWithFloat:0.30];
-    NSNumber *stopClear = [NSNumber numberWithFloat:0.90];
-    gradient.locations = [NSArray arrayWithObjects:stopWhite, stopClear, nil];
+    gradient.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.30],
+                                                   [NSNumber numberWithFloat:0.90], nil];
     
     // Apply the gradient
     self.label_summary.layer.mask = gradient;

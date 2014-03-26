@@ -11,6 +11,8 @@
 
 #import "UIImageView+AFNetworking.h"
 
+#import "UIColor+EZRSharedColorAdditions.h"
+
 #import "Feed.h"
 #import "FeedItem.h"
 #import "User.h"
@@ -20,11 +22,6 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <Block-KVO/MTKObserving.h>
-
-#import "CSEnhancedTableView.h"
-#import "CSEnhancedTableViewCell.h"
-#import "CSEnhancedTableViewHeaderFooterView.h"
-#import "CSEnhancedTableViewStyleDark.h"
 
 #import "CSMenuUserFeedDataSource.h"
 #import "CSMenuSearchFeedDataSource.h"
@@ -50,14 +47,10 @@
     
     // Setup the user and search datasources
     [self setUpDataSources];
+    self.tableView_feeds.delegate = self;
     
     // Set tableViewStyle
-    CSEnhancedTableViewStyle *tableViewStyle = [[CSEnhancedTableViewStyleDark alloc] init];
-    self.tableView_feeds.tableViewStyle = tableViewStyle;
-    
-    [[self.textField_searchInput superview] setBackgroundColor: [tableViewStyle tableBackgroundColor]];
-    [self.textField_searchInput setBackgroundColor: [tableViewStyle headerBackgroundTopColor]];
-    self.textField_searchInput.textColor = [tableViewStyle headerTitleLabelTextColor];
+    [self applyMenuStyles];
     
     // Added search method to the user input field
     [self.textField_searchInput addTarget:self action:@selector(searchFieldDidChange)forControlEvents:UIControlEventEditingChanged];
@@ -96,10 +89,16 @@
                                                  name:MFSideMenuStateNotificationEvent
                                                object:nil];
     
-    self.tableView_feeds.delegate = self;
-    
     [userFeedDataSource updateWithFeeds:self.feeds];
     self.tableView_feeds.dataSource = userFeedDataSource;
+}
+
+- (void)applyMenuStyles
+{
+    [self.tableView_feeds setBackgroundColor: [UIColor EZR_menuBackground]];
+    [self.textField_searchInput setBackgroundColor: [UIColor EZR_menuInputBackground]];
+    [self.textField_searchInput setTextColor: [UIColor whiteColor]];
+    [self.tableView_feeds setSeparatorColor: [UIColor EZR_charcoal]];
 }
 
 - (void)setUpDataSources
@@ -140,6 +139,8 @@
     }
 }
 
+
+#pragma mark - DataSource Methods
 /**
  * Update the feeds in the menu when a user begins or ends a search
  */
@@ -151,44 +152,64 @@
         // Create empty searchFeed set
         NSMutableSet *searchedFeeds = [[NSMutableSet alloc] init];
         
-        // Switch to the searchFeed datasource and update the table
-        [searchFeedDataSource updateWithFeeds:searchedFeeds];
-        self.tableView_feeds.dataSource = searchFeedDataSource;
-        
         // If the user is typing a url
         if ([self.textField_searchInput.text hasPrefix:@"http"]) {
-            // Get the local context
-            NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
-            
-            // Create a new Feed in the current thread context
-            Feed *customFeed = [Feed MR_createInContext:localContext];
-            customFeed.name = self.textField_searchInput.text;
-            customFeed.url = self.textField_searchInput.text;
+            // Create a dictionary containing the new Feed url
+            NSDictionary *customFeed = @{@"url" : self.textField_searchInput.text};
             
             // Add custom feed to the searchFeeds
             [searchedFeeds addObject:customFeed];
+            
+            // Update the searchFeed datasource
+            [searchFeedDataSource updateWithFeeds:searchedFeeds];
+            [self updateSearchFeedDataSource];
         } else {
             // Return feeds from the API similar to user input
             // Add these feeds to the searchFeed datasource
 
             [Feed requestFeedsByName:self.textField_searchInput.text
                              success:^(id responseData, NSInteger httpStatus){
-                                 NSLog(@"Search for feeds successful");
+                                NSDictionary *feeds = [responseData objectForKey:@"feeds"];
+                                for ( NSDictionary *feed in feeds){
+                                    [searchedFeeds addObject:feed];
+                                }
+                                // Update the searchFeed datasource
+                                [searchFeedDataSource updateWithFeeds:searchedFeeds];
+                                [self updateSearchFeedDataSource];
                              }
                              failure:^(id responseData, NSInteger httpStatus, NSError *error){
                                  NSLog(@"Error searching for feeds");
                              }];
         }
-        
-        // Reload the table with new searchFeeds
-        [self.tableView_feeds reloadData];
     } else {
         // Switch to the userFeeds datasource
-        self.tableView_feeds.dataSource = userFeedDataSource;
-        [self.tableView_feeds reloadData];
+        [self updateUserFeedDataSource];
     }
 }
 
+/**
+ * Switch to and reload the menu from the searchFeedDataSource
+ */
+- (void)updateSearchFeedDataSource
+{
+    // Switch to the searchFeed datasource
+    self.tableView_feeds.dataSource = searchFeedDataSource;
+    
+    // Reload the table with new searchFeeds
+    [self.tableView_feeds reloadData];
+}
+
+/**
+ * Switch to and reload the menu from the userFeedDataSource
+ */
+- (void)updateUserFeedDataSource
+{
+    // Switch to the searchFeed datasource
+    self.tableView_feeds.dataSource = userFeedDataSource;
+    
+    // Reload the table with new searchFeeds
+    [self.tableView_feeds reloadData];
+}
 
 #pragma mark - Count Methods
 /**
@@ -198,7 +219,6 @@
 {
     return 1;
 }
-
 
 #pragma mark - UITableViewDelegate Methods
 /**
