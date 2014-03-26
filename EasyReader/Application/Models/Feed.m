@@ -80,24 +80,26 @@
 - (void) purgeOldFeedItems
 {
     // Get the number of feed items to remove if there are more than 10
-    NSInteger numberOfFeedsToRemove = [self.feedItems count] > 10 ? [self.feedItems count] - 10 : 0;
+    NSInteger numberOfFeedItemsToRemove = [self.feedItems count] > 10 ? [self.feedItems count] - 10 : 0;
     
     /** 
      * Query and create an array of the oldest feed items from the database
      * Limit the query to only the amount of feed items needed to be removed
      */
-    NSFetchRequest *fetchFeedItemsToRemove = [FeedItem MR_requestAllSortedBy:@"updatedAt" ascending:NO];
-    [fetchFeedItemsToRemove setFetchLimit:numberOfFeedsToRemove];
-    
-    NSArray *feedItemsToRemove = [FeedItem MR_executeFetchRequest:fetchFeedItemsToRemove];
-    
-    // Delete each feed item
-    for (FeedItem *item in feedItemsToRemove)
-    {
-        [item deleteEntity];
+    if(numberOfFeedItemsToRemove){
+        NSFetchRequest *fetchFeedItemsToRemove = [FeedItem MR_requestAllSortedBy:@"updatedAt" ascending:NO];
+        [fetchFeedItemsToRemove setFetchLimit:numberOfFeedItemsToRemove];
+        
+        NSArray *feedItemsToRemove = [FeedItem MR_executeFetchRequest:fetchFeedItemsToRemove];
+        
+        // Delete each feed item
+        for (FeedItem *item in feedItemsToRemove)
+        {
+            [item deleteEntity];
+        }
+        
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
     }
-    
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
 }
 
 @end
