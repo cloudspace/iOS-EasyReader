@@ -21,8 +21,6 @@
 /// The feed's name
 @property (weak, nonatomic) IBOutlet UILabel *label_name;
 
-/// The add feed action
-- (IBAction)addFeedToUser:(id)sender;
 
 #pragma mark - Other Properties
 

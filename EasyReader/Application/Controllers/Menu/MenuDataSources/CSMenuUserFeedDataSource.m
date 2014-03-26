@@ -126,10 +126,8 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Feed *toDelete = [self.sortedFeeds objectAtIndex:indexPath.row];
-        
-        NSMutableSet *mutableSet = [NSMutableSet setWithSet:self.currentUser.feeds];
-        [mutableSet removeObject:toDelete];
-        self.currentUser.feeds = mutableSet;
+
+        [self.currentUser removeFeedsObject:toDelete];
     }
 }
 

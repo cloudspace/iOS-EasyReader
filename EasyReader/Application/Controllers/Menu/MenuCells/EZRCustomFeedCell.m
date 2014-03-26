@@ -34,31 +34,21 @@
 }
 
 /**
- * Attempts to create a new feed and save it to the user
- */
-- (IBAction)button_addFeed_touchUpInside:(id)sender {
-    [Feed createFeedWithUrl:self.label_url.text
-                    success:^(id responseData, NSInteger httpStatus){
-                    }
-                    failure:^(id responseData, NSInteger httpStatus, NSError *error){
-                    }
-     ];
-}
-
-/**
  * Sets the fields in the cell
  *
  * @param feedData The NSDicitionary of the custom feed
  */
 - (void)setFeedData:(NSDictionary *)feedData
 {
+    _feedData = feedData;
+    
     NSString *customUrl = [feedData objectForKey:@"url"];
     self.label_url.text = customUrl;
     
     // Hide the add button unless the user types a valid url
-    [self.button_addFeed setHidden:YES];
+    [self.button_addCustomFeed setHidden:YES];
     if([self isValidUrl:customUrl]){
-        [self.button_addFeed setHidden:NO];
+        [self.button_addCustomFeed setHidden:NO];
     }
 
 }

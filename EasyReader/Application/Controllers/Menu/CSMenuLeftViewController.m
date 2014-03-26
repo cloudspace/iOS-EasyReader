@@ -26,6 +26,9 @@
 #import "CSMenuUserFeedDataSource.h"
 #import "CSMenuSearchFeedDataSource.h"
 
+#import "EZRCustomFeedCell.h"
+#import "CSSearchFeedCell.h"
+
 @interface CSMenuLeftViewController ()
 {
     CSMenuUserFeedDataSource *userFeedDataSource;
@@ -235,6 +238,45 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
+#pragma mark - UITableViewCell IBAction Methods
+
+/**
+ * Attempts to create a new feed and save it to the user
+ *
+ * @param sender The button that sent the action
+ */
+- (IBAction)button_addCustomFeed_touchUpInside:(id)sender {
+    EZRCustomFeedCell *cell = (EZRCustomFeedCell *)[[[sender superview] superview] superview];
+    
+    [Feed createFeedWithUrl:cell.label_url.text
+                    success:^(id responseData, NSInteger httpStatus){
+                        // Notify user that feeds can take time to populate
+                    }
+                    failure:^(id responseData, NSInteger httpStatus, NSError *error){
+                        // Notify user of error
+                    }
+     ];
+}
+
+/**
+ * Add the feed to the user and save it in the database
+ *
+ * @param sender The button that sent the action
+ */
+- (IBAction)button_addSearchedFeed_touchUpInside:(id)sender {
+    CSSearchFeedCell *cell = (CSSearchFeedCell *)[[[sender superview] superview] superview];
+    
+    // Create a new Feed object and associated FeedItem objects
+    Feed *newFeed = [Feed createOrUpdateFirstFromAPIData:cell.feedData];
+    
+    // Add the feed to the currentUsers feeds
+    [self.currentUser addFeedsObject:newFeed];
+    
+    // Save the feed and feed items in the database
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
 }
 
 @end

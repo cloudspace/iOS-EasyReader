@@ -41,10 +41,10 @@
  */
 - (void)setFeed:(Feed *)feed
 {
-    // Set the label text
-    self.label_name.text = feed.name;
+    _feed = feed;
     
-    // Show feed icons
+    self.label_name.text = feed.name;
+
     [self.imageView_icon setHidden:NO];
     [self.imageView setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:nil];
     

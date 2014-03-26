@@ -19,10 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *label_url;
 
 /// Button to add the custom feed
-@property (weak, nonatomic) IBOutlet UIButton *button_addFeed;
+@property (weak, nonatomic) IBOutlet UIButton *button_addCustomFeed;
 
-/// The create feed action
-- (IBAction)button_addFeed_touchUpInside:(id)sender;
 
 #pragma mark - Other Properties
 
