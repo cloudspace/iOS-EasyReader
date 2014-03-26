@@ -92,7 +92,19 @@
     // Dequeue a styled cell
     CSUserFeedCell *cell = (CSUserFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"UserFeedCell"];
     
+    // Get the feed
     Feed *feed = [self.sortedFeeds objectAtIndex:indexPath.row];
+    
+    // Set the cell data
+    [self setFeed:feed forUserFeedCell:cell];
+    return cell;
+}
+
+/**
+ * Set the feed for a user cell
+ */
+- (void)setFeed:(Feed *)feed forUserFeedCell:(CSUserFeedCell *)cell
+{
     cell.feed = feed;
     
     // Set the label text
@@ -101,11 +113,19 @@
     // Show feed icons
     [cell.imageView_icon setHidden:NO];
     [cell.imageView setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:nil];
+    
+    [self setSelectedBackgroundForCell:cell];
+    
+}
 
+/**
+ * Set the selectedBackgroundView for a cell
+ */
+- (void)setSelectedBackgroundForCell:(UITableViewCell *)cell
+{
     UIView *selectedBackgroundView = [[UIView alloc] init];
     [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
     cell.selectedBackgroundView = selectedBackgroundView;
-    return cell;
 }
 
 /**

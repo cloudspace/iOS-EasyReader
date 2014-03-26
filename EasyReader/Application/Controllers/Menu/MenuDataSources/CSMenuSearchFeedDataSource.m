@@ -94,45 +94,68 @@
         // Dequeue a styled cell
         CSSearchFeedCell *cell = (CSSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
         
+        // Get the feed
         NSDictionary *searchedFeed = [self.sortedFeeds objectAtIndex:indexPath.row];
         
-        // Associate the feed to the cell
-        cell.feed = searchedFeed;
-        
-        // Set the label text
-        cell.label_name.text = [searchedFeed objectForKey:@"name"];
-        
-        // Show feed icons
-        NSString *iconUrl = [searchedFeed objectForKey:@"icon"];
-        if (!iconUrl.isBlank) {
-         [cell.imageView setImageWithURL:[NSURL URLWithString:[searchedFeed objectForKey:@"icon"]] placeholderImage:nil];
-        }
-        
-        UIView *selectedBackgroundView = [[UIView alloc] init];
-        [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
-        cell.selectedBackgroundView = selectedBackgroundView;
+        // Set the cell data
+        [self setFeed:searchedFeed forSearchFeedCell:cell];
+
         return cell;
     }
     else{
         // Dequeue a styled cell
         EZRCustomFeedCell *cell = (EZRCustomFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"CustomFeedCell"];
         
+        // Get the feed
         NSDictionary *customFeed = [self.sortedFeeds objectAtIndex:indexPath.row];
-        NSString *customUrl = [customFeed objectForKey:@"url"];
-        cell.label_url.text = customUrl;
-        
-        // Hide the add button unless the user types a valid url
-        [cell.button_addFeed setHidden:YES];
-        if([self isValidUrl:customUrl]){
-            [cell.button_addFeed setHidden:NO];
-        }
-        
-        UIView *selectedBackgroundView = [[UIView alloc] init];
-        [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
-        cell.selectedBackgroundView = selectedBackgroundView;
+
+        // Set the cell data
+        [self setFeed:customFeed forCustomFeedCell:cell];
         
         return cell;
     }
+}
+
+/**
+ * Set the feed for a search cell
+ */
+- (void)setFeed:(NSDictionary *)feed forSearchFeedCell:(CSSearchFeedCell *)cell
+{
+    // Associate the feed to the cell
+    cell.feed = feed;
+    
+    // Set the label text
+    cell.label_name.text = [feed objectForKey:@"name"];
+    
+    [self setSelectedBackgroundForCell:cell];
+}
+
+/**
+ * Set the feed for a custom cell
+ */
+- (void)setFeed:(NSDictionary *)feed forCustomFeedCell:(EZRCustomFeedCell *)cell
+{
+    NSString *customUrl = [feed objectForKey:@"url"];
+    cell.label_url.text = customUrl;
+    
+    // Hide the add button unless the user types a valid url
+    [cell.button_addFeed setHidden:YES];
+    if([self isValidUrl:customUrl]){
+        [cell.button_addFeed setHidden:NO];
+    }
+    
+    [self setSelectedBackgroundForCell:cell];
+
+}
+
+/**
+ * Set the selectedBackgroundView for a cell
+ */
+- (void)setSelectedBackgroundForCell:(UITableViewCell *)cell
+{
+    UIView *selectedBackgroundView = [[UIView alloc] init];
+    [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
+    cell.selectedBackgroundView = selectedBackgroundView;
 }
 
 /**
