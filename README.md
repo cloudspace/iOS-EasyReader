@@ -1,8 +1,8 @@
 iOS-EasyReader
-==============
+===
 
 Project Setup Instructions
---------------------------
+---
 
 1. Install xcode
 2. Get the repo

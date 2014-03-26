@@ -62,12 +62,19 @@
 -(BOOL)shouldAutorotate {
     return NO;
 }
-
+//
+//typedef returnType (^void)(parameterTypes);
+//
+//- (configureFeedItemCell)configureFeedItem
+//- (void) blockForSelector
+//{
+//                           }
 /**
  * Assigns observers for feeds and feed items, puts page controller at start
  */
 - (void) setupFeedItemObserver
 {
+    
     [self observeRelationship:@keypath(self.currentUser.feeds)
                   changeBlock:^(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
                       NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];

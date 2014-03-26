@@ -25,14 +25,27 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum {
+/// Signifies http request method types
+typedef NS_ENUM(NSInteger, APIRequestMethod) {
+    
+    /// Signifies an http GET API request
     kAPIRequestMethodGET,
+    
+    /// Signifies an http POST request
     kAPIRequestMethodPOST,
+    
+    /// Signifies an http PUT request
     kAPIRequestMethodPUT,
+    
+    /// Signifies an http PATCH request
     kAPIRequestMethodPATCH,
+    
+    /// Signifies an http DELETE request
     kAPIRequestMethodDELETE,
+    
+    /// Signifies an http HEAD request
     kAPIRequestMethodHEAD
-} APIRequestMethod;
+};
 
 
 /**
@@ -67,7 +80,7 @@ typedef enum {
 /**
  * Builds a URL String for a given set of parameters
  *
- * @param params The URL Parameters
+ * @param parameters The URL Parameters
  */
 - (NSString *)pathStringForParameters:(NSDictionary *)parameters;
 

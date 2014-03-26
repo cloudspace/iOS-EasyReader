@@ -6,16 +6,15 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSFeedItemUpdater.h"
+#import "EZRFeedItemUpdateService.h"
 #import "FeedItem.h"
 #import "Feed.h"
 #import "User.h"
 
-@implementation CSFeedItemUpdater
+@implementation EZRFeedItemUpdateService
 
 - (void) start
 {
-    
     if (![self hasSetDefaultFeeds])
     {
         [self loadDefaultFeeds];
@@ -25,7 +24,7 @@
         [self requestOneWeekOfFeedItems];
     }
     
-    NSMethodSignature *mySignature = [CSFeedItemUpdater
+    NSMethodSignature *mySignature = [EZRFeedItemUpdateService
                                       instanceMethodSignatureForSelector:@selector(requestFiveMinutesOfFeedItems:)];
     
     NSInvocation *myInvocation = [NSInvocation

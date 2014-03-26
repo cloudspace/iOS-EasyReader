@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		9D458C7218E331B300BC17D6 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9D458C7318E331B400BC17D6 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				9D458C7618E331C800BC17D6 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		0D1F71DE18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */; };
 		0D7987A218DB6AE4004440C3 /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
@@ -30,7 +44,6 @@
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		0DEBD8CB18E202F200284B33 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
 		1884EDB920EE4720B254D07C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
-		274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
 		2751F4D618DA02C100339C96 /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */; };
 		2751F4D718DA02C100339C96 /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D518DA02C100339C96 /* NSObject+CSReflectionAdditions.m */; };
 		2751F4DA18DA0A6B00339C96 /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D918DA0A6B00339C96 /* CSHomeViewController.m */; };
@@ -77,6 +90,10 @@
 		9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
 		9D4355741795C708002C6657 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4355731795C708002C6657 /* Social.framework */; };
 		9D4355761795C9B4002C6657 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4355751795C9B3002C6657 /* MessageUI.framework */; };
+		9D458C6E18E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D458C6D18E3286500BC17D6 /* EZRFeedItemUpdateService.m */; };
+		9D458C6F18E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D458C6D18E3286500BC17D6 /* EZRFeedItemUpdateService.m */; };
+		9D458C7018E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D458C6D18E3286500BC17D6 /* EZRFeedItemUpdateService.m */; };
+		9D458C7118E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D458C6D18E3286500BC17D6 /* EZRFeedItemUpdateService.m */; };
 		9D4FA6E417971D56001E2A65 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E317971D56001E2A65 /* Default-Portrait~ipad.png */; };
 		9D4FA6E617971D5B001E2A65 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */; };
 		9D4FA6E817971E88001E2A65 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */; };
@@ -112,7 +129,6 @@
 		9D79271218DA1D0300E1D3E1 /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		9D79271318DA1D0300E1D3E1 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		9D79271418DA1D0300E1D3E1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
-		9D79271518DA1D0300E1D3E1 /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
 		9D79271718DA1D0300E1D3E1 /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
 		9D79271918DA1D0300E1D3E1 /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
 		9D79271A18DA1D0300E1D3E1 /* CSFeedAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */; };
@@ -165,7 +181,6 @@
 		9D79275618DA1D3800E1D3E1 /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		9D79275718DA1D3800E1D3E1 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		9D79275818DA1D3800E1D3E1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
-		9D79275918DA1D3800E1D3E1 /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
 		9D79275B18DA1D3800E1D3E1 /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
 		9D79275D18DA1D3800E1D3E1 /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
 		9D79275E18DA1D3800E1D3E1 /* CSFeedAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */; };
@@ -236,7 +251,6 @@
 		9D9CBAD218DCC68A00532F8C /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		9D9CBAD318DCC68A00532F8C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		9D9CBAD418DCC68A00532F8C /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
-		9D9CBAD518DCC68A00532F8C /* CSFeedItemUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 274D540518D0E8D80096831A /* CSFeedItemUpdater.m */; };
 		9D9CBAD718DCC68A00532F8C /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
 		9D9CBAD918DCC68A00532F8C /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
 		9D9CBADA18DCC68A00532F8C /* CSRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */; };
@@ -342,8 +356,6 @@
 		0DE51FF218CF911000454E51 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0DE51FF618CF919900454E51 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
 		0DE51FF718CF919900454E51 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
-		274D540418D0E8D80096831A /* CSFeedItemUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFeedItemUpdater.h; path = Api/CSFeedItemUpdater.h; sourceTree = "<group>"; };
-		274D540518D0E8D80096831A /* CSFeedItemUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedItemUpdater.m; path = Api/CSFeedItemUpdater.m; sourceTree = "<group>"; };
 		2751F4D218DA02C100339C96 /* NSObject+CSNilAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CSNilAdditions.h"; sourceTree = "<group>"; };
 		2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CSNilAdditions.m"; sourceTree = "<group>"; };
 		2751F4D418DA02C100339C96 /* NSObject+CSReflectionAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CSReflectionAdditions.h"; sourceTree = "<group>"; };
@@ -388,6 +400,9 @@
 		9D4355731795C708002C6657 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9D4355751795C9B3002C6657 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9D458C6A18E320B100BC17D6 /* rename_feeditem_images.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = rename_feeditem_images.xcdatamodel; sourceTree = "<group>"; };
+		9D458C6C18E3286500BC17D6 /* EZRFeedItemUpdateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRFeedItemUpdateService.h; sourceTree = "<group>"; };
+		9D458C6D18E3286500BC17D6 /* EZRFeedItemUpdateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRFeedItemUpdateService.m; sourceTree = "<group>"; };
+		9D458C7718E3327D00BC17D6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		9D4FA6E317971D56001E2A65 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -578,15 +593,6 @@
 			path = Home/FeedItemCollectionView;
 			sourceTree = "<group>";
 		};
-		2767394818CFA6AC00110C33 /* Api */ = {
-			isa = PBXGroup;
-			children = (
-				274D540418D0E8D80096831A /* CSFeedItemUpdater.h */,
-				274D540518D0E8D80096831A /* CSFeedItemUpdater.m */,
-			);
-			name = Api;
-			sourceTree = "<group>";
-		};
 		8E685AA418DC724000309270 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +701,15 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
+		9D458C6B18E3286500BC17D6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9D458C6C18E3286500BC17D6 /* EZRFeedItemUpdateService.h */,
+				9D458C6D18E3286500BC17D6 /* EZRFeedItemUpdateService.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		9D639E8618E0BAD500350B5F /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,6 +805,7 @@
 		9DAC16BB1709D48E00383722 = {
 			isa = PBXGroup;
 			children = (
+				9D458C7718E3327D00BC17D6 /* README.md */,
 				9DAC16CF1709D48E00383722 /* EasyReader */,
 				9D7927C718DA279B00E1D3E1 /* EasyReader-Tests */,
 				9DAC16C61709D48E00383722 /* Frameworks */,
@@ -846,9 +862,9 @@
 		9DAC1717170A043200383722 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				9D458C6B18E3286500BC17D6 /* Services */,
 				8E685AA418DC724000309270 /* Controls */,
 				2751F4D118DA02C100339C96 /* Categories */,
-				2767394818CFA6AC00110C33 /* Api */,
 				9DAC1718170A043200383722 /* AppDelegates */,
 				9DAC171B170A043200383722 /* Controllers */,
 				9DAC171D170A043200383722 /* Models */,
@@ -1081,6 +1097,7 @@
 				9D79270818DA1D0300E1D3E1 /* Staging */,
 				9D79274C18DA1D3800E1D3E1 /* Production */,
 				9D7927C218DA279B00E1D3E1 /* EasyReader-Tests */,
+				9D458C7218E331B300BC17D6 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -1258,6 +1275,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
+		9D458C7618E331C800BC17D6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"Easy Reader\" \\\n--project-company \"Cloudspace\" \\\n--company-id \"com.cloudspace\" \\\n--output \"${PROJECT_DIR}/Documentation\" \\\n--install-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--merge-categories \\\n--exit-threshold 2 \\\n--docset-platform-family iphoneos \\\n--ignore \"*.m\" \\\n--ignore \"Pods/\" \\\n--index-desc \"${PROJECT_DIR}/README.markdown\" \\\n\"${PROJECT_DIR}/${PROJECT_NAME}/\"";
+		};
 		9D79274518DA1D0300E1D3E1 /* Auto Increment Version */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1367,6 +1397,7 @@
 				9D9CBAC318DCC52900532F8C /* CSApplicationStyleService.m in Sources */,
 				9D639E7818E0A52300350B5F /* APIMockRequest.m in Sources */,
 				0D9A836018E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */,
+				9D458C7018E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */,
 				9D79270A18DA1D0300E1D3E1 /* Feed.m in Sources */,
 				0DEBD8CB18E202F200284B33 /* APIRouter.m in Sources */,
 				9D79270B18DA1D0300E1D3E1 /* CSAppDelegate.m in Sources */,
@@ -1385,7 +1416,6 @@
 				9D639E7218E0A4E000350B5F /* APIClient.m in Sources */,
 				0D9A835A18E0AA4300D8376E /* CSSearchFeedCell.m in Sources */,
 				9D096C3418DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */,
-				9D79271518DA1D0300E1D3E1 /* CSFeedItemUpdater.m in Sources */,
 				9D639E7E18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D79271718DA1D0300E1D3E1 /* CSMenuLeftViewController.m in Sources */,
 				9D79271918DA1D0300E1D3E1 /* Easy Reader.xcdatamodeld in Sources */,
@@ -1410,6 +1440,7 @@
 				9D9CBAC418DCC52A00532F8C /* CSApplicationStyleService.m in Sources */,
 				9D639E7918E0A52300350B5F /* APIMockRequest.m in Sources */,
 				0D9A836118E0CE5000D8376E /* EZRCustomFeedCell.m in Sources */,
+				9D458C7118E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */,
 				9D79274E18DA1D3800E1D3E1 /* Feed.m in Sources */,
 				9D79274F18DA1D3800E1D3E1 /* CSAppDelegate.m in Sources */,
 				9D79275018DA1D3800E1D3E1 /* main.m in Sources */,
@@ -1427,7 +1458,6 @@
 				0D9A835818E0AA4000D8376E /* CSUserFeedCell.m in Sources */,
 				9D16D35018DBA9E9001E9C38 /* APIRouter.m in Sources */,
 				9D096C3518DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */,
-				9D79275918DA1D3800E1D3E1 /* CSFeedItemUpdater.m in Sources */,
 				9D639E7F18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D79275B18DA1D3800E1D3E1 /* CSMenuLeftViewController.m in Sources */,
 				9D639E6A18E08CED00350B5F /* CSSearchFeedCell.m in Sources */,
@@ -1462,6 +1492,7 @@
 				9D9CBAC818DCC68A00532F8C /* CSApplicationStyleService.m in Sources */,
 				0D9A835F18E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */,
 				9D9CBAC918DCC68A00532F8C /* Feed.m in Sources */,
+				9D458C6F18E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */,
 				9D9CBACA18DCC68A00532F8C /* CSAppDelegate.m in Sources */,
 				9D9CBACB18DCC68A00532F8C /* main.m in Sources */,
 				9D9CBACC18DCC68A00532F8C /* CSHomeViewController.m in Sources */,
@@ -1476,7 +1507,6 @@
 				9D9CBAD318DCC68A00532F8C /* User.m in Sources */,
 				9D639E7718E0A52300350B5F /* APIMockRequest.m in Sources */,
 				9D9CBAD418DCC68A00532F8C /* APIRouter.m in Sources */,
-				9D9CBAD518DCC68A00532F8C /* CSFeedItemUpdater.m in Sources */,
 				0D9A835918E0AA4300D8376E /* CSSearchFeedCell.m in Sources */,
 				0D9A835618E0AA3F00D8376E /* CSUserFeedCell.m in Sources */,
 				9D096C3318DCE9D40043423B /* CSMenuSearchFeedDataSource.m in Sources */,
@@ -1505,6 +1535,7 @@
 				9D16D33D18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
 				9D9CBABF18DC826700532F8C /* CSApplicationStyleService.m in Sources */,
 				9D639E7618E0A52300350B5F /* APIMockRequest.m in Sources */,
+				9D458C6E18E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */,
 				0D9A835E18E0C82200D8376E /* EZRCustomFeedCell.m in Sources */,
 				0DE51FF818CF919900454E51 /* Feed.m in Sources */,
 				9DAC172D170A043200383722 /* CSAppDelegate.m in Sources */,
@@ -1519,7 +1550,6 @@
 				0DE51FF418CF911000454E51 /* FeedItem.m in Sources */,
 				0DE51FF518CF911000454E51 /* User.m in Sources */,
 				9D639E7018E0A4E000350B5F /* APIClient.m in Sources */,
-				274D540618D0E8D80096831A /* CSFeedItemUpdater.m in Sources */,
 				0D7987A218DB6AE4004440C3 /* CSUserFeedCell.m in Sources */,
 				0D7987B218DB8F69004440C3 /* CSMenuUserFeedDataSource.m in Sources */,
 				9D639E7C18E0A53100350B5F /* APIMockResponse.m in Sources */,
@@ -1562,6 +1592,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9D458C7418E331B400BC17D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9D458C7518E331B400BC17D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		9D79274818DA1D0300E1D3E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5CECD14CAE964A1994399D15 /* Pods.xcconfig */;
@@ -1840,6 +1884,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9D458C7318E331B400BC17D6 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D458C7418E331B400BC17D6 /* Debug */,
+				9D458C7518E331B400BC17D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		9D79274718DA1D0300E1D3E1 /* Build configuration list for PBXNativeTarget "Staging" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
