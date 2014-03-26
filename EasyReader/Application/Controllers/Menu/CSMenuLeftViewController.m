@@ -170,11 +170,11 @@
 
             [Feed requestFeedsByName:self.textField_searchInput.text
                              success:^(id responseData, NSInteger httpStatus){
-                                NSDictionary *feeds = [responseData objectForKey:@"feeds"];
+                                NSDictionary *feeds = responseData[@"feeds"];
                                  
                                 // Don't show feed the user has already added
                                 for ( NSDictionary *feed in feeds){
-                                    if ([self.currentUser hasFeedWithURL:[feed objectForKey:@"url"]] == NO) {
+                                    if ([self.currentUser hasFeedWithURL:feed[@"url"]] == NO) {
                                         [searchedFeeds addObject:feed];
                                     }
                                 }
