@@ -19,6 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *button_addFeed;
 
 /// The create feed action
-- (IBAction)createFeed:(id)sender;
+- (IBAction)createFeedFromUrl:(id)sender;
 
 @end

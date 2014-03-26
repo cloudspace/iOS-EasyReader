@@ -328,7 +328,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="createFeed:" destination="Omc-hY-KcW" eventType="touchUpInside" id="JfW-9o-LhQ"/>
+                                                        <action selector="createFeedFromUrl:" destination="Omc-hY-KcW" eventType="touchUpInside" id="giQ-PY-iQt"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
