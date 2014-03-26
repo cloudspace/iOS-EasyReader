@@ -18,8 +18,8 @@
 #import "User.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
-
 #import "CSFeedItemCell.h"
+
 
 @interface CSHomeViewController ()
 {
@@ -45,7 +45,7 @@
     [self setUpVerticalScrollView];
     [self setUpCollectionView];
     [self setUpWebView];
-    [self setupFeedItemObserver];
+    [self setupFeedsObserver];
 }
 
 - (void)viewDidLayoutSubviews
@@ -70,79 +70,94 @@
 //{
 //                           }
 /**
- * Assigns observers for feeds and feed items, puts page controller at start
+ * Assigns observers for feeds
  */
-- (void) setupFeedItemObserver
+- (void) setupFeedsObserver
 {
     
     [self observeRelationship:@keypath(self.currentUser.feeds)
-                  changeBlock:^(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
-                      NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
-                      NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
-                      
-                      [addedFeeds removeObjectsInArray:[old allObjects]];
-                      [removedFeeds removeObjectsInArray:[new allObjects]];
-                      
-                      for ( Feed *feed in removedFeeds ){
-                          [feed removeAllObservations];
-                          
-                          // Remove feed items associated to the feed
-                          for( FeedItem *item in feed.feedItems ){
-                              [_feedItems removeObject:item];
-                          }
-                          
-                          // Delete feed which will cascade delete feed items
-                          [feed deleteEntity];
-                          [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
-                      }
-                      
-                      for ( Feed *feed in addedFeeds ){
-                          [feed observeRelationship:@"feedItems"
-                                        changeBlock:^(__weak Feed *feed, NSSet *old, NSSet *new) {
-                                            
-                                            _feedItems = [(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems];
-                                            
-                                            if(!new) {
-                                                NSLog(@"There are no feeds here");
-                                            } else {
-                                                NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
-                                                NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
-                                                
-                                                [addedFeedItems removeObjectsInArray:[old allObjects]];
-                                                [removedFeedItems removeObjectsInArray:[new allObjects]];
-                                                
-                                                for( FeedItem *item in removedFeedItems ){
-                                                    [_feedItems removeObject:item];
-                                                }
-                                                
-                                                for( FeedItem *item in addedFeedItems ){
-                                                    [_feedItems addObject:item];
-                                                }
-                                                
-                                                [_pageControl_itemIndicator.button_newItem setHidden:NO];
-                                            }
-                                        }
-                                     insertionBlock:nil
-                                       removalBlock:nil
-                                   replacementBlock:nil];
-                      }
-                      //redraw the collection with the changes to the feed items
-                      [_feedCollectionViewDataSource sortFeedItems];
-                      [_collectionView_feedItems reloadData];
-                      _pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
-                      
-                      if(_currentFeedItem){
-                          [self scrollToCurrentFeedItem];
-                          [_pageControl_itemIndicator setPageControllerPageAtIndex:[_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem]
-                                                                     forCollection:_feedItems];
-                      } else {
-                          [_pageControl_itemIndicator setPageControllerPageAtIndex:0 forCollection:_feedItems];
-                      }
+                  changeBlock:^(__weak CSHomeViewController *self, NSSet *old, NSSet *new){
+                    [self feedsDidChange:old new:new];
                   }
                insertionBlock:nil
                  removalBlock:nil
              replacementBlock:nil
      ];
+}
+
+/**
+ * Assigns observers for feedsItems when feeds array on current user changes
+ */
+-(void) feedsDidChange:(NSSet*)old new:(NSSet*)new
+{
+    NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
+    NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
+    
+    [addedFeeds removeObjectsInArray:[old allObjects]];
+    [removedFeeds removeObjectsInArray:[new allObjects]];
+    
+    for ( Feed *feed in removedFeeds ){
+      [feed removeAllObservations];
+      
+      // Remove feed items associated to the feed
+      for( FeedItem *item in feed.feedItems ){
+        [_feedItems removeObject:item];
+      }
+      
+      // Delete feed which will cascade delete feed items
+      [feed deleteEntity];
+      [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    }
+    
+    for ( Feed *feed in addedFeeds ){
+      [feed observeRelationship:@"feedItems"
+                    changeBlock:^(__weak Feed *feed, NSSet *old, NSSet *new) {
+                      [self feedItemsDidChange:old new:new];
+                    }
+                 insertionBlock:nil
+                   removalBlock:nil
+               replacementBlock:nil];
+    }
+    //redraw the collection with the changes to the feed items
+    [_feedCollectionViewDataSource sortFeedItems];
+    [_collectionView_feedItems reloadData];
+    _pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
+      
+    if(_currentFeedItem){
+      [self scrollToCurrentFeedItem];
+      [_pageControl_itemIndicator setPageControllerPageAtIndex:[_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem]
+                                                 forCollection:_feedItems];
+    } else {
+      [_pageControl_itemIndicator setPageControllerPageAtIndex:0 forCollection:_feedItems];
+    }
+}
+
+/**
+ * Called when feedItems array on observed feeds change, shows new item button on page control
+ */
+-(void) feedItemsDidChange:(NSSet*)old new:(NSSet*)new
+{
+  _feedItems = [(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems];
+
+  if(!new) {
+    NSLog(@"There are no feeds here");
+  } else {
+    NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
+    NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
+    
+    [addedFeedItems removeObjectsInArray:[old allObjects]];
+    [removedFeedItems removeObjectsInArray:[new allObjects]];
+    
+    for( FeedItem *item in removedFeedItems ){
+      [_feedItems removeObject:item];
+    }
+    
+    for( FeedItem *item in addedFeedItems ){
+      [_feedItems addObject:item];
+    }
+    
+    [_pageControl_itemIndicator.button_newItem setHidden:NO];
+  }
 }
 
 #pragma mark - IBActions
@@ -161,7 +176,7 @@
     NSInteger width = self.verticalScrollView.frame.size.width;
     NSInteger height = self.verticalScrollView.frame.size.height;
     self.verticalScrollView.contentSize = CGSizeMake(width, height*2);
-    
+  
     self.verticalScrollView.pagingEnabled =YES;
     self.verticalScrollView.delegate = self;
 }
@@ -173,7 +188,7 @@
 {
     //    NSArray *feedItems = [FeedItem MR_findAll];
     NSSet *feedItems = _currentUser.feedItems;
-    
+  
     _feedCollectionViewDataSource =
     [[CSFeedItemCollectionViewDataSource alloc] initWithFeedItems:feedItems
                                            reusableCellIdentifier:@"feedItemCell"
