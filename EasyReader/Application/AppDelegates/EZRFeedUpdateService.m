@@ -8,6 +8,9 @@
 
 #import "EZRFeedUpdateService.h"
 #import "EZRFeedItemUpdateService.h"
+#import "User.h"
+#import "Feed.h"
+#import "FeedItem.h"
 
 @implementation EZRFeedUpdateService
 
@@ -21,7 +24,13 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    User *currentUser = [User current];
     
+    // Purge old feed items for each feed
+    for (Feed *feed in currentUser.feeds) {
+        [feed purgeOldFeedItems];
+    }
 }
+
 
 @end
