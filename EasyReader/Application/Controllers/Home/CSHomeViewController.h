@@ -15,7 +15,6 @@
 // View Controllers
 #import "CSBaseViewController.h"
 #import "CSFeedItemCollectionViewDataSource.h"
-#import "CSCollectionPageControlDelegate.h"
 
 @class User;
 
@@ -23,9 +22,10 @@
  * The home view controller for the application
  */
 @interface CSHomeViewController : CSBaseViewController <
-  UICollectionViewDelegate,
-  UIScrollViewDelegate,
-  CSCollectionPageControlDelegate
+    UICollectionViewDelegate,
+    UIScrollViewDelegate,
+    CSCollectionPageControlDelegate,
+    CSCollectionPageControlDataSource
 >
 
 

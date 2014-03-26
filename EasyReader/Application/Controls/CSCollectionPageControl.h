@@ -8,21 +8,40 @@
 
 #import <UIKit/UIKit.h>
 @class CSHomeViewController;
+@class CSCollectionPageControl;
+
+
+#pragma mark - CSCollectionPageControlDelegate
+
+/**
+ * This protocol represents the behaviour of the the page control.
+ */
+@protocol CSCollectionPageControlDelegate <NSObject>
+
+/**
+ * Tells the delegate that the specified page index was selected
+ *
+ * @param pageControl A Page Control informing the delegate about a new page selection
+ * @param index An index locating the selected page
+ */
+- (void)pageControl:(CSCollectionPageControl*)pageControl didSelectPageAtIndex:(NSInteger)index;
+
+@end
+
+
+#pragma mark - CSCollectionPageControl
 
 /**
  * Customized Page Control for collections of items
  */
 @interface CSCollectionPageControl : UIPageControl
 
-/**
- * The delegate for this class
- */
-@property (nonatomic, retain) id delegate;
 
 # pragma mark - Properties
 
-/// Sorted Collection of items set from main view's datasource
-@property NSArray *collection;
+/// The object that acts as the delegate of the receiving page control
+@property (nonatomic, assign) id<CSCollectionPageControlDelegate> delegate;
+
 
 # pragma mark - Methods
 

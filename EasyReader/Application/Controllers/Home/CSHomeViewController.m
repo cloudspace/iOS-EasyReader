@@ -250,6 +250,30 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
     }
 }
 
+#pragma mark - CSCollectionPageControlDelegate methods
+
+- (void)pageControl:(CSCollectionPageControl *)pageControl didSelectPageAtIndex:(NSInteger)index
+{
+    
+    [self scrollToCurrentFeedItem];
+
+    [self.collectionView_feedItems scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]
+                                          atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+                                                  animated:YES];
+//    self setCurrentFeedItem:_co
+//    
+//    
+//    [self.delegate setCurrentFeedItem:[_collection firstObject]];
+//    [self.delegate scrollToCurrentFeedItem];
+//    [self setPageControllerPageAtIndex:[_collection indexOfObject:[self.delegate currentFeedItem]]];
+
+}
+
+- (NSInteger)numberOfPagesForPageControl:(CSCollectionPageControl *)pageControl
+{
+    return [self.feedItems count];
+}
+
 # pragma mark - ScrollView methods
 
 /**
@@ -284,6 +308,18 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 }
 
 # pragma mark - CollectionView Delegate methods
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if([scrollView isMemberOfClass:[CSFeedItemCollectionView class]]) {
+        CGFloat pageWidth = _collectionView_feedItems.frame.size.width;
+        
+        // We add half the page width to the offset to consider the most-centered page to be the current one, not
+        // the page currently under the leftmost position of the view
+        NSInteger pageIndex = ((scrollView.contentOffset.x + pageWidth/2.0) / pageWidth);
+        
+        [self.pageControl_itemIndicator setCurrentPage:(int)pageIndex];
+    }
+}
 
 /**
  * Collection view delegate method for updating current feed item webview url
