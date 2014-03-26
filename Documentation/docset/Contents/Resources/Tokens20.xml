@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CSUserFeedCell.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CSUserFeedCell</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/setImageView_icon:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_icon</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/imageView_icon</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_icon</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSUserFeedCell/imageView_icon</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_icon</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/setLabel_name:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
+			
+			
+			<Anchor>//api/name/label_name</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/label_name</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
+			
+			
+			<Anchor>//api/name/label_name</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSUserFeedCell/label_name</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
+			
+			
+			<Anchor>//api/name/label_name</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/setFeed:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) Feed *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/feed</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) Feed *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSUserFeedCell/feed</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) Feed *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

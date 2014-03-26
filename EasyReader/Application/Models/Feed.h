@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "CSBaseObject.h"
+#import "CSRemoteObject.h"
 
 @class FeedItem, User;
 
@@ -18,7 +18,7 @@
 /**
  * An RSS Feed
  */
-@interface Feed : CSBaseObject
+@interface Feed : CSRemoteObject
 
 
 #pragma mark  - Core Data Properties

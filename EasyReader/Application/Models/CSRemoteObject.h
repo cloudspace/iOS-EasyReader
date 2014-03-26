@@ -18,7 +18,7 @@
 /**
  * A base for NSManagedObjects that represent objects in a remote API object
  */
-@interface CSBaseObject : NSManagedObject
+@interface CSRemoteObject : NSManagedObject
 
 #pragma mark - Instance creation from API Data helpers
 

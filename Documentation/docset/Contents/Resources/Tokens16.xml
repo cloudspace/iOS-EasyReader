@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CSMenuSearchFeedDataSource.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CSMenuSearchFeedDataSource</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+            
+			
+			<NodeRef refid="16"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/setFeeds:</TokenIdentifier>
+			<Abstract type="html">Feeds used to populate the menu table</Abstract>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
+			
+			
+			<Anchor>//api/name/feeds</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/feeds</TokenIdentifier>
+			<Abstract type="html">Feeds used to populate the menu table</Abstract>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
+			
+			
+			<Anchor>//api/name/feeds</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSMenuSearchFeedDataSource/feeds</TokenIdentifier>
+			<Abstract type="html">Feeds used to populate the menu table</Abstract>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
+			
+			
+			<Anchor>//api/name/feeds</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/setSortedFeeds:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray *sortedFeeds</Declaration>
+			
+			
+			<Anchor>//api/name/sortedFeeds</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/sortedFeeds</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray *sortedFeeds</Declaration>
+			
+			
+			<Anchor>//api/name/sortedFeeds</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSMenuSearchFeedDataSource/sortedFeeds</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray *sortedFeeds</Declaration>
+			
+			
+			<Anchor>//api/name/sortedFeeds</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/updateWithFeeds:</TokenIdentifier>
+			<Abstract type="html">Updates the list of feeds used to populate the menu table</Abstract>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>- (void)updateWithFeeds:(NSMutableSet *)feeds</Declaration>
+			
+			
+			<Anchor>//api/name/updateWithFeeds:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

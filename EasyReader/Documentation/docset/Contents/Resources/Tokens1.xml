@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/APIClient.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/APIClient</TokenIdentifier>
+			<Abstract type="html">A client interface to an API</Abstract>
+			<DeclaredIn>APIClient.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/APIClient/shared</TokenIdentifier>
+			<Abstract type="html">Returns a shared APIClient instance</Abstract>
+			<DeclaredIn>APIClient.h</DeclaredIn>
+			
+			<Declaration>+ (APIClient *)shared</Declaration>
+			
+			
+			<Anchor>//api/name/shared</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIClient/requestRoute:parameters:success:failure:</TokenIdentifier>
+			<Abstract type="html">Makes a request to a named route</Abstract>
+			<DeclaredIn>APIClient.h</DeclaredIn>
+			
+			<Declaration>- (void)requestRoute:(NSString *)routeName parameters:(NSDictionary *)parameters success:(APISuccessBlock)success failure:(APIFailureBlock)failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>routeName</Name>
+					<Abstract type="html">The route name to use for this request</Abstract>
+				</Parameter><Parameter>
+					<Name>parameters</Name>
+					<Abstract type="html">The params to use in the API request</Abstract>
+				</Parameter><Parameter>
+					<Name>success</Name>
+					<Abstract type="html">The block to be executed on request success</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">The block to be executed on request failure</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/requestRoute:parameters:success:failure:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

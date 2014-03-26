@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "CSBaseObject.h"
+#import "CSRemoteObject.h"
 
 @class Feed;
 
@@ -17,7 +17,7 @@
 /**
  * An EasyReader User generally one per project
  */
-@interface User : CSBaseObject
+@interface User : CSRemoteObject
 
 
 #pragma mark - Core Data Properties

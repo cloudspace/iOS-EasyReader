@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/EZRCustomFeedCell.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRCustomFeedCell</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+            
+			
+			<NodeRef refid="23"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRCustomFeedCell/setLabel_url:</TokenIdentifier>
+			<Abstract type="html">The custom feed url</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_url</Declaration>
+			
+			
+			<Anchor>//api/name/label_url</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRCustomFeedCell/label_url</TokenIdentifier>
+			<Abstract type="html">The custom feed url</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_url</Declaration>
+			
+			
+			<Anchor>//api/name/label_url</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRCustomFeedCell/label_url</TokenIdentifier>
+			<Abstract type="html">The custom feed url</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_url</Declaration>
+			
+			
+			<Anchor>//api/name/label_url</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

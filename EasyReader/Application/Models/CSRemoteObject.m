@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSBaseObject.h"
+#import "CSRemoteObject.h"
 
-@implementation CSBaseObject
+@implementation CSRemoteObject
 
 - (APIClient *)client
 {
@@ -87,7 +87,7 @@
             }
             else if ([propertyData[@"type"] isEqualToString:@"NSDate"])
             {
-                [self setValue:[CSBaseObject dateFromAPIDateString:userData[underscoreKey]]
+                [self setValue:[CSRemoteObject dateFromAPIDateString:userData[underscoreKey]]
                         forKey:propertyData[@"name"]];
             }
             else if ([propertyData[@"type"] isEqualToString:@"NSNumber"])
@@ -119,7 +119,7 @@
     Class klass = NSClassFromString(className);
     
     // Only continue if we're dealing with remote object descendants
-    if (![klass isSubclassOfClass:[CSBaseObject class]]) return;
+    if (![klass isSubclassOfClass:[CSRemoteObject class]]) return;
     
     //
     if (className && [data isKindOfClass:[NSArray class]])
@@ -130,7 +130,7 @@
         // Repopulate with new info
         for (NSDictionary *nestedObjectData in data)
         {
-            CSBaseObject *newObject = [klass createOrUpdateFirstFromAPIData:nestedObjectData];
+            CSRemoteObject *newObject = [klass createOrUpdateFirstFromAPIData:nestedObjectData];
             
             NSString *addMethodName = [[NSString stringWithFormat:@"add_%@_object:", [key underscore]] camelizeWithLowerFirstLetter];
             SEL addObjectSelector = NSSelectorFromString(addMethodName);

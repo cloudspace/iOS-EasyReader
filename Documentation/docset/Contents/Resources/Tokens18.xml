@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CSRootViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CSRootViewController</TokenIdentifier>
+			<Abstract type="html">A root view controller</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="18"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRootViewController/setViewController_menuLeft:</TokenIdentifier>
+			<Abstract type="html">The left side swipe menu</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UIViewController *viewController_menuLeft</Declaration>
+			
+			
+			<Anchor>//api/name/viewController_menuLeft</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRootViewController/viewController_menuLeft</TokenIdentifier>
+			<Abstract type="html">The left side swipe menu</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UIViewController *viewController_menuLeft</Declaration>
+			
+			
+			<Anchor>//api/name/viewController_menuLeft</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSRootViewController/viewController_menuLeft</TokenIdentifier>
+			<Abstract type="html">The left side swipe menu</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UIViewController *viewController_menuLeft</Declaration>
+			
+			
+			<Anchor>//api/name/viewController_menuLeft</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRootViewController/setViewController_main:</TokenIdentifier>
+			<Abstract type="html">The main controller that sits at the top of the app</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UIViewController *viewController_main</Declaration>
+			
+			
+			<Anchor>//api/name/viewController_main</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRootViewController/viewController_main</TokenIdentifier>
+			<Abstract type="html">The main controller that sits at the top of the app</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UIViewController *viewController_main</Declaration>
+			
+			
+			<Anchor>//api/name/viewController_main</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSRootViewController/viewController_main</TokenIdentifier>
+			<Abstract type="html">The main controller that sits at the top of the app</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UIViewController *viewController_main</Declaration>
+			
+			
+			<Anchor>//api/name/viewController_main</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRootViewController/toggleLeftMenu</TokenIdentifier>
+			<Abstract type="html">Toggles the left side menu</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)toggleLeftMenu</Declaration>
+			
+			
+			<Anchor>//api/name/toggleLeftMenu</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

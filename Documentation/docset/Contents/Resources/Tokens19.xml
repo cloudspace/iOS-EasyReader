@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CSSearchFeedCell.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CSSearchFeedCell</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+            
+			
+			<NodeRef refid="19"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/setImageView_icon:</TokenIdentifier>
+			<Abstract type="html">The feed&apos;s icon</Abstract>
+			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_icon</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/imageView_icon</TokenIdentifier>
+			<Abstract type="html">The feed&apos;s icon</Abstract>
+			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_icon</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSSearchFeedCell/imageView_icon</TokenIdentifier>
+			<Abstract type="html">The feed&apos;s icon</Abstract>
+			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_icon</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/setLabel_name:</TokenIdentifier>
+			<Abstract type="html">The feed&apos;s name</Abstract>
+			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
+			
+			
+			<Anchor>//api/name/label_name</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/label_name</TokenIdentifier>
+			<Abstract type="html">The feed&apos;s name</Abstract>
+			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
+			
+			
+			<Anchor>//api/name/label_name</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSSearchFeedCell/label_name</TokenIdentifier>
+			<Abstract type="html">The feed&apos;s name</Abstract>
+			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
+			
+			
+			<Anchor>//api/name/label_name</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/addFeedToUser:</TokenIdentifier>
+			<Abstract type="html">The add feed action</Abstract>
+			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			
+			<Declaration>- (IBAction)addFeedToUser:(id)sender</Declaration>
+			
+			
+			<Anchor>//api/name/addFeedToUser:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/setFeed:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) NSDictionary *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/feed</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) NSDictionary *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSSearchFeedCell/feed</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) NSDictionary *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

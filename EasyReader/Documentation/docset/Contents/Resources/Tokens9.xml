@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CSBaseObject.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CSBaseObject</TokenIdentifier>
+			<Abstract type="html">A base for NSManagedObjects that represent objects in a remote API object</Abstract>
+			<DeclaredIn>CSBaseObject.h</DeclaredIn>
+            
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/CSBaseObject/createOrUpdateFirstFromAPIData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSBaseObject.h</DeclaredIn>
+			
+			<Declaration>+ (id)createOrUpdateFirstFromAPIData:(NSDictionary *)remoteObjectData</Declaration>
+			
+			
+			<Anchor>//api/name/createOrUpdateFirstFromAPIData:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSBaseObject/setClient:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSBaseObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
+			
+			
+			<Anchor>//api/name/client</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSBaseObject/client</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSBaseObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
+			
+			
+			<Anchor>//api/name/client</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSBaseObject/client</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSBaseObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
+			
+			
+			<Anchor>//api/name/client</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/CSBaseObject/client</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSBaseObject.h</DeclaredIn>
+			
+			<Declaration>+ (APIClient *)client</Declaration>
+			
+			
+			<Anchor>//api/name/client</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

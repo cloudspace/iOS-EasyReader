@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/APIRequestMethod.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/APIRequestMethod</TokenIdentifier>
+			<Abstract type="html">Signifies http request method types</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
+            
+			
+			<NodeRef refid="35"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kAPIRequestMethodGET</TokenIdentifier>
+            <Abstract type="html">Signifies an http GET API request</Abstract>
+            <Declaration>kAPIRequestMethodGET</Declaration>
+            
+            <DeclaredIn>APIRoute.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kAPIRequestMethodPOST</TokenIdentifier>
+            <Abstract type="html">Signifies an http POST request</Abstract>
+            <Declaration>kAPIRequestMethodPOST</Declaration>
+            
+            <DeclaredIn>APIRoute.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kAPIRequestMethodPUT</TokenIdentifier>
+            <Abstract type="html">Signifies an http PUT request</Abstract>
+            <Declaration>kAPIRequestMethodPUT</Declaration>
+            
+            <DeclaredIn>APIRoute.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kAPIRequestMethodPATCH</TokenIdentifier>
+            <Abstract type="html">Signifies an http PATCH request</Abstract>
+            <Declaration>kAPIRequestMethodPATCH</Declaration>
+            
+            <DeclaredIn>APIRoute.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kAPIRequestMethodDELETE</TokenIdentifier>
+            <Abstract type="html">Signifies an http DELETE request</Abstract>
+            <Declaration>kAPIRequestMethodDELETE</Declaration>
+            
+            <DeclaredIn>APIRoute.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kAPIRequestMethodHEAD</TokenIdentifier>
+            <Abstract type="html">Signifies an http HEAD request</Abstract>
+            <Declaration>kAPIRequestMethodHEAD</Declaration>
+            
+            <DeclaredIn>APIRoute.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+	</File>
+</Tokens>
