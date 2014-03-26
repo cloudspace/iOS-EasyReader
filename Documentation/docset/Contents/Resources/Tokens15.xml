@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSMenuLeftViewController.html">
+	<File path="Classes/CSMenuSearchFeedDataSource.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSMenuLeftViewController</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/CSMenuSearchFeedDataSource</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -13,81 +13,9 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuLeftViewController/setTableView_feeds:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) IBOutlet UITableView *tableView_feeds</Declaration>
-			
-			
-			<Anchor>//api/name/tableView_feeds</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuLeftViewController/tableView_feeds</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) IBOutlet UITableView *tableView_feeds</Declaration>
-			
-			
-			<Anchor>//api/name/tableView_feeds</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSMenuLeftViewController/tableView_feeds</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) IBOutlet UITableView *tableView_feeds</Declaration>
-			
-			
-			<Anchor>//api/name/tableView_feeds</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuLeftViewController/setTextField_searchInput:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
-			
-			<Declaration>@property (strong, nonatomic) IBOutlet UITextField *textField_searchInput</Declaration>
-			
-			
-			<Anchor>//api/name/textField_searchInput</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuLeftViewController/textField_searchInput</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
-			
-			<Declaration>@property (strong, nonatomic) IBOutlet UITextField *textField_searchInput</Declaration>
-			
-			
-			<Anchor>//api/name/textField_searchInput</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSMenuLeftViewController/textField_searchInput</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
-			
-			<Declaration>@property (strong, nonatomic) IBOutlet UITextField *textField_searchInput</Declaration>
-			
-			
-			<Anchor>//api/name/textField_searchInput</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuLeftViewController/setFeeds:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/setFeeds:</TokenIdentifier>
+			<Abstract type="html">Feeds used to populate the menu table</Abstract>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
 			
@@ -97,9 +25,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuLeftViewController/feeds</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/feeds</TokenIdentifier>
+			<Abstract type="html">Feeds used to populate the menu table</Abstract>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
 			
@@ -109,9 +37,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSMenuLeftViewController/feeds</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CSMenuSearchFeedDataSource/feeds</TokenIdentifier>
+			<Abstract type="html">Feeds used to populate the menu table</Abstract>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
 			
@@ -121,38 +49,50 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuLeftViewController/setCurrentUser:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/setSortedFeeds:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) User *currentUser</Declaration>
+			<Declaration>@property (nonatomic, strong) NSArray *sortedFeeds</Declaration>
 			
 			
-			<Anchor>//api/name/currentUser</Anchor>
+			<Anchor>//api/name/sortedFeeds</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuLeftViewController/currentUser</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/sortedFeeds</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) User *currentUser</Declaration>
+			<Declaration>@property (nonatomic, strong) NSArray *sortedFeeds</Declaration>
 			
 			
-			<Anchor>//api/name/currentUser</Anchor>
+			<Anchor>//api/name/sortedFeeds</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSMenuLeftViewController/currentUser</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/CSMenuSearchFeedDataSource/sortedFeeds</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuLeftViewController.h</DeclaredIn>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) User *currentUser</Declaration>
+			<Declaration>@property (nonatomic, strong) NSArray *sortedFeeds</Declaration>
 			
 			
-			<Anchor>//api/name/currentUser</Anchor>
+			<Anchor>//api/name/sortedFeeds</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/updateWithFeeds:</TokenIdentifier>
+			<Abstract type="html">Updates the list of feeds used to populate the menu table</Abstract>
+			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>- (void)updateWithFeeds:(NSMutableSet *)feeds</Declaration>
+			
+			
+			<Anchor>//api/name/updateWithFeeds:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSFeedItemCell.html">
+	<File path="Classes/CSFeedItemCollectionView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSFeedItemCell</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CSFeedItemCollectionView</TokenIdentifier>
+			<Abstract type="html">A collection view built to hold feed items</Abstract>
+			<DeclaredIn>CSFeedItemCollectionView.h</DeclaredIn>
             
 			
 			<NodeRef refid="11"/>
@@ -13,218 +13,38 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCell/setInfo_view:</TokenIdentifier>
-			<Abstract type="html">The feed item information view</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionView/setCurrentFeedItem:</TokenIdentifier>
+			<Abstract type="html">The feed item that is currently focused</Abstract>
+			<DeclaredIn>CSFeedItemCollectionView.h</DeclaredIn>
 			
-			<Declaration>@property (weak, nonatomic) IBOutlet UIView *info_view</Declaration>
+			<Declaration>@property (nonatomic, readonly) FeedItem *currentFeedItem</Declaration>
 			
 			
-			<Anchor>//api/name/info_view</Anchor>
+			<Anchor>//api/name/currentFeedItem</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCell/info_view</TokenIdentifier>
-			<Abstract type="html">The feed item information view</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionView/currentFeedItem</TokenIdentifier>
+			<Abstract type="html">The feed item that is currently focused</Abstract>
+			<DeclaredIn>CSFeedItemCollectionView.h</DeclaredIn>
 			
-			<Declaration>@property (weak, nonatomic) IBOutlet UIView *info_view</Declaration>
+			<Declaration>@property (nonatomic, readonly) FeedItem *currentFeedItem</Declaration>
 			
 			
-			<Anchor>//api/name/info_view</Anchor>
+			<Anchor>//api/name/currentFeedItem</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCell/info_view</TokenIdentifier>
-			<Abstract type="html">The feed item information view</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCollectionView/currentFeedItem</TokenIdentifier>
+			<Abstract type="html">The feed item that is currently focused</Abstract>
+			<DeclaredIn>CSFeedItemCollectionView.h</DeclaredIn>
 			
-			<Declaration>@property (weak, nonatomic) IBOutlet UIView *info_view</Declaration>
-			
-			
-			<Anchor>//api/name/info_view</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCell/setLabel_headline:</TokenIdentifier>
-			<Abstract type="html">The feed item headline</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) IBOutlet UILabel *label_headline</Declaration>
+			<Declaration>@property (nonatomic, readonly) FeedItem *currentFeedItem</Declaration>
 			
 			
-			<Anchor>//api/name/label_headline</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCell/label_headline</TokenIdentifier>
-			<Abstract type="html">The feed item headline</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) IBOutlet UILabel *label_headline</Declaration>
-			
-			
-			<Anchor>//api/name/label_headline</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCell/label_headline</TokenIdentifier>
-			<Abstract type="html">The feed item headline</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) IBOutlet UILabel *label_headline</Declaration>
-			
-			
-			<Anchor>//api/name/label_headline</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCell/setLabel_source:</TokenIdentifier>
-			<Abstract type="html">The feed item&apos;s source</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) IBOutlet UILabel *label_source</Declaration>
-			
-			
-			<Anchor>//api/name/label_source</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCell/label_source</TokenIdentifier>
-			<Abstract type="html">The feed item&apos;s source</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) IBOutlet UILabel *label_source</Declaration>
-			
-			
-			<Anchor>//api/name/label_source</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCell/label_source</TokenIdentifier>
-			<Abstract type="html">The feed item&apos;s source</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) IBOutlet UILabel *label_source</Declaration>
-			
-			
-			<Anchor>//api/name/label_source</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCell/setImageView_background:</TokenIdentifier>
-			<Abstract type="html">The associated feed item image</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) IBOutlet UIImageView *imageView_background</Declaration>
-			
-			
-			<Anchor>//api/name/imageView_background</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCell/imageView_background</TokenIdentifier>
-			<Abstract type="html">The associated feed item image</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) IBOutlet UIImageView *imageView_background</Declaration>
-			
-			
-			<Anchor>//api/name/imageView_background</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCell/imageView_background</TokenIdentifier>
-			<Abstract type="html">The associated feed item image</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) IBOutlet UIImageView *imageView_background</Declaration>
-			
-			
-			<Anchor>//api/name/imageView_background</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCell/setLabel_summary:</TokenIdentifier>
-			<Abstract type="html">The feed item summary</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_summary</Declaration>
-			
-			
-			<Anchor>//api/name/label_summary</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCell/label_summary</TokenIdentifier>
-			<Abstract type="html">The feed item summary</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_summary</Declaration>
-			
-			
-			<Anchor>//api/name/label_summary</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCell/label_summary</TokenIdentifier>
-			<Abstract type="html">The feed item summary</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_summary</Declaration>
-			
-			
-			<Anchor>//api/name/label_summary</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCell/setFeedItem:</TokenIdentifier>
-			<Abstract type="html">The feed item this cell is based on</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) FeedItem *feedItem</Declaration>
-			
-			
-			<Anchor>//api/name/feedItem</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCell/feedItem</TokenIdentifier>
-			<Abstract type="html">The feed item this cell is based on</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) FeedItem *feedItem</Declaration>
-			
-			
-			<Anchor>//api/name/feedItem</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCell/feedItem</TokenIdentifier>
-			<Abstract type="html">The feed item this cell is based on</Abstract>
-			<DeclaredIn>CSFeedItemCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) FeedItem *feedItem</Declaration>
-			
-			
-			<Anchor>//api/name/feedItem</Anchor>
+			<Anchor>//api/name/currentFeedItem</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
