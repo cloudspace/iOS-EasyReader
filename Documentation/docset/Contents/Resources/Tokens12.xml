@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSFeedItemCollectionViewDataSource.html">
+	<File path="Classes/CSHomeViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSFeedItemCollectionViewDataSource</TokenIdentifier>
-			<Abstract type="html">The data source for the FeedCollectionView&apos;s UICollectionView</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CSHomeViewController</TokenIdentifier>
+			<Abstract type="html">The home view controller for the application</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="12"/>
@@ -13,41 +13,189 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/initWithFeedItems:reusableCellIdentifier:configureBlock:</TokenIdentifier>
-			<Abstract type="html">Initializes the data source with a reusable cell identifier</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/setVerticalScrollView:</TokenIdentifier>
+			<Abstract type="html">Vertical scroll view holding collection view and webviews</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithFeedItems:(NSSet *)feedItems reusableCellIdentifier:(NSString *)reusableCellIdentifier configureBlock:(configureFeedItemCell)configureFeedItemCell</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>configureFeedItemCell</Name>
-					<Abstract type="html">A block which will configure the cell based on the given FeedItem</Abstract>
-				</Parameter><Parameter>
-					<Name>The</Name>
-					<Abstract type="html">identifier to use to dequeue reusable cells for the collection view</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (weak, nonatomic) IBOutlet UIScrollView *verticalScrollView</Declaration>
 			
-			<Anchor>//api/name/initWithFeedItems:reusableCellIdentifier:configureBlock:</Anchor>
+			
+			<Anchor>//api/name/verticalScrollView</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/sortFeedItems</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/verticalScrollView</TokenIdentifier>
+			<Abstract type="html">Vertical scroll view holding collection view and webviews</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)sortFeedItems</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet UIScrollView *verticalScrollView</Declaration>
 			
 			
-			<Anchor>//api/name/sortFeedItems</Anchor>
+			<Anchor>//api/name/verticalScrollView</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/setFeedItems:</TokenIdentifier>
-			<Abstract type="html">The FeedItems for this data source</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CSHomeViewController/verticalScrollView</TokenIdentifier>
+			<Abstract type="html">Vertical scroll view holding collection view and webviews</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIScrollView *verticalScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/verticalScrollView</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/setButton_leftMenu:</TokenIdentifier>
+			<Abstract type="html">Button to go to left menu</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet UIButton *button_leftMenu</Declaration>
+			
+			
+			<Anchor>//api/name/button_leftMenu</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/button_leftMenu</TokenIdentifier>
+			<Abstract type="html">Button to go to left menu</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet UIButton *button_leftMenu</Declaration>
+			
+			
+			<Anchor>//api/name/button_leftMenu</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSHomeViewController/button_leftMenu</TokenIdentifier>
+			<Abstract type="html">Button to go to left menu</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet UIButton *button_leftMenu</Declaration>
+			
+			
+			<Anchor>//api/name/button_leftMenu</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/setPageControl_itemIndicator:</TokenIdentifier>
+			<Abstract type="html">Feed position indicator</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet CSCollectionPageControl *pageControl_itemIndicator</Declaration>
+			
+			
+			<Anchor>//api/name/pageControl_itemIndicator</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/pageControl_itemIndicator</TokenIdentifier>
+			<Abstract type="html">Feed position indicator</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet CSCollectionPageControl *pageControl_itemIndicator</Declaration>
+			
+			
+			<Anchor>//api/name/pageControl_itemIndicator</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSHomeViewController/pageControl_itemIndicator</TokenIdentifier>
+			<Abstract type="html">Feed position indicator</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet CSCollectionPageControl *pageControl_itemIndicator</Declaration>
+			
+			
+			<Anchor>//api/name/pageControl_itemIndicator</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/setCollectionView_feedItems:</TokenIdentifier>
+			<Abstract type="html">The collection view which holds the individual feed items</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet CSFeedItemCollectionView *collectionView_feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/collectionView_feedItems</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/collectionView_feedItems</TokenIdentifier>
+			<Abstract type="html">The collection view which holds the individual feed items</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet CSFeedItemCollectionView *collectionView_feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/collectionView_feedItems</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSHomeViewController/collectionView_feedItems</TokenIdentifier>
+			<Abstract type="html">The collection view which holds the individual feed items</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet CSFeedItemCollectionView *collectionView_feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/collectionView_feedItems</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/setFeedItemWebView:</TokenIdentifier>
+			<Abstract type="html">Displays website that hosts article</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIWebView *feedItemWebView</Declaration>
+			
+			
+			<Anchor>//api/name/feedItemWebView</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/feedItemWebView</TokenIdentifier>
+			<Abstract type="html">Displays website that hosts article</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIWebView *feedItemWebView</Declaration>
+			
+			
+			<Anchor>//api/name/feedItemWebView</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSHomeViewController/feedItemWebView</TokenIdentifier>
+			<Abstract type="html">Displays website that hosts article</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIWebView *feedItemWebView</Declaration>
+			
+			
+			<Anchor>//api/name/feedItemWebView</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/setFeedItems:</TokenIdentifier>
+			<Abstract type="html">Feed items on user</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSMutableSet *feedItems</Declaration>
 			
@@ -57,9 +205,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/feedItems</TokenIdentifier>
-			<Abstract type="html">The FeedItems for this data source</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/feedItems</TokenIdentifier>
+			<Abstract type="html">Feed items on user</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSMutableSet *feedItems</Declaration>
 			
@@ -69,9 +217,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCollectionViewDataSource/feedItems</TokenIdentifier>
-			<Abstract type="html">The FeedItems for this data source</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CSHomeViewController/feedItems</TokenIdentifier>
+			<Abstract type="html">Feed items on user</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSMutableSet *feedItems</Declaration>
 			
@@ -81,38 +229,158 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/setSortedFeedItems:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/setCurrentUser:</TokenIdentifier>
+			<Abstract type="html">Current User</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSArray *sortedFeedItems</Declaration>
+			<Declaration>@property (nonatomic, retain) User *currentUser</Declaration>
 			
 			
-			<Anchor>//api/name/sortedFeedItems</Anchor>
+			<Anchor>//api/name/currentUser</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/sortedFeedItems</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/currentUser</TokenIdentifier>
+			<Abstract type="html">Current User</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSArray *sortedFeedItems</Declaration>
+			<Declaration>@property (nonatomic, retain) User *currentUser</Declaration>
 			
 			
-			<Anchor>//api/name/sortedFeedItems</Anchor>
+			<Anchor>//api/name/currentUser</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCollectionViewDataSource/sortedFeedItems</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CSHomeViewController/currentUser</TokenIdentifier>
+			<Abstract type="html">Current User</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSArray *sortedFeedItems</Declaration>
+			<Declaration>@property (nonatomic, retain) User *currentUser</Declaration>
 			
 			
-			<Anchor>//api/name/sortedFeedItems</Anchor>
+			<Anchor>//api/name/currentUser</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/setFeedCollectionViewDataSource:</TokenIdentifier>
+			<Abstract type="html">Data source for Collection view</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property CSFeedItemCollectionViewDataSource *feedCollectionViewDataSource</Declaration>
+			
+			
+			<Anchor>//api/name/feedCollectionViewDataSource</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/feedCollectionViewDataSource</TokenIdentifier>
+			<Abstract type="html">Data source for Collection view</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property CSFeedItemCollectionViewDataSource *feedCollectionViewDataSource</Declaration>
+			
+			
+			<Anchor>//api/name/feedCollectionViewDataSource</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSHomeViewController/feedCollectionViewDataSource</TokenIdentifier>
+			<Abstract type="html">Data source for Collection view</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property CSFeedItemCollectionViewDataSource *feedCollectionViewDataSource</Declaration>
+			
+			
+			<Anchor>//api/name/feedCollectionViewDataSource</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/setCurrentFeedItem:</TokenIdentifier>
+			<Abstract type="html">Feed Item currently visible</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property FeedItem *currentFeedItem</Declaration>
+			
+			
+			<Anchor>//api/name/currentFeedItem</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/currentFeedItem</TokenIdentifier>
+			<Abstract type="html">Feed Item currently visible</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property FeedItem *currentFeedItem</Declaration>
+			
+			
+			<Anchor>//api/name/currentFeedItem</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSHomeViewController/currentFeedItem</TokenIdentifier>
+			<Abstract type="html">Feed Item currently visible</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property FeedItem *currentFeedItem</Declaration>
+			
+			
+			<Anchor>//api/name/currentFeedItem</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/setCollectionCellGoingTo:</TokenIdentifier>
+			<Abstract type="html">Integer id for the Collection cell that user is scrolling to</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger collectionCellGoingTo</Declaration>
+			
+			
+			<Anchor>//api/name/collectionCellGoingTo</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/collectionCellGoingTo</TokenIdentifier>
+			<Abstract type="html">Integer id for the Collection cell that user is scrolling to</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger collectionCellGoingTo</Declaration>
+			
+			
+			<Anchor>//api/name/collectionCellGoingTo</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSHomeViewController/collectionCellGoingTo</TokenIdentifier>
+			<Abstract type="html">Integer id for the Collection cell that user is scrolling to</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger collectionCellGoingTo</Declaration>
+			
+			
+			<Anchor>//api/name/collectionCellGoingTo</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSHomeViewController/scrollToCurrentFeedItem</TokenIdentifier>
+			<Abstract type="html">Scrolls through collection view to display whatever item is set to currentItem</Abstract>
+			<DeclaredIn>CSHomeViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)scrollToCurrentFeedItem</Declaration>
+			
+			
+			<Anchor>//api/name/scrollToCurrentFeedItem</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		

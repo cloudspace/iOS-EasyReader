@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSMenuUserFeedDataSource.html">
+	<File path="Classes/CSRemoteObject.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSMenuUserFeedDataSource</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CSRemoteObject</TokenIdentifier>
+			<Abstract type="html">A base for NSManagedObjects that represent objects in a remote API object</Abstract>
+			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
             
 			
 			<NodeRef refid="16"/>
@@ -13,122 +13,67 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuUserFeedDataSource/setFeeds:</TokenIdentifier>
-			<Abstract type="html">Feeds used to populate the menu table</Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/CSRemoteObject/createOrUpdateFirstFromAPIData:</TokenIdentifier>
+			<Abstract type="html">Creates or updates an object base on API data</Abstract>
+			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
+			<Declaration>+ (id)createOrUpdateFirstFromAPIData:(NSDictionary *)remoteObjectData</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>remoteObjectData</Name>
+					<Abstract type="html">the api data to update/create based on</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/feeds</Anchor>
+			<Anchor>//api/name/createOrUpdateFirstFromAPIData:</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuUserFeedDataSource/feeds</TokenIdentifier>
-			<Abstract type="html">Feeds used to populate the menu table</Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRemoteObject/setClient:</TokenIdentifier>
+			<Abstract type="html">Returns a shared singleton API client for this object</Abstract>
+			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
+			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
 			
 			
-			<Anchor>//api/name/feeds</Anchor>
+			<Anchor>//api/name/client</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSMenuUserFeedDataSource/feeds</TokenIdentifier>
-			<Abstract type="html">Feeds used to populate the menu table</Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRemoteObject/client</TokenIdentifier>
+			<Abstract type="html">Returns a shared singleton API client for this object</Abstract>
+			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
+			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
 			
 			
-			<Anchor>//api/name/feeds</Anchor>
+			<Anchor>//api/name/client</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuUserFeedDataSource/setSortedFeeds:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CSRemoteObject/client</TokenIdentifier>
+			<Abstract type="html">Returns a shared singleton API client for this object</Abstract>
+			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSArray *sortedFeeds</Declaration>
+			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
 			
 			
-			<Anchor>//api/name/sortedFeeds</Anchor>
+			<Anchor>//api/name/client</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuUserFeedDataSource/sortedFeeds</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/CSRemoteObject/client</TokenIdentifier>
+			<Abstract type="html">Returns a shared singleton API Client for this class</Abstract>
+			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSArray *sortedFeeds</Declaration>
-			
-			
-			<Anchor>//api/name/sortedFeeds</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSMenuUserFeedDataSource/sortedFeeds</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSArray *sortedFeeds</Declaration>
+			<Declaration>+ (APIClient *)client</Declaration>
 			
 			
-			<Anchor>//api/name/sortedFeeds</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuUserFeedDataSource/setCurrentUser:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) User *currentUser</Declaration>
-			
-			
-			<Anchor>//api/name/currentUser</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuUserFeedDataSource/currentUser</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) User *currentUser</Declaration>
-			
-			
-			<Anchor>//api/name/currentUser</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSMenuUserFeedDataSource/currentUser</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) User *currentUser</Declaration>
-			
-			
-			<Anchor>//api/name/currentUser</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuUserFeedDataSource/updateWithFeeds:</TokenIdentifier>
-			<Abstract type="html">Updates the list of feeds used to populate the menu table</Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
-			
-			<Declaration>- (void)updateWithFeeds:(NSMutableSet *)feeds</Declaration>
-			
-			
-			<Anchor>//api/name/updateWithFeeds:</Anchor>
+			<Anchor>//api/name/client</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		

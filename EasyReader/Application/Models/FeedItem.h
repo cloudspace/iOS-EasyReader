@@ -38,9 +38,13 @@
 /// The time this feed item was created
 @property (nonatomic, retain) NSDate * createdAt;
 
-
+/// The related iPhone retina sized image
 @property (nonatomic, retain) NSString * image_iphone_retina;
+
+/// The related iPad sized image
 @property (nonatomic, retain) NSString * image_ipad;
+
+/// The related iPad retina sized image
 @property (nonatomic, retain) NSString * image_ipad_retina;
 
 /// The article URL for this feed item
@@ -64,15 +68,15 @@
 /**
  * Requests new feed items from a group of feeds
  *
- * @param feeds
- * @param startAt
+ * @param feeds The feeds to request new items for
+ * @param startAt The time minimum createdAt time for requested feeditems
  * @param success A block to be run on API call success
  * @param failure A block to be run on API call failure
  */
 + (void) requestFeedItemsFromFeeds:(NSSet *)feeds
-                             Since:(NSDate *)startAt
-                           success:(APISuccessBlock)successBlock
-                           failure:(APIFailureBlock)failureBlock;
+                             since:(NSDate *)startAt
+                           success:(APISuccessBlock)success
+                           failure:(APIFailureBlock)failure;
 
 
 @end

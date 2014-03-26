@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class User;
-
 /**
  * A UITableViewDataSource for feeds in Core Data
  */
@@ -17,20 +15,8 @@
 
 #pragma mark - Properties
 
-/**
- * Feeds used to populate the menu table
- */
-@property (nonatomic, retain) NSMutableSet *feeds;
-@property (nonatomic, strong) NSArray *sortedFeeds;
+/// The feeds this data source will use to provide table data
+@property (nonatomic, retain) NSSet *feeds;
 
-@property (nonatomic, retain) User *currentUser;
-
-
-#pragma mark - Methods
-
-/**
- * Updates the list of feeds used to populate the menu table
- */
-- (void)updateWithFeeds:(NSMutableSet *)feeds;
 
 @end

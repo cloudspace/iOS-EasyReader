@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSFeedItemCell.h"
+#import "EZRFeedItemCell.h"
 #import "UIColor+EZRSharedColorAdditions.h"
 
-@implementation CSFeedItemCell
+@implementation EZRFeedItemCell
 
 - (id)initWithFrame:(CGRect)frame
 {

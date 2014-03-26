@@ -13,6 +13,7 @@
  */
 @interface UIColor (EZRSharedColorAdditions)
 
+
 #pragma mark - Color Methods
 
 /// The menu background color
@@ -23,6 +24,13 @@
 
 /// The gradient background color
 + (UIColor *) EZR_charcoal;
+
+/**
+ * The charcoal gradient background with a given opacity
+ *
+ * @param opacity The opacity
+ */
 + (UIColor *) EZR_charcoalWithOpacity:(float)opacity;
+
 
 @end

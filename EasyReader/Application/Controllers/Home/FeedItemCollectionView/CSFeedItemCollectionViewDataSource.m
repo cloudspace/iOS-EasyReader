@@ -9,15 +9,24 @@
 #import "CSFeedItemCollectionViewDataSource.h"
 #import "CSHomeViewController.h"
 #import "FeedItem.h"
-#import "CSFeedItemCell.h"
+#import "EZRFeedItemCell.h"
 
 @implementation CSFeedItemCollectionViewDataSource
-{  
-  /// A block which will configure a cell based on a given FeedItem
-  void (^_configureFeedItemCell)(CSFeedItemCell *, FeedItem *feedItem);
-  
-  /// The identifier to use to dequeue reusable cells for the collection view
-  NSString *_reusableCellIdentifier;
+{
+    /// A block which will configure a cell based on a given FeedItem
+    void (^_configureFeedItemCell)(EZRFeedItemCell *, FeedItem *feedItem);
+    
+    /// The identifier to use to dequeue reusable cells for the collection view
+    NSString *_reusableCellIdentifier;
+    
+    // A sorted array of feed items
+    NSArray *_sortedFeedItems;
+}
+
+- (void)setFeedItems:(NSMutableSet *)feedItems
+{
+    _feedItems = feedItems;
+    _sortedFeedItems = [self sortFeedItems:feedItems];
 }
 
 /**
@@ -25,25 +34,27 @@
  */
 - (id)initWithFeedItems:(NSSet *)feedItems
  reusableCellIdentifier:(NSString *)reusableCellIdentifier
-         configureBlock:(void (^)(CSFeedItemCell *, FeedItem *))configureFeedItemCell
+         configureBlock:(void (^)(EZRFeedItemCell *, FeedItem *))configureFeedItemCell
 {
-  self = [super init];
-  
-  if (self)
-  {
-    _feedItems = [NSMutableSet setWithSet:feedItems];
-    _reusableCellIdentifier = reusableCellIdentifier;
-    _configureFeedItemCell = configureFeedItemCell;
+    self = [super init];
     
-    _sortedFeedItems = [[NSArray alloc] init];
-    [self sortFeedItems];
-  }
+    if (self)
+    {
+        [self setFeedItems:feedItems];
+        
+        _reusableCellIdentifier = reusableCellIdentifier;
+        _configureFeedItemCell = configureFeedItemCell;
+    }
     
-  return self;
+    return self;
 }
 
-// Sort feedItems by updatedAt
-- (void)sortFeedItems
+/**
+ * Sorts a set of feed items by the updatedAt time
+ *
+ * @params feedItems The set of feed items to sort
+ */
+- (NSArray *)sortFeedItems:(NSSet *)feedItems
 {
     NSArray *sortableArray = [NSArray arrayWithArray:[self.feedItems allObjects]];
     
@@ -51,7 +62,8 @@
     sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"updatedAt"
                                                  ascending:NO];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    self.sortedFeedItems = [sortableArray sortedArrayUsingDescriptors:sortDescriptors];
+    
+    return [sortableArray sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 /**
@@ -61,7 +73,7 @@
  */
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-  return 1;
+    return 1;
 }
 
 
@@ -73,7 +85,7 @@
  */
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-  return [_sortedFeedItems count];
+    return [_sortedFeedItems count];
 }
 
 /**
@@ -84,15 +96,15 @@
  */
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-  CSFeedItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:_reusableCellIdentifier
-                                                                         forIndexPath:indexPath];
-  
-  FeedItem *item = [_sortedFeedItems objectAtIndex:indexPath.row];
-  _configureFeedItemCell(cell, item);
-  
-  [(CSHomeViewController*)collectionView.delegate setCollectionCellGoingTo:indexPath.row];
-  
-  return cell;
+    EZRFeedItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:_reusableCellIdentifier
+                                                                     forIndexPath:indexPath];
+    
+    FeedItem *item = [_sortedFeedItems objectAtIndex:indexPath.row];
+    _configureFeedItemCell(cell, item);
+    
+    [(CSHomeViewController*)collectionView.delegate setCollectionCellGoingTo:indexPath.row];
+    
+    return cell;
 }
 
 @end

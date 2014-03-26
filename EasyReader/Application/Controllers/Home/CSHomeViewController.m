@@ -18,7 +18,7 @@
 #import "User.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
-#import "CSFeedItemCell.h"
+#import "EZRFeedItemCell.h"
 
 typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSSet *new);
 
@@ -107,10 +107,11 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
             for( FeedItem *item in feed.feedItems ){
                 [_feedItems removeObject:item];
             }
-            
-            // Delete feed which will cascade delete feed items
-            [feed deleteEntity];
-            [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+
+// Commenting this out because it should not be called here and should not be needed here
+//            // Delete feed which will cascade delete feed items
+//            [feed deleteEntity];
+//            [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
         }
         
         for ( Feed *feed in addedFeeds ){
@@ -120,8 +121,9 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
                          removalBlock:nil
                      replacementBlock:nil];
         }
+        
         //redraw the collection with the changes to the feed items
-        [_feedCollectionViewDataSource sortFeedItems];
+        [_feedCollectionViewDataSource setFeedItems:_currentUser.feedItems];
         [_collectionView_feedItems reloadData];
         _pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
         
@@ -143,7 +145,7 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 -(ObserverBlock) feedItemsDidChange
 {
     ObserverBlock block = ^void(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
-        _feedItems = [(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems];
+        _feedItems = [[(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems] mutableCopy];
         
         if(!new) {
             NSLog(@"There are no feeds here");
@@ -227,7 +229,7 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
  */
 - (configureFeedItemCell)configureFeedItem
 {
-    return ^void(CSFeedItemCell *cell, FeedItem *feedItem) {
+    return ^void(EZRFeedItemCell *cell, FeedItem *feedItem) {
         cell.label_headline.text = feedItem.title;
         cell.label_source.text = feedItem.headline;
         cell.label_summary.text = feedItem.summary;

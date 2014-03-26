@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/EZRCustomFeedCell.html">
+	<File path="Classes/EZRFeedItemCell.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/EZRCustomFeedCell</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRFeedItemCell</TokenIdentifier>
+			<Abstract type="html">A feed item cell in the main easy reader collection view</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
             
 			
 			<NodeRef refid="23"/>
@@ -13,38 +13,218 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EZRCustomFeedCell/setLabel_url:</TokenIdentifier>
-			<Abstract type="html">The custom feed url</Abstract>
-			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/setInfo_view:</TokenIdentifier>
+			<Abstract type="html">The feed item information view</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
 			
-			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_url</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet UIView *info_view</Declaration>
 			
 			
-			<Anchor>//api/name/label_url</Anchor>
+			<Anchor>//api/name/info_view</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EZRCustomFeedCell/label_url</TokenIdentifier>
-			<Abstract type="html">The custom feed url</Abstract>
-			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/info_view</TokenIdentifier>
+			<Abstract type="html">The feed item information view</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
 			
-			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_url</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet UIView *info_view</Declaration>
 			
 			
-			<Anchor>//api/name/label_url</Anchor>
+			<Anchor>//api/name/info_view</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/EZRCustomFeedCell/label_url</TokenIdentifier>
-			<Abstract type="html">The custom feed url</Abstract>
-			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRFeedItemCell/info_view</TokenIdentifier>
+			<Abstract type="html">The feed item information view</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
 			
-			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_url</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet UIView *info_view</Declaration>
 			
 			
-			<Anchor>//api/name/label_url</Anchor>
+			<Anchor>//api/name/info_view</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/setLabel_headline:</TokenIdentifier>
+			<Abstract type="html">The feed item headline</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) IBOutlet UILabel *label_headline</Declaration>
+			
+			
+			<Anchor>//api/name/label_headline</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/label_headline</TokenIdentifier>
+			<Abstract type="html">The feed item headline</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) IBOutlet UILabel *label_headline</Declaration>
+			
+			
+			<Anchor>//api/name/label_headline</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRFeedItemCell/label_headline</TokenIdentifier>
+			<Abstract type="html">The feed item headline</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) IBOutlet UILabel *label_headline</Declaration>
+			
+			
+			<Anchor>//api/name/label_headline</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/setLabel_source:</TokenIdentifier>
+			<Abstract type="html">The feed item&apos;s source</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) IBOutlet UILabel *label_source</Declaration>
+			
+			
+			<Anchor>//api/name/label_source</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/label_source</TokenIdentifier>
+			<Abstract type="html">The feed item&apos;s source</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) IBOutlet UILabel *label_source</Declaration>
+			
+			
+			<Anchor>//api/name/label_source</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRFeedItemCell/label_source</TokenIdentifier>
+			<Abstract type="html">The feed item&apos;s source</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) IBOutlet UILabel *label_source</Declaration>
+			
+			
+			<Anchor>//api/name/label_source</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/setImageView_background:</TokenIdentifier>
+			<Abstract type="html">The associated feed item image</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) IBOutlet UIImageView *imageView_background</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_background</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/imageView_background</TokenIdentifier>
+			<Abstract type="html">The associated feed item image</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) IBOutlet UIImageView *imageView_background</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_background</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRFeedItemCell/imageView_background</TokenIdentifier>
+			<Abstract type="html">The associated feed item image</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) IBOutlet UIImageView *imageView_background</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_background</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/setLabel_summary:</TokenIdentifier>
+			<Abstract type="html">The feed item summary</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_summary</Declaration>
+			
+			
+			<Anchor>//api/name/label_summary</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/label_summary</TokenIdentifier>
+			<Abstract type="html">The feed item summary</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_summary</Declaration>
+			
+			
+			<Anchor>//api/name/label_summary</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRFeedItemCell/label_summary</TokenIdentifier>
+			<Abstract type="html">The feed item summary</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_summary</Declaration>
+			
+			
+			<Anchor>//api/name/label_summary</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/setFeedItem:</TokenIdentifier>
+			<Abstract type="html">The feed item this cell is based on</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) FeedItem *feedItem</Declaration>
+			
+			
+			<Anchor>//api/name/feedItem</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/feedItem</TokenIdentifier>
+			<Abstract type="html">The feed item this cell is based on</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) FeedItem *feedItem</Declaration>
+			
+			
+			<Anchor>//api/name/feedItem</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRFeedItemCell/feedItem</TokenIdentifier>
+			<Abstract type="html">The feed item this cell is based on</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) FeedItem *feedItem</Declaration>
+			
+			
+			<Anchor>//api/name/feedItem</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		

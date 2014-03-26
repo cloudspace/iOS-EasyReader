@@ -50,11 +50,16 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/UIColor/EZR_charcoalWithOpacity:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">The charcoal gradient background with a given opacity</Abstract>
 			<DeclaredIn>UIColor+EZRSharedColorAdditions.h</DeclaredIn>
 			
 			<Declaration>+ (UIColor *)EZR_charcoalWithOpacity:(float)opacity</Declaration>
-			
+			<Parameters>
+				<Parameter>
+					<Name>opacity</Name>
+					<Abstract type="html">The opacity</Abstract>
+				</Parameter>
+			</Parameters>
 			
 			<Anchor>//api/name/EZR_charcoalWithOpacity:</Anchor>
             <NodeRef refid="34"/>

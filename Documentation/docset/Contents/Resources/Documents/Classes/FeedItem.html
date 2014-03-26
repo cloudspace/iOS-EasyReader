@@ -68,7 +68,7 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestFeedItemsFromFeeds:Since:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestFeedItemsFromFeeds:Since:success:failure:</option>
+	<option value="//api/name/requestFeedItemsFromFeeds:since:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestFeedItemsFromFeeds:since:success:failure:</option>
 	
 	
 	
@@ -126,7 +126,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestFeedItemsFromFeeds:Since:success:failure:">requestFeedItemsFromFeeds:Since:success:failure:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestFeedItemsFromFeeds:since:success:failure:">requestFeedItemsFromFeeds:since:success:failure:</a></span></li>
 	
 </ul></li>
 
@@ -257,7 +257,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestFeedItemsFromFeeds:Since:success:failure:">+&nbsp;requestFeedItemsFromFeeds:Since:success:failure:</a></code>
+		<code><a href="#//api/name/requestFeedItemsFromFeeds:since:success:failure:">+&nbsp;requestFeedItemsFromFeeds:since:success:failure:</a></code>
 	</span>
 	
 	
@@ -423,10 +423,35 @@
 	<h3 class="subsubtitle method-title">image_ipad</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>The related iPad sized image</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *image_ipad</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -434,10 +459,35 @@
 	<h3 class="subsubtitle method-title">image_ipad_retina</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>The related iPad retina sized image</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *image_ipad_retina</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -445,10 +495,35 @@
 	<h3 class="subsubtitle method-title">image_iphone_retina</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>The related iPhone retina sized image</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *image_iphone_retina</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -640,8 +715,8 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestFeedItemsFromFeeds:Since:success:failure:" title="requestFeedItemsFromFeeds:Since:success:failure:"></a>
-	<h3 class="subsubtitle method-title">requestFeedItemsFromFeeds:Since:success:failure:</h3>
+	<a name="//api/name/requestFeedItemsFromFeeds:since:success:failure:" title="requestFeedItemsFromFeeds:since:success:failure:"></a>
+	<h3 class="subsubtitle method-title">requestFeedItemsFromFeeds:since:success:failure:</h3>
 	
 	
 	
@@ -651,12 +726,22 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)requestFeedItemsFromFeeds:(NSSet *)<em>feeds</em> Since:(NSDate *)<em>startAt</em> success:(APISuccessBlock)<em>successBlock</em> failure:(APIFailureBlock)<em>failureBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)requestFeedItemsFromFeeds:(NSSet *)<em>feeds</em> since:(NSDate *)<em>startAt</em> success:(APISuccessBlock)<em>success</em> failure:(APIFailureBlock)<em>failure</em></code></div>
 
     
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>feeds</em></dt>
+			<dd><p>The feeds to request new items for</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>startAt</em></dt>
+			<dd><p>The time minimum <a href="#//api/name/createdAt">createdAt</a> time for requested feeditems</p></dd>
+		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>success</em></dt>
@@ -675,12 +760,6 @@
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>@param feeds
-@param startAt</p>
-	</div>
 	
 	
 	

@@ -43,13 +43,13 @@
 }
 
 + (void) requestFeedItemsFromFeeds:(NSSet  *)feeds
-                             Since:(NSDate *)startAt
-                           success:(APISuccessBlock)successBlock
-                           failure:(APIFailureBlock)failureBlock
+                             since:(NSDate *)startAt
+                           success:(APISuccessBlock)success
+                           failure:(APIFailureBlock)failure
 {
     if ([feeds count] == 0)
     {
-        if (successBlock) successBlock(nil, 0);
+        if (success) success(nil, 0);
         return;
     }
     
@@ -67,9 +67,9 @@
     [[self client] requestRoute:@"feedItems"
                      parameters:params success:^(id responseObject, NSInteger httpStatus) {
                          [self saveParsedResponseData:responseObject];
-                         if(successBlock) successBlock(responseObject, httpStatus);
+                         if(success) success(responseObject, httpStatus);
                       }
-                        failure:failureBlock];
+                        failure:failure];
 }
 
 + (void) saveParsedResponseData:(id)responseData

@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "FeedItem.h"
 
-@interface CSFeedItemCell : UICollectionViewCell
+/**
+ * A feed item cell in the main easy reader collection view
+ */
+@interface EZRFeedItemCell : UICollectionViewCell
 
 
 #pragma mark - IBOutlets

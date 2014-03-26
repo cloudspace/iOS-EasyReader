@@ -59,6 +59,8 @@
 	
 	<option value="//api/name/addFeedsObject:">&nbsp;&nbsp;&nbsp;&nbsp;- addFeedsObject:</option>
 	
+	<option value="//api/name/hasFeedWithURL:">&nbsp;&nbsp;&nbsp;&nbsp;- hasFeedWithURL:</option>
+	
 	<option value="//api/name/removeFeeds:">&nbsp;&nbsp;&nbsp;&nbsp;- removeFeeds:</option>
 	
 	<option value="//api/name/removeFeedsObject:">&nbsp;&nbsp;&nbsp;&nbsp;- removeFeedsObject:</option>
@@ -110,6 +112,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addFeeds:">addFeeds:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addFeedsObject:">addFeedsObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasFeedWithURL:">hasFeedWithURL:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeFeeds:">removeFeeds:</a></span></li>
 	
@@ -185,6 +189,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/current">+&nbsp;current</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasFeedWithURL:">&ndash;&nbsp;hasFeedWithURL:</a></code>
 	</span>
 	
 	
@@ -425,6 +435,52 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>value</em></dt>
 			<dd><p>The feed to add</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">User.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasFeedWithURL:" title="hasFeedWithURL:"></a>
+	<h3 class="subsubtitle method-title">hasFeedWithURL:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Check if the feed already exists for the user</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)hasFeedWithURL:(NSString *)<em>url</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>url</em></dt>
+			<dd><p>The url of the feed to check for</p></dd>
 		</dl>
 		
 	</div>

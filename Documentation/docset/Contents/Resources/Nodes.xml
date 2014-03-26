@@ -320,33 +320,6 @@
             
         </Node>
 		<Node id="10" type="file" documentType="reference">
-            <Name>CSFeedItemCell</Name>
-            <Path>Classes/CSFeedItemCell.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/CSFeedItemCell.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/CSFeedItemCell.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/CSFeedItemCell.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="11" type="file" documentType="reference">
             <Name>CSFeedItemCollectionView</Name>
             <Path>Classes/CSFeedItemCollectionView.html</Path>
             
@@ -373,7 +346,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="12" type="file" documentType="reference">
+		<Node id="11" type="file" documentType="reference">
             <Name>CSFeedItemCollectionViewDataSource</Name>
             <Path>Classes/CSFeedItemCollectionViewDataSource.html</Path>
             
@@ -406,7 +379,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="13" type="file" documentType="reference">
+		<Node id="12" type="file" documentType="reference">
             <Name>CSHomeViewController</Name>
             <Path>Classes/CSHomeViewController.html</Path>
             
@@ -439,7 +412,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="14" type="file" documentType="reference">
+		<Node id="13" type="file" documentType="reference">
             <Name>CSMenuLeftViewController</Name>
             <Path>Classes/CSMenuLeftViewController.html</Path>
             
@@ -463,10 +436,16 @@
                 
                 
                 
+                <Node type="section">
+                    <Path>Classes/CSMenuLeftViewController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
             </Subnodes>
             
         </Node>
-		<Node id="15" type="file" documentType="reference">
+		<Node id="14" type="file" documentType="reference">
             <Name>CSMenuSearchFeedDataSource</Name>
             <Path>Classes/CSMenuSearchFeedDataSource.html</Path>
             
@@ -499,7 +478,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="16" type="file" documentType="reference">
+		<Node id="15" type="file" documentType="reference">
             <Name>CSMenuUserFeedDataSource</Name>
             <Path>Classes/CSMenuUserFeedDataSource.html</Path>
             
@@ -523,16 +502,10 @@
                 
                 
                 
-                <Node type="section">
-                    <Path>Classes/CSMenuUserFeedDataSource.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
             </Subnodes>
             
         </Node>
-		<Node id="17" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
             <Name>CSRemoteObject</Name>
             <Path>Classes/CSRemoteObject.html</Path>
             
@@ -565,7 +538,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="18" type="file" documentType="reference">
+		<Node id="17" type="file" documentType="reference">
             <Name>CSRootViewController</Name>
             <Path>Classes/CSRootViewController.html</Path>
             
@@ -598,7 +571,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="18" type="file" documentType="reference">
             <Name>CSSearchFeedCell</Name>
             <Path>Classes/CSSearchFeedCell.html</Path>
             
@@ -622,16 +595,10 @@
                 
                 
                 
-                <Node type="section">
-                    <Path>Classes/CSSearchFeedCell.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
             </Subnodes>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>CSUserFeedCell</Name>
             <Path>Classes/CSUserFeedCell.html</Path>
             
@@ -658,17 +625,17 @@
             </Subnodes>
             
         </Node>
-		<Node id="21" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>EZRApplicationStyleService</Name>
             <Path>Classes/EZRApplicationStyleService.html</Path>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>EZRCoreDataService</Name>
             <Path>Classes/EZRCoreDataService.html</Path>
             
         </Node>
-		<Node id="23" type="file" documentType="reference">
+		<Node id="22" type="file" documentType="reference">
             <Name>EZRCustomFeedCell</Name>
             <Path>Classes/EZRCustomFeedCell.html</Path>
             
@@ -686,6 +653,33 @@
                 
                 <Node type="section">
                     <Path>Classes/EZRCustomFeedCell.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="23" type="file" documentType="reference">
+            <Name>EZRFeedItemCell</Name>
+            <Path>Classes/EZRFeedItemCell.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/EZRFeedItemCell.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/EZRFeedItemCell.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/EZRFeedItemCell.html</Path>
                     <Name>Properties</Name>
                     <Anchor>properties</Anchor>
                 </Node>

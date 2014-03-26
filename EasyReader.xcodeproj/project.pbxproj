@@ -48,7 +48,7 @@
 		2751F4D718DA02C100339C96 /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D518DA02C100339C96 /* NSObject+CSReflectionAdditions.m */; };
 		2751F4DA18DA0A6B00339C96 /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D918DA0A6B00339C96 /* CSHomeViewController.m */; };
 		2751F4E218DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DD18DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m */; };
-		2751F4E318DA0D3000339C96 /* CSFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* CSFeedItemCell.m */; };
+		2751F4E318DA0D3000339C96 /* EZRFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* EZRFeedItemCell.m */; };
 		2751F4E418DA0D3000339C96 /* CSFeedItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */; };
 		8E685AA718DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E685AA818DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
@@ -125,7 +125,7 @@
 		9D79270E18DA1D0300E1D3E1 /* CSFeedItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */; };
 		9D79270F18DA1D0300E1D3E1 /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D518DA02C100339C96 /* NSObject+CSReflectionAdditions.m */; };
 		9D79271018DA1D0300E1D3E1 /* CSRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSRemoteObject.m */; };
-		9D79271118DA1D0300E1D3E1 /* CSFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* CSFeedItemCell.m */; };
+		9D79271118DA1D0300E1D3E1 /* EZRFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* EZRFeedItemCell.m */; };
 		9D79271218DA1D0300E1D3E1 /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		9D79271318DA1D0300E1D3E1 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		9D79271418DA1D0300E1D3E1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
@@ -177,7 +177,7 @@
 		9D79275218DA1D3800E1D3E1 /* CSFeedItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */; };
 		9D79275318DA1D3800E1D3E1 /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D518DA02C100339C96 /* NSObject+CSReflectionAdditions.m */; };
 		9D79275418DA1D3800E1D3E1 /* CSRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSRemoteObject.m */; };
-		9D79275518DA1D3800E1D3E1 /* CSFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* CSFeedItemCell.m */; };
+		9D79275518DA1D3800E1D3E1 /* EZRFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* EZRFeedItemCell.m */; };
 		9D79275618DA1D3800E1D3E1 /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		9D79275718DA1D3800E1D3E1 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		9D79275818DA1D3800E1D3E1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
@@ -246,7 +246,7 @@
 		9D9CBACD18DCC68A00532F8C /* CSFeedItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */; };
 		9D9CBACE18DCC68A00532F8C /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D518DA02C100339C96 /* NSObject+CSReflectionAdditions.m */; };
 		9D9CBACF18DCC68A00532F8C /* CSRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSRemoteObject.m */; };
-		9D9CBAD018DCC68A00532F8C /* CSFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* CSFeedItemCell.m */; };
+		9D9CBAD018DCC68A00532F8C /* EZRFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* EZRFeedItemCell.m */; };
 		9D9CBAD118DCC68A00532F8C /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		9D9CBAD218DCC68A00532F8C /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		9D9CBAD318DCC68A00532F8C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
@@ -364,8 +364,8 @@
 		2751F4D918DA0A6B00339C96 /* CSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSHomeViewController.m; path = Home/CSHomeViewController.m; sourceTree = "<group>"; };
 		2751F4DC18DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItemCollectionViewDataSource.h; sourceTree = "<group>"; };
 		2751F4DD18DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItemCollectionViewDataSource.m; sourceTree = "<group>"; };
-		2751F4DE18DA0D3000339C96 /* CSFeedItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItemCell.h; sourceTree = "<group>"; };
-		2751F4DF18DA0D3000339C96 /* CSFeedItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItemCell.m; sourceTree = "<group>"; };
+		2751F4DE18DA0D3000339C96 /* EZRFeedItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRFeedItemCell.h; sourceTree = "<group>"; };
+		2751F4DF18DA0D3000339C96 /* EZRFeedItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRFeedItemCell.m; sourceTree = "<group>"; };
 		2751F4E018DA0D3000339C96 /* CSFeedItemCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItemCollectionView.h; sourceTree = "<group>"; };
 		2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItemCollectionView.m; sourceTree = "<group>"; };
 		5CECD14CAE964A1994399D15 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -584,8 +584,8 @@
 			children = (
 				2751F4DC18DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.h */,
 				2751F4DD18DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m */,
-				2751F4DE18DA0D3000339C96 /* CSFeedItemCell.h */,
-				2751F4DF18DA0D3000339C96 /* CSFeedItemCell.m */,
+				2751F4DE18DA0D3000339C96 /* EZRFeedItemCell.h */,
+				2751F4DF18DA0D3000339C96 /* EZRFeedItemCell.m */,
 				2751F4E018DA0D3000339C96 /* CSFeedItemCollectionView.h */,
 				2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */,
 			);
@@ -1406,7 +1406,7 @@
 				9D79270E18DA1D0300E1D3E1 /* CSFeedItemCollectionView.m in Sources */,
 				9D79270F18DA1D0300E1D3E1 /* NSObject+CSReflectionAdditions.m in Sources */,
 				9D79271018DA1D0300E1D3E1 /* CSRemoteObject.m in Sources */,
-				9D79271118DA1D0300E1D3E1 /* CSFeedItemCell.m in Sources */,
+				9D79271118DA1D0300E1D3E1 /* EZRFeedItemCell.m in Sources */,
 				8E685AA818DC733B00309270 /* CSCollectionPageControl.m in Sources */,
 				9D79271218DA1D0300E1D3E1 /* CSRootViewController.m in Sources */,
 				9D79271318DA1D0300E1D3E1 /* FeedItem.m in Sources */,
@@ -1448,7 +1448,7 @@
 				9D79275218DA1D3800E1D3E1 /* CSFeedItemCollectionView.m in Sources */,
 				9D79275318DA1D3800E1D3E1 /* NSObject+CSReflectionAdditions.m in Sources */,
 				9D79275418DA1D3800E1D3E1 /* CSRemoteObject.m in Sources */,
-				9D79275518DA1D3800E1D3E1 /* CSFeedItemCell.m in Sources */,
+				9D79275518DA1D3800E1D3E1 /* EZRFeedItemCell.m in Sources */,
 				8E685AA918DC733B00309270 /* CSCollectionPageControl.m in Sources */,
 				9D79275618DA1D3800E1D3E1 /* CSRootViewController.m in Sources */,
 				9D79275718DA1D3800E1D3E1 /* FeedItem.m in Sources */,
@@ -1501,7 +1501,7 @@
 				9D9CBACE18DCC68A00532F8C /* NSObject+CSReflectionAdditions.m in Sources */,
 				9D9CBACF18DCC68A00532F8C /* CSRemoteObject.m in Sources */,
 				9D639E7118E0A4E000350B5F /* APIClient.m in Sources */,
-				9D9CBAD018DCC68A00532F8C /* CSFeedItemCell.m in Sources */,
+				9D9CBAD018DCC68A00532F8C /* EZRFeedItemCell.m in Sources */,
 				9D9CBAD118DCC68A00532F8C /* CSRootViewController.m in Sources */,
 				9D9CBAD218DCC68A00532F8C /* FeedItem.m in Sources */,
 				9D9CBAD318DCC68A00532F8C /* User.m in Sources */,
@@ -1544,7 +1544,7 @@
 				2751F4E418DA0D3000339C96 /* CSFeedItemCollectionView.m in Sources */,
 				2751F4D718DA02C100339C96 /* NSObject+CSReflectionAdditions.m in Sources */,
 				8E7F81F018D0BF8500BC50C2 /* CSRemoteObject.m in Sources */,
-				2751F4E318DA0D3000339C96 /* CSFeedItemCell.m in Sources */,
+				2751F4E318DA0D3000339C96 /* EZRFeedItemCell.m in Sources */,
 				8E685AA718DC733B00309270 /* CSCollectionPageControl.m in Sources */,
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,
 				0DE51FF418CF911000454E51 /* FeedItem.m in Sources */,

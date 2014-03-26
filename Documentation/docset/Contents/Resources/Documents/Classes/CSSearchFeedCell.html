@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -37,7 +39,7 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/feed">&nbsp;&nbsp;&nbsp;&nbsp;feed</option>
+	<option value="//api/name/feedData">&nbsp;&nbsp;&nbsp;&nbsp;feedData</option>
 	
 	<option value="//api/name/imageView_icon">&nbsp;&nbsp;&nbsp;&nbsp;imageView_icon</option>
 	
@@ -48,11 +50,6 @@
 	
 	
 	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/addFeedToUser:">&nbsp;&nbsp;&nbsp;&nbsp;- addFeedToUser:</option>
-	
-	
 	
 </select>
 				</li>
@@ -61,6 +58,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -74,7 +73,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/feed">feed</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/feedData">feedData</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageView_icon">imageView_icon</a></span></li>
 	
@@ -85,12 +84,6 @@
 
 
 
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addFeedToUser:">addFeedToUser:</a></span></li>
-	
-</ul></li>
 
 
 			</ul>
@@ -124,6 +117,14 @@
                     
                     
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A UITableViewCell for feed data returned by the search API</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -149,13 +150,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/addFeedToUser:">&ndash;&nbsp;addFeedToUser:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/feed">&nbsp;&nbsp;feed</a></code>
+		<code><a href="#//api/name/feedData">&nbsp;&nbsp;feedData</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -173,14 +168,39 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/feed" title="feed"></a>
-	<h3 class="subsubtitle method-title">feed</h3>
+	<a name="//api/name/feedData" title="feedData"></a>
+	<h3 class="subsubtitle method-title">feedData</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>The NSDictionary of the feed this cell is based on</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) NSDictionary *feed</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) NSDictionary *feedData</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSSearchFeedCell.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -260,48 +280,6 @@
 					
 					
 					
-					
-					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/addFeedToUser:" title="addFeedToUser:"></a>
-	<h3 class="subsubtitle method-title">addFeedToUser:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The add <a href="#//api/name/feed">feed</a> action</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (IBAction)addFeedToUser:(id)<em>sender</em></code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">CSSearchFeedCell.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
 					
 					
                     

@@ -8,7 +8,7 @@
 
 #import "CSFeedItemCollectionView.h"
 #import "CSFeedItemCollectionViewDataSource.h"
-#import "CSFeedItemCell.h"
+#import "EZRFeedItemCell.h"
 
 @implementation CSFeedItemCollectionView
 
@@ -73,7 +73,7 @@
     {
         // Get the array of visible feed cells
         NSIndexPath *currentIndexPath = [self.indexPathsForVisibleItems objectAtIndex:0];
-        CSFeedItemCell *cell = (CSFeedItemCell *)[self cellForItemAtIndexPath:currentIndexPath];
+        EZRFeedItemCell *cell = (EZRFeedItemCell *)[self cellForItemAtIndexPath:currentIndexPath];
         
         feeditem = cell.feedItem;
     }

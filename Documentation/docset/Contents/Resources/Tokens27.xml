@@ -295,6 +295,18 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/purgeOldFeedItems</TokenIdentifier>
+			<Abstract type="html">Delete all but the 10 newest feed items related to a feed</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>- (void)purgeOldFeedItems</Declaration>
+			
+			
+			<Anchor>//api/name/purgeOldFeedItems</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Feed/addFeedItemsObject:</TokenIdentifier>
 			<Abstract type="html">Adds a FeedItem object to feedItems</Abstract>
 			<DeclaredIn>Feed.h</DeclaredIn>

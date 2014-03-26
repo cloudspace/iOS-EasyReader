@@ -52,8 +52,6 @@
 	
 	<option value="//api/name/initWithFeedItems:reusableCellIdentifier:configureBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithFeedItems:reusableCellIdentifier:configureBlock:</option>
 	
-	<option value="//api/name/sortFeedItems">&nbsp;&nbsp;&nbsp;&nbsp;- sortFeedItems</option>
-	
 	
 	
 </select>
@@ -91,8 +89,6 @@
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithFeedItems:reusableCellIdentifier:configureBlock:">initWithFeedItems:reusableCellIdentifier:configureBlock:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sortFeedItems">sortFeedItems</a></span></li>
 	
 </ul></li>
 
@@ -158,12 +154,6 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/sortFeedItems">&ndash;&nbsp;sortFeedItems</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/feedItems">&nbsp;&nbsp;feedItems</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
@@ -199,7 +189,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableSet *feedItems</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSSet *feedItems</code></div>
 
     
 	
@@ -228,10 +218,35 @@
 	<h3 class="subsubtitle method-title">sortedFeedItems</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>The FeedItems sorted by createdAt time</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSArray *sortedFeedItems</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *sortedFeedItems</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSFeedItemCollectionViewDataSource.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -264,13 +279,18 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>configureFeedItemCell</em></dt>
-			<dd><p>A block which will configure the cell based on the given <a href="../Classes/FeedItem.html">FeedItem</a></p></dd>
+			<dt><em>feedItems</em></dt>
+			<dd><p>The identifier to use to dequeue reusable cells for the collection view</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>The</em></dt>
-			<dd><p>identifier to use to dequeue reusable cells for the collection view</p></dd>
+			<dt><em>reusableCellIdentifier</em></dt>
+			<dd><p>The reusable cell identifier to dequeue a cell with</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>configureFeedItemCell</em></dt>
+			<dd><p>A block which will configure the cell based on the given <a href="../Classes/FeedItem.html">FeedItem</a></p></dd>
 		</dl>
 		
 	</div>
@@ -293,17 +313,6 @@
 	</div>				
 	
 	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/sortFeedItems" title="sortFeedItems"></a>
-	<h3 class="subsubtitle method-title">sortFeedItems</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>- (void)sortFeedItems</code></div>
-
-    
 </div>
 						
 					</div>

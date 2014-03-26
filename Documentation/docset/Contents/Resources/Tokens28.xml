@@ -194,7 +194,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setImage_iphone_retina:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">The related iPhone retina sized image</Abstract>
 			<DeclaredIn>FeedItem.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, retain) NSString *image_iphone_retina</Declaration>
@@ -206,7 +206,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/image_iphone_retina</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">The related iPhone retina sized image</Abstract>
 			<DeclaredIn>FeedItem.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, retain) NSString *image_iphone_retina</Declaration>
@@ -218,7 +218,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/image_iphone_retina</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">The related iPhone retina sized image</Abstract>
 			<DeclaredIn>FeedItem.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, retain) NSString *image_iphone_retina</Declaration>
@@ -230,7 +230,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setImage_ipad:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">The related iPad sized image</Abstract>
 			<DeclaredIn>FeedItem.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, retain) NSString *image_ipad</Declaration>
@@ -242,7 +242,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/image_ipad</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">The related iPad sized image</Abstract>
 			<DeclaredIn>FeedItem.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, retain) NSString *image_ipad</Declaration>
@@ -254,7 +254,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/image_ipad</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">The related iPad sized image</Abstract>
 			<DeclaredIn>FeedItem.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, retain) NSString *image_ipad</Declaration>
@@ -266,7 +266,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setImage_ipad_retina:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">The related iPad retina sized image</Abstract>
 			<DeclaredIn>FeedItem.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, retain) NSString *image_ipad_retina</Declaration>
@@ -278,7 +278,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/image_ipad_retina</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">The related iPad retina sized image</Abstract>
 			<DeclaredIn>FeedItem.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, retain) NSString *image_ipad_retina</Declaration>
@@ -290,7 +290,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/image_ipad_retina</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">The related iPad retina sized image</Abstract>
 			<DeclaredIn>FeedItem.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, retain) NSString *image_ipad_retina</Declaration>
@@ -445,13 +445,19 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/FeedItem/requestFeedItemsFromFeeds:Since:success:failure:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/FeedItem/requestFeedItemsFromFeeds:since:success:failure:</TokenIdentifier>
 			<Abstract type="html">Requests new feed items from a group of feeds</Abstract>
 			<DeclaredIn>FeedItem.h</DeclaredIn>
 			
-			<Declaration>+ (void)requestFeedItemsFromFeeds:(NSSet *)feeds Since:(NSDate *)startAt success:(APISuccessBlock)successBlock failure:(APIFailureBlock)failureBlock</Declaration>
+			<Declaration>+ (void)requestFeedItemsFromFeeds:(NSSet *)feeds since:(NSDate *)startAt success:(APISuccessBlock)success failure:(APIFailureBlock)failure</Declaration>
 			<Parameters>
 				<Parameter>
+					<Name>feeds</Name>
+					<Abstract type="html">The feeds to request new items for</Abstract>
+				</Parameter><Parameter>
+					<Name>startAt</Name>
+					<Abstract type="html">The time minimum createdAt time for requested feeditems</Abstract>
+				</Parameter><Parameter>
 					<Name>success</Name>
 					<Abstract type="html">A block to be run on API call success</Abstract>
 				</Parameter><Parameter>
@@ -460,7 +466,7 @@
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/requestFeedItemsFromFeeds:Since:success:failure:</Anchor>
+			<Anchor>//api/name/requestFeedItemsFromFeeds:since:success:failure:</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		

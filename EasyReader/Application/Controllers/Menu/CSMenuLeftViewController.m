@@ -77,7 +77,7 @@
                       }
                       
                       // Update and switch to the userFeed data source
-                      [userFeedDataSource updateWithFeeds:self.feeds];
+                      userFeedDataSource.feeds = self.feeds;
                       [self updateUserFeedDataSource];
                   }
                insertionBlock:nil
@@ -90,7 +90,7 @@
                                                  name:MFSideMenuStateNotificationEvent
                                                object:nil];
     
-    [userFeedDataSource updateWithFeeds:self.feeds];
+    userFeedDataSource.feeds = self.feeds;
     [self updateUserFeedDataSource];
 }
 

@@ -73,7 +73,7 @@
 - (void) requestFeedItemsSince:(NSDate *)since
 {
     [FeedItem requestFeedItemsFromFeeds:[[User current] feeds]
-                                  Since:since
+                                  since:since
                                 success:^(id responseData, NSInteger httpStatus){
                                     NSLog(@"Feed Items have been added");
                                 }failure:nil

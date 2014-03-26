@@ -97,6 +97,23 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/User/hasFeedWithURL:</TokenIdentifier>
+			<Abstract type="html">Check if the feed already exists for the user</Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasFeedWithURL:(NSString *)url</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The url of the feed to check for</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/hasFeedWithURL:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/User/addFeedsObject:</TokenIdentifier>
 			<Abstract type="html">Adds a feed object to feeds</Abstract>
 			<DeclaredIn>User.h</DeclaredIn>
