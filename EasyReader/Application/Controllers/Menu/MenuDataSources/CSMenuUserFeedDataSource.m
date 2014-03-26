@@ -8,8 +8,6 @@
 
 #import "CSMenuUserFeedDataSource.h"
 
-#import "UIImageView+AFNetworking.h"
-
 #import "UIColor+EZRSharedColorAdditions.h"
 
 #import "CSUserFeedCell.h"
@@ -106,13 +104,6 @@
 - (void)setFeed:(Feed *)feed forUserFeedCell:(CSUserFeedCell *)cell
 {
     cell.feed = feed;
-    
-    // Set the label text
-    cell.label_name.text = feed.name;
-    
-    // Show feed icons
-    [cell.imageView_icon setHidden:NO];
-    [cell.imageView setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:nil];
     
     [self setSelectedBackgroundForCell:cell];
     

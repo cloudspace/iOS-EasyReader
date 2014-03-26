@@ -171,7 +171,7 @@
                                  
                                 // Don't show feed the user has already added
                                 for ( NSDictionary *feed in feeds){
-                                    if ([self isInUserFeed:feed] == FALSE) {
+                                    if ([self.currentUser hasFeedWithURL:[feed objectForKey:@"url"]] == NO) {
                                         [searchedFeeds addObject:feed];
                                     }
                                 }
@@ -218,19 +218,6 @@
     [self.tableView_feeds reloadData];
 }
 
-
-/**
- * Check if the feed already exists in the database
- */
-- (BOOL)isInUserFeed:(NSDictionary *)searchedFeed
-{
-    for (Feed *feed in self.currentUser.feeds) {
-        if ([feed.name isEqualToString:[searchedFeed objectForKey:@"name"]]) {
-            return TRUE;
-        }
-    }
-    return FALSE;
-}
 
 #pragma mark - Count Methods
 /**

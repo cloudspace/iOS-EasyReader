@@ -49,4 +49,15 @@
     // Save the feed and feed items in the database
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
 }
+
+/**
+ * Sets the fields in the cell
+ *
+ * @param feedData The NSDicitionary of the searched feed
+ */
+- (void)setFeedData:(NSDictionary *)feedData
+{
+    self.label_name.text = [feedData objectForKey:@"name"];
+}
+
 @end

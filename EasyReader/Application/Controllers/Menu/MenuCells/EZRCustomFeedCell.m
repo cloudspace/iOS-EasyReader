@@ -34,44 +34,52 @@
 }
 
 /**
- * Attempts to creat a new feed and save it to the user
+ * Attempts to create a new feed and save it to the user
  */
-- (IBAction)createFeedFromUrl:(id)sender {
+- (IBAction)button_addFeed_touchUpInside:(id)sender {
     [Feed createFeedWithUrl:self.label_url.text
                     success:^(id responseData, NSInteger httpStatus){
-                        if (httpStatus == 201) {
-                        }
-                        if (httpStatus == 200) {
-                        }
-                        
-                        // Save the feed to the database
-                        [self addFeed:responseData];
                     }
                     failure:^(id responseData, NSInteger httpStatus, NSError *error){
-                        if (httpStatus == 422) {
-                            // Notify user that this is not a real rss feed
-                        }
-                    }];
+                    }
+     ];
 }
 
 /**
- * Convert response data json to a feed object and save it
+ * Sets the fields in the cell
+ *
+ * @param feedData The NSDicitionary of the custom feed
  */
-- (void)addFeed:(NSDictionary *)response
+- (void)setFeedData:(NSDictionary *)feedData
 {
-    for ( NSDictionary *feed in [response objectForKey:@"feeds"]){
-        // Create a new Feed object and associated FeedItem objects if they exist
-        Feed *newFeed = [Feed createOrUpdateFirstFromAPIData:feed];
-        
-        // Add the feed to the currentUser's feeds
-        User *currentUser = [User current];
-        NSMutableSet *mutableSet = [NSMutableSet setWithSet:currentUser.feeds];
-        [mutableSet addObject:newFeed];
-        currentUser.feeds = mutableSet;
-        
-        // Save the feed and feed items in the database
-        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    NSString *customUrl = [feedData objectForKey:@"url"];
+    self.label_url.text = customUrl;
+    
+    // Hide the add button unless the user types a valid url
+    [self.button_addFeed setHidden:YES];
+    if([self isValidUrl:customUrl]){
+        [self.button_addFeed setHidden:NO];
     }
+
 }
 
+/**
+ * Check for a letter followed by a dot
+ *
+ * @param url The custom feed url
+ */
+- (BOOL)isValidUrl:(NSString *)url
+{
+    NSError *error = NULL;
+    NSString *pattern = @"[a-z][.]";
+    NSString *string = url;
+    NSRange range = NSMakeRange(0, string.length);
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
+    NSArray *matches = [regex matchesInString:string options:NSMatchingReportCompletion range:range];
+    
+    if (matches.count > 0) {
+        return YES;
+    }
+    return NO;
+}
 @end
