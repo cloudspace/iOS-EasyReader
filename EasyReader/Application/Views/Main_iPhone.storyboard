@@ -266,7 +266,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="addFeedToUser:" destination="Omc-hY-KcW" eventType="touchUpInside" id="9Lc-zw-vGm"/>
+                                                        <action selector="createFeed:" destination="Omc-hY-KcW" eventType="touchUpInside" id="JfW-9o-LhQ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

@@ -18,7 +18,7 @@
 /// Button to add the custom feed
 @property (weak, nonatomic) IBOutlet UIButton *button_addFeed;
 
-/// The add feed action
-- (IBAction)addFeedToUser:(id)sender;
+/// The create feed action
+- (IBAction)createFeed:(id)sender;
 
 @end
