@@ -76,9 +76,9 @@
 - (void)setPageControllerPageAtIndex:(NSInteger)index;
 
 /**
- * Alters Frame origin to slide page control up to its place at bottom of screen
+ * Shows page indicators on control
  */
-- (void)showPageControl;
+- (void)showPageControlIndicators;
 
 /**
  * Shows new item button

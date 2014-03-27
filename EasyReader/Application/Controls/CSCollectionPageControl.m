@@ -115,7 +115,7 @@ CGFloat const kAnimationDuration = 0.75;
 {
     if ( !leftFadeOrigin ) leftFadeOrigin = xOrigin-15;
     view_leftFade.frame = CGRectMake(leftFadeOrigin, 10, gradientWidth, 20);
-    view_leftFade.backgroundColor = [UIColor blackColor];
+    view_leftFade.backgroundColor = [self backgroundColor];
     
     CAGradientLayer *leftLayer = [CAGradientLayer layer];
     leftLayer.frame = view_leftFade.bounds;
@@ -126,7 +126,7 @@ CGFloat const kAnimationDuration = 0.75;
     
     if ( !rightFadeOrigin ) rightFadeOrigin = xLastOrigin-8.5;
     view_rightFade.frame = CGRectMake(rightFadeOrigin-8.5, 10, gradientWidth, 20);
-    view_rightFade.backgroundColor = [UIColor blackColor];
+    view_rightFade.backgroundColor = [self backgroundColor];
     
     CAGradientLayer *rightLayer = [CAGradientLayer layer];
     rightLayer.frame = view_rightFade.bounds;
@@ -158,27 +158,21 @@ CGFloat const kAnimationDuration = 0.75;
         if( index < 3 ){
             self.currentPage = index;
             [UIView animateWithDuration:kAnimationDuration animations:^{
-                if( self.frame.origin.y != yOrigin ){
-                    [self showPageControl];
-                }
+                [self showPageControlIndicators];
                 view_leftFade.frame = CGRectMake(leftFadeOrigin-(fadeMovement*(2-index)), 10, gradientWidth, 20);
             }];
         } else if(index > (pageCount-4) ){
             self.currentPage = 5-(pageCount-index);
             [UIView animateWithDuration:kAnimationDuration animations:^{
-                if( self.frame.origin.y != yOrigin ){
-                    [self showPageControl];
-                }
+                [self showPageControlIndicators];
                 view_rightFade.frame = CGRectMake(rightFadeOrigin+(fadeMovement*(3-(pageCount-index))), 10, gradientWidth, 20);
             }];
         } else {
             self.currentPage = 2;
             
-            if( self.frame.origin.y == yOrigin ){
-                [UIView animateWithDuration:kAnimationDuration animations:^{
-                    [self hidePageControl];
-                }];
-            }
+            [UIView animateWithDuration:kAnimationDuration animations:^{
+                [self hidePageControlIndicators];
+            }];
             
             view_leftFade.frame = CGRectMake(leftFadeOrigin, 10, gradientWidth, 20);
             view_rightFade.frame = CGRectMake(rightFadeOrigin, 10, gradientWidth, 20);
@@ -187,20 +181,17 @@ CGFloat const kAnimationDuration = 0.75;
 }
 
 /**
- * Alters Frame origin to slide page control down the screen until out of sight
+ * Hides page indicators on control
  */
-- (void) hidePageControl
-{
-    self.frame = CGRectMake(0, yOrigin+self.frame.size.height, self.frame.size.width, self.frame.size.height);
-}
+- (void) hidePageControlIndicators
+{   for( UIView *view in [self subviews] ) [view setAlpha:0];   }
 
 /**
- * Alters Frame origin to slide page control up to its place at bottom of screen
+ * Shows page indicators on control
  */
-- (void) showPageControl
-{
-    self.frame = CGRectMake(0, yOrigin, self.frame.size.width, self.frame.size.height);
-}
+- (void) showPageControlIndicators
+{   for( UIView *view in [self subviews] ) [view setAlpha:1];   }
+
 
 /**
  * Hides new item button

@@ -9,6 +9,7 @@
 #import "CSHomeViewController.h"
 
 // Pods
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import <Block-KVO/MTKObserving.h>
 #import "MFSideMenu.h"
 
@@ -16,8 +17,11 @@
 #import "FeedItem.h"
 #import "Feed.h"
 #import "User.h"
-#import <AFNetworking/UIImageView+AFNetworking.h>
 
+// Categories
+#import "UIColor+EZRSharedColorAdditions.h"
+
+// Views
 #import "CSFeedItemCell.h"
 
 typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSSet *new);
@@ -40,7 +44,8 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
   
     _pageControl_itemIndicator.delegate = self;
     _pageControl_itemIndicator.datasource = self;
-    
+  _pageControl_itemIndicator.backgroundColor = [UIColor EZR_charcoal];
+  
     self.currentUser = [User current];
     
     [self setUpVerticalScrollView];
