@@ -41,6 +41,7 @@ PODS:
   - MWFeedParser/NSDate+InternetDateTime (1.0.0)
   - MWFeedParser/NSString+HTML (1.0.0)
   - NSDate+TimeAgo (1.0.2)
+  - OCMock (2.2.3)
   - Reachability (3.0.0)
   - RegexKitLite (4.0)
   - SDWebImage (3.5.4):
@@ -65,6 +66,7 @@ DEPENDENCIES:
   - MTLabel (~> 0.0.1)
   - MWFeedParser (~> 1.0.0)
   - NSDate+TimeAgo (~> 1.0.2)
+  - OCMock (~> 2.2.2)
   - Reachability (~> 3.0.0)
   - SDWebImage (~> 3.5.1)
   - SVPullToRefresh
@@ -91,6 +93,7 @@ SPEC CHECKSUMS:
   MTLabel: 5b326c677b5df074e844a5d2840387b9048257a7
   MWFeedParser: eb4fbf12677a1b3d936fdd122f88866b528aca3e
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
+  OCMock: 74e4ddbcef134170dcc844f91c691f13868075d7
   Reachability: 500bd76bf6cd8ff2c6fb715fc5f44ef6e4c024f2
   RegexKitLite: f7af7b4d2b675cd2ec9a4abab6aad6ae1f6499c0
   SDWebImage: 1a62010700adbba823b621fc217906739dbf6aa5

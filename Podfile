@@ -1,6 +1,6 @@
 platform :ios, '7.0'
 
-link_with ['Development', 'Staging', 'E', 'uwithus-production', 'uwithus-staging']
+link_with ['Development', 'Staging', 'Production', 'EasyReader-Tests']
 
 # Hide cocoapods project warnings
 inhibit_all_warnings!
@@ -38,3 +38,6 @@ pod 'MAObjCRuntime', '~> 0.0'
 pod 'CSEnhancedTableView', '~> 0.0.1'
 pod 'CSStandardViewControllers', '~> 0.0.1'
 pod 'CSShortcuts', '~> 0.0.1'
+
+# Testing
+pod 'OCMock', '~> 2.2.2'
