@@ -17,11 +17,17 @@
     mockObserver  = [OCMockObject observerMock];
     
     [APIClient setSharedClient:mockAPIClient];
+    
+    // Set up core data
+    [MagicalRecord setupCoreDataStackWithInMemoryStore];
 }
 
 
 - (void)tearDown
 {
+    // Clean up core data
+    [MagicalRecord cleanUp];
+    
     [super tearDown];
 }
 
