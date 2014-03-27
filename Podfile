@@ -38,3 +38,8 @@ pod 'MAObjCRuntime', '~> 0.0'
 pod 'CSEnhancedTableView', '~> 0.0.1'
 pod 'CSStandardViewControllers', '~> 0.0.1'
 pod 'CSShortcuts', '~> 0.0.1'
+
+
+
+
+pod 'GPUImage', '~> 0.1'

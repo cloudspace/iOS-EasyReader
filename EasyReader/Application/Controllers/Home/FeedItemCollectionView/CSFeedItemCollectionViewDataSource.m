@@ -33,9 +33,7 @@
  * Sets each instance variable to the values in the given parameters
  */
 - (id)initWithFeedItems:(NSSet *)feedItems
- reusableCellIdentifier:(NSString *)reusableCellIdentifier
-         configureBlock:(void (^)(EZRFeedItemCell *, FeedItem *))configureFeedItemCell
-{
+ reusableCellIdentifier:(NSString *)reusableCellIdentifier {
     self = [super init];
     
     if (self)
@@ -43,7 +41,6 @@
         [self setFeedItems:feedItems];
         
         _reusableCellIdentifier = reusableCellIdentifier;
-        _configureFeedItemCell = configureFeedItemCell;
     }
     
     return self;
@@ -99,8 +96,7 @@
     EZRFeedItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:_reusableCellIdentifier
                                                                      forIndexPath:indexPath];
     
-    FeedItem *item = [_sortedFeedItems objectAtIndex:indexPath.row];
-    _configureFeedItemCell(cell, item);
+    cell.feedItem = [_sortedFeedItems objectAtIndex:indexPath.row];
     
     [(CSHomeViewController*)collectionView.delegate setCollectionCellGoingTo:indexPath.row];
     

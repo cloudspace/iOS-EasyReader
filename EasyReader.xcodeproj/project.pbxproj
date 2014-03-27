@@ -118,6 +118,10 @@
 		9D639E8518E0A54300350B5F /* APIMockedDataClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E8118E0A54300350B5F /* APIMockedDataClient.m */; };
 		9D639E8918E0BAD500350B5F /* feeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D639E8718E0BAD500350B5F /* feeds.json */; };
 		9D639E8C18E0C94B00350B5F /* feeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D639E8718E0BAD500350B5F /* feeds.json */; };
+		9D6B8A8918E4D2050085C1EE /* EZRFeedImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B8A8818E4D2050085C1EE /* EZRFeedImageService.m */; };
+		9D6B8A8A18E4D2050085C1EE /* EZRFeedImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B8A8818E4D2050085C1EE /* EZRFeedImageService.m */; };
+		9D6B8A8B18E4D2050085C1EE /* EZRFeedImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B8A8818E4D2050085C1EE /* EZRFeedImageService.m */; };
+		9D6B8A8C18E4D2050085C1EE /* EZRFeedImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B8A8818E4D2050085C1EE /* EZRFeedImageService.m */; };
 		9D79270A18DA1D0300E1D3E1 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		9D79270B18DA1D0300E1D3E1 /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC171A170A043200383722 /* CSAppDelegate.m */; };
 		9D79270C18DA1D0300E1D3E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC1721170A043200383722 /* main.m */; };
@@ -417,6 +421,8 @@
 		9D639E8018E0A54300350B5F /* APIMockedDataClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIMockedDataClient.h; sourceTree = "<group>"; };
 		9D639E8118E0A54300350B5F /* APIMockedDataClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIMockedDataClient.m; sourceTree = "<group>"; };
 		9D639E8718E0BAD500350B5F /* feeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feeds.json; sourceTree = "<group>"; };
+		9D6B8A8718E4D2050085C1EE /* EZRFeedImageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRFeedImageService.h; sourceTree = "<group>"; };
+		9D6B8A8818E4D2050085C1EE /* EZRFeedImageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRFeedImageService.m; sourceTree = "<group>"; };
 		9D79274A18DA1D0300E1D3E1 /* Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Staging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D79278E18DA1D3800E1D3E1 /* Easy Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D79279118DA1D9200E1D3E1 /* Production-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Production-Info.plist"; sourceTree = "<group>"; };
@@ -706,6 +712,8 @@
 			children = (
 				9D458C6C18E3286500BC17D6 /* EZRFeedItemUpdateService.h */,
 				9D458C6D18E3286500BC17D6 /* EZRFeedItemUpdateService.m */,
+				9D6B8A8718E4D2050085C1EE /* EZRFeedImageService.h */,
+				9D6B8A8818E4D2050085C1EE /* EZRFeedImageService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1393,6 +1401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6B8A8B18E4D2050085C1EE /* EZRFeedImageService.m in Sources */,
 				9D16D33E18DB7767001E9C38 /* EZRFeedUpdateService.m in Sources */,
 				9D9CBAC318DCC52900532F8C /* EZRApplicationStyleService.m in Sources */,
 				9D639E7818E0A52300350B5F /* APIMockRequest.m in Sources */,
@@ -1436,6 +1445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6B8A8C18E4D2050085C1EE /* EZRFeedImageService.m in Sources */,
 				9D16D33F18DB7767001E9C38 /* EZRFeedUpdateService.m in Sources */,
 				9D9CBAC418DCC52A00532F8C /* EZRApplicationStyleService.m in Sources */,
 				9D639E7918E0A52300350B5F /* APIMockRequest.m in Sources */,
@@ -1488,6 +1498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6B8A8A18E4D2050085C1EE /* EZRFeedImageService.m in Sources */,
 				9D9CBAC718DCC68A00532F8C /* EZRFeedUpdateService.m in Sources */,
 				9D9CBAC818DCC68A00532F8C /* EZRApplicationStyleService.m in Sources */,
 				0D9A835F18E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */,
@@ -1531,6 +1542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6B8A8918E4D2050085C1EE /* EZRFeedImageService.m in Sources */,
 				9D16D34E18DBA9E9001E9C38 /* APIRouter.m in Sources */,
 				9D16D33D18DB7767001E9C38 /* EZRFeedUpdateService.m in Sources */,
 				9D9CBABF18DC826700532F8C /* EZRApplicationStyleService.m in Sources */,

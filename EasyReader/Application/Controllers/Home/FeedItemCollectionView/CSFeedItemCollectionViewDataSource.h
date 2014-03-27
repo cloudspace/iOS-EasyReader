@@ -24,10 +24,7 @@ typedef void (^configureFeedItemCell)(EZRFeedItemCell *, FeedItem *);
  * @param reusableCellIdentifier The reusable cell identifier to dequeue a cell with
  * @param configureFeedItemCell A block which will configure the cell based on the given FeedItem
  */
-- (id)initWithFeedItems:(NSSet *)feedItems
- reusableCellIdentifier:(NSString *)reusableCellIdentifier
-         configureBlock:(configureFeedItemCell)configureFeedItemCell;
-
+- (id)initWithFeedItems:(NSSet *)feedItems reusableCellIdentifier:(NSString*)reusableCellIdentifier;
 
 /// The FeedItems for this data source
 @property (nonatomic, strong) NSSet *feedItems;

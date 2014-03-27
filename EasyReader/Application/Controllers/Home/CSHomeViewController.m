@@ -21,6 +21,8 @@
 
 #import "EZRFeedItemCell.h"
 
+#import "GPUImage.h"
+
 typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSSet *new);
 
 @interface CSHomeViewController ()
@@ -58,7 +60,6 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
     [self setUpVerticalScrollView];
 }
 
-
 -(NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationPortrait;
 }
@@ -66,13 +67,6 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 -(BOOL)shouldAutorotate {
     return NO;
 }
-//
-//typedef returnType (^void)(parameterTypes);
-//
-//- (configureFeedItemCell)configureFeedItem
-//- (void) blockForSelector
-//{
-//                           }
 
 
 #pragma mark Observations
@@ -203,10 +197,8 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
     //    NSArray *feedItems = [FeedItem MR_findAll];
     NSSet *feedItems = _currentUser.feedItems;
     
-    _feedCollectionViewDataSource =
-    [[CSFeedItemCollectionViewDataSource alloc] initWithFeedItems:feedItems
-                                           reusableCellIdentifier:@"feedItemCell"
-                                                   configureBlock:[self configureFeedItem]];
+    _feedCollectionViewDataSource = [[CSFeedItemCollectionViewDataSource alloc] initWithFeedItems:feedItems
+                                                                           reusableCellIdentifier:@"feedItem"];
     
     self.collectionView_feedItems.dataSource = _feedCollectionViewDataSource;
     self.collectionView_feedItems.delegate = self;
@@ -223,23 +215,9 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
     NSInteger height = self.verticalScrollView.frame.size.height;
     self.feedItemWebView.frame= CGRectMake(0, height, width, height*2);
     [self.feedItemWebView setBackgroundColor:[UIColor blackColor]];
+    
     // Add it to the bottom of the scrollView
     [self.verticalScrollView addSubview:self.feedItemWebView];
-}
-
-/**
- * Sets up collection cell to given feed item data
- */
-- (configureFeedItemCell)configureFeedItem
-{
-    return ^void(EZRFeedItemCell *cell, FeedItem *feedItem) {
-        cell.label_headline.text = feedItem.title;
-        cell.label_source.text = feedItem.headline;
-        cell.label_summary.text = feedItem.summary;
-        cell.feedItem = feedItem;
-        
-        [cell.imageView_background setImageWithURL:[NSURL URLWithString:feedItem.image_iphone_retina]];
-    };
 }
 
 - (void)loadFeedItemWebView

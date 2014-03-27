@@ -29,13 +29,16 @@
 /// The associated feed item image
 @property (nonatomic, weak) IBOutlet UIImageView *imageView_background;
 
+/// The associated feed item image
+@property (nonatomic, weak) IBOutlet UIImageView *imageView_backgroundReflection;
+
 /// The feed item summary
 @property (weak, nonatomic) IBOutlet UILabel *label_summary;
 
 
 #pragma mark - Other Properties
 
-/// The feed item this cell is based on
+/// The feed item this cell is based on.  When set it will update all outlets appropriately
 @property (nonatomic, weak) FeedItem *feedItem;
 
 
