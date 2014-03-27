@@ -53,22 +53,7 @@
                                                                     <rect key="frame" x="0.0" y="331" width="320" height="200"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwa-jG-ubQ">
-                                                                            <rect key="frame" x="8" y="8" width="302" height="16"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                            <attributedString key="attributedText">
-                                                                                <fragment content="label">
-                                                                                    <attributes>
-                                                                                        <color key="NSColor" red="1" green="1" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                        <font key="NSFont" size="11" name="HelveticaNeue-Medium"/>
-                                                                                        <font key="NSOriginalFont" size="11" name="HelveticaNeue-Medium"/>
-                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                                    </attributes>
-                                                                                </fragment>
-                                                                            </attributedString>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="302" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-v3-acz">
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="302" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-v3-acz">
                                                                             <rect key="frame" x="8" y="27" width="302" height="75"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <constraints>
@@ -86,7 +71,7 @@
                                                                             </attributedString>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="302" translatesAutoresizingMaskIntoConstraints="NO" id="Hbm-RM-Vyr">
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="302" translatesAutoresizingMaskIntoConstraints="NO" id="Hbm-RM-Vyr">
                                                                             <rect key="frame" x="8" y="95" width="302" height="93"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <attributedString key="attributedText">
@@ -104,14 +89,8 @@
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottom" secondItem="5IB-v3-acz" secondAttribute="bottom" constant="98" id="2tv-1M-IpA"/>
-                                                                        <constraint firstItem="Hbm-RM-Vyr" firstAttribute="top" secondItem="Xwa-jG-ubQ" secondAttribute="bottom" constant="71" id="78o-Gp-T4g"/>
                                                                         <constraint firstAttribute="bottom" secondItem="Hbm-RM-Vyr" secondAttribute="bottom" constant="12" id="HYI-R8-UVE"/>
-                                                                        <constraint firstItem="5IB-v3-acz" firstAttribute="top" secondItem="Xwa-jG-ubQ" secondAttribute="bottom" constant="3" id="HsL-9c-Met"/>
-                                                                        <constraint firstItem="5IB-v3-acz" firstAttribute="trailing" secondItem="Xwa-jG-ubQ" secondAttribute="trailing" id="N85-xK-ynM"/>
                                                                         <constraint firstItem="5IB-v3-acz" firstAttribute="trailing" secondItem="Hbm-RM-Vyr" secondAttribute="trailing" id="QVP-D1-cx3"/>
-                                                                        <constraint firstItem="Xwa-jG-ubQ" firstAttribute="top" secondItem="GyA-VK-s4d" secondAttribute="top" constant="8" id="aGJ-J5-SGh"/>
-                                                                        <constraint firstItem="Xwa-jG-ubQ" firstAttribute="leading" secondItem="GyA-VK-s4d" secondAttribute="leading" constant="8" id="cy7-Uz-ggM"/>
-                                                                        <constraint firstItem="Xwa-jG-ubQ" firstAttribute="leading" secondItem="5IB-v3-acz" secondAttribute="leading" id="uVe-Jm-o0H"/>
                                                                         <constraint firstItem="5IB-v3-acz" firstAttribute="leading" secondItem="Hbm-RM-Vyr" secondAttribute="leading" id="z0B-cy-ZrK"/>
                                                                     </constraints>
                                                                 </view>
@@ -131,7 +110,6 @@
                                                             <outlet property="imageView_background" destination="HSH-zo-oed" id="4O6-c6-XkW"/>
                                                             <outlet property="info_view" destination="GyA-VK-s4d" id="D8t-dc-C8Q"/>
                                                             <outlet property="label_headline" destination="5IB-v3-acz" id="F15-Jk-Z0d"/>
-                                                            <outlet property="label_source" destination="Xwa-jG-ubQ" id="FlB-zN-gUy"/>
                                                             <outlet property="label_summary" destination="Hbm-RM-Vyr" id="Pqj-fM-MTd"/>
                                                         </connections>
                                                     </collectionViewCell>
