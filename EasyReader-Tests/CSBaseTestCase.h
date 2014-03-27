@@ -15,6 +15,4 @@
  */
 @interface CSBaseTestCase : XCTestCase
 
-- (void)setUp;
-
 @end
