@@ -17,6 +17,7 @@
 #import "Feed.h"
 #import "User.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import "UIColor+EZRSharedColorAdditions.h"
 
 #import "EZRFeedItemCell.h"
 
@@ -47,6 +48,8 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
     [self setUpCollectionView];
     [self setUpWebView];
     [self setupFeedsObserver];
+    
+    [self.pageControl_itemIndicator setBackgroundColor:[UIColor EZR_charcoal]];
 }
 
 - (void)viewDidLayoutSubviews

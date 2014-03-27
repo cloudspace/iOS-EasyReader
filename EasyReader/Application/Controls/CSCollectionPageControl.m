@@ -53,7 +53,7 @@
   _view_leftFade = [[UIView alloc] init];
   _view_leftFade.frame = CGRectMake(110, 10, gradientWidth, 20);
   leftFadeOrigin = 110;
-  _view_leftFade.backgroundColor = [UIColor blackColor];
+  _view_leftFade.backgroundColor = self.backgroundColor;
   
   CAGradientLayer *leftLayer = [CAGradientLayer layer];
   leftLayer.frame = _view_leftFade.bounds;
@@ -65,7 +65,7 @@
   _view_rightFade = [[UIView alloc] init];
   _view_rightFade.frame = CGRectMake(170, 10, gradientWidth, 20);
   rightFadeOrigin = 170;
-  _view_rightFade.backgroundColor = [UIColor blackColor];
+  _view_rightFade.backgroundColor = self.backgroundColor;
   
   CAGradientLayer *rightLayer = [CAGradientLayer layer];
   rightLayer.frame = _view_rightFade.bounds;
