@@ -261,7 +261,16 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 - (void)scrollToCurrentFeedItem
 {
     NSUInteger index = [_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    NSIndexPath *indexPath;
+    
+    // If the current index is greater than the feedItem array
+    if (index > [_feedCollectionViewDataSource.sortedFeedItems count]-1){
+        // Set the index to the last item in the array
+        indexPath = [NSIndexPath indexPathForRow:[_feedCollectionViewDataSource.sortedFeedItems count]-1 inSection:0];
+    } else {
+        indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    }
+    
     [_collectionView_feedItems scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
 
