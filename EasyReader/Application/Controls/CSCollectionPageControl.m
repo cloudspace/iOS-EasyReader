@@ -212,4 +212,14 @@ CGFloat const kAnimationDuration = 0.75;
     }];
 }
 
+/**
+ * Shows new item button
+ */
+- (void) showNewItemButton
+{
+  [UIView animateWithDuration:.25 animations:^{
+    [button_newItem setAlpha:1];
+  }];
+}
+
 @end

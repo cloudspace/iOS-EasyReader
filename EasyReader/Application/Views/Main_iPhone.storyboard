@@ -46,7 +46,6 @@
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GyA-VK-s4d">
                                                             <rect key="frame" x="0.0" y="331" width="320" height="268"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
->>>>>>> cleaned up page control and home view controller
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HSH-zo-oed">
                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>

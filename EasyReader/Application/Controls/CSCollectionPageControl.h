@@ -80,4 +80,9 @@
  */
 - (void)showPageControl;
 
+/**
+ * Shows new item button
+ */
+- (void) showNewItemButton;
+
 @end

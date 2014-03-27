@@ -37,8 +37,7 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 {
     [super viewDidLoad];
     _feedItems = [[NSMutableSet alloc] init];
-    
-    [_pageControl_itemIndicator setUpFades];
+  
     _pageControl_itemIndicator.delegate = self;
     _pageControl_itemIndicator.datasource = self;
     
@@ -127,10 +126,9 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
         
         if(_currentFeedItem){
             [self scrollToCurrentFeedItem];
-            [_pageControl_itemIndicator setPageControllerPageAtIndex:[_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem]
-                                                       forCollection:_feedItems];
+            [_pageControl_itemIndicator setPageControllerPageAtIndex:[_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem]];
         } else {
-            [_pageControl_itemIndicator setPageControllerPageAtIndex:0 forCollection:_feedItems];
+            [_pageControl_itemIndicator setPageControllerPageAtIndex:0];
         }
     };
 
@@ -162,7 +160,7 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
                 [_feedItems addObject:item];
             }
             
-            [_pageControl_itemIndicator.button_newItem setHidden:NO];
+            [_pageControl_itemIndicator showNewItemButton];
         }
     };
     
