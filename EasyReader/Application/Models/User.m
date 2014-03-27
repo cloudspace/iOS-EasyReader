@@ -61,5 +61,15 @@ static User *sharedInstance = nil;
     return feedItems;
 }
 
+- (BOOL)hasFeedWithURL:(NSString *)url
+{
+    for (Feed *feed in self.feeds) {
+        if ([feed.url isEqualToString:url]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 
 @end

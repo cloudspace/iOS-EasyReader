@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * Represents an application delegate service object
+ */
 @interface SOApplicationDelegateService : NSObject <UIApplicationDelegate>
 
 /**
- * A shared singleton app delegate service object
+ * Returns the shared singleton app delegate service object.  Create it if needed.
  */
 + (SOApplicationDelegateService *)shared;
 

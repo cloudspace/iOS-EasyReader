@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CSFeedItemCollectionViewDataSource.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CSFeedItemCollectionViewDataSource</TokenIdentifier>
+			<Abstract type="html">The data source for the FeedCollectionView&apos;s UICollectionView</Abstract>
+			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+            
+			
+			<NodeRef refid="15"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/initWithFeedItems:reusableCellIdentifier:configureBlock:</TokenIdentifier>
+			<Abstract type="html">Initializes the data source with a reusable cell identifier</Abstract>
+			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithFeedItems:(NSSet *)feedItems reusableCellIdentifier:(NSString *)reusableCellIdentifier configureBlock:(configureFeedItemCell)configureFeedItemCell</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>configureFeedItemCell</Name>
+					<Abstract type="html">A block which will configure the cell based on the given FeedItem</Abstract>
+				</Parameter><Parameter>
+					<Name>The</Name>
+					<Abstract type="html">identifier to use to dequeue reusable cells for the collection view</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithFeedItems:reusableCellIdentifier:configureBlock:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/sortFeedItems</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>- (void)sortFeedItems</Declaration>
+			
+			
+			<Anchor>//api/name/sortFeedItems</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/setFeedItems:</TokenIdentifier>
+			<Abstract type="html">The FeedItems for this data source</Abstract>
+			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSMutableSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/feedItems</TokenIdentifier>
+			<Abstract type="html">The FeedItems for this data source</Abstract>
+			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSMutableSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCollectionViewDataSource/feedItems</TokenIdentifier>
+			<Abstract type="html">The FeedItems for this data source</Abstract>
+			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSMutableSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/setSortedFeedItems:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray *sortedFeedItems</Declaration>
+			
+			
+			<Anchor>//api/name/sortedFeedItems</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/sortedFeedItems</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray *sortedFeedItems</Declaration>
+			
+			
+			<Anchor>//api/name/sortedFeedItems</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCollectionViewDataSource/sortedFeedItems</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray *sortedFeedItems</Declaration>
+			
+			
+			<Anchor>//api/name/sortedFeedItems</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

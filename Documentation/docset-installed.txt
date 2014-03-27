@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/jlorich/Library/Developer/Shared/Documentation/DocSets/com.cloudspace.Easy-Reader.docset
+Time: 2014-03-26 19:30:10 +0000

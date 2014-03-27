@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/APIMockResponse.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/APIMockResponse</TokenIdentifier>
+			<Abstract type="html">A mock API Response</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIMockResponse/setRequest:</TokenIdentifier>
+			<Abstract type="html">The associated request</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) APIMockRequest *request</Declaration>
+			
+			
+			<Anchor>//api/name/request</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIMockResponse/request</TokenIdentifier>
+			<Abstract type="html">The associated request</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) APIMockRequest *request</Declaration>
+			
+			
+			<Anchor>//api/name/request</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/APIMockResponse/request</TokenIdentifier>
+			<Abstract type="html">The associated request</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) APIMockRequest *request</Declaration>
+			
+			
+			<Anchor>//api/name/request</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIMockResponse/setHeaders:</TokenIdentifier>
+			<Abstract type="html">The response headers</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *headers</Declaration>
+			
+			
+			<Anchor>//api/name/headers</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIMockResponse/headers</TokenIdentifier>
+			<Abstract type="html">The response headers</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *headers</Declaration>
+			
+			
+			<Anchor>//api/name/headers</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/APIMockResponse/headers</TokenIdentifier>
+			<Abstract type="html">The response headers</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *headers</Declaration>
+			
+			
+			<Anchor>//api/name/headers</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIMockResponse/setHttpStatus:</TokenIdentifier>
+			<Abstract type="html">The response status</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger httpStatus</Declaration>
+			
+			
+			<Anchor>//api/name/httpStatus</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIMockResponse/httpStatus</TokenIdentifier>
+			<Abstract type="html">The response status</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger httpStatus</Declaration>
+			
+			
+			<Anchor>//api/name/httpStatus</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/APIMockResponse/httpStatus</TokenIdentifier>
+			<Abstract type="html">The response status</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger httpStatus</Declaration>
+			
+			
+			<Anchor>//api/name/httpStatus</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIMockResponse/setBody:</TokenIdentifier>
+			<Abstract type="html">The response body</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) id body</Declaration>
+			
+			
+			<Anchor>//api/name/body</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIMockResponse/body</TokenIdentifier>
+			<Abstract type="html">The response body</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) id body</Declaration>
+			
+			
+			<Anchor>//api/name/body</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/APIMockResponse/body</TokenIdentifier>
+			<Abstract type="html">The response body</Abstract>
+			<DeclaredIn>APIMockResponse.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) id body</Declaration>
+			
+			
+			<Anchor>//api/name/body</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

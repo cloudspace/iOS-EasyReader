@@ -6,7 +6,10 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
+#import "UIImageView+AFNetworking.h"
+
 #import "CSUserFeedCell.h"
+#import "Feed.h"
 
 @implementation CSUserFeedCell
 
@@ -29,6 +32,22 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+/**
+ * Sets the fields in the cell
+ *
+ * @param feed The Feed object associated to the user
+ */
+- (void)setFeed:(Feed *)feed
+{
+    _feed = feed;
+    
+    self.label_name.text = feed.name;
+
+    [self.imageView_icon setHidden:NO];
+    [self.imageView setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:nil];
+    
 }
 
 @end

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SOApplicationDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SOApplicationDelegate</TokenIdentifier>
+			<Abstract type="html">A service-oritented UIApplicationDelegate</Abstract>
+			<DeclaredIn>SOApplicationDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="29"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SOApplicationDelegate/setServices:</TokenIdentifier>
+			<Abstract type="html">An array of AppDelegate service objects</Abstract>
+			<DeclaredIn>SOApplicationDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSArray *services</Declaration>
+			
+			
+			<Anchor>//api/name/services</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SOApplicationDelegate/services</TokenIdentifier>
+			<Abstract type="html">An array of AppDelegate service objects</Abstract>
+			<DeclaredIn>SOApplicationDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSArray *services</Declaration>
+			
+			
+			<Anchor>//api/name/services</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SOApplicationDelegate/services</TokenIdentifier>
+			<Abstract type="html">An array of AppDelegate service objects</Abstract>
+			<DeclaredIn>SOApplicationDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSArray *services</Declaration>
+			
+			
+			<Anchor>//api/name/services</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SOApplicationDelegate/setWindow:</TokenIdentifier>
+			<Abstract type="html">The main UIWindow for the application</Abstract>
+			<DeclaredIn>SOApplicationDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			
+			
+			<Anchor>//api/name/window</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SOApplicationDelegate/window</TokenIdentifier>
+			<Abstract type="html">The main UIWindow for the application</Abstract>
+			<DeclaredIn>SOApplicationDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			
+			
+			<Anchor>//api/name/window</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SOApplicationDelegate/window</TokenIdentifier>
+			<Abstract type="html">The main UIWindow for the application</Abstract>
+			<DeclaredIn>SOApplicationDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			
+			
+			<Anchor>//api/name/window</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SOApplicationDelegate/invokeServiceMethodWithSelector:withArgument:</TokenIdentifier>
+			<Abstract type="html">Executes the given selector on all appropriate services</Abstract>
+			<DeclaredIn>SOApplicationDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)invokeServiceMethodWithSelector:(SEL)selector withArgument:(void *)argument</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>selector</Name>
+					<Abstract type="html">The method selector to call on the services</Abstract>
+				</Parameter><Parameter>
+					<Name>argument</Name>
+					<Abstract type="html">A pointer to the argument to be passed along</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/invokeServiceMethodWithSelector:withArgument:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SOApplicationDelegate/registerService:</TokenIdentifier>
+			<Abstract type="html">Registers a new service with the app delegate</Abstract>
+			<DeclaredIn>SOApplicationDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)registerService:(SOApplicationDelegateService *)service</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>service</Name>
+					<Abstract type="html">The service to register</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/registerService:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

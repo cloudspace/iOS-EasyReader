@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CSCoreDataService.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CSCoreDataService</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCoreDataService.h</DeclaredIn>
+            
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

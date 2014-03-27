@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSObject+CSNilAdditions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSObject(CSNilAdditions)</TokenIdentifier>
+			<Abstract type="html">A set of methods to help in checking if an object is empty, nil, null, NSNull</Abstract>
+			<DeclaredIn>NSObject+CSNilAdditions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="32"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/isBlank:</TokenIdentifier>
+			<Abstract type="html">Checks if the given object is blank</Abstract>
+			<DeclaredIn>NSObject+CSNilAdditions.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)isBlank:(id)object</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object to check for blankness</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">true if nil, null, NSNull, or is an empty NSString, NSSet, or NSArray</Abstract></ReturnValue>
+			<Anchor>//api/name/isBlank:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/isBlank</TokenIdentifier>
+			<Abstract type="html">Checks if this object is blank</Abstract>
+			<DeclaredIn>NSObject+CSNilAdditions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isBlank</Declaration>
+			
+			<ReturnValue><Abstract type="html">true if nil, null, NSNull, or is an empty NSString, NSSet, or NSArray</Abstract></ReturnValue>
+			<Anchor>//api/name/isBlank</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

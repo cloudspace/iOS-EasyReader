@@ -8,15 +8,10 @@
 
 #import "CSMenuSearchFeedDataSource.h"
 
-#import "UIImageView+AFNetworking.h"
-
 #import "UIColor+EZRSharedColorAdditions.h"
 
 #import "CSSearchFeedCell.h"
 #import "EZRCustomFeedCell.h"
-
-#import "Feed.h"
-#import "FeedItem.h"
 
 @implementation CSMenuSearchFeedDataSource
 
@@ -39,6 +34,8 @@
 /**
  * Sets the feeds to those returned by the search API or
  * The custom feed being created by the user
+ *
+ * @param feeds The NSSet of feeds to fill the menu with
  */
 - (void)updateWithFeeds:(NSMutableSet *)feeds
 {
@@ -94,61 +91,39 @@
         // Dequeue a styled cell
         CSSearchFeedCell *cell = (CSSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
         
-        NSDictionary *searchedFeed = [self.sortedFeeds objectAtIndex:indexPath.row];
+        // Get the feed
+        NSDictionary *searchedFeedData = [self.sortedFeeds objectAtIndex:indexPath.row];
         
-        // Associate the feed to the cell
-        cell.feed = searchedFeed;
+        // Set the cell data
+        cell.feedData = searchedFeedData;
+        [self setSelectedBackgroundForCell:cell];
         
-        // Set the label text
-        cell.label_name.text = [searchedFeed objectForKey:@"name"];
-        
-        // Show feed icons
-        NSString *iconUrl = [searchedFeed objectForKey:@"icon"];
-        if (!iconUrl.isBlank) {
-         [cell.imageView setImageWithURL:[NSURL URLWithString:[searchedFeed objectForKey:@"icon"]] placeholderImage:nil];
-        }
-        
-        UIView *selectedBackgroundView = [[UIView alloc] init];
-        [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
-        cell.selectedBackgroundView = selectedBackgroundView;
         return cell;
-    }
-    else{
+    } else {
         // Dequeue a styled cell
         EZRCustomFeedCell *cell = (EZRCustomFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"CustomFeedCell"];
         
-        NSDictionary *customFeed = [self.sortedFeeds objectAtIndex:indexPath.row];
-        NSString *customUrl = [customFeed objectForKey:@"url"];
-        cell.label_url.text = customUrl;
-        
-        if([self isValidUrl:customUrl]){
-            // Display create button
-        }
-        
-        UIView *selectedBackgroundView = [[UIView alloc] init];
-        [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
-        cell.selectedBackgroundView = selectedBackgroundView;
+        // Get the feed
+        NSDictionary *customFeedData = [self.sortedFeeds objectAtIndex:indexPath.row];
+
+        // Set the cell data
+        cell.feedData = customFeedData;
+        [self setSelectedBackgroundForCell:cell];
         
         return cell;
     }
 }
 
 /**
- * Check for a letter followed by a dot
+ * Set the selectedBackgroundView for a cell
+ *
+ * @param cell The UITableViewCell to modify
  */
-- (BOOL)isValidUrl:(NSString *)url
+- (void)setSelectedBackgroundForCell:(UITableViewCell *)cell
 {
-    NSError *error = NULL;
-    NSString *pattern = @"[a-z][.]";
-    NSString *string = url;
-    NSRange range = NSMakeRange(0, string.length);
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
-    NSArray *matches = [regex matchesInString:string options:NSMatchingReportCompletion range:range];
-    
-    if (matches.count > 0) {
-        return TRUE;
-    }
-    return FALSE;
+    UIView *selectedBackgroundView = [[UIView alloc] init];
+    [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
+    cell.selectedBackgroundView = selectedBackgroundView;
 }
 
 @end

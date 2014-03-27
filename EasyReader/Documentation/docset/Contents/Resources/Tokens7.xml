@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CSAppDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CSAppDelegate</TokenIdentifier>
+			<Abstract type="html">The main delegate for the application</Abstract>
+			<DeclaredIn>CSAppDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSAppDelegate/setContainer:</TokenIdentifier>
+			<Abstract type="html">The side menu container controller</Abstract>
+			<DeclaredIn>CSAppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) MFSideMenuContainerViewController *container</Declaration>
+			
+			
+			<Anchor>//api/name/container</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSAppDelegate/container</TokenIdentifier>
+			<Abstract type="html">The side menu container controller</Abstract>
+			<DeclaredIn>CSAppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) MFSideMenuContainerViewController *container</Declaration>
+			
+			
+			<Anchor>//api/name/container</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSAppDelegate/container</TokenIdentifier>
+			<Abstract type="html">The side menu container controller</Abstract>
+			<DeclaredIn>CSAppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) MFSideMenuContainerViewController *container</Declaration>
+			
+			
+			<Anchor>//api/name/container</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

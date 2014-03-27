@@ -292,7 +292,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="addFeedToUser:" destination="Vg0-Ic-Bi4" eventType="touchUpInside" id="vVw-rK-cbR"/>
+                                                        <action selector="button_addSearchedFeed_touchUpInside:" destination="IQf-2p-lPR" eventType="touchUpInside" id="QED-3J-nwc"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -327,11 +327,15 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="button_addCustomFeed_touchUpInside:" destination="IQf-2p-lPR" eventType="touchUpInside" id="QRd-e2-3I7"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="button_addCustomFeed" destination="tWI-oY-NeB" id="uE7-xz-iPg"/>
                                             <outlet property="label_url" destination="Hpn-wo-IlL" id="T31-7F-AMt"/>
                                         </connections>
                                     </tableViewCell>

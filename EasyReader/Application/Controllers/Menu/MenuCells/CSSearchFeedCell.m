@@ -34,19 +34,15 @@
 }
 
 /**
- * Add the feed to the user and save it in the database
+ * Sets the fields in the cell
+ *
+ * @param feedData The NSDicitionary of the searched feed
  */
-- (IBAction)addFeedToUser:(id)sender {
-    // Create a new Feed object and associated FeedItem objetcs
-    Feed *newFeed = [Feed createOrUpdateFirstFromAPIData:self.feed];
+- (void)setFeedData:(NSDictionary *)feedData
+{
+    _feedData = feedData;
     
-    // Add the feed to the currentUsers feeds
-    User *currentUser = [User current];
-    NSMutableSet *mutableSet = [NSMutableSet setWithSet:currentUser.feeds];
-    [mutableSet addObject:newFeed];
-    currentUser.feeds = mutableSet;
-    
-    // Save the feed and feed items in the database
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    self.label_name.text = [feedData objectForKey:@"name"];
 }
+
 @end

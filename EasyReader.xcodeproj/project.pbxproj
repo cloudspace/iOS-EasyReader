@@ -53,7 +53,10 @@
 		8E685AA718DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E685AA818DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E685AA918DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
-		8E7F81F018D0BF8500BC50C2 /* CSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */; };
+		8EEDF58818E46D5D00C5E5C2 /* CSRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EEDF58718E46D5D00C5E5C2 /* CSRemoteObject.m */; };
+		8EEDF58918E46D5D00C5E5C2 /* CSRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EEDF58718E46D5D00C5E5C2 /* CSRemoteObject.m */; };
+		8EEDF58A18E46D5D00C5E5C2 /* CSRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EEDF58718E46D5D00C5E5C2 /* CSRemoteObject.m */; };
+		8EEDF58B18E46D5D00C5E5C2 /* CSRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EEDF58718E46D5D00C5E5C2 /* CSRemoteObject.m */; };
 		9D096C3318DCE9D40043423B /* CSMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AE18DB8F69004440C3 /* CSMenuSearchFeedDataSource.m */; };
 		9D096C3418DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AE18DB8F69004440C3 /* CSMenuSearchFeedDataSource.m */; };
 		9D096C3518DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AE18DB8F69004440C3 /* CSMenuSearchFeedDataSource.m */; };
@@ -64,15 +67,15 @@
 		9D140BF5171F68E000CDD319 /* button_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D140BF4171F68E000CDD319 /* button_add@2x.png */; };
 		9D16D30718DA2B3A001E9C38 /* CSBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D30618DA2B3A001E9C38 /* CSBaseTestCase.m */; };
 		9D16D30918DA2E43001E9C38 /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D30818DA2E43001E9C38 /* UserTests.m */; };
-		9D16D32818DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */; };
-		9D16D32918DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */; };
-		9D16D32A18DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */; };
-		9D16D33818DB75D9001E9C38 /* CSCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */; };
-		9D16D33918DB75D9001E9C38 /* CSCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */; };
-		9D16D33A18DB75D9001E9C38 /* CSCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */; };
-		9D16D33D18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */; };
-		9D16D33E18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */; };
-		9D16D33F18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */; };
+		9D16D32818DB57D0001E9C38 /* EZRRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* EZRRegisterRoutesService.m */; };
+		9D16D32918DB57D0001E9C38 /* EZRRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* EZRRegisterRoutesService.m */; };
+		9D16D32A18DB57D0001E9C38 /* EZRRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* EZRRegisterRoutesService.m */; };
+		9D16D33818DB75D9001E9C38 /* EZRCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* EZRCoreDataService.m */; };
+		9D16D33918DB75D9001E9C38 /* EZRCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* EZRCoreDataService.m */; };
+		9D16D33A18DB75D9001E9C38 /* EZRCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* EZRCoreDataService.m */; };
+		9D16D33D18DB7767001E9C38 /* EZRFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* EZRFeedUpdateService.m */; };
+		9D16D33E18DB7767001E9C38 /* EZRFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* EZRFeedUpdateService.m */; };
+		9D16D33F18DB7767001E9C38 /* EZRFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* EZRFeedUpdateService.m */; };
 		9D16D34B18DBA9E9001E9C38 /* APIRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* APIRoute.m */; };
 		9D16D34C18DBA9E9001E9C38 /* APIRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* APIRoute.m */; };
 		9D16D34D18DBA9E9001E9C38 /* APIRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* APIRoute.m */; };
@@ -124,7 +127,6 @@
 		9D79270D18DA1D0300E1D3E1 /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D918DA0A6B00339C96 /* CSHomeViewController.m */; };
 		9D79270E18DA1D0300E1D3E1 /* CSFeedItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */; };
 		9D79270F18DA1D0300E1D3E1 /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D518DA02C100339C96 /* NSObject+CSReflectionAdditions.m */; };
-		9D79271018DA1D0300E1D3E1 /* CSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */; };
 		9D79271118DA1D0300E1D3E1 /* CSFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* CSFeedItemCell.m */; };
 		9D79271218DA1D0300E1D3E1 /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		9D79271318DA1D0300E1D3E1 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
@@ -176,7 +178,6 @@
 		9D79275118DA1D3800E1D3E1 /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D918DA0A6B00339C96 /* CSHomeViewController.m */; };
 		9D79275218DA1D3800E1D3E1 /* CSFeedItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */; };
 		9D79275318DA1D3800E1D3E1 /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D518DA02C100339C96 /* NSObject+CSReflectionAdditions.m */; };
-		9D79275418DA1D3800E1D3E1 /* CSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */; };
 		9D79275518DA1D3800E1D3E1 /* CSFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* CSFeedItemCell.m */; };
 		9D79275618DA1D3800E1D3E1 /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		9D79275718DA1D3800E1D3E1 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
@@ -234,18 +235,17 @@
 		9D8F319A171DB410006CFC6A /* icon_rss@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F3195171DB410006CFC6A /* icon_rss@2x.png */; };
 		9D8F319F171DE908006CFC6A /* icon_disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F319E171DE908006CFC6A /* icon_disclosure@2x.png */; };
 		9D8F31A4171ED4BE006CFC6A /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F31A3171ED4BE006CFC6A /* placeholder.png */; };
-		9D9CBABF18DC826700532F8C /* CSApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */; };
-		9D9CBAC318DCC52900532F8C /* CSApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */; };
-		9D9CBAC418DCC52A00532F8C /* CSApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */; };
-		9D9CBAC718DCC68A00532F8C /* CSFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */; };
-		9D9CBAC818DCC68A00532F8C /* CSApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */; };
+		9D9CBABF18DC826700532F8C /* EZRApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* EZRApplicationStyleService.m */; };
+		9D9CBAC318DCC52900532F8C /* EZRApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* EZRApplicationStyleService.m */; };
+		9D9CBAC418DCC52A00532F8C /* EZRApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* EZRApplicationStyleService.m */; };
+		9D9CBAC718DCC68A00532F8C /* EZRFeedUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33C18DB7767001E9C38 /* EZRFeedUpdateService.m */; };
+		9D9CBAC818DCC68A00532F8C /* EZRApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* EZRApplicationStyleService.m */; };
 		9D9CBAC918DCC68A00532F8C /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
 		9D9CBACA18DCC68A00532F8C /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC171A170A043200383722 /* CSAppDelegate.m */; };
 		9D9CBACB18DCC68A00532F8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC1721170A043200383722 /* main.m */; };
 		9D9CBACC18DCC68A00532F8C /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D918DA0A6B00339C96 /* CSHomeViewController.m */; };
 		9D9CBACD18DCC68A00532F8C /* CSFeedItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */; };
 		9D9CBACE18DCC68A00532F8C /* NSObject+CSReflectionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D518DA02C100339C96 /* NSObject+CSReflectionAdditions.m */; };
-		9D9CBACF18DCC68A00532F8C /* CSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */; };
 		9D9CBAD018DCC68A00532F8C /* CSFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* CSFeedItemCell.m */; };
 		9D9CBAD118DCC68A00532F8C /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C6C5C170CA12500B18012 /* CSRootViewController.m */; };
 		9D9CBAD218DCC68A00532F8C /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
@@ -253,10 +253,10 @@
 		9D9CBAD418DCC68A00532F8C /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
 		9D9CBAD718DCC68A00532F8C /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
 		9D9CBAD918DCC68A00532F8C /* Easy Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4BB1D17130E99001DCC88 /* Easy Reader.xcdatamodeld */; };
-		9D9CBADA18DCC68A00532F8C /* CSRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */; };
+		9D9CBADA18DCC68A00532F8C /* EZRRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D32718DB57D0001E9C38 /* EZRRegisterRoutesService.m */; };
 		9D9CBADB18DCC68A00532F8C /* CSFeedAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */; };
 		9D9CBADC18DCC68A00532F8C /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */; };
-		9D9CBADD18DCC68A00532F8C /* CSCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */; };
+		9D9CBADD18DCC68A00532F8C /* EZRCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* EZRCoreDataService.m */; };
 		9D9CBADE18DCC68A00532F8C /* APIRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* APIRoute.m */; };
 		9D9CBADF18DCC68A00532F8C /* CSFeedItemCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DD18DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m */; };
 		9D9CBAE018DCC68A00532F8C /* SOApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */; };
@@ -372,18 +372,18 @@
 		8E1CE42418D0F5A00090028E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8E685AA518DC733B00309270 /* CSCollectionPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSCollectionPageControl.h; path = EasyReader/Application/Controls/CSCollectionPageControl.h; sourceTree = SOURCE_ROOT; };
 		8E685AA618DC733B00309270 /* CSCollectionPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSCollectionPageControl.m; path = EasyReader/Application/Controls/CSCollectionPageControl.m; sourceTree = SOURCE_ROOT; };
-		8E7F81EE18D0BF8500BC50C2 /* CSBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseObject.h; sourceTree = "<group>"; };
-		8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBaseObject.m; sourceTree = "<group>"; };
+		8EEDF58618E46D5D00C5E5C2 /* CSRemoteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRemoteObject.h; sourceTree = "<group>"; };
+		8EEDF58718E46D5D00C5E5C2 /* CSRemoteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRemoteObject.m; sourceTree = "<group>"; };
 		9D140BF4171F68E000CDD319 /* button_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_add@2x.png"; sourceTree = "<group>"; };
 		9D16D30518DA2B3A001E9C38 /* CSBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseTestCase.h; sourceTree = "<group>"; };
 		9D16D30618DA2B3A001E9C38 /* CSBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBaseTestCase.m; sourceTree = "<group>"; };
 		9D16D30818DA2E43001E9C38 /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTests.m; path = Application/Models/UserTests.m; sourceTree = "<group>"; };
-		9D16D32618DB57D0001E9C38 /* CSRegisterRoutesService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRegisterRoutesService.h; sourceTree = "<group>"; };
-		9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRegisterRoutesService.m; sourceTree = "<group>"; };
-		9D16D33618DB75D9001E9C38 /* CSCoreDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSCoreDataService.h; sourceTree = "<group>"; };
-		9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCoreDataService.m; sourceTree = "<group>"; };
-		9D16D33B18DB7767001E9C38 /* CSFeedUpdateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedUpdateService.h; sourceTree = "<group>"; };
-		9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedUpdateService.m; sourceTree = "<group>"; };
+		9D16D32618DB57D0001E9C38 /* EZRRegisterRoutesService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRRegisterRoutesService.h; sourceTree = "<group>"; };
+		9D16D32718DB57D0001E9C38 /* EZRRegisterRoutesService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRRegisterRoutesService.m; sourceTree = "<group>"; };
+		9D16D33618DB75D9001E9C38 /* EZRCoreDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRCoreDataService.h; sourceTree = "<group>"; };
+		9D16D33718DB75D9001E9C38 /* EZRCoreDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRCoreDataService.m; sourceTree = "<group>"; };
+		9D16D33B18DB7767001E9C38 /* EZRFeedUpdateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRFeedUpdateService.h; sourceTree = "<group>"; };
+		9D16D33C18DB7767001E9C38 /* EZRFeedUpdateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRFeedUpdateService.m; sourceTree = "<group>"; };
 		9D16D34218DBA9E9001E9C38 /* APIRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRoute.h; sourceTree = "<group>"; };
 		9D16D34318DBA9E9001E9C38 /* APIRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRoute.m; sourceTree = "<group>"; };
 		9D16D34418DBA9E9001E9C38 /* APIRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRouter.h; sourceTree = "<group>"; };
@@ -434,8 +434,8 @@
 		9D8F3195171DB410006CFC6A /* icon_rss@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_rss@2x.png"; sourceTree = "<group>"; };
 		9D8F319E171DE908006CFC6A /* icon_disclosure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_disclosure@2x.png"; sourceTree = "<group>"; };
 		9D8F31A3171ED4BE006CFC6A /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
-		9D9CBABD18DC826700532F8C /* CSApplicationStyleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSApplicationStyleService.h; sourceTree = "<group>"; };
-		9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSApplicationStyleService.m; sourceTree = "<group>"; };
+		9D9CBABD18DC826700532F8C /* EZRApplicationStyleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRApplicationStyleService.h; sourceTree = "<group>"; };
+		9D9CBABE18DC826700532F8C /* EZRApplicationStyleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRApplicationStyleService.m; sourceTree = "<group>"; };
 		9D9CBB0F18DCC68A00532F8C /* Development copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Development copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA7CB25171C8B5E0045CC88 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		9DA7CB2B171CAD020045CC88 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -629,14 +629,14 @@
 		9D16D33518DB75BF001E9C38 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9D9CBABD18DC826700532F8C /* CSApplicationStyleService.h */,
-				9D9CBABE18DC826700532F8C /* CSApplicationStyleService.m */,
-				9D16D32618DB57D0001E9C38 /* CSRegisterRoutesService.h */,
-				9D16D32718DB57D0001E9C38 /* CSRegisterRoutesService.m */,
-				9D16D33618DB75D9001E9C38 /* CSCoreDataService.h */,
-				9D16D33718DB75D9001E9C38 /* CSCoreDataService.m */,
-				9D16D33B18DB7767001E9C38 /* CSFeedUpdateService.h */,
-				9D16D33C18DB7767001E9C38 /* CSFeedUpdateService.m */,
+				9D9CBABD18DC826700532F8C /* EZRApplicationStyleService.h */,
+				9D9CBABE18DC826700532F8C /* EZRApplicationStyleService.m */,
+				9D16D32618DB57D0001E9C38 /* EZRRegisterRoutesService.h */,
+				9D16D32718DB57D0001E9C38 /* EZRRegisterRoutesService.m */,
+				9D16D33618DB75D9001E9C38 /* EZRCoreDataService.h */,
+				9D16D33718DB75D9001E9C38 /* EZRCoreDataService.m */,
+				9D16D33B18DB7767001E9C38 /* EZRFeedUpdateService.h */,
+				9D16D33C18DB7767001E9C38 /* EZRFeedUpdateService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -898,8 +898,8 @@
 		9DAC171D170A043200383722 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8E7F81EE18D0BF8500BC50C2 /* CSBaseObject.h */,
-				8E7F81EF18D0BF8500BC50C2 /* CSBaseObject.m */,
+				8EEDF58618E46D5D00C5E5C2 /* CSRemoteObject.h */,
+				8EEDF58718E46D5D00C5E5C2 /* CSRemoteObject.m */,
 				0DE51FF618CF919900454E51 /* Feed.h */,
 				0DE51FF718CF919900454E51 /* Feed.m */,
 				0DE51FEF18CF911000454E51 /* FeedItem.h */,
@@ -1393,8 +1393,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D16D33E18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
-				9D9CBAC318DCC52900532F8C /* CSApplicationStyleService.m in Sources */,
+				8EEDF58A18E46D5D00C5E5C2 /* CSRemoteObject.m in Sources */,
+				9D16D33E18DB7767001E9C38 /* EZRFeedUpdateService.m in Sources */,
+				9D9CBAC318DCC52900532F8C /* EZRApplicationStyleService.m in Sources */,
 				9D639E7818E0A52300350B5F /* APIMockRequest.m in Sources */,
 				0D9A836018E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */,
 				9D458C7018E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */,
@@ -1405,7 +1406,6 @@
 				9D79270D18DA1D0300E1D3E1 /* CSHomeViewController.m in Sources */,
 				9D79270E18DA1D0300E1D3E1 /* CSFeedItemCollectionView.m in Sources */,
 				9D79270F18DA1D0300E1D3E1 /* NSObject+CSReflectionAdditions.m in Sources */,
-				9D79271018DA1D0300E1D3E1 /* CSBaseObject.m in Sources */,
 				9D79271118DA1D0300E1D3E1 /* CSFeedItemCell.m in Sources */,
 				8E685AA818DC733B00309270 /* CSCollectionPageControl.m in Sources */,
 				9D79271218DA1D0300E1D3E1 /* CSRootViewController.m in Sources */,
@@ -1419,11 +1419,11 @@
 				9D639E7E18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D79271718DA1D0300E1D3E1 /* CSMenuLeftViewController.m in Sources */,
 				9D79271918DA1D0300E1D3E1 /* Easy Reader.xcdatamodeld in Sources */,
-				9D16D32918DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */,
+				9D16D32918DB57D0001E9C38 /* EZRRegisterRoutesService.m in Sources */,
 				9D79271A18DA1D0300E1D3E1 /* CSFeedAddViewController.m in Sources */,
 				9D639E8418E0A54300350B5F /* APIMockedDataClient.m in Sources */,
 				9D79271B18DA1D0300E1D3E1 /* NSObject+CSNilAdditions.m in Sources */,
-				9D16D33918DB75D9001E9C38 /* CSCoreDataService.m in Sources */,
+				9D16D33918DB75D9001E9C38 /* EZRCoreDataService.m in Sources */,
 				9D16D34C18DBA9E9001E9C38 /* APIRoute.m in Sources */,
 				9D79271C18DA1D0300E1D3E1 /* CSFeedItemCollectionViewDataSource.m in Sources */,
 				9D16D35518DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
@@ -1436,8 +1436,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D16D33F18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
-				9D9CBAC418DCC52A00532F8C /* CSApplicationStyleService.m in Sources */,
+				8EEDF58B18E46D5D00C5E5C2 /* CSRemoteObject.m in Sources */,
+				9D16D33F18DB7767001E9C38 /* EZRFeedUpdateService.m in Sources */,
+				9D9CBAC418DCC52A00532F8C /* EZRApplicationStyleService.m in Sources */,
 				9D639E7918E0A52300350B5F /* APIMockRequest.m in Sources */,
 				0D9A836118E0CE5000D8376E /* EZRCustomFeedCell.m in Sources */,
 				9D458C7118E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */,
@@ -1447,7 +1448,6 @@
 				9D79275118DA1D3800E1D3E1 /* CSHomeViewController.m in Sources */,
 				9D79275218DA1D3800E1D3E1 /* CSFeedItemCollectionView.m in Sources */,
 				9D79275318DA1D3800E1D3E1 /* NSObject+CSReflectionAdditions.m in Sources */,
-				9D79275418DA1D3800E1D3E1 /* CSBaseObject.m in Sources */,
 				9D79275518DA1D3800E1D3E1 /* CSFeedItemCell.m in Sources */,
 				8E685AA918DC733B00309270 /* CSCollectionPageControl.m in Sources */,
 				9D79275618DA1D3800E1D3E1 /* CSRootViewController.m in Sources */,
@@ -1462,11 +1462,11 @@
 				9D79275B18DA1D3800E1D3E1 /* CSMenuLeftViewController.m in Sources */,
 				9D639E6A18E08CED00350B5F /* CSSearchFeedCell.m in Sources */,
 				9D79275D18DA1D3800E1D3E1 /* Easy Reader.xcdatamodeld in Sources */,
-				9D16D32A18DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */,
+				9D16D32A18DB57D0001E9C38 /* EZRRegisterRoutesService.m in Sources */,
 				9D79275E18DA1D3800E1D3E1 /* CSFeedAddViewController.m in Sources */,
 				9D639E8518E0A54300350B5F /* APIMockedDataClient.m in Sources */,
 				9D79275F18DA1D3800E1D3E1 /* NSObject+CSNilAdditions.m in Sources */,
-				9D16D33A18DB75D9001E9C38 /* CSCoreDataService.m in Sources */,
+				9D16D33A18DB75D9001E9C38 /* EZRCoreDataService.m in Sources */,
 				9D16D34D18DBA9E9001E9C38 /* APIRoute.m in Sources */,
 				9D79276018DA1D3800E1D3E1 /* CSFeedItemCollectionViewDataSource.m in Sources */,
 				9D16D35618DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
@@ -1488,8 +1488,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D9CBAC718DCC68A00532F8C /* CSFeedUpdateService.m in Sources */,
-				9D9CBAC818DCC68A00532F8C /* CSApplicationStyleService.m in Sources */,
+				8EEDF58918E46D5D00C5E5C2 /* CSRemoteObject.m in Sources */,
+				9D9CBAC718DCC68A00532F8C /* EZRFeedUpdateService.m in Sources */,
+				9D9CBAC818DCC68A00532F8C /* EZRApplicationStyleService.m in Sources */,
 				0D9A835F18E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */,
 				9D9CBAC918DCC68A00532F8C /* Feed.m in Sources */,
 				9D458C6F18E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */,
@@ -1499,7 +1500,6 @@
 				9D9CBACD18DCC68A00532F8C /* CSFeedItemCollectionView.m in Sources */,
 				9D639E7D18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D9CBACE18DCC68A00532F8C /* NSObject+CSReflectionAdditions.m in Sources */,
-				9D9CBACF18DCC68A00532F8C /* CSBaseObject.m in Sources */,
 				9D639E7118E0A4E000350B5F /* APIClient.m in Sources */,
 				9D9CBAD018DCC68A00532F8C /* CSFeedItemCell.m in Sources */,
 				9D9CBAD118DCC68A00532F8C /* CSRootViewController.m in Sources */,
@@ -1512,10 +1512,10 @@
 				9D096C3318DCE9D40043423B /* CSMenuSearchFeedDataSource.m in Sources */,
 				9D9CBAD718DCC68A00532F8C /* CSMenuLeftViewController.m in Sources */,
 				9D9CBAD918DCC68A00532F8C /* Easy Reader.xcdatamodeld in Sources */,
-				9D9CBADA18DCC68A00532F8C /* CSRegisterRoutesService.m in Sources */,
+				9D9CBADA18DCC68A00532F8C /* EZRRegisterRoutesService.m in Sources */,
 				9D9CBADB18DCC68A00532F8C /* CSFeedAddViewController.m in Sources */,
 				9D9CBADC18DCC68A00532F8C /* NSObject+CSNilAdditions.m in Sources */,
-				9D9CBADD18DCC68A00532F8C /* CSCoreDataService.m in Sources */,
+				9D9CBADD18DCC68A00532F8C /* EZRCoreDataService.m in Sources */,
 				9D9CBADE18DCC68A00532F8C /* APIRoute.m in Sources */,
 				9D9CBADF18DCC68A00532F8C /* CSFeedItemCollectionViewDataSource.m in Sources */,
 				9D096C3C18DCEDB40043423B /* CSCollectionPageControl.m in Sources */,
@@ -1531,9 +1531,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EEDF58818E46D5D00C5E5C2 /* CSRemoteObject.m in Sources */,
 				9D16D34E18DBA9E9001E9C38 /* APIRouter.m in Sources */,
-				9D16D33D18DB7767001E9C38 /* CSFeedUpdateService.m in Sources */,
-				9D9CBABF18DC826700532F8C /* CSApplicationStyleService.m in Sources */,
+				9D16D33D18DB7767001E9C38 /* EZRFeedUpdateService.m in Sources */,
+				9D9CBABF18DC826700532F8C /* EZRApplicationStyleService.m in Sources */,
 				9D639E7618E0A52300350B5F /* APIMockRequest.m in Sources */,
 				9D458C6E18E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */,
 				0D9A835E18E0C82200D8376E /* EZRCustomFeedCell.m in Sources */,
@@ -1543,7 +1544,6 @@
 				2751F4DA18DA0A6B00339C96 /* CSHomeViewController.m in Sources */,
 				2751F4E418DA0D3000339C96 /* CSFeedItemCollectionView.m in Sources */,
 				2751F4D718DA02C100339C96 /* NSObject+CSReflectionAdditions.m in Sources */,
-				8E7F81F018D0BF8500BC50C2 /* CSBaseObject.m in Sources */,
 				2751F4E318DA0D3000339C96 /* CSFeedItemCell.m in Sources */,
 				8E685AA718DC733B00309270 /* CSCollectionPageControl.m in Sources */,
 				9D8C6C5D170CA12500B18012 /* CSRootViewController.m in Sources */,
@@ -1555,12 +1555,12 @@
 				9D639E7C18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */,
 				9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */,
-				9D16D32818DB57D0001E9C38 /* CSRegisterRoutesService.m in Sources */,
+				9D16D32818DB57D0001E9C38 /* EZRRegisterRoutesService.m in Sources */,
 				9DFBC0991714957E006BF840 /* CSFeedAddViewController.m in Sources */,
 				0D7987B118DB8F69004440C3 /* CSMenuSearchFeedDataSource.m in Sources */,
 				2751F4D618DA02C100339C96 /* NSObject+CSNilAdditions.m in Sources */,
 				9D639E8218E0A54300350B5F /* APIMockedDataClient.m in Sources */,
-				9D16D33818DB75D9001E9C38 /* CSCoreDataService.m in Sources */,
+				9D16D33818DB75D9001E9C38 /* EZRCoreDataService.m in Sources */,
 				9D16D34B18DBA9E9001E9C38 /* APIRoute.m in Sources */,
 				2751F4E218DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m in Sources */,
 				0D1F71DE18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m in Sources */,
@@ -1891,6 +1891,7 @@
 				9D458C7518E331B400BC17D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D79274718DA1D0300E1D3E1 /* Build configuration list for PBXNativeTarget "Staging" */ = {
 			isa = XCConfigurationList;

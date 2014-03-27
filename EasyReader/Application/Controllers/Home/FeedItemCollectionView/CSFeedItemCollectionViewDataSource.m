@@ -90,8 +90,6 @@
   FeedItem *item = [_sortedFeedItems objectAtIndex:indexPath.row];
   _configureFeedItemCell(cell, item);
   
-  [(CSHomeViewController*)collectionView.delegate setCollectionCellGoingTo:indexPath.row];
-  
   return cell;
 }
 

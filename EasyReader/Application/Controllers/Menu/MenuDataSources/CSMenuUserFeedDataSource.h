@@ -10,19 +10,24 @@
 
 @class User;
 
+/**
+ * A UITableViewDataSource for feeds in Core Data
+ */
 @interface CSMenuUserFeedDataSource : NSObject<UITableViewDataSource>
 
 #pragma mark - Properties
+
 /**
  * Feeds used to populate the menu table
  */
 @property (nonatomic, retain) NSMutableSet *feeds;
 @property (nonatomic, strong) NSArray *sortedFeeds;
 
-
 @property (nonatomic, retain) User *currentUser;
 
+
 #pragma mark - Methods
+
 /**
  * Updates the list of feeds used to populate the menu table
  */

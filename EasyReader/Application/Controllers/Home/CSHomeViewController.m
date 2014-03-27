@@ -9,6 +9,7 @@
 #import "CSHomeViewController.h"
 
 // Pods
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import <Block-KVO/MTKObserving.h>
 #import "MFSideMenu.h"
 
@@ -16,8 +17,11 @@
 #import "FeedItem.h"
 #import "Feed.h"
 #import "User.h"
-#import <AFNetworking/UIImageView+AFNetworking.h>
 
+// Categories
+#import "UIColor+EZRSharedColorAdditions.h"
+
+// Views
 #import "CSFeedItemCell.h"
 
 typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSSet *new);
@@ -37,10 +41,11 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 {
     [super viewDidLoad];
     _feedItems = [[NSMutableSet alloc] init];
-    
-    [_pageControl_itemIndicator setUpFadesOnView:[_pageControl_itemIndicator superview]];
-    _pageControl_itemIndicator.controller_owner = self;
-    
+  
+    _pageControl_itemIndicator.delegate = self;
+    _pageControl_itemIndicator.datasource = self;
+  _pageControl_itemIndicator.backgroundColor = [UIColor EZR_charcoal];
+  
     self.currentUser = [User current];
     
     [self setUpVerticalScrollView];
@@ -79,7 +84,6 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
  */
 - (void) setupFeedsObserver
 {
-    
     [self observeRelationship:@keypath(self.currentUser.feeds)
                   changeBlock:[self feedsDidChange]
                insertionBlock:nil
@@ -127,13 +131,12 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
         
         if(_currentFeedItem){
             [self scrollToCurrentFeedItem];
-            [_pageControl_itemIndicator setPageControllerPageAtIndex:[_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem]
-                                                       forCollection:_feedItems];
+            [_pageControl_itemIndicator setPageControllerPageAtIndex:[_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem]];
         } else {
-            [_pageControl_itemIndicator setPageControllerPageAtIndex:0 forCollection:_feedItems];
+            [_pageControl_itemIndicator setPageControllerPageAtIndex:0];
         }
     };
-    
+
     return block;
 }
 
@@ -162,7 +165,7 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
                 [_feedItems addObject:item];
             }
             
-            [_pageControl_itemIndicator.button_newItem setHidden:NO];
+            [_pageControl_itemIndicator showNewItemButton];
         }
     };
     
@@ -251,6 +254,25 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
     }
 }
 
+#pragma mark - CSCollectionPageControlDelegate methods
+
+- (void)pageControl:(CSCollectionPageControl *)pageControl didSelectPageAtIndex:(NSInteger)index
+{
+    
+    [self scrollToCurrentFeedItem];
+
+    [self.collectionView_feedItems scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]
+                                          atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+                                                  animated:YES];
+}
+
+#pragma mark - CSCollectionPageControlDatasource methods
+
+- (NSInteger)numberOfPagesForPageControl
+{
+  return [[_feedCollectionViewDataSource feedItems] count];
+}
+
 # pragma mark - ScrollView methods
 
 /**
@@ -259,7 +281,16 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 - (void)scrollToCurrentFeedItem
 {
     NSUInteger index = [_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    NSIndexPath *indexPath;
+    
+    // If the current index is greater than the feedItem array
+    if (index > [_feedCollectionViewDataSource.sortedFeedItems count]-1){
+        // Set the index to the last item in the array
+        indexPath = [NSIndexPath indexPathForRow:[_feedCollectionViewDataSource.sortedFeedItems count]-1 inSection:0];
+    } else {
+        indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    }
+    
     [_collectionView_feedItems scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
 
@@ -276,6 +307,18 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 }
 
 # pragma mark - CollectionView Delegate methods
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if([scrollView isMemberOfClass:[CSFeedItemCollectionView class]]) {
+        CGFloat pageWidth = _collectionView_feedItems.frame.size.width;
+        
+        // We add half the page width to the offset to consider the most-centered page to be the current one, not
+        // the page currently under the leftmost position of the view
+        NSInteger pageIndex = ((scrollView.contentOffset.x + pageWidth/2.0) / pageWidth);
+        
+        [self.pageControl_itemIndicator setPageControllerPageAtIndex:(int)pageIndex];
+    }
+}
 
 /**
  * Collection view delegate method for updating current feed item webview url
@@ -287,20 +330,11 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
         if(_currentFeedItem != self.collectionView_feedItems.currentFeedItem){
             _currentFeedItem = self.collectionView_feedItems.currentFeedItem;
             [self.feedItemWebView loadHTMLString:@"<html><head></head><body style=\"background-color: #000000;\"></body></html>" baseURL:nil];
+          
+            NSInteger newIndex = [_feedCollectionViewDataSource.sortedFeedItems indexOfObject:self.collectionView_feedItems.currentFeedItem];
+            [_pageControl_itemIndicator setPageControllerPageAtIndex:newIndex];
         }
     }
-}
-
-/**
- * Collection view delegate method for when a cell ends display
- * Sets page control indicator
- */
-- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger newIndex = indexPath.row+((indexPath.row-self.collectionCellGoingTo)*-1);
-    
-    [_pageControl_itemIndicator setPageControllerPageAtIndex:newIndex
-                                               forCollection:_feedItems];
 }
 
 @end

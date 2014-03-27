@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CSCollectionPageControl.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CSCollectionPageControl</TokenIdentifier>
+			<Abstract type="html">Page control for multiple</Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/setController_owner:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property CSHomeViewController *controller_owner</Declaration>
+			
+			
+			<Anchor>//api/name/controller_owner</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/controller_owner</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property CSHomeViewController *controller_owner</Declaration>
+			
+			
+			<Anchor>//api/name/controller_owner</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSCollectionPageControl/controller_owner</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property CSHomeViewController *controller_owner</Declaration>
+			
+			
+			<Anchor>//api/name/controller_owner</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/setButton_newItem:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property UIButton *button_newItem</Declaration>
+			
+			
+			<Anchor>//api/name/button_newItem</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/button_newItem</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property UIButton *button_newItem</Declaration>
+			
+			
+			<Anchor>//api/name/button_newItem</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSCollectionPageControl/button_newItem</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property UIButton *button_newItem</Declaration>
+			
+			
+			<Anchor>//api/name/button_newItem</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/setView_maskLayer:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property UIView *view_maskLayer</Declaration>
+			
+			
+			<Anchor>//api/name/view_maskLayer</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/view_maskLayer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property UIView *view_maskLayer</Declaration>
+			
+			
+			<Anchor>//api/name/view_maskLayer</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSCollectionPageControl/view_maskLayer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property UIView *view_maskLayer</Declaration>
+			
+			
+			<Anchor>//api/name/view_maskLayer</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/setView_leftFade:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property UIView *view_leftFade</Declaration>
+			
+			
+			<Anchor>//api/name/view_leftFade</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/view_leftFade</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property UIView *view_leftFade</Declaration>
+			
+			
+			<Anchor>//api/name/view_leftFade</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSCollectionPageControl/view_leftFade</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property UIView *view_leftFade</Declaration>
+			
+			
+			<Anchor>//api/name/view_leftFade</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/setView_rightFade:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property UIView *view_rightFade</Declaration>
+			
+			
+			<Anchor>//api/name/view_rightFade</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/view_rightFade</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property UIView *view_rightFade</Declaration>
+			
+			
+			<Anchor>//api/name/view_rightFade</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSCollectionPageControl/view_rightFade</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>@property UIView *view_rightFade</Declaration>
+			
+			
+			<Anchor>//api/name/view_rightFade</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/setPageControllerPageAtIndex:forCollection:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>- (void)setPageControllerPageAtIndex:(NSInteger)index forCollection:(NSSet *)collection</Declaration>
+			
+			
+			<Anchor>//api/name/setPageControllerPageAtIndex:forCollection:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/setUpFadesOnView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			
+			<Declaration>- (void)setUpFadesOnView:(UIView *)mask</Declaration>
+			
+			
+			<Anchor>//api/name/setUpFadesOnView:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

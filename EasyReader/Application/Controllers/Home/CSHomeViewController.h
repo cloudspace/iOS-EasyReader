@@ -21,7 +21,12 @@
 /**
  * The home view controller for the application
  */
-@interface CSHomeViewController : CSBaseViewController<UICollectionViewDelegate,UIScrollViewDelegate>
+@interface CSHomeViewController : CSBaseViewController <
+    UICollectionViewDelegate,
+    UIScrollViewDelegate,
+    CSCollectionPageControlDelegate,
+    CSCollectionPageControlDataSource
+>
 
 
 # pragma mark - IBOutlet
@@ -55,9 +60,6 @@
 
 /// Feed Item currently visible
 @property FeedItem *currentFeedItem;
-
-/// Integer id for the Collection cell that user is scrolling to
-@property NSInteger collectionCellGoingTo;
 
 
 # pragma mark - Methods

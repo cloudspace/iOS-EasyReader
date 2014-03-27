@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A UITableViewCell for feed data returned by the search API
+ */
 @interface CSSearchFeedCell : UITableViewCell
 
 #pragma mark - IBOutlets
@@ -18,12 +21,10 @@
 /// The feed's name
 @property (weak, nonatomic) IBOutlet UILabel *label_name;
 
-/// The add feed action
-- (IBAction)addFeedToUser:(id)sender;
 
 #pragma mark - Other Properties
 
-// The NSDictionary of the feed this cell is based on
-@property (nonatomic, weak) NSDictionary *feed;
+/// The NSDictionary of the feed this cell is based on
+@property (nonatomic, weak) NSDictionary *feedData;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "CSBaseObject.h"
+#import "CSRemoteObject.h"
 
 @class Feed;
 
@@ -17,7 +17,7 @@
 /**
  * An EasyReader User generally one per project
  */
-@interface User : CSBaseObject
+@interface User : CSRemoteObject
 
 
 #pragma mark - Core Data Properties
@@ -36,17 +36,49 @@
  */
 + (User *)current;
 
+/**
+ * Check if the feed already exists for the user
+ *
+ * @param url The url of the feed to check for
+ */
+- (BOOL)hasFeedWithURL:(NSString *)url;
 
 @end
 
 
 #pragma mark - Core Data Generated Accessors -
 
+/**
+ * Core data generated accessors
+ */
 @interface User (CoreDataGeneratedAccessors)
 
+/**
+ * Adds a feed object to feeds
+ *
+ * @param value The feed to add
+ */
 - (void)addFeedsObject:(Feed *)value;
+
+/**
+ * Removes a feed object from feeds
+ *
+ * @param value The feed to remove
+ */
 - (void)removeFeedsObject:(Feed *)value;
+
+/**
+ * Adds a new set of Feed objects to feeds
+ *
+ * @param values The feeds to add
+ */
 - (void)addFeeds:(NSSet *)values;
+
+/**
+ * Removes a set of Feed objects from feeds
+ *
+ * @param values The feeds to remove
+ */
 - (void)removeFeeds:(NSSet *)values;
 
 @end

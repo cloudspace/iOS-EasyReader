@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SOApplicationDelegateService.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SOApplicationDelegateService</TokenIdentifier>
+			<Abstract type="html">Represents an application delegate service object</Abstract>
+			<DeclaredIn>SOApplicationDelegateService.h</DeclaredIn>
+            
+			
+			<NodeRef refid="30"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/SOApplicationDelegateService/shared</TokenIdentifier>
+			<Abstract type="html">Returns the shared singleton app delegate service object.  Create it if needed.</Abstract>
+			<DeclaredIn>SOApplicationDelegateService.h</DeclaredIn>
+			
+			<Declaration>+ (SOApplicationDelegateService *)shared</Declaration>
+			
+			
+			<Anchor>//api/name/shared</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

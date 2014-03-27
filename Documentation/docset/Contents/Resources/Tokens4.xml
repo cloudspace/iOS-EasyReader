@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/APIMockedDataClient.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/APIMockedDataClient</TokenIdentifier>
+			<Abstract type="html">A subclass of APIClient which responds with mocked data loaded from JSON fixtures</Abstract>
+			<DeclaredIn>APIMockedDataClient.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

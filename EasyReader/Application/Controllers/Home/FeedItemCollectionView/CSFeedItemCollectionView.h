@@ -9,8 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "FeedItem.h"
 
+/**
+ * A collection view built to hold feed items
+ */
 @interface CSFeedItemCollectionView : UICollectionView
 
-@property (nonatomic,readonly) FeedItem *currentFeedItem;
+/**
+ * The feed item that is currently focused
+ */
+@property (nonatomic, readonly) FeedItem *currentFeedItem;
+
 
 @end

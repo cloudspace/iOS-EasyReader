@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * A UITableViewDataSource for custom and searched feeds returned by the API
+ */
 @interface CSMenuSearchFeedDataSource : NSObject<UITableViewDataSource>
 
 #pragma mark - Properties
+
 /**
  * Feeds used to populate the menu table
  */
@@ -19,6 +23,7 @@
 
 
 #pragma mark - Methods
+
 /**
  * Updates the list of feeds used to populate the menu table
  */

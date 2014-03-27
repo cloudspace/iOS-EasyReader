@@ -1,0 +1,816 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>FeedItem Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Easy Reader </a></h1>
+				<a id="developerHome" href="../index.html">Cloudspace</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">FeedItem Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/createdAt">&nbsp;&nbsp;&nbsp;&nbsp;createdAt</option>
+	
+	<option value="//api/name/feed">&nbsp;&nbsp;&nbsp;&nbsp;feed</option>
+	
+	<option value="//api/name/headline">&nbsp;&nbsp;&nbsp;&nbsp;headline</option>
+	
+	<option value="//api/name/id">&nbsp;&nbsp;&nbsp;&nbsp;id</option>
+	
+	<option value="//api/name/image_ipad">&nbsp;&nbsp;&nbsp;&nbsp;image_ipad</option>
+	
+	<option value="//api/name/image_ipad_retina">&nbsp;&nbsp;&nbsp;&nbsp;image_ipad_retina</option>
+	
+	<option value="//api/name/image_iphone_retina">&nbsp;&nbsp;&nbsp;&nbsp;image_iphone_retina</option>
+	
+	<option value="//api/name/publishedAt">&nbsp;&nbsp;&nbsp;&nbsp;publishedAt</option>
+	
+	<option value="//api/name/summary">&nbsp;&nbsp;&nbsp;&nbsp;summary</option>
+	
+	<option value="//api/name/title">&nbsp;&nbsp;&nbsp;&nbsp;title</option>
+	
+	<option value="//api/name/updatedAt">&nbsp;&nbsp;&nbsp;&nbsp;updatedAt</option>
+	
+	<option value="//api/name/url">&nbsp;&nbsp;&nbsp;&nbsp;url</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/requestFeedItemsFromFeeds:Since:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestFeedItemsFromFeeds:Since:success:failure:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createdAt">createdAt</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/feed">feed</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/headline">headline</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/id">id</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/image_ipad">image_ipad</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/image_ipad_retina">image_ipad_retina</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/image_iphone_retina">image_iphone_retina</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/publishedAt">publishedAt</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/summary">summary</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/title">title</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updatedAt">updatedAt</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/url">url</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestFeedItemsFromFeeds:Since:success:failure:">requestFeedItemsFromFeeds:Since:success:failure:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="FeedItem Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">FeedItem Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/CSRemoteObject.html">CSRemoteObject</a> : NSManagedObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">FeedItem.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A single <a href="#//api/name/feed">feed</a> item in a <a href="#//api/name/feed">feed</a></p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/title">&nbsp;&nbsp;title</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/summary">&nbsp;&nbsp;summary</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updatedAt">&nbsp;&nbsp;updatedAt</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/publishedAt">&nbsp;&nbsp;publishedAt</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createdAt">&nbsp;&nbsp;createdAt</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/image_iphone_retina">&nbsp;&nbsp;image_iphone_retina</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/image_ipad">&nbsp;&nbsp;image_ipad</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/image_ipad_retina">&nbsp;&nbsp;image_ipad_retina</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/url">&nbsp;&nbsp;url</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/id">&nbsp;&nbsp;id</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/feed">&nbsp;&nbsp;feed</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/headline">&nbsp;&nbsp;headline</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestFeedItemsFromFeeds:Since:success:failure:">+&nbsp;requestFeedItemsFromFeeds:Since:success:failure:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/createdAt" title="createdAt"></a>
+	<h3 class="subsubtitle method-title">createdAt</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The time this <a href="#//api/name/feed">feed</a> item was created</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSDate *createdAt</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/feed" title="feed"></a>
+	<h3 class="subsubtitle method-title">feed</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The feed this item is in</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) Feed *feed</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/headline" title="headline"></a>
+	<h3 class="subsubtitle method-title">headline</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The appropriate headline for this article</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSString *headline</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/id" title="id"></a>
+	<h3 class="subsubtitle method-title">id</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This <a href="#//api/name/feed">feed</a> items remote API id</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSNumber *id</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/image_ipad" title="image_ipad"></a>
+	<h3 class="subsubtitle method-title">image_ipad</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *image_ipad</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/image_ipad_retina" title="image_ipad_retina"></a>
+	<h3 class="subsubtitle method-title">image_ipad_retina</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *image_ipad_retina</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/image_iphone_retina" title="image_iphone_retina"></a>
+	<h3 class="subsubtitle method-title">image_iphone_retina</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *image_iphone_retina</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/publishedAt" title="publishedAt"></a>
+	<h3 class="subsubtitle method-title">publishedAt</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The time this <a href="#//api/name/feed">feed</a> item&rsquo;s article was published</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSDate *publishedAt</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/summary" title="summary"></a>
+	<h3 class="subsubtitle method-title">summary</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The summary for this <a href="#//api/name/feed">feed</a> item</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *summary</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/title" title="title"></a>
+	<h3 class="subsubtitle method-title">title</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The article title for this <a href="#//api/name/feed">feed</a> item</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *title</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updatedAt" title="updatedAt"></a>
+	<h3 class="subsubtitle method-title">updatedAt</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The time this <a href="#//api/name/feed">feed</a> item was updated</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSDate *updatedAt</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/url" title="url"></a>
+	<h3 class="subsubtitle method-title">url</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The article URL for this <a href="#//api/name/feed">feed</a> item</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *url</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/requestFeedItemsFromFeeds:Since:success:failure:" title="requestFeedItemsFromFeeds:Since:success:failure:"></a>
+	<h3 class="subsubtitle method-title">requestFeedItemsFromFeeds:Since:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Requests new <a href="#//api/name/feed">feed</a> items from a group of feeds</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)requestFeedItemsFromFeeds:(NSSet *)<em>feeds</em> Since:(NSDate *)<em>startAt</em> success:(APISuccessBlock)<em>successBlock</em> failure:(APIFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block to be run on API call success</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block to be run on API call failure</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>@param feeds
+@param startAt</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FeedItem.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Cloudspace. All rights reserved. (Last updated: 2014-03-26)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
