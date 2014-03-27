@@ -199,7 +199,7 @@
                     <connections>
                         <outlet property="button_leftMenu" destination="wb1-Na-kaO" id="0oK-RY-cyj"/>
                         <outlet property="collectionView_feedItems" destination="xvT-99-V3u" id="kb5-it-zd3"/>
-                        <outlet property="pageControl_itemIndicator" destination="hvt-eP-rs6" id="4QN-hB-imH"/>
+                        <outlet property="pageControl_itemIndicator" destination="hvt-eP-rs6" id="fCL-Ia-Qca"/>
                         <outlet property="verticalScrollView" destination="EWA-9Z-pb1" id="yj7-Ir-WAm"/>
                     </connections>
                 </viewController>

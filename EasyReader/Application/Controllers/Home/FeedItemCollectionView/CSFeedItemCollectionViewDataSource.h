@@ -30,7 +30,7 @@ typedef void (^configureFeedItemCell)(CSFeedItemCell *, FeedItem *);
 - (void)sortFeedItems;
 
 /// The FeedItems for this data source
-@property (nonatomic, strong) NSMutableSet *feedItems;
+@property (nonatomic, strong) NSSet *feedItems;
 @property (nonatomic, strong) NSArray *sortedFeedItems;
 
 @end

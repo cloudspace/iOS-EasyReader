@@ -49,9 +49,6 @@
 /// Displays website that hosts article
 @property (nonatomic, strong) UIWebView *feedItemWebView;
 
-/// Feed items on user
-@property (nonatomic, strong) NSMutableSet *feedItems;
-
 /// Current User
 @property (nonatomic, retain) User* currentUser;
 

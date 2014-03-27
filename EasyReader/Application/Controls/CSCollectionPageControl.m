@@ -184,13 +184,23 @@ CGFloat const kAnimationDuration = 0.75;
  * Hides page indicators on control
  */
 - (void) hidePageControlIndicators
-{   for( UIView *view in [self subviews] ) [view setAlpha:0];   }
+{
+    for( UIView *view in [self subviews] )
+    {
+        [view setAlpha:0];
+    }
+}
 
 /**
  * Shows page indicators on control
  */
 - (void) showPageControlIndicators
-{   for( UIView *view in [self subviews] ) [view setAlpha:1];   }
+{
+    for( UIView *view in [self subviews] )
+    {
+        [view setAlpha:1];
+    }
+}
 
 
 /**

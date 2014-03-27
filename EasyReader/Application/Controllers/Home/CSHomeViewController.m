@@ -29,7 +29,12 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 @interface CSHomeViewController ()
 {
     NSString *currentURL;
+
+    /// Feed items on user
+    NSMutableSet *_feedItems;
+    NSArray *_sortedFeedItems;
 }
+
 @end
 
 @implementation CSHomeViewController
@@ -68,13 +73,6 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 -(BOOL)shouldAutorotate {
     return NO;
 }
-//
-//typedef returnType (^void)(parameterTypes);
-//
-//- (configureFeedItemCell)configureFeedItem
-//- (void) blockForSelector
-//{
-//                           }
 
 
 #pragma mark Observations
@@ -146,7 +144,9 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 -(ObserverBlock) feedItemsDidChange
 {
     ObserverBlock block = ^void(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
-        _feedItems = [(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems];
+  //      CSFeedItemCollectionViewDataSource *dataSource = (CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource;
+        
+//        NSMutableSet *feedItems = [dataSource.feedItems mutableCopy];
         
         if(!new) {
             NSLog(@"There are no feeds here");
@@ -157,6 +157,7 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
             [addedFeedItems removeObjectsInArray:[old allObjects]];
             [removedFeedItems removeObjectsInArray:[new allObjects]];
             
+
             for( FeedItem *item in removedFeedItems ){
                 [_feedItems removeObject:item];
             }
