@@ -9,6 +9,15 @@
 #import <XCTest/XCTest.h>
 #import "EZRBaseModelTests.h"
 
+// Models
+#import "User.h"
+#import "Feed.h"
+#import "FeedItem.h"
+
+
+/**
+ * User model tests
+ */
 @interface UserTests : EZRBaseModelTests
 
 @end
@@ -18,17 +27,60 @@
 - (void)setUp
 {
     [super setUp];
+    
+    bundle = [NSBundle bundleForClass:[self class]];
 }
 
 - (void)tearDown
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testCurrentWithNoSharedInstanceSet
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    [User current];
+    XCTAssertTrue([[User MR_findAll] count] == 1, @"");
+}
+
+- (void)testCurrentWithSetSharedInstance
+{
+    [User current];
+    User *currentUser = [[User MR_findAll] firstObject];
+    XCTAssertTrue([currentUser isEqual:[User current]], @"");
+}
+
+
+- (void)testFeedItems
+{
+    User *user = [User MR_createEntity];
+    
+    Feed *feed1 = [Feed MR_createEntity];
+    Feed *feed2 = [Feed MR_createEntity];
+    
+    FeedItem *feedItem1 = [FeedItem MR_createEntity];
+    FeedItem *feedItem2 = [FeedItem MR_createEntity];
+    
+    [feed1 addFeedItemsObject:feedItem1];
+    [feed2 addFeedItemsObject:feedItem2];
+    
+    [user addFeeds:[NSSet setWithObjects:feed1, feed2, nil]];
+    
+    BOOL assert = [[user feedItems] isEqualToSet:[NSSet setWithObjects:feedItem1, feedItem2, nil]];
+    XCTAssertTrue(assert, @"");
+}
+
+-(void) testHasFeedWithURL
+{
+    Feed *feed1 = [Feed MR_createEntity];
+    [feed1 setUrl:@"test1"];
+    
+    Feed *feed2 = [Feed MR_createEntity];
+    [feed2 setUrl:@"test2"];
+    
+    User *user = [User MR_createEntity];
+    [user addFeeds:[NSSet setWithObjects:feed1, feed2, nil]];
+    
+    XCTAssertTrue([user hasFeedWithURL:@"test1"], @"");
 }
 
 @end
