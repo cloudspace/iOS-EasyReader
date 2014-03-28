@@ -29,6 +29,8 @@
 #import "EZRCustomFeedCell.h"
 #import "CSSearchFeedCell.h"
 
+typedef void (^ObserverBlock)(__weak CSMenuLeftViewController *self, NSSet *old, NSSet *new);
+
 @interface CSMenuLeftViewController ()
 {
     CSMenuUserFeedDataSource *userFeedDataSource;
@@ -58,28 +60,9 @@
     // Added search method to the user input field
     [self.textField_searchInput addTarget:self action:@selector(searchFieldDidChange)forControlEvents:UIControlEventEditingChanged];
     
-    // Add observer
-    //[self.currentUser addObserver:self forKeyPath:@"feeds" options:NSKeyValueObservingOptionNew context:nil];
+    
     [self observeRelationship:@keypath(self.currentUser.feeds)
-                  changeBlock:^(__weak CSMenuLeftViewController *self, NSSet *old, NSSet *new) {
-                      NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
-                      NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
-                      
-                      [addedFeeds removeObjectsInArray:[old allObjects]];
-                      [removedFeeds removeObjectsInArray:[new allObjects]];
-                      
-                      for ( Feed *feed in removedFeeds ){
-                          [[self feeds] removeObject:feed];
-                      }
-                      
-                      for ( Feed *feed in addedFeeds ){
-                          [[self feeds] addObject:feed];
-                      }
-                      
-                      // Update and switch to the userFeed data source
-                      [userFeedDataSource updateWithFeeds:self.feeds];
-                      [self updateUserFeedDataSource];
-                  }
+                  changeBlock:[self feedsDidChange]
                insertionBlock:nil
                  removalBlock:nil
              replacementBlock:nil
@@ -92,6 +75,33 @@
     
     userFeedDataSource.feeds = self.feeds;
     [self updateUserFeedDataSource];
+}
+
+/**
+ * Adds or removes Feeds from current user and updates data source accordingly
+ */
+-(ObserverBlock) feedsDidChange
+{
+    ObserverBlock block = ^void(__weak CSMenuLeftViewController *self, NSSet *old, NSSet *new) {
+        NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
+        NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
+        
+        [addedFeeds removeObjectsInArray:[old allObjects]];
+        [removedFeeds removeObjectsInArray:[new allObjects]];
+        
+        for ( Feed *feed in removedFeeds ){
+            [[self feeds] removeObject:feed];
+        }
+        
+        for ( Feed *feed in addedFeeds ){
+            [[self feeds] addObject:feed];
+        }
+        
+        // Update and switch to the userFeed data source
+        [userFeedDataSource updateWithFeeds:self.feeds];
+        [self updateUserFeedDataSource];
+    };
+    return block;
 }
 
 - (void)applyMenuStyles
@@ -142,6 +152,7 @@
 
 
 #pragma mark - DataSource Methods
+
 /**
  * Update the feeds in the menu when a user begins or ends a search
  */
