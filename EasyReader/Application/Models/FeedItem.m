@@ -19,9 +19,9 @@
 @dynamic updatedAt;
 @dynamic publishedAt;
 @dynamic createdAt;
-@dynamic image_iphone_retina;
-@dynamic image_ipad;
-@dynamic image_ipad_retina;
+@dynamic imageIphoneRetina;
+@dynamic imageIpad;
+@dynamic imageIpadRetina;
 @dynamic url;
 @dynamic feed;
 @dynamic id;

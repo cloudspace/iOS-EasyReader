@@ -60,17 +60,17 @@
                                                                     <rect key="frame" x="0.0" y="400" width="320" height="237"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="302" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-v3-acz">
-                                                                            <rect key="frame" x="8" y="5" width="302" height="75"/>
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="302" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-v3-acz">
+                                                                            <rect key="frame" x="8" y="5" width="302" height="100"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="75" id="Ev7-IU-V7M"/>
+                                                                                <constraint firstAttribute="height" constant="100" id="Ev7-IU-V7M"/>
                                                                             </constraints>
                                                                             <attributedString key="attributedText">
                                                                                 <fragment content="This is the title of an article and can be long sometimes.">
                                                                                     <attributes>
                                                                                         <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                        <font key="NSFont" size="28" name="Futura-Medium"/>
+                                                                                        <font key="NSFont" size="26" name="Futura-Medium"/>
                                                                                         <font key="NSOriginalFont" size="32" name="Futura-Medium"/>
                                                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="0.75"/>
                                                                                     </attributes>
@@ -78,30 +78,18 @@
                                                                             </attributedString>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="302" translatesAutoresizingMaskIntoConstraints="NO" id="Hbm-RM-Vyr">
-                                                                            <rect key="frame" x="8" y="95" width="302" height="93"/>
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKE-EF-lhA">
+                                                                            <rect key="frame" x="0.0" y="143" width="320" height="21"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                            <attributedString key="attributedText">
-                                                                                <fragment>
-                                                                                    <string key="content">Sometimes article summaries can be short and sometimes they can be very long. We need to prepare for both situations. To do this we should top align the summary in a text view and make it fade as it goes off the end of the box.</string>
-                                                                                    <attributes>
-                                                                                        <color key="NSColor" red="0.85490196078431369" green="0.90980392156862744" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                        <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                                    </attributes>
-                                                                                </fragment>
-                                                                            </attributedString>
+                                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="5IB-v3-acz" secondAttribute="bottom" constant="157" id="2tv-1M-IpA"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="Hbm-RM-Vyr" secondAttribute="bottom" constant="49" id="HYI-R8-UVE"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="5IB-v3-acz" secondAttribute="bottom" constant="132" id="2tv-1M-IpA"/>
                                                                         <constraint firstAttribute="trailing" secondItem="5IB-v3-acz" secondAttribute="trailing" constant="10" id="Mk8-cT-wkP"/>
-                                                                        <constraint firstItem="5IB-v3-acz" firstAttribute="trailing" secondItem="Hbm-RM-Vyr" secondAttribute="trailing" id="QVP-D1-cx3"/>
-                                                                        <constraint firstItem="Hbm-RM-Vyr" firstAttribute="top" secondItem="GyA-VK-s4d" secondAttribute="top" constant="95" id="XgE-XT-1g9"/>
                                                                         <constraint firstItem="5IB-v3-acz" firstAttribute="leading" secondItem="GyA-VK-s4d" secondAttribute="leading" constant="8" id="rvV-ox-NbO"/>
-                                                                        <constraint firstItem="5IB-v3-acz" firstAttribute="leading" secondItem="Hbm-RM-Vyr" secondAttribute="leading" id="z0B-cy-ZrK"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -124,7 +112,7 @@
                                                             <outlet property="imageView_backgroundReflection" destination="6do-aH-WMA" id="lKj-KA-3Zm"/>
                                                             <outlet property="info_view" destination="GyA-VK-s4d" id="D8t-dc-C8Q"/>
                                                             <outlet property="label_headline" destination="5IB-v3-acz" id="F15-Jk-Z0d"/>
-                                                            <outlet property="label_summary" destination="Hbm-RM-Vyr" id="Pqj-fM-MTd"/>
+                                                            <outlet property="label_source" destination="ZKE-EF-lhA" id="CiM-kh-mPh"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>

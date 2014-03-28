@@ -39,13 +39,13 @@
 @property (nonatomic, retain) NSDate * createdAt;
 
 /// The related iPhone retina sized image
-@property (nonatomic, retain) NSString * image_iphone_retina;
+@property (nonatomic, retain) NSString * imageIphoneRetina;
 
 /// The related iPad sized image
-@property (nonatomic, retain) NSString * image_ipad;
+@property (nonatomic, retain) NSString * imageIpad;
 
 /// The related iPad retina sized image
-@property (nonatomic, retain) NSString * image_ipad_retina;
+@property (nonatomic, retain) NSString * imageIpadRetina;
 
 /// The article URL for this feed item
 @property (nonatomic, retain) NSString * url;

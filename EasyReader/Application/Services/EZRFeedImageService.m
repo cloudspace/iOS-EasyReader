@@ -11,6 +11,7 @@
 #import "SDImageCache.h"
 #import "SDWebImageDownloader.h"
 #import "FeedItem.h"
+#import "GPUImage.h"
 
 /// The shared instance dispatch once predicate
 static dispatch_once_t pred;
@@ -55,13 +56,13 @@ static EZRFeedImageService *sharedInstance;
 
 - (void)prefetchImagesForFeedItems:(NSArray *)feedItems
 {
-    for (FeedItem *item in feedItems)
-    {
-        if (item.image_iphone_retina)
-        {
-          [self fetchImageAtURLString:item.image_iphone_retina];
-        }
-    }
+//    for (FeedItem *item in feedItems)
+//    {
+//        if (item.imageIphoneRetina)
+//        {
+//          [self fetchImageAtURLString:item.imageIphoneRetina];
+//        }
+//    }
 }
 
 - (void)fetchImageAtURLString:(NSString *)urlString
@@ -77,24 +78,22 @@ static EZRFeedImageService *sharedInstance;
 {
     @synchronized(self)
     {
-        if ([self isImageCurrentlyBeingProcessedForURLString:urlString])
+        [self addCompletionBlocksForURLString:urlString success:success failure:failure];
+        
+        if (![self isImageCurrentlyBeingProcessedForURLString:urlString])
         {
-            [self addCompletionBlocksForURLString:urlString success:success failure:failure];
-            return;
-        }
-        else
-        {
-            [self addCompletionBlocksForURLString:urlString success:success failure:failure];
-            [self downloadAndProcessImageAtURLString:urlString];
+            [self markImageForURLString:urlString asBeingProcessed:YES];
+            
             [imageCache queryDiskCacheForKey:urlString done:^(UIImage *image, SDImageCacheType cacheType) {
                 [blurredImageCache queryDiskCacheForKey:urlString done:^(UIImage *blurredImage, SDImageCacheType blurredCacheType) {
                     if (image && blurredImage)
                     {
-                        if (success) success(image, blurredImage);
+                        NSLog(@"FOUND CACHED IMAGES");
+                        [self triggerCompletionBlocksForUrlString:urlString withImage:image blurredImage:blurredImage];
                     }
                     else
                     {
-                        [self addCompletionBlocksForURLString:urlString success:success failure:failure];
+                        NSLog(@"NO CACHE FOUND, DOWNLOADING");
                         [self downloadAndProcessImageAtURLString:urlString];
                     }
                 }];
@@ -105,8 +104,6 @@ static EZRFeedImageService *sharedInstance;
 
 - (void)downloadAndProcessImageAtURLString:(NSString *)urlString
 {
-    [self markImageForURLString:urlString asBeingProcessed:YES];
-    
     [self downloadImageAtURLString:urlString
                            success:
      ^(UIImage *image) {
@@ -180,11 +177,8 @@ static EZRFeedImageService *sharedInstance;
                                 success:(void (^)(UIImage *image, UIImage *blurredImage))success
                                 failure:(void (^)())failure
 {
-    @synchronized(self)
-    {
-        [self addSuccessCompletionBlockForURLString:urlString success:success];
-        [self addFailureCompletionBlockForURLString:urlString failure:failure];
-    }
+    [self addSuccessCompletionBlockForURLString:urlString success:success];
+    [self addFailureCompletionBlockForURLString:urlString failure:failure];
 }
 
 - (void)addSuccessCompletionBlockForURLString:(NSString *)urlString
@@ -304,24 +298,19 @@ static EZRFeedImageService *sharedInstance;
     
     CIFilter *blurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
     
-//    [blurFilter setDefaults];
-    
+    [blurFilter setDefaults];
     [blurFilter setValue: inputImage forKey: @"inputImage"];
     [blurFilter setValue: [NSNumber numberWithFloat:20.0f] forKey:@"inputRadius"];
     
     CIImage *result = [blurFilter valueForKey: kCIOutputImageKey];
     
-    result = [result imageByApplyingTransform:
-                   CGAffineTransformTranslate(CGAffineTransformMakeScale(1, -1), 0, result.extent.size.height)];
-//
-//    result = [result imageByApplyingTransform:CGAffineTransformTranslate(CGAffineTransformMakeScale(1, -1), 0, 50)];
-    
-    result = [result imageByApplyingTransform:
-              CGAffineTransformTranslate(CGAffineTransformMakeScale(1, -1), 0, result.extent.size.height)];
-  
-    
-    UIImage *blurredImage = [UIImage imageWithCGImage:[context createCGImage:result fromRect:inputImage.extent]];
+    UIImage *blurredImage = [UIImage imageWithCGImage:[context createCGImage:result fromRect:inputImage.extent] scale:1.0 orientation:UIImageOrientationDownMirrored];
    
+//    GPUImageSaturationFilter *saturationFilter = [[GPUImageSaturationFilter alloc] init];
+//    saturationFilter.saturation = 1.5f;
+//    
+//    blurredImage = [saturationFilter imageByFilteringImage:blurredImage];
+
     NSLog(@"finished blur");
     return blurredImage;
 }

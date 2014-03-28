@@ -57,8 +57,8 @@ typedef void (^AFImageBlock)(NSURLRequest *request, NSHTTPURLResponse *response,
     
     
     [self.info_view setBackgroundColor:[[UIColor lightGrayColor] colorWithAlphaComponent:0.60]];
-    [self.imageView_background setImageForURLString:feedItem.image_iphone_retina];
-    [self.imageView_backgroundReflection setBlurredImageForURLString:feedItem.image_iphone_retina];
+    [self.imageView_background setImageForURLString:feedItem.imageIphoneRetina];
+    [self.imageView_backgroundReflection setBlurredImageForURLString:feedItem.imageIphoneRetina];
 }
 //
 ///**

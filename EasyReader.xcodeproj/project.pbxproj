@@ -121,7 +121,6 @@
 		9D639E8418E0A54300350B5F /* APIMockedDataClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E8118E0A54300350B5F /* APIMockedDataClient.m */; };
 		9D639E8518E0A54300350B5F /* APIMockedDataClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E8118E0A54300350B5F /* APIMockedDataClient.m */; };
 		9D639E8918E0BAD500350B5F /* feeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D639E8718E0BAD500350B5F /* feeds.json */; };
-		9D639E8C18E0C94B00350B5F /* feeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D639E8718E0BAD500350B5F /* feeds.json */; };
 		9D6B8A8918E4D2050085C1EE /* EZRFeedImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B8A8818E4D2050085C1EE /* EZRFeedImageService.m */; };
 		9D6B8A8A18E4D2050085C1EE /* EZRFeedImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B8A8818E4D2050085C1EE /* EZRFeedImageService.m */; };
 		9D6B8A8B18E4D2050085C1EE /* EZRFeedImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B8A8818E4D2050085C1EE /* EZRFeedImageService.m */; };
@@ -458,7 +457,7 @@
 		9D8F31A3171ED4BE006CFC6A /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		9D9CBABD18DC826700532F8C /* EZRApplicationStyleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRApplicationStyleService.h; sourceTree = "<group>"; };
 		9D9CBABE18DC826700532F8C /* EZRApplicationStyleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRApplicationStyleService.m; sourceTree = "<group>"; };
-		9D9CBB0F18DCC68A00532F8C /* Development copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Development copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D9CBB0F18DCC68A00532F8C /* Mocked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mocked.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA7CB25171C8B5E0045CC88 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		9DA7CB2B171CAD020045CC88 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		9DA7CB2C171CAD020045CC88 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
@@ -854,7 +853,7 @@
 				9DAC16C41709D48E00383722 /* Development.app */,
 				9D79274A18DA1D0300E1D3E1 /* Staging.app */,
 				9D79278E18DA1D3800E1D3E1 /* Easy Reader.app */,
-				9D9CBB0F18DCC68A00532F8C /* Development copy.app */,
+				9D9CBB0F18DCC68A00532F8C /* Mocked.app */,
 				9D8E39C718E5AE080025B73E /* EasyReader - Unit Tests.xctest */,
 			);
 			name = Products;
@@ -1074,7 +1073,7 @@
 			);
 			name = "Mocked Development";
 			productName = EasyReader;
-			productReference = 9D9CBB0F18DCC68A00532F8C /* Development copy.app */;
+			productReference = 9D9CBB0F18DCC68A00532F8C /* Mocked.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9DAC16C31709D48E00383722 /* Development */ = {
@@ -1843,7 +1842,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
-				PRODUCT_NAME = "Development copy";
+				PRODUCT_NAME = Mocked;
 				PROVISIONING_PROFILE = "0B1685CC-627C-4832-97D4-79736E8FE8EE";
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1865,7 +1864,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
-				PRODUCT_NAME = "Development copy";
+				PRODUCT_NAME = Mocked;
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;

@@ -34,3 +34,5 @@ pod 'CSShortcuts', '~> 0.0.1'
 
 # Testing
 pod 'OCMock', '~> 2.2.2'
+
+pod 'GPUImage', '~> 0.1'
