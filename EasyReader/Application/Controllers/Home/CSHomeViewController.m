@@ -109,8 +109,8 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
             }
             
             // Delete feed which will cascade delete feed items
-            [feed deleteEntity];
-            [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+            [feed MR_deleteEntity];
+            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         }
         
         for ( Feed *feed in addedFeeds ){
