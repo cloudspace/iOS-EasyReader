@@ -25,10 +25,10 @@
 
 - (void)tearDown
 {
-
-    [super tearDown];
     // Clean up core data
     [MagicalRecord cleanUp];
+    
+    [super tearDown];
 }
 
 @end
