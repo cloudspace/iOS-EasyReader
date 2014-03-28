@@ -54,6 +54,7 @@
 		2751F4E218DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DD18DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m */; };
 		2751F4E318DA0D3000339C96 /* EZRFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* EZRFeedItemCell.m */; };
 		2751F4E418DA0D3000339C96 /* CSFeedItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */; };
+		8E04027018E5DA6800F48793 /* CSRemoteObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E04026F18E5DA6800F48793 /* CSRemoteObjectTests.m */; };
 		8E685AA718DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E685AA818DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E685AA918DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
@@ -378,6 +379,7 @@
 		2751F4E018DA0D3000339C96 /* CSFeedItemCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItemCollectionView.h; sourceTree = "<group>"; };
 		2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItemCollectionView.m; sourceTree = "<group>"; };
 		5CECD14CAE964A1994399D15 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8E04026F18E5DA6800F48793 /* CSRemoteObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRemoteObjectTests.m; sourceTree = "<group>"; };
 		8E1CE42418D0F5A00090028E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8E685AA518DC733B00309270 /* CSCollectionPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSCollectionPageControl.h; path = EasyReader/Application/Controls/CSCollectionPageControl.h; sourceTree = SOURCE_ROOT; };
 		8E685AA618DC733B00309270 /* CSCollectionPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSCollectionPageControl.m; path = EasyReader/Application/Controls/CSCollectionPageControl.m; sourceTree = SOURCE_ROOT; };
@@ -773,6 +775,7 @@
 				9D8E39DE18E5B2160025B73E /* EZRFeedItemTests.m */,
 				9D8E39DF18E5B2160025B73E /* UserTests.m */,
 				0DEC0B7B18E5C9F30072BEF5 /* EZRFeedTests.m */,
+				8E04026F18E5DA6800F48793 /* CSRemoteObjectTests.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1554,6 +1557,7 @@
 				0DEC0B7C18E5C9F30072BEF5 /* EZRFeedTests.m in Sources */,
 				9D8E39E218E5B2160025B73E /* EZRBaseModelTests.m in Sources */,
 				9D8E39E518E5B2160025B73E /* CSBaseTestCase.m in Sources */,
+				8E04027018E5DA6800F48793 /* CSRemoteObjectTests.m in Sources */,
 				9D8E39E318E5B2160025B73E /* EZRFeedItemTests.m in Sources */,
 				0DEC0B8C18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m in Sources */,
 				0DEC0B8A18E5E68A0072BEF5 /* EZRBaseControllerTests.m in Sources */,
