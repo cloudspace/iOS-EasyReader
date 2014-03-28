@@ -21,7 +21,8 @@
 
 #import "EZRFeedItemCell.h"
 
-#import "GPUImage.h"
+#import "EZRFeedImageService.h"
+
 
 typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSSet *new);
 
@@ -160,6 +161,8 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
             for( FeedItem *item in addedFeedItems ){
                 [_feedItems addObject:item];
             }
+            
+            [[EZRFeedImageService shared] prefetchImagesForFeedItems:addedFeedItems];
             
             [_pageControl_itemIndicator.button_newItem setHidden:NO];
         }

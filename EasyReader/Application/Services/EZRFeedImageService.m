@@ -10,127 +10,320 @@
 #import "UIImageView+AFNetworking.h"
 #import "SDImageCache.h"
 #import "SDWebImageDownloader.h"
+#import "FeedItem.h"
 
+/// The shared instance dispatch once predicate
 static dispatch_once_t pred;
-static SDImageCache *sharedBlurCache;
+
+/// The shared EZRFeedImageService instance
+static EZRFeedImageService *sharedInstance;
+
 
 @implementation EZRFeedImageService
+{
+    /// A dictionary keyed on urlStrings of NSArrays of blocks to run on image processing success
+    NSMutableDictionary *successBlocks;
+
+    /// A dictionary keyed on urlStrings of NSArrays of blocks to run on image processing failure
+    NSMutableDictionary *failureBlocks;
+    
+    /// An array of URLs that are currently being processed
+    NSMutableArray *imageURLsCurrentlyBeingProcessed;
+    
+    /// A cache of feed item images
+    SDImageCache *imageCache;
+
+    /// A cache of blurred item images
+    SDImageCache *blurredImageCache;
+}
 
 
++ (EZRFeedImageService *)shared {
+    dispatch_once(&pred, ^{
+        if (sharedInstance)
+        {
+            return;
+        }
+        sharedInstance = [[EZRFeedImageService alloc] init];
+    });
+    
+    return sharedInstance;
+}
 
-- (void)prefetchImageAtURLString:(NSString *)urlString
+
+#pragma mark - Public methods
+
+- (void)prefetchImagesForFeedItems:(NSArray *)feedItems
+{
+    for (FeedItem *item in feedItems)
+    {
+        if (item.image_iphone_retina)
+        {
+          [self fetchImageAtURLString:item.image_iphone_retina];
+        }
+    }
+}
+
+- (void)fetchImageAtURLString:(NSString *)urlString
+{
+    [self fetchImageAtURLString:urlString
+                        success:nil
+                        failure:nil];
+}
+
+- (void)fetchImageAtURLString:(NSString *)urlString
+                      success:(void (^)(UIImage *image, UIImage *blurredImage))success
+                      failure:(void (^)())failure
+{
+    @synchronized(self)
+    {
+        if ([self isImageCurrentlyBeingProcessedForURLString:urlString])
+        {
+            [self addCompletionBlocksForURLString:urlString success:success failure:failure];
+            return;
+        }
+        else
+        {
+            [self addCompletionBlocksForURLString:urlString success:success failure:failure];
+            [self downloadAndProcessImageAtURLString:urlString];
+            [imageCache queryDiskCacheForKey:urlString done:^(UIImage *image, SDImageCacheType cacheType) {
+                [blurredImageCache queryDiskCacheForKey:urlString done:^(UIImage *blurredImage, SDImageCacheType blurredCacheType) {
+                    if (image && blurredImage)
+                    {
+                        if (success) success(image, blurredImage);
+                    }
+                    else
+                    {
+                        [self addCompletionBlocksForURLString:urlString success:success failure:failure];
+                        [self downloadAndProcessImageAtURLString:urlString];
+                    }
+                }];
+            }];
+        }
+    }
+}
+
+- (void)downloadAndProcessImageAtURLString:(NSString *)urlString
+{
+    [self markImageForURLString:urlString asBeingProcessed:YES];
+    
+    [self downloadImageAtURLString:urlString
+                           success:
+     ^(UIImage *image) {
+         [imageCache storeImage:image forKey:urlString];
+         
+         UIImage *blurredImage = [self blurImage:image];
+         
+         [blurredImageCache storeImage:blurredImage forKey:urlString];
+         
+         [self markImageForURLString:urlString asBeingProcessed:NO];
+         
+         [self triggerCompletionBlocksForUrlString:urlString withImage:image blurredImage:blurredImage];
+         
+     } failure:^{
+         [self triggerCompletionBlocksForUrlString:urlString withImage:nil blurredImage:nil];
+     }];
+}
+
+/**
+ * Downloads an image at the given URL string and returns it in the block
+ *
+ * @param success A block that is executed on a successful image download
+ * @param failure A block that is executed on a failed image download
+ */
+- (void)downloadImageAtURLString:(NSString *)urlString
+                      success:(void (^)(UIImage *image))success
+                      failure:(void (^)())failure
 {
     SDWebImageDownloader *downloader = [SDWebImageDownloader sharedDownloader];
     
     NSURL *url = [NSURL URLWithString:urlString];
     
-    [downloader downloadImageWithURL:url options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-        // Nothing, we don't really care about progress
-    } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-        // Store the image
-        if (image && finished)
-        {
-            SDImageCache *imageCache = [self sharedImageCache];
-            SDImageCache *blurredImageCache = [self sharedBlurredImageCache];
+    [downloader downloadImageWithURL:url options:0 progress:nil completed:
+     ^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+         if (image && finished)
+         {
+             if (success) success(image);
+         }
+         else
+         {
+             if (failure) failure();
+         }
+     }];
 
-            [imageCache storeImage:image forKey:urlString];
-            [blurredImageCache storeImage:[self blurImage:image] forKey:urlString];
-        }
-    }];
 }
-
-- (UIImage *)blurImage:(UIImage*)image
-{
-    return image;
-}
-
-- (UIImage *)imageForURLString:(NSString *)urlString
-{
-    SDImageCache *imageCache = [self sharedImageCache];
-    imageCache queryDiskCacheForKey:<#(NSString *)#> done:<#^(UIImage *image, SDImageCacheType cacheType)doneBlock#>
-}
-
 
 /**
- * Loads the image at the given urlString and calls setImageAndblur on success
- *
- * @param urlString the URL of the image to load
+ * Initializes a new EZRFeedImageService
  */
-- (void)loadImageWithURLString:(NSString *)urlString
+- (id) init
 {
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    self = [super init];
     
-    [self.imageView_background setImageWithURLRequest:request
-                                     placeholderImage:nil
-                                              success: [self setImageAndBlur]
-                                              failure:nil];
-}
-
-/**
- * Generates a block which will set the background image and then enerate a reflected blurred bottom view
- */
-- (AFImageBlock)setImageAndBlur
-{
-    return ^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        [self.imageView_background setImage:image];
+    if (self)
+    {
+        successBlocks = [[NSMutableDictionary alloc] init];
+        failureBlocks = [[NSMutableDictionary alloc] init];
+        imageCache = [[SDImageCache alloc] initWithNamespace:@"EZRFeedItemImages"];
+        blurredImageCache = [[SDImageCache alloc] initWithNamespace:@"EZRBlurredFeedItemImages"];
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-            CIImage *inputImage = [[CIImage alloc] initWithImage:image];
-            
-            CIFilter *blurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
-            
-            [blurFilter setDefaults];
-            [blurFilter setValue: inputImage forKey: @"inputImage"];
-            [blurFilter setValue: [NSNumber numberWithFloat:6.0f]
-                          forKey:@"inputRadius"];
-            
-            
-            CIImage *outputImage = [blurFilter valueForKey: @"outputImage"];
-            
-            CIContext *context = [CIContext contextWithOptions:nil];
-            
-            UIImage *blurredImage = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:outputImage.extent]];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.imageView_backgroundReflection setImage:blurredImage];
-                [self.imageView_backgroundReflection setTransform:CGAffineTransformMakeScale(1, -1)];
-            });
-        });
-    };
+        imageURLsCurrentlyBeingProcessed = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
 }
 
 
 #pragma mark - Private Methods
 
-/**
- * Returns a shared SDImageCache for feed item images
- */
-- (SDImageCache *)sharedImageCache {
-    dispatch_once(&pred, ^{
-        if (sharedBlurCache)
-        {
-            return;
-        }
-        sharedBlurCache = [[SDImageCache alloc] initWithNamespace:@"EZRBlurredFeedItemImage"];
-    });
+- (void)addCompletionBlocksForURLString:(NSString *)urlString
+                                success:(void (^)(UIImage *image, UIImage *blurredImage))success
+                                failure:(void (^)())failure
+{
+    @synchronized(self)
+    {
+        [self addSuccessCompletionBlockForURLString:urlString success:success];
+        [self addFailureCompletionBlockForURLString:urlString failure:failure];
+    }
+}
+
+- (void)addSuccessCompletionBlockForURLString:(NSString *)urlString
+                                      success:(void (^)(UIImage *image, UIImage *blurredImage))success
+{
+    if (!success) return;
     
-    return sharedBlurCache;
+    NSArray *successBlocksArray = [successBlocks objectForKey:urlString];
+    
+    if (!successBlocksArray)
+    {
+        successBlocksArray = @[success];
+    }
+    else
+    {
+        successBlocksArray = [successBlocksArray arrayByAddingObject:success];
+    }
+    
+    
+    [successBlocks setValue:successBlocksArray forKey:urlString];
+}
+
+- (void)addFailureCompletionBlockForURLString:(NSString *)urlString
+                                      failure:(void (^)())failure
+{
+    if (!failure) return;
+    
+    NSArray *failureBlocksArray = [failureBlocks objectForKey:urlString];
+    
+    if (!failureBlocksArray)
+    {
+        failureBlocksArray = @[failure];
+    }
+    else
+    {
+        failureBlocksArray = [failureBlocksArray arrayByAddingObject:failure];
+    }
+    
+    [failureBlocks setValue:failureBlocksArray forKey:urlString];
+}
+
+
+/**
+ * Triggers completion blocks for the given urlString
+ *
+ * @param image The image to blur
+ */
+- (void)triggerCompletionBlocksForUrlString:(NSString *)urlString
+                                  withImage:(UIImage*)image
+                               blurredImage:(UIImage *)blurredImage
+{
+    @synchronized(self)
+    {
+        if (image && blurredImage)
+        {
+            for (void(^block)(UIImage *image, UIImage *blurredImage) in [successBlocks objectForKey:urlString])
+            {
+                block(image, blurredImage);
+            }
+            
+        }
+        else
+        {
+            for (void(^block)() in [failureBlocks objectForKey:urlString])
+            {
+                block();
+            }
+        }
+        
+        [successBlocks setValue:nil forKey:urlString];
+        [failureBlocks setValue:nil forKey:urlString];
+    }
+}
+
+
+/**
+ * Flags a given URL string as currently being processed
+ *
+ * @param urlString The urlString to flag as being processed
+ */
+- (void)markImageForURLString:(NSString *)urlString asBeingProcessed:(BOOL)processing
+{
+    @synchronized(self)
+    {
+        if (processing)
+        {
+          [imageURLsCurrentlyBeingProcessed addObject:urlString];
+        }
+        else
+        {
+          [imageURLsCurrentlyBeingProcessed removeObject:urlString];
+        }
+    }
 }
 
 /**
- * Returns a shared SDImageCache for blurred feed item images
+ * Checks if the given urlString is currently being processed
+ *
+ * @param image The image to blur
  */
-- (SDImageCache *)sharedBlurredImageCache {
-    dispatch_once(&pred, ^{
-        if (sharedBlurCache)
-        {
-            return;
-        }
-        
-        sharedBlurCache = [[SDImageCache alloc] initWithNamespace:@"EZRFeedItemImages"];
-    });
+- (BOOL)isImageCurrentlyBeingProcessedForURLString:(NSString *)urlString
+{
+    return [imageURLsCurrentlyBeingProcessed containsObject:urlString];
+}
+
+/**
+ * Creates a blurred UIImage appropriate for the feed item
+ *
+ * @param image The image to blur
+ */
+- (UIImage *)blurImage:(UIImage*)image
+{
+    NSLog(@"processing blur");
+    CIContext *context = [CIContext contextWithOptions:nil];
     
-    return sharedBlurCache;
+    CIImage *inputImage = [[CIImage alloc] initWithImage:image];
+    
+    CIFilter *blurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
+    
+//    [blurFilter setDefaults];
+    
+    [blurFilter setValue: inputImage forKey: @"inputImage"];
+    [blurFilter setValue: [NSNumber numberWithFloat:20.0f] forKey:@"inputRadius"];
+    
+    CIImage *result = [blurFilter valueForKey: kCIOutputImageKey];
+    
+    result = [result imageByApplyingTransform:
+                   CGAffineTransformTranslate(CGAffineTransformMakeScale(1, -1), 0, result.extent.size.height)];
+//
+//    result = [result imageByApplyingTransform:CGAffineTransformTranslate(CGAffineTransformMakeScale(1, -1), 0, 50)];
+    
+    result = [result imageByApplyingTransform:
+              CGAffineTransformTranslate(CGAffineTransformMakeScale(1, -1), 0, result.extent.size.height)];
+  
+    
+    UIImage *blurredImage = [UIImage imageWithCGImage:[context createCGImage:result fromRect:inputImage.extent]];
+   
+    NSLog(@"finished blur");
+    return blurredImage;
 }
 
 @end

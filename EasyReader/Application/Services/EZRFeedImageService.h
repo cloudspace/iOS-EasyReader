@@ -15,25 +15,34 @@
 
 
 /**
+ * Prefetches all the images for the given feed items
+ *
+ * @param feedItems The array of feed items to preFetch images for
+ */
+- (void)prefetchImagesForFeedItems:(NSArray *)feedItems;
+
+/**
  * Prefetches and caches an image and it's blurred equivalent for use as background images
  *
  * @param urlString the URL of the image to process
  */
-- (void)prefetchImageAtURLString:(NSString *)urlString;
+- (void)fetchImageAtURLString:(NSString *)urlString;
 
 /**
- * Loads the cached image if it exists
+ * Prefetches and caches an image and it's blurred equivalent for use as background images
  *
- * @param urlString the URL of the image to look for in the cache
+ * @param urlString the URL of the image to process
+ * @param success A block that gets executed after successful fetching and processing
+ * @param success A block that gets executed after image fetching failure
  */
-- (UIImage *)imageForURLString:(NSString *)urlString;
+- (void)fetchImageAtURLString:(NSString *)urlString
+                      success:(void (^)(UIImage *image, UIImage *blurredImage))success
+                      failure:(void (^)())failure;
 
 /**
- * Loads the cached blurred image if it exists
- *
- * @param urlString the URL of the image to look for in the cache
+ * Creates or returns a shared EZRFeedImageService object
  */
-- (UIImage *)blurredForURLString:(NSString *)urlString;
++ (EZRFeedImageService *)shared;
 
 
 @end

@@ -8,7 +8,7 @@
 
 #import "EZRFeedItemCell.h"
 #import "UIColor+EZRSharedColorAdditions.h"
-#import "UIImageView+AFNetworking.h"
+#import "UIImageView+EZRFeedImageAdditions.h"
 
 typedef void (^AFImageBlock)(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image);
 
@@ -55,56 +55,44 @@ typedef void (^AFImageBlock)(NSURLRequest *request, NSHTTPURLResponse *response,
     self.imageView_background.image = nil;
     self.imageView_backgroundReflection.image = nil;
     
-    [self loadImageWithURLString:feedItem.image_iphone_retina];
+    
+    [self.info_view setBackgroundColor:[[UIColor lightGrayColor] colorWithAlphaComponent:0.60]];
+    [self.imageView_background setImageForURLString:feedItem.image_iphone_retina];
+    [self.imageView_backgroundReflection setBlurredImageForURLString:feedItem.image_iphone_retina];
 }
-
-/**
- * Loads the image at the given urlString and calls setImageAndblur on success
- *
- * @param urlString the URL of the image to load
- */
-- (void)loadImageWithURLString:(NSString *)urlString
-{
-   NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-   
-    [self.imageView_background setImageWithURLRequest:request
-                                     placeholderImage:nil
-                                              success: [self setImageAndBlur]
-                                              failure:nil];
-}
-
-/**
- * Generates a block which will set the background image and then enerate a reflected blurred bottom view
- */
-- (AFImageBlock)setImageAndBlur
-{
-    return ^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        [self.imageView_background setImage:image];
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-            CIImage *inputImage = [[CIImage alloc] initWithImage:image];
-            
-            CIFilter *blurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
-            
-            [blurFilter setDefaults];
-            [blurFilter setValue: inputImage forKey: @"inputImage"];
-            [blurFilter setValue: [NSNumber numberWithFloat:6.0f]
-                          forKey:@"inputRadius"];
-            
-            
-            CIImage *outputImage = [blurFilter valueForKey: @"outputImage"];
-            
-            CIContext *context = [CIContext contextWithOptions:nil];
-            
-            UIImage *blurredImage = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:outputImage.extent]];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.imageView_backgroundReflection setImage:blurredImage];
-                [self.imageView_backgroundReflection setTransform:CGAffineTransformMakeScale(1, -1)];
-            });
-        });
-    };
-}
+//
+///**
+// * Generates a block which will set the background image and then enerate a reflected blurred bottom view
+// */
+//- (AFImageBlock)setImageAndBlur
+//{
+//    return ^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+//        [self.imageView_background setImage:image];
+//        
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+//            CIImage *inputImage = [[CIImage alloc] initWithImage:image];
+//            
+//            CIFilter *blurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
+//            
+//            [blurFilter setDefaults];
+//            [blurFilter setValue: inputImage forKey: @"inputImage"];
+//            [blurFilter setValue: [NSNumber numberWithFloat:6.0f]
+//                          forKey:@"inputRadius"];
+//            
+//            
+//            CIImage *outputImage = [blurFilter valueForKey: @"outputImage"];
+//            
+//            CIContext *context = [CIContext contextWithOptions:nil];
+//            
+//            UIImage *blurredImage = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:outputImage.extent]];
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.imageView_backgroundReflection setImage:blurredImage];
+//                [self.imageView_backgroundReflection setTransform:CGAffineTransformMakeScale(1, -1)];
+//            });
+//        });
+//    };
+//}
 //
 //
 //- (void)applyInfoGradient

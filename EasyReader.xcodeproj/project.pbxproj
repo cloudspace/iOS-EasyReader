@@ -98,6 +98,10 @@
 		9D4FA6E617971D5B001E2A65 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */; };
 		9D4FA6E817971E88001E2A65 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */; };
 		9D4FA6EA17971E8D001E2A65 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */; };
+		9D5ACFBF18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ACFBE18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m */; };
+		9D5ACFC018E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ACFBE18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m */; };
+		9D5ACFC118E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ACFBE18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m */; };
+		9D5ACFC218E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ACFBE18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m */; };
 		9D639E6A18E08CED00350B5F /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		9D639E6C18E0934800350B5F /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
 		9D639E7018E0A4E000350B5F /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D639E6F18E0A4E000350B5F /* APIClient.m */; };
@@ -411,6 +415,8 @@
 		9D4FA6E517971D5B001E2A65 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		9D5ACFBD18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+EZRFeedImageAdditions.h"; path = "EasyReader/Application/Categories/UIImageView+EZRFeedImageAdditions.h"; sourceTree = SOURCE_ROOT; };
+		9D5ACFBE18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+EZRFeedImageAdditions.m"; path = "EasyReader/Application/Categories/UIImageView+EZRFeedImageAdditions.m"; sourceTree = SOURCE_ROOT; };
 		9D607E4518DCE0FD004DF7F3 /* Development-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Development-Info.plist"; sourceTree = "<group>"; };
 		9D639E6E18E0A4E000350B5F /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		9D639E6F18E0A4E000350B5F /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
@@ -575,6 +581,8 @@
 		2751F4D118DA02C100339C96 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				9D5ACFBD18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.h */,
+				9D5ACFBE18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m */,
 				2751F4D218DA02C100339C96 /* NSObject+CSNilAdditions.h */,
 				2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */,
 				2751F4D418DA02C100339C96 /* NSObject+CSReflectionAdditions.h */,
@@ -1424,6 +1432,7 @@
 				9D639E6C18E0934800350B5F /* CSUserFeedCell.m in Sources */,
 				9D639E7218E0A4E000350B5F /* APIClient.m in Sources */,
 				0D9A835A18E0AA4300D8376E /* CSSearchFeedCell.m in Sources */,
+				9D5ACFC118E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
 				9D096C3418DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */,
 				9D639E7E18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D79271718DA1D0300E1D3E1 /* CSMenuLeftViewController.m in Sources */,
@@ -1468,6 +1477,7 @@
 				0D9A835818E0AA4000D8376E /* CSUserFeedCell.m in Sources */,
 				9D16D35018DBA9E9001E9C38 /* APIRouter.m in Sources */,
 				9D096C3518DCE9D50043423B /* CSMenuSearchFeedDataSource.m in Sources */,
+				9D5ACFC218E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
 				9D639E7F18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D79275B18DA1D3800E1D3E1 /* CSMenuLeftViewController.m in Sources */,
 				9D639E6A18E08CED00350B5F /* CSSearchFeedCell.m in Sources */,
@@ -1521,6 +1531,7 @@
 				0D9A835918E0AA4300D8376E /* CSSearchFeedCell.m in Sources */,
 				0D9A835618E0AA3F00D8376E /* CSUserFeedCell.m in Sources */,
 				9D096C3318DCE9D40043423B /* CSMenuSearchFeedDataSource.m in Sources */,
+				9D5ACFC018E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
 				9D9CBAD718DCC68A00532F8C /* CSMenuLeftViewController.m in Sources */,
 				9D9CBAD918DCC68A00532F8C /* Easy Reader.xcdatamodeld in Sources */,
 				9D9CBADA18DCC68A00532F8C /* EZRRegisterRoutesService.m in Sources */,
@@ -1565,6 +1576,7 @@
 				0D7987A218DB6AE4004440C3 /* CSUserFeedCell.m in Sources */,
 				0D7987B218DB8F69004440C3 /* CSMenuUserFeedDataSource.m in Sources */,
 				9D639E7C18E0A53100350B5F /* APIMockResponse.m in Sources */,
+				9D5ACFBF18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
 				9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */,
 				9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */,
 				9D16D32818DB57D0001E9C38 /* EZRRegisterRoutesService.m in Sources */,
