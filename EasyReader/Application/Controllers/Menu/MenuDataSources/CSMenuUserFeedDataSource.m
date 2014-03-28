@@ -17,28 +17,6 @@
 #import "User.h"
 
 @implementation CSMenuUserFeedDataSource
-{
-    /// Feeds used to populate the menu table
-    NSSet *_feeds;
-    
-    /// Sorted feeds
-    NSArray *_sortedFeeds;
-    
-    /// The current user
-    User *_currentUser;
-
-}
-
-
-#pragma mark - Public methods
-
-- (void)setFeeds:(NSMutableSet *)feeds
-{
-    _feeds = feeds;
-    _sortedFeeds = [self sortFeeds:_feeds];
-}
-
-#pragma mark - Private Methods
 
 /**
  * Sets each instance variable to the values in the given parameters
@@ -56,16 +34,22 @@
     return self;
 }
 
+/**
+ * Sets the feeds to those in the database
+ */
+- (void)updateWithFeeds:(NSMutableSet *)feeds
+{
+    self.feeds = feeds;
+    [self sortFeeds];
+}
 
 /**
- * Sorts a list of feeds alphabetically
- *
- * @param the feeds to sort
+ * Sort the feeds alphabetically
  */
-- (NSArray *)sortFeeds:(NSSet *)feeds
+- (void)sortFeeds
 {
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    return [[NSArray arrayWithArray:[feeds allObjects]] sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+    self.sortedFeeds = [[NSArray arrayWithArray:[_feeds allObjects]] sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
 }
 
 
@@ -75,7 +59,7 @@
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_sortedFeeds count];
+    return [self.sortedFeeds count];
 }
 
 
@@ -99,20 +83,18 @@
 
 #pragma mark - Cell View
 /**
- * Dequeus and configures a cell for a given index path
+ * Generates a cell for a given index path
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Dequeue a styled cell
     CSUserFeedCell *cell = (CSUserFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"UserFeedCell"];
     
-    Feed *feed = _sortedFeeds[indexPath.row];
+    // Get the feed
+    Feed *feed = [self.sortedFeeds objectAtIndex:indexPath.row];
     
-    cell.feed = feed;
-    
-    UIView *selectedBackgroundView = [[UIView alloc] init];
-    [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
-    cell.selectedBackgroundView = selectedBackgroundView;
-    
+    // Set the cell data
+    [self setFeed:feed forUserFeedCell:cell];
     return cell;
 }
 
@@ -143,9 +125,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Feed *toDelete = [_sortedFeeds objectAtIndex:indexPath.row];
-
-        [_currentUser removeFeedsObject:toDelete];
+        Feed *toDelete = [self.sortedFeeds objectAtIndex:indexPath.row];
+        
+        [self.currentUser removeFeedsObject:toDelete];
     }
 }
 
@@ -154,7 +136,7 @@
  */
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ( indexPath.row == [_sortedFeeds count] ) {
+    if ( indexPath.row == [self.sortedFeeds count] ) {
         return UITableViewCellEditingStyleInsert;
     } else {
         return UITableViewCellEditingStyleDelete;
