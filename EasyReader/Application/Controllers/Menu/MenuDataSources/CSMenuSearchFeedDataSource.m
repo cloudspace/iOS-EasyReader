@@ -95,8 +95,7 @@
         NSDictionary *searchedFeedData = [self.sortedFeeds objectAtIndex:indexPath.row];
         
         // Set the cell data
-        cell.feedData = searchedFeedData;
-        [self setSelectedBackgroundForCell:cell];
+        [self setFeedData:searchedFeedData forSearchFeedCell:cell];
         
         return cell;
     } else {
@@ -107,11 +106,32 @@
         NSDictionary *customFeedData = [self.sortedFeeds objectAtIndex:indexPath.row];
 
         // Set the cell data
-        cell.feedData = customFeedData;
-        [self setSelectedBackgroundForCell:cell];
+        [self setFeedData:customFeedData forCustomFeedCell:cell];
         
         return cell;
     }
+}
+
+/**
+ * Set the feed for a search cell
+ */
+- (void)setFeedData:(NSDictionary *)feedData forSearchFeedCell:(CSSearchFeedCell *)cell
+{
+    cell.feedData = feedData;
+    
+    [self setSelectedBackgroundForCell:cell];
+    
+}
+
+/**
+ * Set the feed for a custom cell
+ */
+- (void)setFeedData:(NSDictionary *)feedData forCustomFeedCell:(EZRCustomFeedCell *)cell
+{
+    cell.feedData = feedData;
+    
+    [self setSelectedBackgroundForCell:cell];
+    
 }
 
 /**

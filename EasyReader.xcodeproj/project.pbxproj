@@ -46,6 +46,7 @@
 		0DEC0B7C18E5C9F30072BEF5 /* EZRFeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC0B7B18E5C9F30072BEF5 /* EZRFeedTests.m */; };
 		0DEC0B8A18E5E68A0072BEF5 /* EZRBaseControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC0B8918E5E68A0072BEF5 /* EZRBaseControllerTests.m */; };
 		0DEC0B8C18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC0B8B18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m */; };
+		0DEC0B8E18E605ED0072BEF5 /* CSMenuSearchFeedDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC0B8D18E605ED0072BEF5 /* CSMenuSearchFeedDataSourceTests.m */; };
 		15A0E5E679094DD3B4BA23CD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
 		1884EDB920EE4720B254D07C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
 		2751F4D618DA02C100339C96 /* NSObject+CSNilAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */; };
@@ -365,6 +366,7 @@
 		0DEC0B8818E5E68A0072BEF5 /* EZRBaseControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRBaseControllerTests.h; sourceTree = "<group>"; };
 		0DEC0B8918E5E68A0072BEF5 /* EZRBaseControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRBaseControllerTests.m; sourceTree = "<group>"; };
 		0DEC0B8B18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMenuUserFeedDataSourceTests.m; sourceTree = "<group>"; };
+		0DEC0B8D18E605ED0072BEF5 /* CSMenuSearchFeedDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMenuSearchFeedDataSourceTests.m; sourceTree = "<group>"; };
 		2751F4D218DA02C100339C96 /* NSObject+CSNilAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CSNilAdditions.h"; sourceTree = "<group>"; };
 		2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CSNilAdditions.m"; sourceTree = "<group>"; };
 		2751F4D418DA02C100339C96 /* NSObject+CSReflectionAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CSReflectionAdditions.h"; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 			isa = PBXGroup;
 			children = (
 				0DEC0B8B18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m */,
+				0DEC0B8D18E605ED0072BEF5 /* CSMenuSearchFeedDataSourceTests.m */,
 			);
 			path = MenuDataSources;
 			sourceTree = "<group>";
@@ -1555,6 +1558,7 @@
 				9D8E39E218E5B2160025B73E /* EZRBaseModelTests.m in Sources */,
 				9D8E39E518E5B2160025B73E /* CSBaseTestCase.m in Sources */,
 				9D8E39E318E5B2160025B73E /* EZRFeedItemTests.m in Sources */,
+				0DEC0B8E18E605ED0072BEF5 /* CSMenuSearchFeedDataSourceTests.m in Sources */,
 				0DEC0B8C18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m in Sources */,
 				0DEC0B8A18E5E68A0072BEF5 /* EZRBaseControllerTests.m in Sources */,
 			);
