@@ -74,7 +74,7 @@
     for( NSDictionary *data in responseData[@"feeds"] ){
         [currentUser addFeedsObject:[Feed createOrUpdateFirstFromAPIData:data]];
     }
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
 - (void) purgeOldFeedItems
@@ -95,10 +95,10 @@
         // Delete each feed item
         for (FeedItem *item in feedItemsToRemove)
         {
-            [item deleteEntity];
+            [item MR_deleteEntity];
         }
         
-        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     }
 }
 

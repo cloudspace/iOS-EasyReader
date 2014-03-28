@@ -10,7 +10,7 @@ This functionality has variously been referred to as a "time ago", "time since",
 - es (Spanish)
 - zh_Hans (Chinese Simplified)
 - zh_Hant (Chinese Traditional)
-- pt_BR (Brazilian Portuguese)
+- pt (Portuguese)
 - fr (French)
 - it (Italian)
 - ru (Russian)
@@ -23,8 +23,21 @@ This functionality has variously been referred to as a "time ago", "time since",
 - ro (Romanian)
 - da (Danish)
 - cs (Czech)
+- nb (Norwegian)
+- lv (Latvian)
+- tr (Turkish)
+- ko (Korean)
+- bg (Bulgarian)
+- he (Hebrew)
+- ar (Arabic)
+- gre (Greek)
+- pl (Polish)
+- sv (Swedish)
+- th (Thai)
 
-If you know a language not listed here, please consider submitting a translation.
+If you know a language not listed here, please consider submitting a translation. [Localization codes by language](http://stackoverflow.com/questions/3040677/locale-codes-for-iphone-lproj-folders).
+
+This project is user driven (by people like you). Pull requests close faster than issues (merged or rejected).
 
 ## Use
 
@@ -33,7 +46,7 @@ If you know a language not listed here, please consider submitting a translation
 3.  Call the `timeAgo` method in the following way:
 
 <pre>
-NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:0]
+NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:0];
 NSString *ago = [date timeAgo];
 NSLog(@"Output is: \"%@\"", ago);
 2011-11-12 17:19:25.608 Proj[0:0] Output is: "41 years ago"
@@ -96,4 +109,21 @@ SorinAntohi added `ro` Romanian strings. https://github.com/SorinAntohi
 
 spookd added `da` Danish strings. https://github.com/spookd
 
-barrettj added `cs` Czech strings.  https://github.com/barrettj
+Barrett Jacobsen added `cs` Czech strings.  https://github.com/barrettj
+
+Dmitry Shmidt added `nb` Norwegian strings. https://github.com/shmidt
+
+Martins Rudens added `lv` Latvian strings. https://github.com/rudensm
+
+Osman Saral added `tr` Turkish strings. https://github.com/osrl
+
+analogstyle added `ko` Korean strings. http://almacreative.net/
+
+Flavio Caetano fixed `pt` Portuguese strings. http://flaviocaetano.com
+
+kolarski added `bg` Bulgarian strings. http://github.com/kolarski
+
+Vladimir Kofman added `he` Hebrew strings. https://github.com/vladimirkofman
+
+Viraf Sarkari added `ar` Arabic, `gre` Greek, `pl` Polish, `sv` Swedish, and `th` Thai strings. https://github.com/viraf
+

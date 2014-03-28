@@ -276,7 +276,7 @@
     [self.currentUser addFeedsObject:newFeed];
     
     // Save the feed and feed items in the database
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
 @end
