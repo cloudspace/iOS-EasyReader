@@ -50,6 +50,11 @@ typedef void (^APIFailureBlock)(id responseObject, NSInteger httpStatus, NSError
  */
 + (APIClient *) shared;
 
+/**
+ * Sets the singleton API client object
+ * @param sharedClient The new shared UWAPIClient object
+ */
++ (void)setSharedClient:(APIClient*)sharedClient;
 
 #pragma mark - Instance methods
 

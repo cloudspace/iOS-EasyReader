@@ -16,6 +16,7 @@
 #import "CSRootViewController.h"
 #import "User.h"
 
+
 @implementation CSAppDelegate
 
 
@@ -28,6 +29,16 @@
  */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    #ifdef DEBUG
+        NSDictionary *environment = [NSProcessInfo processInfo].environment;
+        NSString *injectBundlePath = environment[@"XCInjectBundle"];
+        BOOL unit_testing = [injectBundlePath.pathExtension isEqualToString:@"xctest"];
+    
+        if (unit_testing) {
+            return YES;
+        }
+    #endif
+        
     [self registerService:[EZRCoreDataService shared]];
     [self registerService:[EZRRegisterRoutesService shared]];
     [self registerService:[EZRApplicationStyleService shared]];

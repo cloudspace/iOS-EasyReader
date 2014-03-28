@@ -72,18 +72,6 @@
 #define COCOAPODS_VERSION_MINOR_CSStandardViewControllers 0
 #define COCOAPODS_VERSION_PATCH_CSStandardViewControllers 1
 
-// EGOTableViewPullRefresh
-#define COCOAPODS_POD_AVAILABLE_EGOTableViewPullRefresh
-#define COCOAPODS_VERSION_MAJOR_EGOTableViewPullRefresh 0
-#define COCOAPODS_VERSION_MINOR_EGOTableViewPullRefresh 1
-#define COCOAPODS_VERSION_PATCH_EGOTableViewPullRefresh 0
-
-// Facebook-iOS-SDK
-#define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK
-#define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK 3
-#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 11
-#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 1
-
 // Inflections
 #define COCOAPODS_POD_AVAILABLE_Inflections
 #define COCOAPODS_VERSION_MAJOR_Inflections 1
@@ -114,30 +102,6 @@
 #define COCOAPODS_VERSION_MINOR_MTLabel 0
 #define COCOAPODS_VERSION_PATCH_MTLabel 1
 
-// MWFeedParser
-#define COCOAPODS_POD_AVAILABLE_MWFeedParser
-#define COCOAPODS_VERSION_MAJOR_MWFeedParser 1
-#define COCOAPODS_VERSION_MINOR_MWFeedParser 0
-#define COCOAPODS_VERSION_PATCH_MWFeedParser 0
-
-// MWFeedParser/FeedParser
-#define COCOAPODS_POD_AVAILABLE_MWFeedParser_FeedParser
-#define COCOAPODS_VERSION_MAJOR_MWFeedParser_FeedParser 1
-#define COCOAPODS_VERSION_MINOR_MWFeedParser_FeedParser 0
-#define COCOAPODS_VERSION_PATCH_MWFeedParser_FeedParser 0
-
-// MWFeedParser/NSDate+InternetDateTime
-#define COCOAPODS_POD_AVAILABLE_MWFeedParser_NSDate_InternetDateTime
-#define COCOAPODS_VERSION_MAJOR_MWFeedParser_NSDate_InternetDateTime 1
-#define COCOAPODS_VERSION_MINOR_MWFeedParser_NSDate_InternetDateTime 0
-#define COCOAPODS_VERSION_PATCH_MWFeedParser_NSDate_InternetDateTime 0
-
-// MWFeedParser/NSString+HTML
-#define COCOAPODS_POD_AVAILABLE_MWFeedParser_NSString_HTML
-#define COCOAPODS_VERSION_MAJOR_MWFeedParser_NSString_HTML 1
-#define COCOAPODS_VERSION_MINOR_MWFeedParser_NSString_HTML 0
-#define COCOAPODS_VERSION_PATCH_MWFeedParser_NSString_HTML 0
-
 // MagicalRecord
 #define COCOAPODS_POD_AVAILABLE_MagicalRecord
 #define COCOAPODS_VERSION_MAJOR_MagicalRecord 2
@@ -150,11 +114,11 @@
 #define COCOAPODS_VERSION_MINOR_NSDate_TimeAgo 0
 #define COCOAPODS_VERSION_PATCH_NSDate_TimeAgo 2
 
-// Reachability
-#define COCOAPODS_POD_AVAILABLE_Reachability
-#define COCOAPODS_VERSION_MAJOR_Reachability 3
-#define COCOAPODS_VERSION_MINOR_Reachability 0
-#define COCOAPODS_VERSION_PATCH_Reachability 0
+// OCMock
+#define COCOAPODS_POD_AVAILABLE_OCMock
+#define COCOAPODS_VERSION_MAJOR_OCMock 2
+#define COCOAPODS_VERSION_MINOR_OCMock 2
+#define COCOAPODS_VERSION_PATCH_OCMock 3
 
 // RegexKitLite
 #define COCOAPODS_POD_AVAILABLE_RegexKitLite
@@ -173,12 +137,6 @@
 #define COCOAPODS_VERSION_MAJOR_SDWebImage_Core 3
 #define COCOAPODS_VERSION_MINOR_SDWebImage_Core 5
 #define COCOAPODS_VERSION_PATCH_SDWebImage_Core 4
-
-// SVPullToRefresh
-#define COCOAPODS_POD_AVAILABLE_SVPullToRefresh
-#define COCOAPODS_VERSION_MAJOR_SVPullToRefresh 0
-#define COCOAPODS_VERSION_MINOR_SVPullToRefresh 4
-#define COCOAPODS_VERSION_PATCH_SVPullToRefresh 1
 
 // TestFlightSDK
 #define COCOAPODS_POD_AVAILABLE_TestFlightSDK
