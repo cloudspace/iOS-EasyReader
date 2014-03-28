@@ -22,8 +22,6 @@ PODS:
   - CSShortcuts (0.0.1)
   - CSStandardViewControllers (0.0.1):
     - MBProgressHUD (~> 0.6)
-  - EGOTableViewPullRefresh (0.1.0)
-  - Facebook-iOS-SDK (3.11.1)
   - Inflections (1.0.0):
     - RegexKitLite
   - MagicalRecord (2.2)
@@ -31,22 +29,12 @@ PODS:
   - MBProgressHUD (0.8)
   - MFSideMenu (0.5.4)
   - MTLabel (0.0.1)
-  - MWFeedParser (1.0.0):
-    - MWFeedParser/FeedParser
-    - MWFeedParser/NSDate+InternetDateTime
-    - MWFeedParser/NSString+HTML
-  - MWFeedParser/FeedParser (1.0.0):
-    - MWFeedParser/NSDate+InternetDateTime
-    - MWFeedParser/NSString+HTML
-  - MWFeedParser/NSDate+InternetDateTime (1.0.0)
-  - MWFeedParser/NSString+HTML (1.0.0)
   - NSDate+TimeAgo (1.0.2)
-  - Reachability (3.0.0)
+  - OCMock (2.2.3)
   - RegexKitLite (4.0)
   - SDWebImage (3.5.4):
     - SDWebImage/Core
   - SDWebImage/Core (3.5.4)
-  - SVPullToRefresh (0.4.1)
   - TestFlightSDK (2.2.3-beta)
 
 DEPENDENCIES:
@@ -55,19 +43,15 @@ DEPENDENCIES:
   - CSEnhancedTableView (~> 0.0.1)
   - CSShortcuts (~> 0.0.1)
   - CSStandardViewControllers (~> 0.0.1)
-  - EGOTableViewPullRefresh (~> 0.1.0)
-  - Facebook-iOS-SDK (~> 3.11.0)
   - Inflections (~> 1.0.0)
   - MagicalRecord (from `https://github.com/magicalpanda/MagicalRecord`, commit `98ec121bf767c495a2e887adeade7383b74a62f4`)
   - MAObjCRuntime (~> 0.0)
   - MBProgressHUD (~> 0.8)
   - MFSideMenu (~> 0.5.4)
   - MTLabel (~> 0.0.1)
-  - MWFeedParser (~> 1.0.0)
   - NSDate+TimeAgo (~> 1.0.2)
-  - Reachability (~> 3.0.0)
+  - OCMock (~> 2.2.2)
   - SDWebImage (~> 3.5.1)
-  - SVPullToRefresh
   - TestFlightSDK (~> 2.2.0-noadid-beta)
 
 EXTERNAL SOURCES:
@@ -81,20 +65,16 @@ SPEC CHECKSUMS:
   CSEnhancedTableView: 1e41e8e94529f19fb8f4f827b0e68ea908e26b69
   CSShortcuts: 0bd6b5f939bfbad0422ce7e07b52a8e47e938e8e
   CSStandardViewControllers: 40b3fbc88a2f30278969283c9dd22e345b855788
-  EGOTableViewPullRefresh: 6ba637ce6dd3186b503d2d91e6b3a08a26d650f5
-  Facebook-iOS-SDK: 42a1de39170b858d675c2453d8aace55c51be2bb
   Inflections: e77c455409381402163911a75835892fd406ff99
   MagicalRecord: 565156bae4de961860fad200a5c52e21e7933ebe
   MAObjCRuntime: 284004079156d10cb8237bc3ffcfa3a0e1a0af22
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   MFSideMenu: f59e25c080097a701e108459c207fb22e1f62c30
   MTLabel: 5b326c677b5df074e844a5d2840387b9048257a7
-  MWFeedParser: eb4fbf12677a1b3d936fdd122f88866b528aca3e
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
-  Reachability: 500bd76bf6cd8ff2c6fb715fc5f44ef6e4c024f2
+  OCMock: 74e4ddbcef134170dcc844f91c691f13868075d7
   RegexKitLite: f7af7b4d2b675cd2ec9a4abab6aad6ae1f6499c0
   SDWebImage: 1a62010700adbba823b621fc217906739dbf6aa5
-  SVPullToRefresh: 61a0e4bd12bd6f8e3465909810b0fbeb1a28d5f2
   TestFlightSDK: a959afdd20fd2a43a198bab1e6aa81f9469e5423
 
 COCOAPODS: 0.29.0

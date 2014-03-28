@@ -77,6 +77,12 @@ static APIClient *sharedInstance = nil;
     return sharedInstance;
 }
 
++ (void)setSharedClient:(APIClient*)sharedClient
+{
+    sharedInstance = sharedClient;
+}
+
+
 - (void) requestRoute:(NSString*)routeName
            parameters:(NSDictionary *)parameters
               success:(APISuccessBlock)success

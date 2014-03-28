@@ -36,8 +36,8 @@ static User *sharedInstance = nil;
             }
             else
             {
-                sharedInstance = [User createEntity];
-                [[NSManagedObjectContext MR_defaultContext] saveToPersistentStoreAndWait];
+                sharedInstance = [User MR_createEntity];
+                [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
             }
         }
         

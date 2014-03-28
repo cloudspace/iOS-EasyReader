@@ -76,12 +76,12 @@
 {
     for(NSDictionary *data in responseData[@"feed_items"]) {
         for( Feed *currentFeed in [[User current] feeds] ){
-            if( data[@"feed_id"] == currentFeed.id ){
+            if([data[@"feed_id"] compare:currentFeed.id] == NSOrderedSame){
                 [currentFeed addFeedItemsObject:[FeedItem createOrUpdateFirstFromAPIData:data]];
             }
         }
     }
     
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 @end
