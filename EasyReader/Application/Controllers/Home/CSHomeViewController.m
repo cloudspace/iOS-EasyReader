@@ -286,10 +286,12 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
     NSInteger feedItemsCount = [_feedCollectionViewDataSource.sortedFeedItems count];
     
     NSInteger beginFetchIndex = currentPageIndex - count > 0 ? currentPageIndex - count : 0;
-    NSInteger beforeFetchCount = currentPageIndex - count > 0 ? currentPageIndex - count : currentPageIndex;
-    NSInteger afterFetchCount = currentPageIndex + count > feedItemsCount ? feedItemsCount - currentPageIndex : count;
+    NSInteger beforeFetchCount = currentPageIndex - count > 0 ?  count : currentPageIndex - beginFetchIndex;
+    NSInteger afterFetchCount = currentPageIndex + count + 1 > feedItemsCount ? feedItemsCount - currentPageIndex : count;
     
     NSRange fetchRange = {beginFetchIndex, beforeFetchCount+afterFetchCount};
+    
+    /// TODO: crashes at end
     
     NSArray *itemsToPrefetch = [_feedCollectionViewDataSource.sortedFeedItems subarrayWithRange:fetchRange];
     

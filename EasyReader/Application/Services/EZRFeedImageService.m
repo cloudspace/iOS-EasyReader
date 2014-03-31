@@ -13,6 +13,9 @@
 #import "FeedItem.h"
 #import "GPUImage.h"
 
+// Toggle image caching
+#define IMAGE_CACHING = 0
+
 /// The shared instance dispatch once predicate
 static dispatch_once_t pred;
 
@@ -41,6 +44,29 @@ static EZRFeedImageService *sharedInstance;
 }
 
 
+#pragma mark - Public methods
+
+/**
+ * Initializes a new EZRFeedImageService
+ */
+- (id) init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        successBlocks = [[NSMutableDictionary alloc] init];
+        failureBlocks = [[NSMutableDictionary alloc] init];
+        prefetched = [[NSMutableArray alloc] init];
+        imageCache = [[SDImageCache alloc] initWithNamespace:@"EZRFeedItemImages"];
+        blurredImageCache = [[SDImageCache alloc] initWithNamespace:@"EZRBlurredFeedItemImages"];
+        
+        imageURLsCurrentlyBeingProcessed = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
 + (EZRFeedImageService *)shared {
     dispatch_once(&pred, ^{
         if (sharedInstance)
@@ -53,19 +79,18 @@ static EZRFeedImageService *sharedInstance;
     return sharedInstance;
 }
 
-
-#pragma mark - Public methods
-
 - (void)prefetchImagesForFeedItems:(NSArray *)feedItems
 {
-    for (FeedItem *item in feedItems)
-    {
-        if (item.imageIphoneRetina && ![prefetched containsObject:item.imageIphoneRetina])
+    #ifdef IMAGE_CACHING
+        for (FeedItem *item in feedItems)
         {
-            [self fetchImageAtURLString:item.imageIphoneRetina];
-            [prefetched addObject:item.imageIphoneRetina];
+            if (item.imageIphoneRetina && ![prefetched containsObject:item.imageIphoneRetina])
+            {
+                [self fetchImageAtURLString:item.imageIphoneRetina];
+                [prefetched addObject:item.imageIphoneRetina];
+            }
         }
-    }
+    #endif
 }
 
 - (void)fetchImageAtURLString:(NSString *)urlString
@@ -107,27 +132,6 @@ static EZRFeedImageService *sharedInstance;
     }
 }
 
-/**
- * Initializes a new EZRFeedImageService
- */
-- (id) init
-{
-    self = [super init];
-    
-    if (self)
-    {
-        successBlocks = [[NSMutableDictionary alloc] init];
-        failureBlocks = [[NSMutableDictionary alloc] init];
-        prefetched = [[NSMutableArray alloc] init];
-        imageCache = [[SDImageCache alloc] initWithNamespace:@"EZRFeedItemImages"];
-        blurredImageCache = [[SDImageCache alloc] initWithNamespace:@"EZRBlurredFeedItemImages"];
-        
-        imageURLsCurrentlyBeingProcessed = [[NSMutableArray alloc] init];
-    }
-    
-    return self;
-}
-
 
 #pragma mark - Private Methods
 
@@ -142,15 +146,16 @@ static EZRFeedImageService *sharedInstance;
     [self downloadImageAtURLString:urlString
                            success:
      ^(UIImage *image) {
-         [imageCache storeImage:image forKey:urlString];
+         UIImage *processedImage = [self processImage:image];
          
-         UIImage *blurredImage = [self blurImage:image];
-         
-         [blurredImageCache storeImage:blurredImage forKey:urlString];
+         #ifdef IMAGE_CACHING
+             [imageCache storeImage:image forKey:urlString];
+             [blurredImageCache storeImage:processedImage forKey:urlString];
+         #endif
          
          [self markImageForURLString:urlString asBeingProcessed:NO];
          
-         [self triggerCompletionBlocksForUrlString:urlString withImage:image blurredImage:blurredImage];
+         [self triggerCompletionBlocksForUrlString:urlString withImage:image blurredImage:processedImage];
          
      } failure:^{
          [self triggerCompletionBlocksForUrlString:urlString withImage:nil blurredImage:nil];
@@ -319,6 +324,58 @@ static EZRFeedImageService *sharedInstance;
     return [imageURLsCurrentlyBeingProcessed containsObject:urlString];
 }
 
+- (UIImage *)processImage:(UIImage *)image
+{
+    image = [self scaleImage:image toSize:CGSizeMake(340, 420) uiScale:1.0f];
+    image = [self blurImage:image];
+    image = [self cropImage:image toRect:CGRectMake(10, 160, 320, 200) uiScale:1.0f];
+    image = [self enhanceImage:image saturation:1.5 contrast:1.5];
+    image = [self flipImage:image];
+
+
+    return image;
+}
+
+- (UIImage *)cropImage:(UIImage *)image toRect:(CGRect)rect  uiScale:(CGFloat)scale
+{
+    CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], rect);
+    image = [UIImage imageWithCGImage:imageRef scale:scale orientation:UIImageOrientationUp];
+    CGImageRelease(imageRef);
+    
+    return image;
+}
+
+- (UIImage *)scaleImage:(UIImage *)image toSize:(CGSize)size uiScale:(CGFloat)scale
+{
+    UIGraphicsBeginImageContextWithOptions(size, NO, scale);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    
+    UIImage * resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return resizedImage;
+}
+
+- (UIImage *)enhanceImage:(UIImage *)image saturation:(CGFloat)saturation contrast:(CGFloat)contrast
+{
+    GPUImageSaturationFilter *saturationFilter = [[GPUImageSaturationFilter alloc] init];
+    saturationFilter.saturation = saturation;
+    
+    GPUImageContrastFilter *contrastFilter = [[GPUImageContrastFilter alloc] init];
+    contrastFilter.contrast = contrast;
+
+    UIImage *result = [saturationFilter imageByFilteringImage:image];
+    result = [contrastFilter imageByFilteringImage:result];
+    return result;
+}
+
+- (UIImage *)flipImage:(UIImage *)image
+{
+    return [UIImage imageWithCGImage:image.CGImage
+                               scale:image.scale
+                         orientation: UIImageOrientationDownMirrored];
+}
+
 /**
  * Creates a blurred UIImage appropriate for the feed item
  *
@@ -326,18 +383,9 @@ static EZRFeedImageService *sharedInstance;
  */
 - (UIImage *)blurImage:(UIImage*)image
 {
-    NSLog(@"processing blur");
     CIContext *context = [CIContext contextWithOptions:nil];
     
     CIImage *inputImage = [[CIImage alloc] initWithImage:image];
-    
-    // Crop image appropriately
-    CGRect clippedRect  = CGRectMake(0, 200, 320, 200);
-    CGImageRef cgimg = [context createCGImage:inputImage fromRect:[inputImage extent]];
-    CGImageRef imageRef = CGImageCreateWithImageInRect(cgimg, clippedRect);
-
-    // Blur image
-    inputImage = [CIImage imageWithCGImage:imageRef];
     
     CIFilter *blurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
     
@@ -346,16 +394,9 @@ static EZRFeedImageService *sharedInstance;
     [blurFilter setValue: [NSNumber numberWithFloat:20.0f] forKey:@"inputRadius"];
     
     CIImage *result = [blurFilter valueForKey: kCIOutputImageKey];
-    
+
     UIImage *blurredImage = [UIImage imageWithCGImage:[context createCGImage:result fromRect:inputImage.extent] scale:1.0 orientation:UIImageOrientationDownMirrored];
 
-    // Saturate image
-//    GPUImageSaturationFilter *saturationFilter = [[GPUImageSaturationFilter alloc] init];
-//    saturationFilter.saturation = 1.5f;
-//    
-//    blurredImage = [saturationFilter imageByFilteringImage:blurredImage];
-
-    NSLog(@"finished blur");
     return blurredImage;
 }
 

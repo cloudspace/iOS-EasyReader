@@ -15,6 +15,11 @@
 
 
 /**
+ * Creates or returns a shared EZRFeedImageService object
+ */
++ (EZRFeedImageService *)shared;
+
+/**
  * Prefetches all the images for the given feed items
  *
  * @param feedItems The array of feed items to preFetch images for
@@ -38,11 +43,6 @@
 - (void)fetchImageAtURLString:(NSString *)urlString
                       success:(void (^)(UIImage *image, UIImage *blurredImage))success
                       failure:(void (^)())failure;
-
-/**
- * Creates or returns a shared EZRFeedImageService object
- */
-+ (EZRFeedImageService *)shared;
 
 
 @end
