@@ -77,7 +77,7 @@
                       }
                       
                       // Update and switch to the userFeed data source
-                      userFeedDataSource.feeds = self.feeds;
+                      [userFeedDataSource updateWithFeeds:self.feeds];
                       [self updateUserFeedDataSource];
                   }
                insertionBlock:nil

@@ -77,10 +77,10 @@
     [feed setId:@1];
     
     [FeedItem requestFeedItemsFromFeeds:[NSSet setWithObject:feed]
-                                  Since:[NSDate date]
+                                  since:[NSDate date]
                                 success:nil
                                 failure:nil];
-    
+        
     [mockAPIClient verify];
 }
 
