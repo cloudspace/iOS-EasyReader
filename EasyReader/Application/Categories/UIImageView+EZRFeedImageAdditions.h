@@ -10,6 +10,7 @@
 
 @interface UIImageView (EZRFeedImageAdditions)
 
+@property (strong, nonatomic) NSString *imageURLString;
 
 /**
  * Sets an image with the given URL string

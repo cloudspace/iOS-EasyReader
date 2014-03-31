@@ -49,11 +49,11 @@
                                                                         <constraint firstAttribute="height" constant="400" id="UTY-Fy-oos"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6do-aH-WMA">
-                                                                    <rect key="frame" x="0.0" y="400" width="320" height="400"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6do-aH-WMA">
+                                                                    <rect key="frame" x="0.0" y="400" width="320" height="200"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="400" id="HqE-wK-VrR"/>
+                                                                        <constraint firstAttribute="height" constant="200" id="HqE-wK-VrR"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GyA-VK-s4d">

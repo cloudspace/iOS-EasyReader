@@ -26,13 +26,12 @@
 
 typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSSet *new);
 
-@interface CSHomeViewController ()
+@implementation CSHomeViewController
 {
     NSString *currentURL;
+    NSInteger _currentPageIndex;
+    BOOL hasPrefetchedFirstFeeds;
 }
-@end
-
-@implementation CSHomeViewController
 
 /**
  * Set up data sctructures, controller views, add observers
@@ -44,6 +43,9 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
     
     [_pageControl_itemIndicator setUpFadesOnView:[_pageControl_itemIndicator superview]];
     _pageControl_itemIndicator.controller_owner = self;
+    
+    
+    _currentPageIndex = 0;
     
     self.currentUser = [User current];
     
@@ -70,6 +72,7 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 }
 
 
+
 #pragma mark Observations
 
 /**
@@ -91,27 +94,19 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
  */
 -(ObserverBlock) feedsDidChange
 {
-    ObserverBlock block = ^void(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
+    return ^void(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
         NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
         NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
         
         [addedFeeds removeObjectsInArray:[old allObjects]];
         [removedFeeds removeObjectsInArray:[new allObjects]];
         
+        // Stop observing old feeds
         for ( Feed *feed in removedFeeds ){
             [feed removeAllObservations];
-            
-            // Remove feed items associated to the feed
-            for( FeedItem *item in feed.feedItems ){
-                [_feedItems removeObject:item];
-            }
-
-// Commenting this out because it should not be called here and should not be needed here
-//            // Delete feed which will cascade delete feed items
-//            [feed deleteEntity];
-//            [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
         }
-        
+
+        // Observe added feeds
         for ( Feed *feed in addedFeeds ){
             [feed observeRelationship:@"feedItems"
                           changeBlock:[self feedItemsDidChange]
@@ -120,9 +115,15 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
                      replacementBlock:nil];
         }
         
-        //redraw the collection with the changes to the feed items
-        [_feedCollectionViewDataSource setFeedItems:_currentUser.feedItems];
+        //redraw the collection with the changes to the new feed items
+        
+        _feedItems = [_currentUser.feedItems mutableCopy];
+        _feedCollectionViewDataSource.feedItems = _feedItems;
+
+        
         [_collectionView_feedItems reloadData];
+        
+        
         _pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
         
         if(_currentFeedItem){
@@ -133,20 +134,22 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
             [_pageControl_itemIndicator setPageControllerPageAtIndex:0 forCollection:_feedItems];
         }
     };
-    
-    return block;
 }
 
 /**
  * Called when feedItems array on observed feeds change, shows new item button on page control
  */
--(ObserverBlock) feedItemsDidChange
+-(void (^)(Feed *, NSSet *, NSSet *)) feedItemsDidChange
 {
-    ObserverBlock block = ^void(__weak CSHomeViewController *self, NSSet *old, NSSet *new) {
-        _feedItems = [[(CSFeedItemCollectionViewDataSource *)_collectionView_feedItems.dataSource feedItems] mutableCopy];
+    __weak CSHomeViewController *controller = self;
+    
+    return ^void(Feed *self, NSSet *old, NSSet *new) {
+        CSFeedItemCollectionViewDataSource *dataSource = (CSFeedItemCollectionViewDataSource *)controller.collectionView_feedItems.dataSource;
+        
+        controller.feedItems = [dataSource.feedItems mutableCopy];
         
         if(!new) {
-            NSLog(@"There are no feeds here");
+            NSLog(@"There are no feed items here");
         } else {
             NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
             NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
@@ -155,20 +158,25 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
             [removedFeedItems removeObjectsInArray:[new allObjects]];
             
             for( FeedItem *item in removedFeedItems ){
-                [_feedItems removeObject:item];
+                [controller.feedItems removeObject:item];
             }
             
             for( FeedItem *item in addedFeedItems ){
-                [_feedItems addObject:item];
+                [controller.feedItems addObject:item];
             }
             
-            [[EZRFeedImageService shared] prefetchImagesForFeedItems:addedFeedItems];
+            if (_currentPageIndex == 0)
+            {
+                [controller prefetchImagesNearIndex:0 count:5];
+            }
+            
+            dataSource.feedItems = controller.feedItems;
+            [controller.collectionView_feedItems reloadData];
+            if (controller.currentFeedItem) [controller scrollToCurrentFeedItem];
             
             [_pageControl_itemIndicator.button_newItem setHidden:NO];
         }
     };
-    
-    return block;
 }
 
 #pragma mark - IBActions
@@ -271,6 +279,42 @@ typedef void (^ObserverBlock)(__weak CSHomeViewController *self, NSSet *old, NSS
 }
 
 # pragma mark - CollectionView Delegate methods
+
+
+- (void)prefetchImagesNearIndex:(NSInteger)currentPageIndex count:(NSInteger)count
+{
+    NSInteger feedItemsCount = [_feedCollectionViewDataSource.sortedFeedItems count];
+    
+    NSInteger beginFetchIndex = currentPageIndex - count > 0 ? currentPageIndex - count : 0;
+    NSInteger beforeFetchCount = currentPageIndex - count > 0 ? currentPageIndex - count : currentPageIndex;
+    NSInteger afterFetchCount = currentPageIndex + count > feedItemsCount ? feedItemsCount - currentPageIndex : count;
+    
+    NSRange fetchRange = {beginFetchIndex, beforeFetchCount+afterFetchCount};
+    
+    NSArray *itemsToPrefetch = [_feedCollectionViewDataSource.sortedFeedItems subarrayWithRange:fetchRange];
+    
+    [[EZRFeedImageService shared] prefetchImagesForFeedItems:itemsToPrefetch];
+    
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if([scrollView isMemberOfClass:[CSFeedItemCollectionView class]]) {
+        CGFloat pageWidth = _collectionView_feedItems.frame.size.width;
+        
+        // We add half the page width to the offset to consider the most-centered page to be the current one, not
+        // the page currently under the leftmost position of the view
+        NSInteger pageIndex = ((scrollView.contentOffset.x + pageWidth/2.0) / pageWidth);
+        
+        if (_currentPageIndex != pageIndex)
+        {
+            _currentPageIndex = pageIndex;
+            [self prefetchImagesNearIndex:pageIndex count:5];
+        }
+        
+        //[self.pageControl_itemIndicator setPageControllerPageAtIndex:(int)pageIndex];
+    }
+}
 
 /**
  * Collection view delegate method for updating current feed item webview url

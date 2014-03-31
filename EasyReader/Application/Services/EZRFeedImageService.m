@@ -36,6 +36,8 @@ static EZRFeedImageService *sharedInstance;
 
     /// A cache of blurred item images
     SDImageCache *blurredImageCache;
+    
+    NSMutableArray *prefetched;
 }
 
 
@@ -56,13 +58,14 @@ static EZRFeedImageService *sharedInstance;
 
 - (void)prefetchImagesForFeedItems:(NSArray *)feedItems
 {
-//    for (FeedItem *item in feedItems)
-//    {
-//        if (item.imageIphoneRetina)
-//        {
-//          [self fetchImageAtURLString:item.imageIphoneRetina];
-//        }
-//    }
+    for (FeedItem *item in feedItems)
+    {
+        if (item.imageIphoneRetina && ![prefetched containsObject:item.imageIphoneRetina])
+        {
+            [self fetchImageAtURLString:item.imageIphoneRetina];
+            [prefetched addObject:item.imageIphoneRetina];
+        }
+    }
 }
 
 - (void)fetchImageAtURLString:(NSString *)urlString
@@ -82,18 +85,20 @@ static EZRFeedImageService *sharedInstance;
         
         if (![self isImageCurrentlyBeingProcessedForURLString:urlString])
         {
+            // Mark images as being processed before the cache queries happen
+            // as they aren't always guaranteed to be synchronous
             [self markImageForURLString:urlString asBeingProcessed:YES];
             
             [imageCache queryDiskCacheForKey:urlString done:^(UIImage *image, SDImageCacheType cacheType) {
                 [blurredImageCache queryDiskCacheForKey:urlString done:^(UIImage *blurredImage, SDImageCacheType blurredCacheType) {
                     if (image && blurredImage)
                     {
-                        NSLog(@"FOUND CACHED IMAGES");
                         [self triggerCompletionBlocksForUrlString:urlString withImage:image blurredImage:blurredImage];
+                        [self markImageForURLString:urlString asBeingProcessed:NO];
                     }
                     else
                     {
-                        NSLog(@"NO CACHE FOUND, DOWNLOADING");
+                        // Download and process
                         [self downloadAndProcessImageAtURLString:urlString];
                     }
                 }];
@@ -102,6 +107,36 @@ static EZRFeedImageService *sharedInstance;
     }
 }
 
+/**
+ * Initializes a new EZRFeedImageService
+ */
+- (id) init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        successBlocks = [[NSMutableDictionary alloc] init];
+        failureBlocks = [[NSMutableDictionary alloc] init];
+        prefetched = [[NSMutableArray alloc] init];
+        imageCache = [[SDImageCache alloc] initWithNamespace:@"EZRFeedItemImages"];
+        blurredImageCache = [[SDImageCache alloc] initWithNamespace:@"EZRBlurredFeedItemImages"];
+        
+        imageURLsCurrentlyBeingProcessed = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
+
+#pragma mark - Private Methods
+
+
+/**
+ * Downloads ad processes an image at the given URL string and triggers the existing completion blocks
+ *
+ * @param urlString The URL string of the image to download and process
+ */
 - (void)downloadAndProcessImageAtURLString:(NSString *)urlString
 {
     [self downloadImageAtURLString:urlString
@@ -125,12 +160,13 @@ static EZRFeedImageService *sharedInstance;
 /**
  * Downloads an image at the given URL string and returns it in the block
  *
+ * @param urlString The URL string of the image to download
  * @param success A block that is executed on a successful image download
  * @param failure A block that is executed on a failed image download
  */
 - (void)downloadImageAtURLString:(NSString *)urlString
-                      success:(void (^)(UIImage *image))success
-                      failure:(void (^)())failure
+                         success:(void (^)(UIImage *image))success
+                         failure:(void (^)())failure
 {
     SDWebImageDownloader *downloader = [SDWebImageDownloader sharedDownloader];
     
@@ -147,32 +183,15 @@ static EZRFeedImageService *sharedInstance;
              if (failure) failure();
          }
      }];
-
 }
 
 /**
- * Initializes a new EZRFeedImageService
+ * Adds completion blocks to the blocks dictionary
+ *
+ * @param urlString The URL string of the image.  This is the key for the completion block dictionary.
+ * @param success A block that is executed on a successful image load
+ * @param failure A block that is executed on a failed image load
  */
-- (id) init
-{
-    self = [super init];
-    
-    if (self)
-    {
-        successBlocks = [[NSMutableDictionary alloc] init];
-        failureBlocks = [[NSMutableDictionary alloc] init];
-        imageCache = [[SDImageCache alloc] initWithNamespace:@"EZRFeedItemImages"];
-        blurredImageCache = [[SDImageCache alloc] initWithNamespace:@"EZRBlurredFeedItemImages"];
-        
-        imageURLsCurrentlyBeingProcessed = [[NSMutableArray alloc] init];
-    }
-    
-    return self;
-}
-
-
-#pragma mark - Private Methods
-
 - (void)addCompletionBlocksForURLString:(NSString *)urlString
                                 success:(void (^)(UIImage *image, UIImage *blurredImage))success
                                 failure:(void (^)())failure
@@ -181,6 +200,12 @@ static EZRFeedImageService *sharedInstance;
     [self addFailureCompletionBlockForURLString:urlString failure:failure];
 }
 
+/**
+ * Adds a success completion blocks to the successBlocks dictionary
+ *
+ * @param urlString The URL string of the image.  This is the key for the completion block dictionary.
+ * @param success A block that is executed on a successful image load
+ */
 - (void)addSuccessCompletionBlockForURLString:(NSString *)urlString
                                       success:(void (^)(UIImage *image, UIImage *blurredImage))success
 {
@@ -200,6 +225,13 @@ static EZRFeedImageService *sharedInstance;
     
     [successBlocks setValue:successBlocksArray forKey:urlString];
 }
+
+/**
+ * Adds a success completion blocks to the failureBlocks dictionary
+ *
+ * @param urlString The URL string of the image.  This is the key for the completion block dictionary.
+ * @param failure A block that is executed on a failed image load
+ */
 
 - (void)addFailureCompletionBlockForURLString:(NSString *)urlString
                                       failure:(void (^)())failure
@@ -224,7 +256,9 @@ static EZRFeedImageService *sharedInstance;
 /**
  * Triggers completion blocks for the given urlString
  *
- * @param image The image to blur
+ * @param urlString The completion blocks key used to get the blocks to trigger
+ * @param image The image to pass to the blocks
+ * @param blurredImage The blurred image to pass to the blocks
  */
 - (void)triggerCompletionBlocksForUrlString:(NSString *)urlString
                                   withImage:(UIImage*)image
@@ -258,6 +292,7 @@ static EZRFeedImageService *sharedInstance;
  * Flags a given URL string as currently being processed
  *
  * @param urlString The urlString to flag as being processed
+ * @param processing Whether or not the item at the given urlString is currently being processed
  */
 - (void)markImageForURLString:(NSString *)urlString asBeingProcessed:(BOOL)processing
 {
@@ -277,7 +312,7 @@ static EZRFeedImageService *sharedInstance;
 /**
  * Checks if the given urlString is currently being processed
  *
- * @param image The image to blur
+ * @param urlString The url string of the image to check if is being processed
  */
 - (BOOL)isImageCurrentlyBeingProcessedForURLString:(NSString *)urlString
 {
@@ -296,6 +331,14 @@ static EZRFeedImageService *sharedInstance;
     
     CIImage *inputImage = [[CIImage alloc] initWithImage:image];
     
+    // Crop image appropriately
+    CGRect clippedRect  = CGRectMake(0, 200, 320, 200);
+    CGImageRef cgimg = [context createCGImage:inputImage fromRect:[inputImage extent]];
+    CGImageRef imageRef = CGImageCreateWithImageInRect(cgimg, clippedRect);
+
+    // Blur image
+    inputImage = [CIImage imageWithCGImage:imageRef];
+    
     CIFilter *blurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
     
     [blurFilter setDefaults];
@@ -305,7 +348,8 @@ static EZRFeedImageService *sharedInstance;
     CIImage *result = [blurFilter valueForKey: kCIOutputImageKey];
     
     UIImage *blurredImage = [UIImage imageWithCGImage:[context createCGImage:result fromRect:inputImage.extent] scale:1.0 orientation:UIImageOrientationDownMirrored];
-   
+
+    // Saturate image
 //    GPUImageSaturationFilter *saturationFilter = [[GPUImageSaturationFilter alloc] init];
 //    saturationFilter.saturation = 1.5f;
 //    
