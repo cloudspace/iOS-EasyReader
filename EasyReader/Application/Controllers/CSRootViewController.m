@@ -9,7 +9,7 @@
 #import "CSRootViewController.h"
 
 #import "CSMenuLeftViewController.h"
-#import "CSHomeViewController.h"
+#import "EZRHomeViewController.h"
 
 //#import "UIViewController+NibLoader.h"
 
@@ -29,7 +29,7 @@
   if (self) {
     // Create view controller
     UIStoryboard *storyboard_home = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
-    CSHomeViewController *collections = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
+    EZRHomeViewController *collections = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
     _viewController_main = collections;
 
     [self setViewControllers:@[_viewController_main]];

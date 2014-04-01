@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSFeedItemCollectionView.h"
-#import "CSFeedItemCollectionViewDataSource.h"
+#import "EZRFeedItemCollectionView.h"
+#import "EZRHomeCollectionViewDataSource.h"
 #import "EZRFeedItemCell.h"
 
-@implementation CSFeedItemCollectionView
+@implementation EZRFeedItemCollectionView
 
 #pragma mark - Initializers
 

@@ -12,12 +12,11 @@
 /**
  * A collection view built to hold feed items
  */
-@interface CSFeedItemCollectionView : UICollectionView
+@interface EZRFeedItemCollectionView : UICollectionView
 
 /**
  * The feed item that is currently focused
  */
 @property (nonatomic, readonly) FeedItem *currentFeedItem;
-
 
 @end

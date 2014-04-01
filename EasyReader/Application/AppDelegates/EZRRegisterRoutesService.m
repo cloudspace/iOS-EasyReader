@@ -16,7 +16,7 @@
     [[APIRouter shared] registerRoute:@"feedDefaults" path:@"/feeds/default/"  requestMethod:kAPIRequestMethodGET];
     [[APIRouter shared] registerRoute:@"feedCreate"   path:@"/feeds/"          requestMethod:kAPIRequestMethodPOST];
     [[APIRouter shared] registerRoute:@"feedSearch"   path:@"/feeds/search/"   requestMethod:kAPIRequestMethodGET];
-    [[APIRouter shared] registerRoute:@"feedItems"    path:@"/feed_items/"          requestMethod:kAPIRequestMethodGET];
+    [[APIRouter shared] registerRoute:@"feedItems"    path:@"/feed_items/"     requestMethod:kAPIRequestMethodGET];
 
     return YES;
 }

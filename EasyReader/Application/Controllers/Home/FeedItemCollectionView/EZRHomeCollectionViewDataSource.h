@@ -15,7 +15,7 @@ typedef void (^configureFeedItemCell)(EZRFeedItemCell *, FeedItem *);
 /**
  * The data source for the FeedCollectionView's UICollectionView
  */
-@interface CSFeedItemCollectionViewDataSource : NSObject <UICollectionViewDataSource>
+@interface EZRHomeCollectionViewDataSource : NSObject <UICollectionViewDataSource>
 
 /**
  * Initializes the data source with a reusable cell identifier

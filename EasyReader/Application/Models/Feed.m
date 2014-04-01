@@ -32,13 +32,14 @@
     NSDictionary * params = @{@"url": url};
 
 
-    [[self client] requestRoute:@"feedCreate"
-                      parameters:params
-                        success:^(id responseObject, NSInteger httpStatus) {
-                            [self saveParsedResponseData:responseObject];
-                            if(successBlock) successBlock(responseObject, httpStatus);
-                        }
-                        failure:failureBlock];
+    [[APIClient shared] requestRoute:@"feedCreate"
+                          parameters:params
+                             success:
+     ^(id responseObject, NSInteger httpStatus) {
+         [self saveParsedResponseData:responseObject];
+         if(successBlock) successBlock(responseObject, httpStatus);
+     }
+                             failure:failureBlock];
 }
 
 + (void) requestDefaultFeedsWithSuccess:(APISuccessBlock)successBlock

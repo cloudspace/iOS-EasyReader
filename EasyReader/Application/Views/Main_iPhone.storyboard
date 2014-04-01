@@ -8,7 +8,7 @@
         <!--Home View Controller-->
         <scene sceneID="Iy7-Le-XOV">
             <objects>
-                <viewController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" id="Hgn-0q-Z1W" customClass="CSHomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" id="Hgn-0q-Z1W" customClass="EZRHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u5l-1H-L35"/>
                         <viewControllerLayoutGuide type="bottom" id="lzz-HQ-Mp2"/>
@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xvT-99-V3u" customClass="CSFeedItemCollectionView">
+                                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xvT-99-V3u" customClass="EZRFeedItemCollectionView">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g2g-cS-GvP">
@@ -70,7 +70,7 @@
                                                                                 <fragment content="This is the title of an article and can be long sometimes.">
                                                                                     <attributes>
                                                                                         <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                        <font key="NSFont" size="26" name="Futura-Medium"/>
+                                                                                        <font key="NSFont" size="25" name="Futura-Medium"/>
                                                                                         <font key="NSOriginalFont" size="32" name="Futura-Medium"/>
                                                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="0.75"/>
                                                                                     </attributes>
@@ -162,7 +162,7 @@
                     <connections>
                         <outlet property="button_leftMenu" destination="wb1-Na-kaO" id="0oK-RY-cyj"/>
                         <outlet property="collectionView_feedItems" destination="xvT-99-V3u" id="kb5-it-zd3"/>
-                        <outlet property="verticalScrollView" destination="EWA-9Z-pb1" id="yj7-Ir-WAm"/>
+                        <outlet property="scrollView_vertical" destination="EWA-9Z-pb1" id="VGf-RZ-XO8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGN-P7-i1S" userLabel="First Responder" sceneMemberID="firstResponder"/>

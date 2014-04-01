@@ -7,20 +7,82 @@
 //
 
 #import <UIKit/UIKit.h>
-@class CSHomeViewController;
+@class EZRHomeViewController;
+@class CSCollectionPageControl;
+
+
+#pragma mark - CSCollectionPageControlDelegate
 
 /**
- * Page control for multiple
+ * This protocol represents the behaviour of the the page control.
+ */
+@protocol CSCollectionPageControlDelegate <NSObject>
+
+/**
+ * Tells the delegate that the specified page index was selected
+ *
+ * @param pageControl A Page Control informing the delegate about a new page selection
+ * @param index An index locating the selected page
+ */
+- (void)pageControl:(CSCollectionPageControl*)pageControl didSelectPageAtIndex:(NSInteger)index;
+
+@end
+
+
+#pragma mark - CSCollectionPageControlDataSource
+
+/**
+ * This protocol represents the data source for this page control
+ */
+@protocol CSCollectionPageControlDataSource <NSObject>
+
+@required
+
+/**
+ * Datasource sets pages count for page control
+ *
+ * @param pageControl A Page Control informing the delegate about a new page selection
+ * @param pages for count of items for page control
+ */
+- (NSInteger)numberOfPagesForPageControl;
+
+@end
+
+
+#pragma mark - CSCollectionPageControl
+
+/**
+ * Customized Page Control for collections of items
  */
 @interface CSCollectionPageControl : UIPageControl
 
-@property CSHomeViewController *controller_owner;
-@property UIButton *button_newItem;
-@property UIView *view_maskLayer;
-@property UIView *view_leftFade;
-@property UIView *view_rightFade;
 
-- (void)setPageControllerPageAtIndex:(NSInteger)index forCollection:(NSSet*)collection;
-- (void)setUpFadesOnView:(UIView*)mask;
+# pragma mark - Properties
+
+/// The object that acts as the delegate of the receiving page control
+@property (nonatomic, assign) id<CSCollectionPageControlDelegate> delegate;
+
+/// The object that acts as the delegate of the receiving page control
+@property (nonatomic, assign) id<CSCollectionPageControlDataSource> datasource;
+
+
+# pragma mark - Methods
+
+/**
+ * Sets page to given index
+ * Will display first, second, second to last, and last.. everything in the middle is on third page indicator
+ * Also animates fades in and out when approaching ends
+ */
+- (void)setPageControllerPageAtIndex:(NSInteger)index;
+
+/**
+ * Shows page indicators on control
+ */
+- (void)showPageControlIndicators;
+
+/**
+ * Shows new item button
+ */
+- (void) showNewItemButton;
 
 @end

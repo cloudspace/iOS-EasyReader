@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSFeedItemCollectionViewDataSource.h"
-#import "CSHomeViewController.h"
+#import "EZRHomeCollectionViewDataSource.h"
+#import "EZRHomeViewController.h"
 #import "FeedItem.h"
 #import "EZRFeedItemCell.h"
 
-@implementation CSFeedItemCollectionViewDataSource
+@implementation EZRHomeCollectionViewDataSource
 {
     /// A block which will configure a cell based on a given FeedItem
     void (^_configureFeedItemCell)(EZRFeedItemCell *, FeedItem *feedItem);
@@ -98,7 +98,7 @@
     
     cell.feedItem = [_sortedFeedItems objectAtIndex:indexPath.row];
     
-    [(CSHomeViewController*)collectionView.delegate setCollectionCellGoingTo:indexPath.row];
+//    [(CSHomeViewController*)collectionView.delegate setCollectionCellGoingTo:indexPath.row];
     
     return cell;
 }
