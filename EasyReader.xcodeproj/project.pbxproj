@@ -22,6 +22,9 @@
 
 /* Begin PBXBuildFile section */
 		0D1F71DE18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */; };
+		0D72350C18E9C10E00AD512E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1CE42418D0F5A00090028E /* XCTest.framework */; };
+		0D72350D18E9C10E00AD512E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC16C91709D48E00383722 /* Foundation.framework */; };
+		0D72350E18E9C10E00AD512E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC16C71709D48E00383722 /* UIKit.framework */; };
 		0D7987A218DB6AE4004440C3 /* CSUserFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */; };
 		0D7987A518DB6AF4004440C3 /* CSSearchFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987A418DB6AF4004440C3 /* CSSearchFeedCell.m */; };
 		0D7987B118DB8F69004440C3 /* CSMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AE18DB8F69004440C3 /* CSMenuSearchFeedDataSource.m */; };
@@ -39,6 +42,9 @@
 		0D9A835F18E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */; };
 		0D9A836018E0CE4F00D8376E /* EZRCustomFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */; };
 		0D9A836118E0CE5000D8376E /* EZRCustomFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */; };
+		0DB50C5718E9C1D800F5C69C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DB50C5518E9C1D800F5C69C /* InfoPlist.strings */; };
+		0DB50C5B18E9C60C00F5C69C /* libPods-EasyReader - Integration Tests-KIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB50C5A18E9C60C00F5C69C /* libPods-EasyReader - Integration Tests-KIF.a */; };
+		0DB50C5C18E9C62100F5C69C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC16CB1709D48E00383722 /* CoreGraphics.framework */; };
 		0DE51FF418CF911000454E51 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF018CF911000454E51 /* FeedItem.m */; };
 		0DE51FF518CF911000454E51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF218CF911000454E51 /* User.m */; };
 		0DE51FF818CF919900454E51 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE51FF718CF919900454E51 /* Feed.m */; };
@@ -55,6 +61,7 @@
 		2751F4E218DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DD18DA0D3000339C96 /* CSFeedItemCollectionViewDataSource.m */; };
 		2751F4E318DA0D3000339C96 /* EZRFeedItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* EZRFeedItemCell.m */; };
 		2751F4E418DA0D3000339C96 /* CSFeedItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4E118DA0D3000339C96 /* CSFeedItemCollectionView.m */; };
+		70FB494D1CCE41FDAEBE9B1D /* libPods-EasyReader - Integration Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5D0E0EEA704819AA45AE90 /* libPods-EasyReader - Integration Tests.a */; };
 		8E04027018E5DA6800F48793 /* CSRemoteObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E04026F18E5DA6800F48793 /* CSRemoteObjectTests.m */; };
 		8E685AA718DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E685AA818DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
@@ -332,6 +339,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0D72351818E9C10E00AD512E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DAC16BC1709D48E00383722 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DAC16C31709D48E00383722;
+			remoteInfo = Development;
+		};
 		9D8E39D418E5AE090025B73E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9DAC16BC1709D48E00383722 /* Project object */;
@@ -344,6 +358,9 @@
 /* Begin PBXFileReference section */
 		0D1F71DC18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EZRSharedColorAdditions.h"; sourceTree = "<group>"; };
 		0D1F71DD18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EZRSharedColorAdditions.m"; sourceTree = "<group>"; };
+		0D72350B18E9C10E00AD512E /* EasyReader - Integration Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EasyReader - Integration Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D72352218E9C1AB00AD512E /* EasyReader - Integration Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EasyReader - Integration Tests-Info.plist"; sourceTree = "<group>"; };
+		0D72352318E9C1AB00AD512E /* EasyReader - Integration Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EasyReader - Integration Tests-Prefix.pch"; sourceTree = "<group>"; };
 		0D7987A018DB6AE4004440C3 /* CSUserFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSUserFeedCell.h; sourceTree = "<group>"; };
 		0D7987A118DB6AE4004440C3 /* CSUserFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUserFeedCell.m; sourceTree = "<group>"; };
 		0D7987A318DB6AF4004440C3 /* CSSearchFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSearchFeedCell.h; sourceTree = "<group>"; };
@@ -356,6 +373,9 @@
 		0D8FF1AA18D0DA3F005155E6 /* control_dualEntryTextField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "control_dualEntryTextField@2x.png"; sourceTree = "<group>"; };
 		0D9A835C18E0C82100D8376E /* EZRCustomFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRCustomFeedCell.h; sourceTree = "<group>"; };
 		0D9A835D18E0C82200D8376E /* EZRCustomFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRCustomFeedCell.m; sourceTree = "<group>"; };
+		0DB50C5618E9C1D800F5C69C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DB50C5818E9C5A400F5C69C /* libPods-EasyReader - Integration Tests-KIF.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-EasyReader - Integration Tests-KIF.a"; path = "Pods/build/Debug-iphoneos/libPods-EasyReader - Integration Tests-KIF.a"; sourceTree = "<group>"; };
+		0DB50C5A18E9C60C00F5C69C /* libPods-EasyReader - Integration Tests-KIF.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-EasyReader - Integration Tests-KIF.a"; path = "Pods/build/Debug-iphoneos/libPods-EasyReader - Integration Tests-KIF.a"; sourceTree = "<group>"; };
 		0DE51FE318CF8BDE00454E51 /* api_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = api_v2.xcdatamodel; sourceTree = "<group>"; };
 		0DE51FEF18CF911000454E51 /* FeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItem.h; sourceTree = "<group>"; };
 		0DE51FF018CF911000454E51 /* FeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItem.m; sourceTree = "<group>"; };
@@ -368,6 +388,7 @@
 		0DEC0B8918E5E68A0072BEF5 /* EZRBaseControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRBaseControllerTests.m; sourceTree = "<group>"; };
 		0DEC0B8B18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMenuUserFeedDataSourceTests.m; sourceTree = "<group>"; };
 		0DEC0B8D18E605ED0072BEF5 /* CSMenuSearchFeedDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMenuSearchFeedDataSourceTests.m; sourceTree = "<group>"; };
+		139D85D3E12F4F9E9DF20B66 /* Pods-EasyReader - Integration Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyReader - Integration Tests.xcconfig"; path = "Pods/Pods-EasyReader - Integration Tests.xcconfig"; sourceTree = "<group>"; };
 		2751F4D218DA02C100339C96 /* NSObject+CSNilAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CSNilAdditions.h"; sourceTree = "<group>"; };
 		2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CSNilAdditions.m"; sourceTree = "<group>"; };
 		2751F4D418DA02C100339C96 /* NSObject+CSReflectionAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CSReflectionAdditions.h"; sourceTree = "<group>"; };
@@ -482,9 +503,23 @@
 		9DFBC0981714957E006BF840 /* CSFeedAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFeedAddViewController.m; path = Feed/CSFeedAddViewController.m; sourceTree = "<group>"; };
 		9DFE0CD218E272F7002A0FE9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A7ACF08D0CD54248B25E110A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB5D0E0EEA704819AA45AE90 /* libPods-EasyReader - Integration Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyReader - Integration Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0D72350818E9C10E00AD512E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DB50C5C18E9C62100F5C69C /* CoreGraphics.framework in Frameworks */,
+				0DB50C5B18E9C60C00F5C69C /* libPods-EasyReader - Integration Tests-KIF.a in Frameworks */,
+				0D72350C18E9C10E00AD512E /* XCTest.framework in Frameworks */,
+				0D72350E18E9C10E00AD512E /* UIKit.framework in Frameworks */,
+				0D72350D18E9C10E00AD512E /* Foundation.framework in Frameworks */,
+				70FB494D1CCE41FDAEBE9B1D /* libPods-EasyReader - Integration Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9D79271D18DA1D0300E1D3E1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -559,6 +594,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D72350F18E9C10E00AD512E /* EasyReader - Integration Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0D72351018E9C10E00AD512E /* Supporting Files */,
+			);
+			path = "EasyReader - Integration Tests";
+			sourceTree = "<group>";
+		};
+		0D72351018E9C10E00AD512E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D72352218E9C1AB00AD512E /* EasyReader - Integration Tests-Info.plist */,
+				0DB50C5518E9C1D800F5C69C /* InfoPlist.strings */,
+				0D72352318E9C1AB00AD512E /* EasyReader - Integration Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		0D79879F18DB6ABC004440C3 /* MenuCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -852,12 +905,14 @@
 				9D458C7718E3327D00BC17D6 /* README.md */,
 				9DAC16CF1709D48E00383722 /* EasyReader */,
 				9D8E39CB18E5AE090025B73E /* EasyReader - Unit Tests */,
+				0D72350F18E9C10E00AD512E /* EasyReader - Integration Tests */,
 				9DAC16C61709D48E00383722 /* Frameworks */,
 				9DAC16C51709D48E00383722 /* Products */,
 				9D4FA6E917971E8D001E2A65 /* Default-Landscape@2x~ipad.png */,
 				9D4FA6E717971E88001E2A65 /* Default-Landscape~ipad.png */,
 				9DA7CB35171CAD020045CC88 /* iOS Resources */,
 				5CECD14CAE964A1994399D15 /* Pods.xcconfig */,
+				139D85D3E12F4F9E9DF20B66 /* Pods-EasyReader - Integration Tests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -869,6 +924,7 @@
 				9D79278E18DA1D3800E1D3E1 /* Easy Reader.app */,
 				9D9CBB0F18DCC68A00532F8C /* Development copy.app */,
 				9D8E39C718E5AE080025B73E /* EasyReader - Unit Tests.xctest */,
+				0D72350B18E9C10E00AD512E /* EasyReader - Integration Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -876,6 +932,8 @@
 		9DAC16C61709D48E00383722 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DB50C5A18E9C60C00F5C69C /* libPods-EasyReader - Integration Tests-KIF.a */,
+				0DB50C5818E9C5A400F5C69C /* libPods-EasyReader - Integration Tests-KIF.a */,
 				8ECC8F8D18E4803E006EADD1 /* libPods-OCMock.a */,
 				8ECC8F8A18E47BC1006EADD1 /* libPods-OCMock.a */,
 				9D4355751795C9B3002C6657 /* MessageUI.framework */,
@@ -888,6 +946,7 @@
 				9DAC16EA1709D48E00383722 /* SenTestingKit.framework */,
 				A7ACF08D0CD54248B25E110A /* libPods.a */,
 				8E1CE42418D0F5A00090028E /* XCTest.framework */,
+				AB5D0E0EEA704819AA45AE90 /* libPods-EasyReader - Integration Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1013,6 +1072,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0D72350A18E9C10E00AD512E /* EasyReader - Integration Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D72351C18E9C10E00AD512E /* Build configuration list for PBXNativeTarget "EasyReader - Integration Tests" */;
+			buildPhases = (
+				DE8A202343BF4C9D94FD4963 /* Check Pods Manifest.lock */,
+				0D72350718E9C10E00AD512E /* Sources */,
+				0D72350818E9C10E00AD512E /* Frameworks */,
+				0D72350918E9C10E00AD512E /* Resources */,
+				A25FAF0EDC2E43F7A0BC25D0 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D72351918E9C10E00AD512E /* PBXTargetDependency */,
+			);
+			name = "EasyReader - Integration Tests";
+			productName = "EasyReader - Integration Tests";
+			productReference = 0D72350B18E9C10E00AD512E /* EasyReader - Integration Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9D79270818DA1D0300E1D3E1 /* Staging */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D79274718DA1D0300E1D3E1 /* Build configuration list for PBXNativeTarget "Staging" */;
@@ -1120,6 +1199,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Cloudspace;
 				TargetAttributes = {
+					0D72350A18E9C10E00AD512E = {
+						TestTargetID = 9DAC16C31709D48E00383722;
+					};
 					9D79270818DA1D0300E1D3E1 = {
 						DevelopmentTeam = 34V4E5MT6Z;
 					};
@@ -1146,11 +1228,20 @@
 				9D79274C18DA1D3800E1D3E1 /* Production */,
 				9D458C7218E331B300BC17D6 /* Documentation */,
 				9D8E39C618E5AE080025B73E /* EasyReader - Unit Tests */,
+				0D72350A18E9C10E00AD512E /* EasyReader - Integration Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0D72350918E9C10E00AD512E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DB50C5718E9C1D800F5C69C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9D79272618DA1D0300E1D3E1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1463,9 +1554,46 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		A25FAF0EDC2E43F7A0BC25D0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-EasyReader - Integration Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE8A202343BF4C9D94FD4963 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0D72350718E9C10E00AD512E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9D79270918DA1D0300E1D3E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1657,6 +1785,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0D72351918E9C10E00AD512E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DAC16C31709D48E00383722 /* Development */;
+			targetProxy = 0D72351818E9C10E00AD512E /* PBXContainerItemProxy */;
+		};
 		9D8E39D518E5AE090025B73E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9DAC16C31709D48E00383722 /* Development */;
@@ -1665,6 +1798,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0DB50C5518E9C1D800F5C69C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DB50C5618E9C1D800F5C69C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		9D8E39CE18E5AE090025B73E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1676,6 +1817,77 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0D72351A18E9C10E00AD512E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 139D85D3E12F4F9E9DF20B66 /* Pods-EasyReader - Integration Tests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Development.app/Development";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyReader - Integration Tests/EasyReader - Integration Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "EasyReader - Integration Tests/EasyReader - Integration Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		0D72351B18E9C10E00AD512E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 139D85D3E12F4F9E9DF20B66 /* Pods-EasyReader - Integration Tests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Development.app/Development";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyReader - Integration Tests/EasyReader - Integration Tests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "EasyReader - Integration Tests/EasyReader - Integration Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		9D458C7418E331B400BC17D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1978,6 +2190,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0D72351C18E9C10E00AD512E /* Build configuration list for PBXNativeTarget "EasyReader - Integration Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D72351A18E9C10E00AD512E /* Debug */,
+				0D72351B18E9C10E00AD512E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9D458C7318E331B400BC17D6 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

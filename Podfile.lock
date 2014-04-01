@@ -24,6 +24,7 @@ PODS:
     - MBProgressHUD (~> 0.6)
   - Inflections (1.0.0):
     - RegexKitLite
+  - KIF (2.0.0)
   - MagicalRecord (2.2)
   - MAObjCRuntime (0.0.1)
   - MBProgressHUD (0.8)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - CSShortcuts (~> 0.0.1)
   - CSStandardViewControllers (~> 0.0.1)
   - Inflections (~> 1.0.0)
+  - KIF (~> 2.0)
   - MagicalRecord (from `https://github.com/magicalpanda/MagicalRecord`, commit `98ec121bf767c495a2e887adeade7383b74a62f4`)
   - MAObjCRuntime (~> 0.0)
   - MBProgressHUD (~> 0.8)
@@ -66,6 +68,7 @@ SPEC CHECKSUMS:
   CSShortcuts: 0bd6b5f939bfbad0422ce7e07b52a8e47e938e8e
   CSStandardViewControllers: 40b3fbc88a2f30278969283c9dd22e345b855788
   Inflections: e77c455409381402163911a75835892fd406ff99
+  KIF: ff3b46deb62ce3f8e99c6a2c786729e1eea241ba
   MagicalRecord: 565156bae4de961860fad200a5c52e21e7933ebe
   MAObjCRuntime: 284004079156d10cb8237bc3ffcfa3a0e1a0af22
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622

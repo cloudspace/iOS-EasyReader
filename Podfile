@@ -34,3 +34,6 @@ pod 'CSShortcuts', '~> 0.0.1'
 
 # Testing
 pod 'OCMock', '~> 2.2.2'
+target 'EasyReader - Integration Tests', :exclusive => true do
+    pod 'KIF', '~> 2.0'
+end
