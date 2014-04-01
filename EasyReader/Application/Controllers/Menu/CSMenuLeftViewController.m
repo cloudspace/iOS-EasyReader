@@ -32,10 +32,9 @@
 typedef void (^ObserverBlock)(__weak CSMenuLeftViewController *self, NSSet *old, NSSet *new);
 
 @interface CSMenuLeftViewController ()
-{
-    CSMenuUserFeedDataSource *userFeedDataSource;
-    CSMenuSearchFeedDataSource *searchFeedDataSource;
-}
+
+@property (strong, nonatomic) CSMenuUserFeedDataSource *userFeedDataSource;
+@property (strong, nonatomic) CSMenuSearchFeedDataSource *searchFeedDataSource;
 
 @end
 
@@ -58,7 +57,9 @@ typedef void (^ObserverBlock)(__weak CSMenuLeftViewController *self, NSSet *old,
     [self applyMenuStyles];
     
     // Added search method to the user input field
-    [self.textField_searchInput addTarget:self action:@selector(searchFieldDidChange)forControlEvents:UIControlEventEditingChanged];
+    [self.textField_searchInput addTarget:self
+                                   action:@selector(searchFieldDidChange)
+                         forControlEvents:UIControlEventEditingChanged];
     
     
     [self observeRelationship:@keypath(self.currentUser.feeds)
@@ -73,7 +74,7 @@ typedef void (^ObserverBlock)(__weak CSMenuLeftViewController *self, NSSet *old,
                                                  name:MFSideMenuStateNotificationEvent
                                                object:nil];
     
-    userFeedDataSource.feeds = self.feeds;
+    _userFeedDataSource.feeds = self.feeds;
     [self updateUserFeedDataSource];
 }
 
@@ -98,7 +99,7 @@ typedef void (^ObserverBlock)(__weak CSMenuLeftViewController *self, NSSet *old,
         }
         
         // Update and switch to the userFeed data source
-        [userFeedDataSource updateWithFeeds:self.feeds];
+        [_userFeedDataSource updateWithFeeds:self.feeds];
         [self updateUserFeedDataSource];
     };
     return block;
@@ -115,10 +116,10 @@ typedef void (^ObserverBlock)(__weak CSMenuLeftViewController *self, NSSet *old,
 - (void)setUpDataSources
 {
     // Lists feeds in the database
-    userFeedDataSource = [[CSMenuUserFeedDataSource alloc] init];
+    self.userFeedDataSource = [[CSMenuUserFeedDataSource alloc] init];
     
     // Lists feeds returned by the search API
-    searchFeedDataSource = [[CSMenuSearchFeedDataSource alloc] init];
+    self.searchFeedDataSource = [[CSMenuSearchFeedDataSource alloc] init];
 }
 
 - (void)menuStateEventOccurred:(NSNotification *)notification {
@@ -144,7 +145,7 @@ typedef void (^ObserverBlock)(__weak CSMenuLeftViewController *self, NSSet *old,
             weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeNone;
             
             // Reset to the users feeds
-            weakSelf.tableView_feeds.dataSource = userFeedDataSource;
+            weakSelf.tableView_feeds.dataSource = _userFeedDataSource;
             [weakSelf.tableView_feeds reloadData];
             break;
     }
@@ -173,7 +174,7 @@ typedef void (^ObserverBlock)(__weak CSMenuLeftViewController *self, NSSet *old,
             [searchedFeeds addObject:customFeed];
             
             // Update the searchFeed datasource
-            [searchFeedDataSource updateWithFeeds:searchedFeeds];
+            [_searchFeedDataSource updateWithFeeds:searchedFeeds];
             [self updateSearchFeedDataSource];
         } else {
             // Return feeds from the API similar to user input
@@ -191,7 +192,7 @@ typedef void (^ObserverBlock)(__weak CSMenuLeftViewController *self, NSSet *old,
                                 }
                                  
                                 // Update the searchFeed datasource
-                                [searchFeedDataSource updateWithFeeds:searchedFeeds];
+                                [_searchFeedDataSource updateWithFeeds:searchedFeeds];
                                 [self updateSearchFeedDataSource];
                              }
                              failure:^(id responseData, NSInteger httpStatus, NSError *error){
@@ -210,7 +211,7 @@ typedef void (^ObserverBlock)(__weak CSMenuLeftViewController *self, NSSet *old,
 - (void)updateSearchFeedDataSource
 {
     // Switch to the searchFeed datasource
-    self.tableView_feeds.dataSource = searchFeedDataSource;
+    self.tableView_feeds.dataSource = _searchFeedDataSource;
     
     // Reload the table with new searchFeeds
     [self.tableView_feeds reloadData];
@@ -226,7 +227,7 @@ typedef void (^ObserverBlock)(__weak CSMenuLeftViewController *self, NSSet *old,
     [self.textField_searchInput endEditing:YES];
     
     // Switch to the searchFeed datasource
-    self.tableView_feeds.dataSource = userFeedDataSource;
+    self.tableView_feeds.dataSource = _userFeedDataSource;
     
     // Reload the table with new searchFeeds
     [self.tableView_feeds reloadData];
