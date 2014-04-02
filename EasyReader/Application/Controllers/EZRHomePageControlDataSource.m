@@ -10,7 +10,19 @@
 #import "EZRHomeViewController.h"
 
 @implementation EZRHomePageControlDataSource
+{
+    EZRHomeViewController *controller;
+}
 
+- (instancetype)initWithController:(EZRHomeViewController *)homeController {
+    self = [super init];
+    
+    if (self) {
+        controller = homeController;
+    }
+    
+    return self;
+}
 - (NSInteger)numberOfPagesForPageControl
 {
     return 0;

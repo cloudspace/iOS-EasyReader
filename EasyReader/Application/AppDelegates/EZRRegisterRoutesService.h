@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SOApplicationDelegateService.h"
+#import "SRVApplicationDelegateService.h"
 
 /**
  * An AppDelegate service used to register named API routes and their paths
  */
-@interface EZRRegisterRoutesService : SOApplicationDelegateService
+@interface EZRRegisterRoutesService : SRVApplicationDelegateService
 
 @end

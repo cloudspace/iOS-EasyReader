@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "SOApplicationDelegateService.h"
+#import "SRVApplicationDelegateService.h"
 
 
 static NSMutableDictionary *sharedDispatchPredicates = nil;
@@ -16,7 +16,7 @@ static dispatch_once_t predicateDictionaryPredicate;
 static dispatch_once_t instanceDictionaryPredicate;
 
 
-@implementation SOApplicationDelegateService
+@implementation SRVApplicationDelegateService
 
 /**
  * Returns a shared dictionary singleton used to store addresses of dispatch_once_t predicates
@@ -53,7 +53,7 @@ static dispatch_once_t instanceDictionaryPredicate;
 /**
  *
  */
-+ (SOApplicationDelegateService *)shared
++ (SRVApplicationDelegateService *)shared
 {
     NSMutableDictionary *predicates = [self sharedDispatchPredicates];
     NSMutableDictionary *instances = [self sharedInstances];

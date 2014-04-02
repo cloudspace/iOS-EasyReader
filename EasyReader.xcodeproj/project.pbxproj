@@ -83,12 +83,12 @@
 		9D16D34D18DBA9E9001E9C38 /* APIRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* APIRoute.m */; };
 		9D16D34E18DBA9E9001E9C38 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
 		9D16D35018DBA9E9001E9C38 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
-		9D16D35118DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
-		9D16D35218DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
-		9D16D35318DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
-		9D16D35418DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */; };
-		9D16D35518DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */; };
-		9D16D35618DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */; };
+		9D16D35118DBA9E9001E9C38 /* SRVApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SRVApplicationDelegateService.m */; };
+		9D16D35218DBA9E9001E9C38 /* SRVApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SRVApplicationDelegateService.m */; };
+		9D16D35318DBA9E9001E9C38 /* SRVApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SRVApplicationDelegateService.m */; };
+		9D16D35418DBA9E9001E9C38 /* SRVApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SRVApplicationDelegate.m */; };
+		9D16D35518DBA9E9001E9C38 /* SRVApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SRVApplicationDelegate.m */; };
+		9D16D35618DBA9E9001E9C38 /* SRVApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SRVApplicationDelegate.m */; };
 		9D27B1DF1715DECB001C39CF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D27B1DE1715DECB001C39CF /* Default-568h@2x.png */; };
 		9D2FDF881721EE4400535763 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF871721EE4400535763 /* Default@2x.png */; };
 		9D2FDF8A1721EE4800535763 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2FDF891721EE4700535763 /* Default.png */; };
@@ -112,10 +112,6 @@
 		9D38DDEE18EB0A7600C67022 /* EZRHomeScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D38DDEC18EB0A7600C67022 /* EZRHomeScrollViewDelegate.m */; };
 		9D38DDEF18EB0A7600C67022 /* EZRHomeScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D38DDEC18EB0A7600C67022 /* EZRHomeScrollViewDelegate.m */; };
 		9D38DDF018EB0A7600C67022 /* EZRHomeScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D38DDEC18EB0A7600C67022 /* EZRHomeScrollViewDelegate.m */; };
-		9D38DDF318EB0AEC00C67022 /* EZRHomeFeedObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D38DDF218EB0AEC00C67022 /* EZRHomeFeedObserver.m */; };
-		9D38DDF418EB0AEC00C67022 /* EZRHomeFeedObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D38DDF218EB0AEC00C67022 /* EZRHomeFeedObserver.m */; };
-		9D38DDF518EB0AEC00C67022 /* EZRHomeFeedObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D38DDF218EB0AEC00C67022 /* EZRHomeFeedObserver.m */; };
-		9D38DDF618EB0AEC00C67022 /* EZRHomeFeedObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D38DDF218EB0AEC00C67022 /* EZRHomeFeedObserver.m */; };
 		9D429770170E164D00E73BFE /* CSMenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */; };
 		9D4355741795C708002C6657 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4355731795C708002C6657 /* Social.framework */; };
 		9D4355761795C9B4002C6657 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4355751795C9B3002C6657 /* MessageUI.framework */; };
@@ -299,8 +295,8 @@
 		9D9CBADD18DCC68A00532F8C /* EZRCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D33718DB75D9001E9C38 /* EZRCoreDataService.m */; };
 		9D9CBADE18DCC68A00532F8C /* APIRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34318DBA9E9001E9C38 /* APIRoute.m */; };
 		9D9CBADF18DCC68A00532F8C /* EZRHomeCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DD18DA0D3000339C96 /* EZRHomeCollectionViewDataSource.m */; };
-		9D9CBAE018DCC68A00532F8C /* SOApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */; };
-		9D9CBAE118DCC68A00532F8C /* SOApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */; };
+		9D9CBAE018DCC68A00532F8C /* SRVApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SRVApplicationDelegate.m */; };
+		9D9CBAE118DCC68A00532F8C /* SRVApplicationDelegateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34818DBA9E9001E9C38 /* SRVApplicationDelegateService.m */; };
 		9D9CBAE318DCC68A00532F8C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4355751795C9B3002C6657 /* MessageUI.framework */; };
 		9D9CBAE418DCC68A00532F8C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4355731795C708002C6657 /* Social.framework */; };
 		9D9CBAE518DCC68A00532F8C /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA7CB25171C8B5E0045CC88 /* iAd.framework */; };
@@ -434,10 +430,10 @@
 		9D16D34318DBA9E9001E9C38 /* APIRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRoute.m; sourceTree = "<group>"; };
 		9D16D34418DBA9E9001E9C38 /* APIRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRouter.h; sourceTree = "<group>"; };
 		9D16D34518DBA9E9001E9C38 /* APIRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRouter.m; sourceTree = "<group>"; };
-		9D16D34718DBA9E9001E9C38 /* SOApplicationDelegateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOApplicationDelegateService.h; sourceTree = "<group>"; };
-		9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOApplicationDelegateService.m; sourceTree = "<group>"; };
-		9D16D34918DBA9E9001E9C38 /* SOApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOApplicationDelegate.h; sourceTree = "<group>"; };
-		9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOApplicationDelegate.m; sourceTree = "<group>"; };
+		9D16D34718DBA9E9001E9C38 /* SRVApplicationDelegateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRVApplicationDelegateService.h; sourceTree = "<group>"; };
+		9D16D34818DBA9E9001E9C38 /* SRVApplicationDelegateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRVApplicationDelegateService.m; sourceTree = "<group>"; };
+		9D16D34918DBA9E9001E9C38 /* SRVApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRVApplicationDelegate.h; sourceTree = "<group>"; };
+		9D16D34A18DBA9E9001E9C38 /* SRVApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRVApplicationDelegate.m; sourceTree = "<group>"; };
 		9D27B1DE1715DECB001C39CF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9D2FDF871721EE4400535763 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9D2FDF891721EE4700535763 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -451,8 +447,6 @@
 		9D38DDE618EB091B00C67022 /* EZRHomePageControlDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRHomePageControlDataSource.m; sourceTree = "<group>"; };
 		9D38DDEB18EB0A7600C67022 /* EZRHomeScrollViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRHomeScrollViewDelegate.h; sourceTree = "<group>"; };
 		9D38DDEC18EB0A7600C67022 /* EZRHomeScrollViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRHomeScrollViewDelegate.m; sourceTree = "<group>"; };
-		9D38DDF118EB0AEC00C67022 /* EZRHomeFeedObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EZRHomeFeedObserver.h; path = Home/EZRHomeFeedObserver.h; sourceTree = "<group>"; };
-		9D38DDF218EB0AEC00C67022 /* EZRHomeFeedObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRHomeFeedObserver.m; path = Home/EZRHomeFeedObserver.m; sourceTree = "<group>"; };
 		9D42976E170E164D00E73BFE /* CSMenuLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMenuLeftViewController.h; path = Menu/CSMenuLeftViewController.h; sourceTree = "<group>"; };
 		9D42976F170E164D00E73BFE /* CSMenuLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMenuLeftViewController.m; path = Menu/CSMenuLeftViewController.m; sourceTree = "<group>"; };
 		9D4355731795C708002C6657 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -755,10 +749,10 @@
 		9D16D34618DBA9E9001E9C38 /* ServiceOrientedAppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				9D16D34718DBA9E9001E9C38 /* SOApplicationDelegateService.h */,
-				9D16D34818DBA9E9001E9C38 /* SOApplicationDelegateService.m */,
-				9D16D34918DBA9E9001E9C38 /* SOApplicationDelegate.h */,
-				9D16D34A18DBA9E9001E9C38 /* SOApplicationDelegate.m */,
+				9D16D34718DBA9E9001E9C38 /* SRVApplicationDelegateService.h */,
+				9D16D34818DBA9E9001E9C38 /* SRVApplicationDelegateService.m */,
+				9D16D34918DBA9E9001E9C38 /* SRVApplicationDelegate.h */,
+				9D16D34A18DBA9E9001E9C38 /* SRVApplicationDelegate.m */,
 			);
 			path = ServiceOrientedAppDelegate;
 			sourceTree = "<group>";
@@ -780,8 +774,6 @@
 				2751F4DB18DA0D3000339C96 /* FeedItemCollectionView */,
 				2751F4D818DA0A6B00339C96 /* EZRHomeViewController.h */,
 				2751F4D918DA0A6B00339C96 /* EZRHomeViewController.m */,
-				9D38DDF118EB0AEC00C67022 /* EZRHomeFeedObserver.h */,
-				9D38DDF218EB0AEC00C67022 /* EZRHomeFeedObserver.m */,
 				9D38DDD318EB08D600C67022 /* EZRHomeCollectionViewDelegate.h */,
 				9D38DDD418EB08D600C67022 /* EZRHomeCollectionViewDelegate.m */,
 				2751F4DC18DA0D3000339C96 /* EZRHomeCollectionViewDataSource.h */,
@@ -1583,12 +1575,11 @@
 				9D79271B18DA1D0300E1D3E1 /* NSObject+CSNilAdditions.m in Sources */,
 				9D16D33918DB75D9001E9C38 /* EZRCoreDataService.m in Sources */,
 				9D16D34C18DBA9E9001E9C38 /* APIRoute.m in Sources */,
-				9D38DDF518EB0AEC00C67022 /* EZRHomeFeedObserver.m in Sources */,
 				9D79271C18DA1D0300E1D3E1 /* EZRHomeCollectionViewDataSource.m in Sources */,
 				9D38DDE918EB091B00C67022 /* EZRHomePageControlDataSource.m in Sources */,
-				9D16D35518DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
+				9D16D35518DBA9E9001E9C38 /* SRVApplicationDelegate.m in Sources */,
 				0D9A835418E0AA2A00D8376E /* UIColor+EZRSharedColorAdditions.m in Sources */,
-				9D16D35218DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */,
+				9D16D35218DBA9E9001E9C38 /* SRVApplicationDelegateService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1632,13 +1623,12 @@
 				9D79275E18DA1D3800E1D3E1 /* CSFeedAddViewController.m in Sources */,
 				9D639E8518E0A54300350B5F /* APIMockedDataClient.m in Sources */,
 				9D79275F18DA1D3800E1D3E1 /* NSObject+CSNilAdditions.m in Sources */,
-				9D38DDF618EB0AEC00C67022 /* EZRHomeFeedObserver.m in Sources */,
 				9D16D33A18DB75D9001E9C38 /* EZRCoreDataService.m in Sources */,
 				9D16D34D18DBA9E9001E9C38 /* APIRoute.m in Sources */,
 				9D79276018DA1D3800E1D3E1 /* EZRHomeCollectionViewDataSource.m in Sources */,
-				9D16D35618DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
+				9D16D35618DBA9E9001E9C38 /* SRVApplicationDelegate.m in Sources */,
 				0D9A835518E0AA2A00D8376E /* UIColor+EZRSharedColorAdditions.m in Sources */,
-				9D16D35318DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */,
+				9D16D35318DBA9E9001E9C38 /* SRVApplicationDelegateService.m in Sources */,
 				9D38DDD818EB08D600C67022 /* EZRHomeCollectionViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1700,11 +1690,10 @@
 				9D9CBADD18DCC68A00532F8C /* EZRCoreDataService.m in Sources */,
 				9D9CBADE18DCC68A00532F8C /* APIRoute.m in Sources */,
 				9D9CBADF18DCC68A00532F8C /* EZRHomeCollectionViewDataSource.m in Sources */,
-				9D38DDF418EB0AEC00C67022 /* EZRHomeFeedObserver.m in Sources */,
 				9D096C3C18DCEDB40043423B /* CSCollectionPageControl.m in Sources */,
 				9D639E8318E0A54300350B5F /* APIMockedDataClient.m in Sources */,
-				9D9CBAE018DCC68A00532F8C /* SOApplicationDelegate.m in Sources */,
-				9D9CBAE118DCC68A00532F8C /* SOApplicationDelegateService.m in Sources */,
+				9D9CBAE018DCC68A00532F8C /* SRVApplicationDelegate.m in Sources */,
+				9D9CBAE118DCC68A00532F8C /* SRVApplicationDelegateService.m in Sources */,
 				0D9A835318E0AA2900D8376E /* UIColor+EZRSharedColorAdditions.m in Sources */,
 				9D096C3618DCE9D70043423B /* CSMenuUserFeedDataSource.m in Sources */,
 				9D38DDD618EB08D600C67022 /* EZRHomeCollectionViewDelegate.m in Sources */,
@@ -1751,12 +1740,11 @@
 				2751F4D618DA02C100339C96 /* NSObject+CSNilAdditions.m in Sources */,
 				9D639E8218E0A54300350B5F /* APIMockedDataClient.m in Sources */,
 				9D16D33818DB75D9001E9C38 /* EZRCoreDataService.m in Sources */,
-				9D38DDF318EB0AEC00C67022 /* EZRHomeFeedObserver.m in Sources */,
 				9D16D34B18DBA9E9001E9C38 /* APIRoute.m in Sources */,
 				2751F4E218DA0D3000339C96 /* EZRHomeCollectionViewDataSource.m in Sources */,
 				0D1F71DE18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m in Sources */,
-				9D16D35418DBA9E9001E9C38 /* SOApplicationDelegate.m in Sources */,
-				9D16D35118DBA9E9001E9C38 /* SOApplicationDelegateService.m in Sources */,
+				9D16D35418DBA9E9001E9C38 /* SRVApplicationDelegate.m in Sources */,
+				9D16D35118DBA9E9001E9C38 /* SRVApplicationDelegateService.m in Sources */,
 				0D7987A518DB6AF4004440C3 /* CSSearchFeedCell.m in Sources */,
 				9D38DDD518EB08D600C67022 /* EZRHomeCollectionViewDelegate.m in Sources */,
 			);

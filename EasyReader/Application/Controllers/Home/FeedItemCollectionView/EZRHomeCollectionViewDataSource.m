@@ -12,10 +12,7 @@
 #import "EZRFeedItemCell.h"
 
 @implementation EZRHomeCollectionViewDataSource
-{
-    /// A block which will configure a cell based on a given FeedItem
-    void (^_configureFeedItemCell)(EZRFeedItemCell *, FeedItem *feedItem);
-    
+{    
     /// The identifier to use to dequeue reusable cells for the collection view
     NSString *_reusableCellIdentifier;
     
@@ -32,14 +29,11 @@
 /**
  * Sets each instance variable to the values in the given parameters
  */
-- (id)initWithFeedItems:(NSSet *)feedItems
- reusableCellIdentifier:(NSString *)reusableCellIdentifier {
+- (instancetype)initWithReusableCellIdentifier:(NSString *)reusableCellIdentifier {
     self = [super init];
     
     if (self)
     {
-        [self setFeedItems:feedItems];
-        
         _reusableCellIdentifier = reusableCellIdentifier;
     }
     

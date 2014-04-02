@@ -13,7 +13,6 @@
 
 @interface EZRHomePageControlDataSource : NSObject <CSCollectionPageControlDataSource>
 
-/// The home view controller
-@property (nonatomic, strong) EZRHomeViewController *controller;
-
+- (instancetype)initWithController:(EZRHomeViewController *)homeController;
+    
 @end

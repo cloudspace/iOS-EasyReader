@@ -10,5 +10,26 @@
 #import "EZRHomeViewController.h"
 
 @implementation EZRHomePageControlDelegate
+{
+    EZRHomeViewController *controller;
+}
+
+- (instancetype)initWithController:(EZRHomeViewController *)homeController
+{
+    self = [super init];
+    
+    if (self)
+    {
+        controller = homeController;
+    }
+    
+    return self;
+}
+
+- (void)pageControl:(CSCollectionPageControl *)pageControl didSelectPageAtIndex:(NSInteger)index
+{
+    
+}
+
 
 @end

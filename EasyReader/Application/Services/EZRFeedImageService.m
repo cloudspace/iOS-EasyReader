@@ -365,7 +365,12 @@ static EZRFeedImageService *sharedInstance;
     contrastFilter.contrast = contrast;
 
     UIImage *result = [saturationFilter imageByFilteringImage:image];
-    result = [contrastFilter imageByFilteringImage:result];
+    
+    if (result)
+    {
+        result = [contrastFilter imageByFilteringImage:result];
+    }
+    
     return result;
 }
 

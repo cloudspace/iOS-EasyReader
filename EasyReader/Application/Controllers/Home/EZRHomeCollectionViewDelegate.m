@@ -15,6 +15,7 @@
 @interface EZRHomeViewController (Additions)
 
 - (void)prefetchImagesNearIndex:(NSInteger)currentPageIndex count:(NSInteger)count;
+- (void)setCurrentFeedItem:(FeedItem *)item;
 
 @end
 
@@ -26,7 +27,7 @@
     NSInteger _currentPageIndex;
 }
 
-- (id)initWithController:(EZRHomeViewController *)homeController
+- (instancetype)initWithController:(EZRHomeViewController *)homeController
 {
     self = [super init];
     
@@ -81,10 +82,14 @@
     
     if (_currentPageIndex != pageIndex)
     {
+        [self resetWebView];
+        
         _currentPageIndex = pageIndex;
         
         [controller prefetchImagesNearIndex:pageIndex count:5];
         [controller.pageControl_itemIndicator setPageControllerPageAtIndex:pageIndex];
+        controller.currentFeedItem = controller.sortedFeedItems[pageIndex];
+        NSLog(@"%@", controller.currentFeedItem.title);
     }
 }
 

@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "CSMenuLeftViewController.h"
 #import "MFSideMenu.h"
-#import "SOApplicationDelegate.h"
+#import "SRVApplicationDelegate.h"
 
 
 /**
  * The main delegate for the application
  */
-@interface CSAppDelegate : SOApplicationDelegate <UIApplicationDelegate>
+@interface CSAppDelegate : SRVApplicationDelegate <UIApplicationDelegate>
 
 
 #pragma mark - Properties

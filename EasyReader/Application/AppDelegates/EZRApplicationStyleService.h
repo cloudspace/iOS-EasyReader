@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SOApplicationDelegateService.h"
+#import "SRVApplicationDelegateService.h"
 
 /**
  * An AppDelegate service that handles application styling
  */
-@interface EZRApplicationStyleService : SOApplicationDelegateService
+@interface EZRApplicationStyleService : SRVApplicationDelegateService
 
 @end

@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "SOApplicationDelegateService.h"
+#import "SRVApplicationDelegateService.h"
 
 /**
  * An AppDelegate service used to handle feed updating
  */
-@interface EZRFeedUpdateService : SOApplicationDelegateService
+@interface EZRFeedUpdateService : SRVApplicationDelegateService
 
 @end

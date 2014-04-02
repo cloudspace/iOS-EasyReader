@@ -15,7 +15,7 @@
     NSString *currentURL;
 }
 
-- (id)initWithController:(EZRHomeViewController *)homeController
+- (instancetype)initWithController:(EZRHomeViewController *)homeController
 {
     self = [super init];
     
@@ -33,9 +33,7 @@
  */
 - (void)scrollViewWillBeginDragging:(UIScrollView *)sender {
     // If we are scrolling in the scrollView only not a subclass
-    if([sender isMemberOfClass:[UIScrollView class]]) {
-        [self loadFeedItemWebView];
-    }
+    [self loadFeedItemWebView];
 }
 
 /**
@@ -48,9 +46,9 @@
         
         // load the url in the webView
         NSURL *url = [NSURL URLWithString:currentURL];
-        NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
         
-        [controller.webView_feedItem loadRequest:requestObj];
+        [controller.webView_feedItem loadRequest:request];
     }
 
 }

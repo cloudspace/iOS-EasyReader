@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EZRHomeViewController.h"
 
 @interface EZRHomeScrollViewDelegate : NSObject <UIScrollViewDelegate>
+
+
+- (instancetype)initWithController:(EZRHomeViewController *)homeController;
 
 @end

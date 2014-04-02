@@ -6,14 +6,13 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "SOApplicationDelegate.h"
-#import "SOApplicationDelegateService.h"
-//#import <objc/runtime.h>
+#import "SRVApplicationDelegate.h"
+#import "SRVApplicationDelegateService.h"
 #import "RTProtocol.h"
 #import "RTMethod.h"
 
 
-@implementation SOApplicationDelegate
+@implementation SRVApplicationDelegate
 {
     /// Internal mutable storage for the services registered with this delegate
     NSMutableArray *_services;
@@ -22,7 +21,7 @@
 
 #pragma mark - Public methods
 
-- (void) registerService:(SOApplicationDelegateService *)service
+- (void) registerService:(SRVApplicationDelegateService *)service
 {
     if (!service || [_services containsObject:service])
     {
@@ -113,7 +112,7 @@
  */
 - (void)invokeInvocationOnServices:(NSInvocation *)invocation
 {
-    for (SOApplicationDelegateService *service in _services)
+    for (SRVApplicationDelegateService *service in _services)
     {
         if ([service respondsToSelector:[invocation selector]])
         {

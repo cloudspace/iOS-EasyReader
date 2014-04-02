@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class SOApplicationDelegateService;
+@class SRVApplicationDelegateService;
 
 /**
  * A service-oritented UIApplicationDelegate
  */
-@interface SOApplicationDelegate : UIResponder
+@interface SRVApplicationDelegate : UIResponder
 
 
 #pragma mark - Properties
@@ -39,7 +39,7 @@
  * Registers a new service with the app delegate
  * @param service The service to register
  */
-- (void) registerService:(SOApplicationDelegateService *)service;
+- (void) registerService:(SRVApplicationDelegateService *)service;
 
 
 @end

@@ -24,7 +24,7 @@
 @interface EZRHomeViewController : CSBaseViewController
 
 
-# pragma mark - IBOutlet
+# pragma mark - IBOutlet Properties
 
 /// Vertical scroll view holding collection view and webviews
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView_vertical;
@@ -44,20 +44,17 @@
 
 # pragma mark - Properties
 
-/// Feed items on user
-@property (nonatomic, strong) NSMutableSet *feedItems;
-
-/// Current User
-@property (nonatomic, retain) User* currentUser;
-
-/// Data source for Collection view
-@property EZRHomeCollectionViewDataSource *feedCollectionViewDataSource;
+/// Feed Item currently visible
+@property (nonatomic, readonly) FeedItem *currentFeedItem;
 
 /// Feed Item currently visible
-@property FeedItem *currentFeedItem;
+@property (nonatomic, readonly) NSInteger *currentPageIndex;
 
-/// Integer id for the Collection cell that user is scrolling to
-@property NSInteger collectionCellGoingTo;
+/// The feed items visible on this view controller
+@property (nonatomic, readonly) NSMutableSet *feedItems;
+
+/// A sorted array of feed items
+@property (nonatomic, readonly) NSArray *sortedFeedItems;
 
 
 # pragma mark - Methods

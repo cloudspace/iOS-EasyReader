@@ -12,6 +12,6 @@
 
 @interface EZRHomeCollectionViewDelegate : NSObject <UICollectionViewDelegate>
 
-- (id)initWithController:(EZRHomeViewController *)homeController;
+- (instancetype)initWithController:(EZRHomeViewController *)homeController;
 
 @end
