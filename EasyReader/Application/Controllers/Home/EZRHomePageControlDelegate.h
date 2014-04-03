@@ -11,10 +11,16 @@
 
 @class EZRHomeViewController;
 
-
+/**
+ * A delegate for the page control on the home view controller
+ */
 @interface EZRHomePageControlDelegate : NSObject <CSCollectionPageControlDelegate>
 
-
+/**
+ * Initializes a new page control delegate for the given home view controller instance
+ *
+ * @param homeController The home view controller
+ */
 - (instancetype)initWithController:(EZRHomeViewController *)homeController;
 
 @end

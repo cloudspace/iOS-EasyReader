@@ -1,33 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSObject+CSReflectionAdditions.html">
+	<File path="Classes/EZRRegisterRoutesService.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSObject(CSReflectionAdditions)</TokenIdentifier>
-			<Abstract type="html">A collection of methods to assist with reflection</Abstract>
-			<DeclaredIn>NSObject+CSReflectionAdditions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRRegisterRoutesService</TokenIdentifier>
+			<Abstract type="html">An AppDelegate service used to register named API routes and their paths</Abstract>
+			<DeclaredIn>EZRRegisterRoutesService.h</DeclaredIn>
             
 			
 			<NodeRef refid="33"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSObject/reflectOverPropertyDataWithBlock:</TokenIdentifier>
-			<Abstract type="html">Reflects over an NSObject calling block once per property with a dictionary of information about that property</Abstract>
-			<DeclaredIn>NSObject+CSReflectionAdditions.h</DeclaredIn>
-			
-			<Declaration>- (void)reflectOverPropertyDataWithBlock:(void ( ^ ) ( NSDictionary *propertyData ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">the block that will get called once per property with the property info</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/reflectOverPropertyDataWithBlock:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
 		
         
 	</File>

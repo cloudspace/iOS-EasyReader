@@ -25,7 +25,7 @@
 }
 - (NSInteger)numberOfPagesForPageControl
 {
-    return 0;
+    return [controller.feedItems count];
 }
 
 @end

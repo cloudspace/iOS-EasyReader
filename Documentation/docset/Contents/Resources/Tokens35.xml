@@ -1,77 +1,475 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/APIRequestMethod.html">
+	<File path="Classes/FeedItem.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/APIRequestMethod</TokenIdentifier>
-			<Abstract type="html">Signifies http request method types</Abstract>
-			<DeclaredIn>APIRoute.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/FeedItem</TokenIdentifier>
+			<Abstract type="html">A single feed item in a feed</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
             
 			
 			<NodeRef refid="35"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kAPIRequestMethodGET</TokenIdentifier>
-            <Abstract type="html">Signifies an http GET API request</Abstract>
-            <Declaration>kAPIRequestMethodGET</Declaration>
-            
-            <DeclaredIn>APIRoute.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setTitle:</TokenIdentifier>
+			<Abstract type="html">The article title for this feed item</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *title</Declaration>
+			
+			
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="35"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kAPIRequestMethodPOST</TokenIdentifier>
-            <Abstract type="html">Signifies an http POST request</Abstract>
-            <Declaration>kAPIRequestMethodPOST</Declaration>
-            
-            <DeclaredIn>APIRoute.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/title</TokenIdentifier>
+			<Abstract type="html">The article title for this feed item</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *title</Declaration>
+			
+			
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="35"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kAPIRequestMethodPUT</TokenIdentifier>
-            <Abstract type="html">Signifies an http PUT request</Abstract>
-            <Declaration>kAPIRequestMethodPUT</Declaration>
-            
-            <DeclaredIn>APIRoute.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/title</TokenIdentifier>
+			<Abstract type="html">The article title for this feed item</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *title</Declaration>
+			
+			
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="35"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kAPIRequestMethodPATCH</TokenIdentifier>
-            <Abstract type="html">Signifies an http PATCH request</Abstract>
-            <Declaration>kAPIRequestMethodPATCH</Declaration>
-            
-            <DeclaredIn>APIRoute.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setSummary:</TokenIdentifier>
+			<Abstract type="html">The summary for this feed item</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *summary</Declaration>
+			
+			
+			<Anchor>//api/name/summary</Anchor>
             <NodeRef refid="35"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kAPIRequestMethodDELETE</TokenIdentifier>
-            <Abstract type="html">Signifies an http DELETE request</Abstract>
-            <Declaration>kAPIRequestMethodDELETE</Declaration>
-            
-            <DeclaredIn>APIRoute.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/summary</TokenIdentifier>
+			<Abstract type="html">The summary for this feed item</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *summary</Declaration>
+			
+			
+			<Anchor>//api/name/summary</Anchor>
             <NodeRef refid="35"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kAPIRequestMethodHEAD</TokenIdentifier>
-            <Abstract type="html">Signifies an http HEAD request</Abstract>
-            <Declaration>kAPIRequestMethodHEAD</Declaration>
-            
-            <DeclaredIn>APIRoute.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/summary</TokenIdentifier>
+			<Abstract type="html">The summary for this feed item</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *summary</Declaration>
+			
+			
+			<Anchor>//api/name/summary</Anchor>
             <NodeRef refid="35"/>
-        </Token>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setUpdatedAt:</TokenIdentifier>
+			<Abstract type="html">The time this feed item was updated</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDate *updatedAt</Declaration>
+			
+			
+			<Anchor>//api/name/updatedAt</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/updatedAt</TokenIdentifier>
+			<Abstract type="html">The time this feed item was updated</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDate *updatedAt</Declaration>
+			
+			
+			<Anchor>//api/name/updatedAt</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/updatedAt</TokenIdentifier>
+			<Abstract type="html">The time this feed item was updated</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDate *updatedAt</Declaration>
+			
+			
+			<Anchor>//api/name/updatedAt</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setPublishedAt:</TokenIdentifier>
+			<Abstract type="html">The time this feed item&apos;s article was published</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDate *publishedAt</Declaration>
+			
+			
+			<Anchor>//api/name/publishedAt</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/publishedAt</TokenIdentifier>
+			<Abstract type="html">The time this feed item&apos;s article was published</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDate *publishedAt</Declaration>
+			
+			
+			<Anchor>//api/name/publishedAt</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/publishedAt</TokenIdentifier>
+			<Abstract type="html">The time this feed item&apos;s article was published</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDate *publishedAt</Declaration>
+			
+			
+			<Anchor>//api/name/publishedAt</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setCreatedAt:</TokenIdentifier>
+			<Abstract type="html">The time this feed item was created</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDate *createdAt</Declaration>
+			
+			
+			<Anchor>//api/name/createdAt</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/createdAt</TokenIdentifier>
+			<Abstract type="html">The time this feed item was created</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDate *createdAt</Declaration>
+			
+			
+			<Anchor>//api/name/createdAt</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/createdAt</TokenIdentifier>
+			<Abstract type="html">The time this feed item was created</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDate *createdAt</Declaration>
+			
+			
+			<Anchor>//api/name/createdAt</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setImageIphoneRetina:</TokenIdentifier>
+			<Abstract type="html">The related iPhone retina sized image</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *imageIphoneRetina</Declaration>
+			
+			
+			<Anchor>//api/name/imageIphoneRetina</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/imageIphoneRetina</TokenIdentifier>
+			<Abstract type="html">The related iPhone retina sized image</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *imageIphoneRetina</Declaration>
+			
+			
+			<Anchor>//api/name/imageIphoneRetina</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/imageIphoneRetina</TokenIdentifier>
+			<Abstract type="html">The related iPhone retina sized image</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *imageIphoneRetina</Declaration>
+			
+			
+			<Anchor>//api/name/imageIphoneRetina</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setImageIpad:</TokenIdentifier>
+			<Abstract type="html">The related iPad sized image</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *imageIpad</Declaration>
+			
+			
+			<Anchor>//api/name/imageIpad</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/imageIpad</TokenIdentifier>
+			<Abstract type="html">The related iPad sized image</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *imageIpad</Declaration>
+			
+			
+			<Anchor>//api/name/imageIpad</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/imageIpad</TokenIdentifier>
+			<Abstract type="html">The related iPad sized image</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *imageIpad</Declaration>
+			
+			
+			<Anchor>//api/name/imageIpad</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setImageIpadRetina:</TokenIdentifier>
+			<Abstract type="html">The related iPad retina sized image</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *imageIpadRetina</Declaration>
+			
+			
+			<Anchor>//api/name/imageIpadRetina</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/imageIpadRetina</TokenIdentifier>
+			<Abstract type="html">The related iPad retina sized image</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *imageIpadRetina</Declaration>
+			
+			
+			<Anchor>//api/name/imageIpadRetina</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/imageIpadRetina</TokenIdentifier>
+			<Abstract type="html">The related iPad retina sized image</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *imageIpadRetina</Declaration>
+			
+			
+			<Anchor>//api/name/imageIpadRetina</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setUrl:</TokenIdentifier>
+			<Abstract type="html">The article URL for this feed item</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/url</TokenIdentifier>
+			<Abstract type="html">The article URL for this feed item</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/url</TokenIdentifier>
+			<Abstract type="html">The article URL for this feed item</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setId:</TokenIdentifier>
+			<Abstract type="html">This feed items remote API id</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSNumber *id</Declaration>
+			
+			
+			<Anchor>//api/name/id</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/id</TokenIdentifier>
+			<Abstract type="html">This feed items remote API id</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSNumber *id</Declaration>
+			
+			
+			<Anchor>//api/name/id</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/id</TokenIdentifier>
+			<Abstract type="html">This feed items remote API id</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSNumber *id</Declaration>
+			
+			
+			<Anchor>//api/name/id</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setFeed:</TokenIdentifier>
+			<Abstract type="html">The feed this item is in</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) Feed *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/feed</TokenIdentifier>
+			<Abstract type="html">The feed this item is in</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) Feed *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/feed</TokenIdentifier>
+			<Abstract type="html">The feed this item is in</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) Feed *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/setHeadline:</TokenIdentifier>
+			<Abstract type="html">The appropriate headline for this article</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSString *headline</Declaration>
+			
+			
+			<Anchor>//api/name/headline</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FeedItem/headline</TokenIdentifier>
+			<Abstract type="html">The appropriate headline for this article</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSString *headline</Declaration>
+			
+			
+			<Anchor>//api/name/headline</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FeedItem/headline</TokenIdentifier>
+			<Abstract type="html">The appropriate headline for this article</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSString *headline</Declaration>
+			
+			
+			<Anchor>//api/name/headline</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/FeedItem/requestFeedItemsFromFeeds:since:success:failure:</TokenIdentifier>
+			<Abstract type="html">Requests new feed items from a group of feeds</Abstract>
+			<DeclaredIn>FeedItem.h</DeclaredIn>
+			
+			<Declaration>+ (void)requestFeedItemsFromFeeds:(NSSet *)feeds since:(NSDate *)startAt success:(APISuccessBlock)success failure:(APIFailureBlock)failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>feeds</Name>
+					<Abstract type="html">The feeds to request new items for</Abstract>
+				</Parameter><Parameter>
+					<Name>startAt</Name>
+					<Abstract type="html">The time minimum createdAt time for requested feeditems</Abstract>
+				</Parameter><Parameter>
+					<Name>success</Name>
+					<Abstract type="html">A block to be run on API call success</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">A block to be run on API call failure</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/requestFeedItemsFromFeeds:since:success:failure:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

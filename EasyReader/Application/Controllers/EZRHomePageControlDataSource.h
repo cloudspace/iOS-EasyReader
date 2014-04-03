@@ -11,8 +11,16 @@
 
 @class EZRHomeViewController;
 
+/**
+ * A data source for the page control on the home view controller
+ */
 @interface EZRHomePageControlDataSource : NSObject <CSCollectionPageControlDataSource>
 
+/**
+ * Initializes a new page control data source for the given home view controller instance
+ *
+ * @param homeController The home view controller
+ */
 - (instancetype)initWithController:(EZRHomeViewController *)homeController;
     
 @end

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSFeedItemCollectionViewDataSource.html">
+	<File path="Classes/CSFeedAddViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSFeedItemCollectionViewDataSource</TokenIdentifier>
-			<Abstract type="html">The data source for the FeedCollectionView&apos;s UICollectionView</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CSFeedAddViewController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="11"/>
@@ -13,97 +13,362 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/initWithFeedItems:reusableCellIdentifier:configureBlock:</TokenIdentifier>
-			<Abstract type="html">Initializes the data source with a reusable cell identifier</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/setBarButton_save:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithFeedItems:(NSSet *)feedItems reusableCellIdentifier:(NSString *)reusableCellIdentifier configureBlock:(configureFeedItemCell)configureFeedItemCell</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>feedItems</Name>
-					<Abstract type="html">The identifier to use to dequeue reusable cells for the collection view</Abstract>
-				</Parameter><Parameter>
-					<Name>reusableCellIdentifier</Name>
-					<Abstract type="html">The reusable cell identifier to dequeue a cell with</Abstract>
-				</Parameter><Parameter>
-					<Name>configureFeedItemCell</Name>
-					<Abstract type="html">A block which will configure the cell based on the given FeedItem</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, retain) UIBarButtonItem *barButton_save</Declaration>
 			
-			<Anchor>//api/name/initWithFeedItems:reusableCellIdentifier:configureBlock:</Anchor>
+			
+			<Anchor>//api/name/barButton_save</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/setFeedItems:</TokenIdentifier>
-			<Abstract type="html">The FeedItems for this data source</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/barButton_save</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSSet *feedItems</Declaration>
+			<Declaration>@property (nonatomic, retain) UIBarButtonItem *barButton_save</Declaration>
 			
 			
-			<Anchor>//api/name/feedItems</Anchor>
+			<Anchor>//api/name/barButton_save</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/feedItems</TokenIdentifier>
-			<Abstract type="html">The FeedItems for this data source</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedAddViewController/barButton_save</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSSet *feedItems</Declaration>
+			<Declaration>@property (nonatomic, retain) UIBarButtonItem *barButton_save</Declaration>
 			
 			
-			<Anchor>//api/name/feedItems</Anchor>
+			<Anchor>//api/name/barButton_save</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCollectionViewDataSource/feedItems</TokenIdentifier>
-			<Abstract type="html">The FeedItems for this data source</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/setBarButton_cancel:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSSet *feedItems</Declaration>
+			<Declaration>@property (nonatomic, retain) UIBarButtonItem *barButton_cancel</Declaration>
 			
 			
-			<Anchor>//api/name/feedItems</Anchor>
+			<Anchor>//api/name/barButton_cancel</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/setSortedFeedItems:</TokenIdentifier>
-			<Abstract type="html">The FeedItems sorted by createdAt time</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/barButton_cancel</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *sortedFeedItems</Declaration>
+			<Declaration>@property (nonatomic, retain) UIBarButtonItem *barButton_cancel</Declaration>
 			
 			
-			<Anchor>//api/name/sortedFeedItems</Anchor>
+			<Anchor>//api/name/barButton_cancel</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionViewDataSource/sortedFeedItems</TokenIdentifier>
-			<Abstract type="html">The FeedItems sorted by createdAt time</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedAddViewController/barButton_cancel</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *sortedFeedItems</Declaration>
+			<Declaration>@property (nonatomic, retain) UIBarButtonItem *barButton_cancel</Declaration>
 			
 			
-			<Anchor>//api/name/sortedFeedItems</Anchor>
+			<Anchor>//api/name/barButton_cancel</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCollectionViewDataSource/sortedFeedItems</TokenIdentifier>
-			<Abstract type="html">The FeedItems sorted by createdAt time</Abstract>
-			<DeclaredIn>CSFeedItemCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/setFeed:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *sortedFeedItems</Declaration>
+			<Declaration>@property (nonatomic, retain) Feed *feed</Declaration>
 			
 			
-			<Anchor>//api/name/sortedFeedItems</Anchor>
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/feed</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) Feed *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedAddViewController/feed</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) Feed *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/setView_addCustomFeed:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UIView *view_addCustomFeed</Declaration>
+			
+			
+			<Anchor>//api/name/view_addCustomFeed</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/view_addCustomFeed</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UIView *view_addCustomFeed</Declaration>
+			
+			
+			<Anchor>//api/name/view_addCustomFeed</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedAddViewController/view_addCustomFeed</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UIView *view_addCustomFeed</Declaration>
+			
+			
+			<Anchor>//api/name/view_addCustomFeed</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/setTextFieldName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UITextField *textFieldName</Declaration>
+			
+			
+			<Anchor>//api/name/textFieldName</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/textFieldName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UITextField *textFieldName</Declaration>
+			
+			
+			<Anchor>//api/name/textFieldName</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedAddViewController/textFieldName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UITextField *textFieldName</Declaration>
+			
+			
+			<Anchor>//api/name/textFieldName</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/setTextFieldURL:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UITextField *textFieldURL</Declaration>
+			
+			
+			<Anchor>//api/name/textFieldURL</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/textFieldURL</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UITextField *textFieldURL</Declaration>
+			
+			
+			<Anchor>//api/name/textFieldURL</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedAddViewController/textFieldURL</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UITextField *textFieldURL</Declaration>
+			
+			
+			<Anchor>//api/name/textFieldURL</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/setAutoCompleteController:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) CSAutoCompleteViewController *autoCompleteController</Declaration>
+			
+			
+			<Anchor>//api/name/autoCompleteController</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/autoCompleteController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) CSAutoCompleteViewController *autoCompleteController</Declaration>
+			
+			
+			<Anchor>//api/name/autoCompleteController</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedAddViewController/autoCompleteController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) CSAutoCompleteViewController *autoCompleteController</Declaration>
+			
+			
+			<Anchor>//api/name/autoCompleteController</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/setRequestOperation:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) AFHTTPRequestOperation *requestOperation</Declaration>
+			
+			
+			<Anchor>//api/name/requestOperation</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/requestOperation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) AFHTTPRequestOperation *requestOperation</Declaration>
+			
+			
+			<Anchor>//api/name/requestOperation</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedAddViewController/requestOperation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) AFHTTPRequestOperation *requestOperation</Declaration>
+			
+			
+			<Anchor>//api/name/requestOperation</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/setAvailableFeeds:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSArray *availableFeeds</Declaration>
+			
+			
+			<Anchor>//api/name/availableFeeds</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/availableFeeds</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSArray *availableFeeds</Declaration>
+			
+			
+			<Anchor>//api/name/availableFeeds</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedAddViewController/availableFeeds</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSArray *availableFeeds</Declaration>
+			
+			
+			<Anchor>//api/name/availableFeeds</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/setDefaultData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSArray *defaultData</Declaration>
+			
+			
+			<Anchor>//api/name/defaultData</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSFeedAddViewController/defaultData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSArray *defaultData</Declaration>
+			
+			
+			<Anchor>//api/name/defaultData</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSFeedAddViewController/defaultData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSFeedAddViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSArray *defaultData</Declaration>
+			
+			
+			<Anchor>//api/name/defaultData</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		

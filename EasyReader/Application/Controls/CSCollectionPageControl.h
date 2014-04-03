@@ -39,10 +39,7 @@
 @required
 
 /**
- * Datasource sets pages count for page control
- *
- * @param pageControl A Page Control informing the delegate about a new page selection
- * @param pages for count of items for page control
+ * Returns the page count to be used in the page control
  */
 - (NSInteger)numberOfPagesForPageControl;
 
@@ -72,17 +69,9 @@
  * Sets page to given index
  * Will display first, second, second to last, and last.. everything in the middle is on third page indicator
  * Also animates fades in and out when approaching ends
+ *
+ * @param index The index to set the page control page to
  */
 - (void)setPageControllerPageAtIndex:(NSInteger)index;
-
-/**
- * Shows page indicators on control
- */
-- (void)showPageControlIndicators;
-
-/**
- * Shows new item button
- */
-- (void) showNewItemButton;
 
 @end

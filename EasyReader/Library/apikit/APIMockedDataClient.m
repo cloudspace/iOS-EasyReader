@@ -27,6 +27,7 @@
 #import "APIMockRequest.h"
 #import "APIMockResponse.h"
 #import "APIRouter.h"
+#import "APIParameterComparator.h"
 
 @implementation APIMockedDataClient
 {
@@ -109,7 +110,9 @@
     {
         BOOL pathsMatch = path ? [path isEqualToString:request.path] : YES;
         BOOL methodsMatch = method ? [method isEqualToString:request.method] : YES;
-        BOOL parametersMatch = parameters ? [parameters isEqualToDictionary:request.parameters] : YES;
+        BOOL parametersMatch = parameters ?
+            [APIParameterComparator compareParametersIgnoringNulls:parameters toParameters:request.parameters] : YES;
+        
         BOOL headersMatch = headers ? [headers isEqualToDictionary:request.headers] : YES;
         
         if (pathsMatch && methodsMatch && parametersMatch && headersMatch)
@@ -120,6 +123,7 @@
     
     return nil;
 }
+
 
 
 #pragma mark - Loading mock data

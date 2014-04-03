@@ -19,4 +19,5 @@
  */
 @property (nonatomic, readonly) FeedItem *currentFeedItem;
 
+
 @end

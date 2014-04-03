@@ -1,0 +1,97 @@
+{
+    "/feed_items/": [ 
+        {
+            "request": {
+                "method": "GET",
+                "parameters": {
+                     "feed_ids": [1, 2],
+                     "since": null
+                 }
+            },
+            "response": {
+                "status": 200,
+                "body": {
+                    "feed_items": [
+                        {
+                            "id": 5,
+                            "feed_id": 1,
+                            "title": "How Thieves Steal Your Bitcoins",
+                            "summary": "Even though Bitcoin exchange Mt. Gox and Canadian bank Flexcoin had to shut down after recent cyber-attacks, crypto-currencies continue to grow in popularity. The soaring value of virtual crypto-currencies such as Bitcoin makes them attractive to thieves, however, and users need to take steps to secure their wallets.",
+                            "image_iphone_retina": "https://s3.amazonaws.com/easy-reader-images/bc1.png",
+                            "url": "http://securitywatch.pcmag.com/malware/321388-how-thieves-steal-your-bitcoins?mailingID=7C77FA6460D99C2C4A0D92B843079466",
+                            "created_at": "2014-03-19T16:58:37.969Z",
+                            "updated_at": "2014-03-19T16:58:37.969Z",
+                            "published_at": "2014-03-19T16:58:37.969Z"
+                        },
+                        {
+                            "id": 9,
+                            "feed_id": 1,
+                            "title": "iOS 7.1",
+                            "summary": "iOS 7.1 is packed with interface refinements, bug fixes, improvements, and new features. Apple CarPlay introduces a better way to use iPhone while driving. And you can now control exactly how long Siri listens and more. Getting the update is easy. Go to Settings. Select General. And tap Software Update.",
+                            "image_iphone_retina": "https://s3.amazonaws.com/easy-reader-images/ios1.png",
+                            "url": "http://www.apple.com/ios/ios7-update/",
+                            "created_at": "2014-03-19T16:58:37.969Z",
+                            "updated_at": "2014-03-19T16:58:37.969Z",
+                            "published_at": "2014-03-19T16:58:37.969Z"
+                        },
+                        {
+                            "id": 8,
+                            "feed_id": 2,
+                            "title": "1 Billion",
+                            "summary": "Kickstarter just had the billionth dollar pledged on the platform. The company published a fun infographic of some of their data to celebrate. They included a map of how much each country had pledged total, but they didnâ€™t show where all the money had gone to.",
+                            "image_iphone_retina": "https://s3.amazonaws.com/easy-reader-images/ks1.png",
+                            "url": "http://blog.milesgrimshaw.com/2014/03/10/1-billion/",
+                            "created_at": "2014-03-19T16:58:37.969Z",
+                            "updated_at": "2014-03-19T16:58:37.969Z",
+                            "published_at": "2014-03-19T16:58:37.969Z"
+                        },
+                        {
+                            "id": 10,
+                            "feed_id": 2,
+                            "title": "The Flying Phantom:  US$40k sailboat levitates two feet above the waves",
+                            "summary": "'Itâ€™s like removing the 67864824_update_schemeshandbrake â€“ suddenly everything gets smoother and faster in pure silence.' This gravity-defying US$40k catamaran rises completely out of the water at speed on a pair of hook-shaped hydrofoils. It looks like the work of David Copperfield, but itâ€™s real, and itâ€™s set to start a revolution in the sailing world.",
+                            "image_iphone_retina": "https://s3.amazonaws.com/easy-reader-images/sb1.png",
+                            "url": "http://www.gizmag.com/flying-phantom-hydrofoil-catamaran-sailing/31143/",
+                            "created_at": "2014-03-19T16:58:37.969Z",
+                            "updated_at": "2014-03-19T16:58:37.969Z",
+                            "published_at": "2014-03-19T16:58:37.969Z"
+                        },
+                        {
+                            "id": 11,
+                            "feed_id": 3,
+                            "title": "2014 Winter Olympics Opening Ceremony in Sochi",
+                            "summary": "The Opening Ceremony kicked off the start of the 2014 Winter Olympics in Sochi, Russia today. The torch was lit after a dazzling display of performance and fireworks",
+                            "image_iphone_retina": "http://i.imgur.com/5ZOzA56.jpg",
+                            "url": "http://www.boston.com/bigpicture/2014/02/2014_winter_olympics_opening_ceremony_in_soch.html",
+                            "created_at": "2014-03-19T16:58:37.969Z",
+                            "updated_at": "2014-03-19T16:58:37.969Z",
+                            "published_at": "2014-03-19T16:58:37.969Z"
+                        },
+                        {
+                            "id": 3,
+                            "feed_id": 1,
+                            "title": "Docker 0.9:  introducing execution drivers and libcontainer",
+                            "summary": "Today we are happy to introduce Docker 0.9. With this release we are continuing our focus on quality over features, shrinking and stabilizing the core, and providing first-class support for all major operating systems.",
+                            "image_iphone_retina": "https://s3.amazonaws.com/easy-reader-images/si1.png",
+                            "url": "http://blog.docker.io/2014/03/docker-0-9-introducing-execution-drivers-and-libcontainer/",
+                            "created_at": "2014-03-19T16:58:37.969Z",
+                            "updated_at": "2014-03-19T16:58:37.969Z",
+                            "published_at": "2014-03-19T16:58:37.969Z"
+                        },
+                        {
+                            "id": 6,
+                            "feed_id": 2,
+                            "title": "DoSomething.org Is Upping the Snapchat Game",
+                            "summary": "DoSomething.org is all about empowering young people. \n\n The organization, one of the largest non-profits for teens and young adults in the United States, connects 13-to-25 year olds through a wide variety of social causes. It didnâ€™t take long for DoSomething.org strategy leaders to realize that Snapchat users fall within that exact age demographic.",
+                            "image_iphone_retina": "https://s3.amazonaws.com/easy-reader-images/yt1.png",
+                            "url": "http://mashable.com/2014/03/09/dosomething-snapchat/#: eyJzIjoidCIsImkiOiJfMDhiOWhsYmI1NzViNXB0bCJ9",
+                            "created_at": "2014-03-19T16:58:37.969Z",
+                            "updated_at": "2014-03-19T16:58:37.969Z",
+                            "published_at": "2014-03-19T16:58:37.969Z"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

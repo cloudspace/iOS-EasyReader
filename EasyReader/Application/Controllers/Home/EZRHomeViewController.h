@@ -48,7 +48,7 @@
 @property (nonatomic, readonly) FeedItem *currentFeedItem;
 
 /// Feed Item currently visible
-@property (nonatomic, readonly) NSInteger *currentPageIndex;
+@property (nonatomic, readonly) NSInteger currentPageIndex;
 
 /// The feed items visible on this view controller
 @property (nonatomic, readonly) NSMutableSet *feedItems;

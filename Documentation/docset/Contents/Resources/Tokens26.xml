@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/EZRRegisterRoutesService.html">
+	<File path="Classes/EZRFeedUpdateService.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/EZRRegisterRoutesService</TokenIdentifier>
-			<Abstract type="html">An AppDelegate service used to register named API routes and their paths</Abstract>
-			<DeclaredIn>EZRRegisterRoutesService.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRFeedUpdateService</TokenIdentifier>
+			<Abstract type="html">An AppDelegate service used to handle feed updating</Abstract>
+			<DeclaredIn>EZRFeedUpdateService.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>

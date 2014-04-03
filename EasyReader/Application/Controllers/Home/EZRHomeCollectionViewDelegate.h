@@ -10,8 +10,15 @@
 
 @class EZRHomeViewController;
 
+/**
+ * A delegate for the collection view on the home view controller
+ */
 @interface EZRHomeCollectionViewDelegate : NSObject <UICollectionViewDelegate>
 
-- (instancetype)initWithController:(EZRHomeViewController *)homeController;
+/**
+ * Initializes a collection view delegate for the given home view controller instance
+ *
+ * @param homeController The home view controller
+ */- (instancetype)initWithController:(EZRHomeViewController *)homeController;
 
 @end

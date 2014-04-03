@@ -1,16 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/EZRCoreDataService.html">
+	<File path="Classes/EZRCustomFeedCell.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/EZRCoreDataService</TokenIdentifier>
-			<Abstract type="html">An AppDelegate service used to manage core data functionality</Abstract>
-			<DeclaredIn>EZRCoreDataService.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRCustomFeedCell</TokenIdentifier>
+			<Abstract type="html">A UITableViewCell for custom feed data</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
             
 			
 			<NodeRef refid="21"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRCustomFeedCell/setLabel_url:</TokenIdentifier>
+			<Abstract type="html">The custom feed url</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_url</Declaration>
+			
+			
+			<Anchor>//api/name/label_url</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRCustomFeedCell/label_url</TokenIdentifier>
+			<Abstract type="html">The custom feed url</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_url</Declaration>
+			
+			
+			<Anchor>//api/name/label_url</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRCustomFeedCell/label_url</TokenIdentifier>
+			<Abstract type="html">The custom feed url</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_url</Declaration>
+			
+			
+			<Anchor>//api/name/label_url</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRCustomFeedCell/setButton_addCustomFeed:</TokenIdentifier>
+			<Abstract type="html">Button to add the custom feed</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIButton *button_addCustomFeed</Declaration>
+			
+			
+			<Anchor>//api/name/button_addCustomFeed</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRCustomFeedCell/button_addCustomFeed</TokenIdentifier>
+			<Abstract type="html">Button to add the custom feed</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIButton *button_addCustomFeed</Declaration>
+			
+			
+			<Anchor>//api/name/button_addCustomFeed</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRCustomFeedCell/button_addCustomFeed</TokenIdentifier>
+			<Abstract type="html">Button to add the custom feed</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIButton *button_addCustomFeed</Declaration>
+			
+			
+			<Anchor>//api/name/button_addCustomFeed</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRCustomFeedCell/setFeedData:</TokenIdentifier>
+			<Abstract type="html">The NSDictionary of the feed this cell is based on</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) NSDictionary *feedData</Declaration>
+			
+			
+			<Anchor>//api/name/feedData</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRCustomFeedCell/feedData</TokenIdentifier>
+			<Abstract type="html">The NSDictionary of the feed this cell is based on</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) NSDictionary *feedData</Declaration>
+			
+			
+			<Anchor>//api/name/feedData</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRCustomFeedCell/feedData</TokenIdentifier>
+			<Abstract type="html">The NSDictionary of the feed this cell is based on</Abstract>
+			<DeclaredIn>EZRCustomFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) NSDictionary *feedData</Declaration>
+			
+			
+			<Anchor>//api/name/feedData</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
 		
         
 	</File>

@@ -38,7 +38,7 @@
  *
  * @param urlString the URL of the image to process
  * @param success A block that gets executed after successful fetching and processing
- * @param success A block that gets executed after image fetching failure
+ * @param failure A block that gets executed after image fetching failure
  */
 - (void)fetchImageAtURLString:(NSString *)urlString
                       success:(void (^)(UIImage *image, UIImage *blurredImage))success

@@ -42,6 +42,13 @@
 						<NodeRef refid="29"/>
 						<NodeRef refid="30"/>
 						<NodeRef refid="31"/>
+						<NodeRef refid="32"/>
+						<NodeRef refid="33"/>
+						<NodeRef refid="34"/>
+						<NodeRef refid="35"/>
+						<NodeRef refid="36"/>
+						<NodeRef refid="37"/>
+						<NodeRef refid="38"/>
 						
 					</Subnodes>
 				</Node>
@@ -51,20 +58,31 @@
 					<Name>Categories</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="32"/>
-						<NodeRef refid="33"/>
-						<NodeRef refid="34"/>
+						<NodeRef refid="39"/>
+						<NodeRef refid="40"/>
+						<NodeRef refid="41"/>
+						<NodeRef refid="42"/>
 						
 					</Subnodes>
 				</Node>
 				
                 
+				<Node>
+					<Name>Protocols</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="43"/>
+						<NodeRef refid="44"/>
+						
+					</Subnodes>
+				</Node>
+				
                 
 				<Node>
 					<Name>Constants</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="35"/>
+						<NodeRef refid="45"/>
 						
 					</Subnodes>
 				</Node>
@@ -167,6 +185,33 @@
             
         </Node>
 		<Node id="5" type="file" documentType="reference">
+            <Name>APIParameterComparator</Name>
+            <Path>Classes/APIParameterComparator.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/APIParameterComparator.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/APIParameterComparator.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/APIParameterComparator.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="6" type="file" documentType="reference">
             <Name>APIRoute</Name>
             <Path>Classes/APIRoute.html</Path>
             
@@ -199,7 +244,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="6" type="file" documentType="reference">
+		<Node id="7" type="file" documentType="reference">
             <Name>APIRouter</Name>
             <Path>Classes/APIRouter.html</Path>
             
@@ -232,7 +277,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="7" type="file" documentType="reference">
+		<Node id="8" type="file" documentType="reference">
             <Name>CSAppDelegate</Name>
             <Path>Classes/CSAppDelegate.html</Path>
             
@@ -259,7 +304,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="8" type="file" documentType="reference">
+		<Node id="9" type="file" documentType="reference">
             <Name>CSCollectionPageControl</Name>
             <Path>Classes/CSCollectionPageControl.html</Path>
             
@@ -292,7 +337,12 @@
             </Subnodes>
             
         </Node>
-		<Node id="9" type="file" documentType="reference">
+		<Node id="10" type="file" documentType="reference">
+            <Name>CSControllerAbstraction</Name>
+            <Path>Classes/CSControllerAbstraction.html</Path>
+            
+        </Node>
+		<Node id="11" type="file" documentType="reference">
             <Name>CSFeedAddViewController</Name>
             <Path>Classes/CSFeedAddViewController.html</Path>
             
@@ -319,100 +369,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="10" type="file" documentType="reference">
-            <Name>CSFeedItemCollectionView</Name>
-            <Path>Classes/CSFeedItemCollectionView.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/CSFeedItemCollectionView.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/CSFeedItemCollectionView.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/CSFeedItemCollectionView.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="11" type="file" documentType="reference">
-            <Name>CSFeedItemCollectionViewDataSource</Name>
-            <Path>Classes/CSFeedItemCollectionViewDataSource.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/CSFeedItemCollectionViewDataSource.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/CSFeedItemCollectionViewDataSource.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/CSFeedItemCollectionViewDataSource.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                
-                <Node type="section">
-                    <Path>Classes/CSFeedItemCollectionViewDataSource.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
-            </Subnodes>
-            
-        </Node>
 		<Node id="12" type="file" documentType="reference">
-            <Name>CSHomeViewController</Name>
-            <Path>Classes/CSHomeViewController.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/CSHomeViewController.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/CSHomeViewController.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/CSHomeViewController.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                
-                <Node type="section">
-                    <Path>Classes/CSHomeViewController.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="13" type="file" documentType="reference">
             <Name>CSMenuLeftViewController</Name>
             <Path>Classes/CSMenuLeftViewController.html</Path>
             
@@ -445,7 +402,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="14" type="file" documentType="reference">
+		<Node id="13" type="file" documentType="reference">
             <Name>CSMenuSearchFeedDataSource</Name>
             <Path>Classes/CSMenuSearchFeedDataSource.html</Path>
             
@@ -478,7 +435,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="15" type="file" documentType="reference">
+		<Node id="14" type="file" documentType="reference">
             <Name>CSMenuUserFeedDataSource</Name>
             <Path>Classes/CSMenuUserFeedDataSource.html</Path>
             
@@ -502,10 +459,16 @@
                 
                 
                 
+                <Node type="section">
+                    <Path>Classes/CSMenuUserFeedDataSource.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
             </Subnodes>
             
         </Node>
-		<Node id="16" type="file" documentType="reference">
+		<Node id="15" type="file" documentType="reference">
             <Name>CSRemoteObject</Name>
             <Path>Classes/CSRemoteObject.html</Path>
             
@@ -538,7 +501,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="17" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
             <Name>CSRootViewController</Name>
             <Path>Classes/CSRootViewController.html</Path>
             
@@ -571,7 +534,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="18" type="file" documentType="reference">
+		<Node id="17" type="file" documentType="reference">
             <Name>CSSearchFeedCell</Name>
             <Path>Classes/CSSearchFeedCell.html</Path>
             
@@ -598,7 +561,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="18" type="file" documentType="reference">
             <Name>CSUserFeedCell</Name>
             <Path>Classes/CSUserFeedCell.html</Path>
             
@@ -625,17 +588,17 @@
             </Subnodes>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>EZRApplicationStyleService</Name>
             <Path>Classes/EZRApplicationStyleService.html</Path>
             
         </Node>
-		<Node id="21" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>EZRCoreDataService</Name>
             <Path>Classes/EZRCoreDataService.html</Path>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>EZRCustomFeedCell</Name>
             <Path>Classes/EZRCustomFeedCell.html</Path>
             
@@ -658,6 +621,39 @@
                 </Node>
                 
                 
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="22" type="file" documentType="reference">
+            <Name>EZRFeedImageService</Name>
+            <Path>Classes/EZRFeedImageService.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/EZRFeedImageService.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/EZRFeedImageService.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/EZRFeedImageService.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/EZRFeedImageService.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
                 
             </Subnodes>
             
@@ -690,6 +686,33 @@
             
         </Node>
 		<Node id="24" type="file" documentType="reference">
+            <Name>EZRFeedItemCollectionView</Name>
+            <Path>Classes/EZRFeedItemCollectionView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/EZRFeedItemCollectionView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/EZRFeedItemCollectionView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/EZRFeedItemCollectionView.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="25" type="file" documentType="reference">
             <Name>EZRFeedItemUpdateService</Name>
             <Path>Classes/EZRFeedItemUpdateService.html</Path>
             
@@ -716,17 +739,191 @@
             </Subnodes>
             
         </Node>
-		<Node id="25" type="file" documentType="reference">
+		<Node id="26" type="file" documentType="reference">
             <Name>EZRFeedUpdateService</Name>
             <Path>Classes/EZRFeedUpdateService.html</Path>
             
         </Node>
-		<Node id="26" type="file" documentType="reference">
+		<Node id="27" type="file" documentType="reference">
+            <Name>EZRHomeCollectionViewDataSource</Name>
+            <Path>Classes/EZRHomeCollectionViewDataSource.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/EZRHomeCollectionViewDataSource.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/EZRHomeCollectionViewDataSource.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/EZRHomeCollectionViewDataSource.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/EZRHomeCollectionViewDataSource.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="28" type="file" documentType="reference">
+            <Name>EZRHomeCollectionViewDelegate</Name>
+            <Path>Classes/EZRHomeCollectionViewDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/EZRHomeCollectionViewDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/EZRHomeCollectionViewDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/EZRHomeCollectionViewDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="29" type="file" documentType="reference">
+            <Name>EZRHomePageControlDataSource</Name>
+            <Path>Classes/EZRHomePageControlDataSource.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/EZRHomePageControlDataSource.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/EZRHomePageControlDataSource.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/EZRHomePageControlDataSource.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="30" type="file" documentType="reference">
+            <Name>EZRHomePageControlDelegate</Name>
+            <Path>Classes/EZRHomePageControlDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/EZRHomePageControlDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/EZRHomePageControlDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/EZRHomePageControlDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="31" type="file" documentType="reference">
+            <Name>EZRHomeScrollViewDelegate</Name>
+            <Path>Classes/EZRHomeScrollViewDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/EZRHomeScrollViewDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/EZRHomeScrollViewDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/EZRHomeScrollViewDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="32" type="file" documentType="reference">
+            <Name>EZRHomeViewController</Name>
+            <Path>Classes/EZRHomeViewController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/EZRHomeViewController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/EZRHomeViewController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/EZRHomeViewController.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/EZRHomeViewController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="33" type="file" documentType="reference">
             <Name>EZRRegisterRoutesService</Name>
             <Path>Classes/EZRRegisterRoutesService.html</Path>
             
         </Node>
-		<Node id="27" type="file" documentType="reference">
+		<Node id="34" type="file" documentType="reference">
             <Name>Feed</Name>
             <Path>Classes/Feed.html</Path>
             
@@ -765,7 +962,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="28" type="file" documentType="reference">
+		<Node id="35" type="file" documentType="reference">
             <Name>FeedItem</Name>
             <Path>Classes/FeedItem.html</Path>
             
@@ -798,24 +995,24 @@
             </Subnodes>
             
         </Node>
-		<Node id="29" type="file" documentType="reference">
-            <Name>SOApplicationDelegate</Name>
-            <Path>Classes/SOApplicationDelegate.html</Path>
+		<Node id="36" type="file" documentType="reference">
+            <Name>SRVApplicationDelegate</Name>
+            <Path>Classes/SRVApplicationDelegate.html</Path>
             
                 <Subnodes>
                 <Node type="section">
-                    <Path>Classes/SOApplicationDelegate.html</Path>
+                    <Path>Classes/SRVApplicationDelegate.html</Path>
                     <Name>Overview</Name>
                     <Anchor>overview</Anchor>
                 </Node>
                 <Node type="section">
-                    <Path>Classes/SOApplicationDelegate.html</Path>
+                    <Path>Classes/SRVApplicationDelegate.html</Path>
                     <Name>Tasks</Name>
                     <Anchor>tasks</Anchor>
                 </Node>
                 
                 <Node type="section">
-                    <Path>Classes/SOApplicationDelegate.html</Path>
+                    <Path>Classes/SRVApplicationDelegate.html</Path>
                     <Name>Properties</Name>
                     <Anchor>properties</Anchor>
                 </Node>
@@ -823,7 +1020,7 @@
                 
                 
                 <Node type="section">
-                    <Path>Classes/SOApplicationDelegate.html</Path>
+                    <Path>Classes/SRVApplicationDelegate.html</Path>
                     <Name>Instance Methods</Name>
                     <Anchor>instance_methods</Anchor>
                 </Node>
@@ -831,25 +1028,25 @@
             </Subnodes>
             
         </Node>
-		<Node id="30" type="file" documentType="reference">
-            <Name>SOApplicationDelegateService</Name>
-            <Path>Classes/SOApplicationDelegateService.html</Path>
+		<Node id="37" type="file" documentType="reference">
+            <Name>SRVApplicationDelegateService</Name>
+            <Path>Classes/SRVApplicationDelegateService.html</Path>
             
                 <Subnodes>
                 <Node type="section">
-                    <Path>Classes/SOApplicationDelegateService.html</Path>
+                    <Path>Classes/SRVApplicationDelegateService.html</Path>
                     <Name>Overview</Name>
                     <Anchor>overview</Anchor>
                 </Node>
                 <Node type="section">
-                    <Path>Classes/SOApplicationDelegateService.html</Path>
+                    <Path>Classes/SRVApplicationDelegateService.html</Path>
                     <Name>Tasks</Name>
                     <Anchor>tasks</Anchor>
                 </Node>
                 
                 
                 <Node type="section">
-                    <Path>Classes/SOApplicationDelegateService.html</Path>
+                    <Path>Classes/SRVApplicationDelegateService.html</Path>
                     <Name>Class Methods</Name>
                     <Anchor>class_methods</Anchor>
                 </Node>
@@ -858,7 +1055,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="31" type="file" documentType="reference">
+		<Node id="38" type="file" documentType="reference">
             <Name>User</Name>
             <Path>Classes/User.html</Path>
             
@@ -898,7 +1095,7 @@
             
         </Node>
 		
-		<Node id="32" type="file" documentType="reference">
+		<Node id="39" type="file" documentType="reference">
             <Name>NSObject(CSNilAdditions)</Name>
             <Path>Categories/NSObject+CSNilAdditions.html</Path>
             
@@ -931,7 +1128,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="33" type="file" documentType="reference">
+		<Node id="40" type="file" documentType="reference">
             <Name>NSObject(CSReflectionAdditions)</Name>
             <Path>Categories/NSObject+CSReflectionAdditions.html</Path>
             
@@ -958,7 +1155,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="34" type="file" documentType="reference">
+		<Node id="41" type="file" documentType="reference">
             <Name>UIColor(EZRSharedColorAdditions)</Name>
             <Path>Categories/UIColor+EZRSharedColorAdditions.html</Path>
             
@@ -985,9 +1182,96 @@
             </Subnodes>
             
         </Node>
+		<Node id="42" type="file" documentType="reference">
+            <Name>UIImageView(EZRFeedImageAdditions)</Name>
+            <Path>Categories/UIImageView+EZRFeedImageAdditions.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Categories/UIImageView+EZRFeedImageAdditions.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Categories/UIImageView+EZRFeedImageAdditions.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Categories/UIImageView+EZRFeedImageAdditions.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Categories/UIImageView+EZRFeedImageAdditions.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
 		
-        
-        <Node id="35" type="file" documentType="reference">
+        <Node id="43" type="file" documentType="reference">
+            <Name>CSCollectionPageControlDataSource</Name>
+            <Path>Protocols/CSCollectionPageControlDataSource.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/CSCollectionPageControlDataSource.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/CSCollectionPageControlDataSource.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/CSCollectionPageControlDataSource.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="44" type="file" documentType="reference">
+            <Name>CSCollectionPageControlDelegate</Name>
+            <Path>Protocols/CSCollectionPageControlDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/CSCollectionPageControlDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/CSCollectionPageControlDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/CSCollectionPageControlDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		
+        <Node id="45" type="file" documentType="reference">
             <Name>APIRequestMethod</Name>
             <Path>Constants/APIRequestMethod.html</Path>
             

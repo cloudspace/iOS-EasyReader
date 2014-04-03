@@ -39,15 +39,9 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/button_newItem">&nbsp;&nbsp;&nbsp;&nbsp;button_newItem</option>
+	<option value="//api/name/datasource">&nbsp;&nbsp;&nbsp;&nbsp;datasource</option>
 	
-	<option value="//api/name/controller_owner">&nbsp;&nbsp;&nbsp;&nbsp;controller_owner</option>
-	
-	<option value="//api/name/view_leftFade">&nbsp;&nbsp;&nbsp;&nbsp;view_leftFade</option>
-	
-	<option value="//api/name/view_maskLayer">&nbsp;&nbsp;&nbsp;&nbsp;view_maskLayer</option>
-	
-	<option value="//api/name/view_rightFade">&nbsp;&nbsp;&nbsp;&nbsp;view_rightFade</option>
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
 	
 	
 	
@@ -56,9 +50,7 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/setPageControllerPageAtIndex:forCollection:">&nbsp;&nbsp;&nbsp;&nbsp;- setPageControllerPageAtIndex:forCollection:</option>
-	
-	<option value="//api/name/setUpFadesOnView:">&nbsp;&nbsp;&nbsp;&nbsp;- setUpFadesOnView:</option>
+	<option value="//api/name/setPageControllerPageAtIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- setPageControllerPageAtIndex:</option>
 	
 	
 	
@@ -84,15 +76,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/button_newItem">button_newItem</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/datasource">datasource</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/controller_owner">controller_owner</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/view_leftFade">view_leftFade</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/view_maskLayer">view_maskLayer</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/view_rightFade">view_rightFade</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
 	
 </ul></li>
 
@@ -102,9 +88,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPageControllerPageAtIndex:forCollection:">setPageControllerPageAtIndex:forCollection:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setUpFadesOnView:">setUpFadesOnView:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPageControllerPageAtIndex:">setPageControllerPageAtIndex:</a></span></li>
 	
 </ul></li>
 
@@ -143,7 +127,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Page control for multiple</p>
+						<p>Customized Page Control for collections of items</p>
 					</div>
 					
 					
@@ -161,43 +145,19 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/controller_owner">&nbsp;&nbsp;controller_owner</a></code>
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/button_newItem">&nbsp;&nbsp;button_newItem</a></code>
+		<code><a href="#//api/name/datasource">&nbsp;&nbsp;datasource</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/view_maskLayer">&nbsp;&nbsp;view_maskLayer</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/view_leftFade">&nbsp;&nbsp;view_leftFade</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/view_rightFade">&nbsp;&nbsp;view_rightFade</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/setPageControllerPageAtIndex:forCollection:">&ndash;&nbsp;setPageControllerPageAtIndex:forCollection:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/setUpFadesOnView:">&ndash;&nbsp;setUpFadesOnView:</a></code>
+		<code><a href="#//api/name/setPageControllerPageAtIndex:">&ndash;&nbsp;setPageControllerPageAtIndex:</a></code>
 	</span>
 	
 	
@@ -215,58 +175,75 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/button_newItem" title="button_newItem"></a>
-	<h3 class="subsubtitle method-title">button_newItem</h3>
+	<a name="//api/name/datasource" title="datasource"></a>
+	<h3 class="subsubtitle method-title">datasource</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>The object that acts as the <a href="#//api/name/delegate">delegate</a> of the receiving page control</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>@property UIButton *button_newItem</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) id&lt;CSCollectionPageControlDataSource&gt; datasource</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSCollectionPageControl.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/controller_owner" title="controller_owner"></a>
-	<h3 class="subsubtitle method-title">controller_owner</h3>
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>The object that acts as the delegate of the receiving page control</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>@property CSHomeViewController *controller_owner</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) id&lt;CSCollectionPageControlDelegate&gt; delegate</code></div>
 
     
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/view_leftFade" title="view_leftFade"></a>
-	<h3 class="subsubtitle method-title">view_leftFade</h3>
 	
 	
-
-	<div class="method-subsection method-declaration"><code>@property UIView *view_leftFade</code></div>
-
-    
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/view_maskLayer" title="view_maskLayer"></a>
-	<h3 class="subsubtitle method-title">view_maskLayer</h3>
 	
 	
-
-	<div class="method-subsection method-declaration"><code>@property UIView *view_maskLayer</code></div>
-
-    
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/view_rightFade" title="view_rightFade"></a>
-	<h3 class="subsubtitle method-title">view_rightFade</h3>
 	
 	
-
-	<div class="method-subsection method-declaration"><code>@property UIView *view_rightFade</code></div>
-
-    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSCollectionPageControl.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -280,25 +257,51 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/setPageControllerPageAtIndex:forCollection:" title="setPageControllerPageAtIndex:forCollection:"></a>
-	<h3 class="subsubtitle method-title">setPageControllerPageAtIndex:forCollection:</h3>
+	<a name="//api/name/setPageControllerPageAtIndex:" title="setPageControllerPageAtIndex:"></a>
+	<h3 class="subsubtitle method-title">setPageControllerPageAtIndex:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets page to given index
+Will display first, second, second to last, and last.. everything in the middle is on third page indicator
+Also animates fades in and out when approaching ends</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>- (void)setPageControllerPageAtIndex:(NSInteger)<em>index</em> forCollection:(NSSet *)<em>collection</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)setPageControllerPageAtIndex:(NSInteger)<em>index</em></code></div>
 
     
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/setUpFadesOnView:" title="setUpFadesOnView:"></a>
-	<h3 class="subsubtitle method-title">setUpFadesOnView:</h3>
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>index</em></dt>
+			<dd><p>The index to set the page control page to</p></dd>
+		</dl>
+		
+	</div>
 	
 	
-
-	<div class="method-subsection method-declaration"><code>- (void)setUpFadesOnView:(UIView *)<em>mask</em></code></div>
-
-    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSCollectionPageControl.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -316,7 +319,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Cloudspace. All rights reserved. (Last updated: 2014-03-26)</span><br />
+						<p><span class="copyright">&copy; 2014 Cloudspace. All rights reserved. (Last updated: 2014-04-03)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

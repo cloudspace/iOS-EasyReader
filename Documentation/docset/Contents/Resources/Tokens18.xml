@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSSearchFeedCell.html">
+	<File path="Classes/CSUserFeedCell.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSSearchFeedCell</TokenIdentifier>
-			<Abstract type="html">A UITableViewCell for feed data returned by the search API</Abstract>
-			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CSUserFeedCell</TokenIdentifier>
+			<Abstract type="html">A UITableViewCell for Feeds in Core Data</Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
@@ -13,9 +13,9 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/setImageView_icon:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/setImageView_icon:</TokenIdentifier>
 			<Abstract type="html">The feed&apos;s icon</Abstract>
-			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
 			
 			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
 			
@@ -25,9 +25,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/imageView_icon</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/imageView_icon</TokenIdentifier>
 			<Abstract type="html">The feed&apos;s icon</Abstract>
-			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
 			
 			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
 			
@@ -37,9 +37,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSSearchFeedCell/imageView_icon</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/CSUserFeedCell/imageView_icon</TokenIdentifier>
 			<Abstract type="html">The feed&apos;s icon</Abstract>
-			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
 			
 			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
 			
@@ -49,9 +49,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/setLabel_name:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/setLabel_name:</TokenIdentifier>
 			<Abstract type="html">The feed&apos;s name</Abstract>
-			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
 			
 			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
 			
@@ -61,9 +61,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/label_name</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/label_name</TokenIdentifier>
 			<Abstract type="html">The feed&apos;s name</Abstract>
-			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
 			
 			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
 			
@@ -73,9 +73,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSSearchFeedCell/label_name</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/CSUserFeedCell/label_name</TokenIdentifier>
 			<Abstract type="html">The feed&apos;s name</Abstract>
-			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
 			
 			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
 			
@@ -85,38 +85,38 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/setFeedData:</TokenIdentifier>
-			<Abstract type="html">The NSDictionary of the feed this cell is based on</Abstract>
-			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/setFeed:</TokenIdentifier>
+			<Abstract type="html">The feed item this cell is based on</Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) NSDictionary *feedData</Declaration>
+			<Declaration>@property (nonatomic, weak) Feed *feed</Declaration>
 			
 			
-			<Anchor>//api/name/feedData</Anchor>
+			<Anchor>//api/name/feed</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSSearchFeedCell/feedData</TokenIdentifier>
-			<Abstract type="html">The NSDictionary of the feed this cell is based on</Abstract>
-			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/feed</TokenIdentifier>
+			<Abstract type="html">The feed item this cell is based on</Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) NSDictionary *feedData</Declaration>
+			<Declaration>@property (nonatomic, weak) Feed *feed</Declaration>
 			
 			
-			<Anchor>//api/name/feedData</Anchor>
+			<Anchor>//api/name/feed</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSSearchFeedCell/feedData</TokenIdentifier>
-			<Abstract type="html">The NSDictionary of the feed this cell is based on</Abstract>
-			<DeclaredIn>CSSearchFeedCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CSUserFeedCell/feed</TokenIdentifier>
+			<Abstract type="html">The feed item this cell is based on</Abstract>
+			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) NSDictionary *feedData</Declaration>
+			<Declaration>@property (nonatomic, weak) Feed *feed</Declaration>
 			
 			
-			<Anchor>//api/name/feedData</Anchor>
+			<Anchor>//api/name/feed</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

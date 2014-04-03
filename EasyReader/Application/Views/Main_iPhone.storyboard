@@ -61,7 +61,7 @@
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="302" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-v3-acz">
-                                                                            <rect key="frame" x="8" y="5" width="302" height="100"/>
+                                                                            <rect key="frame" x="8" y="8" width="302" height="100"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="100" id="Ev7-IU-V7M"/>
@@ -79,15 +79,15 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CNN - 5 Minutes Ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKE-EF-lhA">
-                                                                            <rect key="frame" x="0.0" y="143" width="320" height="21"/>
+                                                                            <rect key="frame" x="-1" y="127" width="320" height="21"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
-                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                                            <color key="textColor" white="1" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="5IB-v3-acz" secondAttribute="bottom" constant="132" id="2tv-1M-IpA"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="5IB-v3-acz" secondAttribute="bottom" constant="129" id="2tv-1M-IpA"/>
                                                                         <constraint firstAttribute="trailing" secondItem="5IB-v3-acz" secondAttribute="trailing" constant="10" id="Mk8-cT-wkP"/>
                                                                         <constraint firstItem="5IB-v3-acz" firstAttribute="leading" secondItem="GyA-VK-s4d" secondAttribute="leading" constant="8" id="rvV-ox-NbO"/>
                                                                     </constraints>
@@ -117,6 +117,10 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZJR-Bc-2rZ" customClass="CSCollectionPageControl">
+                                                <rect key="frame" x="0.0" y="535" width="320" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </pageControl>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="xvT-99-V3u" firstAttribute="top" secondItem="wv0-Kq-lEd" secondAttribute="top" id="eeM-6n-6rD"/>
@@ -162,6 +166,7 @@
                     <connections>
                         <outlet property="button_leftMenu" destination="wb1-Na-kaO" id="0oK-RY-cyj"/>
                         <outlet property="collectionView_feedItems" destination="xvT-99-V3u" id="kb5-it-zd3"/>
+                        <outlet property="pageControl_itemIndicator" destination="ZJR-Bc-2rZ" id="DWa-BN-VLk"/>
                         <outlet property="scrollView_vertical" destination="EWA-9Z-pb1" id="VGf-RZ-XO8"/>
                     </connections>
                 </viewController>

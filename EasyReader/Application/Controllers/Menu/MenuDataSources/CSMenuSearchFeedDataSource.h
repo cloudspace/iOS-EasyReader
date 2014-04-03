@@ -15,10 +15,10 @@
 
 #pragma mark - Properties
 
-/**
- * Feeds used to populate the menu table
- */
+/// Feeds used to populate the menu table
 @property (nonatomic, retain) NSMutableSet *feeds;
+
+/// The sorted array of feeds
 @property (nonatomic, strong) NSArray *sortedFeeds;
 
 
@@ -26,6 +26,8 @@
 
 /**
  * Updates the list of feeds used to populate the menu table
+ *
+ * @param feeds The feeds to update the list with
  */
 - (void)updateWithFeeds:(NSMutableSet *)feeds;
 

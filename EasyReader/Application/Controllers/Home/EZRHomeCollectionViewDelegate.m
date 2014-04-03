@@ -16,6 +16,7 @@
 
 - (void)prefetchImagesNearIndex:(NSInteger)currentPageIndex count:(NSInteger)count;
 - (void)setCurrentFeedItem:(FeedItem *)item;
+- (void)setCurrentPageIndex:(NSInteger)index;
 
 @end
 
@@ -89,6 +90,8 @@
         [controller prefetchImagesNearIndex:pageIndex count:5];
         [controller.pageControl_itemIndicator setPageControllerPageAtIndex:pageIndex];
         controller.currentFeedItem = controller.sortedFeedItems[pageIndex];
+        controller.currentPageIndex = _currentPageIndex;
+        
         NSLog(@"%@", controller.currentFeedItem.title);
     }
 }

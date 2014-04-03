@@ -23,29 +23,19 @@ static void *__ImageURLStringKey;
 - (void)setImageForURLString:(NSString *)urlString
 {
     if (!urlString) return;
-    
-    NSLog(@"LOADING IMAGE FOR: %@", urlString);
-    
+
     EZRFeedImageService *feedImageService = [EZRFeedImageService shared];
     
     objc_setAssociatedObject(self, &__ImageURLStringKey, urlString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    [feedImageService fetchImageAtURLString:urlString
-                                    success:
-    ^(UIImage *image, UIImage *blurredImage) {
+    [feedImageService fetchImageAtURLString:urlString success:^(UIImage *image, UIImage *blurredImage) {
         NSString *currentURLString = objc_getAssociatedObject(self, &__ImageURLStringKey);
         
         if (urlString == currentURLString)
         {
           [self setImage:image];
         }
-        {
-            NSLog(@"currentl URL != loaded url");
-        }
-    }
-                                    failure:
-    ^{
-        NSLog(@"image set failed for: %@", urlString);
+    } failure: ^{
         [self setImage:nil];
     }];
 }
@@ -59,23 +49,15 @@ static void *__ImageURLStringKey;
     
     objc_setAssociatedObject(self, &__ImageURLStringKey, urlString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    [feedImageService fetchImageAtURLString:urlString
-                                    success:
-     ^(UIImage *image, UIImage *blurredImage) {
-         NSString *currentURLString = objc_getAssociatedObject(self, &__ImageURLStringKey);
-         
-         if (urlString == currentURLString)
-         {
-             [self setImage:blurredImage];
-         }
-         {
-             NSLog(@"currentl URL != loaded url");
-         }
-     }
-                                    failure:
-     ^{
-         [self setImage:nil];
-     }];
+    [feedImageService fetchImageAtURLString:urlString success:^(UIImage *image, UIImage *blurredImage) {
+        NSString *currentURLString = objc_getAssociatedObject(self, &__ImageURLStringKey);
+        
+        if (urlString == currentURLString) {
+            [self setImage:blurredImage];
+        }
+    } failure: ^{
+     [self setImage:nil];
+    }];
 }
 
 @end

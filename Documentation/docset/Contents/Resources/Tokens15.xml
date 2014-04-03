@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSMenuUserFeedDataSource.html">
+	<File path="Classes/CSRemoteObject.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSMenuUserFeedDataSource</TokenIdentifier>
-			<Abstract type="html">A UITableViewDataSource for feeds in Core Data</Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CSRemoteObject</TokenIdentifier>
+			<Abstract type="html">A base for NSManagedObjects that represent objects in a remote API object</Abstract>
+			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -13,38 +13,67 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuUserFeedDataSource/setFeeds:</TokenIdentifier>
-			<Abstract type="html">The feeds this data source will use to provide table data</Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/CSRemoteObject/createOrUpdateFirstFromAPIData:</TokenIdentifier>
+			<Abstract type="html">Creates or updates an object base on API data</Abstract>
+			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSSet *feeds</Declaration>
+			<Declaration>+ (id)createOrUpdateFirstFromAPIData:(NSDictionary *)remoteObjectData</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>remoteObjectData</Name>
+					<Abstract type="html">the api data to update/create based on</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/feeds</Anchor>
+			<Anchor>//api/name/createOrUpdateFirstFromAPIData:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuUserFeedDataSource/feeds</TokenIdentifier>
-			<Abstract type="html">The feeds this data source will use to provide table data</Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRemoteObject/setClient:</TokenIdentifier>
+			<Abstract type="html">Returns a shared singleton API client for this object</Abstract>
+			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSSet *feeds</Declaration>
+			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
 			
 			
-			<Anchor>//api/name/feeds</Anchor>
+			<Anchor>//api/name/client</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSMenuUserFeedDataSource/feeds</TokenIdentifier>
-			<Abstract type="html">The feeds this data source will use to provide table data</Abstract>
-			<DeclaredIn>CSMenuUserFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRemoteObject/client</TokenIdentifier>
+			<Abstract type="html">Returns a shared singleton API client for this object</Abstract>
+			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSSet *feeds</Declaration>
+			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
 			
 			
-			<Anchor>//api/name/feeds</Anchor>
+			<Anchor>//api/name/client</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSRemoteObject/client</TokenIdentifier>
+			<Abstract type="html">Returns a shared singleton API client for this object</Abstract>
+			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
+			
+			
+			<Anchor>//api/name/client</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/CSRemoteObject/client</TokenIdentifier>
+			<Abstract type="html">Returns a shared singleton API Client for this class</Abstract>
+			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
+			
+			<Declaration>+ (APIClient *)client</Declaration>
+			
+			
+			<Anchor>//api/name/client</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

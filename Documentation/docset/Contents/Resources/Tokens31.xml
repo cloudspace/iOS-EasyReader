@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/User.html">
+	<File path="Classes/EZRHomeScrollViewDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/User</TokenIdentifier>
-			<Abstract type="html">An EasyReader User generally one per project</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRHomeScrollViewDelegate</TokenIdentifier>
+			<Abstract type="html">A delegate for the scroll view on the home view controller</Abstract>
+			<DeclaredIn>EZRHomeScrollViewDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="31"/>
@@ -13,171 +13,19 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/User/setFeeds:</TokenIdentifier>
-			<Abstract type="html">The users feeds</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeScrollViewDelegate/initWithController:</TokenIdentifier>
+			<Abstract type="html">Initializes a new scroll view delegate for the given home view controller instance</Abstract>
+			<DeclaredIn>EZRHomeScrollViewDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSSet *feeds</Declaration>
-			
-			
-			<Anchor>//api/name/feeds</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/User/feeds</TokenIdentifier>
-			<Abstract type="html">The users feeds</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) NSSet *feeds</Declaration>
-			
-			
-			<Anchor>//api/name/feeds</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/User/feeds</TokenIdentifier>
-			<Abstract type="html">The users feeds</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) NSSet *feeds</Declaration>
-			
-			
-			<Anchor>//api/name/feeds</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/User/setFeedItems:</TokenIdentifier>
-			<Abstract type="html">The items in a users feeds</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSSet *feedItems</Declaration>
-			
-			
-			<Anchor>//api/name/feedItems</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/User/feedItems</TokenIdentifier>
-			<Abstract type="html">The items in a users feeds</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSSet *feedItems</Declaration>
-			
-			
-			<Anchor>//api/name/feedItems</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/User/feedItems</TokenIdentifier>
-			<Abstract type="html">The items in a users feeds</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSSet *feedItems</Declaration>
-			
-			
-			<Anchor>//api/name/feedItems</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/User/current</TokenIdentifier>
-			<Abstract type="html">Gets the current user (a singleton shared user)</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
-			
-			<Declaration>+ (User *)current</Declaration>
-			
-			
-			<Anchor>//api/name/current</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/User/hasFeedWithURL:</TokenIdentifier>
-			<Abstract type="html">Check if the feed already exists for the user</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)hasFeedWithURL:(NSString *)url</Declaration>
+			<Declaration>- (instancetype)initWithController:(EZRHomeViewController *)homeController</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The url of the feed to check for</Abstract>
+					<Name>homeController</Name>
+					<Abstract type="html">The home view controller</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/hasFeedWithURL:</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/User/addFeedsObject:</TokenIdentifier>
-			<Abstract type="html">Adds a feed object to feeds</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
-			
-			<Declaration>- (void)addFeedsObject:(Feed *)value</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>value</Name>
-					<Abstract type="html">The feed to add</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/addFeedsObject:</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/User/removeFeedsObject:</TokenIdentifier>
-			<Abstract type="html">Removes a feed object from feeds</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
-			
-			<Declaration>- (void)removeFeedsObject:(Feed *)value</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>value</Name>
-					<Abstract type="html">The feed to remove</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/removeFeedsObject:</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/User/addFeeds:</TokenIdentifier>
-			<Abstract type="html">Adds a new set of Feed objects to feeds</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
-			
-			<Declaration>- (void)addFeeds:(NSSet *)values</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>values</Name>
-					<Abstract type="html">The feeds to add</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/addFeeds:</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/User/removeFeeds:</TokenIdentifier>
-			<Abstract type="html">Removes a set of Feed objects from feeds</Abstract>
-			<DeclaredIn>User.h</DeclaredIn>
-			
-			<Declaration>- (void)removeFeeds:(NSSet *)values</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>values</Name>
-					<Abstract type="html">The feeds to remove</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/removeFeeds:</Anchor>
+			<Anchor>//api/name/initWithController:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		

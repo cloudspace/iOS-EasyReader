@@ -63,6 +63,11 @@
     _currentFeedItem = currentFeedItem;
 }
 
+- (void)setCurrentPageIndex:(NSInteger)currentPageIndex
+{
+    _currentPageIndex = currentPageIndex;
+}
+
 - (void)setFeedItems:(NSMutableSet *)feedItems
 {
     _feedItems = feedItems;
@@ -91,6 +96,10 @@
     [self setUpCollectionView];
     [self setUpWebView];
     [self setupFeedsObserver];
+    
+    if ([self.feedItems count] > 0) {
+      [self.collectionView_feedItems scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    }
 }
 
 /**
@@ -126,10 +135,10 @@
  */
 - (void) setUpPageControl
 {
-    [self.pageControl_itemIndicator setBackgroundColor:[UIColor EZR_charcoal]];
+//    [self.pageControl_itemIndicator setBackgroundColor:[UIColor EZR_charcoal]];
     
-    pageControlDelegate    = [[EZRHomePageControlDelegate alloc] init];
-    pageControlDataSource = [[EZRHomePageControlDataSource alloc] init];
+    pageControlDelegate    = [[EZRHomePageControlDelegate alloc] initWithController:self];
+    pageControlDataSource = [[EZRHomePageControlDataSource alloc] initWithController:self];
     
     self.pageControl_itemIndicator.delegate = pageControlDelegate;
     self.pageControl_itemIndicator.datasource = pageControlDataSource;
@@ -216,35 +225,30 @@
             [feed removeAllObservations];
         }
         
+        for (FeedItem *item in _feedItems) {
+            if ([removedFeeds containsObject:item.feed]) {
+                [_feedItems removeObject:item];
+            }
+        }
+        
         // Observe added feeds
-        for ( Feed *feed in addedFeeds ){
+        for ( Feed *feed in addedFeeds ) {
             [feed observeRelationship:@"feedItems"
                           changeBlock:[self feedItemsDidChange]
                        insertionBlock:nil
                          removalBlock:nil
                      replacementBlock:nil];
+            
+            [_feedItems addObjectsFromArray:[feed.feedItems sortedArrayUsingDescriptors:nil]];
         }
-        
-        //redraw the collection with the changes to the new feed items
-        
-        [_feedItems removeAllObjects];
-        [_feedItems addObjectsFromArray:[_currentUser.feedItems sortedArrayUsingDescriptors:nil]];
         
         collectionViewDataSource.feedItems = _feedItems;
         _sortedFeedItems = collectionViewDataSource.sortedFeedItems;
         
         [self.collectionView_feedItems reloadData];
-        
-        self.pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
-        
-        
+
         if(self.currentFeedItem){
             [self scrollToCurrentFeedItem];
-            //            _pageControl_itemIndicator setPageControllerPageAtIndex:<#(NSInteger)#>
-            //            [_pageControl_itemIndicator setPageControllerPageAtIndex:[_feedCollectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem]
-            //                                                       forCollection:_feedItems];
-        } else {
-            //            [_pageControl_itemIndicator setPageControllerPageAtIndex:0 forCollection:_feedItems];
         }
     };
 }
@@ -254,12 +258,8 @@
  */
 - (void (^)(Feed *, NSSet *, NSSet *))feedItemsDidChange
 {
-    __weak EZRHomeViewController *controller = self;
-    
     return ^void(Feed *feed, NSSet *old, NSSet *new) {
-        EZRHomeCollectionViewDataSource *dataSource = (EZRHomeCollectionViewDataSource *)controller.collectionView_feedItems.dataSource;
-        
-        controller.feedItems = [dataSource.feedItems mutableCopy];
+        EZRHomeCollectionViewDataSource *dataSource = self.collectionView_feedItems.dataSource;
         
         if(new) {
             NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
@@ -269,21 +269,27 @@
             [removedFeedItems removeObjectsInArray:[new allObjects]];
             
             for( FeedItem *item in removedFeedItems ){
-                [controller.feedItems removeObject:item];
+                [_feedItems removeObject:item];
             }
             
             for( FeedItem *item in addedFeedItems ){
-                [controller.feedItems addObject:item];
+                [_feedItems addObject:item];
             }
             
             if (_currentPageIndex == 0)
             {
-                [controller prefetchImagesNearIndex:0 count:5];
+                [self prefetchImagesNearIndex:0 count:5];
             }
             
-            dataSource.feedItems = controller.feedItems;
-            [controller.collectionView_feedItems reloadData];
-            if (controller.currentFeedItem) [controller scrollToCurrentFeedItem];
+            dataSource.feedItems = _feedItems;
+            _sortedFeedItems = dataSource.sortedFeedItems;
+            
+            [self.collectionView_feedItems reloadData];
+            
+            if (self.currentFeedItem) [self scrollToCurrentFeedItem];
+
+            self.pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
+            [self.pageControl_itemIndicator setPageControllerPageAtIndex:self.currentPageIndex];
             
             //            [_pageControl_itemIndicator.button_newItem setHidden:NO];
         }

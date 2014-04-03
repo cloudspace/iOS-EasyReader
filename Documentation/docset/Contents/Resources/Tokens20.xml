@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/EZRApplicationStyleService.html">
+	<File path="Classes/EZRCoreDataService.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/EZRApplicationStyleService</TokenIdentifier>
-			<Abstract type="html">An AppDelegate service that handles application styling</Abstract>
-			<DeclaredIn>EZRApplicationStyleService.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRCoreDataService</TokenIdentifier>
+			<Abstract type="html">An AppDelegate service used to manage core data functionality</Abstract>
+			<DeclaredIn>EZRCoreDataService.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>

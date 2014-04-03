@@ -1,52 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSFeedItemCollectionView.html">
+	<File path="Classes/CSControllerAbstraction.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSFeedItemCollectionView</TokenIdentifier>
-			<Abstract type="html">A collection view built to hold feed items</Abstract>
-			<DeclaredIn>CSFeedItemCollectionView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CSControllerAbstraction</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>CSControllerAbstraction.h</DeclaredIn>
             
 			
 			<NodeRef refid="10"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionView/setCurrentFeedItem:</TokenIdentifier>
-			<Abstract type="html">The feed item that is currently focused</Abstract>
-			<DeclaredIn>CSFeedItemCollectionView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) FeedItem *currentFeedItem</Declaration>
-			
-			
-			<Anchor>//api/name/currentFeedItem</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSFeedItemCollectionView/currentFeedItem</TokenIdentifier>
-			<Abstract type="html">The feed item that is currently focused</Abstract>
-			<DeclaredIn>CSFeedItemCollectionView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) FeedItem *currentFeedItem</Declaration>
-			
-			
-			<Anchor>//api/name/currentFeedItem</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSFeedItemCollectionView/currentFeedItem</TokenIdentifier>
-			<Abstract type="html">The feed item that is currently focused</Abstract>
-			<DeclaredIn>CSFeedItemCollectionView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) FeedItem *currentFeedItem</Declaration>
-			
-			
-			<Anchor>//api/name/currentFeedItem</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
 		
         
 	</File>

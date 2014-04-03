@@ -157,6 +157,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/setImageView_backgroundReflection:</TokenIdentifier>
+			<Abstract type="html">The associated feed item image</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) IBOutlet UIImageView *imageView_backgroundReflection</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_backgroundReflection</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/imageView_backgroundReflection</TokenIdentifier>
+			<Abstract type="html">The associated feed item image</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) IBOutlet UIImageView *imageView_backgroundReflection</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_backgroundReflection</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRFeedItemCell/imageView_backgroundReflection</TokenIdentifier>
+			<Abstract type="html">The associated feed item image</Abstract>
+			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) IBOutlet UIImageView *imageView_backgroundReflection</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_backgroundReflection</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/setLabel_summary:</TokenIdentifier>
 			<Abstract type="html">The feed item summary</Abstract>
 			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
@@ -194,7 +230,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/setFeedItem:</TokenIdentifier>
-			<Abstract type="html">The feed item this cell is based on</Abstract>
+			<Abstract type="html">The feed item this cell is based on.  When set it will update all outlets appropriately</Abstract>
 			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, weak) FeedItem *feedItem</Declaration>
@@ -206,7 +242,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCell/feedItem</TokenIdentifier>
-			<Abstract type="html">The feed item this cell is based on</Abstract>
+			<Abstract type="html">The feed item this cell is based on.  When set it will update all outlets appropriately</Abstract>
 			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, weak) FeedItem *feedItem</Declaration>
@@ -218,7 +254,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/EZRFeedItemCell/feedItem</TokenIdentifier>
-			<Abstract type="html">The feed item this cell is based on</Abstract>
+			<Abstract type="html">The feed item this cell is based on.  When set it will update all outlets appropriately</Abstract>
 			<DeclaredIn>EZRFeedItemCell.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, weak) FeedItem *feedItem</Declaration>

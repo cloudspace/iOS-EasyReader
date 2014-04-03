@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSObject+CSNilAdditions.html">
+	<File path="Classes/EZRHomeViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSObject(CSNilAdditions)</TokenIdentifier>
-			<Abstract type="html">A set of methods to help in checking if an object is empty, nil, null, NSNull</Abstract>
-			<DeclaredIn>NSObject+CSNilAdditions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRHomeViewController</TokenIdentifier>
+			<Abstract type="html">The home view controller for the application</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="32"/>
@@ -13,31 +13,338 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSObject/isBlank:</TokenIdentifier>
-			<Abstract type="html">Checks if the given object is blank</Abstract>
-			<DeclaredIn>NSObject+CSNilAdditions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/setScrollView_vertical:</TokenIdentifier>
+			<Abstract type="html">Vertical scroll view holding collection view and webviews</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)isBlank:(id)object</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The object to check for blankness</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">true if nil, null, NSNull, or is an empty NSString, NSSet, or NSArray</Abstract></ReturnValue>
-			<Anchor>//api/name/isBlank:</Anchor>
+			<Declaration>@property (weak, nonatomic) IBOutlet UIScrollView *scrollView_vertical</Declaration>
+			
+			
+			<Anchor>//api/name/scrollView_vertical</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSObject/isBlank</TokenIdentifier>
-			<Abstract type="html">Checks if this object is blank</Abstract>
-			<DeclaredIn>NSObject+CSNilAdditions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/scrollView_vertical</TokenIdentifier>
+			<Abstract type="html">Vertical scroll view holding collection view and webviews</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)isBlank</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet UIScrollView *scrollView_vertical</Declaration>
 			
-			<ReturnValue><Abstract type="html">true if nil, null, NSNull, or is an empty NSString, NSSet, or NSArray</Abstract></ReturnValue>
-			<Anchor>//api/name/isBlank</Anchor>
+			
+			<Anchor>//api/name/scrollView_vertical</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeViewController/scrollView_vertical</TokenIdentifier>
+			<Abstract type="html">Vertical scroll view holding collection view and webviews</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIScrollView *scrollView_vertical</Declaration>
+			
+			
+			<Anchor>//api/name/scrollView_vertical</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/setButton_leftMenu:</TokenIdentifier>
+			<Abstract type="html">Button to go to left menu</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet UIButton *button_leftMenu</Declaration>
+			
+			
+			<Anchor>//api/name/button_leftMenu</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/button_leftMenu</TokenIdentifier>
+			<Abstract type="html">Button to go to left menu</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet UIButton *button_leftMenu</Declaration>
+			
+			
+			<Anchor>//api/name/button_leftMenu</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeViewController/button_leftMenu</TokenIdentifier>
+			<Abstract type="html">Button to go to left menu</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet UIButton *button_leftMenu</Declaration>
+			
+			
+			<Anchor>//api/name/button_leftMenu</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/setPageControl_itemIndicator:</TokenIdentifier>
+			<Abstract type="html">Feed position indicator</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet CSCollectionPageControl *pageControl_itemIndicator</Declaration>
+			
+			
+			<Anchor>//api/name/pageControl_itemIndicator</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/pageControl_itemIndicator</TokenIdentifier>
+			<Abstract type="html">Feed position indicator</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet CSCollectionPageControl *pageControl_itemIndicator</Declaration>
+			
+			
+			<Anchor>//api/name/pageControl_itemIndicator</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeViewController/pageControl_itemIndicator</TokenIdentifier>
+			<Abstract type="html">Feed position indicator</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet CSCollectionPageControl *pageControl_itemIndicator</Declaration>
+			
+			
+			<Anchor>//api/name/pageControl_itemIndicator</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/setCollectionView_feedItems:</TokenIdentifier>
+			<Abstract type="html">The collection view which holds the individual feed items</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet EZRFeedItemCollectionView *collectionView_feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/collectionView_feedItems</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/collectionView_feedItems</TokenIdentifier>
+			<Abstract type="html">The collection view which holds the individual feed items</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet EZRFeedItemCollectionView *collectionView_feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/collectionView_feedItems</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeViewController/collectionView_feedItems</TokenIdentifier>
+			<Abstract type="html">The collection view which holds the individual feed items</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBOutlet EZRFeedItemCollectionView *collectionView_feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/collectionView_feedItems</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/setWebView_feedItem:</TokenIdentifier>
+			<Abstract type="html">Displays website that hosts article</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIWebView *webView_feedItem</Declaration>
+			
+			
+			<Anchor>//api/name/webView_feedItem</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/webView_feedItem</TokenIdentifier>
+			<Abstract type="html">Displays website that hosts article</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIWebView *webView_feedItem</Declaration>
+			
+			
+			<Anchor>//api/name/webView_feedItem</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeViewController/webView_feedItem</TokenIdentifier>
+			<Abstract type="html">Displays website that hosts article</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIWebView *webView_feedItem</Declaration>
+			
+			
+			<Anchor>//api/name/webView_feedItem</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/setCurrentFeedItem:</TokenIdentifier>
+			<Abstract type="html">Feed Item currently visible</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) FeedItem *currentFeedItem</Declaration>
+			
+			
+			<Anchor>//api/name/currentFeedItem</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/currentFeedItem</TokenIdentifier>
+			<Abstract type="html">Feed Item currently visible</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) FeedItem *currentFeedItem</Declaration>
+			
+			
+			<Anchor>//api/name/currentFeedItem</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeViewController/currentFeedItem</TokenIdentifier>
+			<Abstract type="html">Feed Item currently visible</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) FeedItem *currentFeedItem</Declaration>
+			
+			
+			<Anchor>//api/name/currentFeedItem</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/setCurrentPageIndex:</TokenIdentifier>
+			<Abstract type="html">Feed Item currently visible</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger currentPageIndex</Declaration>
+			
+			
+			<Anchor>//api/name/currentPageIndex</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/currentPageIndex</TokenIdentifier>
+			<Abstract type="html">Feed Item currently visible</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger currentPageIndex</Declaration>
+			
+			
+			<Anchor>//api/name/currentPageIndex</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeViewController/currentPageIndex</TokenIdentifier>
+			<Abstract type="html">Feed Item currently visible</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger currentPageIndex</Declaration>
+			
+			
+			<Anchor>//api/name/currentPageIndex</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/setFeedItems:</TokenIdentifier>
+			<Abstract type="html">The feed items visible on this view controller</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/feedItems</TokenIdentifier>
+			<Abstract type="html">The feed items visible on this view controller</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeViewController/feedItems</TokenIdentifier>
+			<Abstract type="html">The feed items visible on this view controller</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/setSortedFeedItems:</TokenIdentifier>
+			<Abstract type="html">A sorted array of feed items</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *sortedFeedItems</Declaration>
+			
+			
+			<Anchor>//api/name/sortedFeedItems</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/sortedFeedItems</TokenIdentifier>
+			<Abstract type="html">A sorted array of feed items</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *sortedFeedItems</Declaration>
+			
+			
+			<Anchor>//api/name/sortedFeedItems</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeViewController/sortedFeedItems</TokenIdentifier>
+			<Abstract type="html">A sorted array of feed items</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *sortedFeedItems</Declaration>
+			
+			
+			<Anchor>//api/name/sortedFeedItems</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeViewController/scrollToCurrentFeedItem</TokenIdentifier>
+			<Abstract type="html">Scrolls through collection view to display whatever item is set to currentItem</Abstract>
+			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)scrollToCurrentFeedItem</Declaration>
+			
+			
+			<Anchor>//api/name/scrollToCurrentFeedItem</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		

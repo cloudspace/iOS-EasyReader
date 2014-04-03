@@ -25,6 +25,23 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/APIClient/setSharedClient:</TokenIdentifier>
+			<Abstract type="html">Sets the singleton API client object</Abstract>
+			<DeclaredIn>APIClient.h</DeclaredIn>
+			
+			<Declaration>+ (void)setSharedClient:(APIClient *)sharedClient</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sharedClient</Name>
+					<Abstract type="html">The new shared UWAPIClient object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSharedClient:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/APIClient/requestRoute:parameters:success:failure:</TokenIdentifier>
 			<Abstract type="html">Makes a request to a named route</Abstract>
 			<DeclaredIn>APIClient.h</DeclaredIn>

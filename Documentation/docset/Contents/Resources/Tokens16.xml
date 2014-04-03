@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSRemoteObject.html">
+	<File path="Classes/CSRootViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSRemoteObject</TokenIdentifier>
-			<Abstract type="html">A base for NSManagedObjects that represent objects in a remote API object</Abstract>
-			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CSRootViewController</TokenIdentifier>
+			<Abstract type="html">A root view controller</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="16"/>
@@ -13,67 +13,86 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/CSRemoteObject/createOrUpdateFirstFromAPIData:</TokenIdentifier>
-			<Abstract type="html">Creates or updates an object base on API data</Abstract>
-			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRootViewController/setViewController_menuLeft:</TokenIdentifier>
+			<Abstract type="html">The left side swipe menu</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
 			
-			<Declaration>+ (id)createOrUpdateFirstFromAPIData:(NSDictionary *)remoteObjectData</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>remoteObjectData</Name>
-					<Abstract type="html">the api data to update/create based on</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, retain) UIViewController *viewController_menuLeft</Declaration>
 			
-			<Anchor>//api/name/createOrUpdateFirstFromAPIData:</Anchor>
+			
+			<Anchor>//api/name/viewController_menuLeft</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSRemoteObject/setClient:</TokenIdentifier>
-			<Abstract type="html">Returns a shared singleton API client for this object</Abstract>
-			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRootViewController/viewController_menuLeft</TokenIdentifier>
+			<Abstract type="html">The left side swipe menu</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
+			<Declaration>@property (nonatomic, retain) UIViewController *viewController_menuLeft</Declaration>
 			
 			
-			<Anchor>//api/name/client</Anchor>
+			<Anchor>//api/name/viewController_menuLeft</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSRemoteObject/client</TokenIdentifier>
-			<Abstract type="html">Returns a shared singleton API client for this object</Abstract>
-			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CSRootViewController/viewController_menuLeft</TokenIdentifier>
+			<Abstract type="html">The left side swipe menu</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
+			<Declaration>@property (nonatomic, retain) UIViewController *viewController_menuLeft</Declaration>
 			
 			
-			<Anchor>//api/name/client</Anchor>
+			<Anchor>//api/name/viewController_menuLeft</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSRemoteObject/client</TokenIdentifier>
-			<Abstract type="html">Returns a shared singleton API client for this object</Abstract>
-			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRootViewController/setViewController_main:</TokenIdentifier>
+			<Abstract type="html">The main controller that sits at the top of the app</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
+			<Declaration>@property (nonatomic, retain) UIViewController *viewController_main</Declaration>
 			
 			
-			<Anchor>//api/name/client</Anchor>
+			<Anchor>//api/name/viewController_main</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/CSRemoteObject/client</TokenIdentifier>
-			<Abstract type="html">Returns a shared singleton API Client for this class</Abstract>
-			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRootViewController/viewController_main</TokenIdentifier>
+			<Abstract type="html">The main controller that sits at the top of the app</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
 			
-			<Declaration>+ (APIClient *)client</Declaration>
+			<Declaration>@property (nonatomic, retain) UIViewController *viewController_main</Declaration>
 			
 			
-			<Anchor>//api/name/client</Anchor>
+			<Anchor>//api/name/viewController_main</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CSRootViewController/viewController_main</TokenIdentifier>
+			<Abstract type="html">The main controller that sits at the top of the app</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) UIViewController *viewController_main</Declaration>
+			
+			
+			<Anchor>//api/name/viewController_main</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CSRootViewController/toggleLeftMenu</TokenIdentifier>
+			<Abstract type="html">Toggles the left side menu</Abstract>
+			<DeclaredIn>CSRootViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)toggleLeftMenu</Declaration>
+			
+			
+			<Anchor>//api/name/toggleLeftMenu</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		

@@ -18,34 +18,16 @@ CGFloat const gradientWidth = 40.0;
 CGFloat const fadeMovement = 10.0;
 
 /// The duration of most aniomations
-CGFloat const kAnimationDuration = 0.75;
+CGFloat const kAnimationDuration = 0.25;
 
 
 @implementation CSCollectionPageControl
 {
-    // Gets set once to calculated origin for fade views
-    float leftFadeOrigin;
-    float rightFadeOrigin;
-    
-    // x origin value for first indicator dot
-    float xOrigin;
-    // x origin value for last indicator dot
-    float xLastOrigin;
-    
-    // y origin used to hide and show page control
-    float yOrigin;
-    
     /// Button that pops up when new items are added to collection
     UIButton *button_newItem;
     
-    /// View to layer over buttons for gradients
-    UIView *view_maskLayer;
-    
-    /// View for left fade gradient
-    UIView *view_leftFade;
-    
-    /// View for right fade gradient
-    UIView *view_rightFade;
+    BOOL fadingOut;
+    BOOL fadingIn;
 }
 
 /**
@@ -56,14 +38,8 @@ CGFloat const kAnimationDuration = 0.75;
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        yOrigin = self.frame.origin.y;
-        
-        view_maskLayer = [[UIView alloc] init];
-        view_leftFade = [[UIView alloc] init];
-        view_rightFade = [[UIView alloc] init];
-        
         button_newItem = [UIButton buttonWithType:UIButtonTypeInfoLight];
-        button_newItem.frame = CGRectMake(10,(self.frame.size.height/2)-5, 12, 12);
+        button_newItem.alpha = 0.0f;
         
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(newItemButton:)];
         [button_newItem addGestureRecognizer:singleTap];
@@ -78,20 +54,12 @@ CGFloat const kAnimationDuration = 0.75;
 {
     [super layoutSubviews];
     
-    NSMutableArray *subviews = [[self subviews] mutableCopy];
+    CGRect buttonFrame = CGRectMake(10,(CGRectGetHeight(self.frame)/2)-5, 12, 12);
+    [button_newItem setFrame:buttonFrame];
     
-    [self insertSubview:view_maskLayer atIndex:[[self subviews] count]];
-    [self insertSubview:button_newItem atIndex:[[self subviews] count]];
     
-    int count = [subviews count] < 5 ? [subviews count] : 5;
-    xOrigin = (self.frame.size.width/2)-( 3.5 + ((float)count/2)*12 );
-    xLastOrigin = xOrigin + ([subviews count]*10.5);
-    
-    [self setUpFades];
-    [self setPageControllerPageAtIndex:[self currentPage]];
-    NSLog(@"something");
+    [self fadeRightSubviews];
 }
-
 
 /**
  * Sets up button that takes user to newest item added to collection
@@ -109,88 +77,125 @@ CGFloat const kAnimationDuration = 0.75;
 }
 
 /**
- * Sets up fade views for page controller
- */
--(void)setUpFades
-{
-    if ( !leftFadeOrigin ) leftFadeOrigin = xOrigin-15;
-    view_leftFade.frame = CGRectMake(leftFadeOrigin, 10, gradientWidth, 20);
-    view_leftFade.backgroundColor = [self backgroundColor];
-    
-    CAGradientLayer *leftLayer = [CAGradientLayer layer];
-    leftLayer.frame = view_leftFade.bounds;
-    leftLayer.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor, (id)[UIColor clearColor].CGColor, nil];
-    leftLayer.startPoint = CGPointMake(0.0f, 1.0f);
-    leftLayer.endPoint = CGPointMake(1.0f, 1.0f);
-    view_leftFade.layer.mask = leftLayer;
-    
-    if ( !rightFadeOrigin ) rightFadeOrigin = xLastOrigin-8.5;
-    view_rightFade.frame = CGRectMake(rightFadeOrigin-8.5, 10, gradientWidth, 20);
-    view_rightFade.backgroundColor = [self backgroundColor];
-    
-    CAGradientLayer *rightLayer = [CAGradientLayer layer];
-    rightLayer.frame = view_rightFade.bounds;
-    rightLayer.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor, (id)[UIColor clearColor].CGColor, nil];
-    rightLayer.startPoint = CGPointMake(1.0f, 1.0f);
-    rightLayer.endPoint = CGPointMake(0.0f, 1.0f);
-    view_rightFade.layer.mask = rightLayer;
-    
-    [view_maskLayer addSubview:view_leftFade];
-    [view_maskLayer addSubview:view_rightFade];
-}
-
-/**
  * Sets page to given index
  * Will display first, second, second to last, and last.. everything in the middle is on third page indicator
  * Also animates fades in and out when approaching ends
  */
-- (void)setPageControllerPageAtIndex:(NSInteger)index
-{
+- (void)setPageControllerPageAtIndex:(NSInteger)index {
     NSInteger pageCount = [self.datasource numberOfPagesForPageControl];
+    NSInteger beginFadeIndex = floor(self.numberOfPages/2.0);
+    NSInteger endFadeIndex = pageCount - floor(self.numberOfPages/2.0);
     
-    if (pageCount < 5){
+    if (pageCount <= self.numberOfPages){
         self.currentPage = index;
-        [UIView animateWithDuration:kAnimationDuration animations:^{
-            view_leftFade.frame = CGRectMake(leftFadeOrigin-(fadeMovement*(2-index)), 10, gradientWidth, 20);
-            view_rightFade.frame = CGRectMake(rightFadeOrigin+(fadeMovement*(3-(pageCount-index))), 10, gradientWidth, 20);
-        }];
+        [self fadeInSubviews];
+        return;
+    }
+    
+    if (index < beginFadeIndex) {
+        self.currentPage = index;
+        [self fadeInSubviews];
+        [self fadeRightSubviews];
+    } else if (index >= endFadeIndex) {
+        self.currentPage = self.numberOfPages - (pageCount - index);
+        [self fadeInSubviews];
+        [self fadeLeftSubviews];
     } else {
-        if( index < 3 ){
-            self.currentPage = index;
-            [UIView animateWithDuration:kAnimationDuration animations:^{
-                [self showPageControlIndicators];
-                view_leftFade.frame = CGRectMake(leftFadeOrigin-(fadeMovement*(2-index)), 10, gradientWidth, 20);
-            }];
-        } else if(index > (pageCount-4) ){
-            self.currentPage = 5-(pageCount-index);
-            [UIView animateWithDuration:kAnimationDuration animations:^{
-                [self showPageControlIndicators];
-                view_rightFade.frame = CGRectMake(rightFadeOrigin+(fadeMovement*(3-(pageCount-index))), 10, gradientWidth, 20);
-            }];
+        // Dont set a current page here as we're hiding the control anyway
+        [self fadeOutSubviews];
+    }
+    
+    
+}
+
+/**
+ * Returns an array of the page controls subviews sorted by the minimum X frame value
+ */
+- (NSArray *)sortedSubviews
+{
+    NSArray *sortedSubviews = [self.subviews sortedArrayUsingComparator:^NSComparisonResult(UIView *obj1, UIView *obj2) {
+        CGFloat min1 = CGRectGetMinX(obj1.frame);
+        CGFloat min2 = CGRectGetMinX(obj2.frame);
+        
+        if (min1 < min2) {
+            return NSOrderedAscending;
+        } else if (min2 < min1) {
+            return NSOrderedDescending;
         } else {
-            self.currentPage = 2;
-            
-            [UIView animateWithDuration:kAnimationDuration animations:^{
-                [self hidePageControlIndicators];
-            }];
-            
-            view_leftFade.frame = CGRectMake(leftFadeOrigin, 10, gradientWidth, 20);
-            view_rightFade.frame = CGRectMake(rightFadeOrigin, 10, gradientWidth, 20);
+            return NSOrderedSame;
         }
+        
+    }];
+    
+    return sortedSubviews;
+}
+
+- (void)fadeRightSubviews
+{
+    NSArray *sortedSubviews = [self sortedSubviews];
+
+    NSInteger numberOfPagesToFade = ceil(self.numberOfPages/2.0);
+    NSInteger count = 1;
+    for (NSInteger i = self.numberOfPages - 1; i > self.numberOfPages - 1 - numberOfPagesToFade; i--)
+    {
+        CGFloat alpha = 100.0/(numberOfPagesToFade+1)/100.0*count;
+        
+        [sortedSubviews[i] setAlpha:alpha];
+        
+        count++;
+    }
+}
+
+- (void)fadeLeftSubviews
+{
+    NSArray *sortedSubviews = [self sortedSubviews];
+    
+    NSInteger numberOfPagesToFade = ceil(self.numberOfPages/2.0);
+    for (NSInteger i = 0; i < numberOfPagesToFade; i++)
+    {
+        CGFloat alpha = 100.0/(numberOfPagesToFade+1)/100.0*(i+1);
+        
+        [sortedSubviews[i] setAlpha:alpha];
     }
 }
 
 /**
- * Hides page indicators on control
+ * Fades out all subviews except the new button
  */
-- (void) hidePageControlIndicators
-{   for( UIView *view in [self subviews] ) [view setAlpha:0];   }
+- (void)fadeOutSubviews
+{
+    if (!fadingOut)
+    {
+        fadingOut = YES;
+        
+        [UIView animateWithDuration:kAnimationDuration animations:^{
+            for (UIView *view in self.subviews) {
+                view.alpha = 0.0f;
+            }
+        } completion:^(BOOL finished) {
+            fadingOut = NO;
+        }];
+    }
+}
 
 /**
- * Shows page indicators on control
+ * Fades in all subviews
  */
-- (void) showPageControlIndicators
-{   for( UIView *view in [self subviews] ) [view setAlpha:1];   }
+- (void)fadeInSubviews
+{
+    if (!fadingIn)
+    {
+        fadingIn = YES;
+        
+        [UIView animateWithDuration:kAnimationDuration animations:^{
+            for (UIView *view in self.subviews) {
+                view.alpha = 1.0f;
+            }
+        } completion:^(BOOL finished) {
+            fadingIn = NO;
+        }];
+    }
+}
 
 
 /**

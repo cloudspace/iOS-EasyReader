@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/APIRouter.html">
+	<File path="Classes/APIRoute.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/APIRouter</TokenIdentifier>
-			<Abstract type="html">An interface to create and process named routes for URLs</Abstract>
-			<DeclaredIn>APIRouter.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/APIRoute</TokenIdentifier>
+			<Abstract type="html">An API Route</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
             
 			
 			<NodeRef refid="6"/>
@@ -13,128 +13,147 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/APIRouter/shared</TokenIdentifier>
-			<Abstract type="html">Returns a shared singleton router instance</Abstract>
-			<DeclaredIn>APIRouter.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/APIRoute/setPath:</TokenIdentifier>
+			<Abstract type="html">The string representation for the url for this route</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
 			
-			<Declaration>+ (APIRouter *)shared</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *path</Declaration>
 			
 			
-			<Anchor>//api/name/shared</Anchor>
+			<Anchor>//api/name/path</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/APIRouter/registerRoute:path:requestMethod:</TokenIdentifier>
-			<Abstract type="html">Registers a new route with the router</Abstract>
-			<DeclaredIn>APIRouter.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/APIRoute/path</TokenIdentifier>
+			<Abstract type="html">The string representation for the url for this route</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
 			
-			<Declaration>- (void)registerRoute:(NSString *)routeName path:(NSString *)path requestMethod:(APIRequestMethod)requestMethod</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *path</Declaration>
+			
+			
+			<Anchor>//api/name/path</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/APIRoute/path</TokenIdentifier>
+			<Abstract type="html">The string representation for the url for this route</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *path</Declaration>
+			
+			
+			<Anchor>//api/name/path</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIRoute/setRequestMethod:</TokenIdentifier>
+			<Abstract type="html">The request method for this route</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) APIRequestMethod requestMethod</Declaration>
+			
+			
+			<Anchor>//api/name/requestMethod</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIRoute/requestMethod</TokenIdentifier>
+			<Abstract type="html">The request method for this route</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) APIRequestMethod requestMethod</Declaration>
+			
+			
+			<Anchor>//api/name/requestMethod</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/APIRoute/requestMethod</TokenIdentifier>
+			<Abstract type="html">The request method for this route</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) APIRequestMethod requestMethod</Declaration>
+			
+			
+			<Anchor>//api/name/requestMethod</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIRoute/setRequestMethodString:</TokenIdentifier>
+			<Abstract type="html">The request method string for this route</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *requestMethodString</Declaration>
+			
+			
+			<Anchor>//api/name/requestMethodString</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIRoute/requestMethodString</TokenIdentifier>
+			<Abstract type="html">The request method string for this route</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *requestMethodString</Declaration>
+			
+			
+			<Anchor>//api/name/requestMethodString</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/APIRoute/requestMethodString</TokenIdentifier>
+			<Abstract type="html">The request method string for this route</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *requestMethodString</Declaration>
+			
+			
+			<Anchor>//api/name/requestMethodString</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIRoute/initWithPath:requestMethod:</TokenIdentifier>
+			<Abstract type="html">Initializes a new CSApiRoute</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithPath:(NSString *)path requestMethod:(APIRequestMethod)requestMethod</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>routeName</Name>
-					<Abstract type="html">The route name string</Abstract>
-				</Parameter><Parameter>
 					<Name>path</Name>
-					<Abstract type="html">The path for the route</Abstract>
+					<Abstract type="html">the path for this URL</Abstract>
 				</Parameter><Parameter>
 					<Name>requestMethod</Name>
-					<Abstract type="html">the Request Method</Abstract>
+					<Abstract type="html">the request method for this route</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/registerRoute:path:requestMethod:</Anchor>
+			<Anchor>//api/name/initWithPath:requestMethod:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/APIRouter/urlFor:parameters:</TokenIdentifier>
-			<Abstract type="html">Builds an NSURL Based on the route name and parameters</Abstract>
-			<DeclaredIn>APIRouter.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/APIRoute/pathStringForParameters:</TokenIdentifier>
+			<Abstract type="html">Builds a URL String for a given set of parameters</Abstract>
+			<DeclaredIn>APIRoute.h</DeclaredIn>
 			
-			<Declaration>- (NSURL *)urlFor:(NSString *)routeName parameters:(NSDictionary *)params</Declaration>
+			<Declaration>- (NSString *)pathStringForParameters:(NSDictionary *)parameters</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>routeName</Name>
-					<Abstract type="html">the API Route Name</Abstract>
-				</Parameter><Parameter>
-					<Name>params</Name>
-					<Abstract type="html">paramaters to be used in building the API route</Abstract>
+					<Name>parameters</Name>
+					<Abstract type="html">The URL Parameters</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/urlFor:parameters:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/APIRouter/pathFor:params:</TokenIdentifier>
-			<Abstract type="html">Builds an NSString path based on the route name and parameters</Abstract>
-			<DeclaredIn>APIRouter.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)pathFor:(NSString *)routeName params:(NSDictionary *)params</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>routeName</Name>
-					<Abstract type="html">the API Route Name</Abstract>
-				</Parameter><Parameter>
-					<Name>params</Name>
-					<Abstract type="html">paramaters to be used in building the API route</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/pathFor:params:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/APIRouter/methodFor:</TokenIdentifier>
-			<Abstract type="html">Returns the request method for the given route</Abstract>
-			<DeclaredIn>APIRouter.h</DeclaredIn>
-			
-			<Declaration>- (APIRequestMethod)methodFor:(NSString *)routeName</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>routeName</Name>
-					<Abstract type="html">the API Route Name</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/methodFor:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/APIRouter/methodStringFor:</TokenIdentifier>
-			<Abstract type="html">Returns the request method string for the given route</Abstract>
-			<DeclaredIn>APIRouter.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)methodStringFor:(NSString *)routeName</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>routeName</Name>
-					<Abstract type="html">the API Route Name</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/methodStringFor:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/APIRouter/routeNamed:</TokenIdentifier>
-			<Abstract type="html">Gets the route object for the given route name</Abstract>
-			<DeclaredIn>APIRouter.h</DeclaredIn>
-			
-			<Declaration>- (APIRoute *)routeNamed:(NSString *)routeName</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>routeName</Name>
-					<Abstract type="html">The routes name</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/routeNamed:</Anchor>
+			<Anchor>//api/name/pathStringForParameters:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

@@ -329,7 +329,7 @@ static EZRFeedImageService *sharedInstance;
     image = [self scaleImage:image toSize:CGSizeMake(340, 420) uiScale:1.0f];
     image = [self blurImage:image];
     image = [self cropImage:image toRect:CGRectMake(10, 160, 320, 200) uiScale:1.0f];
-    image = [self enhanceImage:image saturation:1.5 contrast:1.5];
+    image = [self enhanceImage:image saturation:2.5 contrast:1.5 brightness:0.75];
     image = [self flipImage:image];
 
 
@@ -356,13 +356,16 @@ static EZRFeedImageService *sharedInstance;
     return resizedImage;
 }
 
-- (UIImage *)enhanceImage:(UIImage *)image saturation:(CGFloat)saturation contrast:(CGFloat)contrast
+- (UIImage *)enhanceImage:(UIImage *)image saturation:(CGFloat)saturation contrast:(CGFloat)contrast brightness:(CGFloat)brightness
 {
     GPUImageSaturationFilter *saturationFilter = [[GPUImageSaturationFilter alloc] init];
     saturationFilter.saturation = saturation;
     
     GPUImageContrastFilter *contrastFilter = [[GPUImageContrastFilter alloc] init];
     contrastFilter.contrast = contrast;
+    
+    GPUImageBrightnessFilter *brightnessFilter = [[GPUImageBrightnessFilter alloc] init];
+    brightnessFilter.brightness = brightness;
 
     UIImage *result = [saturationFilter imageByFilteringImage:image];
     

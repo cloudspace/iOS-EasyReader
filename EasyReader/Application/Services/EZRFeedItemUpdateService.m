@@ -33,7 +33,7 @@
     [myInvocation setTarget:self];
     [myInvocation setSelector:@selector(requestFiveMinutesOfFeedItems:)];
     
-    int interval = 120 * 1;
+    int interval = 10 * 1;
     [NSTimer scheduledTimerWithTimeInterval:interval invocation:myInvocation repeats:YES];
 }
 
@@ -69,7 +69,6 @@
     NSLog(@"Setup Invocation");
 }
 
-//TODO: Remove 'this is for testing' functionality (in CSResponsiveApiRouter as well)
 - (void) requestFeedItemsSince:(NSDate *)since
 {
     [FeedItem requestFeedItemsFromFeeds:[[User current] feeds]
