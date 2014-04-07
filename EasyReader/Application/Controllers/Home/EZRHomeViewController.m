@@ -299,11 +299,14 @@
             dataSource.feedItems = _feedItems;
             _sortedFeedItems = dataSource.sortedFeedItems;
             
-            _currentFeedItem = _sortedFeedItems[_currentPageIndex];
+           // _currentFeedItem = _sortedFeedItems[_currentPageIndex];
             
             [self.collectionView_feedItems reloadData];
             
-            if (self.currentFeedItem) [self scrollToCurrentFeedItem];
+            if (self.currentFeedItem)
+            {
+                [self scrollToCurrentFeedItem];
+            }
 
             self.pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
             [self.pageControl_itemIndicator setPageControllerPageAtIndex:self.currentPageIndex];
@@ -348,11 +351,14 @@
  */
 - (void)prefetchFirstImages
 {
-    [[EZRFeedImageService shared] fetchImageAtURLString: _currentFeedItem.imageIphoneRetina success:^(UIImage *image, UIImage *blurredImage) {
-        [self prefetchImagesNearIndex:1 count:2];
-    } failure:^{
-        
-    }];
+    if (_currentFeedItem.imageIphoneRetina)
+    {
+        [[EZRFeedImageService shared] fetchImageAtURLString: _currentFeedItem.imageIphoneRetina success:^(UIImage *image, UIImage *blurredImage) {
+            [self prefetchImagesNearIndex:1 count:2];
+        } failure:^{
+            
+        }];
+    }
 
 }
 - (void)prefetchImagesNearIndex:(NSInteger)currentPageIndex count:(NSInteger)count

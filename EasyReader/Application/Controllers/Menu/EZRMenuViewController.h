@@ -31,6 +31,9 @@
 /// The current array of feeds
 @property (nonatomic, retain) NSMutableSet *feeds;
 
+/// The current sorted array of feeds
+@property (nonatomic, readonly) NSArray *sortedFeeds;
+
 /// The current user
 @property (nonatomic, retain) User *currentUser;
 

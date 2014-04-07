@@ -24,9 +24,6 @@
 /// The properly sorted array of feeds
 @property (nonatomic, readonly) NSArray *sortedFeeds;
 
-/// The current user for this data source
-@property (nonatomic, retain) User *currentUser;
-
 
 #pragma mark - Methods
 
@@ -36,5 +33,12 @@
  * @param feeds Sets and sorts the feeds
  */
 - (void)updateWithFeeds:(NSMutableSet *)feeds;
+
+/**
+ * Initializes a new menu data source
+ *
+ * @param menuController the menu view controller
+ */
+- (instancetype)initWithController:(EZRMenuViewController *)menuController;
 
 @end

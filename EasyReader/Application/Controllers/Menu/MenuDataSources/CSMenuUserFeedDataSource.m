@@ -16,19 +16,25 @@
 #import "FeedItem.h"
 #import "User.h"
 
+#import "EZRMenuViewController.h"
+
 @implementation CSMenuUserFeedDataSource
+{
+    /// The menu view controller
+    EZRMenuViewController *controller;
+}
 
 /**
  * Sets each instance variable to the values in the given parameters
  */
-- (id)init
+- (instancetype)initWithController:(EZRMenuViewController *)menuController
 {
     self = [super init];
     
     if (self) {
         _feeds = [[NSMutableSet alloc] init];
         _sortedFeeds = [[NSArray alloc] init];
-        _currentUser = [User current];
+        controller = menuController;
     }
     
     return self;
@@ -106,7 +112,6 @@
     cell.feed = feed;
     
     [self setSelectedBackgroundForCell:cell];
-    
 }
 
 /**
@@ -127,7 +132,9 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Feed *toDelete = [self.sortedFeeds objectAtIndex:indexPath.row];
         
-        [self.currentUser removeFeedsObject:toDelete];
+        [[User current] removeFeedsObject:toDelete];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        [controller.tableView_menu reloadData];
     }
 }
 
