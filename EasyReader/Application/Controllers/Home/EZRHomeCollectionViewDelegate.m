@@ -91,8 +91,6 @@
         [controller.pageControl_itemIndicator setPageControllerPageAtIndex:pageIndex];
         controller.currentFeedItem = controller.sortedFeedItems[pageIndex];
         controller.currentPageIndex = _currentPageIndex;
-        
-        NSLog(@"%@", controller.currentFeedItem.title);
     }
 }
 

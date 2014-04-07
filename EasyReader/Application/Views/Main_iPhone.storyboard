@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWA-9Z-pb1">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWA-9Z-pb1" customClass="CSNestableScrollView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
@@ -167,7 +167,7 @@
                         <outlet property="button_leftMenu" destination="wb1-Na-kaO" id="0oK-RY-cyj"/>
                         <outlet property="collectionView_feedItems" destination="xvT-99-V3u" id="kb5-it-zd3"/>
                         <outlet property="pageControl_itemIndicator" destination="ZJR-Bc-2rZ" id="DWa-BN-VLk"/>
-                        <outlet property="scrollView_vertical" destination="EWA-9Z-pb1" id="VGf-RZ-XO8"/>
+                        <outlet property="scrollView_vertical" destination="EWA-9Z-pb1" id="T2I-XO-1AS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGN-P7-i1S" userLabel="First Responder" sceneMemberID="firstResponder"/>

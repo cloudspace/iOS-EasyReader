@@ -27,6 +27,9 @@
 #import "EZRHomePageControlDelegate.h"
 #import "EZRHomePageControlDataSource.h"
 
+#import "EZRNestableWebView.h"
+#import "EZRHomeWebViewDelegate.h"
+
 @interface EZRHomeViewController()
 
 @property User *currentUser;
@@ -55,6 +58,8 @@
     
     /// The page control data source
     EZRHomePageControlDataSource  *pageControlDataSource;
+    
+    EZRHomeWebViewDelegate *webViewDelegate;
 
 }
 
@@ -100,6 +105,13 @@
     if ([self.feedItems count] > 0) {
       [self.collectionView_feedItems scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     }
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self layOutVerticalScrollView];
 }
 
 /**
@@ -150,9 +162,12 @@
 -(void)setUpVerticalScrollView
 {
     self.scrollView_vertical.pagingEnabled =YES;
+//    self.scrollView_vertical.canCancelContentTouches = NO;
+//    self.scrollView_vertical.delaysContentTouches = NO;
     
     scrollViewDelegate = [[EZRHomeScrollViewDelegate alloc] initWithController:self];
     self.scrollView_vertical.delegate = scrollViewDelegate;
+    [self layOutVerticalScrollView];
 }
 
 /**
@@ -187,9 +202,14 @@
  */
 -(void)setUpWebView
 {
-    self.webView_feedItem = [[UIWebView alloc] init];
+    self.webView_feedItem = [[EZRNestableWebView alloc] init];
     [self.webView_feedItem setBackgroundColor:[UIColor redColor]];
     [self.scrollView_vertical addSubview:self.webView_feedItem];
+    
+    webViewDelegate = [[EZRHomeWebViewDelegate alloc] initWithController:self];
+    
+    self.webView_feedItem.scrollView.delegate = webViewDelegate;
+    self.webView_feedItem.delegate = webViewDelegate;
 }
 
 
@@ -276,13 +296,10 @@
                 [_feedItems addObject:item];
             }
             
-            if (_currentPageIndex == 0)
-            {
-                [self prefetchImagesNearIndex:0 count:5];
-            }
-            
             dataSource.feedItems = _feedItems;
             _sortedFeedItems = dataSource.sortedFeedItems;
+            
+            _currentFeedItem = _sortedFeedItems[_currentPageIndex];
             
             [self.collectionView_feedItems reloadData];
             
@@ -291,7 +308,10 @@
             self.pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
             [self.pageControl_itemIndicator setPageControllerPageAtIndex:self.currentPageIndex];
             
-            //            [_pageControl_itemIndicator.button_newItem setHidden:NO];
+            if (_currentPageIndex == 0 && _currentFeedItem)
+            {
+                [self prefetchFirstImages];
+            }
         }
     };
 }
@@ -323,6 +343,18 @@
     [_collectionView_feedItems scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
 
+/**
+ * Fetches the current feed item image, then prefetches after
+ */
+- (void)prefetchFirstImages
+{
+    [[EZRFeedImageService shared] fetchImageAtURLString: _currentFeedItem.imageIphoneRetina success:^(UIImage *image, UIImage *blurredImage) {
+        [self prefetchImagesNearIndex:1 count:2];
+    } failure:^{
+        
+    }];
+
+}
 - (void)prefetchImagesNearIndex:(NSInteger)currentPageIndex count:(NSInteger)count
 {
     NSInteger feedItemsCount = [collectionViewDataSource.sortedFeedItems count];

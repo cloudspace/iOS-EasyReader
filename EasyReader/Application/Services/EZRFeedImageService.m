@@ -14,7 +14,7 @@
 #import "GPUImage.h"
 
 // Toggle image caching
-#define IMAGE_CACHING = 0
+#define IMAGE_CACHING = 1
 
 /// The shared instance dispatch once predicate
 static dispatch_once_t pred;
@@ -86,6 +86,7 @@ static EZRFeedImageService *sharedInstance;
         {
             if (item.imageIphoneRetina && ![prefetched containsObject:item.imageIphoneRetina])
             {
+                NSLog(@"prefetching image %@", item.imageIphoneRetina);
                 [self fetchImageAtURLString:item.imageIphoneRetina];
                 [prefetched addObject:item.imageIphoneRetina];
             }

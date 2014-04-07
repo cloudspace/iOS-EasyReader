@@ -11,10 +11,12 @@
 // Controls
 #import "CSCollectionPageControl.h"
 #import "EZRFeedItemCollectionView.h"
+#import "CSNestableScrollView.h"
 
 // View Controllers
 #import "CSBaseViewController.h"
 #import "EZRHomeCollectionViewDataSource.h"
+#import "EZRNestableWebView.h"
 
 @class User;
 
@@ -27,7 +29,7 @@
 # pragma mark - IBOutlet Properties
 
 /// Vertical scroll view holding collection view and webviews
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView_vertical;
+@property (weak, nonatomic) IBOutlet CSNestableScrollView *scrollView_vertical;
 
 /// Button to go to left menu
 @property (strong, nonatomic) IBOutlet UIButton *button_leftMenu;
@@ -39,7 +41,7 @@
 @property (strong, nonatomic) IBOutlet EZRFeedItemCollectionView *collectionView_feedItems;
 
 /// Displays website that hosts article
-@property (nonatomic, strong) UIWebView *webView_feedItem;
+@property (nonatomic, strong) EZRNestableWebView *webView_feedItem;
 
 
 # pragma mark - Properties

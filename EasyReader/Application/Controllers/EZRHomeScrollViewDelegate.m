@@ -50,7 +50,48 @@
         
         [controller.webView_feedItem loadRequest:request];
     }
+}
 
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+//{
+//    if (scrollView.contentOffset.y >=  CGRectGetHeight(scrollView.frame))
+//    {
+////        scrollView.scrollEnabled = NO;
+////        NSLog(@"Disabling scroll view scrolling");
+//    }
+//}
+//
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    if (scrollView.contentOffset.y == CGRectGetHeight(scrollView.frame)) {
+//        scrollView.scrollEnabled = NO;
+//        scrollView.delaysContentTouches = NO;
+//        [controller.scrollView_vertical becomeFirstResponder];
+//        NSLog(@"stop delaying touches");
+//        //[controller.webView_feedItem becomeFirstResponder];
+//    }
+//    else
+//    {
+//        NSLog(@"start delaying touches");
+//        [controller.webView_feedItem becomeFirstResponder];
+//        scrollView.delaysContentTouches = YES;
+//    }
+//}
+
+
+
+- (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+//    if (scrollView.contentOffset.y == CGRectGetHeight(scrollView.frame)) {
+//        scrollView.delaysContentTouches = NO;
+//        NSLog(@"stop delaying touches");
+//        //[controller.webView_feedItem becomeFirstResponder];
+//    }
+//    else
+//    {
+//        NSLog(@"start delaying touches");
+//        scrollView.delaysContentTouches = YES;
+//    }
 }
 
 @end
