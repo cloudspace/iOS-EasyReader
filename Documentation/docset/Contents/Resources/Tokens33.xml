@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/EZRRegisterRoutesService.html">
+	<File path="Classes/EZRHomeWebViewDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/EZRRegisterRoutesService</TokenIdentifier>
-			<Abstract type="html">An AppDelegate service used to register named API routes and their paths</Abstract>
-			<DeclaredIn>EZRRegisterRoutesService.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRHomeWebViewDelegate</TokenIdentifier>
+			<Abstract type="html">A delegate for the scroll view on the home view controller</Abstract>
+			<DeclaredIn>EZRHomeWebViewDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="33"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeWebViewDelegate/initWithController:</TokenIdentifier>
+			<Abstract type="html">Initializes a new scroll view delegate for the given home view controller instance</Abstract>
+			<DeclaredIn>EZRHomeWebViewDelegate.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithController:(EZRHomeViewController *)homeController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>homeController</Name>
+					<Abstract type="html">The home view controller</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithController:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
 		
         
 	</File>

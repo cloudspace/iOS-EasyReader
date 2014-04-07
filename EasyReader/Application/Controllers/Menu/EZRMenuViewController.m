@@ -6,8 +6,7 @@
 //  Copyright (c) 2013 Cloudspace. All rights reserved.
 //
 
-#import "CSMenuLeftViewController.h"
-#import "CSFeedAddViewController.h"
+#import "EZRMenuViewController.h"
 
 #import "UIImageView+AFNetworking.h"
 
@@ -29,15 +28,22 @@
 #import "EZRCustomFeedCell.h"
 #import "CSSearchFeedCell.h"
 
-@interface CSMenuLeftViewController ()
+#import "CSMenuTableViewDelegate.h"
+
+
+@implementation EZRMenuViewController
 {
+    /// A tableView data source for the user's feeds
     CSMenuUserFeedDataSource *userFeedDataSource;
+    
+    /// A tableView data source for searched feeds
     CSMenuSearchFeedDataSource *searchFeedDataSource;
+    
+    /// The delegate for the menu table view
+    CSMenuTableViewDelegate *tableViewDelegate;
 }
 
-@end
-
-@implementation CSMenuLeftViewController
+#pragma mark - UIViewController Lifecycle methods
 
 /**
  * Sets up the table view, observers, and loads the core data feed list
@@ -50,7 +56,10 @@
     
     // Setup the user and search datasources
     [self setUpDataSources];
-    self.tableView_feeds.delegate = self;
+    
+    tableViewDelegate = [[CSMenuTableViewDelegate alloc] init];
+    
+    self.tableView_menu.delegate = tableViewDelegate;
     
     // Set tableViewStyle
     [self applyMenuStyles];
@@ -61,7 +70,7 @@
     // Add observer
     //[self.currentUser addObserver:self forKeyPath:@"feeds" options:NSKeyValueObservingOptionNew context:nil];
     [self observeRelationship:@keypath(self.currentUser.feeds)
-                  changeBlock:^(__weak CSMenuLeftViewController *self, NSSet *old, NSSet *new) {
+                  changeBlock:^(__weak EZRMenuViewController *self, NSSet *old, NSSet *new) {
                       NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
                       NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
                       
@@ -94,12 +103,14 @@
     [self updateUserFeedDataSource];
 }
 
+
+
 - (void)applyMenuStyles
 {
-    [self.tableView_feeds setBackgroundColor: [UIColor EZR_menuBackground]];
+    [self.tableView_menu setBackgroundColor: [UIColor EZR_menuBackground]];
     [self.textField_searchInput setBackgroundColor: [UIColor EZR_menuInputBackground]];
     [self.textField_searchInput setTextColor: [UIColor whiteColor]];
-    [self.tableView_feeds setSeparatorColor: [UIColor EZR_charcoal]];
+    [self.tableView_menu setSeparatorColor: [UIColor EZR_charcoal]];
 }
 
 - (void)setUpDataSources
@@ -114,7 +125,7 @@
 - (void)menuStateEventOccurred:(NSNotification *)notification {
     MFSideMenuStateEvent event = [[[notification userInfo] objectForKey:@"eventType"] intValue];
     
-    __weak CSMenuLeftViewController *weakSelf = self;
+    __weak EZRMenuViewController *weakSelf = self;
     
     switch (event) {
         case MFSideMenuStateEventMenuWillOpen:
@@ -122,7 +133,7 @@
             break;
         case MFSideMenuStateEventMenuDidOpen:
             // the menu finished opening
-            [weakSelf.tableView_feeds reloadData];
+            [weakSelf.tableView_menu reloadData];
             break;
         case MFSideMenuStateEventMenuWillClose:
             // the menu will close
@@ -130,12 +141,12 @@
             break;
         case MFSideMenuStateEventMenuDidClose:
             weakSelf.textField_searchInput.text = @"";
-            [weakSelf.tableView_feeds setEditing:NO animated:YES];
+            [weakSelf.tableView_menu setEditing:NO animated:YES];
             weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeNone;
             
             // Reset to the users feeds
-            weakSelf.tableView_feeds.dataSource = userFeedDataSource;
-            [weakSelf.tableView_feeds reloadData];
+            weakSelf.tableView_menu.dataSource = userFeedDataSource;
+            [weakSelf.tableView_menu reloadData];
             break;
     }
 }
@@ -199,10 +210,10 @@
 - (void)updateSearchFeedDataSource
 {
     // Switch to the searchFeed datasource
-    self.tableView_feeds.dataSource = searchFeedDataSource;
+    self.tableView_menu.dataSource = searchFeedDataSource;
     
     // Reload the table with new searchFeeds
-    [self.tableView_feeds reloadData];
+    [self.tableView_menu reloadData];
 }
 
 /**
@@ -215,10 +226,10 @@
     [self.textField_searchInput endEditing:YES];
     
     // Switch to the searchFeed datasource
-    self.tableView_feeds.dataSource = userFeedDataSource;
+    self.tableView_menu.dataSource = userFeedDataSource;
     
     // Reload the table with new searchFeeds
-    [self.tableView_feeds reloadData];
+    [self.tableView_menu reloadData];
 }
 
 
@@ -230,16 +241,6 @@
 {
     return 1;
 }
-
-#pragma mark - UITableViewDelegate Methods
-/**
- * Handles selection of a row
- */
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
 
 #pragma mark - UITableViewCell IBAction Methods
 

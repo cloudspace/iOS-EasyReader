@@ -60,7 +60,7 @@
     
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
 
-    CSMenuLeftViewController *leftMenuViewController = (CSMenuLeftViewController*)[mainStoryBoard instantiateViewControllerWithIdentifier:@"LeftMenu"];
+    EZRMenuViewController *leftMenuViewController = (EZRMenuViewController*)[mainStoryBoard instantiateViewControllerWithIdentifier:@"LeftMenu"];
     
     CSRootViewController *rootVC = [[CSRootViewController alloc] init];
     

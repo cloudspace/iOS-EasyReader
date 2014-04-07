@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CSMenuLeftViewController.h"
+#import "EZRMenuViewController.h"
 #import "MFSideMenu.h"
 #import "SRVApplicationDelegate.h"
 

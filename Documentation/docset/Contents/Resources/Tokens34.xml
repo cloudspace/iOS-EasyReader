@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Feed.html">
+	<File path="Classes/EZRMenuViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Feed</TokenIdentifier>
-			<Abstract type="html">An RSS Feed</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRMenuViewController</TokenIdentifier>
+			<Abstract type="html">The menu view controller</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="34"/>
@@ -13,364 +13,180 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/setIcon:</TokenIdentifier>
-			<Abstract type="html">This feed&apos;s icon</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuViewController/setTableView_menu:</TokenIdentifier>
+			<Abstract type="html">The feeds table view</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSString *icon</Declaration>
+			<Declaration>@property (nonatomic, retain) IBOutlet UITableView *tableView_menu</Declaration>
 			
 			
-			<Anchor>//api/name/icon</Anchor>
+			<Anchor>//api/name/tableView_menu</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/icon</TokenIdentifier>
-			<Abstract type="html">This feed&apos;s icon</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuViewController/tableView_menu</TokenIdentifier>
+			<Abstract type="html">The feeds table view</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSString *icon</Declaration>
+			<Declaration>@property (nonatomic, retain) IBOutlet UITableView *tableView_menu</Declaration>
 			
 			
-			<Anchor>//api/name/icon</Anchor>
+			<Anchor>//api/name/tableView_menu</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Feed/icon</TokenIdentifier>
-			<Abstract type="html">This feed&apos;s icon</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRMenuViewController/tableView_menu</TokenIdentifier>
+			<Abstract type="html">The feeds table view</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSString *icon</Declaration>
+			<Declaration>@property (nonatomic, retain) IBOutlet UITableView *tableView_menu</Declaration>
 			
 			
-			<Anchor>//api/name/icon</Anchor>
+			<Anchor>//api/name/tableView_menu</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/setName:</TokenIdentifier>
-			<Abstract type="html">This feed&apos;s name</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuViewController/setTextField_searchInput:</TokenIdentifier>
+			<Abstract type="html">The search input text field</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSString *name</Declaration>
+			<Declaration>@property (strong, nonatomic) IBOutlet UITextField *textField_searchInput</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/textField_searchInput</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/name</TokenIdentifier>
-			<Abstract type="html">This feed&apos;s name</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuViewController/textField_searchInput</TokenIdentifier>
+			<Abstract type="html">The search input text field</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSString *name</Declaration>
+			<Declaration>@property (strong, nonatomic) IBOutlet UITextField *textField_searchInput</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/textField_searchInput</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Feed/name</TokenIdentifier>
-			<Abstract type="html">This feed&apos;s name</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRMenuViewController/textField_searchInput</TokenIdentifier>
+			<Abstract type="html">The search input text field</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSString *name</Declaration>
+			<Declaration>@property (strong, nonatomic) IBOutlet UITextField *textField_searchInput</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/textField_searchInput</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/setUrl:</TokenIdentifier>
-			<Abstract type="html">This feed&apos;s RSS url</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuViewController/setFeeds:</TokenIdentifier>
+			<Abstract type="html">The current array of feeds</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSString *url</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
 			
 			
-			<Anchor>//api/name/url</Anchor>
+			<Anchor>//api/name/feeds</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/url</TokenIdentifier>
-			<Abstract type="html">This feed&apos;s RSS url</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuViewController/feeds</TokenIdentifier>
+			<Abstract type="html">The current array of feeds</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSString *url</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
 			
 			
-			<Anchor>//api/name/url</Anchor>
+			<Anchor>//api/name/feeds</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Feed/url</TokenIdentifier>
-			<Abstract type="html">This feed&apos;s RSS url</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRMenuViewController/feeds</TokenIdentifier>
+			<Abstract type="html">The current array of feeds</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSString *url</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
 			
 			
-			<Anchor>//api/name/url</Anchor>
+			<Anchor>//api/name/feeds</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/setId:</TokenIdentifier>
-			<Abstract type="html">The remote ID of this feed object on the API</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuViewController/setCurrentUser:</TokenIdentifier>
+			<Abstract type="html">The current user</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSNumber *id</Declaration>
+			<Declaration>@property (nonatomic, retain) User *currentUser</Declaration>
 			
 			
-			<Anchor>//api/name/id</Anchor>
+			<Anchor>//api/name/currentUser</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/id</TokenIdentifier>
-			<Abstract type="html">The remote ID of this feed object on the API</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuViewController/currentUser</TokenIdentifier>
+			<Abstract type="html">The current user</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSNumber *id</Declaration>
+			<Declaration>@property (nonatomic, retain) User *currentUser</Declaration>
 			
 			
-			<Anchor>//api/name/id</Anchor>
+			<Anchor>//api/name/currentUser</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Feed/id</TokenIdentifier>
-			<Abstract type="html">The remote ID of this feed object on the API</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRMenuViewController/currentUser</TokenIdentifier>
+			<Abstract type="html">The current user</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSNumber *id</Declaration>
+			<Declaration>@property (nonatomic, retain) User *currentUser</Declaration>
 			
 			
-			<Anchor>//api/name/id</Anchor>
+			<Anchor>//api/name/currentUser</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/setUser:</TokenIdentifier>
-			<Abstract type="html">The user this feed is associated to</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuViewController/button_addCustomFeed_touchUpInside:</TokenIdentifier>
+			<Abstract type="html">The add custom feed action</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) User *user</Declaration>
-			
-			
-			<Anchor>//api/name/user</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/user</TokenIdentifier>
-			<Abstract type="html">The user this feed is associated to</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) User *user</Declaration>
-			
-			
-			<Anchor>//api/name/user</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Feed/user</TokenIdentifier>
-			<Abstract type="html">The user this feed is associated to</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) User *user</Declaration>
-			
-			
-			<Anchor>//api/name/user</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/setFeedItems:</TokenIdentifier>
-			<Abstract type="html">The items in this feed</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) NSSet *feedItems</Declaration>
-			
-			
-			<Anchor>//api/name/feedItems</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/feedItems</TokenIdentifier>
-			<Abstract type="html">The items in this feed</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) NSSet *feedItems</Declaration>
-			
-			
-			<Anchor>//api/name/feedItems</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Feed/feedItems</TokenIdentifier>
-			<Abstract type="html">The items in this feed</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, retain) NSSet *feedItems</Declaration>
-			
-			
-			<Anchor>//api/name/feedItems</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Feed/createFeedWithUrl:success:failure:</TokenIdentifier>
-			<Abstract type="html">Creates a new feed based on a given url</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
-			
-			<Declaration>+ (void)createFeedWithUrl:(NSString *)url success:(APISuccessBlock)successBlock failure:(APIFailureBlock)failureBlock</Declaration>
+			<Declaration>- (IBAction)button_addCustomFeed_touchUpInside:(id)sender</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL of the feed to create</Abstract>
-				</Parameter><Parameter>
-					<Name>successBlock</Name>
-					<Abstract type="html">A block to be run on API call success</Abstract>
-				</Parameter><Parameter>
-					<Name>failureBlock</Name>
-					<Abstract type="html">A block to be run on API call failure</Abstract>
+					<Name>sender</Name>
+					<Abstract type="html">The event triggering object</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/createFeedWithUrl:success:failure:</Anchor>
+			<Anchor>//api/name/button_addCustomFeed_touchUpInside:</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Feed/requestDefaultFeedsWithSuccess:failure:</TokenIdentifier>
-			<Abstract type="html">Requests the default feeds list (called once on the first app run)</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuViewController/button_addSearchedFeed_touchUpInside:</TokenIdentifier>
+			<Abstract type="html">The add searched feed action</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
 			
-			<Declaration>+ (void)requestDefaultFeedsWithSuccess:(APISuccessBlock)successBlock failure:(APIFailureBlock)failureBlock</Declaration>
+			<Declaration>- (IBAction)button_addSearchedFeed_touchUpInside:(id)sender</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>successBlock</Name>
-					<Abstract type="html">A block to be run on API call success</Abstract>
-				</Parameter><Parameter>
-					<Name>failureBlock</Name>
-					<Abstract type="html">A block to be run on API call failure</Abstract>
+					<Name>sender</Name>
+					<Abstract type="html">The event triggering object</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/requestDefaultFeedsWithSuccess:failure:</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Feed/requestFeedsByName:success:failure:</TokenIdentifier>
-			<Abstract type="html">Requests a list of feeds by name (search)</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
-			
-			<Declaration>+ (void)requestFeedsByName:(NSString *)name success:(APISuccessBlock)successBlock failure:(APIFailureBlock)failureBlock</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>name</Name>
-					<Abstract type="html">The name to search feeds by</Abstract>
-				</Parameter><Parameter>
-					<Name>successBlock</Name>
-					<Abstract type="html">A block to be run on API call success</Abstract>
-				</Parameter><Parameter>
-					<Name>failureBlock</Name>
-					<Abstract type="html">A block to be run on API call failure</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/requestFeedsByName:success:failure:</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/purgeOldFeedItems</TokenIdentifier>
-			<Abstract type="html">Delete all but the 10 newest feed items related to a feed</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
-			
-			<Declaration>- (void)purgeOldFeedItems</Declaration>
-			
-			
-			<Anchor>//api/name/purgeOldFeedItems</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/addFeedItemsObject:</TokenIdentifier>
-			<Abstract type="html">Adds a FeedItem object to feedItems</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
-			
-			<Declaration>- (void)addFeedItemsObject:(FeedItem *)value</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>value</Name>
-					<Abstract type="html">The FeedItem to add</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/addFeedItemsObject:</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/removeFeedItemsObject:</TokenIdentifier>
-			<Abstract type="html">Removes a FeedItem object from feedItems</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
-			
-			<Declaration>- (void)removeFeedItemsObject:(FeedItem *)value</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>value</Name>
-					<Abstract type="html">The FeedItem to remove</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/removeFeedItemsObject:</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/addFeedItems:</TokenIdentifier>
-			<Abstract type="html">Adds a set of FeedItem objects to feedItems</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
-			
-			<Declaration>- (void)addFeedItems:(NSSet *)values</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>values</Name>
-					<Abstract type="html">The FeedItems to add</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/addFeedItems:</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Feed/removeFeedItems:</TokenIdentifier>
-			<Abstract type="html">Removes a set of FeedItem objects from feedItems</Abstract>
-			<DeclaredIn>Feed.h</DeclaredIn>
-			
-			<Declaration>- (void)removeFeedItems:(NSSet *)values</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>values</Name>
-					<Abstract type="html">The FeedItems to remove</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/removeFeedItems:</Anchor>
+			<Anchor>//api/name/button_addSearchedFeed_touchUpInside:</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		

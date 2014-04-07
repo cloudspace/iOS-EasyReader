@@ -8,7 +8,7 @@
 
 #import "CSRootViewController.h"
 
-#import "CSMenuLeftViewController.h"
+#import "EZRMenuViewController.h"
 #import "EZRHomeViewController.h"
 
 //#import "UIViewController+NibLoader.h"

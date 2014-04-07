@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A nestable scroll view (currently unused)
+ */
 @interface CSNestableScrollView : UIScrollView <UIGestureRecognizerDelegate>
 
 @end

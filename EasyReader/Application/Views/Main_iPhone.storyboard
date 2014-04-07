@@ -174,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="13" y="-735"/>
         </scene>
-        <!--Menu Left View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="wwp-1t-XzC">
             <objects>
-                <viewController storyboardIdentifier="LeftMenu" id="IQf-2p-lPR" customClass="CSMenuLeftViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeftMenu" id="IQf-2p-lPR" customClass="EZRMenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C4i-F3-dmc"/>
                         <viewControllerLayoutGuide type="bottom" id="s5I-Ee-yuh"/>
@@ -312,7 +312,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="tableView_feeds" destination="14d-Nx-0xr" id="MJ3-bG-sWH"/>
+                        <outlet property="tableView_menu" destination="14d-Nx-0xr" id="V1g-Kc-z5U"/>
                         <outlet property="textField_searchInput" destination="8MM-Gu-G6V" id="1WH-rf-KAb"/>
                     </connections>
                 </viewController>

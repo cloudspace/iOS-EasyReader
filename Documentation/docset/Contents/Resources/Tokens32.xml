@@ -17,7 +17,7 @@
 			<Abstract type="html">Vertical scroll view holding collection view and webviews</Abstract>
 			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
 			
-			<Declaration>@property (weak, nonatomic) IBOutlet UIScrollView *scrollView_vertical</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet CSNestableScrollView *scrollView_vertical</Declaration>
 			
 			
 			<Anchor>//api/name/scrollView_vertical</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">Vertical scroll view holding collection view and webviews</Abstract>
 			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
 			
-			<Declaration>@property (weak, nonatomic) IBOutlet UIScrollView *scrollView_vertical</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet CSNestableScrollView *scrollView_vertical</Declaration>
 			
 			
 			<Anchor>//api/name/scrollView_vertical</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">Vertical scroll view holding collection view and webviews</Abstract>
 			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
 			
-			<Declaration>@property (weak, nonatomic) IBOutlet UIScrollView *scrollView_vertical</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet CSNestableScrollView *scrollView_vertical</Declaration>
 			
 			
 			<Anchor>//api/name/scrollView_vertical</Anchor>
@@ -161,7 +161,7 @@
 			<Abstract type="html">Displays website that hosts article</Abstract>
 			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIWebView *webView_feedItem</Declaration>
+			<Declaration>@property (nonatomic, strong) EZRNestableWebView *webView_feedItem</Declaration>
 			
 			
 			<Anchor>//api/name/webView_feedItem</Anchor>
@@ -173,7 +173,7 @@
 			<Abstract type="html">Displays website that hosts article</Abstract>
 			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIWebView *webView_feedItem</Declaration>
+			<Declaration>@property (nonatomic, strong) EZRNestableWebView *webView_feedItem</Declaration>
 			
 			
 			<Anchor>//api/name/webView_feedItem</Anchor>
@@ -185,7 +185,7 @@
 			<Abstract type="html">Displays website that hosts article</Abstract>
 			<DeclaredIn>EZRHomeViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIWebView *webView_feedItem</Declaration>
+			<Declaration>@property (nonatomic, strong) EZRNestableWebView *webView_feedItem</Declaration>
 			
 			
 			<Anchor>//api/name/webView_feedItem</Anchor>
