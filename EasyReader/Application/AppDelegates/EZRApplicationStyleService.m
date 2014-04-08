@@ -19,8 +19,8 @@
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0], NSForegroundColorAttributeName,
-      [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0], NSShadowAttributeName,
-      [NSValue valueWithUIOffset:UIOffsetMake(0, -1)], NSShadowAttributeName,
+//      [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0], NSShadowAttributeName,
+//      [NSValue valueWithUIOffset:UIOffsetMake(0, -1)], NSShadowAttributeName,
       [UIFont fontWithName:@"Avenir-Medium" size:17.0], NSFontAttributeName,
       nil]];
     
