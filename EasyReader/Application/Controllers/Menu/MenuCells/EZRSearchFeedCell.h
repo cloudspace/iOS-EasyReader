@@ -11,7 +11,7 @@
 /**
  * A UITableViewCell for feed data returned by the search API
  */
-@interface CSSearchFeedCell : UITableViewCell
+@interface EZRSearchFeedCell : UITableViewCell
 
 #pragma mark - IBOutlets
 

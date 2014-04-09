@@ -22,6 +22,9 @@ typedef void (^AFImageBlock)(NSURLRequest *request, NSHTTPURLResponse *response,
     if (self) {
         UIColor *transGray =[UIColor EZR_charcoal];
         [self setBackgroundColor:[transGray colorWithAlphaComponent:1.0]];
+//        [self.layer setCornerRadius:5.0f];
+//        self.clipsToBounds = YES;
+
     }
     
     return self;

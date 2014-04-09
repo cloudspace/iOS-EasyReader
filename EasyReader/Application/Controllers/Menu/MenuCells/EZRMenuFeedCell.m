@@ -8,10 +8,10 @@
 
 #import "UIImageView+AFNetworking.h"
 
-#import "CSUserFeedCell.h"
+#import "EZRMenuFeedCell.h"
 #import "Feed.h"
 
-@implementation CSUserFeedCell
+@implementation EZRMenuFeedCell
 
 /**
  * Sets the fields in the cell
@@ -25,8 +25,13 @@
     self.label_name.text = feed.name;
 
     [self.imageView_icon setHidden:NO];
-    [self.imageView setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:nil];
-    
+    [self.imageView_icon setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:[UIImage imageNamed:@"icon_rss"]];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+
 }
 
 @end

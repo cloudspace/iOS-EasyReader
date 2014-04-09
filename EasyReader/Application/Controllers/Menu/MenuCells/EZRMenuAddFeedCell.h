@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EZRMenuFeedCell.h"
 
 /**
  * A UITableViewCell for custom feed data
  */
-@interface EZRCustomFeedCell : UITableViewCell
+@interface EZRMenuAddFeedCell : UITableViewCell
 
 #pragma mark - IBOutlets
 

@@ -11,7 +11,7 @@
 /**
  * A UITableViewDataSource for custom and searched feeds returned by the API
  */
-@interface CSMenuSearchFeedDataSource : NSObject<UITableViewDataSource>
+@interface EZRMenuSearchFeedDataSource : NSObject<UITableViewDataSource>
 
 #pragma mark - Properties
 

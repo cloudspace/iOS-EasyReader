@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSMenuSearchFeedDataSource.h"
+#import "EZRMenuSearchFeedDataSource.h"
 
 #import "UIColor+EZRSharedColorAdditions.h"
 
-#import "CSSearchFeedCell.h"
-#import "EZRCustomFeedCell.h"
+#import "EZRSearchFeedCell.h"
+#import "EZRMenuAddFeedCell.h"
 
-@implementation CSMenuSearchFeedDataSource
+@implementation EZRMenuSearchFeedDataSource
 
 
 /**
@@ -89,7 +89,7 @@
 {
     if ([[self.sortedFeeds objectAtIndex:indexPath.row] objectForKey:@"feed_items"]) {
         // Dequeue a styled cell
-        CSSearchFeedCell *cell = (CSSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
+        EZRSearchFeedCell *cell = (EZRSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
         
         // Get the feed
         NSDictionary *searchedFeedData = [self.sortedFeeds objectAtIndex:indexPath.row];
@@ -100,7 +100,7 @@
         return cell;
     } else {
         // Dequeue a styled cell
-        EZRCustomFeedCell *cell = (EZRCustomFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"CustomFeedCell"];
+        EZRMenuAddFeedCell *cell = (EZRMenuAddFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"CustomFeedCell"];
         
         // Get the feed
         NSDictionary *customFeedData = [self.sortedFeeds objectAtIndex:indexPath.row];
@@ -115,7 +115,7 @@
 /**
  * Set the feed for a search cell
  */
-- (void)setFeedData:(NSDictionary *)feedData forSearchFeedCell:(CSSearchFeedCell *)cell
+- (void)setFeedData:(NSDictionary *)feedData forSearchFeedCell:(EZRSearchFeedCell *)cell
 {
     cell.feedData = feedData;
     
@@ -126,7 +126,7 @@
 /**
  * Set the feed for a custom cell
  */
-- (void)setFeedData:(NSDictionary *)feedData forCustomFeedCell:(EZRCustomFeedCell *)cell
+- (void)setFeedData:(NSDictionary *)feedData forCustomFeedCell:(EZRMenuAddFeedCell *)cell
 {
     cell.feedData = feedData;
     

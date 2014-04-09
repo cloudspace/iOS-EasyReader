@@ -8,26 +8,26 @@
 
 #import <XCTest/XCTest.h>
 #import "EZRBaseControllerTests.h"
-#import "CSMenuUserFeedDataSource.h"
+#import "EZRMenuUserFeedDataSource.h"
 
 // Menu Cells
-#import "CSUserFeedCell.h"
+#import "EZRMenuFeedCell.h"
 
 // Models
 #import "Feed.h"
 #import "FeedItem.h"
 #import "User.h"
 
-@interface CSMenuUserFeedDataSource(Test)
+@interface EZRMenuUserFeedDataSource(Test)
 
 - (void)sortFeeds;
-- (void)setFeed:(Feed *)feed forUserFeedCell:(CSUserFeedCell *)cell;
+- (void)setFeed:(Feed *)feed forUserFeedCell:(EZRMenuFeedCell *)cell;
 
 @end
 
 @interface CSMenuUserFeedDataSourceTests : EZRBaseControllerTests
 {
-    CSMenuUserFeedDataSource *userFeedDataSource;
+    EZRMenuUserFeedDataSource *userFeedDataSource;
 }
 @end
 
@@ -36,7 +36,7 @@
 - (void)setUp
 {
     [super setUp];
-    userFeedDataSource = [[CSMenuUserFeedDataSource alloc] init];
+    userFeedDataSource = [[EZRMenuUserFeedDataSource alloc] init];
 }
 
 - (void)tearDown
@@ -79,7 +79,7 @@
 
 - (void)testSetFeedForUserFeedCell
 {
-    CSUserFeedCell *cell = [[CSUserFeedCell alloc] init];
+    EZRMenuFeedCell *cell = [[EZRMenuFeedCell alloc] init];
     Feed *feed = [Feed MR_createEntity];
     [feed setName:@"A"];
     

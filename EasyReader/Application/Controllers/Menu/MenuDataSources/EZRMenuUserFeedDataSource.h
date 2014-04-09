@@ -13,7 +13,7 @@
 /**
  * A UITableViewDataSource for feeds in Core Data
  */
-@interface CSMenuUserFeedDataSource : NSObject<UITableViewDataSource>
+@interface EZRMenuUserFeedDataSource : NSObject<UITableViewDataSource>
 
 #pragma mark - Properties
 

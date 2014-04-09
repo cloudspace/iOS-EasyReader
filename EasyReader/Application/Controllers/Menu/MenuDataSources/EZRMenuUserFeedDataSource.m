@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSMenuUserFeedDataSource.h"
+#import "EZRMenuUserFeedDataSource.h"
 
 #import "UIColor+EZRSharedColorAdditions.h"
 
-#import "CSUserFeedCell.h"
+#import "EZRMenuFeedCell.h"
 
 #import "Feed.h"
 #import "FeedItem.h"
@@ -18,7 +18,7 @@
 
 #import "EZRMenuViewController.h"
 
-@implementation CSMenuUserFeedDataSource
+@implementation EZRMenuUserFeedDataSource
 {
     /// The menu view controller
     EZRMenuViewController *controller;
@@ -83,7 +83,7 @@
  */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    return 35;
 }
 
 
@@ -94,7 +94,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Dequeue a styled cell
-    CSUserFeedCell *cell = (CSUserFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"UserFeedCell"];
+    EZRMenuFeedCell *cell = (EZRMenuFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"UserFeedCell"];
     
     // Get the feed
     Feed *feed = [self.sortedFeeds objectAtIndex:indexPath.row];
@@ -107,7 +107,7 @@
 /**
  * Set the feed for a user cell
  */
-- (void)setFeed:(Feed *)feed forUserFeedCell:(CSUserFeedCell *)cell
+- (void)setFeed:(Feed *)feed forUserFeedCell:(EZRMenuFeedCell *)cell
 {
     cell.feed = feed;
     

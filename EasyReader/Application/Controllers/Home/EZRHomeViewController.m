@@ -64,6 +64,8 @@
     
     /// The flow layout for the collection view
     UICollectionViewFlowLayout *collectionViewLayout;
+    
+    UIActionSheet *menu;
 
 }
 
@@ -192,6 +194,9 @@
  */
 - (void)setUpCollectionView
 {
+    [self.collectionView_feedItems.layer setCornerRadius:5.0f];
+    self.collectionView_feedItems.clipsToBounds = YES;
+
     collectionViewDataSource = [[EZRHomeCollectionViewDataSource alloc] initWithReusableCellIdentifier:@"feedItem"];
     self.collectionView_feedItems.dataSource = collectionViewDataSource;
     
@@ -335,8 +340,39 @@
 
 // Receives left menu link click
 - (IBAction)buttonLeftMenu_touchUpInside_goToMenu:(id)sender {
+//    menu = [[UIActionSheet alloc] initWithTitle:@"My Feeds" delegate:nil cancelButtonTitle:@"cancel" destructiveButtonTitle:nil otherButtonTitles:nil];
+//    
+//    CGFloat height = CGRectGetHeight(self.view.frame)*0.9f;
+//    CGFloat width = CGRectGetWidth(self.view.frame)*0.9f;
+//    CGFloat y = CGRectGetHeight(self.view.frame)/2.0f - height/2.0f;
+//    CGFloat x = CGRectGetWidth(self.view.frame)/2.0f - width/2.0f;
+//    
+//
+//    
+////    UIView *view_menu = [[UIView alloc] init];
+////    
+////    //view_menu.layer.cornerRadius = 3.0;
+////    view_menu.backgroundColor = [UIColor whiteColor];
+////    view_menu.frame = CGRectMake(20, 20, 290, 400);
+//    //view_menu.clipsToBounds = YES;
+//
+//  //  [menu addSubview:view_menu];
+//    
+//    [menu showInView:self.view];
+//    
+//    menu.frame = CGRectMake(x, y, width, height);
+//    menu.bounds = CGRectMake(x, y, width, height);
+    
     [[self rootViewController] toggleLeftSideMenuCompletion:^{}];
 }
+
+//- (void)closeMenu
+//{
+//    if (menu) {
+//        [menu dismissWithClickedButtonIndex:0 animated:YES];
+//        menu = nil;
+//    }
+//}
 
 /**
  * Scroll to the currentFeedItem when the feedItems update

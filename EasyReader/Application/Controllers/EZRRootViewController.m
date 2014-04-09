@@ -6,18 +6,18 @@
 //  Copyright (c) 2013 Cloudspace. All rights reserved.
 //
 
-#import "CSRootViewController.h"
+#import "EZRRootViewController.h"
 
 #import "EZRMenuViewController.h"
 #import "EZRHomeViewController.h"
 
 //#import "UIViewController+NibLoader.h"
 
-@interface CSRootViewController ()
+@interface EZRRootViewController ()
 
 @end
 
-@implementation CSRootViewController
+@implementation EZRRootViewController
 
 /**
  * Creates the menu contorllers and side menu

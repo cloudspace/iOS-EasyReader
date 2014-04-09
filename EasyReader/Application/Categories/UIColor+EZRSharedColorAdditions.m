@@ -12,7 +12,7 @@
 
 #pragma mark - Color Methods
 
-+ (UIColor *) EZR_menuBackground           { return [UIColor colorWithRed:51/255.0 green:58/255.0 blue:74/255.0 alpha:1.0]; }
++ (UIColor *) EZR_menuBackground           { return [UIColor colorWithRed:20/255.0 green:20/255.0 blue:20/255.0 alpha:1.0]; }
 + (UIColor *) EZR_menuInputBackground      { return [UIColor colorWithRed:67/255.0 green:74/255.0 blue:94/255.0 alpha:1.0]; }
 
 + (UIColor *) EZR_charcoal                 { return [UIColor EZR_charcoalWithOpacity:1]; }

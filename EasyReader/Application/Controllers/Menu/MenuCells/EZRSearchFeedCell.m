@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "CSSearchFeedCell.h"
+#import "EZRSearchFeedCell.h"
 #import "Feed.h"
 #import "User.h"
 
-@implementation CSSearchFeedCell
+@implementation EZRSearchFeedCell
 
 /**
  * Sets the fields in the cell

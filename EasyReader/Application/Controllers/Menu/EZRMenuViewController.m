@@ -15,32 +15,33 @@
 #import "Feed.h"
 #import "FeedItem.h"
 #import "User.h"
-#import "CSAppDelegate.h"
-#import "CSRootViewController.h"
+#import "EZRAppDelegate.h"
+#import "EZRRootViewController.h"
 #import "MFSideMenu.h"
 
 #import <QuartzCore/QuartzCore.h>
 #import <Block-KVO/MTKObserving.h>
 
-#import "CSMenuUserFeedDataSource.h"
-#import "CSMenuSearchFeedDataSource.h"
+#import "EZRMenuUserFeedDataSource.h"
+#import "EZRMenuSearchFeedDataSource.h"
 
-#import "EZRCustomFeedCell.h"
-#import "CSSearchFeedCell.h"
+#import "EZRMenuAddFeedCell.h"
+#import "EZRSearchFeedCell.h"
 
-#import "CSMenuTableViewDelegate.h"
+#import "EZRMenuTableViewDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @implementation EZRMenuViewController
 {
     /// A tableView data source for the user's feeds
-    CSMenuUserFeedDataSource *userFeedDataSource;
+    EZRMenuUserFeedDataSource *userFeedDataSource;
     
     /// A tableView data source for searched feeds
-    CSMenuSearchFeedDataSource *searchFeedDataSource;
+    EZRMenuSearchFeedDataSource *searchFeedDataSource;
     
     /// The delegate for the menu table view
-    CSMenuTableViewDelegate *tableViewDelegate;
+    EZRMenuTableViewDelegate *tableViewDelegate;
 }
 
 #pragma mark - UIViewController Lifecycle methods
@@ -57,7 +58,7 @@
     // Setup the user and search datasources
     [self setUpDataSources];
     
-    tableViewDelegate = [[CSMenuTableViewDelegate alloc] init];
+    tableViewDelegate = [[EZRMenuTableViewDelegate alloc] init];
     
     self.tableView_menu.delegate = tableViewDelegate;
     
@@ -107,19 +108,34 @@
 
 - (void)applyMenuStyles
 {
-    [self.tableView_menu setBackgroundColor: [UIColor EZR_menuBackground]];
-    [self.textField_searchInput setBackgroundColor: [UIColor EZR_menuInputBackground]];
+    // Background
+    UIImageView *background = [[UIImageView alloc] initWithFrame:self.view.frame];
+    [background setImage:[UIImage imageNamed:@"menuBackground2"]];
+    [self.view insertSubview:background atIndex:0];
+    
+    // Text field
+    [self.textField_searchInput setBackgroundColor: [UIColor clearColor]];
+
+    self.textField_searchInput.tintColor = [UIColor whiteColor];
     [self.textField_searchInput setTextColor: [UIColor whiteColor]];
-    [self.tableView_menu setSeparatorColor: [UIColor EZR_charcoal]];
+    
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 15, 20)];
+    self.textField_searchInput.leftView = paddingView;
+    self.textField_searchInput.leftViewMode = UITextFieldViewModeAlways;
+    
+    self.textField_searchInput.layer.borderColor = [[UIColor colorWithWhite:1.0f alpha:0.5f] CGColor];
+    self.textField_searchInput.layer.cornerRadius = 5.0f;
+    self.textField_searchInput.layer.borderWidth = 1.5f;
+//    [self.tableView_menu setSeparatorColor: [UIColor clearColor]];
 }
 
 - (void)setUpDataSources
 {
     // Lists feeds in the database
-    userFeedDataSource = [[CSMenuUserFeedDataSource alloc] init];
+    userFeedDataSource = [[EZRMenuUserFeedDataSource alloc] init];
     
     // Lists feeds returned by the search API
-    searchFeedDataSource = [[CSMenuSearchFeedDataSource alloc] init];
+    searchFeedDataSource = [[EZRMenuSearchFeedDataSource alloc] init];
 }
 
 - (void)menuStateEventOccurred:(NSNotification *)notification {
@@ -142,7 +158,7 @@
         case MFSideMenuStateEventMenuDidClose:
             weakSelf.textField_searchInput.text = @"";
             [weakSelf.tableView_menu setEditing:NO animated:YES];
-            weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeNone;
+            weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
             
             // Reset to the users feeds
             weakSelf.tableView_menu.dataSource = userFeedDataSource;
@@ -250,7 +266,7 @@
  * @param sender The button that sent the action
  */
 - (IBAction)button_addCustomFeed_touchUpInside:(id)sender {
-    EZRCustomFeedCell *cell = (EZRCustomFeedCell *)[[[sender superview] superview] superview];
+    EZRMenuAddFeedCell *cell = (EZRMenuAddFeedCell *)[[[sender superview] superview] superview];
     
     [Feed createFeedWithUrl:cell.label_url.text
                     success:^(id responseData, NSInteger httpStatus){
@@ -268,7 +284,7 @@
  * @param sender The button that sent the action
  */
 - (IBAction)button_addSearchedFeed_touchUpInside:(id)sender {
-    CSSearchFeedCell *cell = (CSSearchFeedCell *)[[[sender superview] superview] superview];
+    EZRSearchFeedCell *cell = (EZRSearchFeedCell *)[[[sender superview] superview] superview];
     
     // Create a new Feed object and associated FeedItem objects
     Feed *newFeed = [Feed createOrUpdateFirstFromAPIData:cell.feedData];

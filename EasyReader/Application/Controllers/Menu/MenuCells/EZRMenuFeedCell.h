@@ -13,7 +13,7 @@
 /**
  * A UITableViewCell for Feeds in Core Data
  */
-@interface CSUserFeedCell : UITableViewCell
+@interface EZRMenuFeedCell : UITableViewCell
 
 #pragma mark - IBOutlets
 

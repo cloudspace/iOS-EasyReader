@@ -8,28 +8,28 @@
 
 #import <XCTest/XCTest.h>
 #import "EZRBaseControllerTests.h"
-#import "CSMenuSearchFeedDataSource.h"
+#import "EZRMenuSearchFeedDataSource.h"
 
 // Menu Cells
-#import "CSSearchFeedCell.h"
-#import "EZRCustomFeedCell.h"
+#import "EZRSearchFeedCell.h"
+#import "EZRMenuAddFeedCell.h"
 
 // Models
 #import "Feed.h"
 #import "FeedItem.h"
 #import "User.h"
 
-@interface CSMenuSearchFeedDataSource(Test)
+@interface EZRMenuSearchFeedDataSource(Test)
 
 - (void)sortFeeds;
-- (void)setFeedData:(NSDictionary *)feedData forSearchFeedCell:(CSSearchFeedCell *)cell;
-- (void)setFeedData:(NSDictionary *)feedData forCustomFeedCell:(EZRCustomFeedCell *)cell;
+- (void)setFeedData:(NSDictionary *)feedData forSearchFeedCell:(EZRSearchFeedCell *)cell;
+- (void)setFeedData:(NSDictionary *)feedData forCustomFeedCell:(EZRMenuAddFeedCell *)cell;
 
 @end
 
 @interface CSMenuSearchFeedDataSourceTests : EZRBaseControllerTests
 {
-    CSMenuSearchFeedDataSource *searchFeedDataSource;
+    EZRMenuSearchFeedDataSource *searchFeedDataSource;
 }
 @end
 
@@ -38,7 +38,7 @@
 - (void)setUp
 {
     [super setUp];
-    searchFeedDataSource = [[CSMenuSearchFeedDataSource alloc] init];
+    searchFeedDataSource = [[EZRMenuSearchFeedDataSource alloc] init];
 }
 
 - (void)tearDown
@@ -81,7 +81,7 @@
 
 - (void)testSetFeedForSearchFeedCell
 {
-    CSSearchFeedCell *cell = [[CSSearchFeedCell alloc] init];
+    EZRSearchFeedCell *cell = [[EZRSearchFeedCell alloc] init];
     
     NSDictionary *feedData = @{@"url" : @"search"};
     
@@ -94,7 +94,7 @@
 
 - (void)testSetFeedForCustomFeedCell
 {
-    EZRCustomFeedCell *cell = [[EZRCustomFeedCell alloc] init];
+    EZRMenuAddFeedCell *cell = [[EZRMenuAddFeedCell alloc] init];
     
     NSDictionary *feedData = @{@"url" : @"custom"};
     

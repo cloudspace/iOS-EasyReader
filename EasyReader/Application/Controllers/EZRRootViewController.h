@@ -12,7 +12,7 @@
 /**
  * A root view controller
  */
-@interface CSRootViewController : UINavigationController
+@interface EZRRootViewController : UINavigationController
 
 {
   

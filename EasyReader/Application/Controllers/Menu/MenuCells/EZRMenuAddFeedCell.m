@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "EZRCustomFeedCell.h"
+#import "EZRMenuAddFeedCell.h"
 #import "Feed.h"
 #import "User.h"
 
-@implementation EZRCustomFeedCell
+@implementation EZRMenuAddFeedCell
 
 /**
  * Sets the fields in the cell

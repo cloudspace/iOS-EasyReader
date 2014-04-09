@@ -6,18 +6,18 @@
 //  Copyright (c) 2013 Cloudspace. All rights reserved.
 //
 
-#import "CSAppDelegate.h"
+#import "EZRAppDelegate.h"
 
 #import "EZRRegisterRoutesService.h"
 #import "EZRCoreDataService.h"
 #import "EZRFeedUpdateService.h"
 #import "EZRApplicationStyleService.h"
 
-#import "CSRootViewController.h"
+#import "EZRRootViewController.h"
 #import "User.h"
 
 
-@implementation CSAppDelegate
+@implementation EZRAppDelegate
 
 
 /**
@@ -62,13 +62,19 @@
 
     EZRMenuViewController *leftMenuViewController = (EZRMenuViewController*)[mainStoryBoard instantiateViewControllerWithIdentifier:@"LeftMenu"];
     
-    CSRootViewController *rootVC = [[CSRootViewController alloc] init];
+    EZRRootViewController *rootVC = [[EZRRootViewController alloc] init];
     
     MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
                                                     containerWithCenterViewController:rootVC
                                                     leftMenuViewController:leftMenuViewController
                                                     rightMenuViewController:nil];
     
+    [container.shadow setEnabled:YES];
+  //  [container setMenuSlideAnimationEnabled:NO];
+//
+    [container.shadow setRadius:5.0f];
+    [container.shadow setOpacity:0.75f];
+    [container setMenuSlideAnimationFactor:3.0f];
     self.window.rootViewController = container;
     [self.window makeKeyAndVisible];
     

@@ -15,7 +15,7 @@
 /**
  * The main delegate for the application
  */
-@interface CSAppDelegate : SRVApplicationDelegate <UIApplicationDelegate>
+@interface EZRAppDelegate : SRVApplicationDelegate <UIApplicationDelegate>
 
 
 #pragma mark - Properties

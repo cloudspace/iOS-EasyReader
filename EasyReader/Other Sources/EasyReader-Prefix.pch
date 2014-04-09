@@ -24,7 +24,7 @@
 #endif
 
 // Make app delegate available
-#import "CSAppDelegate.h"
+#import "EZRAppDelegate.h"
 #define appDelegate (CSAppDelegate *)[UIApplication sharedApplication].delegate
 
 // Magical Record
