@@ -74,10 +74,24 @@
 
 + (void) saveParsedResponseData:(id)responseData
 {
+    User *currentUser = [User current];
+    
     for(NSDictionary *data in responseData[@"feed_items"]) {
-        for( Feed *currentFeed in [[User current] feeds] ){
+        for( Feed *currentFeed in currentUser.feeds){
             if([data[@"feed_id"] compare:currentFeed.id] == NSOrderedSame){
-                [currentFeed addFeedItemsObject:[FeedItem createOrUpdateFirstFromAPIData:data]];
+                FeedItem *item = [FeedItem createOrUpdateFirstFromAPIData:data];
+                
+                if (![currentFeed.feedItems containsObject:item])
+                {
+                    
+                    if (![item.id isEqualToNumber:data[@"id"]])
+                    {
+                        NSLog(@"Something wen't horribly wrong");
+                    }
+                    
+                    // item id != data id???? wtf
+                  [currentFeed addFeedItemsObject:item];
+                }
             }
         }
     }

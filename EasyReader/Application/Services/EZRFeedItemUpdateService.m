@@ -74,7 +74,11 @@
     [FeedItem requestFeedItemsFromFeeds:[[User current] feeds]
                                   since:since
                                 success:^(id responseData, NSInteger httpStatus){
-                                    NSLog(@"Feed Items have been added");
+                                    NSInteger count = [responseData[@"feed_items"] count];
+                                    
+                                    if (count > 0) {
+                                      NSLog(@"%ld feed Items have been added", (long)count);
+                                    }
                                 }failure:nil
      ];
 }

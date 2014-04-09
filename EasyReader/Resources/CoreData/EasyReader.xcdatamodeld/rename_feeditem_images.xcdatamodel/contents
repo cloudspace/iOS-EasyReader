@@ -5,7 +5,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="feedItems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FeedItem" inverseName="feed" inverseEntity="FeedItem" syncable="YES"/>
+        <relationship name="feedItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FeedItem" inverseName="feed" inverseEntity="FeedItem" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="feeds" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="FeedItem" representedClassName="FeedItem" syncable="YES">
@@ -26,7 +26,7 @@
     </entity>
     <elements>
         <element name="Feed" positionX="0" positionY="0" width="128" height="135"/>
-        <element name="FeedItem" positionX="0" positionY="0" width="128" height="210"/>
+        <element name="FeedItem" positionX="0" positionY="0" width="128" height="208"/>
         <element name="User" positionX="0" positionY="0" width="128" height="58"/>
     </elements>
 </model>

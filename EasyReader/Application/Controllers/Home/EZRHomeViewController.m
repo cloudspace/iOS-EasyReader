@@ -59,7 +59,11 @@
     /// The page control data source
     EZRHomePageControlDataSource  *pageControlDataSource;
     
+    /// The delegate for the web view
     EZRHomeWebViewDelegate *webViewDelegate;
+    
+    /// The flow layout for the collection view
+    UICollectionViewFlowLayout *collectionViewLayout;
 
 }
 
@@ -180,6 +184,7 @@
     
     self.scrollView_vertical.contentSize = CGSizeMake(width, height*2);
     self.webView_feedItem.frame = CGRectMake(0, height, width, height);
+    collectionViewLayout.itemSize = CGSizeMake(width, height);
 }
 
 /**
@@ -195,6 +200,13 @@
     
     collectionViewDataSource.feedItems = self.feedItems;
     _sortedFeedItems = collectionViewDataSource.sortedFeedItems;
+    
+    collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
+    collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    collectionViewLayout.minimumInteritemSpacing = 0;
+    collectionViewLayout.minimumLineSpacing = 0;
+    self.collectionView_feedItems.collectionViewLayout = collectionViewLayout;
+    
 }
 
 /**
@@ -282,24 +294,23 @@
         EZRHomeCollectionViewDataSource *dataSource = self.collectionView_feedItems.dataSource;
         
         if(new) {
-            NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
-            NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
+//            NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
+//            NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
+//            
+//            [addedFeedItems removeObjectsInArray:[old allObjects]];
+//            [removedFeedItems removeObjectsInArray:[new allObjects]];
+//            
+//            for( FeedItem *item in removedFeedItems ){
+//                [_feedItems removeObject:item];
+//            }
+//            
+//            for( FeedItem *item in addedFeedItems ){
+//                [_feedItems addObject:item];
+//            }
             
-            [addedFeedItems removeObjectsInArray:[old allObjects]];
-            [removedFeedItems removeObjectsInArray:[new allObjects]];
-            
-            for( FeedItem *item in removedFeedItems ){
-                [_feedItems removeObject:item];
-            }
-            
-            for( FeedItem *item in addedFeedItems ){
-                [_feedItems addObject:item];
-            }
-            
+            _feedItems = [[[User current] feedItems] mutableCopy];
             dataSource.feedItems = _feedItems;
             _sortedFeedItems = dataSource.sortedFeedItems;
-            
-           // _currentFeedItem = _sortedFeedItems[_currentPageIndex];
             
             [self.collectionView_feedItems reloadData];
             

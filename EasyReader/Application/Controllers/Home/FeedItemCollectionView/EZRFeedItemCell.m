@@ -35,7 +35,7 @@ typedef void (^AFImageBlock)(NSURLRequest *request, NSHTTPURLResponse *response,
     self.label_source.text = feedItem.headline;
     self.label_summary.text = feedItem.summary;
     self.imageView_background.image = nil;
-    self.imageView_backgroundReflection.image = nil;
+    self.imageView_backgroundReflection.image = nil; 
     
     
     [self.info_view setBackgroundColor:[[UIColor darkGrayColor] colorWithAlphaComponent:0.60]];

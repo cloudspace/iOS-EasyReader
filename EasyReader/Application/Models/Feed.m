@@ -72,9 +72,14 @@
 {
     User *currentUser = [User current];
     
-    for( NSDictionary *data in responseData[@"feeds"] ){
-        [currentUser addFeedsObject:[Feed createOrUpdateFirstFromAPIData:data]];
+    for ( NSDictionary *data in responseData[@"feeds"] ){
+        Feed *feed = [Feed createOrUpdateFirstFromAPIData:data];
+        
+        if (![currentUser.feeds containsObject:feed]) {
+          [currentUser addFeedsObject:feed];
+        }
     }
+    
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
@@ -88,15 +93,17 @@
      * Limit the query to only the amount of feed items needed to be removed
      */
     if(numberOfFeedItemsToRemove){
-        NSFetchRequest *fetchFeedItemsToRemove = [FeedItem MR_requestAllSortedBy:@"updatedAt" ascending:NO];
+        NSFetchRequest *fetchFeedItemsToRemove = [FeedItem MR_requestAllSortedBy:@"updatedAt" ascending:YES];
         [fetchFeedItemsToRemove setFetchLimit:numberOfFeedItemsToRemove];
         
         NSArray *feedItemsToRemove = [FeedItem MR_executeFetchRequest:fetchFeedItemsToRemove];
         
-        // Delete each feed item
+        [self removeFeedItems:[NSSet setWithArray:feedItemsToRemove]];
+        
         for (FeedItem *item in feedItemsToRemove)
         {
             [item MR_deleteEntity];
+            
         }
         
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];

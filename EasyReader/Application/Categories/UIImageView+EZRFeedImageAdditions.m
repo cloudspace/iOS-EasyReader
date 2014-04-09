@@ -27,7 +27,7 @@ static void *__ImageURLStringKey;
     EZRFeedImageService *feedImageService = [EZRFeedImageService shared];
     
     objc_setAssociatedObject(self, &__ImageURLStringKey, urlString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    NSLog(@"fetch image");
+
     [feedImageService fetchImageAtURLString:urlString success:^(UIImage *image, UIImage *blurredImage) {
         NSString *currentURLString = objc_getAssociatedObject(self, &__ImageURLStringKey);
         

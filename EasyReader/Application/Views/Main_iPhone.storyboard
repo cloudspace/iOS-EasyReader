@@ -28,7 +28,7 @@
                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xvT-99-V3u" customClass="EZRFeedItemCollectionView">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g2g-cS-GvP">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="g2g-cS-GvP">
                                                     <size key="itemSize" width="320" height="568"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -46,18 +46,19 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="400" id="UTY-Fy-oos"/>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="2gm-I4-wok"/>
+                                                                        <constraint firstAttribute="height" constant="400" id="UfT-8u-WYd"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6do-aH-WMA">
-                                                                    <rect key="frame" x="0.0" y="400" width="320" height="200"/>
+                                                                    <rect key="frame" x="0.0" y="400" width="320" height="168"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="200" id="HqE-wK-VrR"/>
+                                                                        <constraint firstAttribute="height" constant="168" id="TfH-FR-MMg"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GyA-VK-s4d">
-                                                                    <rect key="frame" x="0.0" y="400" width="320" height="237"/>
+                                                                    <rect key="frame" x="0.0" y="400" width="320" height="168"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="302" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-v3-acz">
@@ -65,6 +66,7 @@
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="100" id="Ev7-IU-V7M"/>
+                                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="g8n-s1-N6b"/>
                                                                             </constraints>
                                                                             <attributedString key="attributedText">
                                                                                 <fragment content="This is the title of an article and can be long sometimes.">
@@ -87,25 +89,25 @@
                                                                         </label>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="5IB-v3-acz" secondAttribute="bottom" constant="129" id="2tv-1M-IpA"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="5IB-v3-acz" secondAttribute="trailing" constant="10" id="Mk8-cT-wkP"/>
-                                                                        <constraint firstItem="5IB-v3-acz" firstAttribute="leading" secondItem="GyA-VK-s4d" secondAttribute="leading" constant="8" id="rvV-ox-NbO"/>
+                                                                        <constraint firstItem="5IB-v3-acz" firstAttribute="leading" secondItem="GyA-VK-s4d" secondAttribute="leading" constant="8" id="GBE-Ru-gfS"/>
+                                                                        <constraint firstAttribute="height" constant="168" id="Mdi-fc-sTd"/>
+                                                                        <constraint firstItem="5IB-v3-acz" firstAttribute="top" secondItem="GyA-VK-s4d" secondAttribute="top" constant="8" id="vGo-hX-cm7"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="5IB-v3-acz" secondAttribute="trailing" constant="10" id="xJh-Jl-OtF"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
                                                         <constraints>
-                                                            <constraint firstItem="HSH-zo-oed" firstAttribute="top" secondItem="BLC-ou-GYj" secondAttribute="top" id="3TG-U0-cg8"/>
-                                                            <constraint firstItem="6do-aH-WMA" firstAttribute="top" secondItem="HSH-zo-oed" secondAttribute="top" constant="400" id="C3f-rA-kTN"/>
-                                                            <constraint firstItem="GyA-VK-s4d" firstAttribute="leading" secondItem="BLC-ou-GYj" secondAttribute="leading" id="FTa-I2-E2h"/>
-                                                            <constraint firstItem="6do-aH-WMA" firstAttribute="width" secondItem="HSH-zo-oed" secondAttribute="width" id="JTS-7J-Ht7"/>
-                                                            <constraint firstItem="6do-aH-WMA" firstAttribute="leading" secondItem="GyA-VK-s4d" secondAttribute="leading" id="cFJ-gB-brW"/>
-                                                            <constraint firstAttribute="bottom" secondItem="GyA-VK-s4d" secondAttribute="bottom" constant="-69" id="hUm-47-7Vr"/>
-                                                            <constraint firstAttribute="trailing" secondItem="GyA-VK-s4d" secondAttribute="trailing" id="k28-h8-Wjf"/>
-                                                            <constraint firstItem="HSH-zo-oed" firstAttribute="leading" secondItem="GyA-VK-s4d" secondAttribute="leading" id="lpm-Ct-afP"/>
-                                                            <constraint firstItem="GyA-VK-s4d" firstAttribute="top" secondItem="BLC-ou-GYj" secondAttribute="top" constant="400" id="mRS-oL-Gby"/>
-                                                            <constraint firstItem="HSH-zo-oed" firstAttribute="trailing" secondItem="GyA-VK-s4d" secondAttribute="trailing" id="v1F-nw-O8N"/>
+                                                            <constraint firstItem="GyA-VK-s4d" firstAttribute="leading" secondItem="BLC-ou-GYj" secondAttribute="leading" id="Ccs-cR-IPd"/>
+                                                            <constraint firstAttribute="bottom" secondItem="6do-aH-WMA" secondAttribute="bottom" id="Gxa-wQ-6iA"/>
+                                                            <constraint firstAttribute="trailing" secondItem="6do-aH-WMA" secondAttribute="trailing" id="Njy-5z-Mf4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="GyA-VK-s4d" secondAttribute="trailing" id="bMQ-DU-ytI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="HSH-zo-oed" secondAttribute="trailing" id="beL-Uw-QVi"/>
+                                                            <constraint firstItem="HSH-zo-oed" firstAttribute="top" secondItem="BLC-ou-GYj" secondAttribute="top" id="f1A-jb-ux4"/>
+                                                            <constraint firstItem="6do-aH-WMA" firstAttribute="leading" secondItem="BLC-ou-GYj" secondAttribute="leading" id="nPS-LN-ItW"/>
+                                                            <constraint firstAttribute="bottom" secondItem="GyA-VK-s4d" secondAttribute="bottom" id="o7k-9k-SwE"/>
+                                                            <constraint firstItem="HSH-zo-oed" firstAttribute="leading" secondItem="BLC-ou-GYj" secondAttribute="leading" id="pah-5e-S0U"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="imageView_background" destination="HSH-zo-oed" id="4O6-c6-XkW"/>
@@ -117,13 +119,19 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZJR-Bc-2rZ" customClass="CSCollectionPageControl">
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZJR-Bc-2rZ" customClass="CSCollectionPageControl">
                                                 <rect key="frame" x="0.0" y="535" width="320" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="IOR-d8-478"/>
+                                                </constraints>
                                             </pageControl>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="ZJR-Bc-2rZ" firstAttribute="leading" secondItem="wv0-Kq-lEd" secondAttribute="leading" id="4rH-P3-1FM"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZJR-Bc-2rZ" secondAttribute="bottom" constant="-4" id="Udw-oK-lYS"/>
                                             <constraint firstItem="xvT-99-V3u" firstAttribute="top" secondItem="wv0-Kq-lEd" secondAttribute="top" id="eeM-6n-6rD"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZJR-Bc-2rZ" secondAttribute="trailing" id="g71-Kw-bfi"/>
                                             <constraint firstAttribute="trailing" secondItem="xvT-99-V3u" secondAttribute="trailing" id="i4C-E3-DhH"/>
                                             <constraint firstItem="xvT-99-V3u" firstAttribute="leading" secondItem="wv0-Kq-lEd" secondAttribute="leading" id="rr9-vu-oHF"/>
                                         </constraints>

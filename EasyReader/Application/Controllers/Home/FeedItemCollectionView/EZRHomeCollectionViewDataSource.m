@@ -79,6 +79,8 @@
     return [_sortedFeedItems count];
 }
 
+
+
 /**
  * Dequeues and configures a UICollectionViewCell for the given index path
  *
@@ -89,8 +91,10 @@
 {
     EZRFeedItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:_reusableCellIdentifier
                                                                      forIndexPath:indexPath];
-    
+
     cell.feedItem = [_sortedFeedItems objectAtIndex:indexPath.row];
+    
+    NSLog(@"%d - %@", [cell.feedItem.id intValue], cell.feedItem.title);
     
 //    [(CSHomeViewController*)collectionView.delegate setCollectionCellGoingTo:indexPath.row];
     
