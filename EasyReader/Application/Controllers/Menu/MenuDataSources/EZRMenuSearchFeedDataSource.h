@@ -13,22 +13,7 @@
  */
 @interface EZRMenuSearchFeedDataSource : NSObject<UITableViewDataSource>
 
-#pragma mark - Properties
-
-/// Feeds used to populate the menu table
-@property (nonatomic, retain) NSMutableSet *feeds;
-
-/// The sorted array of feeds
-@property (nonatomic, strong) NSArray *sortedFeeds;
-
-
-#pragma mark - Methods
-
-/**
- * Updates the list of feeds used to populate the menu table
- *
- * @param feeds The feeds to update the list with
- */
-- (void)updateWithFeeds:(NSMutableSet *)feeds;
+/// A dictionary of feed data to use as the base for this data source
+@property (nonatomic, retain) NSDictionary *feedData;
 
 @end

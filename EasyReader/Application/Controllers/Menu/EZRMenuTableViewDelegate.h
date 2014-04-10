@@ -12,6 +12,6 @@
 /**
  * A nestable web view (currently unused)
  */
-@interface EZRMenuTableViewDelegate : NSObject < UITableViewDelegate>
+@interface EZRMenuTableViewDelegate : NSObject <UITableViewDelegate>
 
 @end

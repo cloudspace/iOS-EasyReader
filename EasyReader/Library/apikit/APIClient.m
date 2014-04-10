@@ -105,6 +105,21 @@ static APIClient *sharedInstance = nil;
     [_requestManager.operationQueue addOperation:operation];
 }
 
+- (void)cancelOperationsForRoute:(NSString *)routeName parameters:(NSDictionary *)parameters
+{
+    APIRouter *router = [APIRouter shared];
+    
+    for (AFHTTPRequestOperation *operation in [_requestManager operationQueue].operations)
+    {
+        NSURL *url = [router urlFor:routeName parameters:parameters];
+        
+        if ([[operation.request.URL path] isEqualToString:[url path]])
+        {
+            [operation cancel];
+        }
+    }
+}
+
 
 #pragma mark - Private methods
 

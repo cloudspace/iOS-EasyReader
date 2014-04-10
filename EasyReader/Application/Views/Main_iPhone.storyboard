@@ -203,13 +203,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="270" height="60"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" placeholder="Find new feeds" translatesAutoresizingMaskIntoConstraints="NO" id="6U4-aC-Dql">
+                                        <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" placeholder="Find new feeds" translatesAutoresizingMaskIntoConstraints="NO" id="6U4-aC-Dql" customClass="EZRSearchBar">
                                             <rect key="frame" x="0.0" y="0.0" width="270" height="44"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="jNU-eH-pwx" id="Yh3-Uy-q92"/>
+                                            </connections>
                                         </searchBar>
                                     </subviews>
                                 </view>
@@ -318,15 +321,42 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="lXO-lt-Zlf" id="MNS-D8-5ji"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="currentUserProxy" destination="a7w-3J-OSj" id="qmr-ut-WBx"/>
+                        <outlet property="searchBar" destination="6U4-aC-Dql" id="5As-xt-K3v"/>
+                        <outlet property="searchFeedDataSource" destination="Kyf-fs-6tv" id="Uv8-6U-oh0"/>
                         <outlet property="tableView_menu" destination="14d-Nx-0xr" id="V1g-Kc-z5U"/>
+                        <outlet property="userFeedDataSource" destination="sJh-MY-rG4" id="8r3-FZ-KIc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AeO-M3-d5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="a7w-3J-OSj" customClass="EZRCurrentUserProxy"/>
+                <customObject id="lXO-lt-Zlf" customClass="EZRMenuTableViewDelegate"/>
+                <customObject id="jNU-eH-pwx" customClass="EZRMenuSearchBarDelegate">
+                    <connections>
+                        <outlet property="feedSearchDataSource" destination="Kyf-fs-6tv" id="o44-0T-J8n"/>
+                        <outlet property="menuTableView" destination="14d-Nx-0xr" id="QMN-Cm-zkD"/>
+                        <outlet property="userFeedDataSource" destination="sJh-MY-rG4" id="wuV-UW-eCn"/>
+                    </connections>
+                </customObject>
+                <customObject id="Kyf-fs-6tv" customClass="EZRMenuSearchFeedDataSource">
+                    <connections>
+                        <outlet property="tableView" destination="14d-Nx-0xr" id="mWN-6I-ALZ"/>
+                    </connections>
+                </customObject>
+                <customObject id="sJh-MY-rG4" customClass="EZRMenuUserFeedDataSource">
+                    <connections>
+                        <outlet property="tableView" destination="14d-Nx-0xr" id="YeL-Aa-h6L"/>
+                        <outlet property="userProxy" destination="a7w-3J-OSj" id="HAh-Fk-5om"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="516" y="-735"/>
         </scene>

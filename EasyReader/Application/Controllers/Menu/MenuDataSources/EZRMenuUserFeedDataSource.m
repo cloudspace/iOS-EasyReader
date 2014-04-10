@@ -18,58 +18,52 @@
 
 #import "EZRMenuViewController.h"
 
+#import "EZRCurrentUserProxy.h"
+#import <Block-KVO/MTKObserving.h>
+
+
+#import "NSSet+CSSortingAdditions.h"
+
+@interface EZRMenuUserFeedDataSource ()
+
+/// The menu table view
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
+/// A proxy object containing the current user
+@property (nonatomic, weak) IBOutlet EZRCurrentUserProxy *userProxy;
+
+
+@end
+
+
 @implementation EZRMenuUserFeedDataSource
 {
-    /// The menu view controller
-    EZRMenuViewController *controller;
+    /// The sorted array of feeds
+    NSArray *sortedFeeds;
 }
 
 /**
- * Sets each instance variable to the values in the given parameters
+ * Sets up observers on awaken
  */
-- (instancetype)initWithController:(EZRMenuViewController *)menuController
+- (void) awakeFromNib
 {
-    self = [super init];
-    
-    if (self) {
-        _feeds = [[NSMutableSet alloc] init];
-        _sortedFeeds = [[NSArray alloc] init];
-        controller = menuController;
-    }
-    
-    return self;
-}
-
-/**
- * Sets the feeds to those in the database
- */
-- (void)updateWithFeeds:(NSMutableSet *)feeds
-{
-    self.feeds = feeds;
-    [self sortFeeds];
-}
-
-/**
- * Sort the feeds alphabetically
- */
-- (void)sortFeeds
-{
-    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    _sortedFeeds = [[NSArray arrayWithArray:[_feeds allObjects]] sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+    [self observeRelationship:@keypath(self.userProxy.user.feeds) changeBlock:^(__weak EZRMenuUserFeedDataSource *self, NSSet *feeds) {
+        sortedFeeds = [feeds sortedArrayByAttributes:@"name", nil];
+        [self.tableView reloadData];
+    }];
 }
 
 
-#pragma mark - Count Methods
+
+#pragma mark - Data Source Methods
 /**
  * Determines the number of rows in each section
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.sortedFeeds count];
+    return [sortedFeeds count];
 }
 
-
-#pragma mark - Size Methods
 /**
  * Height of the header in each section
  */
@@ -86,8 +80,6 @@
     return 35;
 }
 
-
-#pragma mark - Cell View
 /**
  * Generates a cell for a given index path
  */
@@ -97,32 +89,33 @@
     EZRMenuFeedCell *cell = (EZRMenuFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"UserFeedCell"];
     
     // Get the feed
-    Feed *feed = [self.sortedFeeds objectAtIndex:indexPath.row];
+    Feed *feed = [sortedFeeds objectAtIndex:indexPath.row];
     
-    // Set the cell data
-    [self setFeed:feed forUserFeedCell:cell];
+    cell.feed = feed;
+    
+
     return cell;
 }
 
-/**
- * Set the feed for a user cell
- */
-- (void)setFeed:(Feed *)feed forUserFeedCell:(EZRMenuFeedCell *)cell
-{
-    cell.feed = feed;
-    
-    [self setSelectedBackgroundForCell:cell];
-}
-
-/**
- * Set the selectedBackgroundView for a cell
- */
-- (void)setSelectedBackgroundForCell:(UITableViewCell *)cell
-{
-    UIView *selectedBackgroundView = [[UIView alloc] init];
-    [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
-    cell.selectedBackgroundView = selectedBackgroundView;
-}
+///**
+// * Set the feed for a user cell
+// */
+//- (void)setFeed:(Feed *)feed forUserFeedCell:(EZRMenuFeedCell *)cell
+//{
+//    cell.feed = feed;
+//    
+//    [self setSelectedBackgroundForCell:cell];
+//}
+//
+///**
+// * Set the selectedBackgroundView for a cell
+// */
+//- (void)setSelectedBackgroundForCell:(UITableViewCell *)cell
+//{
+//    UIView *selectedBackgroundView = [[UIView alloc] init];
+//    [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
+//    cell.selectedBackgroundView = selectedBackgroundView;
+//}
 
 /**
  * Commits each editing action
@@ -130,11 +123,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Feed *toDelete = [self.sortedFeeds objectAtIndex:indexPath.row];
+        Feed *toDelete = [sortedFeeds objectAtIndex:indexPath.row];
         
         [[User current] removeFeedsObject:toDelete];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-        [controller.tableView_menu reloadData];
+        [self.tableView reloadData];
     }
 }
 
@@ -143,7 +136,7 @@
  */
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ( indexPath.row == [self.sortedFeeds count] ) {
+    if ( indexPath.row == [sortedFeeds count] ) {
         return UITableViewCellEditingStyleInsert;
     } else {
         return UITableViewCellEditingStyleDelete;

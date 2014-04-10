@@ -19,30 +19,33 @@
 #import "EZRRootViewController.h"
 #import "MFSideMenu.h"
 
-#import <QuartzCore/QuartzCore.h>
-#import <Block-KVO/MTKObserving.h>
 
 #import "EZRMenuUserFeedDataSource.h"
 #import "EZRMenuSearchFeedDataSource.h"
+#import "EZRMenuSearchBarDelegate.h"
 
 #import "EZRMenuAddFeedCell.h"
 #import "EZRSearchFeedCell.h"
 
+#import "EZRCurrentUserProxy.h"
+
 #import "EZRMenuTableViewDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface EZRMenuViewController ()
+
+
+@property IBOutlet EZRCurrentUserProxy *currentUserProxy;
+
+@property IBOutlet EZRMenuSearchFeedDataSource *searchFeedDataSource;
+
+@property IBOutlet EZRMenuUserFeedDataSource *userFeedDataSource;
+
+
+@end
+
 
 @implementation EZRMenuViewController
-{
-    /// A tableView data source for the user's feeds
-    EZRMenuUserFeedDataSource *userFeedDataSource;
-    
-    /// A tableView data source for searched feeds
-    EZRMenuSearchFeedDataSource *searchFeedDataSource;
-    
-    /// The delegate for the menu table view
-    EZRMenuTableViewDelegate *tableViewDelegate;
-}
 
 #pragma mark - UIViewController Lifecycle methods
 
@@ -52,90 +55,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.currentUser = [User current];
     self.feeds = [[NSMutableSet alloc] init];
     
-    // Setup the user and search datasources
-    [self setUpDataSources];
-    
-    tableViewDelegate = [[EZRMenuTableViewDelegate alloc] init];
-    
-    self.tableView_menu.delegate = tableViewDelegate;
-    
-    // Set tableViewStyle
     [self applyMenuStyles];
-    
-    // Added search method to the user input field
-    [self.textField_searchInput addTarget:self action:@selector(searchFieldDidChange)forControlEvents:UIControlEventEditingChanged];
-    
-    // Add observer
-    //[self.currentUser addObserver:self forKeyPath:@"feeds" options:NSKeyValueObservingOptionNew context:nil];
-    [self observeRelationship:@keypath(self.currentUser.feeds)
-                  changeBlock:^(__weak EZRMenuViewController *self, NSSet *old, NSSet *new) {
-                      NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
-                      NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
-                      
-                      [addedFeeds removeObjectsInArray:[old allObjects]];
-                      [removedFeeds removeObjectsInArray:[new allObjects]];
-                      
-                      for ( Feed *feed in removedFeeds ){
-                          [[self feeds] removeObject:feed];
-                      }
-                      
-                      for ( Feed *feed in addedFeeds ){
-                          [[self feeds] addObject:feed];
-                      }
-                      
-                      // Update and switch to the userFeed data source
-                      [userFeedDataSource updateWithFeeds:self.feeds];
-                      [self updateUserFeedDataSource];
-                  }
-               insertionBlock:nil
-                 removalBlock:nil
-             replacementBlock:nil
-     ];
-    
+
+    [self.searchBar.textField setEnablesReturnKeyAutomatically:NO];
+    [self.searchBar.textField setReturnKeyType:UIReturnKeyDone];
+    [self.searchBar.textField setKeyboardAppearance:UIKeyboardAppearanceDark];
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(menuStateEventOccurred:)
                                                  name:MFSideMenuStateNotificationEvent
                                                object:nil];
     
-    userFeedDataSource.feeds = self.feeds;
-    [self updateUserFeedDataSource];
 }
 
 
 
 - (void)applyMenuStyles
 {
-    // Background
     UIImageView *background = [[UIImageView alloc] initWithFrame:self.view.frame];
     [background setImage:[UIImage imageNamed:@"menuBackground2"]];
     [self.view insertSubview:background atIndex:0];
-    
-    // Text field
-    [self.textField_searchInput setBackgroundColor: [UIColor clearColor]];
-
-    self.textField_searchInput.tintColor = [UIColor whiteColor];
-    [self.textField_searchInput setTextColor: [UIColor whiteColor]];
-    
-    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 15, 20)];
-    self.textField_searchInput.leftView = paddingView;
-    self.textField_searchInput.leftViewMode = UITextFieldViewModeAlways;
-    
-    self.textField_searchInput.layer.borderColor = [[UIColor colorWithWhite:1.0f alpha:0.5f] CGColor];
-    self.textField_searchInput.layer.cornerRadius = 5.0f;
-    self.textField_searchInput.layer.borderWidth = 1.5f;
-//    [self.tableView_menu setSeparatorColor: [UIColor clearColor]];
-}
-
-- (void)setUpDataSources
-{
-    // Lists feeds in the database
-    userFeedDataSource = [[EZRMenuUserFeedDataSource alloc] init];
-    
-    // Lists feeds returned by the search API
-    searchFeedDataSource = [[EZRMenuSearchFeedDataSource alloc] init];
 }
 
 - (void)menuStateEventOccurred:(NSNotification *)notification {
@@ -153,15 +94,15 @@
             break;
         case MFSideMenuStateEventMenuWillClose:
             // the menu will close
-            [self.textField_searchInput endEditing:YES];
+            [self.searchBar endEditing:YES];
             break;
         case MFSideMenuStateEventMenuDidClose:
-            weakSelf.textField_searchInput.text = @"";
+            self.searchBar.text = @"";
             [weakSelf.tableView_menu setEditing:NO animated:YES];
             weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
             
             // Reset to the users feeds
-            weakSelf.tableView_menu.dataSource = userFeedDataSource;
+            weakSelf.tableView_menu.dataSource = self.userFeedDataSource;
             [weakSelf.tableView_menu reloadData];
             break;
     }
@@ -172,91 +113,82 @@
 /**
  * Update the feeds in the menu when a user begins or ends a search
  */
-- (void)searchFieldDidChange
-{
-    // If the searchInput has text
-    if (self.textField_searchInput.text && self.textField_searchInput.text.length > 0) {
-        
-        // Create empty searchFeed set
-        NSMutableSet *searchedFeeds = [[NSMutableSet alloc] init];
-        
-        // If the user is typing a url
-        if ([self.textField_searchInput.text hasPrefix:@"http"]) {
-            // Create a dictionary containing the new Feed url
-            NSDictionary *customFeed = @{@"url" : self.textField_searchInput.text};
-            
-            // Add custom feed to the searchFeeds
-            [searchedFeeds addObject:customFeed];
-            
-            // Update the searchFeed datasource
-            [searchFeedDataSource updateWithFeeds:searchedFeeds];
-            [self updateSearchFeedDataSource];
-        } else {
-            // Return feeds from the API similar to user input
-            // Add these feeds to the searchFeed datasource
-
-            [Feed requestFeedsByName:self.textField_searchInput.text
-                             success:^(id responseData, NSInteger httpStatus){
-                                NSDictionary *feeds = responseData[@"feeds"];
-                                 
-                                // Don't show feed the user has already added
-                                for ( NSDictionary *feed in feeds){
-                                    if ([self.currentUser hasFeedWithURL:feed[@"url"]] == NO) {
-                                        [searchedFeeds addObject:feed];
-                                    }
-                                }
-                                 
-                                // Update the searchFeed datasource
-                                [searchFeedDataSource updateWithFeeds:searchedFeeds];
-                                [self updateSearchFeedDataSource];
-                             }
-                             failure:^(id responseData, NSInteger httpStatus, NSError *error){
-                                 NSLog(@"Error searching for feeds");
-                             }];
-        }
-    } else {
-        // Switch to the userFeeds datasource
-        [self updateUserFeedDataSource];
-    }
-}
-
-/**
- * Switch to and reload the menu from the searchFeedDataSource
- */
-- (void)updateSearchFeedDataSource
-{
-    // Switch to the searchFeed datasource
-    self.tableView_menu.dataSource = searchFeedDataSource;
-    
-    // Reload the table with new searchFeeds
-    [self.tableView_menu reloadData];
-}
-
-/**
- * Switch to and reload the menu from the userFeedDataSource
- */
-- (void)updateUserFeedDataSource
-{
-    // Clear the input field and dismiss the keyboard
-    self.textField_searchInput.text = @"";
-    [self.textField_searchInput endEditing:YES];
-    
-    // Switch to the searchFeed datasource
-    self.tableView_menu.dataSource = userFeedDataSource;
-    
-    // Reload the table with new searchFeeds
-    [self.tableView_menu reloadData];
-}
-
-
-#pragma mark - Count Methods
-/**
- * Determines the number of sections in the table view
- */
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
+//- (void)searchFieldDidChange
+//{
+//    // If the searchInput has text
+//    if (self.textField_searchInput.text && self.textField_searchInput.text.length > 0) {
+//        
+//        // Create empty searchFeed set
+//        NSMutableSet *searchedFeeds = [[NSMutableSet alloc] init];
+//        
+//        // If the user is typing a url
+//        if ([self.textField_searchInput.text hasPrefix:@"http"]) {
+//            // Create a dictionary containing the new Feed url
+//            NSDictionary *customFeed = @{@"url" : self.textField_searchInput.text};
+//            
+//            // Add custom feed to the searchFeeds
+//            [searchedFeeds addObject:customFeed];
+//            
+//            // Update the searchFeed datasource
+//            [searchFeedDataSource updateWithFeeds:searchedFeeds];
+//            [self updateSearchFeedDataSource];
+//        } else {
+//            // Return feeds from the API similar to user input
+//            // Add these feeds to the searchFeed datasource
+//
+//            [Feed requestFeedsByName:self.textField_searchInput.text
+//                             success:^(id responseData, NSInteger httpStatus){
+//                                NSDictionary *feeds = responseData[@"feeds"];
+//                                 
+//                                // Don't show feed the user has already added
+//                                for ( NSDictionary *feed in feeds){
+//                                    if ([self.currentUser hasFeedWithURL:feed[@"url"]] == NO) {
+//                                        [searchedFeeds addObject:feed];
+//                                    }
+//                                }
+//                                 
+//                                // Update the searchFeed datasource
+//                                [searchFeedDataSource updateWithFeeds:searchedFeeds];
+//                                [self updateSearchFeedDataSource];
+//                             }
+//                             failure:^(id responseData, NSInteger httpStatus, NSError *error){
+//                                 NSLog(@"Error searching for feeds");
+//                             }];
+//        }
+//    } else {
+//        // Switch to the userFeeds datasource
+//        [self updateUserFeedDataSource];
+//    }
+//}
+//
+///**
+// * Switch to and reload the menu from the searchFeedDataSource
+// */
+//- (void)updateSearchFeedDataSource
+//{
+//    // Switch to the searchFeed datasource
+//    self.tableView_menu.dataSource = searchFeedDataSource;
+//    
+//    // Reload the table with new searchFeeds
+//    [self.tableView_menu reloadData];
+//}
+//
+///**
+// * Switch to and reload the menu from the userFeedDataSource
+// */
+//- (void)updateUserFeedDataSource
+//{
+//    // Clear the input field and dismiss the keyboard
+//    self.textField_searchInput.text = @"";
+//    [self.textField_searchInput endEditing:YES];
+//    
+//    // Switch to the searchFeed datasource
+//    self.tableView_menu.dataSource = userFeedDataSource;
+//    
+//    // Reload the table with new searchFeeds
+//    [self.tableView_menu reloadData];
+//}
+//
 
 #pragma mark - UITableViewCell IBAction Methods
 
@@ -290,7 +222,7 @@
     Feed *newFeed = [Feed createOrUpdateFirstFromAPIData:cell.feedData];
     
     // Add the feed to the currentUsers feeds
-    [self.currentUser addFeedsObject:newFeed];
+    [self.currentUserProxy.user addFeedsObject:newFeed];
     
     // Save the feed and feed items in the database
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];

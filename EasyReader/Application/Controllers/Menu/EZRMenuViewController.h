@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CSBaseViewController.h"
+#import "EZRSearchBar.h"
 
 @class User;
 
@@ -20,10 +21,10 @@
 #pragma mark - IBOutlet Properties
 
 /// The feeds table view
-@property (nonatomic, retain) IBOutlet UITableView *tableView_menu;
+@property (nonatomic, weak) IBOutlet UITableView *tableView_menu;
 
-/// The search input text field
-@property (strong, nonatomic) IBOutlet UITextField *textField_searchInput;
+/// The search input bar
+@property (nonatomic, weak) IBOutlet EZRSearchBar *searchBar;
 
 
 #pragma mark - Properties
@@ -33,9 +34,6 @@
 
 /// The current sorted array of feeds
 @property (nonatomic, readonly) NSArray *sortedFeeds;
-
-/// The current user
-@property (nonatomic, retain) User *currentUser;
 
 
 #pragma mark - IBActions

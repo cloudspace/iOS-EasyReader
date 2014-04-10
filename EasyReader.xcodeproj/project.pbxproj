@@ -64,6 +64,22 @@
 		9D010EE718F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
 		9D010EE818F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
 		9D010EE918F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
+		9D010EEC18F6D39A001999EE /* EZRMenuSearchBarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010EEB18F6D39A001999EE /* EZRMenuSearchBarDelegate.m */; };
+		9D010EED18F6D39A001999EE /* EZRMenuSearchBarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010EEB18F6D39A001999EE /* EZRMenuSearchBarDelegate.m */; };
+		9D010EEE18F6D39A001999EE /* EZRMenuSearchBarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010EEB18F6D39A001999EE /* EZRMenuSearchBarDelegate.m */; };
+		9D010EEF18F6D39A001999EE /* EZRMenuSearchBarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010EEB18F6D39A001999EE /* EZRMenuSearchBarDelegate.m */; };
+		9D010EFE18F70454001999EE /* EZRCurrentUserProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010EFD18F70454001999EE /* EZRCurrentUserProxy.m */; };
+		9D010EFF18F70454001999EE /* EZRCurrentUserProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010EFD18F70454001999EE /* EZRCurrentUserProxy.m */; };
+		9D010F0018F70454001999EE /* EZRCurrentUserProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010EFD18F70454001999EE /* EZRCurrentUserProxy.m */; };
+		9D010F0118F70454001999EE /* EZRCurrentUserProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010EFD18F70454001999EE /* EZRCurrentUserProxy.m */; };
+		9D010F0418F71E5C001999EE /* EZRSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010F0318F71E5C001999EE /* EZRSearchBar.m */; };
+		9D010F0518F71E5C001999EE /* EZRSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010F0318F71E5C001999EE /* EZRSearchBar.m */; };
+		9D010F0618F71E5C001999EE /* EZRSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010F0318F71E5C001999EE /* EZRSearchBar.m */; };
+		9D010F0718F71E5C001999EE /* EZRSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010F0318F71E5C001999EE /* EZRSearchBar.m */; };
+		9D010F0A18F72F0B001999EE /* NSSet+CSSortingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010F0918F72F0B001999EE /* NSSet+CSSortingAdditions.m */; };
+		9D010F0B18F72F0B001999EE /* NSSet+CSSortingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010F0918F72F0B001999EE /* NSSet+CSSortingAdditions.m */; };
+		9D010F0C18F72F0B001999EE /* NSSet+CSSortingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010F0918F72F0B001999EE /* NSSet+CSSortingAdditions.m */; };
+		9D010F0D18F72F0B001999EE /* NSSet+CSSortingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010F0918F72F0B001999EE /* NSSet+CSSortingAdditions.m */; };
 		9D096C3318DCE9D40043423B /* EZRMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AE18DB8F69004440C3 /* EZRMenuSearchFeedDataSource.m */; };
 		9D096C3418DCE9D50043423B /* EZRMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AE18DB8F69004440C3 /* EZRMenuSearchFeedDataSource.m */; };
 		9D096C3518DCE9D50043423B /* EZRMenuSearchFeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7987AE18DB8F69004440C3 /* EZRMenuSearchFeedDataSource.m */; };
@@ -329,6 +345,14 @@
 		8ECC8F8D18E4803E006EADD1 /* libPods-OCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OCMock.a"; path = "Pods/build/Release-iphoneos/libPods-OCMock.a"; sourceTree = "<group>"; };
 		9D010EE418F4AC9E001999EE /* move_to_64bit_ids.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = move_to_64bit_ids.xcdatamodel; sourceTree = "<group>"; };
 		9D010EE518F58BA2001999EE /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		9D010EEA18F6D39A001999EE /* EZRMenuSearchBarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EZRMenuSearchBarDelegate.h; path = Menu/EZRMenuSearchBarDelegate.h; sourceTree = "<group>"; };
+		9D010EEB18F6D39A001999EE /* EZRMenuSearchBarDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRMenuSearchBarDelegate.m; path = Menu/EZRMenuSearchBarDelegate.m; sourceTree = "<group>"; };
+		9D010EFC18F70454001999EE /* EZRCurrentUserProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRCurrentUserProxy.h; sourceTree = "<group>"; };
+		9D010EFD18F70454001999EE /* EZRCurrentUserProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRCurrentUserProxy.m; sourceTree = "<group>"; };
+		9D010F0218F71E5C001999EE /* EZRSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EZRSearchBar.h; path = Controls/EZRSearchBar.h; sourceTree = "<group>"; };
+		9D010F0318F71E5C001999EE /* EZRSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRSearchBar.m; path = Controls/EZRSearchBar.m; sourceTree = "<group>"; };
+		9D010F0818F72F0B001999EE /* NSSet+CSSortingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+CSSortingAdditions.h"; sourceTree = "<group>"; };
+		9D010F0918F72F0B001999EE /* NSSet+CSSortingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+CSSortingAdditions.m"; sourceTree = "<group>"; };
 		9D16D32618DB57D0001E9C38 /* EZRRegisterRoutesService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRRegisterRoutesService.h; sourceTree = "<group>"; };
 		9D16D32718DB57D0001E9C38 /* EZRRegisterRoutesService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRRegisterRoutesService.m; sourceTree = "<group>"; };
 		9D16D33618DB75D9001E9C38 /* EZRCoreDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRCoreDataService.h; sourceTree = "<group>"; };
@@ -552,8 +576,12 @@
 		2751F4D118DA02C100339C96 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				9D010F0818F72F0B001999EE /* NSSet+CSSortingAdditions.h */,
+				9D010F0918F72F0B001999EE /* NSSet+CSSortingAdditions.m */,
 				9D5ACFBD18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.h */,
 				9D5ACFBE18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m */,
+				9D010EFC18F70454001999EE /* EZRCurrentUserProxy.h */,
+				9D010EFD18F70454001999EE /* EZRCurrentUserProxy.m */,
 				2751F4D218DA02C100339C96 /* NSObject+CSNilAdditions.h */,
 				2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */,
 				2751F4D418DA02C100339C96 /* NSObject+CSReflectionAdditions.h */,
@@ -585,6 +613,8 @@
 				8E685AA618DC733B00309270 /* CSCollectionPageControl.m */,
 				9D6610D418F303CD0067EF5E /* EZRNestableWebView.h */,
 				9D6610D518F303CD0067EF5E /* EZRNestableWebView.m */,
+				9D010F0218F71E5C001999EE /* EZRSearchBar.h */,
+				9D010F0318F71E5C001999EE /* EZRSearchBar.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -662,6 +692,8 @@
 				0D79879F18DB6ABC004440C3 /* MenuCells */,
 				9D42976E170E164D00E73BFE /* EZRMenuViewController.h */,
 				9D42976F170E164D00E73BFE /* EZRMenuViewController.m */,
+				9D010EEA18F6D39A001999EE /* EZRMenuSearchBarDelegate.h */,
+				9D010EEB18F6D39A001999EE /* EZRMenuSearchBarDelegate.m */,
 				9D6610E018F335A30067EF5E /* EZRMenuTableViewDelegate.h */,
 				9D6610E118F335A30067EF5E /* EZRMenuTableViewDelegate.m */,
 			);
@@ -1273,6 +1305,7 @@
 				9DA831F018F2FB6000D93529 /* CSNestableScrollView.m in Sources */,
 				9D6610D818F303CD0067EF5E /* EZRNestableWebView.m in Sources */,
 				9D79270E18DA1D0300E1D3E1 /* EZRFeedItemCollectionView.m in Sources */,
+				9D010EEE18F6D39A001999EE /* EZRMenuSearchBarDelegate.m in Sources */,
 				9D79270F18DA1D0300E1D3E1 /* NSObject+CSReflectionAdditions.m in Sources */,
 				9D79271018DA1D0300E1D3E1 /* CSRemoteObject.m in Sources */,
 				9D79271118DA1D0300E1D3E1 /* EZRFeedItemCell.m in Sources */,
@@ -1280,14 +1313,17 @@
 				9D79271218DA1D0300E1D3E1 /* EZRRootViewController.m in Sources */,
 				9D79271318DA1D0300E1D3E1 /* FeedItem.m in Sources */,
 				9D79271418DA1D0300E1D3E1 /* User.m in Sources */,
+				9D010F0618F71E5C001999EE /* EZRSearchBar.m in Sources */,
 				9D096C3718DCE9D70043423B /* EZRMenuUserFeedDataSource.m in Sources */,
 				9D639E6C18E0934800350B5F /* EZRMenuFeedCell.m in Sources */,
 				9D639E7218E0A4E000350B5F /* APIClient.m in Sources */,
 				9D38DDD118EB07A400C67022 /* CSControllerAbstraction.m in Sources */,
+				9D010F0018F70454001999EE /* EZRCurrentUserProxy.m in Sources */,
 				0D9A835A18E0AA4300D8376E /* EZRSearchFeedCell.m in Sources */,
 				9D5ACFC118E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
 				9D096C3418DCE9D50043423B /* EZRMenuSearchFeedDataSource.m in Sources */,
 				9D639E7E18E0A53100350B5F /* APIMockResponse.m in Sources */,
+				9D010F0C18F72F0B001999EE /* NSSet+CSSortingAdditions.m in Sources */,
 				9D79271718DA1D0300E1D3E1 /* EZRMenuViewController.m in Sources */,
 				9D79271918DA1D0300E1D3E1 /* Easy Reader.xcdatamodeld in Sources */,
 				9D16D32918DB57D0001E9C38 /* EZRRegisterRoutesService.m in Sources */,
@@ -1327,6 +1363,7 @@
 				9DA831F118F2FB6000D93529 /* CSNestableScrollView.m in Sources */,
 				9D6610D918F303CD0067EF5E /* EZRNestableWebView.m in Sources */,
 				9D38DDE418EB090500C67022 /* EZRHomePageControlDelegate.m in Sources */,
+				9D010EEF18F6D39A001999EE /* EZRMenuSearchBarDelegate.m in Sources */,
 				9D79275518DA1D3800E1D3E1 /* EZRFeedItemCell.m in Sources */,
 				9D38DDF018EB0A7600C67022 /* EZRHomeScrollViewDelegate.m in Sources */,
 				8E685AA918DC733B00309270 /* CSCollectionPageControl.m in Sources */,
@@ -1334,14 +1371,17 @@
 				9D79275718DA1D3800E1D3E1 /* FeedItem.m in Sources */,
 				9D79275818DA1D3800E1D3E1 /* User.m in Sources */,
 				9D096C3818DCE9D80043423B /* EZRMenuUserFeedDataSource.m in Sources */,
+				9D010F0718F71E5C001999EE /* EZRSearchBar.m in Sources */,
 				9D639E7318E0A4E000350B5F /* APIClient.m in Sources */,
 				0D9A835818E0AA4000D8376E /* EZRMenuFeedCell.m in Sources */,
 				9D16D35018DBA9E9001E9C38 /* APIRouter.m in Sources */,
 				9D096C3518DCE9D50043423B /* EZRMenuSearchFeedDataSource.m in Sources */,
+				9D010F0118F70454001999EE /* EZRCurrentUserProxy.m in Sources */,
 				9D38DDD218EB07A400C67022 /* CSControllerAbstraction.m in Sources */,
 				9D5ACFC218E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
 				9D639E7F18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D79275B18DA1D3800E1D3E1 /* EZRMenuViewController.m in Sources */,
+				9D010F0D18F72F0B001999EE /* NSSet+CSSortingAdditions.m in Sources */,
 				9D639E6A18E08CED00350B5F /* EZRSearchFeedCell.m in Sources */,
 				9D79275D18DA1D3800E1D3E1 /* Easy Reader.xcdatamodeld in Sources */,
 				9D16D32A18DB57D0001E9C38 /* EZRRegisterRoutesService.m in Sources */,
@@ -1398,6 +1438,7 @@
 				9DA831EF18F2FB6000D93529 /* CSNestableScrollView.m in Sources */,
 				9D6610D718F303CD0067EF5E /* EZRNestableWebView.m in Sources */,
 				9D38DDE218EB090500C67022 /* EZRHomePageControlDelegate.m in Sources */,
+				9D010EED18F6D39A001999EE /* EZRMenuSearchBarDelegate.m in Sources */,
 				9D639E7118E0A4E000350B5F /* APIClient.m in Sources */,
 				9D38DDEE18EB0A7600C67022 /* EZRHomeScrollViewDelegate.m in Sources */,
 				9D9CBAD018DCC68A00532F8C /* EZRFeedItemCell.m in Sources */,
@@ -1405,14 +1446,17 @@
 				9D9CBAD218DCC68A00532F8C /* FeedItem.m in Sources */,
 				9D9CBAD318DCC68A00532F8C /* User.m in Sources */,
 				9D639E7718E0A52300350B5F /* APIMockRequest.m in Sources */,
+				9D010F0518F71E5C001999EE /* EZRSearchBar.m in Sources */,
 				9D9CBAD418DCC68A00532F8C /* APIRouter.m in Sources */,
 				0D9A835918E0AA4300D8376E /* EZRSearchFeedCell.m in Sources */,
 				0D9A835618E0AA3F00D8376E /* EZRMenuFeedCell.m in Sources */,
 				9D096C3318DCE9D40043423B /* EZRMenuSearchFeedDataSource.m in Sources */,
+				9D010EFF18F70454001999EE /* EZRCurrentUserProxy.m in Sources */,
 				9D38DDD018EB07A400C67022 /* CSControllerAbstraction.m in Sources */,
 				9D5ACFC018E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
 				9D9CBAD718DCC68A00532F8C /* EZRMenuViewController.m in Sources */,
 				9D9CBAD918DCC68A00532F8C /* Easy Reader.xcdatamodeld in Sources */,
+				9D010F0B18F72F0B001999EE /* NSSet+CSSortingAdditions.m in Sources */,
 				9D9CBADA18DCC68A00532F8C /* EZRRegisterRoutesService.m in Sources */,
 				9D9CBADC18DCC68A00532F8C /* NSObject+CSNilAdditions.m in Sources */,
 				9D9CBADD18DCC68A00532F8C /* EZRCoreDataService.m in Sources */,
@@ -1452,6 +1496,7 @@
 				9DA831EE18F2FB6000D93529 /* CSNestableScrollView.m in Sources */,
 				9D6610D618F303CD0067EF5E /* EZRNestableWebView.m in Sources */,
 				9D38DDE118EB090500C67022 /* EZRHomePageControlDelegate.m in Sources */,
+				9D010EEC18F6D39A001999EE /* EZRMenuSearchBarDelegate.m in Sources */,
 				8E7F81F018D0BF8500BC50C2 /* CSRemoteObject.m in Sources */,
 				9D38DDED18EB0A7600C67022 /* EZRHomeScrollViewDelegate.m in Sources */,
 				2751F4E318DA0D3000339C96 /* EZRFeedItemCell.m in Sources */,
@@ -1459,14 +1504,17 @@
 				9D8C6C5D170CA12500B18012 /* EZRRootViewController.m in Sources */,
 				0DE51FF418CF911000454E51 /* FeedItem.m in Sources */,
 				0DE51FF518CF911000454E51 /* User.m in Sources */,
+				9D010F0418F71E5C001999EE /* EZRSearchBar.m in Sources */,
 				9D639E7018E0A4E000350B5F /* APIClient.m in Sources */,
 				0D7987A218DB6AE4004440C3 /* EZRMenuFeedCell.m in Sources */,
 				0D7987B218DB8F69004440C3 /* EZRMenuUserFeedDataSource.m in Sources */,
 				9D639E7C18E0A53100350B5F /* APIMockResponse.m in Sources */,
+				9D010EFE18F70454001999EE /* EZRCurrentUserProxy.m in Sources */,
 				9D38DDCF18EB07A400C67022 /* CSControllerAbstraction.m in Sources */,
 				9D5ACFBF18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
 				9D429770170E164D00E73BFE /* EZRMenuViewController.m in Sources */,
 				9DF4BB1F17130E99001DCC88 /* Easy Reader.xcdatamodeld in Sources */,
+				9D010F0A18F72F0B001999EE /* NSSet+CSSortingAdditions.m in Sources */,
 				9D16D32818DB57D0001E9C38 /* EZRRegisterRoutesService.m in Sources */,
 				0D7987B118DB8F69004440C3 /* EZRMenuSearchFeedDataSource.m in Sources */,
 				2751F4D618DA02C100339C96 /* NSObject+CSNilAdditions.m in Sources */,
