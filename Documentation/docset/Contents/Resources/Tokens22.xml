@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/EZRFeedImageService.html">
+	<File path="Classes/EZRHomePageControlDataSource.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/EZRFeedImageService</TokenIdentifier>
-			<Abstract type="html">A service to process and cache feed images</Abstract>
-			<DeclaredIn>EZRFeedImageService.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRHomePageControlDataSource</TokenIdentifier>
+			<Abstract type="html">A data source for the page control on the home view controller</Abstract>
+			<DeclaredIn>EZRHomePageControlDataSource.h</DeclaredIn>
             
 			
 			<NodeRef refid="22"/>
@@ -13,71 +13,19 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/EZRFeedImageService/shared</TokenIdentifier>
-			<Abstract type="html">Creates or returns a shared EZRFeedImageService object</Abstract>
-			<DeclaredIn>EZRFeedImageService.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomePageControlDataSource/initWithController:</TokenIdentifier>
+			<Abstract type="html">Initializes a new page control data source for the given home view controller instance</Abstract>
+			<DeclaredIn>EZRHomePageControlDataSource.h</DeclaredIn>
 			
-			<Declaration>+ (EZRFeedImageService *)shared</Declaration>
-			
-			
-			<Anchor>//api/name/shared</Anchor>
-            <NodeRef refid="22"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedImageService/prefetchImagesForFeedItems:</TokenIdentifier>
-			<Abstract type="html">Prefetches all the images for the given feed items</Abstract>
-			<DeclaredIn>EZRFeedImageService.h</DeclaredIn>
-			
-			<Declaration>- (void)prefetchImagesForFeedItems:(NSArray *)feedItems</Declaration>
+			<Declaration>- (instancetype)initWithController:(EZRHomeViewController *)homeController</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>feedItems</Name>
-					<Abstract type="html">The array of feed items to preFetch images for</Abstract>
+					<Name>homeController</Name>
+					<Abstract type="html">The home view controller</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/prefetchImagesForFeedItems:</Anchor>
-            <NodeRef refid="22"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedImageService/fetchImageAtURLString:</TokenIdentifier>
-			<Abstract type="html">Prefetches and caches an image and it&apos;s blurred equivalent for use as background images</Abstract>
-			<DeclaredIn>EZRFeedImageService.h</DeclaredIn>
-			
-			<Declaration>- (void)fetchImageAtURLString:(NSString *)urlString</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>urlString</Name>
-					<Abstract type="html">the URL of the image to process</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/fetchImageAtURLString:</Anchor>
-            <NodeRef refid="22"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedImageService/fetchImageAtURLString:success:failure:</TokenIdentifier>
-			<Abstract type="html">Prefetches and caches an image and it&apos;s blurred equivalent for use as background images</Abstract>
-			<DeclaredIn>EZRFeedImageService.h</DeclaredIn>
-			
-			<Declaration>- (void)fetchImageAtURLString:(NSString *)urlString success:(void ( ^ ) ( UIImage *image , UIImage *blurredImage ))success failure:(void ( ^ ) ( ))failure</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>urlString</Name>
-					<Abstract type="html">the URL of the image to process</Abstract>
-				</Parameter><Parameter>
-					<Name>success</Name>
-					<Abstract type="html">A block that gets executed after successful fetching and processing</Abstract>
-				</Parameter><Parameter>
-					<Name>failure</Name>
-					<Abstract type="html">A block that gets executed after image fetching failure</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/fetchImageAtURLString:success:failure:</Anchor>
+			<Anchor>//api/name/initWithController:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		

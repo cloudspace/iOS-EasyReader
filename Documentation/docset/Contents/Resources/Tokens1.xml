@@ -67,6 +67,26 @@
             <NodeRef refid="1"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/APIClient/cancelOperationsForRoute:parameters:</TokenIdentifier>
+			<Abstract type="html">Cancels all pending requests to given route</Abstract>
+			<DeclaredIn>APIClient.h</DeclaredIn>
+			
+			<Declaration>- (void)cancelOperationsForRoute:(NSString *)routeName parameters:(NSDictionary *)parameters</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>routeName</Name>
+					<Abstract type="html">The route name to cancel requests by</Abstract>
+				</Parameter><Parameter>
+					<Name>parameters</Name>
+					<Abstract type="html">The params to used to build the url to be cancelled</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cancelOperationsForRoute:parameters:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

@@ -7,22 +7,18 @@
 //
 
 #import "EZRMenuUserFeedDataSource.h"
-
-#import "UIColor+EZRSharedColorAdditions.h"
-
+#import "EZRCurrentUserProxy.h"
 #import "EZRMenuFeedCell.h"
 
 #import "Feed.h"
 #import "FeedItem.h"
 #import "User.h"
 
-#import "EZRMenuViewController.h"
+#import "UIColor+EZRSharedColorAdditions.h"
+#import "NSSet+CSSortingAdditions.h"
 
-#import "EZRCurrentUserProxy.h"
 #import <Block-KVO/MTKObserving.h>
 
-
-#import "NSSet+CSSortingAdditions.h"
 
 @interface EZRMenuUserFeedDataSource ()
 
@@ -65,22 +61,6 @@
 }
 
 /**
- * Height of the header in each section
- */
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 0;
-}
-
-/**
- * Height of all the cells
- */
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 35;
-}
-
-/**
  * Generates a cell for a given index path
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -97,26 +77,6 @@
     return cell;
 }
 
-///**
-// * Set the feed for a user cell
-// */
-//- (void)setFeed:(Feed *)feed forUserFeedCell:(EZRMenuFeedCell *)cell
-//{
-//    cell.feed = feed;
-//    
-//    [self setSelectedBackgroundForCell:cell];
-//}
-//
-///**
-// * Set the selectedBackgroundView for a cell
-// */
-//- (void)setSelectedBackgroundForCell:(UITableViewCell *)cell
-//{
-//    UIView *selectedBackgroundView = [[UIView alloc] init];
-//    [selectedBackgroundView setBackgroundColor: [UIColor EZR_charcoal]];
-//    cell.selectedBackgroundView = selectedBackgroundView;
-//}
-
 /**
  * Commits each editing action
  */
@@ -131,16 +91,5 @@
     }
 }
 
-/**
- * Determines the editing style for each row
- */
-- (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ( indexPath.row == [sortedFeeds count] ) {
-        return UITableViewCellEditingStyleInsert;
-    } else {
-        return UITableViewCellEditingStyleDelete;
-    }
-}
 
 @end

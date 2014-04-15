@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "EZRFeedItemCell.h"
+#import "EZRFeedItemCollectionViewCell.h"
 #import "UIColor+EZRSharedColorAdditions.h"
 #import "UIImageView+EZRFeedImageAdditions.h"
 
 typedef void (^AFImageBlock)(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image);
 
-@implementation EZRFeedItemCell
+@implementation EZRFeedItemCollectionViewCell
 
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -22,8 +22,6 @@ typedef void (^AFImageBlock)(NSURLRequest *request, NSHTTPURLResponse *response,
     if (self) {
         UIColor *transGray =[UIColor EZR_charcoal];
         [self setBackgroundColor:[transGray colorWithAlphaComponent:1.0]];
-//        [self.layer setCornerRadius:5.0f];
-//        self.clipsToBounds = YES;
 
     }
     

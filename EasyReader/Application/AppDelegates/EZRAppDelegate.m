@@ -7,13 +7,15 @@
 //
 
 #import "EZRAppDelegate.h"
+#import "EZRRootViewController.h"
 
+// Services
 #import "EZRRegisterRoutesService.h"
 #import "EZRCoreDataService.h"
 #import "EZRFeedUpdateService.h"
 #import "EZRApplicationStyleService.h"
+#import "EZRTestFlightService.h"
 
-#import "EZRRootViewController.h"
 #import "User.h"
 
 
@@ -29,6 +31,7 @@
  */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Skips the rest of the launch process if we're testing
     #ifdef DEBUG
         NSDictionary *environment = [NSProcessInfo processInfo].environment;
         NSString *injectBundlePath = environment[@"XCInjectBundle"];
@@ -38,7 +41,14 @@
             return YES;
         }
     #endif
-        
+    
+    // Conditionally load testing services
+    #ifdef STAGING
+    
+    [self registerService:[EZRTestFlightService shared]];
+    
+    #endif
+    
     [self registerService:[EZRCoreDataService shared]];
     [self registerService:[EZRRegisterRoutesService shared]];
     [self registerService:[EZRApplicationStyleService shared]];
@@ -70,8 +80,6 @@
                                                     rightMenuViewController:nil];
     
     [container.shadow setEnabled:YES];
-  //  [container setMenuSlideAnimationEnabled:NO];
-//
     [container.shadow setRadius:5.0f];
     [container.shadow setOpacity:0.75f];
     [container setMenuSlideAnimationFactor:3.0f];

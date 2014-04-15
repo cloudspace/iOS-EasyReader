@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSRemoteObject.html">
+	<File path="Classes/EZRFeedImageService.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSRemoteObject</TokenIdentifier>
-			<Abstract type="html">A base for NSManagedObjects that represent objects in a remote API object</Abstract>
-			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRFeedImageService</TokenIdentifier>
+			<Abstract type="html">A service to process and cache feed images</Abstract>
+			<DeclaredIn>EZRFeedImageService.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -13,67 +13,71 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/CSRemoteObject/createOrUpdateFirstFromAPIData:</TokenIdentifier>
-			<Abstract type="html">Creates or updates an object base on API data</Abstract>
-			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/EZRFeedImageService/shared</TokenIdentifier>
+			<Abstract type="html">Creates or returns a shared EZRFeedImageService object</Abstract>
+			<DeclaredIn>EZRFeedImageService.h</DeclaredIn>
 			
-			<Declaration>+ (id)createOrUpdateFirstFromAPIData:(NSDictionary *)remoteObjectData</Declaration>
+			<Declaration>+ (EZRFeedImageService *)shared</Declaration>
+			
+			
+			<Anchor>//api/name/shared</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedImageService/prefetchImagesForFeedItems:</TokenIdentifier>
+			<Abstract type="html">Prefetches all the images for the given feed items</Abstract>
+			<DeclaredIn>EZRFeedImageService.h</DeclaredIn>
+			
+			<Declaration>- (void)prefetchImagesForFeedItems:(NSArray *)feedItems</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>remoteObjectData</Name>
-					<Abstract type="html">the api data to update/create based on</Abstract>
+					<Name>feedItems</Name>
+					<Abstract type="html">The array of feed items to preFetch images for</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/createOrUpdateFirstFromAPIData:</Anchor>
+			<Anchor>//api/name/prefetchImagesForFeedItems:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSRemoteObject/setClient:</TokenIdentifier>
-			<Abstract type="html">Returns a shared singleton API client for this object</Abstract>
-			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedImageService/fetchImageAtURLString:</TokenIdentifier>
+			<Abstract type="html">Prefetches and caches an image and it&apos;s blurred equivalent for use as background images</Abstract>
+			<DeclaredIn>EZRFeedImageService.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
+			<Declaration>- (void)fetchImageAtURLString:(NSString *)urlString</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>urlString</Name>
+					<Abstract type="html">the URL of the image to process</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/client</Anchor>
+			<Anchor>//api/name/fetchImageAtURLString:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSRemoteObject/client</TokenIdentifier>
-			<Abstract type="html">Returns a shared singleton API client for this object</Abstract>
-			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedImageService/fetchImageAtURLString:success:failure:</TokenIdentifier>
+			<Abstract type="html">Prefetches and caches an image and it&apos;s blurred equivalent for use as background images</Abstract>
+			<DeclaredIn>EZRFeedImageService.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
+			<Declaration>- (void)fetchImageAtURLString:(NSString *)urlString success:(void ( ^ ) ( UIImage *image , UIImage *blurredImage ))success failure:(void ( ^ ) ( ))failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>urlString</Name>
+					<Abstract type="html">the URL of the image to process</Abstract>
+				</Parameter><Parameter>
+					<Name>success</Name>
+					<Abstract type="html">A block that gets executed after successful fetching and processing</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">A block that gets executed after image fetching failure</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/client</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSRemoteObject/client</TokenIdentifier>
-			<Abstract type="html">Returns a shared singleton API client for this object</Abstract>
-			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) APIClient *client</Declaration>
-			
-			
-			<Anchor>//api/name/client</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/CSRemoteObject/client</TokenIdentifier>
-			<Abstract type="html">Returns a shared singleton API Client for this class</Abstract>
-			<DeclaredIn>CSRemoteObject.h</DeclaredIn>
-			
-			<Declaration>+ (APIClient *)client</Declaration>
-			
-			
-			<Anchor>//api/name/client</Anchor>
+			<Anchor>//api/name/fetchImageAtURLString:success:failure:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

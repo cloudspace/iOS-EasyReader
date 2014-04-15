@@ -28,10 +28,4 @@
     [self.imageView_icon setImageWithURL:[NSURL URLWithString:feed.icon] placeholderImage:[UIImage imageNamed:@"icon_rss"]];
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-
-}
-
 @end

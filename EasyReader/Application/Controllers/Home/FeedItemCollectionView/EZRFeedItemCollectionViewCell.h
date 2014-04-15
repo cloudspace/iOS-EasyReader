@@ -12,7 +12,7 @@
 /**
  * A feed item cell in the main easy reader collection view
  */
-@interface EZRFeedItemCell : UICollectionViewCell
+@interface EZRFeedItemCollectionViewCell : UICollectionViewCell
 
 
 #pragma mark - IBOutlets

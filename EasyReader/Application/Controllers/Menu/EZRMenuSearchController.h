@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class EZRMenuViewController;
-
 /**
  * Acts as the delegate object for the menu search bar
  */
-@interface EZRMenuSearchBarDelegate : NSObject <UISearchBarDelegate>
+@interface EZRMenuSearchController : NSObject <UISearchBarDelegate>
 
+/**
+ * Cancels a search, clears the search text, hides the keyboard
+ */
+- (void)cancelSearch;
 
 @end

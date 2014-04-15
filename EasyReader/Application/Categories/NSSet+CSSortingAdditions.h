@@ -8,13 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Additions to NSSet to allow sorting by attribute names
+ */
 @interface NSSet (CSSortingAdditions)
 
 /**
  * Sorts feeds alphabetically
  *
- * @param The set of feeds to sort
+ * @param attribute The first feed attribute to sort by
+ * @param ... Additional attributes to sort by (nil terminated)
  */
-- (NSArray *)sortedArrayByAttributes:(NSString *)attribute1,... NS_REQUIRES_NIL_TERMINATION;
+- (NSArray *)sortedArrayByAttributes:(NSString *)attribute,... NS_REQUIRES_NIL_TERMINATION;
 
 @end

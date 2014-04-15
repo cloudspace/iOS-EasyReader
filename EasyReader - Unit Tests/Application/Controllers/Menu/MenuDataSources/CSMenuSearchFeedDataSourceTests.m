@@ -12,7 +12,7 @@
 
 // Menu Cells
 #import "EZRSearchFeedCell.h"
-#import "EZRMenuAddFeedCell.h"
+#import "EZRMenuUserFeedCell.h"
 
 // Models
 #import "Feed.h"
@@ -23,7 +23,7 @@
 
 - (void)sortFeeds;
 - (void)setFeedData:(NSDictionary *)feedData forSearchFeedCell:(EZRSearchFeedCell *)cell;
-- (void)setFeedData:(NSDictionary *)feedData forCustomFeedCell:(EZRMenuAddFeedCell *)cell;
+- (void)setFeedData:(NSDictionary *)feedData forCustomFeedCell:(EZRMenuUserFeedCell *)cell;
 
 @end
 
@@ -94,7 +94,7 @@
 
 - (void)testSetFeedForCustomFeedCell
 {
-    EZRMenuAddFeedCell *cell = [[EZRMenuAddFeedCell alloc] init];
+    EZRMenuUserFeedCell *cell = [[EZRMenuUserFeedCell alloc] init];
     
     NSDictionary *feedData = @{@"url" : @"custom"};
     

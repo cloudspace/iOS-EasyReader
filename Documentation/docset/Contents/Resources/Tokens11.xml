@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSMenuSearchFeedDataSource.html">
+	<File path="Classes/EZRAppDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSMenuSearchFeedDataSource</TokenIdentifier>
-			<Abstract type="html">A UITableViewDataSource for custom and searched feeds returned by the API</Abstract>
-			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRAppDelegate</TokenIdentifier>
+			<Abstract type="html">The main delegate for the application</Abstract>
+			<DeclaredIn>EZRAppDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="11"/>
@@ -13,91 +13,38 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/setFeeds:</TokenIdentifier>
-			<Abstract type="html">Feeds used to populate the menu table</Abstract>
-			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRAppDelegate/setContainer:</TokenIdentifier>
+			<Abstract type="html">The side menu container controller</Abstract>
+			<DeclaredIn>EZRAppDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
+			<Declaration>@property (strong, nonatomic) MFSideMenuContainerViewController *container</Declaration>
 			
 			
-			<Anchor>//api/name/feeds</Anchor>
+			<Anchor>//api/name/container</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/feeds</TokenIdentifier>
-			<Abstract type="html">Feeds used to populate the menu table</Abstract>
-			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRAppDelegate/container</TokenIdentifier>
+			<Abstract type="html">The side menu container controller</Abstract>
+			<DeclaredIn>EZRAppDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
+			<Declaration>@property (strong, nonatomic) MFSideMenuContainerViewController *container</Declaration>
 			
 			
-			<Anchor>//api/name/feeds</Anchor>
+			<Anchor>//api/name/container</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSMenuSearchFeedDataSource/feeds</TokenIdentifier>
-			<Abstract type="html">Feeds used to populate the menu table</Abstract>
-			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRAppDelegate/container</TokenIdentifier>
+			<Abstract type="html">The side menu container controller</Abstract>
+			<DeclaredIn>EZRAppDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
-			
-			
-			<Anchor>//api/name/feeds</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/setSortedFeeds:</TokenIdentifier>
-			<Abstract type="html">The sorted array of feeds</Abstract>
-			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSArray *sortedFeeds</Declaration>
+			<Declaration>@property (strong, nonatomic) MFSideMenuContainerViewController *container</Declaration>
 			
 			
-			<Anchor>//api/name/sortedFeeds</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/sortedFeeds</TokenIdentifier>
-			<Abstract type="html">The sorted array of feeds</Abstract>
-			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSArray *sortedFeeds</Declaration>
-			
-			
-			<Anchor>//api/name/sortedFeeds</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSMenuSearchFeedDataSource/sortedFeeds</TokenIdentifier>
-			<Abstract type="html">The sorted array of feeds</Abstract>
-			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSArray *sortedFeeds</Declaration>
-			
-			
-			<Anchor>//api/name/sortedFeeds</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSMenuSearchFeedDataSource/updateWithFeeds:</TokenIdentifier>
-			<Abstract type="html">Updates the list of feeds used to populate the menu table</Abstract>
-			<DeclaredIn>CSMenuSearchFeedDataSource.h</DeclaredIn>
-			
-			<Declaration>- (void)updateWithFeeds:(NSMutableSet *)feeds</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>feeds</Name>
-					<Abstract type="html">The feeds to update the list with</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/updateWithFeeds:</Anchor>
+			<Anchor>//api/name/container</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		

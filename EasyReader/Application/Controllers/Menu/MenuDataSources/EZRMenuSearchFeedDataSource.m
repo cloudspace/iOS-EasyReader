@@ -11,7 +11,6 @@
 #import "UIColor+EZRSharedColorAdditions.h"
 
 #import "EZRSearchFeedCell.h"
-#import "EZRMenuAddFeedCell.h"
 
 @interface EZRMenuSearchFeedDataSource ()
 
@@ -49,39 +48,14 @@
 }
 
 /**
- * Height of the header in each section
- */
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 0;
-}
-
-/**
- * Height of all the cells
- */
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 44;
-}
-
-/**
  * Generates a cell for a given index path
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[sortedFeedData objectAtIndex:indexPath.row] objectForKey:@"feed_items"]) {
-        EZRSearchFeedCell *cell = (EZRSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
-        
-        cell.feedData = sortedFeedData[indexPath.row];
-        
-        return cell;
-    } else {
-        EZRMenuAddFeedCell *cell = (EZRMenuAddFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"CustomFeedCell"];
-        
-        cell.feedData = sortedFeedData[indexPath.row];
-        
-        return cell;
-    }
+    EZRSearchFeedCell *cell = (EZRSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
+    cell.feedData = sortedFeedData[indexPath.row];
+    
+    return cell;
 }
 
 @end

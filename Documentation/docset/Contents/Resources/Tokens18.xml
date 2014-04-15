@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSUserFeedCell.html">
+	<File path="Classes/EZRFeedItemUpdateService.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSUserFeedCell</TokenIdentifier>
-			<Abstract type="html">A UITableViewCell for Feeds in Core Data</Abstract>
-			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRFeedItemUpdateService</TokenIdentifier>
+			<Abstract type="html">A service that polls for feed item update every few minutes</Abstract>
+			<DeclaredIn>EZRFeedItemUpdateService.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
@@ -13,110 +13,14 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/setImageView_icon:</TokenIdentifier>
-			<Abstract type="html">The feed&apos;s icon</Abstract>
-			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemUpdateService/start</TokenIdentifier>
+			<Abstract type="html">Starts the feed update service</Abstract>
+			<DeclaredIn>EZRFeedItemUpdateService.h</DeclaredIn>
 			
-			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
-			
-			
-			<Anchor>//api/name/imageView_icon</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/imageView_icon</TokenIdentifier>
-			<Abstract type="html">The feed&apos;s icon</Abstract>
-			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
-			
-			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
+			<Declaration>- (void)start</Declaration>
 			
 			
-			<Anchor>//api/name/imageView_icon</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSUserFeedCell/imageView_icon</TokenIdentifier>
-			<Abstract type="html">The feed&apos;s icon</Abstract>
-			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
-			
-			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
-			
-			
-			<Anchor>//api/name/imageView_icon</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/setLabel_name:</TokenIdentifier>
-			<Abstract type="html">The feed&apos;s name</Abstract>
-			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
-			
-			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
-			
-			
-			<Anchor>//api/name/label_name</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/label_name</TokenIdentifier>
-			<Abstract type="html">The feed&apos;s name</Abstract>
-			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
-			
-			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
-			
-			
-			<Anchor>//api/name/label_name</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSUserFeedCell/label_name</TokenIdentifier>
-			<Abstract type="html">The feed&apos;s name</Abstract>
-			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
-			
-			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
-			
-			
-			<Anchor>//api/name/label_name</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/setFeed:</TokenIdentifier>
-			<Abstract type="html">The feed item this cell is based on</Abstract>
-			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) Feed *feed</Declaration>
-			
-			
-			<Anchor>//api/name/feed</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSUserFeedCell/feed</TokenIdentifier>
-			<Abstract type="html">The feed item this cell is based on</Abstract>
-			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) Feed *feed</Declaration>
-			
-			
-			<Anchor>//api/name/feed</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSUserFeedCell/feed</TokenIdentifier>
-			<Abstract type="html">The feed item this cell is based on</Abstract>
-			<DeclaredIn>CSUserFeedCell.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) Feed *feed</Declaration>
-			
-			
-			<Anchor>//api/name/feed</Anchor>
+			<Anchor>//api/name/start</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

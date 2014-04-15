@@ -19,7 +19,7 @@
 
 #import "UIColor+EZRSharedColorAdditions.h"
 
-#import "EZRFeedItemCell.h"
+#import "EZRFeedItemCollectionViewCell.h"
 #import "EZRFeedImageService.h"
 
 #import "EZRHomeCollectionViewDelegate.h"
@@ -30,13 +30,18 @@
 #import "EZRNestableWebView.h"
 #import "EZRHomeWebViewDelegate.h"
 
+#import "EZRCurrentFeedsService.h"
+
+
+#import "CSArrayCollectionViewDataSource.h"
+
+
 @interface EZRHomeViewController()
 
 @property User *currentUser;
 
 /// Feed items on user
 @property (nonatomic, strong) NSMutableSet *feedItems;
-
 
 
 @end
@@ -46,9 +51,6 @@
 {
     /// The collectionView delegate
     EZRHomeCollectionViewDelegate *collectionViewDelegate;
-    
-    /// The collectionView data source
-    EZRHomeCollectionViewDataSource *collectionViewDataSource;
     
     /// The scroll view delegate
     EZRHomeScrollViewDelegate *scrollViewDelegate;
@@ -62,6 +64,11 @@
     /// The delegate for the web view
     EZRHomeWebViewDelegate *webViewDelegate;
     
+    /// The data source for the collection view
+    CSArrayCollectionViewDataSource *collectionViewArrayDataSource;
+    
+    EZRCurrentFeedsService *currentFeedsService;
+    
     /// The flow layout for the collection view
     UICollectionViewFlowLayout *collectionViewLayout;
     
@@ -69,26 +76,17 @@
 
 }
 
-- (void)setCurrentFeedItem:(FeedItem *)currentFeedItem
+- (FeedItem *)currentFeedItem
 {
-    _currentFeedItem = currentFeedItem;
+    return self.collectionView_feedItems.currentFeedItem;
 }
+
 
 - (void)setCurrentPageIndex:(NSInteger)currentPageIndex
 {
     _currentPageIndex = currentPageIndex;
 }
 
-- (void)setFeedItems:(NSMutableSet *)feedItems
-{
-    _feedItems = feedItems;
-    
-    if (collectionViewDataSource)
-    {
-      collectionViewDataSource.feedItems = feedItems;
-      _sortedFeedItems = collectionViewDataSource.sortedFeedItems;
-    }
-}
 
 #pragma mark - UIViewController Methods
 
@@ -102,15 +100,15 @@
     self.currentUser = [User current];
     self.feedItems = [self.currentUser.feedItems mutableCopy];
     
+    currentFeedsService = [EZRCurrentFeedsService shared];
+
     [self setUpPageControl];
     [self setUpVerticalScrollView];
     [self setUpCollectionView];
     [self setUpWebView];
-    [self setupFeedsObserver];
     
-    if ([self.feedItems count] > 0) {
-      [self.collectionView_feedItems scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-    }
+    [self observeObject:currentFeedsService property:@"visibleFeedItems" withSelector:@selector(visibleFeedItemsDidChange:visibleFeeditems:)];
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -153,8 +151,6 @@
  */
 - (void) setUpPageControl
 {
-//    [self.pageControl_itemIndicator setBackgroundColor:[UIColor EZR_charcoal]];
-    
     pageControlDelegate    = [[EZRHomePageControlDelegate alloc] initWithController:self];
     pageControlDataSource = [[EZRHomePageControlDataSource alloc] initWithController:self];
     
@@ -168,9 +164,6 @@
 -(void)setUpVerticalScrollView
 {
     self.scrollView_vertical.pagingEnabled =YES;
-//    self.scrollView_vertical.canCancelContentTouches = NO;
-//    self.scrollView_vertical.delaysContentTouches = NO;
-    
     scrollViewDelegate = [[EZRHomeScrollViewDelegate alloc] initWithController:self];
     self.scrollView_vertical.delegate = scrollViewDelegate;
     [self layOutVerticalScrollView];
@@ -194,24 +187,16 @@
  */
 - (void)setUpCollectionView
 {
-    [self.collectionView_feedItems.layer setCornerRadius:5.0f];
-    self.collectionView_feedItems.clipsToBounds = YES;
-
-    collectionViewDataSource = [[EZRHomeCollectionViewDataSource alloc] initWithReusableCellIdentifier:@"feedItem"];
-    self.collectionView_feedItems.dataSource = collectionViewDataSource;
+    collectionViewArrayDataSource = [CSArrayCollectionViewDataSource dataSourceWithArray:currentFeedsService.feedItems
+                                     reusableCellIdentifier:@"feedItem"
+                                             configureBlock:^(UICollectionViewCell *cell, id item) {
+                                                 ((EZRFeedItemCollectionViewCell *)cell).feedItem = item;
+                                             }];
+    
+    self.collectionView_feedItems.dataSource = collectionViewArrayDataSource;
     
     collectionViewDelegate = [[EZRHomeCollectionViewDelegate alloc] initWithController:self];
     self.collectionView_feedItems.delegate = collectionViewDelegate;
-    
-    collectionViewDataSource.feedItems = self.feedItems;
-    _sortedFeedItems = collectionViewDataSource.sortedFeedItems;
-    
-    collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
-    collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    collectionViewLayout.minimumInteritemSpacing = 0;
-    collectionViewLayout.minimumLineSpacing = 0;
-    self.collectionView_feedItems.collectionViewLayout = collectionViewLayout;
-    
 }
 
 /**
@@ -233,106 +218,23 @@
 #pragma mark - Observations
 
 /**
- * Assigns observers for feeds
+ * Updates the data source when the feed items change
  */
-- (void) setupFeedsObserver
-{
-    [self observeRelationship:@keypath(self.currentUser.feeds)
-                  changeBlock:[self feedsDidChange]
-               insertionBlock:nil
-                 removalBlock:nil
-             replacementBlock:nil
-     ];
-}
-
-/**
- * Assigns observers for feedsItems when feeds array on current user changes
- */
-- (void (^)(EZRHomeViewController *, NSSet *, NSSet *)) feedsDidChange
-{
-    return ^void(__weak EZRHomeViewController *_controller, NSSet *old, NSSet *new) {
-        NSMutableArray *addedFeeds = [[new allObjects] mutableCopy];
-        NSMutableArray *removedFeeds = [[old allObjects] mutableCopy];
-        
-        [addedFeeds removeObjectsInArray:[old allObjects]];
-        [removedFeeds removeObjectsInArray:[new allObjects]];
-        
-        // Stop observing old feeds
-        for ( Feed *feed in removedFeeds ){
-            [feed removeAllObservations];
-        }
-        
-        for (FeedItem *item in _feedItems) {
-            if ([removedFeeds containsObject:item.feed]) {
-                [_feedItems removeObject:item];
-            }
-        }
-        
-        // Observe added feeds
-        for ( Feed *feed in addedFeeds ) {
-            [feed observeRelationship:@"feedItems"
-                          changeBlock:[self feedItemsDidChange]
-                       insertionBlock:nil
-                         removalBlock:nil
-                     replacementBlock:nil];
-            
-            [_feedItems addObjectsFromArray:[feed.feedItems sortedArrayUsingDescriptors:nil]];
-        }
-        
-        collectionViewDataSource.feedItems = _feedItems;
-        _sortedFeedItems = collectionViewDataSource.sortedFeedItems;
-        
-        [self.collectionView_feedItems reloadData];
-
-        if(self.currentFeedItem){
-            [self scrollToCurrentFeedItem];
-        }
-    };
-}
-
-/**
- * Called when feedItems array on observed feeds change, shows new item button on page control
- */
-- (void (^)(Feed *, NSSet *, NSSet *))feedItemsDidChange
-{
-    return ^void(Feed *feed, NSSet *old, NSSet *new) {
-        EZRHomeCollectionViewDataSource *dataSource = self.collectionView_feedItems.dataSource;
-        
-        if(new) {
-//            NSMutableArray *addedFeedItems = [[new allObjects] mutableCopy];
-//            NSMutableArray *removedFeedItems = [[old allObjects] mutableCopy];
-//            
-//            [addedFeedItems removeObjectsInArray:[old allObjects]];
-//            [removedFeedItems removeObjectsInArray:[new allObjects]];
-//            
-//            for( FeedItem *item in removedFeedItems ){
-//                [_feedItems removeObject:item];
-//            }
-//            
-//            for( FeedItem *item in addedFeedItems ){
-//                [_feedItems addObject:item];
-//            }
-            
-            _feedItems = [[[User current] feedItems] mutableCopy];
-            dataSource.feedItems = _feedItems;
-            _sortedFeedItems = dataSource.sortedFeedItems;
-            
-            [self.collectionView_feedItems reloadData];
-            
-            if (self.currentFeedItem)
-            {
-                [self scrollToCurrentFeedItem];
-            }
-
-            self.pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
-            [self.pageControl_itemIndicator setPageControllerPageAtIndex:self.currentPageIndex];
-            
-            if (_currentPageIndex == 0 && _currentFeedItem)
-            {
-                [self prefetchFirstImages];
-            }
-        }
-    };
+- (void) visibleFeedItemsDidChange:(EZRCurrentFeedsService *)currentFeedService visibleFeeditems:(NSArray *)visibleFeedItems {
+    collectionViewArrayDataSource.source = visibleFeedItems;
+    
+    [self.collectionView_feedItems reloadData];
+    
+    if(self.currentFeedItem){
+        [self scrollToCurrentFeedItem];
+    }
+    
+    self.pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
+    [self.pageControl_itemIndicator setPageControllerPageAtIndex:self.currentPageIndex];
+    
+//    if (_currentPageIndex == 0 && _currentFeedItem) {
+        [self prefetchFirstImages];
+//    }
 }
 
 
@@ -340,52 +242,22 @@
 
 // Receives left menu link click
 - (IBAction)buttonLeftMenu_touchUpInside_goToMenu:(id)sender {
-//    menu = [[UIActionSheet alloc] initWithTitle:@"My Feeds" delegate:nil cancelButtonTitle:@"cancel" destructiveButtonTitle:nil otherButtonTitles:nil];
-//    
-//    CGFloat height = CGRectGetHeight(self.view.frame)*0.9f;
-//    CGFloat width = CGRectGetWidth(self.view.frame)*0.9f;
-//    CGFloat y = CGRectGetHeight(self.view.frame)/2.0f - height/2.0f;
-//    CGFloat x = CGRectGetWidth(self.view.frame)/2.0f - width/2.0f;
-//    
-//
-//    
-////    UIView *view_menu = [[UIView alloc] init];
-////    
-////    //view_menu.layer.cornerRadius = 3.0;
-////    view_menu.backgroundColor = [UIColor whiteColor];
-////    view_menu.frame = CGRectMake(20, 20, 290, 400);
-//    //view_menu.clipsToBounds = YES;
-//
-//  //  [menu addSubview:view_menu];
-//    
-//    [menu showInView:self.view];
-//    
-//    menu.frame = CGRectMake(x, y, width, height);
-//    menu.bounds = CGRectMake(x, y, width, height);
-    
     [[self rootViewController] toggleLeftSideMenuCompletion:^{}];
 }
-
-//- (void)closeMenu
-//{
-//    if (menu) {
-//        [menu dismissWithClickedButtonIndex:0 animated:YES];
-//        menu = nil;
-//    }
-//}
 
 /**
  * Scroll to the currentFeedItem when the feedItems update
  */
 - (void)scrollToCurrentFeedItem
 {
-    NSUInteger index = [collectionViewDataSource.sortedFeedItems indexOfObject:_currentFeedItem];
+    
+    NSUInteger index = [currentFeedsService.feedItems indexOfObject:self.currentFeedItem];
     NSIndexPath *indexPath;
     
     // If the current index is greater than the feedItem array
-    if (index > [collectionViewDataSource.sortedFeedItems count]-1){
+    if (index > [currentFeedsService.feedItems count]-1){
         // Set the index to the last item in the array
-        indexPath = [NSIndexPath indexPathForRow:[collectionViewDataSource.sortedFeedItems count]-1 inSection:0];
+        indexPath = [NSIndexPath indexPathForRow:[currentFeedsService.feedItems count]-1 inSection:0];
     } else {
         indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     }
@@ -398,9 +270,9 @@
  */
 - (void)prefetchFirstImages
 {
-    if (_currentFeedItem.imageIphoneRetina)
+    if (self.currentFeedItem.imageIphoneRetina)
     {
-        [[EZRFeedImageService shared] fetchImageAtURLString: _currentFeedItem.imageIphoneRetina success:^(UIImage *image, UIImage *blurredImage) {
+        [[EZRFeedImageService shared] fetchImageAtURLString:self.currentFeedItem.imageIphoneRetina success:^(UIImage *image, UIImage *blurredImage) {
             [self prefetchImagesNearIndex:1 count:2];
         } failure:^{
             
@@ -410,7 +282,7 @@
 }
 - (void)prefetchImagesNearIndex:(NSInteger)currentPageIndex count:(NSInteger)count
 {
-    NSInteger feedItemsCount = [collectionViewDataSource.sortedFeedItems count];
+    NSInteger feedItemsCount = [currentFeedsService.feedItems count];
     
     NSInteger beginFetchIndex = currentPageIndex - count > 0 ? currentPageIndex - count : 0;
     NSInteger beforeFetchCount = currentPageIndex - count > 0 ?  count : currentPageIndex - beginFetchIndex;
@@ -418,7 +290,7 @@
     
     NSRange fetchRange = {beginFetchIndex, beforeFetchCount+afterFetchCount};
     
-    NSArray *itemsToPrefetch = [collectionViewDataSource.sortedFeedItems subarrayWithRange:fetchRange];
+    NSArray *itemsToPrefetch = [currentFeedsService.feedItems subarrayWithRange:fetchRange];
     
     [[EZRFeedImageService shared] prefetchImagesForFeedItems:itemsToPrefetch];
     

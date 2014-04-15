@@ -10,9 +10,9 @@
 #import "EZRBaseControllerTests.h"
 
 // Models
-#import "EZRMenuAddFeedCell.h"
+#import "EZRMenuUserFeedCell.h"
 
-@interface EZRMenuAddFeedCell (Test)
+@interface EZRMenuUserFeedCell (Test)
 
 - (BOOL)isValidUrl:(NSString *)url;
 
@@ -21,7 +21,7 @@
 
 @interface EZRCustomFeedCellTests : EZRBaseControllerTests
 {
-    EZRMenuAddFeedCell *cell;
+    EZRMenuUserFeedCell *cell;
 }
 @end
 
@@ -30,7 +30,7 @@
 
 - (void)setUp
 {
-    cell = [[EZRMenuAddFeedCell alloc] init];
+    cell = [[EZRMenuUserFeedCell alloc] init];
     [super setUp];
 }
 

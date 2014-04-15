@@ -10,23 +10,23 @@
 
 @implementation NSSet (CSSortingAdditions)
 
-- (NSArray *)sortedArrayByAttributes:(NSString *)attribute1, ...
+- (NSArray *)sortedArrayByAttributes:(NSString *)attribute, ...
 {
     NSMutableArray *descriptors = [[NSMutableArray alloc] init];
     
-    if (attribute1)
+    if (attribute)
     {
-        [descriptors addObject:[NSSortDescriptor sortDescriptorWithKey:attribute1 ascending:YES]];
+        [descriptors addObject:[NSSortDescriptor sortDescriptorWithKey:attribute ascending:YES]];
         
         va_list attributes;
         
-        va_start(attributes, attribute1);
+        va_start(attributes, attribute);
         
-        NSString *attribute;
+        NSString *nextAttribute;
         
-        while ((attribute = va_arg(attributes, NSString *)))
+        while ((nextAttribute = va_arg(attributes, NSString *)))
         {
-            [descriptors addObject:[NSSortDescriptor sortDescriptorWithKey:attribute ascending:YES]];
+            [descriptors addObject:[NSSortDescriptor sortDescriptorWithKey:nextAttribute ascending:YES]];
         }
         
         va_end(attributes);

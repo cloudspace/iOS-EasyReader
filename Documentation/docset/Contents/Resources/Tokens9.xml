@@ -1,107 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSCollectionPageControl.html">
+	<File path="Classes/CSNestableScrollView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSCollectionPageControl</TokenIdentifier>
-			<Abstract type="html">Customized Page Control for collections of items</Abstract>
-			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CSNestableScrollView</TokenIdentifier>
+			<Abstract type="html">A nestable scroll view (currently unused)</Abstract>
+			<DeclaredIn>CSNestableScrollView.h</DeclaredIn>
             
 			
 			<NodeRef refid="9"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/setDelegate:</TokenIdentifier>
-			<Abstract type="html">The object that acts as the delegate of the receiving page control</Abstract>
-			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) id&lt;CSCollectionPageControlDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/delegate</TokenIdentifier>
-			<Abstract type="html">The object that acts as the delegate of the receiving page control</Abstract>
-			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) id&lt;CSCollectionPageControlDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSCollectionPageControl/delegate</TokenIdentifier>
-			<Abstract type="html">The object that acts as the delegate of the receiving page control</Abstract>
-			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) id&lt;CSCollectionPageControlDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/setDatasource:</TokenIdentifier>
-			<Abstract type="html">The object that acts as the delegate of the receiving page control</Abstract>
-			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) id&lt;CSCollectionPageControlDataSource&gt; datasource</Declaration>
-			
-			
-			<Anchor>//api/name/datasource</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/datasource</TokenIdentifier>
-			<Abstract type="html">The object that acts as the delegate of the receiving page control</Abstract>
-			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) id&lt;CSCollectionPageControlDataSource&gt; datasource</Declaration>
-			
-			
-			<Anchor>//api/name/datasource</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CSCollectionPageControl/datasource</TokenIdentifier>
-			<Abstract type="html">The object that acts as the delegate of the receiving page control</Abstract>
-			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) id&lt;CSCollectionPageControlDataSource&gt; datasource</Declaration>
-			
-			
-			<Anchor>//api/name/datasource</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CSCollectionPageControl/setPageControllerPageAtIndex:</TokenIdentifier>
-			<Abstract type="html">Sets page to given index
-Will display first, second, second to last, and last.. everything in the middle is on third page indicator
-Also animates fades in and out when approaching ends</Abstract>
-			<DeclaredIn>CSCollectionPageControl.h</DeclaredIn>
-			
-			<Declaration>- (void)setPageControllerPageAtIndex:(NSInteger)index</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>index</Name>
-					<Abstract type="html">The index to set the page control page to</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setPageControllerPageAtIndex:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
 		
         
 	</File>

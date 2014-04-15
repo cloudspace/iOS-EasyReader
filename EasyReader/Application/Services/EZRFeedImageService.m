@@ -359,23 +359,29 @@ static EZRFeedImageService *sharedInstance;
 
 - (UIImage *)enhanceImage:(UIImage *)image saturation:(CGFloat)saturation contrast:(CGFloat)contrast brightness:(CGFloat)brightness
 {
-    GPUImageSaturationFilter *saturationFilter = [[GPUImageSaturationFilter alloc] init];
-    saturationFilter.saturation = saturation;
-    
-    GPUImageContrastFilter *contrastFilter = [[GPUImageContrastFilter alloc] init];
-    contrastFilter.contrast = contrast;
-    
-    GPUImageBrightnessFilter *brightnessFilter = [[GPUImageBrightnessFilter alloc] init];
-    brightnessFilter.brightness = brightness;
+    @try {
+        GPUImageSaturationFilter *saturationFilter = [[GPUImageSaturationFilter alloc] init];
+        saturationFilter.saturation = saturation;
 
-    UIImage *result = [saturationFilter imageByFilteringImage:image];
-    
-    if (result)
-    {
-        result = [contrastFilter imageByFilteringImage:result];
+        if (image) {
+            image = [saturationFilter imageByFilteringImage:image];
+        }
+    } @catch (NSException * e) {
+        // Skip this filter if it had issues
     }
     
-    return result;
+    @try {
+        GPUImageContrastFilter *contrastFilter = [[GPUImageContrastFilter alloc] init];
+        contrastFilter.contrast = contrast;
+
+        if (image) {
+            image = [contrastFilter imageByFilteringImage:image];
+        }
+    } @catch (NSException * e) {
+        // Skip this filter if it had issues
+    }
+    
+    return image;
 }
 
 - (UIImage *)flipImage:(UIImage *)image

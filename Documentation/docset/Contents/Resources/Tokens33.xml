@@ -1,33 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/EZRHomeWebViewDelegate.html">
+	<File path="Classes/EZRNestableWebView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/EZRHomeWebViewDelegate</TokenIdentifier>
-			<Abstract type="html">A delegate for the scroll view on the home view controller</Abstract>
-			<DeclaredIn>EZRHomeWebViewDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRNestableWebView</TokenIdentifier>
+			<Abstract type="html">A nestable web view (currently unused)</Abstract>
+			<DeclaredIn>EZRNestableWebView.h</DeclaredIn>
             
 			
 			<NodeRef refid="33"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeWebViewDelegate/initWithController:</TokenIdentifier>
-			<Abstract type="html">Initializes a new scroll view delegate for the given home view controller instance</Abstract>
-			<DeclaredIn>EZRHomeWebViewDelegate.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithController:(EZRHomeViewController *)homeController</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>homeController</Name>
-					<Abstract type="html">The home view controller</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/initWithController:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
 		
         
 	</File>

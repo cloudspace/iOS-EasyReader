@@ -7,7 +7,6 @@
 //
 
 #import "CSCollectionPageControl.h"
-#import "EZRHomeCollectionViewDataSource.h"
 #import "EZRHomeViewController.h"
 
 

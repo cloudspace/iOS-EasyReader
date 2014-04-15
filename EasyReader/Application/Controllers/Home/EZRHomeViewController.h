@@ -15,7 +15,6 @@
 
 // View Controllers
 #import "CSBaseViewController.h"
-#import "EZRHomeCollectionViewDataSource.h"
 #import "EZRNestableWebView.h"
 
 @class User;
@@ -52,11 +51,11 @@
 /// Feed Item currently visible
 @property (nonatomic, readonly) NSInteger currentPageIndex;
 
-/// The feed items visible on this view controller
-@property (nonatomic, readonly) NSMutableSet *feedItems;
-
-/// A sorted array of feed items
-@property (nonatomic, readonly) NSArray *sortedFeedItems;
+///// The feed items visible on this view controller
+//@property (nonatomic, readonly) NSMutableSet *feedItems;
+//
+///// A sorted array of feed items
+//@property (nonatomic, readonly) NSArray *sortedFeedItems;
 
 
 # pragma mark - Methods

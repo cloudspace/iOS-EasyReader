@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/EZRHomeCollectionViewDataSource.html">
+	<File path="Classes/EZRMenuFeedCell.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/EZRHomeCollectionViewDataSource</TokenIdentifier>
-			<Abstract type="html">The data source for the FeedCollectionView&apos;s UICollectionView</Abstract>
-			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRMenuFeedCell</TokenIdentifier>
+			<Abstract type="html">A UITableViewCell for Feeds in Core Data</Abstract>
+			<DeclaredIn>EZRMenuFeedCell.h</DeclaredIn>
             
 			
 			<NodeRef refid="27"/>
@@ -13,91 +13,110 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeCollectionViewDataSource/initWithReusableCellIdentifier:</TokenIdentifier>
-			<Abstract type="html">Initializes the data source with a reusable cell identifier</Abstract>
-			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuFeedCell/setImageView_icon:</TokenIdentifier>
+			<Abstract type="html">The feed&apos;s icon</Abstract>
+			<DeclaredIn>EZRMenuFeedCell.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithReusableCellIdentifier:(NSString *)reusableCellIdentifier</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>reusableCellIdentifier</Name>
-					<Abstract type="html">The reusable cell identifier to dequeue a cell with</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
 			
-			<Anchor>//api/name/initWithReusableCellIdentifier:</Anchor>
+			
+			<Anchor>//api/name/imageView_icon</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeCollectionViewDataSource/setFeedItems:</TokenIdentifier>
-			<Abstract type="html">The FeedItems for this data source</Abstract>
-			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuFeedCell/imageView_icon</TokenIdentifier>
+			<Abstract type="html">The feed&apos;s icon</Abstract>
+			<DeclaredIn>EZRMenuFeedCell.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSSet *feedItems</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
 			
 			
-			<Anchor>//api/name/feedItems</Anchor>
+			<Anchor>//api/name/imageView_icon</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeCollectionViewDataSource/feedItems</TokenIdentifier>
-			<Abstract type="html">The FeedItems for this data source</Abstract>
-			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRMenuFeedCell/imageView_icon</TokenIdentifier>
+			<Abstract type="html">The feed&apos;s icon</Abstract>
+			<DeclaredIn>EZRMenuFeedCell.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSSet *feedItems</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon</Declaration>
 			
 			
-			<Anchor>//api/name/feedItems</Anchor>
+			<Anchor>//api/name/imageView_icon</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeCollectionViewDataSource/feedItems</TokenIdentifier>
-			<Abstract type="html">The FeedItems for this data source</Abstract>
-			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuFeedCell/setLabel_name:</TokenIdentifier>
+			<Abstract type="html">The feed&apos;s name</Abstract>
+			<DeclaredIn>EZRMenuFeedCell.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSSet *feedItems</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
 			
 			
-			<Anchor>//api/name/feedItems</Anchor>
+			<Anchor>//api/name/label_name</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeCollectionViewDataSource/setSortedFeedItems:</TokenIdentifier>
-			<Abstract type="html">The FeedItems sorted by createdAt time</Abstract>
-			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuFeedCell/label_name</TokenIdentifier>
+			<Abstract type="html">The feed&apos;s name</Abstract>
+			<DeclaredIn>EZRMenuFeedCell.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *sortedFeedItems</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
 			
 			
-			<Anchor>//api/name/sortedFeedItems</Anchor>
+			<Anchor>//api/name/label_name</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeCollectionViewDataSource/sortedFeedItems</TokenIdentifier>
-			<Abstract type="html">The FeedItems sorted by createdAt time</Abstract>
-			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRMenuFeedCell/label_name</TokenIdentifier>
+			<Abstract type="html">The feed&apos;s name</Abstract>
+			<DeclaredIn>EZRMenuFeedCell.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *sortedFeedItems</Declaration>
+			<Declaration>@property (weak, nonatomic) IBOutlet UILabel *label_name</Declaration>
 			
 			
-			<Anchor>//api/name/sortedFeedItems</Anchor>
+			<Anchor>//api/name/label_name</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeCollectionViewDataSource/sortedFeedItems</TokenIdentifier>
-			<Abstract type="html">The FeedItems sorted by createdAt time</Abstract>
-			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuFeedCell/setFeed:</TokenIdentifier>
+			<Abstract type="html">The feed item this cell is based on</Abstract>
+			<DeclaredIn>EZRMenuFeedCell.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *sortedFeedItems</Declaration>
+			<Declaration>@property (nonatomic, weak) Feed *feed</Declaration>
 			
 			
-			<Anchor>//api/name/sortedFeedItems</Anchor>
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuFeedCell/feed</TokenIdentifier>
+			<Abstract type="html">The feed item this cell is based on</Abstract>
+			<DeclaredIn>EZRMenuFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) Feed *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRMenuFeedCell/feed</TokenIdentifier>
+			<Abstract type="html">The feed item this cell is based on</Abstract>
+			<DeclaredIn>EZRMenuFeedCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) Feed *feed</Declaration>
+			
+			
+			<Anchor>//api/name/feed</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		

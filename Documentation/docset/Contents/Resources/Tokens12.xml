@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CSMenuTableViewDelegate.html">
+	<File path="Classes/EZRApplicationStyleService.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CSMenuTableViewDelegate</TokenIdentifier>
-			<Abstract type="html">A nestable web view (currently unused)</Abstract>
-			<DeclaredIn>CSMenuTableViewDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRApplicationStyleService</TokenIdentifier>
+			<Abstract type="html">An AppDelegate service that handles application styling</Abstract>
+			<DeclaredIn>EZRApplicationStyleService.h</DeclaredIn>
             
 			
 			<NodeRef refid="12"/>

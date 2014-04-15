@@ -1,16 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/EZRCoreDataService.html">
+	<File path="Classes/EZRHomeCollectionViewDataSource.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/EZRCoreDataService</TokenIdentifier>
-			<Abstract type="html">An AppDelegate service used to manage core data functionality</Abstract>
-			<DeclaredIn>EZRCoreDataService.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRHomeCollectionViewDataSource</TokenIdentifier>
+			<Abstract type="html">The data source for the FeedCollectionView&apos;s UICollectionView</Abstract>
+			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeCollectionViewDataSource/initWithReusableCellIdentifier:</TokenIdentifier>
+			<Abstract type="html">Initializes the data source with a reusable cell identifier</Abstract>
+			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithReusableCellIdentifier:(NSString *)reusableCellIdentifier</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>reusableCellIdentifier</Name>
+					<Abstract type="html">The reusable cell identifier to dequeue a cell with</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithReusableCellIdentifier:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeCollectionViewDataSource/setFeedItems:</TokenIdentifier>
+			<Abstract type="html">The FeedItems for this data source</Abstract>
+			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeCollectionViewDataSource/feedItems</TokenIdentifier>
+			<Abstract type="html">The FeedItems for this data source</Abstract>
+			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeCollectionViewDataSource/feedItems</TokenIdentifier>
+			<Abstract type="html">The FeedItems for this data source</Abstract>
+			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeCollectionViewDataSource/setSortedFeedItems:</TokenIdentifier>
+			<Abstract type="html">The FeedItems sorted by createdAt time</Abstract>
+			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *sortedFeedItems</Declaration>
+			
+			
+			<Anchor>//api/name/sortedFeedItems</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeCollectionViewDataSource/sortedFeedItems</TokenIdentifier>
+			<Abstract type="html">The FeedItems sorted by createdAt time</Abstract>
+			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *sortedFeedItems</Declaration>
+			
+			
+			<Anchor>//api/name/sortedFeedItems</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRHomeCollectionViewDataSource/sortedFeedItems</TokenIdentifier>
+			<Abstract type="html">The FeedItems sorted by createdAt time</Abstract>
+			<DeclaredIn>EZRHomeCollectionViewDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *sortedFeedItems</Declaration>
+			
+			
+			<Anchor>//api/name/sortedFeedItems</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
 		
         
 	</File>

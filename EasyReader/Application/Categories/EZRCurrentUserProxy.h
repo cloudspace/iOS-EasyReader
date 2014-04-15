@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 @class User;
 
+/**
+ * A proxy class that references the current user
+ */
 @interface EZRCurrentUserProxy : NSObject
 
+/// The current user
 @property (nonatomic, retain) User *user;
 
 

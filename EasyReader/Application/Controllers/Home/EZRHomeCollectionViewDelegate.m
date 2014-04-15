@@ -89,8 +89,8 @@
         
         [controller prefetchImagesNearIndex:pageIndex count:5];
         [controller.pageControl_itemIndicator setPageControllerPageAtIndex:pageIndex];
-        controller.currentFeedItem = controller.sortedFeedItems[pageIndex];
-        controller.currentPageIndex = _currentPageIndex;
+//        controller.currentFeedItem = controller.sortedFeedItems[pageIndex];
+//        controller.currentPageIndex = _currentPageIndex;
     }
 }
 

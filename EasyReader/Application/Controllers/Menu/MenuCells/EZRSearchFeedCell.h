@@ -22,9 +22,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *label_name;
 
 
-#pragma mark - Other Properties
+#pragma mark - Properties
 
 /// The NSDictionary of the feed this cell is based on
 @property (nonatomic, weak) NSDictionary *feedData;
+
 
 @end

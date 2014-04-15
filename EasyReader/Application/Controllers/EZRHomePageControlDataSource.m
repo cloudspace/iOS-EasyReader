@@ -8,6 +8,7 @@
 
 #import "EZRHomePageControlDataSource.h"
 #import "EZRHomeViewController.h"
+#import "EZRCurrentFeedsService.h"
 
 @implementation EZRHomePageControlDataSource
 {
@@ -23,9 +24,10 @@
     
     return self;
 }
+
 - (NSInteger)numberOfPagesForPageControl
 {
-    return [controller.feedItems count];
+    return [[EZRCurrentFeedsService shared].feedItems count];
 }
 
 @end

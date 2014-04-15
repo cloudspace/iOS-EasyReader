@@ -7,26 +7,11 @@
 //
 
 #import "EZRFeedItemCollectionView.h"
-#import "EZRHomeCollectionViewDataSource.h"
-#import "EZRFeedItemCell.h"
+#import "EZRFeedItemCollectionViewCell.h"
 
 @implementation EZRFeedItemCollectionView
 
 #pragma mark - Initializers
-
-/**
- * Calls setup on init with frame
- */
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    
-    if (self) {
-        [self setup];
-    }
-    
-    return self;
-}
 
 /**
  * Calls setup on init with coder
@@ -34,25 +19,28 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     
-    if ( self ) {
-        [self setup];
+    if (self) {
+        [self.layer setCornerRadius:5.0f];
+        self.clipsToBounds = YES;
+        
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        
+        CGFloat width = CGRectGetWidth(self.frame);
+        CGFloat height = CGRectGetHeight(self.frame);
+        
+        flowLayout.itemSize = CGSizeMake(width, height);
+        
+        flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        flowLayout.minimumInteritemSpacing = 0;
+        flowLayout.minimumLineSpacing = 0;
+        self.collectionViewLayout = flowLayout;
+        
+        self.pagingEnabled = YES;
     }
     
     return self;
 }
 
-/**
- * Calls setup on init
- */
-- (id)init {
-    self = [super init];
-    
-    if ( self ) {
-        [self setup];
-    }
-    
-    return self;
-}
 
 #pragma mark - Property implementations
 
@@ -66,28 +54,13 @@
     if ([visibleIndexPaths count] > 0)
     {
         NSIndexPath *currentIndexPath = [self.indexPathsForVisibleItems objectAtIndex:0];
-        EZRFeedItemCell *cell = (EZRFeedItemCell *)[self cellForItemAtIndexPath:currentIndexPath];
+        EZRFeedItemCollectionViewCell *cell = (EZRFeedItemCollectionViewCell *)[self cellForItemAtIndexPath:currentIndexPath];
         
         feeditem = cell.feedItem;
     }
     
     return feeditem;
 }
-
-
-#pragma mark - Private methods
-/**
- * Adds paging and a sets a fullscreen flowlayout
- */
-- (void)setup {
-    self.pagingEnabled = YES;
-    
-    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
-
-    flowLayout.minimumLineSpacing = 0.0;
-    flowLayout.itemSize = CGSizeMake(self.frame.size.width, self.frame.size.height);
-}
-
 
 
 @end
