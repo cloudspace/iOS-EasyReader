@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CSArrayTableViewDataSource.h"
 
 @class User;
 
 /**
  * A UITableViewDataSource for feeds in Core Data
  */
-@interface EZRMenuUserFeedDataSource : NSObject<UITableViewDataSource>
+@interface EZRMenuUserFeedDataSource : CSArrayTableViewDataSource
 
 /// Feeds used to populate the menu table
 @property (nonatomic, retain) NSMutableSet *feeds;

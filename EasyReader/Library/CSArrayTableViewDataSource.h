@@ -11,7 +11,7 @@
 /**
  * A generic array data source
  */
-@interface CSArrayTableViewDataSource : NSObject
+@interface CSArrayTableViewDataSource : NSObject <UITableViewDataSource>
 
 
 /// The array soruce
@@ -22,6 +22,9 @@
 
 /// A block to configure the cell
 @property (nonatomic, copy) void (^configureCell)(UITableViewCell *cell, id item);
+
+/// A block to handle deleting an item
+@property (nonatomic, copy) void (^deleteItem)(id item);
 
 
 @end

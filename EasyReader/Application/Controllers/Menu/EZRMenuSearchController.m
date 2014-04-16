@@ -11,16 +11,14 @@
 #import "EZRMenuUserFeedDataSource.h"
 #import "Feed.h"
 
+
+NSString * const kEZRFeedSearchStateChangedNotification = @"kEZRFeedSearchStateChanged";
+
+
 @interface EZRMenuSearchController ()
 
-/// The feed search results data source
+///// The feed search results data source
 @property (nonatomic, weak) IBOutlet EZRMenuSearchFeedDataSource *feedSearchDataSource;
-
-/// The user feeds data source
-@property (nonatomic, weak) IBOutlet EZRMenuUserFeedDataSource *userFeedDataSource;
-
-/// The menu table view
-@property (nonatomic, weak) IBOutlet UITableView *menuTableView;
 
 /// The search bar this delegate is for
 @property (nonatomic, weak) IBOutlet EZRSearchBar *searchBar;
@@ -31,6 +29,8 @@
 {
     /// The last term searched for.  Used to cancel previous requests when text changes.
     NSString *lastSearchTerm;
+    
+    BOOL searching;
 }
 
 
@@ -39,9 +39,10 @@
 - (void)cancelSearch {
     [self.searchBar resignFirstResponder];
     self.searchBar.text = @"";
-    self.menuTableView.dataSource = self.userFeedDataSource;
     
-    [self.menuTableView reloadData];
+    searching = NO;
+    
+    [self postSearchStateChangeNotification:kEZRSearchStateStoppedSearching];
 }
 
 
@@ -65,6 +66,20 @@
     }
 }
 
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    if (!searching) {
+        [self postSearchStateChangeNotification:kEZRSearchStateStartedSearching];
+        searching = YES;
+    }
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [self postSearchStateChangeNotification:kEZRSearchStateStoppedSearching];
+    searching = NO;
+}
+
 /**
  *
  */
@@ -80,6 +95,7 @@
     // Make a new request
     [Feed requestFeedsByName:searchText success:^(id responseObject, NSInteger httpStatus) {
         self.feedSearchDataSource.feedData = responseObject;
+        [self postSearchStateChangeNotification:kEZRSearchStateResultsAvailable];
     } failure:^(id responseObject, NSInteger httpStatus, NSError *error) {
         self.feedSearchDataSource.feedData = nil;
     }];
@@ -97,6 +113,13 @@
     
 }
 
+- (void)postSearchStateChangeNotification:(EZRSearchState)state
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kEZRFeedSearchStateChangedNotification
+                                                        object:nil
+                                                      userInfo:@{@"searchState": [NSNumber numberWithInt:state]}];
+}
+
 #pragma mark - UISearchBarDelegate Methods
 
 /**
@@ -108,15 +131,13 @@
  */
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if ([searchText length] > 0) {
-        self.menuTableView.dataSource = self.feedSearchDataSource;
-        
         if ([self isURL:searchText]) {
             [self displayURL:searchText];
         } else {
             [self search:searchText];
         }
     } else {
-        self.menuTableView.dataSource = self.userFeedDataSource;
+        self.feedSearchDataSource.source = nil;
         return;
     }
 }

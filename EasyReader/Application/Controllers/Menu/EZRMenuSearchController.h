@@ -8,7 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, EZRSearchState) {
+    kEZRSearchStateStartedSearching,
+    kEZRSearchStateResultsAvailable,
+    kEZRSearchStateStoppedSearching,
+};
+
+extern NSString * const kEZRFeedSearchStateChangedNotification;
+
+
 /**
+ * Handles search actions from the menu
+ *
+ * Switches out the tableView data source between the 
  * Acts as the delegate object for the menu search bar
  */
 @interface EZRMenuSearchController : NSObject <UISearchBarDelegate>

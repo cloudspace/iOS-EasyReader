@@ -9,13 +9,27 @@
 #import "EZRMenuViewController.h"
 #import "EZRMenuUserFeedDataSource.h"
 
+#import "EZRCurrentFeedsProvider.h"
+
 #import "MFSideMenu.h"
 
+#import <Block-KVO/MTKObserving.h>
+
+#import "EZRMenuSearchController.h"
+
+
+#import "EZRMenuFeedCell.h"
+#import "EZRSearchFeedCell.h"
+
+#import "EZRMenuSearchFeedDataSource.h"
 
 @interface EZRMenuViewController ()
 
 /// A data source that provides information about the current users feeds
-@property IBOutlet EZRMenuUserFeedDataSource *userFeedDataSource;
+@property (nonatomic, weak) IBOutlet EZRMenuUserFeedDataSource *userFeedDataSource;
+
+/// A data source that provides information about the current users feeds
+@property (nonatomic, weak) IBOutlet EZRMenuSearchFeedDataSource *searchFeedDataSource;
 
 /// The feeds table view
 @property (nonatomic, weak) IBOutlet UITableView *tableView_menu;
@@ -23,10 +37,17 @@
 /// The search input bar
 @property (nonatomic, weak) IBOutlet EZRSearchBar *searchBar;
 
+/// The current feeds provider
+@property (nonatomic, strong) EZRCurrentFeedsProvider *currentFeedsProvider;
+
 @end
 
 
 @implementation EZRMenuViewController
+{
+    /// Is the user currently searching
+    BOOL searching;
+}
 
 #pragma mark - UIViewController Lifecycle methods
 
@@ -47,6 +68,15 @@
                                              selector:@selector(menuStateEventOccurred:)
                                                  name:MFSideMenuStateNotificationEvent
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(searchStateChanged:)
+                                                 name:kEZRFeedSearchStateChangedNotification
+                                               object:nil];
+    
+    self.currentFeedsProvider = [EZRCurrentFeedsProvider shared];
+    
+    [self observeObject:self.currentFeedsProvider property:@"feeds" withSelector:@selector(feedsDidChange:feeds:)];
 }
 
 - (void)applyMenuStyles
@@ -56,10 +86,33 @@
     [self.view insertSubview:background atIndex:0];
 }
 
+- (void)feedsDidChange:(EZRCurrentFeedsProvider *)currentFeedProvider feeds:(NSArray *)feeds {
+    ((CSArrayTableViewDataSource *)self.tableView_menu.dataSource).source = self.currentFeedsProvider.feeds;
+    [self.tableView_menu reloadData];
+}
+
+- (void)searchStateChanged:(NSNotification *)notification {
+    EZRSearchState event = [[[notification userInfo] objectForKey:@"searchState"] intValue];
+    
+    switch (event) {
+        case kEZRSearchStateStartedSearching:
+            self.tableView_menu.dataSource = self.searchFeedDataSource;
+            break;
+            
+        case kEZRSearchStateStoppedSearching:
+            self.tableView_menu.dataSource = self.userFeedDataSource;
+            break;
+            
+        case kEZRSearchStateResultsAvailable:
+            // Do nothing, just need to realod
+            break;
+    }
+    
+    [self.tableView_menu reloadData];
+}
+
 - (void)menuStateEventOccurred:(NSNotification *)notification {
     MFSideMenuStateEvent event = [[[notification userInfo] objectForKey:@"eventType"] intValue];
-    
-    __weak EZRMenuViewController *weakSelf = self;
     
     switch (event) {
         case MFSideMenuStateEventMenuWillOpen:
@@ -67,7 +120,7 @@
             break;
         case MFSideMenuStateEventMenuDidOpen:
             // the menu finished opening
-            [weakSelf.tableView_menu reloadData];
+            [self.tableView_menu reloadData];
             break;
         case MFSideMenuStateEventMenuWillClose:
             // the menu will close
@@ -75,12 +128,12 @@
             break;
         case MFSideMenuStateEventMenuDidClose:
             self.searchBar.text = @"";
-            [weakSelf.tableView_menu setEditing:NO animated:YES];
-            weakSelf.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
+            [self.tableView_menu setEditing:NO animated:YES];
+            self.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
             
             // Reset to the users feeds data source
-            weakSelf.tableView_menu.dataSource = self.userFeedDataSource;
-            [weakSelf.tableView_menu reloadData];
+            self.tableView_menu.dataSource = self.userFeedDataSource;
+            [self.tableView_menu reloadData];
             break;
     }
 }

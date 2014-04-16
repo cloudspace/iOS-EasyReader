@@ -12,18 +12,20 @@
 
 #import "EZRSearchFeedCell.h"
 
-@interface EZRMenuSearchFeedDataSource ()
-
-/// The menu table view
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
-
-@end
-
-
 @implementation EZRMenuSearchFeedDataSource
-{
-    /// The sorted array of feed data
-    NSArray *sortedFeedData;
+
+- (instancetype) init{
+    self = [super init];
+    
+    if (self) {
+        self.configureCell = ^(UITableViewCell *cell, id item) {
+            ((EZRSearchFeedCell *)cell).feedData = item;
+        };
+        
+        self.reusableCellIdentifier = @"SearchFeedCell";
+    }
+    
+    return self;
 }
 
 #pragma mark - Public methods
@@ -32,30 +34,8 @@
 {
     NSSet *feedSet = [NSSet setWithArray:feedData[@"feeds"]];
     
-    sortedFeedData = [feedSet sortedArrayByAttributes:@"name", nil];
-    [self.tableView reloadData];
+    self.source = [feedSet sortedArrayByAttributes:@"name", nil];
 }
 
-
-#pragma mark - Private methods
-
-/**
- * Determines the number of rows in each section
- */
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [sortedFeedData count];
-}
-
-/**
- * Generates a cell for a given index path
- */
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    EZRSearchFeedCell *cell = (EZRSearchFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchFeedCell"];
-    cell.feedData = sortedFeedData[indexPath.row];
-    
-    return cell;
-}
 
 @end

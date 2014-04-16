@@ -23,20 +23,23 @@ PODS:
   - CSStandardViewControllers (0.0.1):
     - MBProgressHUD (~> 0.6)
   - GPUImage (0.1.3)
+  - HexColors (2.2.1)
   - Inflections (1.0.0):
     - RegexKitLite
   - MagicalRecord (2.2)
   - MAObjCRuntime (0.0.1)
   - MBProgressHUD (0.8)
   - MFSideMenu (0.5.4)
-  - MTLabel (0.0.1)
   - NSDate+TimeAgo (1.0.3)
   - OCMock (2.2.3)
   - RegexKitLite (4.0)
   - SDWebImage (3.5.4):
     - SDWebImage/Core
   - SDWebImage/Core (3.5.4)
+  - SVProgressHUD (1.0)
   - TestFlightSDK (2.2.3-beta)
+  - TSMessages (0.9.7):
+    - HexColors
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0.3)
@@ -48,13 +51,13 @@ DEPENDENCIES:
   - Inflections (~> 1.0.0)
   - MagicalRecord (from `https://github.com/magicalpanda/MagicalRecord`, commit `98ec121bf767c495a2e887adeade7383b74a62f4`)
   - MAObjCRuntime (~> 0.0)
-  - MBProgressHUD (~> 0.8)
   - MFSideMenu (~> 0.5.4)
-  - MTLabel (~> 0.0.1)
   - NSDate+TimeAgo (~> 1.0.2)
   - OCMock (~> 2.2.2)
   - SDWebImage (~> 3.5.1)
+  - SVProgressHUD (~> 1.0)
   - TestFlightSDK (~> 2.2.0-noadid-beta)
+  - TSMessages (~> 0.9)
 
 EXTERNAL SOURCES:
   MagicalRecord:
@@ -68,16 +71,18 @@ SPEC CHECKSUMS:
   CSShortcuts: 0bd6b5f939bfbad0422ce7e07b52a8e47e938e8e
   CSStandardViewControllers: 40b3fbc88a2f30278969283c9dd22e345b855788
   GPUImage: efcc16efc1fc45c8f2fdc50591f3505d100789de
-  Inflections: e77c455409381402163911a75835892fd406ff99
+  HexColors: 99211502e17904af7891fc8f687d0e4958a6d66e
+  Inflections: 59aaf387b9ce22342b504534ee785fbdd793edd0
   MagicalRecord: 565156bae4de961860fad200a5c52e21e7933ebe
-  MAObjCRuntime: 284004079156d10cb8237bc3ffcfa3a0e1a0af22
+  MAObjCRuntime: ab7a4cd2ad843a49c8d78d2a96453c76b465da46
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   MFSideMenu: f59e25c080097a701e108459c207fb22e1f62c30
-  MTLabel: 5b326c677b5df074e844a5d2840387b9048257a7
   NSDate+TimeAgo: ca09306750ac2564418042aa10cf8365c36d2cee
-  OCMock: 74e4ddbcef134170dcc844f91c691f13868075d7
-  RegexKitLite: f7af7b4d2b675cd2ec9a4abab6aad6ae1f6499c0
+  OCMock: ea7fe30ee99e4e3186ad47d032a301fa7e8793ec
+  RegexKitLite: b16f029b518614394438e17b7d1df8bfa1e5a81e
   SDWebImage: 1a62010700adbba823b621fc217906739dbf6aa5
-  TestFlightSDK: a959afdd20fd2a43a198bab1e6aa81f9469e5423
+  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
+  TestFlightSDK: 79a20263b43de6f094271655c023d5581762cf8a
+  TSMessages: 9dd053bcf1a8985275177ebe0fb8c0f1416e92f7
 
 COCOAPODS: 0.29.0

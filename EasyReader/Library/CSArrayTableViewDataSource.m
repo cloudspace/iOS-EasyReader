@@ -38,15 +38,15 @@
 /**
  * Commits each editing action
  */
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        Feed *toDelete = [sortedFeeds objectAtIndex:indexPath.row];
-//        
-//        [[User current] removeFeedsObject:toDelete];
-//        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-//        [self.tableView reloadData];
-//    }
-//}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (editingStyle) {
+        case UITableViewCellEditingStyleDelete:
+             self.deleteItem(self.source[indexPath.row]);
+            break;
+        default:
+            break;
+    }
+}
 
 @end

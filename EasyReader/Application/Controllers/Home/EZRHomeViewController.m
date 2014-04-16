@@ -30,7 +30,7 @@
 #import "EZRNestableWebView.h"
 #import "EZRHomeWebViewDelegate.h"
 
-#import "EZRCurrentFeedsService.h"
+#import "EZRCurrentFeedsProvider.h"
 
 
 #import "CSArrayCollectionViewDataSource.h"
@@ -40,8 +40,9 @@
 
 @property User *currentUser;
 
-/// Feed items on user
-@property (nonatomic, strong) NSMutableSet *feedItems;
+
+///
+@property (nonatomic, strong) EZRCurrentFeedsProvider *currentFeedsProvider;
 
 
 @end
@@ -67,7 +68,6 @@
     /// The data source for the collection view
     CSArrayCollectionViewDataSource *collectionViewArrayDataSource;
     
-    EZRCurrentFeedsService *currentFeedsService;
     
     /// The flow layout for the collection view
     UICollectionViewFlowLayout *collectionViewLayout;
@@ -97,25 +97,15 @@
 {
     [super viewDidLoad];
     
-    self.currentUser = [User current];
-    self.feedItems = [self.currentUser.feedItems mutableCopy];
-    
-    currentFeedsService = [EZRCurrentFeedsService shared];
+    self.currentFeedsProvider = [EZRCurrentFeedsProvider shared];
 
     [self setUpPageControl];
     [self setUpVerticalScrollView];
     [self setUpCollectionView];
     [self setUpWebView];
     
-    [self observeObject:currentFeedsService property:@"visibleFeedItems" withSelector:@selector(visibleFeedItemsDidChange:visibleFeeditems:)];
+    [self observeObject:self.currentFeedsProvider property:@"visibleFeedItems" withSelector:@selector(visibleFeedItemsDidChange:visibleFeeditems:)];
     
-}
-
-- (void) viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    [self layOutVerticalScrollView];
 }
 
 /**
@@ -151,8 +141,8 @@
  */
 - (void) setUpPageControl
 {
-    pageControlDelegate    = [[EZRHomePageControlDelegate alloc] initWithController:self];
-    pageControlDataSource = [[EZRHomePageControlDataSource alloc] initWithController:self];
+    pageControlDelegate   = [[EZRHomePageControlDelegate alloc] initWithController:self];
+    pageControlDataSource = [[EZRHomePageControlDataSource alloc] init];
     
     self.pageControl_itemIndicator.delegate = pageControlDelegate;
     self.pageControl_itemIndicator.datasource = pageControlDataSource;
@@ -187,7 +177,7 @@
  */
 - (void)setUpCollectionView
 {
-    collectionViewArrayDataSource = [CSArrayCollectionViewDataSource dataSourceWithArray:currentFeedsService.feedItems
+    collectionViewArrayDataSource = [CSArrayCollectionViewDataSource dataSourceWithArray:self.currentFeedsProvider.feedItems
                                      reusableCellIdentifier:@"feedItem"
                                              configureBlock:^(UICollectionViewCell *cell, id item) {
                                                  ((EZRFeedItemCollectionViewCell *)cell).feedItem = item;
@@ -220,16 +210,20 @@
 /**
  * Updates the data source when the feed items change
  */
-- (void) visibleFeedItemsDidChange:(EZRCurrentFeedsService *)currentFeedService visibleFeeditems:(NSArray *)visibleFeedItems {
+- (void) visibleFeedItemsDidChange:(EZRCurrentFeedsProvider *)currentFeedService visibleFeeditems:(NSArray *)visibleFeedItems {
     collectionViewArrayDataSource.source = visibleFeedItems;
     
     [self.collectionView_feedItems reloadData];
     
-    if(self.currentFeedItem){
+    if([visibleFeedItems containsObject:self.currentFeedItem]){
         [self scrollToCurrentFeedItem];
+    } else if ([visibleFeedItems count] > 0){
+        
     }
     
-    self.pageControl_itemIndicator.numberOfPages = [_feedItems count] < 6 ? [_feedItems count] : 5;
+    NSInteger count = [self.currentFeedsProvider.visibleFeedItems count];
+    
+    self.pageControl_itemIndicator.numberOfPages = count < 6 ? count : 5;
     [self.pageControl_itemIndicator setPageControllerPageAtIndex:self.currentPageIndex];
     
 //    if (_currentPageIndex == 0 && _currentFeedItem) {
@@ -251,13 +245,14 @@
 - (void)scrollToCurrentFeedItem
 {
     
-    NSUInteger index = [currentFeedsService.feedItems indexOfObject:self.currentFeedItem];
+    NSUInteger index = [self.currentFeedsProvider.visibleFeedItems indexOfObject:self.currentFeedItem];
     NSIndexPath *indexPath;
+    NSInteger count = [self.currentFeedsProvider.visibleFeedItems count];
     
     // If the current index is greater than the feedItem array
-    if (index > [currentFeedsService.feedItems count]-1){
+    if (index > count - 1){
         // Set the index to the last item in the array
-        indexPath = [NSIndexPath indexPathForRow:[currentFeedsService.feedItems count]-1 inSection:0];
+        indexPath = [NSIndexPath indexPathForRow:count - 1 inSection:0];
     } else {
         indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     }
@@ -282,7 +277,7 @@
 }
 - (void)prefetchImagesNearIndex:(NSInteger)currentPageIndex count:(NSInteger)count
 {
-    NSInteger feedItemsCount = [currentFeedsService.feedItems count];
+    NSInteger feedItemsCount = [self.currentFeedsProvider.feedItems count];
     
     NSInteger beginFetchIndex = currentPageIndex - count > 0 ? currentPageIndex - count : 0;
     NSInteger beforeFetchCount = currentPageIndex - count > 0 ?  count : currentPageIndex - beginFetchIndex;
@@ -290,7 +285,7 @@
     
     NSRange fetchRange = {beginFetchIndex, beforeFetchCount+afterFetchCount};
     
-    NSArray *itemsToPrefetch = [currentFeedsService.feedItems subarrayWithRange:fetchRange];
+    NSArray *itemsToPrefetch = [self.currentFeedsProvider.feedItems subarrayWithRange:fetchRange];
     
     [[EZRFeedImageService shared] prefetchImagesForFeedItems:itemsToPrefetch];
     

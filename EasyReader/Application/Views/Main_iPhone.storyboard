@@ -316,6 +316,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
+                                    <outlet property="dataSource" destination="sJh-MY-rG4" id="me7-tU-DuK"/>
                                     <outlet property="delegate" destination="lXO-lt-Zlf" id="MNS-D8-5ji"/>
                                 </connections>
                             </tableView>
@@ -324,12 +325,12 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="6U4-aC-Dql" id="5As-xt-K3v"/>
+                        <outlet property="searchFeedDataSource" destination="Kyf-fs-6tv" id="UKM-0P-nBF"/>
                         <outlet property="tableView_menu" destination="14d-Nx-0xr" id="V1g-Kc-z5U"/>
-                        <outlet property="userFeedDataSource" destination="sJh-MY-rG4" id="8r3-FZ-KIc"/>
+                        <outlet property="userFeedDataSource" destination="sJh-MY-rG4" id="3Wb-iT-Zng"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AeO-M3-d5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="a7w-3J-OSj" customClass="EZRCurrentUserProxy"/>
                 <customObject id="lXO-lt-Zlf" customClass="EZRMenuTableViewDelegate">
                     <connections>
                         <outlet property="searchController" destination="jNU-eH-pwx" id="O68-Xb-1pY"/>
@@ -337,21 +338,14 @@
                 </customObject>
                 <customObject id="jNU-eH-pwx" customClass="EZRMenuSearchController">
                     <connections>
-                        <outlet property="feedSearchDataSource" destination="Kyf-fs-6tv" id="o44-0T-J8n"/>
-                        <outlet property="menuTableView" destination="14d-Nx-0xr" id="QMN-Cm-zkD"/>
+                        <outlet property="feedSearchDataSource" destination="Kyf-fs-6tv" id="l3D-sl-XQh"/>
                         <outlet property="searchBar" destination="6U4-aC-Dql" id="fk0-2k-s3A"/>
-                        <outlet property="userFeedDataSource" destination="sJh-MY-rG4" id="wuV-UW-eCn"/>
                     </connections>
                 </customObject>
-                <customObject id="Kyf-fs-6tv" customClass="EZRMenuSearchFeedDataSource">
-                    <connections>
-                        <outlet property="tableView" destination="14d-Nx-0xr" id="mWN-6I-ALZ"/>
-                    </connections>
-                </customObject>
+                <customObject id="Kyf-fs-6tv" customClass="EZRMenuSearchFeedDataSource"/>
                 <customObject id="sJh-MY-rG4" customClass="EZRMenuUserFeedDataSource">
                     <connections>
-                        <outlet property="tableView" destination="14d-Nx-0xr" id="YeL-Aa-h6L"/>
-                        <outlet property="userProxy" destination="a7w-3J-OSj" id="HAh-Fk-5om"/>
+                        <outlet property="tableView" destination="14d-Nx-0xr" id="8iD-af-9Ge"/>
                     </connections>
                 </customObject>
             </objects>

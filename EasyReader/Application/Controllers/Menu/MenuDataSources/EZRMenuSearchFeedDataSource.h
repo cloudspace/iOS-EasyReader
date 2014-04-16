@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CSArrayTableViewDataSource.h"
 
 /**
  * A UITableViewDataSource for custom and searched feeds returned by the API
  */
-@interface EZRMenuSearchFeedDataSource : NSObject<UITableViewDataSource>
+@interface EZRMenuSearchFeedDataSource : CSArrayTableViewDataSource
 
 /// A dictionary of feed data to use as the base for this data source
 @property (nonatomic, retain) NSDictionary *feedData;

@@ -13,11 +13,12 @@
 #import "EZRMenuFeedCell.h"
 
 #import "EZRMenuSearchController.h"
-
 #import "EZRRootViewController.h"
 
 #import "Feed.h"
+#import "User.h"
 
+#import "SVProgressHUD.h"
 
 @interface EZRMenuTableViewDelegate ()
 
@@ -34,7 +35,6 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     
     if ([tableView.dataSource isKindOfClass:[EZRMenuSearchFeedDataSource class]]) {
         NSDictionary *feedData = ((EZRSearchFeedCell *)[tableView cellForRowAtIndexPath:indexPath]).feedData;
@@ -42,12 +42,17 @@
         Feed *existingFeed = [Feed MR_findFirstByAttribute:@"id" withValue:feedData[@"id"]];
         
         if (!existingFeed) {
-        
+            
             [Feed createFeedWithUrl:feedData[@"url"] success:^(id responseObject, NSInteger httpStatus) {
                 
             } failure:^(id responseObject, NSInteger httpStatus, NSError *error) {
                 
             }];
+        }
+        else if (![[User current].feeds containsObject:existingFeed])
+        {
+            [[User current] addFeedsObject:existingFeed];
+            [self postSelectedNotificationForFeed:existingFeed];
         }
         
         [self.searchController cancelSearch];
@@ -55,10 +60,16 @@
         
     } else {
         Feed *feed = ((EZRMenuFeedCell *)[tableView cellForRowAtIndexPath:indexPath]).feed;
-        [defaultCenter postNotificationName:@"kEZRFeedSelected" object:feed];
+        [self postSelectedNotificationForFeed:feed];
     }
     
     [((MFSideMenuContainerViewController *)tableView.window.rootViewController) setMenuState:MFSideMenuStateClosed];
+}
+
+- (void)postSelectedNotificationForFeed:(Feed *)feed
+{
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter postNotificationName:@"kEZRFeedSelected" object:feed];
 }
 
 /**
