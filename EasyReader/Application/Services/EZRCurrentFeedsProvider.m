@@ -123,7 +123,15 @@ static EZRCurrentFeedsProvider *sharedInstance;
         [feedItems addObjectsFromArray:[feed.feedItems sortedArrayUsingDescriptors:nil]];
     }
     
+    _feeds = [newFeeds sortedArrayByAttributes:@"name", nil];
     _feedItems = [feedItems sortedArrayByAttributes:@"createdAt", nil];
+    
+    if (!currentFeed) {
+        _visibleFeedItems = _feedItems;
+    } else if (currentFeed && [removedFeeds containsObject:currentFeed]) {
+        _visibleFeedItems = _feedItems;
+        currentFeed = nil;
+    }
     
     [self didChangeValueForKey:@"feeds"];
     [self didChangeValueForKey:@"feedItems"];

@@ -104,7 +104,17 @@
     [self setUpCollectionView];
     [self setUpWebView];
     
-    [self observeObject:self.currentFeedsProvider property:@"visibleFeedItems" withSelector:@selector(visibleFeedItemsDidChange:visibleFeeditems:)];
+
+    
+    [self observeRelationship:@keypath(self.currentFeedsProvider.visibleFeedItems) changeBlock:^(EZRCurrentFeedsProvider *provider, NSArray *visibleFeedItems) {
+        [self visibleFeedItemsDidChange:provider visibleFeeditems:visibleFeedItems];
+    }];
+    
+    [self observeProperty:@keypath(self.currentFeedsProvider.visibleFeedItems) withBlock:^(__weak id self, id old, id new) {
+        NSLog(@"doing stuff");
+    }];
+//    
+//    [self observeObject:self.currentFeedsProvider property:@"visibleFeedItems" withSelector:@selector(visibleFeedItemsDidChange:visibleFeeditems:)];
     
 }
 
