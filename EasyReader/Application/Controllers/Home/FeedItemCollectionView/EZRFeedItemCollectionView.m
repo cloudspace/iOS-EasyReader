@@ -10,7 +10,9 @@
 #import "EZRFeedItemCollectionViewCell.h"
 
 @implementation EZRFeedItemCollectionView
-
+{
+    UICollectionViewFlowLayout *flowLayout;
+}
 #pragma mark - Initializers
 
 /**
@@ -21,9 +23,9 @@
     
     if (self) {
         [self.layer setCornerRadius:5.0f];
-        self.clipsToBounds = YES;
+        //self.clipsToBounds = YES;
         
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        flowLayout = [[UICollectionViewFlowLayout alloc] init];
         
         CGFloat width = CGRectGetWidth(self.frame);
         CGFloat height = CGRectGetHeight(self.frame);
@@ -33,6 +35,7 @@
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         flowLayout.minimumInteritemSpacing = 0;
         flowLayout.minimumLineSpacing = 0;
+        
         self.collectionViewLayout = flowLayout;
         
         self.pagingEnabled = YES;
@@ -45,21 +48,39 @@
 #pragma mark - Property implementations
 
 /**
- * Returns the currently visible feed item
+ * Returns the most centered currently visible feed item
  */
 - (FeedItem *) currentFeedItem {
-    NSArray *visibleIndexPaths = self.indexPathsForVisibleItems;
-    FeedItem *feeditem;
+    NSIndexPath *currentItemIndexPath = [NSIndexPath indexPathForRow:[self currentPageIndex] inSection:0];
     
-    if ([visibleIndexPaths count] > 0)
-    {
-        NSIndexPath *currentIndexPath = [self.indexPathsForVisibleItems objectAtIndex:0];
-        EZRFeedItemCollectionViewCell *cell = (EZRFeedItemCollectionViewCell *)[self cellForItemAtIndexPath:currentIndexPath];
+    EZRFeedItemCollectionViewCell *cell = (EZRFeedItemCollectionViewCell *)[self cellForItemAtIndexPath:currentItemIndexPath];
+    
+    if (cell) {
+        return cell.feedItem;
+    } else {
+        return nil;
+    }
+}
+
+/**
+ * Returns the currently visible feed item
+ */
+- (NSInteger) currentPageIndex {
+    CGFloat centerX = self.contentOffset.x + CGRectGetWidth(self.frame)/2;
+    
+    for (NSIndexPath *visibleIndexPath in self.indexPathsForVisibleItems) {
         
-        feeditem = cell.feedItem;
+        UICollectionViewLayoutAttributes *attributes = [self layoutAttributesForItemAtIndexPath:visibleIndexPath];
+
+        CGFloat cellMinX = CGRectGetMinX(attributes.frame);
+        CGFloat cellMaxX = CGRectGetMaxX(attributes.frame);
+        
+        if (cellMinX <= centerX && cellMaxX >= centerX) {
+            return visibleIndexPath.row;
+        }
     }
     
-    return feeditem;
+    return 0;
 }
 
 

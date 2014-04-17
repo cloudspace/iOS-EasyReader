@@ -25,7 +25,7 @@
 {
     EZRHomeViewController    *controller;
     EZRFeedItemCollectionView *collectionView;
-    NSInteger _currentPageIndex;
+    FeedItem *previousFeedItem;
 }
 
 - (instancetype)initWithController:(EZRHomeViewController *)homeController
@@ -34,37 +34,11 @@
     
     if (self)
     {
-        controller        = homeController;
-        _currentPageIndex = 0;
+        controller     = homeController;
+        collectionView = homeController.collectionView_feedItems;
     }
     
     return self;
-}
-
-/**
- * Fires when the collection view has stopped decelerating
- * Resets the web view if the current feed item has changed
- *
- * @param sender The scroll view calling the delegate methods
- */
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)sender
-{
-    // unload the webView if we have moved to a new feedItem
-    if(controller.currentFeedItem != controller.collectionView_feedItems.currentFeedItem)
-    {
-        controller.currentFeedItem = controller.collectionView_feedItems.currentFeedItem;
-        [self resetWebView];
-    }
-}
-
-/**
- * Resets the content of the web view
- */
-- (void)resetWebView
-{
-    NSString *blankHTML = @"<html><head></head><body style=\"background-color: #000000;\"></body></html>";
-    [controller.webView_feedItem loadHTMLString:blankHTML
-                                        baseURL:nil];
 }
 
 /**
@@ -75,20 +49,22 @@
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat pageWidth = controller.collectionView_feedItems.frame.size.width;
+    FeedItem *currentFeedItem = collectionView.currentFeedItem;
+    NSInteger pageIndex = collectionView.currentPageIndex;
     
-    // We add half the page width to the offset to consider the most-centered page to be the current one, not
-    // the page currently under the leftmost position of the view
-    NSInteger pageIndex = ((scrollView.contentOffset.x + pageWidth/2.0) / pageWidth);
-    
-    if (_currentPageIndex != pageIndex)
-    {
-        [self resetWebView];
+    if (previousFeedItem != collectionView.currentFeedItem) {
+        [controller resetWebView];
         
-        _currentPageIndex = pageIndex;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            if (collectionView.currentFeedItem == currentFeedItem) {
+                [controller loadURLForFeedItem:currentFeedItem];
+            }
+        });
         
         [controller prefetchImagesNearIndex:pageIndex count:5];
         [controller.pageControl_itemIndicator setPageControllerPageAtIndex:pageIndex];
+        
+        previousFeedItem = currentFeedItem;
     }
 }
 

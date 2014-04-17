@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NJKWebViewProgress.h"
+#import "NJKWebViewProgressView.h"
 
 @class EZRHomeViewController;
 
 /**
  * A delegate for the scroll view on the home view controller
  */
-@interface EZRHomeWebViewDelegate : NSObject <UIWebViewDelegate, UIScrollViewDelegate>
+@interface EZRHomeWebViewDelegate : NJKWebViewProgress <UIScrollViewDelegate, NJKWebViewProgressDelegate>
 
 /**
  * Initializes a new scroll view delegate for the given home view controller instance

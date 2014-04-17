@@ -12,6 +12,8 @@
 @implementation EZRHomeWebViewDelegate
 {
     EZRHomeViewController *controller;
+    
+    NJKWebViewProgressView *progressView;
 }
 
 - (instancetype)initWithController:(EZRHomeViewController *)homeController
@@ -21,28 +23,20 @@
     if (self)
     {
         controller = homeController;
+        self.progressDelegate = self;
     }
     
     return self;
 }
 
-
-//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-//{
-////    controller.scrollView_vertical.scrollEnabled = YES;
-//    NSLog(@"enable scrolling on uiscrollview");
-//}
-
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress
 {
-//    controller.scrollView_vertical.scrollEnabled = YES;
-//    
-//    if (scrollView.contentOffset.y == 0)
-//    {
-//        NSLog(@"YES");
-//        
-//    }
+    if (!progressView) {
+        progressView = [[NJKWebViewProgressView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(controller.webView_feedItem.frame), 5)];
+        [controller.webView_feedItem addSubview:progressView];
+    }
+    
+    [progressView setProgress:progress animated:NO];
 }
 
 @end

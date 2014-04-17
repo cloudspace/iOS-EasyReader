@@ -30,9 +30,15 @@ PODS:
   - MAObjCRuntime (0.0.1)
   - MBProgressHUD (0.8)
   - MFSideMenu (0.5.4)
+  - NJKWebViewProgress (0.2.2):
+    - NJKWebViewProgress/Core
+    - NJKWebViewProgress/ProgressView
+  - NJKWebViewProgress/Core (0.2.2)
+  - NJKWebViewProgress/ProgressView (0.2.2)
   - NSDate+TimeAgo (1.0.3)
   - OCMock (2.2.3)
   - RegexKitLite (4.0)
+  - RNCachingURLProtocol (0.0.1)
   - SDWebImage (3.5.4):
     - SDWebImage/Core
   - SDWebImage/Core (3.5.4)
@@ -52,8 +58,10 @@ DEPENDENCIES:
   - MagicalRecord (from `https://github.com/magicalpanda/MagicalRecord`, commit `98ec121bf767c495a2e887adeade7383b74a62f4`)
   - MAObjCRuntime (~> 0.0)
   - MFSideMenu (~> 0.5.4)
+  - NJKWebViewProgress (~> 0.2)
   - NSDate+TimeAgo (~> 1.0.2)
   - OCMock (~> 2.2.2)
+  - RNCachingURLProtocol (~> 0.0)
   - SDWebImage (~> 3.5.1)
   - SVProgressHUD (~> 1.0)
   - TestFlightSDK (~> 2.2.0-noadid-beta)
@@ -77,12 +85,14 @@ SPEC CHECKSUMS:
   MAObjCRuntime: ab7a4cd2ad843a49c8d78d2a96453c76b465da46
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   MFSideMenu: f59e25c080097a701e108459c207fb22e1f62c30
+  NJKWebViewProgress: 4f905b9ab7eb91525dc899cacebd2941a6d4553b
   NSDate+TimeAgo: ca09306750ac2564418042aa10cf8365c36d2cee
   OCMock: ea7fe30ee99e4e3186ad47d032a301fa7e8793ec
   RegexKitLite: b16f029b518614394438e17b7d1df8bfa1e5a81e
+  RNCachingURLProtocol: 8ffacb3582c207cddc231624f4db38d1625b61bf
   SDWebImage: 1a62010700adbba823b621fc217906739dbf6aa5
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
   TestFlightSDK: 79a20263b43de6f094271655c023d5581762cf8a
   TSMessages: 9dd053bcf1a8985275177ebe0fb8c0f1416e92f7
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.32.1

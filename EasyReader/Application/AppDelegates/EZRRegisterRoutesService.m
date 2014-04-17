@@ -8,6 +8,7 @@
 
 #import "EZRRegisterRoutesService.h"
 #import "APIRouter.h"
+#import "RNCachingURLProtocol.h"
 
 @implementation EZRRegisterRoutesService
 
@@ -18,6 +19,8 @@
     [[APIRouter shared] registerRoute:@"feedSearch"   path:@"/feeds/search/"   requestMethod:kAPIRequestMethodGET];
     [[APIRouter shared] registerRoute:@"feedItems"    path:@"/feed_items/"     requestMethod:kAPIRequestMethodGET];
 
+    //[NSURLProtocol registerClass:[RNCachingURLProtocol class]];
+    
     return YES;
 }
 

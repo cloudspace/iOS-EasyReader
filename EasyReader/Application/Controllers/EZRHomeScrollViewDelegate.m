@@ -19,38 +19,31 @@
 {
     self = [super init];
     
-    if (self)
-    {
+    if (self) {
         controller = homeController;
     }
     
     return self;
 }
 
-
 /**
- * Scroll view delegate method for dragging view up into webview
+ *
+ *
+ * @param scrollVsiew the
  */
-- (void)scrollViewWillBeginDragging:(UIScrollView *)sender {
-    // If we are scrolling in the scrollView only not a subclass
-    [self loadFeedItemWebView];
-}
-
-/**
- * Loads a new
- */
-- (void) loadFeedItemWebView
-{
-    if(currentURL != controller.currentFeedItem.url){
-        currentURL = controller.currentFeedItem.url;
-        
-        // load the url in the webView
-        NSURL *url = [NSURL URLWithString:currentURL];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        
-        [controller.webView_feedItem loadRequest:request];
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y == -scrollView.contentInset.top) {
+        [self stopScrollingInScrollView:scrollView];
     }
 }
 
+/**
+ * Stops scrolling inside the given scrollview
+ *
+ * @param The scroll view
+ */
+- (void)stopScrollingInScrollView:(UIScrollView *)scrollView {
+    [scrollView setContentOffset:scrollView.contentOffset animated:NO];
+}
 
 @end

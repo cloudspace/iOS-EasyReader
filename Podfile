@@ -22,11 +22,15 @@ pod 'MAObjCRuntime', '~> 0.0'
 # User notification
 pod 'SVProgressHUD', '~> 1.0'
 pod 'TSMessages', '~> 0.9'
+pod 'NJKWebViewProgress', '~> 0.2'
 
 
 # Image caching and processing
 pod 'SDWebImage', '~> 3.5.1'
 pod 'GPUImage', '~> 0.1'
+
+pod 'RNCachingURLProtocol', '~> 0.0'
+pod 'AFCache', '~> 0.0'
 
 # Private CS repos
 pod 'CSEnhancedTableView', '~> 0.0.1'

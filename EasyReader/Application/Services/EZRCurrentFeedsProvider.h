@@ -15,13 +15,13 @@
 
 
 /// All feeds
-@property (nonatomic, retain) NSArray *feeds;
+@property (nonatomic, readonly) NSArray *feeds;
 
 /// All feed items
-@property (nonatomic, retain) NSArray *feedItems;
+@property (nonatomic, readonly) NSArray *feedItems;
 
 /// All feed items that should be visible
-@property (nonatomic, retain) NSArray *visibleFeedItems;
+@property (nonatomic, readonly) NSArray *visibleFeedItems;
 
 
 #pragma mark - Methods

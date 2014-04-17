@@ -49,13 +49,33 @@
     return self;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [super tableView:tableView numberOfRowsInSection:section] + 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell;
+    
+    if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:self.reusableCellIdentifier];
+        ((EZRMenuFeedCell*)cell).label_name.text = @"All Feeds";
+    } else {
+        NSIndexPath *previousIndexPath = [NSIndexPath indexPathForRow:indexPath.row-1 inSection:indexPath.section];
+        cell = [super tableView:tableView cellForRowAtIndexPath:previousIndexPath];
+    }
+
+    return cell;
+}
+
 /**
  * Commits each editing action
  */
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Feed *toDelete = [self.source objectAtIndex:indexPath.row];
+        Feed *toDelete = [self.source objectAtIndex:indexPath.row-1];
         
         [[User current] removeFeedsObject:toDelete];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];

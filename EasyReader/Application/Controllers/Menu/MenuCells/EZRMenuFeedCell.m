@@ -13,6 +13,18 @@
 
 @implementation EZRMenuFeedCell
 
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        self.imageView_icon.hidden = NO;
+        self.imageView.image = [UIImage imageNamed:@"icon_rss"];
+    }
+    
+    return self;
+}
+
 /**
  * Sets the fields in the cell
  *

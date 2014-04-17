@@ -62,7 +62,6 @@ static EZRCurrentFeedsProvider *sharedInstance;
                                                      name:@"kEZRFeedSelected"
                                                    object:nil];
 
-
         [self observeRelationship:@keypath(self.currentUser.feeds) changeBlock:^(__weak User *user, NSSet *oldFeeds, NSSet *newFeeds) {
             [self userFeedsDidChange:user oldFeeds:oldFeeds newFeeds:newFeeds];
         } insertionBlock:nil removalBlock:nil replacementBlock:nil];
@@ -71,6 +70,11 @@ static EZRCurrentFeedsProvider *sharedInstance;
     return self;
 }
 
+/**
+ * Called when the selected feed item notification is received
+ *
+ * @param notification the NSNotification related to teh feed item change
+ */
 - (void)selectedFeedDidChange:(NSNotification *)notification
 {
     Feed *feed = notification.object;
@@ -87,6 +91,15 @@ static EZRCurrentFeedsProvider *sharedInstance;
 }
 
 
+/**
+ * Called when the current users feeds have changed
+ *
+ * Triggers KVO for feeds, feedItems, and visibleFeedItems
+ *
+ * @param currentUser The current user object
+ * @param notification The old feeds NSSet
+ * @param notification The new feeds NSSet
+ */
 - (void) userFeedsDidChange:(User *)currentUser oldFeeds:(NSSet *)oldFeeds newFeeds:(NSSet *)newFeeds {
     [self willChangeValueForKey:@"feeds"];
     [self willChangeValueForKey:@"feedItems"];
@@ -122,6 +135,7 @@ static EZRCurrentFeedsProvider *sharedInstance;
         
         [feedItems addObjectsFromArray:[feed.feedItems sortedArrayUsingDescriptors:nil]];
     }
+    
     
     _feeds = [newFeeds sortedArrayByAttributes:@"name", nil];
     _feedItems = [feedItems sortedArrayByAttributes:@"createdAt", nil];

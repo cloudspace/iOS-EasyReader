@@ -14,10 +14,11 @@
  */
 @interface EZRFeedItemCollectionView : UICollectionView
 
-/**
- * The feed item that is currently focused
- */
+/// The feed item that is currently focused
 @property (nonatomic, readonly) FeedItem *currentFeedItem;
+
+/// The curent visible page index
+@property (nonatomic, readonly) NSInteger currentPageIndex;
 
 
 @end

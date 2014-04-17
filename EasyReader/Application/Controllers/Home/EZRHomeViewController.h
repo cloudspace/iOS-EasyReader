@@ -42,6 +42,11 @@
 /// Displays website that hosts article
 @property (nonatomic, strong) EZRNestableWebView *webView_feedItem;
 
+@property (nonatomic, strong) UIToolbar *toolbar_webView;
+
+@property (nonatomic, strong) UIImageView *upIndicatorView;
+
+
 
 # pragma mark - Properties
 
@@ -58,5 +63,16 @@
  * Scrolls through collection view to display whatever item is set to currentItem
  */
 - (void)scrollToCurrentFeedItem;
+
+/**
+ * Loads the url for the new feed item in the web view
+ *
+ * @param feedItem The feed item to
+ */
+- (void) loadURLForFeedItem:(FeedItem *)feedItem;
+/**
+ * Resets the content of the web view
+ */
+- (void)resetWebView;
 
 @end

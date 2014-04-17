@@ -67,13 +67,6 @@
     
     /// The data source for the collection view
     CSArrayCollectionViewDataSource *collectionViewArrayDataSource;
-    
-    
-    /// The flow layout for the collection view
-    UICollectionViewFlowLayout *collectionViewLayout;
-    
-    UIActionSheet *menu;
-
 }
 
 - (FeedItem *)currentFeedItem
@@ -104,18 +97,9 @@
     [self setUpCollectionView];
     [self setUpWebView];
     
-
-    
     [self observeRelationship:@keypath(self.currentFeedsProvider.visibleFeedItems) changeBlock:^(EZRCurrentFeedsProvider *provider, NSArray *visibleFeedItems) {
         [self visibleFeedItemsDidChange:provider visibleFeeditems:visibleFeedItems];
     }];
-    
-    [self observeProperty:@keypath(self.currentFeedsProvider.visibleFeedItems) withBlock:^(__weak id self, id old, id new) {
-        NSLog(@"doing stuff");
-    }];
-//    
-//    [self observeObject:self.currentFeedsProvider property:@"visibleFeedItems" withSelector:@selector(visibleFeedItemsDidChange:visibleFeeditems:)];
-    
 }
 
 /**
@@ -167,6 +151,10 @@
     scrollViewDelegate = [[EZRHomeScrollViewDelegate alloc] initWithController:self];
     self.scrollView_vertical.delegate = scrollViewDelegate;
     [self layOutVerticalScrollView];
+    
+    
+    [self.scrollView_vertical setContentInset:UIEdgeInsetsMake(60, 0, 0, 0)];
+    [self.scrollView_vertical setContentOffset:CGPointMake(0, 60)];
 }
 
 /**
@@ -179,7 +167,7 @@
     
     self.scrollView_vertical.contentSize = CGSizeMake(width, height*2);
     self.webView_feedItem.frame = CGRectMake(0, height, width, height);
-    collectionViewLayout.itemSize = CGSizeMake(width, height);
+    self.upIndicatorView.frame = CGRectMake(CGRectGetWidth(self.scrollView_vertical.frame)/2.0 - 25, height+15, 50, 40);
 }
 
 /**
@@ -205,13 +193,37 @@
 -(void)setUpWebView
 {
     self.webView_feedItem = [[EZRNestableWebView alloc] init];
-    [self.webView_feedItem setBackgroundColor:[UIColor redColor]];
+    [self.webView_feedItem setBackgroundColor:[UIColor blackColor]];
     [self.scrollView_vertical addSubview:self.webView_feedItem];
     
     webViewDelegate = [[EZRHomeWebViewDelegate alloc] initWithController:self];
     
     self.webView_feedItem.scrollView.delegate = webViewDelegate;
     self.webView_feedItem.delegate = webViewDelegate;
+    self.webView_feedItem.multipleTouchEnabled = YES;
+    self.webView_feedItem.scalesPageToFit = YES;
+    
+    NSInteger cacheSizeMemory = 16*1024*1024; // 4MB
+    NSInteger cacheSizeDisk = 64*1024*1024; // 32MB
+    
+    NSURLCache *sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:cacheSizeMemory diskCapacity:cacheSizeDisk diskPath:@"nsurlcache"];
+    [NSURLCache setSharedURLCache:sharedCache];
+    
+    // Up indicator hook
+    self.upIndicatorView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_upIndicator"]];
+    
+    [self.scrollView_vertical addSubview:self.upIndicatorView];
+    [self.upIndicatorView setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollToTop)];
+    [self.upIndicatorView addGestureRecognizer:tapRecognizer];
+}
+
+/**
+ * Scrolls the main containing scroll view to the top (animated)
+ */
+- (void) scrollToTop {
+    [self.scrollView_vertical setContentOffset:CGPointMake(0,0) animated:YES];
 }
 
 
@@ -228,7 +240,10 @@
     if([visibleFeedItems containsObject:self.currentFeedItem]){
         [self scrollToCurrentFeedItem];
     } else if ([visibleFeedItems count] > 0){
-        
+        [self resetWebView];
+        NSIndexPath *firstItemPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.collectionView_feedItems scrollToItemAtIndexPath:firstItemPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+        [self loadURLForFeedItem:visibleFeedItems[0]];
     }
     
     NSInteger count = [self.currentFeedsProvider.visibleFeedItems count];
@@ -236,9 +251,7 @@
     self.pageControl_itemIndicator.numberOfPages = count < 6 ? count : 5;
     [self.pageControl_itemIndicator setPageControllerPageAtIndex:self.currentPageIndex];
     
-//    if (_currentPageIndex == 0 && _currentFeedItem) {
-        [self prefetchFirstImages];
-//    }
+    [self prefetchFirstImages];
 }
 
 
@@ -283,11 +296,15 @@
             
         }];
     }
+    else
+    {
+        [self prefetchImagesNearIndex:1 count:2];
+    }
 
 }
 - (void)prefetchImagesNearIndex:(NSInteger)currentPageIndex count:(NSInteger)count
 {
-    NSInteger feedItemsCount = [self.currentFeedsProvider.feedItems count];
+    NSInteger feedItemsCount = [self.currentFeedsProvider.visibleFeedItems count];
     
     NSInteger beginFetchIndex = currentPageIndex - count > 0 ? currentPageIndex - count : 0;
     NSInteger beforeFetchCount = currentPageIndex - count > 0 ?  count : currentPageIndex - beginFetchIndex;
@@ -295,10 +312,35 @@
     
     NSRange fetchRange = {beginFetchIndex, beforeFetchCount+afterFetchCount};
     
-    NSArray *itemsToPrefetch = [self.currentFeedsProvider.feedItems subarrayWithRange:fetchRange];
+    NSArray *itemsToPrefetch = [self.currentFeedsProvider.visibleFeedItems subarrayWithRange:fetchRange];
     
     [[EZRFeedImageService shared] prefetchImagesForFeedItems:itemsToPrefetch];
     
+}
+
+/**
+ * Loads the url for the new feed item in the web view
+ *
+ * @param feedItem The feed item to
+ */
+- (void) loadURLForFeedItem:(FeedItem *)feedItem
+{
+    NSURL *url = [NSURL URLWithString:feedItem.url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30.0];
+
+    [self.webView_feedItem loadRequest:request];
+}
+
+/**
+ * Resets the content of the web view
+ */
+- (void)resetWebView
+{
+    [self.webView_feedItem stopLoading];
+    
+    NSString *blankHTML = @"<html><head></head><body style=\"background-color: #000000;\"></body></html>";
+    [self.webView_feedItem loadHTMLString:blankHTML
+                                        baseURL:nil];
 }
 
 @end
