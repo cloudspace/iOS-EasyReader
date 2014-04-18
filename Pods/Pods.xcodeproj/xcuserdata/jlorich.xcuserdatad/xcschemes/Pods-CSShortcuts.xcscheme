@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0AB22DDB45B647BF86A74AD8"
+               BlueprintIdentifier = "468A21B0662C47079814B575"
                BuildableName = "libPods-CSShortcuts.a"
                BlueprintName = "Pods-CSShortcuts"
                ReferencedContainer = "container:Pods.xcodeproj">
