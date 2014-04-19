@@ -23,6 +23,8 @@ static dispatch_once_t pred;
 static EZRFeedImageService *sharedInstance;
 
 
+
+
 @implementation EZRFeedImageService
 {
     /// A dictionary keyed on urlStrings of NSArrays of blocks to run on image processing success
@@ -416,3 +418,4 @@ static EZRFeedImageService *sharedInstance;
 }
 
 @end
+

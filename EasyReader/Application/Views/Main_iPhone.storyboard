@@ -173,16 +173,28 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="button_leftMenu" destination="wb1-Na-kaO" id="0oK-RY-cyj"/>
                         <outlet property="collectionView_feedItems" destination="xvT-99-V3u" id="kb5-it-zd3"/>
                         <outlet property="pageControl_itemIndicator" destination="ZJR-Bc-2rZ" id="DWa-BN-VLk"/>
                         <outlet property="scrollView_vertical" destination="EWA-9Z-pb1" id="T2I-XO-1AS"/>
+                        <outlet property="socialShareToolbar" destination="cdD-4o-hTR" id="YTt-sV-J3Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGN-P7-i1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="b7J-Of-yw4" customClass="EZRHomeSocialToolbarDataSource">
+                    <connections>
+                        <outlet property="controller" destination="Hgn-0q-Z1W" id="jsg-XU-luH"/>
+                    </connections>
+                </customObject>
+                <customObject id="cdD-4o-hTR" customClass="CSSocialShareToolbar">
+                    <connections>
+                        <outlet property="dataSource" destination="b7J-Of-yw4" id="ltQ-0S-sa5"/>
+                    </connections>
+                </customObject>
             </objects>
-            <point key="canvasLocation" x="13" y="-735"/>
+            <point key="canvasLocation" x="63" y="-778"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="wwp-1t-XzC">
@@ -354,7 +366,7 @@
                 <customObject id="jNU-eH-pwx" customClass="EZRMenuSearchController">
                     <connections>
                         <outlet property="feedSearchDataSource" destination="Kyf-fs-6tv" id="l3D-sl-XQh"/>
-                        <outlet property="searchBar" destination="6U4-aC-Dql" id="fk0-2k-s3A"/>
+                        <outlet property="searchBar" destination="6U4-aC-Dql" id="oor-8F-EAf"/>
                     </connections>
                 </customObject>
                 <customObject id="Kyf-fs-6tv" customClass="EZRMenuSearchFeedDataSource"/>

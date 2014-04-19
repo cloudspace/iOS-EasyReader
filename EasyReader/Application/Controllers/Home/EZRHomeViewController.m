@@ -35,6 +35,9 @@
 
 #import "CSArrayCollectionViewDataSource.h"
 
+#import "CSSocialShareToolbar.h"
+
+#import "EZRHomeSocialToolbarDataSource.h"
 
 @interface EZRHomeViewController()
 
@@ -44,6 +47,9 @@
 ///
 @property (nonatomic, strong) EZRCurrentFeedsProvider *currentFeedsProvider;
 
+
+
+@property (nonatomic, weak) IBOutlet CSSocialShareToolbar *socialShareToolbar;
 
 @end
 
@@ -67,19 +73,13 @@
     
     /// The data source for the collection view
     CSArrayCollectionViewDataSource *collectionViewArrayDataSource;
+    
 }
 
 - (FeedItem *)currentFeedItem
 {
     return self.collectionView_feedItems.currentFeedItem;
 }
-
-
-- (void)setCurrentPageIndex:(NSInteger)currentPageIndex
-{
-    _currentPageIndex = currentPageIndex;
-}
-
 
 #pragma mark - UIViewController Methods
 
@@ -96,10 +96,12 @@
     [self setUpVerticalScrollView];
     [self setUpCollectionView];
     [self setUpWebView];
+    [self setUpShareToolbar];
     
     [self observeRelationship:@keypath(self.currentFeedsProvider.visibleFeedItems) changeBlock:^(EZRCurrentFeedsProvider *provider, NSArray *visibleFeedItems) {
         [self visibleFeedItemsDidChange:provider visibleFeeditems:visibleFeedItems];
     }];
+    
 }
 
 /**
@@ -117,7 +119,7 @@
  * Locks the interface orientation to portrait
  */
 -(NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationPortrait;
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 /**
@@ -157,6 +159,10 @@
     [self.scrollView_vertical setContentOffset:CGPointMake(0, 60)];
 }
 
+- (void)setUpShareToolbar {
+    [self.scrollView_vertical insertSubview:self.socialShareToolbar belowSubview:self.webView_feedItem];
+}
+
 /**
  * Sets the size of the vertical scroll view to be double the frame size
  */
@@ -168,6 +174,8 @@
     self.scrollView_vertical.contentSize = CGSizeMake(width, height*2);
     self.webView_feedItem.frame = CGRectMake(0, height, width, height);
     self.upIndicatorView.frame = CGRectMake(CGRectGetWidth(self.scrollView_vertical.frame)/2.0 - 25, height+15, 50, 40);
+    
+    self.socialShareToolbar.frame = CGRectMake(0, -self.scrollView_vertical.contentInset.top, width, self.scrollView_vertical.contentInset.top);
 }
 
 /**
