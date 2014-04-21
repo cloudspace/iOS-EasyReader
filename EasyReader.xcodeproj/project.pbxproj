@@ -51,7 +51,6 @@
 		8E685AA818DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E685AA918DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E7F81F018D0BF8500BC50C2 /* CSRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSRemoteObject.m */; };
-		8EB0714D18E6121E009B1BA3 /* EZRCustomFeedCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB0714C18E6121E009B1BA3 /* EZRCustomFeedCellTests.m */; };
 		9D010EE618F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
 		9D010EE718F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
 		9D010EE818F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
@@ -346,7 +345,6 @@
 		8E685AA618DC733B00309270 /* CSCollectionPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSCollectionPageControl.m; path = EasyReader/Application/Controls/CSCollectionPageControl.m; sourceTree = SOURCE_ROOT; };
 		8E7F81EE18D0BF8500BC50C2 /* CSRemoteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRemoteObject.h; sourceTree = "<group>"; };
 		8E7F81EF18D0BF8500BC50C2 /* CSRemoteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRemoteObject.m; sourceTree = "<group>"; };
-		8EB0714C18E6121E009B1BA3 /* EZRCustomFeedCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRCustomFeedCellTests.m; path = MenuCells/EZRCustomFeedCellTests.m; sourceTree = "<group>"; };
 		8ECC8F8A18E47BC1006EADD1 /* libPods-OCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OCMock.a"; path = "Pods/build/Debug-iphoneos/libPods-OCMock.a"; sourceTree = "<group>"; };
 		8ECC8F8D18E4803E006EADD1 /* libPods-OCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OCMock.a"; path = "Pods/build/Release-iphoneos/libPods-OCMock.a"; sourceTree = "<group>"; };
 		9D010EE418F4AC9E001999EE /* move_to_64bit_ids.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = move_to_64bit_ids.xcdatamodel; sourceTree = "<group>"; };
@@ -638,7 +636,6 @@
 		8EB0714818E61136009B1BA3 /* MenuCells */ = {
 			isa = PBXGroup;
 			children = (
-				8EB0714C18E6121E009B1BA3 /* EZRCustomFeedCellTests.m */,
 			);
 			name = MenuCells;
 			sourceTree = "<group>";
@@ -1442,7 +1439,6 @@
 				9D8E39E318E5B2160025B73E /* EZRFeedItemTests.m in Sources */,
 				0DEC0B8E18E605ED0072BEF5 /* CSMenuSearchFeedDataSourceTests.m in Sources */,
 				0DEC0B8C18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m in Sources */,
-				8EB0714D18E6121E009B1BA3 /* EZRCustomFeedCellTests.m in Sources */,
 				0DEC0B8A18E5E68A0072BEF5 /* EZRBaseControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

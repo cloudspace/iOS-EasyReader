@@ -12,7 +12,7 @@
 
 // Menu Cells
 #import "EZRSearchFeedCell.h"
-#import "EZRMenuUserFeedCell.h"
+#import "EZRMenuFeedCell.h"
 
 // Models
 #import "Feed.h"
@@ -23,7 +23,7 @@
 
 - (void)sortFeeds;
 - (void)setFeedData:(NSDictionary *)feedData forSearchFeedCell:(EZRSearchFeedCell *)cell;
-- (void)setFeedData:(NSDictionary *)feedData forCustomFeedCell:(EZRMenuUserFeedCell *)cell;
+- (void)setFeedData:(NSDictionary *)feedData forCustomFeedCell:(EZRMenuFeedCell *)cell;
 
 @end
 
@@ -45,64 +45,5 @@
 {
     [super tearDown];
 }
-
-- (void)testUpdateWithFeeds
-{
-    Feed *feed = [Feed MR_createEntity];
-    [feed setName:@"A"];
-    
-    NSMutableSet *feedSet = [[NSMutableSet alloc] init];
-    [feedSet addObject:feed];
-    
-    [searchFeedDataSource updateWithFeeds:feedSet];
-    
-    BOOL assert = [searchFeedDataSource.feeds count] == 1;
-    XCTAssertTrue(assert, @"");
-}
-
-- (void)testSortFeeds
-{
-    NSMutableSet *feedSet = [[NSMutableSet alloc] init];
-    
-    Feed *feed1 = [Feed MR_createEntity];
-    [feed1 setName:@"B"];
-    [feedSet addObject:feed1];
-    Feed *feed2 = [Feed MR_createEntity];
-    [feed2 setName:@"A"];
-    [feedSet addObject:feed2];
-    
-    searchFeedDataSource.feeds = feedSet;
-    
-    [searchFeedDataSource sortFeeds];
-    
-    BOOL assert = [((Feed *)[searchFeedDataSource.sortedFeeds objectAtIndex:0]) isEqual:feed2];
-    XCTAssertTrue(assert, @"");
-}
-
-- (void)testSetFeedForSearchFeedCell
-{
-    EZRSearchFeedCell *cell = [[EZRSearchFeedCell alloc] init];
-    
-    NSDictionary *feedData = @{@"url" : @"search"};
-    
-    [searchFeedDataSource setFeedData:feedData forSearchFeedCell:cell];
-    
-    BOOL assert = [((NSDictionary *)cell.feedData) isEqual:feedData];
-    XCTAssertTrue(assert, @"");
-}
-
-
-- (void)testSetFeedForCustomFeedCell
-{
-    EZRMenuUserFeedCell *cell = [[EZRMenuUserFeedCell alloc] init];
-    
-    NSDictionary *feedData = @{@"url" : @"custom"};
-    
-    [searchFeedDataSource setFeedData:feedData forCustomFeedCell:cell];
-    
-    BOOL assert = [((NSDictionary *)cell.feedData) isEqual:feedData];
-    XCTAssertTrue(assert, @"");
-}
-
 
 @end
