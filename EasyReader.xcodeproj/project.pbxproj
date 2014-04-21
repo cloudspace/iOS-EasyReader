@@ -1895,10 +1895,8 @@
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Development-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(PODS_ROOT)/TestFlightSDK\"",
-					"$(SYMROOT)/Release$(EFFECTIVE_PLATFORM_NAME)",
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "\"$(PODS_ROOT)/TestFlightSDK\"";
 				PRODUCT_NAME = Development;
 				PROVISIONING_PROFILE = "0B1685CC-627C-4832-97D4-79736E8FE8EE";
 				VALID_ARCHS = "armv7 arm64 armv7s";
@@ -1919,10 +1917,7 @@
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Development-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(PODS_ROOT)/TestFlightSDK\"",
-					"$(SYMROOT)/Release$(EFFECTIVE_PLATFORM_NAME)",
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
 				PRODUCT_NAME = Development;
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 arm64 armv7s";

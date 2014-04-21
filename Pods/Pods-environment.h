@@ -144,12 +144,6 @@
 #define COCOAPODS_VERSION_MINOR_OCMock 2
 #define COCOAPODS_VERSION_PATCH_OCMock 3
 
-// RNCachingURLProtocol
-#define COCOAPODS_POD_AVAILABLE_RNCachingURLProtocol
-#define COCOAPODS_VERSION_MAJOR_RNCachingURLProtocol 0
-#define COCOAPODS_VERSION_MINOR_RNCachingURLProtocol 0
-#define COCOAPODS_VERSION_PATCH_RNCachingURLProtocol 1
-
 // RegexKitLite
 #define COCOAPODS_POD_AVAILABLE_RegexKitLite
 #define COCOAPODS_VERSION_MAJOR_RegexKitLite 4

@@ -29,9 +29,6 @@ pod 'NJKWebViewProgress', '~> 0.2'
 pod 'SDWebImage', '~> 3.5.1'
 pod 'GPUImage', '~> 0.1'
 
-pod 'RNCachingURLProtocol', '~> 0.0'
-pod 'AFCache', '~> 0.0'
-
 # Private CS repos
 pod 'CSEnhancedTableView', '~> 0.0.1'
 pod 'CSStandardViewControllers', '~> 0.0.1'

@@ -38,7 +38,6 @@ PODS:
   - NSDate+TimeAgo (1.0.3)
   - OCMock (2.2.3)
   - RegexKitLite (4.0)
-  - RNCachingURLProtocol (0.0.1)
   - SDWebImage (3.5.4):
     - SDWebImage/Core
   - SDWebImage/Core (3.5.4)
@@ -61,7 +60,6 @@ DEPENDENCIES:
   - NJKWebViewProgress (~> 0.2)
   - NSDate+TimeAgo (~> 1.0.2)
   - OCMock (~> 2.2.2)
-  - RNCachingURLProtocol (~> 0.0)
   - SDWebImage (~> 3.5.1)
   - SVProgressHUD (~> 1.0)
   - TestFlightSDK (~> 2.2.0-noadid-beta)
@@ -89,7 +87,6 @@ SPEC CHECKSUMS:
   NSDate+TimeAgo: ca09306750ac2564418042aa10cf8365c36d2cee
   OCMock: ea7fe30ee99e4e3186ad47d032a301fa7e8793ec
   RegexKitLite: b16f029b518614394438e17b7d1df8bfa1e5a81e
-  RNCachingURLProtocol: 8ffacb3582c207cddc231624f4db38d1625b61bf
   SDWebImage: 1a62010700adbba823b621fc217906739dbf6aa5
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
   TestFlightSDK: 79a20263b43de6f094271655c023d5581762cf8a

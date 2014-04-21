@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FD50215DF5AE4C7B807D8C73"
-               BuildableName = "libPods-Inflections.a"
-               BlueprintName = "Pods-Inflections"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "9D79270818DA1D0300E1D3E1"
+               BuildableName = "Staging.app"
+               BlueprintName = "Staging"
+               ReferencedContainer = "container:EasyReader.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,6 +29,15 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9D79270818DA1D0300E1D3E1"
+            BuildableName = "Staging.app"
+            BlueprintName = "Staging"
+            ReferencedContainer = "container:EasyReader.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -39,6 +48,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9D79270818DA1D0300E1D3E1"
+            BuildableName = "Staging.app"
+            BlueprintName = "Staging"
+            ReferencedContainer = "container:EasyReader.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -48,6 +66,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9D79270818DA1D0300E1D3E1"
+            BuildableName = "Staging.app"
+            BlueprintName = "Staging"
+            ReferencedContainer = "container:EasyReader.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

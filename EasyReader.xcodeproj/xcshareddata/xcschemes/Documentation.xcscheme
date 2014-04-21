@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "92BFC39263A84C57A2C79396"
-               BuildableName = "libPods-MTLabel.a"
-               BlueprintName = "Pods-MTLabel"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "9D458C7218E331B300BC17D6"
+               BuildableName = "Documentation"
+               BlueprintName = "Documentation"
+               ReferencedContainer = "container:EasyReader.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
