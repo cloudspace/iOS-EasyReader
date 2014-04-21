@@ -34,7 +34,7 @@
 {
     NSSet *feedSet = [NSSet setWithArray:feedData[@"feeds"]];
     
-    self.source = [feedSet sortedArrayByAttributes:@"name", nil];
+    self.source = [feedSet sortedArrayByAttributes:@[@"name"] ascending:YES];
 }
 
 

@@ -53,8 +53,8 @@ static EZRCurrentFeedsProvider *sharedInstance;
     
     if (self) {
         self.currentUser = [User current];
-        _feeds = [self.currentUser.feeds sortedArrayByAttributes:@"name", nil];
-        _feedItems = [self.currentUser.feedItems sortedArrayByAttributes:@"createdAt", nil];
+        _feeds = [self.currentUser.feeds sortedArrayByAttributes:@[@"name"] ascending:YES];
+        _feedItems = [self.currentUser.feedItems sortedArrayByAttributes:@[@"createdAt"] ascending:NO];
         _visibleFeedItems = _feedItems;
         
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -82,7 +82,7 @@ static EZRCurrentFeedsProvider *sharedInstance;
     [self willChangeValueForKey:@"visibleFeedItems"];
     
     if (feed) {
-        _visibleFeedItems = [feed.feedItems sortedArrayByAttributes:@"createdAt", nil];
+        _visibleFeedItems = [feed.feedItems sortedArrayByAttributes:@[@"createdAt"] ascending:NO];
     } else {
         _visibleFeedItems = _feedItems;
     }
@@ -137,8 +137,8 @@ static EZRCurrentFeedsProvider *sharedInstance;
     }
     
     
-    _feeds = [newFeeds sortedArrayByAttributes:@"name", nil];
-    _feedItems = [feedItems sortedArrayByAttributes:@"createdAt", nil];
+    _feeds = [newFeeds sortedArrayByAttributes:@[@"name"] ascending:YES];
+    _feedItems = [feedItems sortedArrayByAttributes:@[@"createdAt"] ascending:NO];
     
     if (!currentFeed) {
         _visibleFeedItems = _feedItems;
@@ -160,7 +160,7 @@ static EZRCurrentFeedsProvider *sharedInstance;
 {
     return ^void(Feed *feed, NSSet *old, NSSet *new) {
         [self willChangeValueForKey:@"feedItems"];
-        _feedItems = [self.currentUser.feedItems sortedArrayByAttributes:@"createdAt", nil];
+        _feedItems = [self.currentUser.feedItems sortedArrayByAttributes:@[@"createdAt"] ascending:NO];
         [self didChangeValueForKey:@"feedItems"];
     };
 }

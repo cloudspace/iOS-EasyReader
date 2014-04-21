@@ -16,9 +16,9 @@
 /**
  * Sorts feeds alphabetically
  *
- * @param attribute The first feed attribute to sort by
- * @param ... Additional attributes to sort by (nil terminated)
+ * @param attribute The attributes to sort by
+ * @param ascending Whether or not the array should be sorted in ascending order
  */
-- (NSArray *)sortedArrayByAttributes:(NSString *)attribute,... NS_REQUIRES_NIL_TERMINATION;
+- (NSArray *)sortedArrayByAttributes:(NSArray *)attributes ascending:(BOOL)ascending;
 
 @end
