@@ -1,16 +1,15 @@
-	//
-//  EZRBaseModelTests.m
+//
+//  EZRBaseServiceTests.m
 //  EasyReader
 //
-//  Created by Alfredo Uribe on 3/27/14.
+//  Created by Alfredo Uribe on 4/18/14.
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "EZRBaseModelTests.h"
+#import "EZRBaseServiceTests.h"
 #import "APIClient.h"
-#import "User.h"
 
-@implementation EZRBaseModelTests
+@implementation EZRBaseServiceTests
 
 - (void)setUp
 {
@@ -28,7 +27,7 @@
 {
     // Clean up core data
     [MagicalRecord cleanUp];
-    [User setCurrent:nil];
+    
     [super tearDown];
 }
 

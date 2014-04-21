@@ -84,31 +84,31 @@
     [mockAPIClient verify];
 }
 
-- (void)testSaveParsedResponseData
-{
-    Feed *feed1 = [Feed MR_createEntity];
-    [feed1 setId:@1];
-    
-    Feed *feed2 = [Feed MR_createEntity];
-    [feed2 setId:@2];
-    
-    User *user = [User current];
-    [user setFeeds:[NSSet setWithObjects:feed1,feed2, nil]];
-    
-    NSDictionary *response = @{
-                           @"feed_items":@[
-                                @{
-                                    @"feed_id":@1
-                                  },
-                                @{
-                                    @"feed_id":@2
-                                  }
-                           ]};
-    
-    [FeedItem saveParsedResponseData:response];
-    
-    BOOL assert = [[FeedItem MR_findAll] count] == 2;
-    XCTAssertTrue(assert, @"");
-}
+//- (void)testSaveParsedResponseData
+//{
+//    Feed *feed1 = [Feed MR_createEntity];
+//    [feed1 setId:@1];
+//    
+//    Feed *feed2 = [Feed MR_createEntity];
+//    [feed2 setId:@2];
+//    
+//    User *user = [User current];
+//    [user setFeeds:[NSSet setWithObjects:feed1,feed2, nil]];
+//    
+//    NSDictionary *response = @{
+//                           @"feed_items":@[
+//                                @{
+//                                    @"feed_id":@1
+//                                  },
+//                                @{
+//                                    @"feed_id":@2
+//                                  }
+//                           ]};
+//    
+//    [FeedItem saveParsedResponseData:response];
+//    
+//    BOOL assert = [[FeedItem MR_findAll] count] == 2;
+//    XCTAssertTrue(assert, @"");
+//}
 
 @end

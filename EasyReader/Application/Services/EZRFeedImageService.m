@@ -27,6 +27,12 @@ static EZRFeedImageService *sharedInstance;
 
 @implementation EZRFeedImageService
 {
+    /// A cache of feed item images
+    SDImageCache *imageCache;
+    
+    /// A cache of blurred item images
+    SDImageCache *blurredImageCache;
+
     /// A dictionary keyed on urlStrings of NSArrays of blocks to run on image processing success
     NSMutableDictionary *successBlocks;
 
@@ -35,12 +41,6 @@ static EZRFeedImageService *sharedInstance;
     
     /// An array of URLs that are currently being processed
     NSMutableArray *imageURLsCurrentlyBeingProcessed;
-    
-    /// A cache of feed item images
-    SDImageCache *imageCache;
-
-    /// A cache of blurred item images
-    SDImageCache *blurredImageCache;
     
     NSMutableArray *prefetched;
 }
@@ -81,6 +81,11 @@ static EZRFeedImageService *sharedInstance;
     return sharedInstance;
 }
 
++ (void)setShared:(EZRFeedImageService *)shared
+{
+    sharedInstance = shared;
+}
+
 - (void)prefetchImagesForFeedItems:(NSArray *)feedItems
 {
     #ifdef IMAGE_CACHING
@@ -117,21 +122,39 @@ static EZRFeedImageService *sharedInstance;
             // as they aren't always guaranteed to be synchronous
             [self markImageForURLString:urlString asBeingProcessed:YES];
             
-            [imageCache queryDiskCacheForKey:urlString done:^(UIImage *image, SDImageCacheType cacheType) {
-                [blurredImageCache queryDiskCacheForKey:urlString done:^(UIImage *blurredImage, SDImageCacheType blurredCacheType) {
-                    if (image && blurredImage)
-                    {
-                        [self triggerCompletionBlocksForUrlString:urlString withImage:image blurredImage:blurredImage];
-                        [self markImageForURLString:urlString asBeingProcessed:NO];
-                    }
-                    else
-                    {
-                        // Download and process
-                        [self downloadAndProcessImageAtURLString:urlString];
-                    }
-                }];
-            }];
+            [imageCache queryDiskCacheForKey:urlString
+                                        done:^(UIImage *image, SDImageCacheType cacheType) {
+                                            [self blurredBlockForURLString:urlString withImage:image];
+                                        }
+             ];
         }
+    }
+}
+
+- (void)blurredBlockForURLString:(NSString *)urlString withImage:(UIImage *)image
+{
+    [blurredImageCache queryDiskCacheForKey:urlString
+                                       done:^(UIImage *blurredImage, SDImageCacheType blurredCacheType) {
+                                           [self triggerCompletionBlocksForUrlString:urlString
+                                                                           withImage:image
+                                                                        blurredImage:blurredImage];
+                                       }
+     ];
+}
+
+- (void)triggerOrDownloadForURLString:(NSString *)urlString withImage:(UIImage *)image blurredImage:(UIImage *)blurredImage
+{
+    if (image && blurredImage)
+    {
+        [self triggerCompletionBlocksForUrlString:urlString
+                                        withImage:image
+                                     blurredImage:blurredImage];
+        [self markImageForURLString:urlString asBeingProcessed:NO];
+    }
+    else
+    {
+        // Download and process
+        [self downloadAndProcessImageAtURLString:urlString];
     }
 }
 
@@ -140,29 +163,39 @@ static EZRFeedImageService *sharedInstance;
 
 
 /**
- * Downloads ad processes an image at the given URL string and triggers the existing completion blocks
+ * Downloads and processes an image at the given URL string and triggers the existing completion blocks
  *
  * @param urlString The URL string of the image to download and process
  */
 - (void)downloadAndProcessImageAtURLString:(NSString *)urlString
 {
     [self downloadImageAtURLString:urlString
-                           success:
-     ^(UIImage *image) {
-         UIImage *processedImage = [self processImage:image];
-         
-         #ifdef IMAGE_CACHING
-             [imageCache storeImage:image forKey:urlString];
-             [blurredImageCache storeImage:processedImage forKey:urlString];
-         #endif
-         
-         [self markImageForURLString:urlString asBeingProcessed:NO];
-         
-         [self triggerCompletionBlocksForUrlString:urlString withImage:image blurredImage:processedImage];
-         
-     } failure:^{
-         [self triggerCompletionBlocksForUrlString:urlString withImage:nil blurredImage:nil];
-     }];
+                           success:^(UIImage *image) {
+                               [self downloadAndProcessImage:(UIImage *)image atURLString:(NSString *)urlString];
+                           } failure:^{
+                               [self triggerCompletionBlocksForUrlString:urlString withImage:nil blurredImage:nil];
+                           }
+     ];
+}
+
+/**
+ * Processes an image at the given URL string and triggers the existing completion blocks
+ *
+ * @param image The UIImage to process
+ * @param urlString The URL string of the image to download and process
+ */
+- (void)downloadAndProcessImage:(UIImage *)image atURLString:(NSString *)urlString
+{
+    UIImage *processedImage = [self processImage:image];
+    
+    #ifdef IMAGE_CACHING
+        [imageCache storeImage:image forKey:urlString];
+        [blurredImageCache storeImage:processedImage forKey:urlString];
+    #endif
+    
+    [self markImageForURLString:urlString asBeingProcessed:NO];
+    
+    [self triggerCompletionBlocksForUrlString:urlString withImage:image blurredImage:processedImage];
 }
 
 /**
@@ -334,7 +367,6 @@ static EZRFeedImageService *sharedInstance;
     image = [self cropImage:image toRect:CGRectMake(10, 160, 320, 200) uiScale:1.0f];
     image = [self enhanceImage:image saturation:2.5 contrast:1.5 brightness:0.75];
     image = [self flipImage:image];
-
 
     return image;
 }

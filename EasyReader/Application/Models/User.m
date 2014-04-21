@@ -47,6 +47,12 @@ static User *sharedInstance = nil;
     }
 }
 
++ (void) setCurrent:(User *)user {
+    @synchronized(self) {
+        sharedInstance = user;
+    }
+}
+
 
 /**
  * Gathers all the items in a users feeds

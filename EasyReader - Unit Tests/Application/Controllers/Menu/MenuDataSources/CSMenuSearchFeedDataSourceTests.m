@@ -46,4 +46,15 @@
     [super tearDown];
 }
 
+- (void)testSetFeedData
+{
+    NSDictionary *feed = @{ @"url" : @"search" };
+    NSDictionary *feedData = @{ @"feeds" : @[feed] };
+    
+    [searchFeedDataSource setFeedData:feedData];
+    
+    XCTAssertTrue([((NSArray *)searchFeedDataSource.source) containsObject:feed], @"");
+}
+
+
 @end

@@ -40,7 +40,7 @@
 
 #pragma mark - Private Methods
 
-- (void) requestFiveMinutesOfFeedItems:(id)sender
+- (void)requestFiveMinutesOfFeedItems:(id)sender
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *today = [NSDate date];
@@ -54,8 +54,7 @@
     NSLog(@"Invocation ran!");
 }
 
-
-- (void) requestOneWeekOfFeedItems
+- (void)requestOneWeekOfFeedItems
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *today = [NSDate date];
@@ -69,7 +68,7 @@
     NSLog(@"Setup Invocation");
 }
 
-- (void) requestFeedItemsSince:(NSDate *)since
+- (void)requestFeedItemsSince:(NSDate *)since
 {
     [FeedItem requestFeedItemsFromFeeds:[[User current] feeds]
                                   since:since
@@ -84,7 +83,7 @@
 }
 
 
-- (void) loadDefaultFeeds
+- (void)loadDefaultFeeds
 {
     [Feed requestDefaultFeedsWithSuccess:^(id responseObject, NSInteger httpStatus) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
