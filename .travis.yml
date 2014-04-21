@@ -1,1 +1,8 @@
+
 language: objective-c
+before_install:
+  - gem install cocoapods -v '0.32.1'
+script:
+  - xctool -workspace EasyReader.xcworkspace -scheme Staging -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool test -workspace EasyReader.xcworkspace -scheme Staging -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+
