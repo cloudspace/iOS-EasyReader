@@ -106,104 +106,106 @@
     XCTAssertTrue([EZRFeedImageService shared] == testService, @"");
 }
 
-//- (void)testFetchImageAtURLString
-//{
-//    [[partialMockService expect] fetchImageAtURLString:@"test"
-//                                        success:nil
-//                                        failure:nil];
-//    
-//    [partialMockService fetchImageAtURLString:@"test"];
-//    [partialMockService verify];
-//}
+- (void)testFetchImageAtURLString
+{
+    [[partialMockService expect] fetchImageAtURLString:@"test"
+                                        success:nil
+                                        failure:nil];
+    
+    [partialMockService fetchImageAtURLString:@"test"];
+    [partialMockService verify];
+}
 
-//- (void)testFetchImageAtURLStringSuccessFailureBeingProcessed
-//{
-//    [[partialMockService expect] addCompletionBlocksForURLString:@"test"
-//                                                         success:nil
-//                                                         failure:nil];
-//    
-//    [[[partialMockService stub] andReturnValue:@YES] isImageCurrentlyBeingProcessedForURLString:@"test"];
-//
-//    [partialMockService fetchImageAtURLString:@"test"
-//                                      success:nil
-//                                      failure:nil];
-//    
-//    [partialMockService verify];
-//}
+- (void)testFetchImageAtURLStringSuccessFailureBeingProcessed
+{
+    [[partialMockService expect] addCompletionBlocksForURLString:@"test"
+                                                         success:nil
+                                                         failure:nil];
+    
+    [[[partialMockService stub] andReturnValue:@YES] isImageCurrentlyBeingProcessedForURLString:@"test"];
 
-//- (void)testFetchImageAtURLStringSuccessFailureNotBeingProcessed
-//{
-//    [[partialMockService expect] addCompletionBlocksForURLString:@"test"
-//                                                         success:nil
-//                                                         failure:nil];
-//    [[[partialMockService stub] andReturnValue:@NO] isImageCurrentlyBeingProcessedForURLString:@"test"];
-//    [[partialMockService expect] markImageForURLString:@"test" asBeingProcessed:YES];
-//    
-//    [partialMockService setImageCache:mockImageCache];
-//    [[mockImageCache expect] queryDiskCacheForKey:@"test" done:[OCMArg any]];
-//
-//    [partialMockService fetchImageAtURLString:@"test"
-//                                      success:nil
-//                                      failure:nil];
-//    
-//    [partialMockService verify];
-//}
-//
-//
-//- (void)testBlurredBlockForURLString
-//{
-//    [[mockBlurredCache expect] queryDiskCacheForKey:@"test" done:[OCMArg any]];
-//    
-//    [partialMockService blurredBlockForURLString:@"test"
-//                                       withImage:mockImage];
-//    
-//    [partialMockService verify];
-//}
-//
-//- (void)testTriggerOrDownloadForURLStringWithImageAndBlurredImage
-//{
-//    [[partialMockService expect] triggerCompletionBlocksForUrlString:@"test"
-//                                                           withImage:[OCMArg any]
-//                                                        blurredImage:[OCMArg any]];
-//    [[partialMockService expect] markImageForURLString:@"test" asBeingProcessed:NO];
-//    
-//    [partialMockService triggerOrDownloadForURLString:@"test"
-//                                            withImage:mockImage
-//                                         blurredImage:mockBlurredImage];
-//    
-//    [partialMockService verify];
-//}
-//
-//- (void)testTriggerOrDownloadForURLStringWithOnlyImage
-//{
-//    [[partialMockService expect] downloadAndProcessImageAtURLString:@"test"];
-//    
-//    [partialMockService triggerOrDownloadForURLString:@"test"
-//                                            withImage:mockImage
-//                                         blurredImage:nil];
-//    
-//    [partialMockService verify];
-//}
-//
-//- (void)testDownloadAndProcessImageAtURLString
-//{
-//    [[partialMockService expect] downloadImageAtURLString:@"test"
-//                                                  success:[OCMArg any]
-//                                                  failure:[OCMArg any]];
-//    
-//    [partialMockService triggerOrDownloadForURLString:@"test"
-//                                            withImage:mockImage
-//                                         blurredImage:nil];
-//    [partialMockService verify];
-//}
+    [partialMockService fetchImageAtURLString:@"test"
+                                      success:nil
+                                      failure:nil];
+    
+    [partialMockService verify];
+}
 
+//// needs imageCache and blurredImageCache to be a properties for full test
+- (void)testFetchImageAtURLStringSuccessFailureNotBeingProcessed
+{
+    [[partialMockService expect] addCompletionBlocksForURLString:@"test"
+                                                         success:nil
+                                                         failure:nil];
+    [[[partialMockService stub] andReturnValue:@NO] isImageCurrentlyBeingProcessedForURLString:@"test"];
+    [[partialMockService expect] markImageForURLString:@"test" asBeingProcessed:YES];
+    
+    //[partialMockService setImageCache:mockImageCache];
+    //[[mockImageCache expect] queryDiskCacheForKey:@"test" done:[OCMArg any]];
+
+    [partialMockService fetchImageAtURLString:@"test"
+                                      success:nil
+                                      failure:nil];
+    
+    [partialMockService verify];
+}
+
+- (void)testBlurredBlockForURLString
+{
+    [[mockBlurredCache expect] queryDiskCacheForKey:@"test" done:[OCMArg any]];
+    
+    [partialMockService blurredBlockForURLString:@"test"
+                                       withImage:mockImage];
+    
+    [partialMockService verify];
+}
+
+- (void)testTriggerOrDownloadForURLStringWithImageAndBlurredImage
+{
+    [[partialMockService expect] triggerCompletionBlocksForUrlString:@"test"
+                                                           withImage:[OCMArg any]
+                                                        blurredImage:[OCMArg any]];
+    [[partialMockService expect] markImageForURLString:@"test" asBeingProcessed:NO];
+    
+    [partialMockService triggerOrDownloadForURLString:@"test"
+                                            withImage:mockImage
+                                         blurredImage:mockBlurredImage];
+    
+    [partialMockService verify];
+}
+
+- (void)testTriggerOrDownloadForURLStringWithOnlyImage
+{
+    [[partialMockService expect] downloadAndProcessImageAtURLString:@"test"];
+    
+    [partialMockService triggerOrDownloadForURLString:@"test"
+                                            withImage:mockImage
+                                         blurredImage:nil];
+    
+    [partialMockService verify];
+}
+
+- (void)testDownloadAndProcessImageAtURLString
+{
+    [[partialMockService expect] downloadImageAtURLString:@"test"
+                                                  success:[OCMArg any]
+                                                  failure:[OCMArg any]];
+    
+    [partialMockService triggerOrDownloadForURLString:@"test"
+                                            withImage:mockImage
+                                         blurredImage:nil];
+    [partialMockService verify];
+}
+
+///////////////// would need imageCache and blurredImageCache to be a properties
 //- (void)testDownloadAndProcessImage
 //{
-//    [[[partialMockService stub] andReturn:mockImage ] processImage:mockImage];
+//    [[[partialMockService expect] andReturn:mockBlurredImage ] processImage:mockImage];
 //    
 //    [[partialMockService expect] markImageForURLString:@"test" asBeingProcessed:NO];
-//    [[partialMockService expect] triggerCompletionBlocksForUrlString:@"test" withImage:mockImage blurredImage:[OCMArg any]];
-//    
+//    [[partialMockService expect] triggerCompletionBlocksForUrlString:@"test"
+//                                                           withImage:mockImage
+//                                                        blurredImage:mockBlurredImage];
 //    [partialMockService setImageCache:mockImageCache];
 //    [[mockImageCache expect] storeImage:mockImage forKey:@"test"];
 //    
@@ -214,6 +216,7 @@
 //    [partialMockService verify];
 //}
 
+///////////////// would need imageURLsCurrentlyBeingProcessed to be a property
 //- (void)testMarkImageForURLStringAsBeingProcessedYes
 //{
 //    [partialMockService markImageForURLString:@"test" asBeingProcessed:YES];
@@ -226,16 +229,16 @@
 //    [partialMockService verify];
 //}
 
-//- (void)testProcessImage
-//{
-//    [[[partialMockService expect] andReturn:mockImage] scaleImage:mockImage toSize:CGSizeMake(340, 420) uiScale:1.0f];
-//    [[[partialMockService expect] andReturn:mockImage] blurImage:mockImage];
-//    [[[partialMockService expect] andReturn:mockImage] cropImage:mockImage toRect:CGRectMake(10, 160, 320, 200) uiScale:1.0f];
-//    [[[partialMockService expect] andReturn:mockImage] enhanceImage:mockImage saturation:2.5 contrast:1.5 brightness:0.75];
-//    [[[partialMockService expect] andReturn:mockImage] flipImage:mockImage];
-//    
-//    [partialMockService processImage:mockImage];
-//    [partialMockService verify];
-//}
+- (void)testProcessImage
+{
+    [[[partialMockService expect] andReturn:mockImage] scaleImage:mockImage toSize:CGSizeMake(340, 420) uiScale:1.0f];
+    [[[partialMockService expect] andReturn:mockImage] blurImage:mockImage];
+    [[[partialMockService expect] andReturn:mockImage] cropImage:mockImage toRect:CGRectMake(10, 160, 320, 200) uiScale:1.0f];
+    [[[partialMockService expect] andReturn:mockImage] enhanceImage:mockImage saturation:2.5 contrast:1.5 brightness:0.75];
+    [[[partialMockService expect] andReturn:mockImage] flipImage:mockImage];
+    
+    [partialMockService processImage:mockImage];
+    [partialMockService verify];
+}
 
 @end

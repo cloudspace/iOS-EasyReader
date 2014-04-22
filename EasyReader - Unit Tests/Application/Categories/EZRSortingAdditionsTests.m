@@ -45,29 +45,29 @@
     XCTAssertTrue(assert, @"");
 }
 
-//- (void)testSortedArrayByTwoAttributes
-//{
-//    NSArray *data = @[
-//                      @{ @"first" : @"b", @"second" : @"b" },
-//                      @{ @"first" : @"c", @"second" : @"a" },
-//                      @{ @"first" : @"a", @"second" : @"b" },
-//                      @{ @"first" : @"a", @"second" : @"a" },
-//                      @{ @"first" : @"b", @"second" : @"a" },
-//                      @{ @"first" : @"c", @"second" : @"b" }
-//                      ];
-//    NSSet *toSort = [NSSet setWithArray:data];
-//    
-//    NSArray *sorted = @[
-//                        @{ @"first" : @"a", @"second" : @"a" },
-//                        @{ @"first" : @"a", @"second" : @"b" },
-//                        @{ @"first" : @"b", @"second" : @"a" },
-//                        @{ @"first" : @"b", @"second" : @"b" },
-//                        @{ @"first" : @"c", @"second" : @"a" },
-//                        @{ @"first" : @"c", @"second" : @"b" }
-//                        ];
-//    
-//    BOOL assert = [[toSort sortedArrayByAttributes:@[@"name",@"second"] ascending:YES] isEqualToArray:sorted];
-//    XCTAssertTrue(assert, @"");
-//}
+- (void)testSortedArrayByTwoAttributes
+{
+    NSArray *data = @[
+                      @{ @"first" : @"b", @"second" : @"b" },
+                      @{ @"first" : @"c", @"second" : @"a" },
+                      @{ @"first" : @"a", @"second" : @"b" },
+                      @{ @"first" : @"a", @"second" : @"a" },
+                      @{ @"first" : @"b", @"second" : @"a" },
+                      @{ @"first" : @"c", @"second" : @"b" }
+                      ];
+    NSSet *toSort = [NSSet setWithArray:data];
+    
+    NSArray *sorted = @[
+                        @{ @"first" : @"a", @"second" : @"a" },
+                        @{ @"first" : @"a", @"second" : @"b" },
+                        @{ @"first" : @"b", @"second" : @"a" },
+                        @{ @"first" : @"b", @"second" : @"b" },
+                        @{ @"first" : @"c", @"second" : @"a" },
+                        @{ @"first" : @"c", @"second" : @"b" }
+                        ];
+    
+    BOOL assert = [[toSort sortedArrayByAttributes:@[@"first",@"second"] ascending:YES] isEqualToArray:sorted];
+    XCTAssertTrue(assert, @"");
+}
 
 @end

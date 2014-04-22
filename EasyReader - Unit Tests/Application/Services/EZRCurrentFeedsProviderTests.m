@@ -93,7 +93,7 @@
     [partialMockService selectedFeedDidChange:mockNotification];
     
     if( [[partialMockService visibleFeedItems] isEqualToArray:
-         [feedItemSet sortedArrayByAttributes:@[@"createdAt"] ascending:YES]] )
+         [feedItemSet sortedArrayByAttributes:@[@"createdAt"] ascending:NO]] )
     {
         [partialMockService verify];
     } else {
@@ -120,6 +120,7 @@
     }
 }
 
+//////////////////////// Needs _feedItems to be a property to test properly
 //- (void)testUserFeedDidChangeWithFeed
 //{
 //    User *currentUser = [User current];
@@ -155,7 +156,6 @@
 //                                  newFeeds:newFeeds];
 //    
 //    [partialMockService verify];
-//    
 //}
 
 @end
