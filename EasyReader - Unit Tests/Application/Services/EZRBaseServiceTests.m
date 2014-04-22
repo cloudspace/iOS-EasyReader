@@ -7,6 +7,7 @@
 //
 
 #import "EZRBaseServiceTests.h"
+#import "EZRFeedImageService.h"
 #import "APIClient.h"
 
 @implementation EZRBaseServiceTests
@@ -25,9 +26,7 @@
 
 - (void)tearDown
 {
-    // Clean up core data
-    [MagicalRecord cleanUp];
-    
+    [EZRFeedImageService setShared:nil];
     [super tearDown];
 }
 

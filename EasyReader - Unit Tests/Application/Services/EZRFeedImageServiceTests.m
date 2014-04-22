@@ -74,7 +74,7 @@
     [super setUp];
     testService = [[EZRFeedImageService alloc] init];
     mockService = [OCMockObject mockForClass:[EZRFeedImageService class]];
-    partialMockService = [OCMockObject partialMockForObject:[EZRFeedImageService shared]];
+    partialMockService = [OCMockObject partialMockForObject:[[EZRFeedImageService alloc] init]];
     
     mockImageCache = [OCMockObject mockForClass:[SDImageCache class]];
     mockBlurredCache = [OCMockObject mockForClass:[SDImageCache class]];
@@ -85,6 +85,16 @@
 
 - (void)tearDown
 {
+    testService = nil;
+    mockService = nil;
+    partialMockService = nil;
+    
+    mockImageCache = nil;
+    mockBlurredCache = nil;
+    
+    mockImage = nil;
+    mockBlurredImage = nil;
+    
     [super tearDown];
 }
 
@@ -101,7 +111,6 @@
 
 - (void)testSetShared
 {
-    testService = [[EZRFeedImageService alloc] init];
     [EZRFeedImageService setShared:testService];
     XCTAssertTrue([EZRFeedImageService shared] == testService, @"");
 }
@@ -131,7 +140,7 @@
     [partialMockService verify];
 }
 
-//// needs imageCache and blurredImageCache to be a properties for full test
+//// need imageCache and blurredImageCache to be a properties for full test
 - (void)testFetchImageAtURLStringSuccessFailureNotBeingProcessed
 {
     [[partialMockService expect] addCompletionBlocksForURLString:@"test"
@@ -150,15 +159,15 @@
     [partialMockService verify];
 }
 
-- (void)testBlurredBlockForURLString
-{
-    [[mockBlurredCache expect] queryDiskCacheForKey:@"test" done:[OCMArg any]];
-    
-    [partialMockService blurredBlockForURLString:@"test"
-                                       withImage:mockImage];
-    
-    [partialMockService verify];
-}
+//- (void)testBlurredBlockForURLString
+//{
+//    [[mockBlurredCache expect] queryDiskCacheForKey:@"test" done:[OCMArg any]];
+//    
+//    [partialMockService blurredBlockForURLString:@"test"
+//                                       withImage:mockImage];
+//    
+//    [partialMockService verify];
+//}
 
 - (void)testTriggerOrDownloadForURLStringWithImageAndBlurredImage
 {
