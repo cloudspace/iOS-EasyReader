@@ -14,6 +14,8 @@
 
 - (void)setUp
 {
+    [User setCurrent:nil];
+    
     mockAPIClient = [OCMockObject mockForClass:[APIClient class]];
     mockObserver  = [OCMockObject observerMock];
     
@@ -28,7 +30,6 @@
 {
     // Clean up core data
     [MagicalRecord cleanUp];
-    [User setCurrent:nil];
     [super tearDown];
 }
 

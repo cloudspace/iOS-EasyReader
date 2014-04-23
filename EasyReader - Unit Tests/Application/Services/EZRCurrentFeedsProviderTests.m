@@ -52,6 +52,8 @@
 
 - (void)tearDown
 {
+    testService = nil;
+    partialMockService = nil;
     [super tearDown];
 }
 
@@ -84,6 +86,8 @@
     
     FeedItem *feedItem1 = [FeedItem MR_createEntity];
     FeedItem *feedItem2 = [FeedItem MR_createEntity];
+    feedItem1.createdAt = [NSDate date];
+    feedItem2.createdAt = [NSDate dateWithTimeIntervalSinceNow: -(60.0f*60.0f*24.0f)];
     NSSet *feedItemSet = [NSSet setWithArray:@[feedItem1, feedItem2]];
     
     [feed addFeedItems:feedItemSet];
@@ -92,8 +96,10 @@
 
     [partialMockService selectedFeedDidChange:mockNotification];
     
-    if( [[partialMockService visibleFeedItems] isEqualToArray:
-         [feedItemSet sortedArrayByAttributes:@[@"createdAt"] ascending:NO]] )
+    NSArray *visible = [partialMockService visibleFeedItems];
+    NSArray *sorted = [feedItemSet sortedArrayByAttributes:@[@"createdAt"] ascending:NO];
+    
+    if(  [visible isEqualToArray:sorted] )
     {
         [partialMockService verify];
     } else {

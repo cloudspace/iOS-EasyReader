@@ -26,7 +26,6 @@
 
 - (void)tearDown
 {
-    [EZRFeedImageService setShared:nil];
     [super tearDown];
 }
 
