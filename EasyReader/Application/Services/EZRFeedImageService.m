@@ -88,7 +88,6 @@ static EZRFeedImageService *sharedInstance;
         {
             if (item.imageIphoneRetina && ![prefetched containsObject:item.imageIphoneRetina])
             {
-                NSLog(@"prefetching image %@", item.imageIphoneRetina);
                 [self fetchImageAtURLString:item.imageIphoneRetina];
                 [prefetched addObject:item.imageIphoneRetina];
             }

@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_Block_KVO 2
 #define COCOAPODS_VERSION_PATCH_Block_KVO 1
 
+// CCARadialGradientLayer
+#define COCOAPODS_POD_AVAILABLE_CCARadialGradientLayer
+#define COCOAPODS_VERSION_MAJOR_CCARadialGradientLayer 1
+#define COCOAPODS_VERSION_MINOR_CCARadialGradientLayer 0
+#define COCOAPODS_VERSION_PATCH_CCARadialGradientLayer 0
+
 // CSEnhancedTableView
 #define COCOAPODS_POD_AVAILABLE_CSEnhancedTableView
 #define COCOAPODS_VERSION_MAJOR_CSEnhancedTableView 0

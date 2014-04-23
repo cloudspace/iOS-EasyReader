@@ -68,4 +68,12 @@
     }
 }
 
+/**
+ * Scrolls the window down when a title is tapped
+ */
+- (void)didTapHeadlineOfCell:(EZRFeedItemCollectionViewCell *)cell {
+    CGPoint lowestPoint = CGPointMake(0, controller.scrollView_vertical.contentSize.height - CGRectGetHeight(controller.scrollView_vertical.frame));
+    [controller.scrollView_vertical setContentOffset:lowestPoint animated:YES];
+}
+
 @end

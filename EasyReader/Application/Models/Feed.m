@@ -92,8 +92,10 @@
      * Query and create an array of the oldest feed items from the database
      * Limit the query to only the amount of feed items needed to be removed
      */
-    if(numberOfFeedItemsToRemove){
-        NSFetchRequest *fetchFeedItemsToRemove = [FeedItem MR_requestAllSortedBy:@"updatedAt" ascending:YES];
+    if (numberOfFeedItemsToRemove) {
+        NSPredicate *feedPredicate = [NSPredicate predicateWithFormat:@"feed = %@", self];
+        NSFetchRequest *fetchFeedItemsToRemove = [FeedItem MR_requestAllSortedBy:@"updatedAt" ascending:YES withPredicate:feedPredicate];
+        
         [fetchFeedItemsToRemove setFetchLimit:numberOfFeedItemsToRemove];
         
         NSArray *feedItemsToRemove = [FeedItem MR_executeFetchRequest:fetchFeedItemsToRemove];

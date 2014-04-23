@@ -11,17 +11,15 @@
 #import <Accounts/Accounts.h>
 #import <MessageUI/MessageUI.h>
 
-/**
- * Returns the page count to be used in the page control
- */
 
-@class CSSocialShareToolbar;
+@class CLDSocialShareToolbar;
 
+#pragma mark - CLDSocialShareToolbarDataSource
 
 /**
  * This protocol represents the data source for the Social Share Toolbar control
  */
-@protocol CSSocialShareToolbarDataSource <NSObject>
+@protocol CLDSocialShareToolbarDataSource <NSObject>
 
 @required
 
@@ -30,7 +28,7 @@
  *
  * @param toolbar The social share toolbar making the request
  */
-- (UIViewController *)containingViewControllerForDialogFromSocialToolbar:(CSSocialShareToolbar *)toolbar;
+- (UIViewController *)containingViewControllerForDialogFromSocialToolbar:(CLDSocialShareToolbar *)toolbar;
 
 @optional
 
@@ -40,7 +38,7 @@
  * @param toolbar The social share toolbar making the request
  * @param serviceType The service type requested for the share.  Possible values are defined in <Social/SLServiceTypes.h>
  */
-- (NSString *)socialToolbar:(CSSocialShareToolbar *)toolbar textForShareDialogFromService:(NSString *)serviceType;
+- (NSString *)socialToolbar:(CLDSocialShareToolbar *)toolbar textForShareDialogFromService:(NSString *)serviceType;
 
 /**
  * Returns a url to share with the given service
@@ -48,8 +46,7 @@
  * @param toolbar The social share toolbar making the request
  * @param serviceType The service type requested for the share.  Possible values are defined in <Social/SLServiceTypes.h>
  */
-- (NSURL *)socialToolbar:(CSSocialShareToolbar *)toolbar urlForShareDialogFromService:(NSString *)serviceType;
-
+- (NSURL *)socialToolbar:(CLDSocialShareToolbar *)toolbar urlForShareDialogFromService:(NSString *)serviceType;
 
 /**
  * Returns an image to share with the given service
@@ -57,20 +54,29 @@
  * @param toolbar The social share toolbar making the request
  * @param serviceType The service type requested for the share.  Possible values are defined in <Social/SLServiceTypes.h>
  */
-- (UIImage *)socialToolbar:(CSSocialShareToolbar *)toolbar imageForShareDialogFromService:(NSString *)serviceType;
+- (UIImage *)socialToolbar:(CLDSocialShareToolbar *)toolbar imageForShareDialogFromService:(NSString *)serviceType;
 
 @end
+
+
+#pragma mark - CLDSocialShareToolbar
 
 /**
  * A social sharing UIToolbar implementation
  */
-@interface CSSocialShareToolbar : UIToolbar <MFMailComposeViewControllerDelegate>
+@interface CLDSocialShareToolbar : UIToolbar <MFMailComposeViewControllerDelegate>
 
 
 # pragma mark - Properties
 
 /// The object that acts as the data source of the receiving social share toolbar
-@property (nonatomic, assign) IBOutlet id<CSSocialShareToolbarDataSource> dataSource;
+@property (nonatomic, assign) IBOutlet id<CLDSocialShareToolbarDataSource> dataSource;
+
+/// The title label
+@property (nonatomic, strong) UILabel *label_title;
+
+/// Whether or not the background is transparent
+@property (nonatomic, assign) BOOL backgroundTransparent;
 
 
 @end

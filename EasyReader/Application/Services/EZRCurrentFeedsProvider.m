@@ -53,8 +53,11 @@ static EZRCurrentFeedsProvider *sharedInstance;
     
     if (self) {
         self.currentUser = [User current];
-        _feeds = [self.currentUser.feeds sortedArrayByAttributes:@[@"name"] ascending:YES];
-        _feedItems = [self.currentUser.feedItems sortedArrayByAttributes:@[@"createdAt"] ascending:NO];
+        _feeds = [self.currentUser.feeds sortedArrayByAttributes:@[@"name"]
+                                                       ascending:[self nameSortDirection]];
+        
+        _feedItems = [self.currentUser.feedItems sortedArrayByAttributes:@[@"createdAt"]
+                                                               ascending:[self createdAtSortDirection]];
         _visibleFeedItems = _feedItems;
         
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -82,9 +85,12 @@ static EZRCurrentFeedsProvider *sharedInstance;
     [self willChangeValueForKey:@"visibleFeedItems"];
     
     if (feed) {
-        _visibleFeedItems = [feed.feedItems sortedArrayByAttributes:@[@"createdAt"] ascending:NO];
+        _visibleFeedItems = [feed.feedItems sortedArrayByAttributes:@[@"createdAt"]
+                                                          ascending:[self createdAtSortDirection]];
+        currentFeed = feed;
     } else {
         _visibleFeedItems = _feedItems;
+        currentFeed = nil;
     }
     
     [self didChangeValueForKey:@"visibleFeedItems"];
@@ -137,8 +143,11 @@ static EZRCurrentFeedsProvider *sharedInstance;
     }
     
     
-    _feeds = [newFeeds sortedArrayByAttributes:@[@"name"] ascending:YES];
-    _feedItems = [feedItems sortedArrayByAttributes:@[@"createdAt"] ascending:NO];
+    _feeds = [newFeeds sortedArrayByAttributes:@[@"name"]
+                                     ascending:[self nameSortDirection]];
+    
+    _feedItems = [feedItems sortedArrayByAttributes:@[@"createdAt"]
+                                          ascending:[self createdAtSortDirection]];
     
     if (!currentFeed) {
         _visibleFeedItems = _feedItems;
@@ -159,10 +168,31 @@ static EZRCurrentFeedsProvider *sharedInstance;
 - (void (^)(Feed *, NSSet *, NSSet *))feedItemsDidChange
 {
     return ^void(Feed *feed, NSSet *old, NSSet *new) {
+        [self willChangeValueForKey:@"visibleFeedItems"];
         [self willChangeValueForKey:@"feedItems"];
-        _feedItems = [self.currentUser.feedItems sortedArrayByAttributes:@[@"createdAt"] ascending:NO];
+        
+        _feedItems = [self.currentUser.feedItems sortedArrayByAttributes:@[@"createdAt"]
+                                                               ascending:[self createdAtSortDirection]];
+        
+        if (!currentFeed) {
+            _visibleFeedItems = _feedItems;
+        } else {
+            _visibleFeedItems = [currentFeed.feedItems sortedArrayByAttributes:@[@"createdAt"]
+                                                                     ascending:[self createdAtSortDirection]];
+        }
+        
         [self didChangeValueForKey:@"feedItems"];
+        [self didChangeValueForKey:@"visibleFeedItems"];
     };
+}
+
+- (BOOL)createdAtSortDirection {
+    return NO;
+}
+
+
+- (BOOL)nameSortDirection {
+    return YES;
 }
 
 

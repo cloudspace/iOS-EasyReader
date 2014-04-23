@@ -11,29 +11,19 @@
 @implementation EZRNestableWebView
 
 
-//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-//{
-//    NSLog(@"%@", NSStringFromClass([otherGestureRecognizer.view class]));
-//
-//    return YES;
-////    UIView *superView = [otherGestureRecognizer.view superview];
-////    UIView *superSuperView = [superView superview];
-////    
-////    if ([superView isKindOfClass:[UIWebView class]] || [superSuperView isKindOfClass:[UIWebView class]])
-////    {
-////        return YES;
-////    }
-////    else
-////    {
-////        return NO;
-////    }
-//}
+- (void) layoutSubviews {
+    [super layoutSubviews];
+    [self fixOffsetIfZeroForScrollView:self.scrollView];
+}
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self fixOffsetIfZeroForScrollView:scrollView];
+}
 
-//- (UIResponder *)nextResponder
-//{
-//    UIResponder *next = [super nextResponder];
-//    
-//    return next;
-//}
+- (void)fixOffsetIfZeroForScrollView:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y == 0) {
+        scrollView.contentOffset = CGPointMake(0, 1);
+    }
+}
+
 @end

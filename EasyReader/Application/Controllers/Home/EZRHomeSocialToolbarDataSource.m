@@ -21,16 +21,16 @@
 @implementation EZRHomeSocialToolbarDataSource
 
 
-- (UIViewController *)containingViewControllerForDialogFromSocialToolbar:(CSSocialShareToolbar *)toolbar
+- (UIViewController *)containingViewControllerForDialogFromSocialToolbar:(CLDSocialShareToolbar *)toolbar
 {
     return self.controller;
 }
 
-- (NSString *)socialToolbar:(CSSocialShareToolbar *)toolbar textForShareDialogFromService:(NSString *)serviceType {
+- (NSString *)socialToolbar:(CLDSocialShareToolbar *)toolbar textForShareDialogFromService:(NSString *)serviceType {
     return self.controller.currentFeedItem.title;
 }
 
-- (NSURL *)socialToolbar:(CSSocialShareToolbar *)toolbar urlForShareDialogFromService:(NSString *)serviceType {
+- (NSURL *)socialToolbar:(CLDSocialShareToolbar *)toolbar urlForShareDialogFromService:(NSString *)serviceType {
     return [NSURL URLWithString:self.controller.currentFeedItem.url];
 }
 

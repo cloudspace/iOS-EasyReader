@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EZRFeedItemCollectionViewCell.h"
 
 @class EZRHomeViewController;
 
 /**
  * A delegate for the collection view on the home view controller
  */
-@interface EZRHomeCollectionViewDelegate : NSObject <UICollectionViewDelegate>
+@interface EZRHomeCollectionViewDelegate : NSObject <UICollectionViewDelegate, EZRFeedItemCollectionViewCellDelegate>
 
 /**
  * Initializes a collection view delegate for the given home view controller instance

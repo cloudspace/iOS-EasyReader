@@ -9,6 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "FeedItem.h"
 
+@class EZRCollectionView;
+
+@protocol EZRCollectionViewDelegate<NSObject, UICollectionViewDelegate>
+
+@optional
+
+- (void)collectionView:(EZRCollectionView *)collectionView didTapTitleOfItem:(FeedItem *)item;
+
+@end
+
+
 /**
  * A collection view built to hold feed items
  */

@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CSSocialShareToolbar.h"
+#import "CLDSocialShareToolbar.h"
 
-@interface EZRHomeSocialToolbarDataSource : NSObject <CSSocialShareToolbarDataSource>
+@interface EZRHomeSocialToolbarDataSource : NSObject <CLDSocialShareToolbarDataSource>
 
 @end

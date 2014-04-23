@@ -51,6 +51,10 @@
 		8E685AA818DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E685AA918DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E7F81F018D0BF8500BC50C2 /* CSRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSRemoteObject.m */; };
+		9D00DE84190816F900A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
+		9D00DE85190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
+		9D00DE86190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
+		9D00DE87190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
 		9D010EE618F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
 		9D010EE718F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
 		9D010EE818F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
@@ -75,10 +79,6 @@
 		9D010F1718F83940001999EE /* EZRMenuFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010F1518F83940001999EE /* EZRMenuFeedCell.m */; };
 		9D010F1818F83940001999EE /* EZRMenuFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010F1518F83940001999EE /* EZRMenuFeedCell.m */; };
 		9D010F1918F83940001999EE /* EZRMenuFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D010F1518F83940001999EE /* EZRMenuFeedCell.m */; };
-		9D06C642190190900029A233 /* CSSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D06C641190190900029A233 /* CSSocialShareToolbar.m */; };
-		9D06C643190190900029A233 /* CSSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D06C641190190900029A233 /* CSSocialShareToolbar.m */; };
-		9D06C644190190900029A233 /* CSSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D06C641190190900029A233 /* CSSocialShareToolbar.m */; };
-		9D06C645190190900029A233 /* CSSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D06C641190190900029A233 /* CSSocialShareToolbar.m */; };
 		9D06C6481901AE190029A233 /* EZRHomeSocialToolbarDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D06C6471901AE190029A233 /* EZRHomeSocialToolbarDataSource.m */; };
 		9D06C6491901AE190029A233 /* EZRHomeSocialToolbarDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D06C6471901AE190029A233 /* EZRHomeSocialToolbarDataSource.m */; };
 		9D06C64A1901AE190029A233 /* EZRHomeSocialToolbarDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D06C6471901AE190029A233 /* EZRHomeSocialToolbarDataSource.m */; };
@@ -347,6 +347,8 @@
 		8E7F81EF18D0BF8500BC50C2 /* CSRemoteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRemoteObject.m; sourceTree = "<group>"; };
 		8ECC8F8A18E47BC1006EADD1 /* libPods-OCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OCMock.a"; path = "Pods/build/Debug-iphoneos/libPods-OCMock.a"; sourceTree = "<group>"; };
 		8ECC8F8D18E4803E006EADD1 /* libPods-OCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OCMock.a"; path = "Pods/build/Release-iphoneos/libPods-OCMock.a"; sourceTree = "<group>"; };
+		9D00DE82190816F900A0C65F /* CLDSocialShareToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDSocialShareToolbar.h; sourceTree = "<group>"; };
+		9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLDSocialShareToolbar.m; sourceTree = "<group>"; };
 		9D010EE418F4AC9E001999EE /* move_to_64bit_ids.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = move_to_64bit_ids.xcdatamodel; sourceTree = "<group>"; };
 		9D010EE518F58BA2001999EE /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		9D010EEA18F6D39A001999EE /* EZRMenuSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EZRMenuSearchController.h; path = Menu/EZRMenuSearchController.h; sourceTree = "<group>"; };
@@ -359,8 +361,6 @@
 		9D010F0F18F832C5001999EE /* EZRTestFlightService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRTestFlightService.m; sourceTree = "<group>"; };
 		9D010F1418F8392F001999EE /* EZRMenuFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRMenuFeedCell.h; sourceTree = "<group>"; };
 		9D010F1518F83940001999EE /* EZRMenuFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRMenuFeedCell.m; sourceTree = "<group>"; };
-		9D06C640190190900029A233 /* CSSocialShareToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSSocialShareToolbar.h; path = EasyReader/Application/Controls/CSSocialShareToolbar.h; sourceTree = SOURCE_ROOT; };
-		9D06C641190190900029A233 /* CSSocialShareToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSSocialShareToolbar.m; path = EasyReader/Application/Controls/CSSocialShareToolbar.m; sourceTree = SOURCE_ROOT; };
 		9D06C6461901AE190029A233 /* EZRHomeSocialToolbarDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EZRHomeSocialToolbarDataSource.h; path = Home/EZRHomeSocialToolbarDataSource.h; sourceTree = "<group>"; };
 		9D06C6471901AE190029A233 /* EZRHomeSocialToolbarDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRHomeSocialToolbarDataSource.m; path = Home/EZRHomeSocialToolbarDataSource.m; sourceTree = "<group>"; };
 		9D16D32618DB57D0001E9C38 /* EZRRegisterRoutesService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRRegisterRoutesService.h; sourceTree = "<group>"; };
@@ -627,8 +627,6 @@
 				9D6610D518F303CD0067EF5E /* EZRNestableWebView.m */,
 				9D010F0218F71E5C001999EE /* EZRSearchBar.h */,
 				9D010F0318F71E5C001999EE /* EZRSearchBar.m */,
-				9D06C640190190900029A233 /* CSSocialShareToolbar.h */,
-				9D06C641190190900029A233 /* CSSocialShareToolbar.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -638,6 +636,15 @@
 			children = (
 			);
 			name = MenuCells;
+			sourceTree = "<group>";
+		};
+		9D00DE81190816F900A0C65F /* CLDSocialShareToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				9D00DE82190816F900A0C65F /* CLDSocialShareToolbar.h */,
+				9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */,
+			);
+			path = CLDSocialShareToolbar;
 			sourceTree = "<group>";
 		};
 		9D16D33518DB75BF001E9C38 /* Services */ = {
@@ -660,6 +667,7 @@
 		9D16D34018DBA9E9001E9C38 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				9D00DE81190816F900A0C65F /* CLDSocialShareToolbar */,
 				9D16D34118DBA9E9001E9C38 /* apikit */,
 				9D16D34618DBA9E9001E9C38 /* ServiceOrientedAppDelegate */,
 				9DFD89F418FC7D9300630CBF /* CSArrayTableViewDataSource.h */,
@@ -1311,6 +1319,7 @@
 			files = (
 				9D6B8A8B18E4D2050085C1EE /* EZRFeedImageService.m in Sources */,
 				9D010F1218F832C5001999EE /* EZRTestFlightService.m in Sources */,
+				9D00DE86190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */,
 				9DFD89F818FC7D9300630CBF /* CSArrayTableViewDataSource.m in Sources */,
 				9D16D33E18DB7767001E9C38 /* EZRFeedUpdateService.m in Sources */,
 				9D9CBAC318DCC52900532F8C /* EZRApplicationStyleService.m in Sources */,
@@ -1341,7 +1350,6 @@
 				9D79271418DA1D0300E1D3E1 /* User.m in Sources */,
 				9D010F0618F71E5C001999EE /* EZRSearchBar.m in Sources */,
 				9D096C3718DCE9D70043423B /* EZRMenuUserFeedDataSource.m in Sources */,
-				9D06C644190190900029A233 /* CSSocialShareToolbar.m in Sources */,
 				9D639E7218E0A4E000350B5F /* APIClient.m in Sources */,
 				0D9A835A18E0AA4300D8376E /* EZRSearchFeedCell.m in Sources */,
 				9D5ACFC118E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
@@ -1372,6 +1380,7 @@
 			files = (
 				9D6B8A8C18E4D2050085C1EE /* EZRFeedImageService.m in Sources */,
 				9D010F1318F832C5001999EE /* EZRTestFlightService.m in Sources */,
+				9D00DE87190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */,
 				9DFD89F918FC7D9300630CBF /* CSArrayTableViewDataSource.m in Sources */,
 				9D16D33F18DB7767001E9C38 /* EZRFeedUpdateService.m in Sources */,
 				9D9CBAC418DCC52A00532F8C /* EZRApplicationStyleService.m in Sources */,
@@ -1402,7 +1411,6 @@
 				9D096C3818DCE9D80043423B /* EZRMenuUserFeedDataSource.m in Sources */,
 				9D010F0718F71E5C001999EE /* EZRSearchBar.m in Sources */,
 				9D639E7318E0A4E000350B5F /* APIClient.m in Sources */,
-				9D06C645190190900029A233 /* CSSocialShareToolbar.m in Sources */,
 				9D16D35018DBA9E9001E9C38 /* APIRouter.m in Sources */,
 				9D096C3518DCE9D50043423B /* EZRMenuSearchFeedDataSource.m in Sources */,
 				9D5ACFC218E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
@@ -1449,6 +1457,7 @@
 			files = (
 				9D6B8A8A18E4D2050085C1EE /* EZRFeedImageService.m in Sources */,
 				9D010F1118F832C5001999EE /* EZRTestFlightService.m in Sources */,
+				9D00DE85190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */,
 				9DFD89F718FC7D9300630CBF /* CSArrayTableViewDataSource.m in Sources */,
 				9D9CBAC718DCC68A00532F8C /* EZRFeedUpdateService.m in Sources */,
 				9D9CBAC818DCC68A00532F8C /* EZRApplicationStyleService.m in Sources */,
@@ -1479,7 +1488,6 @@
 				9D639E7718E0A52300350B5F /* APIMockRequest.m in Sources */,
 				9D010F0518F71E5C001999EE /* EZRSearchBar.m in Sources */,
 				9D9CBAD418DCC68A00532F8C /* APIRouter.m in Sources */,
-				9D06C643190190900029A233 /* CSSocialShareToolbar.m in Sources */,
 				0D9A835918E0AA4300D8376E /* EZRSearchFeedCell.m in Sources */,
 				9D096C3318DCE9D40043423B /* EZRMenuSearchFeedDataSource.m in Sources */,
 				9D5ACFC018E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
@@ -1510,6 +1518,7 @@
 			files = (
 				9D6B8A8918E4D2050085C1EE /* EZRFeedImageService.m in Sources */,
 				9D010F1018F832C5001999EE /* EZRTestFlightService.m in Sources */,
+				9D00DE84190816F900A0C65F /* CLDSocialShareToolbar.m in Sources */,
 				9DFD89F618FC7D9300630CBF /* CSArrayTableViewDataSource.m in Sources */,
 				9D16D34E18DBA9E9001E9C38 /* APIRouter.m in Sources */,
 				9D16D33D18DB7767001E9C38 /* EZRFeedUpdateService.m in Sources */,
@@ -1540,7 +1549,6 @@
 				0DE51FF518CF911000454E51 /* User.m in Sources */,
 				9D010F0418F71E5C001999EE /* EZRSearchBar.m in Sources */,
 				9D639E7018E0A4E000350B5F /* APIClient.m in Sources */,
-				9D06C642190190900029A233 /* CSSocialShareToolbar.m in Sources */,
 				0D7987B218DB8F69004440C3 /* EZRMenuUserFeedDataSource.m in Sources */,
 				9D639E7C18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D5ACFBF18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
@@ -1618,12 +1626,10 @@
 				);
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(PODS_ROOT)/TestFlightSDK\"",
-					"$(SYMROOT)/Release$(EFFECTIVE_PLATFORM_NAME)",
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
 				PRODUCT_NAME = Staging;
 				PROVISIONING_PROFILE = "FBE43E56-523F-4B31-9050-95F2750E83C8";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1641,12 +1647,10 @@
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(PODS_ROOT)/TestFlightSDK\"",
-					"$(SYMROOT)/Release$(EFFECTIVE_PLATFORM_NAME)",
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
 				PRODUCT_NAME = Staging;
 				PROVISIONING_PROFILE = "AE75F2A8-B0F9-486D-8DE0-CFEA22EC508C";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1675,6 +1679,7 @@
 				);
 				PRODUCT_NAME = "Easy Reader";
 				PROVISIONING_PROFILE = "69FD30FF-426E-4BD8-8941-A0A741F92746";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1698,6 +1703,7 @@
 				);
 				PRODUCT_NAME = "Easy Reader";
 				PROVISIONING_PROFILE = "E41143CF-D6B6-4CE1-8493-853B58EB0910";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1788,10 +1794,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-					"$(SYMROOT)/Release$(EFFECTIVE_PLATFORM_NAME)",
 				);
 				PRODUCT_NAME = Mocked;
 				PROVISIONING_PROFILE = "0B1685CC-627C-4832-97D4-79736E8FE8EE";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1817,6 +1823,7 @@
 				);
 				PRODUCT_NAME = Mocked;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1896,9 +1903,9 @@
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Development-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
-				"LIBRARY_SEARCH_PATHS[arch=*]" = "\"$(PODS_ROOT)/TestFlightSDK\"";
 				PRODUCT_NAME = Development;
 				PROVISIONING_PROFILE = "0B1685CC-627C-4832-97D4-79736E8FE8EE";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1920,6 +1927,7 @@
 				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
 				PRODUCT_NAME = Development;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

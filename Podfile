@@ -13,6 +13,8 @@ pod 'MFSideMenu', '~> 0.5.4'
 pod 'TestFlightSDK', '~> 2.2.0-noadid-beta'
 
 pod 'MagicalRecord', :git => 'https://github.com/magicalpanda/MagicalRecord', :commit => '98ec121bf767c495a2e887adeade7383b74a62f4'
+pod 'CCARadialGradientLayer', :git => 'https://github.com/jilouc/CCARadialGradientLayer', :commit => '4a2d6f31d8a08a3150ca517f0370e59047dae0e2'
+
 pod 'AFNetworking', '~> 2.0.3'
 pod 'NSDate+TimeAgo', '~> 1.0.2'
 pod 'Inflections', '~> 1.0.0'

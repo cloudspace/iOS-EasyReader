@@ -28,7 +28,9 @@
 
 - (void)pageControl:(CSCollectionPageControl *)pageControl didSelectPageAtIndex:(NSInteger)index
 {
+    NSIndexPath *destinationIndexPath = [NSIndexPath indexPathForItem:index inSection:0];
     
+    [controller.collectionView_feedItems scrollToItemAtIndexPath:destinationIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
 }
 
 

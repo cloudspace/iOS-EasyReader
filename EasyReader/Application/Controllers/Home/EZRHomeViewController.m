@@ -35,9 +35,12 @@
 
 #import "CSArrayCollectionViewDataSource.h"
 
-#import "CSSocialShareToolbar.h"
+#import "CLDSocialShareToolbar.h"
 
 #import "EZRHomeSocialToolbarDataSource.h"
+
+
+#import "CCARadialGradientLayer.h"
 
 @interface EZRHomeViewController()
 
@@ -49,7 +52,7 @@
 
 
 
-@property (nonatomic, weak) IBOutlet CSSocialShareToolbar *socialShareToolbar;
+@property (nonatomic, weak) IBOutlet CLDSocialShareToolbar *socialShareToolbar;
 
 @end
 
@@ -74,6 +77,8 @@
     /// The data source for the collection view
     CSArrayCollectionViewDataSource *collectionViewArrayDataSource;
     
+    // Background gradient
+    CCARadialGradientLayer *gradient;
 }
 
 - (FeedItem *)currentFeedItem
@@ -101,7 +106,15 @@
     [self observeRelationship:@keypath(self.currentFeedsProvider.visibleFeedItems) changeBlock:^(EZRCurrentFeedsProvider *provider, NSArray *visibleFeedItems) {
         [self visibleFeedItemsDidChange:provider visibleFeeditems:visibleFeedItems];
     }];
+
+    UIColor *fromColor = [UIColor colorWithRed:109.0/255.0f green:126.0/255.0f blue:149.0/255.0f alpha:1.0f];
+    UIColor *toColor = [UIColor colorWithRed:49.0/255.0f green:66.0/255.0f blue:89.0/255.0f alpha:1.0f];
     
+    gradient = [CCARadialGradientLayer layer];
+    gradient.colors = [NSArray arrayWithObjects:(id)[fromColor CGColor], (id)[toColor CGColor], nil];
+    gradient.locations = @[@0, @1];
+    
+    [self.view.layer insertSublayer:gradient atIndex:0];
 }
 
 /**
@@ -113,6 +126,11 @@
 {
     [super viewDidLayoutSubviews];
     [self layOutVerticalScrollView];
+
+    gradient.frame = self.view.bounds;
+    gradient.gradientRadius = CGRectGetWidth(self.view.frame)/2.0f;
+    gradient.gradientOrigin = CGPointMake(CGRectGetWidth(self.view.frame)/2.0,100);
+
 }
 
 /**
@@ -161,6 +179,7 @@
 
 - (void)setUpShareToolbar {
     [self.scrollView_vertical insertSubview:self.socialShareToolbar belowSubview:self.webView_feedItem];
+    self.socialShareToolbar.backgroundTransparent = YES;
 }
 
 /**
@@ -187,6 +206,7 @@
                                      reusableCellIdentifier:@"feedItem"
                                              configureBlock:^(UICollectionViewCell *cell, id item) {
                                                  ((EZRFeedItemCollectionViewCell *)cell).feedItem = item;
+                                                 ((EZRFeedItemCollectionViewCell *)cell).delegate = collectionViewDelegate;
                                              }];
     
     self.collectionView_feedItems.dataSource = collectionViewArrayDataSource;
@@ -249,8 +269,18 @@
         [self scrollToCurrentFeedItem];
     } else if ([visibleFeedItems count] > 0){
         [self resetWebView];
-        NSIndexPath *firstItemPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.collectionView_feedItems scrollToItemAtIndexPath:firstItemPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+        
+        NSIndexPath *destinationIndexPath;
+ 
+//        if (self.currentPageIndex < [visibleFeedItems count]) {
+//            destinationIndexPath = [NSIndexPath indexPathForRow:[visibleFeedItems count] -1 inSection:0];
+//        } else {
+//            destinationIndexPath = [NSIndexPath indexPathForRow:self.currentPageIndex - 1 inSection:0];
+//        }
+        
+        destinationIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        
+        [self.collectionView_feedItems scrollToItemAtIndexPath:destinationIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
         [self loadURLForFeedItem:visibleFeedItems[0]];
     }
     

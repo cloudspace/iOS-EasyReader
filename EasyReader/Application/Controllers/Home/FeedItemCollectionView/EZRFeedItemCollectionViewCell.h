@@ -9,6 +9,26 @@
 #import <UIKit/UIKit.h>
 #import "FeedItem.h"
 
+@class EZRFeedItemCollectionViewCell;
+
+
+/**
+ * This protocol represents the behaviour of the the collection view cell
+ */
+@protocol EZRFeedItemCollectionViewCellDelegate<NSObject>
+
+@optional
+
+/**
+ * Tells the delegate that the specified cell title was tapped
+ *
+ * @param cell A feed item collection view cell informing the delegate about a title label tap
+ */
+- (void)didTapHeadlineOfCell:(EZRFeedItemCollectionViewCell *)cell;
+
+@end
+
+
 /**
  * A feed item cell in the main easy reader collection view
  */
@@ -40,6 +60,9 @@
 
 /// The feed item this cell is based on.  When set it will update all outlets appropriately
 @property (nonatomic, weak) FeedItem *feedItem;
+
+/// The object that acts as the delegate of the cell
+@property (nonatomic, assign) id<EZRFeedItemCollectionViewCellDelegate> delegate;
 
 
 @end

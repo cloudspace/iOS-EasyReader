@@ -37,12 +37,19 @@ CGFloat const kAnimationDuration = 0.25;
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        button_newItem = [UIButton buttonWithType:UIButtonTypeInfoLight];
+        button_newItem = [[UIButton alloc] init];
         button_newItem.alpha = 0.0f;
+        [button_newItem setTitle:@"Jump to first item" forState:UIControlStateNormal];
+        [button_newItem.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0f]];
+        [button_newItem.titleLabel setTextAlignment:NSTextAlignmentCenter];
+        button_newItem.userInteractionEnabled = YES;
+        self.userInteractionEnabled = YES;
         
-        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(newItemButton:)];
-        [button_newItem addGestureRecognizer:singleTap];
+        [button_newItem addTarget:self action:@selector(newItemButton:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self addSubview:button_newItem];
     }
+    
     return self;
 }
 
@@ -53,11 +60,11 @@ CGFloat const kAnimationDuration = 0.25;
 {
     [super layoutSubviews];
     
-    CGRect buttonFrame = CGRectMake(10,(CGRectGetHeight(self.frame)/2)-5, 12, 12);
+    
+    CGRect buttonFrame = CGRectMake(CGRectGetWidth(self.frame)/2.0-50,(CGRectGetHeight(self.frame)/2)-15, 100, 30);
     [button_newItem setFrame:buttonFrame];
     
-    
-    [self fadeRightSubviews];
+   //[self fadeRightSubviews];
 }
 
 /**
@@ -88,23 +95,26 @@ CGFloat const kAnimationDuration = 0.25;
     if (pageCount <= self.numberOfPages){
         self.currentPage = index;
         [self fadeInSubviews];
+        [self hideNewItemButton];
         return;
     }
     
     if (index < beginFadeIndex) {
         self.currentPage = index;
+        [self hideNewItemButton];
         [self fadeInSubviews];
         [self fadeRightSubviews];
     } else if (index >= endFadeIndex) {
         self.currentPage = self.numberOfPages - (pageCount - index);
+        
+        [self hideNewItemButton];
         [self fadeInSubviews];
         [self fadeLeftSubviews];
     } else {
         // Dont set a current page here as we're hiding the control anyway
         [self fadeOutSubviews];
+        [self showNewItemButton];
     }
-    
-    
 }
 
 /**
@@ -112,7 +122,11 @@ CGFloat const kAnimationDuration = 0.25;
  */
 - (NSArray *)sortedSubviews
 {
-    NSArray *sortedSubviews = [self.subviews sortedArrayUsingComparator:^NSComparisonResult(UIView *obj1, UIView *obj2) {
+    NSArray *dotViews = [self.subviews filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return ![evaluatedObject isKindOfClass:[UIButton class]];
+    }]];
+                         
+    NSArray *sortedSubviews = [dotViews sortedArrayUsingComparator:^NSComparisonResult(UIView *obj1, UIView *obj2) {
         CGFloat min1 = CGRectGetMinX(obj1.frame);
         CGFloat min2 = CGRectGetMinX(obj2.frame);
         
@@ -169,7 +183,9 @@ CGFloat const kAnimationDuration = 0.25;
         
         [UIView animateWithDuration:kAnimationDuration animations:^{
             for (UIView *view in self.subviews) {
-                view.alpha = 0.0f;
+                if (![view isKindOfClass:[UIButton class]]) {
+                    view.alpha = 0.0f;
+                }
             }
         } completion:^(BOOL finished) {
             fadingOut = NO;
@@ -188,7 +204,9 @@ CGFloat const kAnimationDuration = 0.25;
         
         [UIView animateWithDuration:kAnimationDuration animations:^{
             for (UIView *view in self.subviews) {
-                view.alpha = 1.0f;
+                if (![view isKindOfClass:[UIButton class]]) {
+                    view.alpha = 1.0f;
+                }
             }
         } completion:^(BOOL finished) {
             fadingIn = NO;
@@ -213,7 +231,7 @@ CGFloat const kAnimationDuration = 0.25;
 - (void) showNewItemButton
 {
     [UIView animateWithDuration:.25 animations:^{
-        [button_newItem setAlpha:1];
+        [button_newItem setAlpha:.35f];
     }];
 }
 
