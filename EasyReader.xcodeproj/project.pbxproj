@@ -54,10 +54,6 @@
 		8E6980CC190057C30075D009 /* EZRBaseCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6980CB190057C30075D009 /* EZRBaseCategoryTests.m */; };
 		8E6980CE190058B60075D009 /* EZRSortingAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6980CD190058B60075D009 /* EZRSortingAdditionsTests.m */; };
 		8E7F81F018D0BF8500BC50C2 /* CSRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSRemoteObject.m */; };
-		9D00DE84190816F900A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
-		9D00DE85190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
-		9D00DE86190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
-		9D00DE87190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
 		8EA5082C19057DA5004A4EB9 /* EZRFeedItemUpdateServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5082B19057DA5004A4EB9 /* EZRFeedItemUpdateServiceTests.m */; };
 		8EA5082E190597FA004A4EB9 /* EZRCurrentFeedsProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5082D190597FA004A4EB9 /* EZRCurrentFeedsProviderTests.m */; };
 		8EB0714D18E6121E009B1BA3 /* EZRMenuFeedCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB0714C18E6121E009B1BA3 /* EZRMenuFeedCellTests.m */; };
@@ -65,6 +61,10 @@
 		8EB5226E190067F000628A24 /* CSNilAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5226D190067F000628A24 /* CSNilAdditionsTests.m */; };
 		8EB5227219016ADE00628A24 /* EZRBaseServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5227119016ADE00628A24 /* EZRBaseServiceTests.m */; };
 		8EB5227419016B4300628A24 /* EZRFeedImageServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5227319016B4300628A24 /* EZRFeedImageServiceTests.m */; };
+		9D00DE84190816F900A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
+		9D00DE85190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
+		9D00DE86190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
+		9D00DE87190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
 		9D010EE618F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
 		9D010EE718F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
 		9D010EE818F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
@@ -674,15 +674,6 @@
 			name = MenuCells;
 			sourceTree = "<group>";
 		};
-		9D00DE81190816F900A0C65F /* CLDSocialShareToolbar */ = {
-			isa = PBXGroup;
-			children = (
-				9D00DE82190816F900A0C65F /* CLDSocialShareToolbar.h */,
-				9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */,
-			);
-			path = CLDSocialShareToolbar;
-			sourceTree = "<group>";
-		};
 		8EB5226F19016A8000628A24 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,6 +684,15 @@
 				8EA5082D190597FA004A4EB9 /* EZRCurrentFeedsProviderTests.m */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		9D00DE81190816F900A0C65F /* CLDSocialShareToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				9D00DE82190816F900A0C65F /* CLDSocialShareToolbar.h */,
+				9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */,
+			);
+			path = CLDSocialShareToolbar;
 			sourceTree = "<group>";
 		};
 		9D16D33518DB75BF001E9C38 /* Services */ = {
@@ -1129,6 +1129,9 @@
 					};
 					9D8E39C618E5AE080025B73E = {
 						TestTargetID = 9DAC16C31709D48E00383722;
+					};
+					9DAC16C31709D48E00383722 = {
+						DevelopmentTeam = 34V4E5MT6Z;
 					};
 				};
 			};
@@ -1955,8 +1958,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Lorich (G28849DAB7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Lorich (G28849DAB7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
@@ -1964,7 +1967,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
 				PRODUCT_NAME = Development;
-				PROVISIONING_PROFILE = "0B1685CC-627C-4832-97D4-79736E8FE8EE";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1977,8 +1980,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";

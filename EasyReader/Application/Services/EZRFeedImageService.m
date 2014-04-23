@@ -134,9 +134,7 @@ static EZRFeedImageService *sharedInstance;
 {
     [blurredImageCache queryDiskCacheForKey:urlString
                                        done:^(UIImage *blurredImage, SDImageCacheType blurredCacheType) {
-                                           [self triggerCompletionBlocksForUrlString:urlString
-                                                                           withImage:image
-                                                                        blurredImage:blurredImage];
+                                           [self triggerOrDownloadForURLString:urlString withImage:image blurredImage:blurredImage];
                                        }
      ];
 }

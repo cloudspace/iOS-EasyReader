@@ -27,11 +27,13 @@
 }
 
 //
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    if (scrollView.contentOffset.y == scrollView.frame.size.height) {
-//
-//    }
-//}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y == scrollView.frame.size.height) {
+        if (controller.webView_feedItem.scrollView.contentOffset.y == 0) {
+            controller.webView_feedItem.scrollView.contentOffset = CGPointMake(0, 1);
+        }
+    }
+}
 
 /**
  *

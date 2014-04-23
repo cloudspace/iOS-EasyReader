@@ -82,9 +82,9 @@
         self.items = @[
                          barButtonItem_title,
                          flexSpace,
-                         self.button_shareTwitter,
-                         smallSpace1,
                          self.button_shareFacebook,
+                         smallSpace1,
+                         self.button_shareTwitter,
                          smallSpace2,
                          self.button_shareMail
                      ];

@@ -32,6 +32,7 @@
 
 
 
+
 //- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 //{
 //    if (self.contentOffset.y >= self.frame.size.height)
