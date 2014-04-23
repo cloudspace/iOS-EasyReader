@@ -55,13 +55,16 @@
 
 - (void)testDateFromAPIDateStringFullTimeString
 {
-    NSDate *resultDate = [CSRemoteObject dateFromAPIDateString:@"2014-03-28T14:53:21.000Z"];
+    NSString *dateString = @"2014-03-28T14:53:21.000Z";
+    NSDate *resultDate = [CSRemoteObject dateFromAPIDateString:dateString];
     
+    NSLog(@"%@", resultDate);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+    NSDate *date = [dateFormatter dateFromString:@"2014-03-28T14:53:21.000Z"];
     
-    NSDate *date = [dateFormatter dateFromString:@"2014-03-28T10:53:21.000Z"];
-    
+    NSLog(@"%@", date);
     XCTAssertTrue([resultDate isEqualToDate:date], @"");
 }
 
