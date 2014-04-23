@@ -37,6 +37,13 @@
 + (User *)current;
 
 /**
+ * Sets the current user
+ *
+ * @param user The new current user
+ */
++ (void) setCurrent:(User *)user;
+
+/**
  * Check if the feed already exists for the user
  *
  * @param url The url of the feed to check for

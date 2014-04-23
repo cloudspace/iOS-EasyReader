@@ -1,5 +1,5 @@
 //
-//  UserTests.m
+//  EZRUserTests.m
 //  EasyReader
 //
 //  Created by Joseph Lorich on 3/19/14.
@@ -18,17 +18,15 @@
 /**
  * User model tests
  */
-@interface UserTests : EZRBaseModelTests
+@interface EZRUserTests : EZRBaseModelTests
 
 @end
 
-@implementation UserTests
+@implementation EZRUserTests
 
 - (void)setUp
 {
     [super setUp];
-    
-    bundle = [NSBundle bundleForClass:[self class]];
 }
 
 - (void)tearDown

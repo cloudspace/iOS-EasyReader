@@ -37,7 +37,6 @@
 		0DEBD8CB18E202F200284B33 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34518DBA9E9001E9C38 /* APIRouter.m */; };
 		0DEC0B7C18E5C9F30072BEF5 /* EZRFeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC0B7B18E5C9F30072BEF5 /* EZRFeedTests.m */; };
 		0DEC0B8A18E5E68A0072BEF5 /* EZRBaseControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC0B8918E5E68A0072BEF5 /* EZRBaseControllerTests.m */; };
-		0DEC0B8C18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC0B8B18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m */; };
 		0DEC0B8E18E605ED0072BEF5 /* CSMenuSearchFeedDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC0B8D18E605ED0072BEF5 /* CSMenuSearchFeedDataSourceTests.m */; };
 		15A0E5E679094DD3B4BA23CD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
 		1884EDB920EE4720B254D07C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ACF08D0CD54248B25E110A /* libPods.a */; };
@@ -46,15 +45,26 @@
 		2751F4DA18DA0A6B00339C96 /* EZRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4D918DA0A6B00339C96 /* EZRHomeViewController.m */; };
 		2751F4E318DA0D3000339C96 /* EZRFeedItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4DF18DA0D3000339C96 /* EZRFeedItemCollectionViewCell.m */; };
 		2751F4E418DA0D3000339C96 /* EZRFeedItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751F4E118DA0D3000339C96 /* EZRFeedItemCollectionView.m */; };
+		8E006C571905B181008ACDBA /* EZRMenuUserFeedDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC0B8B18E5F35B0072BEF5 /* EZRMenuUserFeedDataSourceTests.m */; };
 		8E04027018E5DA6800F48793 /* CSRemoteObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E04026F18E5DA6800F48793 /* CSRemoteObjectTests.m */; };
 		8E685AA718DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E685AA818DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
 		8E685AA918DC733B00309270 /* CSCollectionPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E685AA618DC733B00309270 /* CSCollectionPageControl.m */; };
+		8E6980C8190040310075D009 /* EZRMenuSearchControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6980C7190040310075D009 /* EZRMenuSearchControllerTests.m */; };
+		8E6980CC190057C30075D009 /* EZRBaseCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6980CB190057C30075D009 /* EZRBaseCategoryTests.m */; };
+		8E6980CE190058B60075D009 /* EZRSortingAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6980CD190058B60075D009 /* EZRSortingAdditionsTests.m */; };
 		8E7F81F018D0BF8500BC50C2 /* CSRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F81EF18D0BF8500BC50C2 /* CSRemoteObject.m */; };
 		9D00DE84190816F900A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
 		9D00DE85190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
 		9D00DE86190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
 		9D00DE87190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */; };
+		8EA5082C19057DA5004A4EB9 /* EZRFeedItemUpdateServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5082B19057DA5004A4EB9 /* EZRFeedItemUpdateServiceTests.m */; };
+		8EA5082E190597FA004A4EB9 /* EZRCurrentFeedsProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5082D190597FA004A4EB9 /* EZRCurrentFeedsProviderTests.m */; };
+		8EB0714D18E6121E009B1BA3 /* EZRMenuFeedCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB0714C18E6121E009B1BA3 /* EZRMenuFeedCellTests.m */; };
+		8EB5226C1900632100628A24 /* EZRFeedImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5226B1900632100628A24 /* EZRFeedImageAdditions.m */; };
+		8EB5226E190067F000628A24 /* CSNilAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5226D190067F000628A24 /* CSNilAdditionsTests.m */; };
+		8EB5227219016ADE00628A24 /* EZRBaseServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5227119016ADE00628A24 /* EZRBaseServiceTests.m */; };
+		8EB5227419016B4300628A24 /* EZRFeedImageServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5227319016B4300628A24 /* EZRFeedImageServiceTests.m */; };
 		9D010EE618F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
 		9D010EE718F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
 		9D010EE818F58BA2001999EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D010EE518F58BA2001999EE /* Media.xcassets */; };
@@ -229,7 +239,7 @@
 		9D8E39D018E5AE090025B73E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D8E39CE18E5AE090025B73E /* InfoPlist.strings */; };
 		9D8E39E218E5B2160025B73E /* EZRBaseModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E39DD18E5B2160025B73E /* EZRBaseModelTests.m */; };
 		9D8E39E318E5B2160025B73E /* EZRFeedItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E39DE18E5B2160025B73E /* EZRFeedItemTests.m */; };
-		9D8E39E418E5B2160025B73E /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E39DF18E5B2160025B73E /* UserTests.m */; };
+		9D8E39E418E5B2160025B73E /* EZRUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E39DF18E5B2160025B73E /* EZRUserTests.m */; };
 		9D8E39E518E5B2160025B73E /* CSBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E39E118E5B2160025B73E /* CSBaseTestCase.m */; };
 		9D9CBABF18DC826700532F8C /* EZRApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* EZRApplicationStyleService.m */; };
 		9D9CBAC318DCC52900532F8C /* EZRApplicationStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CBABE18DC826700532F8C /* EZRApplicationStyleService.m */; };
@@ -326,7 +336,7 @@
 		0DEC0B7B18E5C9F30072BEF5 /* EZRFeedTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRFeedTests.m; sourceTree = "<group>"; };
 		0DEC0B8818E5E68A0072BEF5 /* EZRBaseControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRBaseControllerTests.h; sourceTree = "<group>"; };
 		0DEC0B8918E5E68A0072BEF5 /* EZRBaseControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRBaseControllerTests.m; sourceTree = "<group>"; };
-		0DEC0B8B18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMenuUserFeedDataSourceTests.m; sourceTree = "<group>"; };
+		0DEC0B8B18E5F35B0072BEF5 /* EZRMenuUserFeedDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRMenuUserFeedDataSourceTests.m; sourceTree = "<group>"; };
 		0DEC0B8D18E605ED0072BEF5 /* CSMenuSearchFeedDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMenuSearchFeedDataSourceTests.m; sourceTree = "<group>"; };
 		2751F4D218DA02C100339C96 /* NSObject+CSNilAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CSNilAdditions.h"; sourceTree = "<group>"; };
 		2751F4D318DA02C100339C96 /* NSObject+CSNilAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CSNilAdditions.m"; sourceTree = "<group>"; };
@@ -343,8 +353,20 @@
 		8E1CE42418D0F5A00090028E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8E685AA518DC733B00309270 /* CSCollectionPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSCollectionPageControl.h; path = EasyReader/Application/Controls/CSCollectionPageControl.h; sourceTree = SOURCE_ROOT; };
 		8E685AA618DC733B00309270 /* CSCollectionPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSCollectionPageControl.m; path = EasyReader/Application/Controls/CSCollectionPageControl.m; sourceTree = SOURCE_ROOT; };
+		8E6980C7190040310075D009 /* EZRMenuSearchControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRMenuSearchControllerTests.m; sourceTree = "<group>"; };
+		8E6980CA190057C30075D009 /* EZRBaseCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EZRBaseCategoryTests.h; path = Categories/EZRBaseCategoryTests.h; sourceTree = "<group>"; };
+		8E6980CB190057C30075D009 /* EZRBaseCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRBaseCategoryTests.m; path = Categories/EZRBaseCategoryTests.m; sourceTree = "<group>"; };
+		8E6980CD190058B60075D009 /* EZRSortingAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRSortingAdditionsTests.m; path = Categories/EZRSortingAdditionsTests.m; sourceTree = "<group>"; };
 		8E7F81EE18D0BF8500BC50C2 /* CSRemoteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRemoteObject.h; sourceTree = "<group>"; };
 		8E7F81EF18D0BF8500BC50C2 /* CSRemoteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRemoteObject.m; sourceTree = "<group>"; };
+		8EA5082B19057DA5004A4EB9 /* EZRFeedItemUpdateServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRFeedItemUpdateServiceTests.m; path = Services/EZRFeedItemUpdateServiceTests.m; sourceTree = "<group>"; };
+		8EA5082D190597FA004A4EB9 /* EZRCurrentFeedsProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRCurrentFeedsProviderTests.m; path = Services/EZRCurrentFeedsProviderTests.m; sourceTree = "<group>"; };
+		8EB0714C18E6121E009B1BA3 /* EZRMenuFeedCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRMenuFeedCellTests.m; path = MenuCells/EZRMenuFeedCellTests.m; sourceTree = "<group>"; };
+		8EB5226B1900632100628A24 /* EZRFeedImageAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRFeedImageAdditions.m; path = Categories/EZRFeedImageAdditions.m; sourceTree = "<group>"; };
+		8EB5226D190067F000628A24 /* CSNilAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSNilAdditionsTests.m; path = Categories/CSNilAdditionsTests.m; sourceTree = "<group>"; };
+		8EB5227019016ADE00628A24 /* EZRBaseServiceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EZRBaseServiceTests.h; path = Services/EZRBaseServiceTests.h; sourceTree = "<group>"; };
+		8EB5227119016ADE00628A24 /* EZRBaseServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRBaseServiceTests.m; path = Services/EZRBaseServiceTests.m; sourceTree = "<group>"; };
+		8EB5227319016B4300628A24 /* EZRFeedImageServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRFeedImageServiceTests.m; path = Services/EZRFeedImageServiceTests.m; sourceTree = "<group>"; };
 		8ECC8F8A18E47BC1006EADD1 /* libPods-OCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OCMock.a"; path = "Pods/build/Debug-iphoneos/libPods-OCMock.a"; sourceTree = "<group>"; };
 		8ECC8F8D18E4803E006EADD1 /* libPods-OCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OCMock.a"; path = "Pods/build/Release-iphoneos/libPods-OCMock.a"; sourceTree = "<group>"; };
 		9D00DE82190816F900A0C65F /* CLDSocialShareToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDSocialShareToolbar.h; sourceTree = "<group>"; };
@@ -429,7 +451,7 @@
 		9D8E39DC18E5B2160025B73E /* EZRBaseModelTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRBaseModelTests.h; sourceTree = "<group>"; };
 		9D8E39DD18E5B2160025B73E /* EZRBaseModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRBaseModelTests.m; sourceTree = "<group>"; };
 		9D8E39DE18E5B2160025B73E /* EZRFeedItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRFeedItemTests.m; sourceTree = "<group>"; };
-		9D8E39DF18E5B2160025B73E /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
+		9D8E39DF18E5B2160025B73E /* EZRUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRUserTests.m; sourceTree = "<group>"; };
 		9D8E39E018E5B2160025B73E /* CSBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBaseTestCase.h; sourceTree = "<group>"; };
 		9D8E39E118E5B2160025B73E /* CSBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBaseTestCase.m; sourceTree = "<group>"; };
 		9D9CBABD18DC826700532F8C /* EZRApplicationStyleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRApplicationStyleService.h; sourceTree = "<group>"; };
@@ -574,6 +596,7 @@
 			children = (
 				0DEC0B8518E5DB4A0072BEF5 /* MenuDataSources */,
 				8EB0714818E61136009B1BA3 /* MenuCells */,
+				8E6980C7190040310075D009 /* EZRMenuSearchControllerTests.m */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -581,7 +604,7 @@
 		0DEC0B8518E5DB4A0072BEF5 /* MenuDataSources */ = {
 			isa = PBXGroup;
 			children = (
-				0DEC0B8B18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m */,
+				0DEC0B8B18E5F35B0072BEF5 /* EZRMenuUserFeedDataSourceTests.m */,
 				0DEC0B8D18E605ED0072BEF5 /* CSMenuSearchFeedDataSourceTests.m */,
 			);
 			path = MenuDataSources;
@@ -631,9 +654,22 @@
 			name = Controls;
 			sourceTree = "<group>";
 		};
+		8E6980C9190057120075D009 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8E6980CA190057C30075D009 /* EZRBaseCategoryTests.h */,
+				8E6980CB190057C30075D009 /* EZRBaseCategoryTests.m */,
+				8E6980CD190058B60075D009 /* EZRSortingAdditionsTests.m */,
+				8EB5226B1900632100628A24 /* EZRFeedImageAdditions.m */,
+				8EB5226D190067F000628A24 /* CSNilAdditionsTests.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		8EB0714818E61136009B1BA3 /* MenuCells */ = {
 			isa = PBXGroup;
 			children = (
+				8EB0714C18E6121E009B1BA3 /* EZRMenuFeedCellTests.m */,
 			);
 			name = MenuCells;
 			sourceTree = "<group>";
@@ -645,6 +681,18 @@
 				9D00DE83190816F900A0C65F /* CLDSocialShareToolbar.m */,
 			);
 			path = CLDSocialShareToolbar;
+			sourceTree = "<group>";
+		};
+		8EB5226F19016A8000628A24 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8EB5227019016ADE00628A24 /* EZRBaseServiceTests.h */,
+				8EB5227119016ADE00628A24 /* EZRBaseServiceTests.m */,
+				8EB5227319016B4300628A24 /* EZRFeedImageServiceTests.m */,
+				8EA5082B19057DA5004A4EB9 /* EZRFeedItemUpdateServiceTests.m */,
+				8EA5082D190597FA004A4EB9 /* EZRCurrentFeedsProviderTests.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		9D16D33518DB75BF001E9C38 /* Services */ = {
@@ -795,6 +843,8 @@
 		9D8E39D918E5B2160025B73E /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				8EB5226F19016A8000628A24 /* Services */,
+				8E6980C9190057120075D009 /* Categories */,
 				0DEC0B8318E5DB4A0072BEF5 /* Controllers */,
 				9D8E39DB18E5B2160025B73E /* Models */,
 			);
@@ -808,7 +858,7 @@
 				9D8E39DD18E5B2160025B73E /* EZRBaseModelTests.m */,
 				8E04026F18E5DA6800F48793 /* CSRemoteObjectTests.m */,
 				9D8E39DE18E5B2160025B73E /* EZRFeedItemTests.m */,
-				9D8E39DF18E5B2160025B73E /* UserTests.m */,
+				9D8E39DF18E5B2160025B73E /* EZRUserTests.m */,
 				0DEC0B7B18E5C9F30072BEF5 /* EZRFeedTests.m */,
 			);
 			path = Models;
@@ -1439,15 +1489,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D8E39E418E5B2160025B73E /* UserTests.m in Sources */,
+				8EB5227219016ADE00628A24 /* EZRBaseServiceTests.m in Sources */,
+				9D8E39E418E5B2160025B73E /* EZRUserTests.m in Sources */,
 				0DEC0B7C18E5C9F30072BEF5 /* EZRFeedTests.m in Sources */,
+				8E6980CC190057C30075D009 /* EZRBaseCategoryTests.m in Sources */,
 				9D8E39E218E5B2160025B73E /* EZRBaseModelTests.m in Sources */,
+				8E6980C8190040310075D009 /* EZRMenuSearchControllerTests.m in Sources */,
 				9D8E39E518E5B2160025B73E /* CSBaseTestCase.m in Sources */,
+				8EB5226E190067F000628A24 /* CSNilAdditionsTests.m in Sources */,
+				8EB5227419016B4300628A24 /* EZRFeedImageServiceTests.m in Sources */,
 				8E04027018E5DA6800F48793 /* CSRemoteObjectTests.m in Sources */,
 				9D8E39E318E5B2160025B73E /* EZRFeedItemTests.m in Sources */,
 				0DEC0B8E18E605ED0072BEF5 /* CSMenuSearchFeedDataSourceTests.m in Sources */,
-				0DEC0B8C18E5F35B0072BEF5 /* CSMenuUserFeedDataSourceTests.m in Sources */,
+				8E006C571905B181008ACDBA /* EZRMenuUserFeedDataSourceTests.m in Sources */,
+				8EA5082E190597FA004A4EB9 /* EZRCurrentFeedsProviderTests.m in Sources */,
+				8EB0714D18E6121E009B1BA3 /* EZRMenuFeedCellTests.m in Sources */,
+				8EB5226C1900632100628A24 /* EZRFeedImageAdditions.m in Sources */,
 				0DEC0B8A18E5E68A0072BEF5 /* EZRBaseControllerTests.m in Sources */,
+				8EA5082C19057DA5004A4EB9 /* EZRFeedItemUpdateServiceTests.m in Sources */,
+				8E6980CE190058B60075D009 /* EZRSortingAdditionsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

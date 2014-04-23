@@ -1,21 +1,18 @@
-	//
-//  EZRBaseModelTests.m
+//
+//  EZRBaseCategoryTests.m
 //  EasyReader
 //
-//  Created by Alfredo Uribe on 3/27/14.
+//  Created by Alfredo Uribe on 4/17/14.
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
-#import "EZRBaseModelTests.h"
+#import "EZRBaseCategoryTests.h"
 #import "APIClient.h"
-#import "User.h"
 
-@implementation EZRBaseModelTests
+@implementation EZRBaseCategoryTests
 
 - (void)setUp
 {
-    [User setCurrent:nil];
-    
     mockAPIClient = [OCMockObject mockForClass:[APIClient class]];
     mockObserver  = [OCMockObject observerMock];
     
@@ -30,6 +27,7 @@
 {
     // Clean up core data
     [MagicalRecord cleanUp];
+    
     [super tearDown];
 }
 

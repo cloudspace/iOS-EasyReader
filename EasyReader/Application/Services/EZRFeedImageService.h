@@ -7,17 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+@class SDImageCache;
 
 /**
  * A service to process and cache feed images
  */
 @interface EZRFeedImageService : NSObject
 
-
 /**
  * Creates or returns a shared EZRFeedImageService object
  */
 + (EZRFeedImageService *)shared;
+
+/**
+ * Sets the singleton object
+ * @param shared The new shared FeedImageService
+ */
++ (void)setShared:(EZRFeedImageService *)shared;
 
 /**
  * Prefetches all the images for the given feed items

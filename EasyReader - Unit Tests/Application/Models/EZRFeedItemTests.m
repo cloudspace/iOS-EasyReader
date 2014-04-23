@@ -98,10 +98,10 @@
     NSDictionary *response = @{
                            @"feed_items":@[
                                 @{
-                                    @"feed_id":@1
+                                    @"id":@1
                                   },
                                 @{
-                                    @"feed_id":@2
+                                    @"id":@2
                                   }
                            ]};
     

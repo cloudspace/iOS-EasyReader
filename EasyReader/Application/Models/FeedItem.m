@@ -90,7 +90,7 @@
                     }
                     
                     // item id != data id???? wtf
-                  [currentFeed addFeedItemsObject:item];
+                    [currentFeed addFeedItemsObject:item];
                 }
             }
         }

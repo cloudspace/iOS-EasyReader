@@ -47,6 +47,15 @@ static EZRCurrentFeedsProvider *sharedInstance;
     return sharedInstance;
 }
 
+/**
+ * Sets the singleton EZRCurrentFeedsProvider object
+ * @param EZRCurrentFeedsProvider The new shared EZRCurrentFeedsProvider object
+ */
++ (void)setShared:(EZRCurrentFeedsProvider *)shared
+{
+    sharedInstance = shared;
+}
+
 - (instancetype) init
 {
     self = [super init];
@@ -65,9 +74,14 @@ static EZRCurrentFeedsProvider *sharedInstance;
                                                      name:@"kEZRFeedSelected"
                                                    object:nil];
 
-        [self observeRelationship:@keypath(self.currentUser.feeds) changeBlock:^(__weak User *user, NSSet *oldFeeds, NSSet *newFeeds) {
-            [self userFeedsDidChange:user oldFeeds:oldFeeds newFeeds:newFeeds];
-        } insertionBlock:nil removalBlock:nil replacementBlock:nil];
+        [self observeRelationship:@keypath(self.currentUser.feeds)
+                      changeBlock:^(__weak User *user, NSSet *oldFeeds, NSSet *newFeeds) {
+                          [self userFeedsDidChange:user oldFeeds:oldFeeds newFeeds:newFeeds];
+                      }
+                   insertionBlock:nil
+                     removalBlock:nil
+                 replacementBlock:nil
+         ];
     }
     
     return self;
@@ -131,17 +145,12 @@ static EZRCurrentFeedsProvider *sharedInstance;
         }
     }
     
+    [self observeFeedItemsForFeeds:addedFeeds];
+    
     // Observe added feeds
     for ( Feed *feed in addedFeeds ) {
-        [feed observeRelationship:@"feedItems"
-                      changeBlock:[self feedItemsDidChange]
-                   insertionBlock:nil
-                     removalBlock:nil
-                 replacementBlock:nil];
-        
         [feedItems addObjectsFromArray:[feed.feedItems sortedArrayUsingDescriptors:nil]];
     }
-    
     
     _feeds = [newFeeds sortedArrayByAttributes:@[@"name"]
                                      ascending:[self nameSortDirection]];
@@ -161,6 +170,18 @@ static EZRCurrentFeedsProvider *sharedInstance;
     [self didChangeValueForKey:@"visibleFeedItems"];
 }
 
+/**
+ *
+ */
+- (void)observeFeedItemsForFeeds:(NSArray *)feeds {
+    for ( Feed *feed in feeds ) {
+        [feed observeRelationship:@"feedItems"
+                      changeBlock:[self feedItemsDidChange]
+                   insertionBlock:nil
+                     removalBlock:nil
+                 replacementBlock:nil];
+    }
+}
 
 /**
  * Called when feedItems array on observed feeds change, shows new item button on page control
