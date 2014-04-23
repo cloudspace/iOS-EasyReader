@@ -62,7 +62,7 @@
     
     NSDate *date = [dateFormatter dateFromString:@"2014-03-28T10:53:21.000Z"];
     
-    XCTAssertTrue( [resultDate compare:date] == NSOrderedSame, @"");
+    XCTAssertTrue([resultDate isEqualToDate:date], @"");
 }
 
 
