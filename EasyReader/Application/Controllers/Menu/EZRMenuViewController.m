@@ -94,13 +94,26 @@
 - (void)searchStateChanged:(NSNotification *)notification {
     EZRSearchState event = [[[notification userInfo] objectForKey:@"searchState"] intValue];
     
+    CGRect oldFrame = self.menuContainerViewController.leftMenuViewController.view.frame;
+    UIViewController *newLeftController = self.menuContainerViewController.leftMenuViewController;
+    
     switch (event) {
         case kEZRSearchStateStartedSearching:
+        {
             self.tableView_menu.dataSource = self.searchFeedDataSource;
-            break;
             
+            newLeftController.view.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, oldFrame.size.width, 361.0);
+            self.menuContainerViewController.leftMenuViewController = newLeftController;
+            [[(EZRMenuSearchController *)newLeftController searchBar] becomeFirstResponder];
+            
+            break;
+        }
         case kEZRSearchStateStoppedSearching:
             self.tableView_menu.dataSource = self.userFeedDataSource;
+            
+            newLeftController.view.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, oldFrame.size.width, 568.0);
+            self.menuContainerViewController.leftMenuViewController = newLeftController;
+            
             break;
             
         case kEZRSearchStateResultsAvailable:

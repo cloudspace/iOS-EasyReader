@@ -25,6 +25,10 @@ extern NSString * const kEZRFeedSearchStateChangedNotification;
  */
 @interface EZRMenuSearchController : NSObject <UISearchBarDelegate>
 
+
+/// The search bar this delegate is for
+@property (nonatomic, weak) IBOutlet EZRSearchBar *searchBar;
+
 /**
  * Cancels a search, clears the search text, hides the keyboard
  */

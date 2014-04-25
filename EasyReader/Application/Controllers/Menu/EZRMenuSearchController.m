@@ -20,8 +20,6 @@ NSString * const kEZRFeedSearchStateChangedNotification = @"kEZRFeedSearchStateC
 ///// The feed search results data source
 @property (nonatomic, weak) IBOutlet EZRMenuSearchFeedDataSource *feedSearchDataSource;
 
-/// The search bar this delegate is for
-@property (nonatomic, weak) IBOutlet EZRSearchBar *searchBar;
 
 @end
 
