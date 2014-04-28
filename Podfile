@@ -6,9 +6,6 @@ link_with ['Development', 'Staging', 'Production', 'EasyReader - Unit Tests']
 inhibit_all_warnings!
 
 
-# Cocopods public repo
-
-
 pod 'MFSideMenu', '~> 0.5.4'
 pod 'TestFlightSDK', '~> 2.2.0-noadid-beta'
 

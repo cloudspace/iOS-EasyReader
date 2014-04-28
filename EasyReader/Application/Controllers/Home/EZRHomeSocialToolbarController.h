@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "CLDSocialShareToolbar.h"
 
-@interface EZRHomeSocialToolbarDataSource : NSObject <CLDSocialShareToolbarDataSource>
+@interface EZRHomeSocialToolbarController : NSObject <CLDSocialShareToolbarDataSource, CLDSocialShareToolbarDelegate>
 
 @end

@@ -37,7 +37,7 @@
 
 #import "CLDSocialShareToolbar.h"
 
-#import "EZRHomeSocialToolbarDataSource.h"
+#import "EZRHomeSocialToolbarController.h"
 
 
 #import "CCARadialGradientLayer.h"

@@ -8,16 +8,19 @@
 
 #import "CLDSocialShareToolbar.h"
 
+typedef void (^CLDSocialCompletionBlock)(SLComposeViewControllerResult result);
+
 @interface CLDSocialShareToolbar ()
-
-/// The share text from the dataSource
-@property (nonatomic, retain) NSString *shareText;
-
-/// The share image from the dataSource
-@property (nonatomic, retain) UIImage *shareImage;
-
-/// The share URL from the dataSource
-@property (nonatomic, retain) NSURL *shareURL;
+{
+    /// The share text from the dataSource
+    NSString *_shareText;
+    
+    /// The share image from the dataSource
+    UIImage *_shareImage;
+    
+    /// The share URL from the dataSource
+    NSURL *_shareURL;
+}
 
 /// The share via mail button
 @property (nonatomic, retain) UIBarButtonItem *button_shareMail;
@@ -30,6 +33,7 @@
 
 /// The mail compose view controller
 @property (nonatomic, retain) MFMailComposeViewController *mailComposeViewContoller;
+
 
 @end
 
@@ -100,9 +104,9 @@
 /**
  * Returns the dataSource share text if it provides it
  */
-- (NSString *)shareText {
+- (NSString *)shareText:(CLDSocialServiceType)serviceType {
     if ([self.dataSource respondsToSelector:@selector(socialToolbar:textForShareDialogFromService:)]) {
-        return [self.dataSource socialToolbar:self textForShareDialogFromService:SLServiceTypeFacebook];
+        return [self.dataSource socialToolbar:self textForShareDialogFromService:serviceType];
     }
     
     return nil;
@@ -111,9 +115,9 @@
 /**
  * Returns the dataSource share image if it provides it
  */
-- (UIImage *)shareImage {
+- (UIImage *)shareImage:(CLDSocialServiceType)serviceType {
     if ([self.dataSource respondsToSelector:@selector(socialToolbar:imageForShareDialogFromService:)]) {
-        return [self.dataSource socialToolbar:self imageForShareDialogFromService:SLServiceTypeFacebook];
+        return [self.dataSource socialToolbar:self imageForShareDialogFromService:serviceType];
     }
     
     return nil;
@@ -122,9 +126,9 @@
 /**
  * Returns the dataSource share url if it provides it
  */
-- (NSURL *)shareURL {
+- (NSURL *)shareURL:(CLDSocialServiceType)serviceType {
     if (!_shareURL && [self.dataSource respondsToSelector:@selector(socialToolbar:urlForShareDialogFromService:)]) {
-        return [self.dataSource socialToolbar:self urlForShareDialogFromService:SLServiceTypeFacebook];
+        return [self.dataSource socialToolbar:self urlForShareDialogFromService:serviceType];
     }
     
     return nil;
@@ -162,21 +166,21 @@
     self.mailComposeViewContoller = [[MFMailComposeViewController alloc] init];
     self.mailComposeViewContoller.mailComposeDelegate = self;
     
-    [self.mailComposeViewContoller setSubject:self.shareText];
+    [self.mailComposeViewContoller setSubject:[self shareText:CLDServiceTypeMail]];
 
     
     NSMutableString *messageBody = [[NSMutableString alloc] init];
 
     [messageBody appendString:@"<html><body><p>"];
 
-    if (self.shareURL) {
-        [messageBody appendString:[self.shareURL absoluteString]];
+    if ([self shareURL:CLDServiceTypeMail]) {
+        [messageBody appendString:[[self shareURL:CLDServiceTypeMail] absoluteString]];
     }
 
     [messageBody appendString:@"</p></body></html>"];
     
-    if (self.shareImage) {
-        NSData *jpegData = UIImageJPEGRepresentation(self.shareImage, 1);
+    if ([self shareImage:CLDServiceTypeMail]) {
+        NSData *jpegData = UIImageJPEGRepresentation([self shareImage:CLDServiceTypeMail], 1);
         
         NSString *fileName = @"attachment";
         fileName = [fileName stringByAppendingPathExtension:@"jpeg"];
@@ -195,9 +199,11 @@
     UIViewController *presentingController = [self.dataSource containingViewControllerForDialogFromSocialToolbar:self];
     SLComposeViewController *twitterComposeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     
-    [twitterComposeViewController setInitialText:self.shareText];
-    [twitterComposeViewController addImage:self.shareImage];
-    [twitterComposeViewController addURL:self.shareURL];
+    [twitterComposeViewController setInitialText:[self shareText:CLDServiceTypeTwitter]];
+    [twitterComposeViewController addImage:[self shareImage:CLDServiceTypeTwitter]];
+    [twitterComposeViewController addURL:[self shareURL:CLDServiceTypeTwitter]];
+    
+    [twitterComposeViewController setCompletionHandler:[self socialCompletionForServiceType:CLDServiceTypeTwitter]];
     
     [presentingController presentViewController:twitterComposeViewController animated:YES completion:nil];
 }
@@ -209,12 +215,30 @@
     UIViewController *presentingController = [self.dataSource containingViewControllerForDialogFromSocialToolbar:self];
     SLComposeViewController *facebookComposeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     
-    [facebookComposeViewController setInitialText:self.shareText];
-    [facebookComposeViewController addImage:self.shareImage];
-    [facebookComposeViewController addURL:self.shareURL];
+    [facebookComposeViewController setInitialText:[self shareText:CLDServiceTypeFacebook]];
+    [facebookComposeViewController addImage:[self shareImage:CLDServiceTypeFacebook]];
+    [facebookComposeViewController addURL:[self shareURL:CLDServiceTypeFacebook]];
+    
+    [facebookComposeViewController setCompletionHandler:[self socialCompletionForServiceType:CLDServiceTypeFacebook]];
     
     [presentingController presentViewController:facebookComposeViewController animated:YES completion:nil];
 }
+
+
+#pragma mark - Share completion
+/**
+ * Returns a block that when executed triggers the appropriate social toolbar delegate completion method
+ */
+- (CLDSocialCompletionBlock)socialCompletionForServiceType:(CLDSocialServiceType)serviceType {
+    return ^(SLComposeViewControllerResult result) {
+        if ([self.delegate respondsToSelector:@selector(socialToolbar:didCompleteShareWithService:success:)]) {
+            [self.delegate socialToolbar:self
+             didCompleteShareWithService:serviceType
+                                 success:(result == SLComposeViewControllerResultDone)];
+        }
+    };
+}
+
 
 #pragma mark - MFMailComposeViewControllerDelegate Methods
 
@@ -223,6 +247,10 @@
  */
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     UIViewController *presentingController = [self.dataSource containingViewControllerForDialogFromSocialToolbar:self];
+    
+    if (result == MFMailComposeResultSent) {
+        [self socialCompletionForServiceType:CLDServiceTypeMail](SLComposeViewControllerResultDone);
+    }
     
     [presentingController dismissViewControllerAnimated:YES completion:nil];
 }

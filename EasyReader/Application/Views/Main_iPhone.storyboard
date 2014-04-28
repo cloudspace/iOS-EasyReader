@@ -188,14 +188,15 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGN-P7-i1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="b7J-Of-yw4" customClass="EZRHomeSocialToolbarDataSource">
+                <customObject id="b7J-Of-yw4" customClass="EZRHomeSocialToolbarController">
                     <connections>
                         <outlet property="controller" destination="Hgn-0q-Z1W" id="jsg-XU-luH"/>
                     </connections>
                 </customObject>
                 <customObject id="cdD-4o-hTR" customClass="CLDSocialShareToolbar">
                     <connections>
-                        <outlet property="dataSource" destination="b7J-Of-yw4" id="ltQ-0S-sa5"/>
+                        <outlet property="dataSource" destination="b7J-Of-yw4" id="HiG-yx-gHk"/>
+                        <outlet property="delegate" destination="b7J-Of-yw4" id="fSp-gc-SUD"/>
                     </connections>
                 </customObject>
             </objects>
