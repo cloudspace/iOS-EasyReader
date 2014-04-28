@@ -37,13 +37,14 @@ CGFloat const kAnimationDuration = 0.25;
     self = [super initWithCoder:aDecoder];
     
     if (self) {
+        
         button_newItem = [[UIButton alloc] init];
         button_newItem.alpha = 0.0f;
         [button_newItem setTitle:@"Jump to first item" forState:UIControlStateNormal];
         [button_newItem.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0f]];
         [button_newItem.titleLabel setTextAlignment:NSTextAlignmentCenter];
         button_newItem.userInteractionEnabled = YES;
-        self.userInteractionEnabled = YES;
+        self.userInteractionEnabled = NO;
         
         [button_newItem addTarget:self action:@selector(newItemButton:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -59,7 +60,6 @@ CGFloat const kAnimationDuration = 0.25;
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    
     
     CGRect buttonFrame = CGRectMake(CGRectGetWidth(self.frame)/2.0-50,(CGRectGetHeight(self.frame)/2)-15, 100, 30);
     [button_newItem setFrame:buttonFrame];
@@ -220,6 +220,7 @@ CGFloat const kAnimationDuration = 0.25;
  */
 - (void) hideNewItemButton
 {
+    [self setUserInteractionEnabled:NO];
     [UIView animateWithDuration:.25 animations:^{
         [button_newItem setAlpha:0];
     }];
@@ -230,6 +231,7 @@ CGFloat const kAnimationDuration = 0.25;
  */
 - (void) showNewItemButton
 {
+    [self setUserInteractionEnabled:YES];
     [UIView animateWithDuration:.25 animations:^{
         [button_newItem setAlpha:.35f];
     }];
