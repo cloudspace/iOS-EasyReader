@@ -104,7 +104,7 @@
             
             newLeftController.view.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, oldFrame.size.width, 361.0);
             self.menuContainerViewController.leftMenuViewController = newLeftController;
-            [[(EZRMenuSearchController *)newLeftController searchBar] becomeFirstResponder];
+            [self.searchBar becomeFirstResponder];
             
             break;
         }
