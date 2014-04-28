@@ -20,6 +20,8 @@
 
 #import "SVProgressHUD.h"
 
+#import "TSMessage.h"
+
 @interface EZRMenuTableViewDelegate ()
 
 /// The menu search controller
@@ -42,11 +44,12 @@
         Feed *existingFeed = [Feed MR_findFirstByAttribute:@"id" withValue:feedData[@"id"]];
         
         if (!existingFeed) {
+            UIViewController *rootVC = [[[UIApplication sharedApplication].delegate window] rootViewController];
             
             [Feed createFeedWithUrl:feedData[@"url"] success:^(id responseObject, NSInteger httpStatus) {
-                
+                [TSMessage showNotificationInViewController:rootVC title:@"Easy Reader" subtitle:@"The selected feed has been added to the menu.  Please allow a few minutes for new items to populate." type:TSMessageNotificationTypeSuccess];
             } failure:^(id responseObject, NSInteger httpStatus, NSError *error) {
-                
+                [TSMessage showNotificationInViewController:rootVC title:@"Easy Reader" subtitle:@"There was an error adding that feed.  Please try again later." type:TSMessageNotificationTypeError];
             }];
         }
         else if (![[User current].feeds containsObject:existingFeed])
@@ -66,6 +69,11 @@
     [((MFSideMenuContainerViewController *)tableView.window.rootViewController) setMenuState:MFSideMenuStateClosed];
 }
 
+/**
+ * Sends out a kEZRFeedSelected notification
+ *
+ * @param feed The feed to notify the selection of
+ */
 - (void)postSelectedNotificationForFeed:(Feed *)feed
 {
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
