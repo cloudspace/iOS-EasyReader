@@ -98,6 +98,7 @@ NSString * const kEZRFeedSearchStateChangedNotification = @"kEZRFeedSearchStateC
         [self postSearchStateChangeNotification:kEZRSearchStateResultsAvailable];
     } failure:^(id responseObject, NSInteger httpStatus, NSError *error) {
         self.feedSearchDataSource.feedData = nil;
+        [self postSearchStateChangeNotification:kEZRSearchStateResultsAvailable];
     }];
 }
 
@@ -137,7 +138,8 @@ NSString * const kEZRFeedSearchStateChangedNotification = @"kEZRFeedSearchStateC
             [self search:searchText];
         }
     } else {
-        self.feedSearchDataSource.source = nil;
+        self.feedSearchDataSource.source = @[];
+        [self postSearchStateChangeNotification:kEZRSearchStateResultsAvailable];
         return;
     }
 }
