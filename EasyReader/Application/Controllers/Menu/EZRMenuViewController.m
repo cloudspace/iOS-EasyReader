@@ -40,6 +40,9 @@
 /// The current feeds provider
 @property (nonatomic, strong) EZRCurrentFeedsProvider *currentFeedsProvider;
 
+/// Height Menu to modify
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *menuHeight;
+
 @end
 
 
@@ -94,28 +97,19 @@
 - (void)searchStateChanged:(NSNotification *)notification {
     EZRSearchState event = [[[notification userInfo] objectForKey:@"searchState"] intValue];
     
-    CGRect oldFrame = self.menuContainerViewController.leftMenuViewController.view.frame;
-    UIViewController *newLeftController = self.menuContainerViewController.leftMenuViewController;
-    
     switch (event) {
         case kEZRSearchStateStartedSearching:
         {
             self.tableView_menu.dataSource = self.searchFeedDataSource;
-            
-            newLeftController.view.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, oldFrame.size.width, 361.0);
-            self.menuContainerViewController.leftMenuViewController = newLeftController;
-            [[(EZRMenuSearchController *)newLeftController searchBar] becomeFirstResponder];
-            
+            self.menuHeight.constant = self.menuHeight.constant*.6;
             break;
         }
         case kEZRSearchStateStoppedSearching:
+        {
             self.tableView_menu.dataSource = self.userFeedDataSource;
-            
-            newLeftController.view.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, oldFrame.size.width, 568.0);
-            self.menuContainerViewController.leftMenuViewController = newLeftController;
-            
+            self.menuHeight.constant = self.menuHeight.constant/.6;
             break;
-            
+        }
         case kEZRSearchStateResultsAvailable:
             // Do nothing, just need to realod
             break;
