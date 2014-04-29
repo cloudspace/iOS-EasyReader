@@ -42,7 +42,6 @@
         Feed *existingFeed = [Feed MR_findFirstByAttribute:@"id" withValue:feedData[@"id"]];
         
         if (!existingFeed) {
-            
             [Feed createFeedWithUrl:feedData[@"url"] success:^(id responseObject, NSInteger httpStatus) {
                 
             } failure:^(id responseObject, NSInteger httpStatus, NSError *error) {
