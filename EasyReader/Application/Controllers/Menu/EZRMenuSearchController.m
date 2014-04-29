@@ -112,6 +112,7 @@ NSString * const kEZRFeedSearchStateChangedNotification = @"kEZRFeedSearchStateC
         ]
     };
     
+    [self postSearchStateChangeNotification:kEZRSearchStateResultsAvailable];
 }
 
 - (void)postSearchStateChangeNotification:(EZRSearchState)state

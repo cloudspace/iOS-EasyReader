@@ -42,11 +42,6 @@
 /// Displays website that hosts article
 @property (nonatomic, strong) EZRNestableWebView *webView_feedItem;
 
-@property (nonatomic, strong) UIToolbar *toolbar_webView;
-
-@property (nonatomic, strong) UIImageView *upIndicatorView;
-
-
 
 # pragma mark - Properties
 
