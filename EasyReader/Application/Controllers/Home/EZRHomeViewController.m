@@ -47,12 +47,14 @@
 @property User *currentUser;
 
 
-///
+/// The current feeds provider object
 @property (nonatomic, strong) EZRCurrentFeedsProvider *currentFeedsProvider;
 
-
-
+/// The social sharing toolbar
 @property (nonatomic, weak) IBOutlet CLDSocialShareToolbar *socialShareToolbar;
+
+/// The up indicator displayed over the web view to assist in navigating to the top of the page
+@property (nonatomic, strong) UIImageView *upIndicatorView;
 
 @end
 
