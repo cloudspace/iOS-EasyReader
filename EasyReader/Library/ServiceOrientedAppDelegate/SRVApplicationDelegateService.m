@@ -53,7 +53,7 @@ static dispatch_once_t instanceDictionaryPredicate;
 /**
  *
  */
-+ (SRVApplicationDelegateService *)shared
++ (instancetype)shared
 {
     NSMutableDictionary *predicates = [self sharedDispatchPredicates];
     NSMutableDictionary *instances = [self sharedInstances];

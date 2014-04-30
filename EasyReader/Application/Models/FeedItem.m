@@ -38,8 +38,13 @@
 - (NSString *)headline
 {
     NSString *timeAgo = [self.updatedAt timeAgo];
+    NSString *feedName = self.feed.name;
     
-    return[NSString stringWithFormat:@"%@ \u00b7 %@", self.feed.name, timeAgo];
+    if (feedName.length > 30) {
+        feedName = [[feedName substringToIndex:30] stringByAppendingString:@"..."];
+    }
+    
+    return[NSString stringWithFormat:@"%@ \u00b7 %@", feedName, timeAgo];
 }
 
 + (void) requestFeedItemsFromFeeds:(NSSet  *)feeds

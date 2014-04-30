@@ -15,11 +15,9 @@
 
 #import "UIColor+EZRSharedColorAdditions.h"
 #import "NSSet+CSSortingAdditions.h"
-
 #import "EZRCurrentFeedsProvider.h"
-
 #import <Block-KVO/MTKObserving.h>
-
+#import "EZRGoogleAnalyticsService.h"
 
 @interface EZRMenuUserFeedDataSource ()
 
@@ -37,6 +35,7 @@
 
 - (instancetype) init{
     self = [super init];
+    self.currentFeedsProvider = [EZRCurrentFeedsProvider shared];
     
     if (self) {
         self.configureCell = ^(UITableViewCell *cell, Feed *feed) {
@@ -61,9 +60,17 @@
     if (indexPath.row == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:self.reusableCellIdentifier];
         ((EZRMenuFeedCell*)cell).label_name.text = @"All Feeds";
+        
+        if (self.currentFeedsProvider.currentFeed == nil) {
+            cell.selected = YES;
+        }
     } else {
         NSIndexPath *previousIndexPath = [NSIndexPath indexPathForRow:indexPath.row-1 inSection:indexPath.section];
         cell = [super tableView:tableView cellForRowAtIndexPath:previousIndexPath];
+
+        if (self.source[indexPath.row-1] == self.currentFeedsProvider.currentFeed) {
+            cell.selected = YES;
+        }
     }
 
     return cell;
@@ -76,7 +83,7 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Feed *toDelete = [self.source objectAtIndex:indexPath.row-1];
-        
+        [[EZRGoogleAnalyticsService shared] sendView:@"Feed Removed"];
         [[User current] removeFeedsObject:toDelete];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         [self.tableView reloadData];

@@ -11,6 +11,8 @@
 #import "EZRMenuViewController.h"
 #import "EZRHomeViewController.h"
 
+
+
 //#import "UIViewController+NibLoader.h"
 
 @interface EZRRootViewController ()
@@ -23,7 +25,7 @@
  * Creates the menu contorllers and side menu
  */
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+{    
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   
   if (self) {

@@ -19,8 +19,8 @@
 #import "User.h"
 
 #import "SVProgressHUD.h"
-
 #import "TSMessage.h"
+#import "EZRGoogleAnalyticsService.h"
 
 @interface EZRMenuTableViewDelegate ()
 
@@ -36,10 +36,10 @@
  * Handles selection of a row
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
     if ([tableView.dataSource isKindOfClass:[EZRMenuSearchFeedDataSource class]]) {
-        NSDictionary *feedData = ((EZRSearchFeedCell *)[tableView cellForRowAtIndexPath:indexPath]).feedData;
+        NSDictionary *feedData = ((EZRSearchFeedCell *)cell).feedData;
         
         Feed *existingFeed = [Feed MR_findFirstByAttribute:@"id" withValue:feedData[@"id"]];
         
@@ -47,6 +47,7 @@
             UIViewController *rootVC = [[[UIApplication sharedApplication].delegate window] rootViewController];
             
             [Feed createFeedWithUrl:feedData[@"url"] success:^(id responseObject, NSInteger httpStatus) {
+                [[EZRGoogleAnalyticsService shared] sendView:@"Feed Added"];
                 [TSMessage showNotificationInViewController:rootVC title:@"Easy Reader" subtitle:@"The selected feed has been added to the menu.  Please allow a few minutes for new items to populate." type:TSMessageNotificationTypeSuccess];
             } failure:^(id responseObject, NSInteger httpStatus, NSError *error) {
                 [TSMessage showNotificationInViewController:rootVC title:@"Easy Reader" subtitle:@"There was an error adding that feed.  Please try again later." type:TSMessageNotificationTypeError];
@@ -62,7 +63,7 @@
         [tableView reloadData];
         
     } else {
-        Feed *feed = ((EZRMenuFeedCell *)[tableView cellForRowAtIndexPath:indexPath]).feed;
+        Feed *feed = ((EZRMenuFeedCell *)cell).feed;
         [self postSelectedNotificationForFeed:feed];
     }
     

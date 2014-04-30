@@ -9,6 +9,8 @@
 #import "EZRHomeSocialToolbarDataSource.h"
 #import "EZRHomeViewController.h"
 #import "FeedItem.h"
+#import "EZRGoogleAnalyticsService.h"
+#import "CLDSocialShareToolbar.h"
 
 @interface EZRHomeSocialToolbarDataSource ()
 

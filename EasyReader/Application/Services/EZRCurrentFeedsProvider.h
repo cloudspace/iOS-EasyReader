@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class Feed;
+
 /**
  * A data provider class that contains up-to-date, sorted, lists of feeds and feedItems
  */
@@ -22,6 +24,9 @@
 
 /// All feed items that should be visible
 @property (nonatomic, readonly) NSArray *visibleFeedItems;
+
+/// The currently selected feed
+@property (nonatomic, readonly) Feed *currentFeed;
 
 
 #pragma mark - Methods

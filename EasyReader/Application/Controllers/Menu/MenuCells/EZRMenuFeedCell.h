@@ -18,10 +18,10 @@
 #pragma mark - IBOutlets
 
 /// The feed's icon
-@property (weak, nonatomic) IBOutlet UIImageView *imageView_icon;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView_icon;
 
 /// The feed's name
-@property (weak, nonatomic) IBOutlet UILabel *label_name;
+@property (nonatomic, weak) IBOutlet UILabel *label_name;
 
 
 #pragma mark - Other Properties

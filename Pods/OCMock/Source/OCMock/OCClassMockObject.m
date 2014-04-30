@@ -9,6 +9,9 @@
 #import "NSObject+OCMAdditions.h"
 
 
+NSString *OCMRealMethodAliasPrefix = @"ocmock_replaced_";
+
+
 @implementation OCClassMockObject
 
 #pragma mark  Mock table
@@ -67,7 +70,7 @@ static NSMutableDictionary *mockTable;
 	if(replacedClassMethods != nil)
     {
 		[self stopMocking];
-        [[self class] forgetMockForClass:mockedClass];
+        [[self mockObjectClass] forgetMockForClass:mockedClass];
         [replacedClassMethods release];
     }
 	[super dealloc];
@@ -92,13 +95,13 @@ static NSMutableDictionary *mockTable;
         return;
 
     replacedClassMethods = [[NSMutableDictionary alloc] init];
-    [[self class] rememberMock:self forClass:mockedClass];
+    [[self mockObjectClass] rememberMock:self forClass:mockedClass];
 
     Method method = class_getClassMethod(mockedClass, @selector(forwardInvocation:));
     IMP originalIMP = method_getImplementation(method);
     [replacedClassMethods setObject:[NSValue valueWithPointer:originalIMP] forKey:NSStringFromSelector(@selector(forwardInvocation:))];
 
-    Method myForwardMethod = class_getInstanceMethod([self class], @selector(forwardInvocationForClassObject:));
+    Method myForwardMethod = class_getInstanceMethod([self mockObjectClass], @selector(forwardInvocationForClassObject:));
    	IMP myForwardIMP = method_getImplementation(myForwardMethod);
     Class metaClass = object_getClass(mockedClass);
 	class_replaceMethod(metaClass, @selector(forwardInvocation:), myForwardIMP, method_getTypeEncoding(myForwardMethod));
@@ -120,6 +123,9 @@ static NSMutableDictionary *mockTable;
     Class metaClass = object_getClass(mockedClass);
     IMP forwarderIMP = [metaClass instanceMethodForwarderForSelector:selector];
     class_replaceMethod(metaClass, method_getName(method), forwarderIMP, method_getTypeEncoding(method));
+    
+    SEL aliasSelector = NSSelectorFromString([OCMRealMethodAliasPrefix stringByAppendingString:NSStringFromSelector(selector)]);
+    class_addMethod(metaClass, aliasSelector, originalIMP, method_getTypeEncoding(method));
 }
 
 - (void)removeForwarderForClassMethodSelector:(SEL)selector
@@ -160,6 +166,16 @@ static NSMutableDictionary *mockTable;
 	return [mockedClass instanceMethodSignatureForSelector:aSelector];
 }
 
+- (Class)mockObjectClass
+{
+    return [super class];
+}
+
+- (Class)class
+{
+    return mockedClass;
+}
+
 - (BOOL)respondsToSelector:(SEL)selector
 {
     return [mockedClass instancesRespondToSelector:selector];
@@ -168,6 +184,11 @@ static NSMutableDictionary *mockTable;
 - (BOOL)isKindOfClass:(Class)aClass
 {
     return [mockedClass isSubclassOfClass:aClass];
+}
+
+- (BOOL)conformsToProtocol:(Protocol *)aProtocol
+{
+    return class_conformsToProtocol(mockedClass, aProtocol);
 }
 
 @end

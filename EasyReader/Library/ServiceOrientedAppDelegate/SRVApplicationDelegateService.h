@@ -16,6 +16,6 @@
 /**
  * Returns the shared singleton app delegate service object.  Create it if needed.
  */
-+ (SRVApplicationDelegateService *)shared;
++ (instancetype)shared;
 
 @end

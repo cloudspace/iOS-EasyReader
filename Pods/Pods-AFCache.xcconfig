@@ -1,1 +1,0 @@
-PODS_AFCACHE_OTHER_LDFLAGS = -lz -framework SystemConfiguration

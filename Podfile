@@ -39,3 +39,6 @@ pod 'CSShortcuts', '~> 0.0.1'
 # Testing
 pod 'OCMock', '~> 2.2.2'
 
+# Analytics
+pod 'GoogleAnalytics-iOS-SDK', '~> 3.0'
+
