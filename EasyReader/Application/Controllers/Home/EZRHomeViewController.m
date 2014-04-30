@@ -41,6 +41,7 @@
 #import "EZRGoogleAnalyticsService.h"
 
 #import "CCARadialGradientLayer.h"
+#import "UIView+PlaceholderAdditions.h"
 
 @interface EZRHomeViewController()
 
@@ -290,6 +291,14 @@
  * Updates the data source when the feed items change
  */
 - (void) visibleFeedItemsDidChange:(EZRCurrentFeedsProvider *)currentFeedService visibleFeeditems:(NSArray *)visibleFeedItems {
+    if (visibleFeedItems.count == 0) {
+        self.scrollView_vertical.scrollEnabled = NO;
+        [self.collectionView_feedItems hideAndInstantiatePlaceHolderWithTitle:@"No feed items are available at this time."];
+    } else {
+        [self.collectionView_feedItems removePlaceholderViewAndShow];
+        self.scrollView_vertical.scrollEnabled = YES;
+    }
+    
     if (self.currentFeedItem) {
         lastSelectedFeedItem = self.currentFeedItem;
     }
@@ -304,15 +313,7 @@
     } else if ([visibleFeedItems count] > 0){
         [self resetWebView];
         
-        NSIndexPath *destinationIndexPath;
- 
-//        if (self.currentPageIndex < [visibleFeedItems count]) {
-//            destinationIndexPath = [NSIndexPath indexPathForRow:[visibleFeedItems count] -1 inSection:0];
-//        } else {
-//            destinationIndexPath = [NSIndexPath indexPathForRow:self.currentPageIndex - 1 inSection:0];
-//        }
-        
-        destinationIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        NSIndexPath *destinationIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         
         [self.collectionView_feedItems scrollToItemAtIndexPath:destinationIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
         [self loadURLForFeedItem:visibleFeedItems[0]];

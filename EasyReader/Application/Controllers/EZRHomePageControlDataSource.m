@@ -14,7 +14,7 @@
 
 - (NSInteger)numberOfPagesForPageControl
 {
-    return [[EZRCurrentFeedsProvider shared].feedItems count];
+    return [[EZRCurrentFeedsProvider shared].visibleFeedItems count];
 }
 
 @end

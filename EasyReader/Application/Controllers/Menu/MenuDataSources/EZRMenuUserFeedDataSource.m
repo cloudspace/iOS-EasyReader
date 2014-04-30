@@ -59,8 +59,8 @@
     
     if (indexPath.row == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:self.reusableCellIdentifier];
+        ((EZRMenuFeedCell*)cell).feed = nil;
         ((EZRMenuFeedCell*)cell).label_name.text = @"All Feeds";
-        
         if (self.currentFeedsProvider.currentFeed == nil) {
             cell.selected = YES;
         }
