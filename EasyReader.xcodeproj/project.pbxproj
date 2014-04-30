@@ -120,6 +120,10 @@
 		9D16D35418DBA9E9001E9C38 /* SRVApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SRVApplicationDelegate.m */; };
 		9D16D35518DBA9E9001E9C38 /* SRVApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SRVApplicationDelegate.m */; };
 		9D16D35618DBA9E9001E9C38 /* SRVApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16D34A18DBA9E9001E9C38 /* SRVApplicationDelegate.m */; };
+		9D1A6E9A19105AB2002F7DBA /* EZRGoogleAnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A6E9919105AB2002F7DBA /* EZRGoogleAnalyticsService.m */; };
+		9D1A6E9B19105AB2002F7DBA /* EZRGoogleAnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A6E9919105AB2002F7DBA /* EZRGoogleAnalyticsService.m */; };
+		9D1A6E9C19105AB2002F7DBA /* EZRGoogleAnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A6E9919105AB2002F7DBA /* EZRGoogleAnalyticsService.m */; };
+		9D1A6E9D19105AB2002F7DBA /* EZRGoogleAnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A6E9919105AB2002F7DBA /* EZRGoogleAnalyticsService.m */; };
 		9D38DDD518EB08D600C67022 /* EZRHomeCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D38DDD418EB08D600C67022 /* EZRHomeCollectionViewDelegate.m */; };
 		9D38DDD618EB08D600C67022 /* EZRHomeCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D38DDD418EB08D600C67022 /* EZRHomeCollectionViewDelegate.m */; };
 		9D38DDD718EB08D600C67022 /* EZRHomeCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D38DDD418EB08D600C67022 /* EZRHomeCollectionViewDelegate.m */; };
@@ -399,6 +403,8 @@
 		9D16D34818DBA9E9001E9C38 /* SRVApplicationDelegateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRVApplicationDelegateService.m; sourceTree = "<group>"; };
 		9D16D34918DBA9E9001E9C38 /* SRVApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRVApplicationDelegate.h; sourceTree = "<group>"; };
 		9D16D34A18DBA9E9001E9C38 /* SRVApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRVApplicationDelegate.m; sourceTree = "<group>"; };
+		9D1A6E9819105AB2002F7DBA /* EZRGoogleAnalyticsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRGoogleAnalyticsService.h; sourceTree = "<group>"; };
+		9D1A6E9919105AB2002F7DBA /* EZRGoogleAnalyticsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRGoogleAnalyticsService.m; sourceTree = "<group>"; };
 		9D38DDD318EB08D600C67022 /* EZRHomeCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EZRHomeCollectionViewDelegate.h; path = Home/EZRHomeCollectionViewDelegate.h; sourceTree = "<group>"; };
 		9D38DDD418EB08D600C67022 /* EZRHomeCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRHomeCollectionViewDelegate.m; path = Home/EZRHomeCollectionViewDelegate.m; sourceTree = "<group>"; };
 		9D38DDDF18EB090500C67022 /* EZRHomePageControlDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EZRHomePageControlDelegate.h; path = Home/EZRHomePageControlDelegate.h; sourceTree = "<group>"; };
@@ -698,6 +704,8 @@
 		9D16D33518DB75BF001E9C38 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9D1A6E9819105AB2002F7DBA /* EZRGoogleAnalyticsService.h */,
+				9D1A6E9919105AB2002F7DBA /* EZRGoogleAnalyticsService.m */,
 				9D9CBABD18DC826700532F8C /* EZRApplicationStyleService.h */,
 				9D9CBABE18DC826700532F8C /* EZRApplicationStyleService.m */,
 				9D010F0E18F832C5001999EE /* EZRTestFlightService.h */,
@@ -1371,6 +1379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D6B8A8B18E4D2050085C1EE /* EZRFeedImageService.m in Sources */,
+				9D1A6E9C19105AB2002F7DBA /* EZRGoogleAnalyticsService.m in Sources */,
 				9D010F1218F832C5001999EE /* EZRTestFlightService.m in Sources */,
 				9D00DE86190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */,
 				9DFD89F818FC7D9300630CBF /* CSArrayTableViewDataSource.m in Sources */,
@@ -1432,6 +1441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D6B8A8C18E4D2050085C1EE /* EZRFeedImageService.m in Sources */,
+				9D1A6E9D19105AB2002F7DBA /* EZRGoogleAnalyticsService.m in Sources */,
 				9D010F1318F832C5001999EE /* EZRTestFlightService.m in Sources */,
 				9D00DE87190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */,
 				9DFD89F918FC7D9300630CBF /* CSArrayTableViewDataSource.m in Sources */,
@@ -1519,6 +1529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D6B8A8A18E4D2050085C1EE /* EZRFeedImageService.m in Sources */,
+				9D1A6E9B19105AB2002F7DBA /* EZRGoogleAnalyticsService.m in Sources */,
 				9D010F1118F832C5001999EE /* EZRTestFlightService.m in Sources */,
 				9D00DE85190816FF00A0C65F /* CLDSocialShareToolbar.m in Sources */,
 				9DFD89F718FC7D9300630CBF /* CSArrayTableViewDataSource.m in Sources */,
@@ -1580,6 +1591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D6B8A8918E4D2050085C1EE /* EZRFeedImageService.m in Sources */,
+				9D1A6E9A19105AB2002F7DBA /* EZRGoogleAnalyticsService.m in Sources */,
 				9D010F1018F832C5001999EE /* EZRTestFlightService.m in Sources */,
 				9D00DE84190816F900A0C65F /* CLDSocialShareToolbar.m in Sources */,
 				9DFD89F618FC7D9300630CBF /* CSArrayTableViewDataSource.m in Sources */,
@@ -1689,7 +1701,36 @@
 				);
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(PODS_ROOT)/TestFlightSDK\"",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lGoogleAnalyticsServices",
+					"-lTestFlight",
+					"-licucore",
+					"-lsqlite3",
+					"-lz",
+					"-framework",
+					CFNetwork,
+					"-framework",
+					CoreData,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					ImageIO,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-framework",
+					UIKit,
+				);
 				PRODUCT_NAME = Staging;
 				PROVISIONING_PROFILE = "FBE43E56-523F-4B31-9050-95F2750E83C8";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1708,9 +1749,43 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"STAGING=1",
+				);
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(PODS_ROOT)/TestFlightSDK\"",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lGoogleAnalyticsServices",
+					"-lTestFlight",
+					"-licucore",
+					"-lsqlite3",
+					"-lz",
+					"-framework",
+					CFNetwork,
+					"-framework",
+					CoreData,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					ImageIO,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-framework",
+					UIKit,
+				);
 				PRODUCT_NAME = Staging;
 				PROVISIONING_PROFILE = "AE75F2A8-B0F9-486D-8DE0-CFEA22EC508C";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1739,6 +1814,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(PODS_ROOT)/TestFlightSDK\"",
 					"$(SYMROOT)/Release$(EFFECTIVE_PLATFORM_NAME)",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
 				);
 				PRODUCT_NAME = "Easy Reader";
 				PROVISIONING_PROFILE = "69FD30FF-426E-4BD8-8941-A0A741F92746";
@@ -1758,11 +1834,17 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"PRODUCTION=1",
+				);
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Production-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(PODS_ROOT)/TestFlightSDK\"",
 					"$(SYMROOT)/Release$(EFFECTIVE_PLATFORM_NAME)",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
 				);
 				PRODUCT_NAME = "Easy Reader";
 				PROVISIONING_PROFILE = "E41143CF-D6B6-4CE1-8493-853B58EB0910";
@@ -1851,12 +1933,14 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 					"MOCKED=1",
+					"DEVELOPMENT=1",
 				);
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Development-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
 				);
 				PRODUCT_NAME = Mocked;
 				PROVISIONING_PROFILE = "0B1685CC-627C-4832-97D4-79736E8FE8EE";
@@ -1877,12 +1961,18 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"DEVELOPMENT=1",
+				);
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Development-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 					"$(SYMROOT)/Release$(EFFECTIVE_PLATFORM_NAME)",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
 				);
 				PRODUCT_NAME = Mocked;
 				PROVISIONING_PROFILE = "";
@@ -1963,9 +2053,17 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"DEVELOPMENT=1",
+				);
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Development-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(PODS_ROOT)/TestFlightSDK\"",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
+				);
 				PRODUCT_NAME = Development;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1985,9 +2083,17 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"DEVELOPMENT=1",
+				);
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Development-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(PODS_ROOT)/TestFlightSDK\"",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
+				);
 				PRODUCT_NAME = Development;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

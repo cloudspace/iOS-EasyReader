@@ -47,6 +47,12 @@ static EZRCurrentFeedsProvider *sharedInstance;
     return sharedInstance;
 }
 
+
+- (Feed *)currentFeed {
+    return currentFeed;
+}
+
+
 /**
  * Sets the singleton EZRCurrentFeedsProvider object
  * @param EZRCurrentFeedsProvider The new shared EZRCurrentFeedsProvider object

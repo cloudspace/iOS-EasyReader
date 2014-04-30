@@ -21,6 +21,8 @@
     GLint yuvConversionLuminanceTextureUniform, yuvConversionChrominanceTextureUniform;
     GLint yuvConversionMatrixUniform;
     const GLfloat *_preferredConversion;
+    
+    BOOL isFullYUVRange;
 
     int imageBufferWidth, imageBufferHeight;
 }
@@ -95,7 +97,8 @@
             [GPUImageContext useImageProcessingContext];
 
             _preferredConversion = kColorConversion709;
-            yuvConversionProgram = [[GPUImageContext sharedImageProcessingContext] programForVertexShaderString:kGPUImageVertexShaderString fragmentShaderString:kGPUImageYUVVideoRangeConversionForLAFragmentShaderString];
+            isFullYUVRange       = YES;
+            yuvConversionProgram = [[GPUImageContext sharedImageProcessingContext] programForVertexShaderString:kGPUImageVertexShaderString fragmentShaderString:kGPUImageYUVFullRangeConversionForLAFragmentShaderString];
 
             if (!yuvConversionProgram.initialized)
             {
@@ -131,11 +134,12 @@
 
 - (void)dealloc
 {
-    if (self.playerItem && (displayLink != nil))
-    {
-        [displayLink invalidate]; // remove from all run loops
-        displayLink = nil;
-    }
+    // Moved into endProcessing
+    //if (self.playerItem && (displayLink != nil))
+    //{
+    //    [displayLink invalidate]; // remove from all run loops
+    //    displayLink = nil;
+    //}
 }
 
 #pragma mark -
@@ -190,6 +194,7 @@
     AVAssetReader *assetReader = [AVAssetReader assetReaderWithAsset:self.asset error:&error];
 
     NSDictionary *outputSettings = @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)};
+    isFullYUVRange = YES;
     // Maybe set alwaysCopiesSampleData to NO on iOS 5.0 for faster video decoding
     AVAssetReaderTrackOutput *readerVideoTrackOutput = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:[[self.asset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] outputSettings:outputSettings];
     readerVideoTrackOutput.alwaysCopiesSampleData = NO;
@@ -432,13 +437,37 @@
     int bufferWidth = (int) CVPixelBufferGetWidth(movieFrame);
 #endif
     CFTypeRef colorAttachments = CVBufferGetAttachment(movieFrame, kCVImageBufferYCbCrMatrixKey, NULL);
-    if(CFStringCompare(colorAttachments, kCVImageBufferYCbCrMatrix_ITU_R_601_4, 0) == kCFCompareEqualTo) {
-        _preferredConversion = kColorConversion601;
+    if (colorAttachments != NULL)
+    {
+        if(CFStringCompare(colorAttachments, kCVImageBufferYCbCrMatrix_ITU_R_601_4, 0) == kCFCompareEqualTo)
+        {
+            if (isFullYUVRange)
+            {
+                _preferredConversion = kColorConversion601FullRange;
+            }
+            else
+            {
+                _preferredConversion = kColorConversion601;
+            }
+        }
+        else
+        {
+            _preferredConversion = kColorConversion709;
+        }
     }
-    else {
-        _preferredConversion = kColorConversion709;
-    }
+    else
+    {
+        if (isFullYUVRange)
+        {
+            _preferredConversion = kColorConversion601FullRange;
+        }
+        else
+        {
+            _preferredConversion = kColorConversion601;
+        }
 
+    }
+    
     CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
 
     if ([GPUImageContext supportsFastTextureUpload])
@@ -621,6 +650,12 @@
     {
         [synchronizedMovieWriter setVideoInputReadyCallback:^{return NO;}];
         [synchronizedMovieWriter setAudioInputReadyCallback:^{return NO;}];
+    }
+    
+    if (self.playerItem && (displayLink != nil))
+    {
+        [displayLink invalidate]; // remove from all run loops
+        displayLink = nil;
     }
 
     if ([self.delegate respondsToSelector:@selector(didCompletePlayingMovie)]) {

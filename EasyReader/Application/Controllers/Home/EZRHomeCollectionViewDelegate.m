@@ -12,6 +12,8 @@
 #import "EZRFeedItemCollectionView.h"
 #import "CSCollectionPageControl.h"
 
+#import "EZRGoogleAnalyticsService.h"
+
 @interface EZRHomeViewController (Additions)
 
 - (void)prefetchImagesNearIndex:(NSInteger)currentPageIndex count:(NSInteger)count;

@@ -54,11 +54,6 @@
 
 # pragma mark - Methods
 
-/** 
- * Scrolls through collection view to display whatever item is set to currentItem
- */
-- (void)scrollToCurrentFeedItem;
-
 /**
  * Loads the url for the new feed item in the web view
  *

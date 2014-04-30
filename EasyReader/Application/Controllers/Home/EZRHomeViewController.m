@@ -38,7 +38,7 @@
 #import "CLDSocialShareToolbar.h"
 
 #import "EZRHomeSocialToolbarDataSource.h"
-
+#import "EZRGoogleAnalyticsService.h"
 
 #import "CCARadialGradientLayer.h"
 
@@ -79,8 +79,14 @@
     /// The data source for the collection view
     CSArrayCollectionViewDataSource *collectionViewArrayDataSource;
     
-    // Background gradient
+    /// Background gradient
     CCARadialGradientLayer *gradient;
+    
+    /// The most recently visible feed item
+    FeedItem *lastSelectedFeedItem;
+    
+    /// The most recently visible feed
+    Feed *lastSelectedFeed;
 }
 
 - (FeedItem *)currentFeedItem
@@ -98,7 +104,9 @@
     [super viewDidLoad];
     
     self.currentFeedsProvider = [EZRCurrentFeedsProvider shared];
-
+    
+    [[EZRGoogleAnalyticsService shared] sendView:@"Home"];
+    
     [self setUpPageControl];
     [self setUpVerticalScrollView];
     [self setUpCollectionView];
@@ -117,6 +125,11 @@
     gradient.locations = @[@0, @1];
     
     [self.view.layer insertSublayer:gradient atIndex:0];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(selectedFeedDidChange:)
+                                                 name:@"kEZRFeedSelected"
+                                               object:nil];
 }
 
 /**
@@ -260,15 +273,34 @@
 #pragma mark - Observations
 
 /**
+ * Called when the selected feed item notification is received
+ *
+ * @param notification the NSNotification related to the feed item change
+ */
+- (void)selectedFeedDidChange:(NSNotification *)notification
+{
+    Feed *feed = notification.object;
+    
+    if ((!feed || feed != lastSelectedFeed) && [self.collectionView_feedItems numberOfItemsInSection:0] > 0) {
+        [self.collectionView_feedItems scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    }
+}
+
+/**
  * Updates the data source when the feed items change
  */
 - (void) visibleFeedItemsDidChange:(EZRCurrentFeedsProvider *)currentFeedService visibleFeeditems:(NSArray *)visibleFeedItems {
+    if (self.currentFeedItem) {
+        lastSelectedFeedItem = self.currentFeedItem;
+    }
+    
     collectionViewArrayDataSource.source = visibleFeedItems;
+    
     
     [self.collectionView_feedItems reloadData];
     
-    if([visibleFeedItems containsObject:self.currentFeedItem]){
-        [self scrollToCurrentFeedItem];
+    if([visibleFeedItems containsObject:lastSelectedFeedItem]){
+        [self scrollToFeedItem:lastSelectedFeedItem];
     } else if ([visibleFeedItems count] > 0){
         [self resetWebView];
         
@@ -305,12 +337,12 @@
 /**
  * Scroll to the currentFeedItem when the feedItems update
  */
-- (void)scrollToCurrentFeedItem
+- (void)scrollToFeedItem:(FeedItem *)feedItem
 {
-    
-    NSUInteger index = [self.currentFeedsProvider.visibleFeedItems indexOfObject:self.currentFeedItem];
-    NSIndexPath *indexPath;
+    NSUInteger index = [self.currentFeedsProvider.visibleFeedItems indexOfObject:feedItem];
     NSInteger count = [self.currentFeedsProvider.visibleFeedItems count];
+    
+    NSIndexPath *indexPath;
     
     // If the current index is greater than the feedItem array
     if (index > count - 1){

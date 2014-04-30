@@ -18,11 +18,23 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.imageView_icon.hidden = NO;
         self.imageView.image = [UIImage imageNamed:@"icon_rss"];
     }
     
     return self;
+}
+
+- (void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    
+    if (self.isSelected) {
+        [self.label_name setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:16.0]];
+    } else {
+        [self.label_name setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0]];
+    }
 }
 
 /**

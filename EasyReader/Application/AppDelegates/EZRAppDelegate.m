@@ -15,6 +15,7 @@
 #import "EZRFeedUpdateService.h"
 #import "EZRApplicationStyleService.h"
 #import "EZRTestFlightService.h"
+#import "EZRGoogleAnalyticsService.h"
 
 #import "User.h"
 
@@ -53,6 +54,7 @@
     [self registerService:[EZRRegisterRoutesService shared]];
     [self registerService:[EZRApplicationStyleService shared]];
     [self registerService:[EZRFeedUpdateService shared]];
+    [self registerService:[EZRGoogleAnalyticsService shared]];
     
     [self invokeServiceMethodWithSelector:@selector(application:didFinishLaunchingWithOptions:) withArgument:&launchOptions];
     

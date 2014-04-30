@@ -15,6 +15,7 @@
 #import "OCMIndirectReturnValueProvider.h"
 #import "OCMNotificationPoster.h"
 #import "OCMBlockCaller.h"
+#import "OCMRealObjectForwarder.h"
 #import "NSInvocation+OCMAdditions.h"
 
 @interface NSObject(HCMatcherDummy)
@@ -98,9 +99,8 @@
 
 - (id)andForwardToRealObject
 {
-	[NSException raise:NSInternalInconsistencyException format:@"Method %@ can only be used with partial mocks.",
-	 NSStringFromSelector(_cmd)];
-	return self; // keep compiler happy
+    [invocationHandlers addObject:[[[OCMRealObjectForwarder alloc] init] autorelease]];
+    return self;
 }
 
 
@@ -137,7 +137,7 @@
     if(signature == nil)
     {
         // if we're a working with a class mock and there is a class method, auto-switch
-        if(([[signatureResolver class] isSubclassOfClass:[OCClassMockObject class]]) &&
+        if(([object_getClass(signatureResolver) isSubclassOfClass:[OCClassMockObject class]]) &&
            ([[signatureResolver mockedClass] respondsToSelector:aSelector]))
         {
             [self classMethod];
