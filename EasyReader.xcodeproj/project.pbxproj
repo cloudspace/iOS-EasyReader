@@ -1940,6 +1940,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
 				);
 				PRODUCT_NAME = Mocked;
 				PROVISIONING_PROFILE = "0B1685CC-627C-4832-97D4-79736E8FE8EE";
@@ -1971,6 +1972,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 					"$(SYMROOT)/Release$(EFFECTIVE_PLATFORM_NAME)",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
 				);
 				PRODUCT_NAME = Mocked;
 				PROVISIONING_PROFILE = "";
@@ -2058,7 +2060,10 @@
 				);
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Development-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(PODS_ROOT)/TestFlightSDK\"",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
+				);
 				PRODUCT_NAME = Development;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2085,7 +2090,10 @@
 				);
 				INFOPLIST_FILE = "EasyReader/Supporting Files/Development-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = "\"$(PODS_ROOT)/TestFlightSDK\"";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(PODS_ROOT)/TestFlightSDK\"",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
+				);
 				PRODUCT_NAME = Development;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
