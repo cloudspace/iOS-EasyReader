@@ -40,6 +40,9 @@
 /// The current feeds provider
 @property (nonatomic, strong) EZRCurrentFeedsProvider *currentFeedsProvider;
 
+/// Height Menu to modify
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *menuHeight;
+
 @end
 
 
@@ -47,6 +50,9 @@
 {
     /// Is the user currently searching
     BOOL searching;
+    
+    /// A temporary store for the menu height since it's made small when the keyboard shows
+    CGFloat originalMenuHeight;
 }
 
 #pragma mark - UIViewController Lifecycle methods
@@ -96,13 +102,19 @@
     
     switch (event) {
         case kEZRSearchStateStartedSearching:
+        {
+            originalMenuHeight = self.menuHeight.constant;
+            
             self.tableView_menu.dataSource = self.searchFeedDataSource;
+            self.menuHeight.constant = originalMenuHeight - 216;
             break;
-            
+        }
         case kEZRSearchStateStoppedSearching:
+        {
             self.tableView_menu.dataSource = self.userFeedDataSource;
+            self.menuHeight.constant = originalMenuHeight;
             break;
-            
+        }
         case kEZRSearchStateResultsAvailable:
             // Do nothing, just need to realod
             break;

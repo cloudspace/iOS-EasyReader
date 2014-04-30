@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EZRSearchBar.h"
 
 typedef NS_ENUM(NSUInteger, EZRSearchState) {
     kEZRSearchStateStartedSearching,
@@ -24,6 +25,7 @@ extern NSString * const kEZRFeedSearchStateChangedNotification;
  * Acts as the delegate object for the menu search bar
  */
 @interface EZRMenuSearchController : NSObject <UISearchBarDelegate>
+
 
 /**
  * Cancels a search, clears the search text, hides the keyboard
