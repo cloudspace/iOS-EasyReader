@@ -171,7 +171,7 @@
 {
     [super viewDidLayoutSubviews];
     [self layOutVerticalScrollView];
-
+    
     gradient.frame = self.view.bounds;
     gradient.gradientRadius = CGRectGetWidth(self.view.frame)/2.0f;
     gradient.gradientOrigin = CGPointMake(CGRectGetWidth(self.view.frame)/2.0,100);

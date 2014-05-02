@@ -53,6 +53,10 @@
     
     /// A temporary store for the menu height since it's made small when the keyboard shows
     CGFloat originalMenuHeight;
+    
+    /// Has the inital menu height been set to the frame (can not rely on autolayout since we're changing it when
+    /// the keyboard shows
+    BOOL hasSetMenuHeight;
 }
 
 #pragma mark - UIViewController Lifecycle methods
@@ -83,6 +87,14 @@
     self.currentFeedsProvider = [EZRCurrentFeedsProvider shared];
     
     [self observeObject:self.currentFeedsProvider property:@"feeds" withSelector:@selector(feedsDidChange:feeds:)];
+}
+
+- (void)viewDidLayoutSubviews {
+    if (!hasSetMenuHeight) {
+        self.menuHeight.constant = CGRectGetHeight(self.view.frame);
+        hasSetMenuHeight = YES;
+        [self.view layoutSubviews];
+    }
 }
 
 - (void)applyMenuStyles
