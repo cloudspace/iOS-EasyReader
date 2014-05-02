@@ -43,6 +43,9 @@
 #import "CCARadialGradientLayer.h"
 #import "UIView+PlaceholderAdditions.h"
 
+#import <AVFoundation/AVFoundation.h>
+
+
 @interface EZRHomeViewController()
 
 @property User *currentUser;
@@ -160,6 +163,17 @@
                                              selector:@selector(selectedFeedDidChange:)
                                                  name:@"kEZRFeedSelected"
                                                object:nil];
+    
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    BOOL ok;
+    NSError *setCategoryError = nil;
+    ok = [audioSession setCategory:AVAudioSessionCategoryPlayback
+                             error:&setCategoryError];
+    if (!ok) {
+        NSLog(@"%s setCategoryError=%@", __PRETTY_FUNCTION__, setCategoryError);
+    }
+    
+    //[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
 }
 
 /**
