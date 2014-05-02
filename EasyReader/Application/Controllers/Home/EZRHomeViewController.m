@@ -185,6 +185,10 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
 /**
  * Tells the calling object that this view controller should not autorotate
  */
