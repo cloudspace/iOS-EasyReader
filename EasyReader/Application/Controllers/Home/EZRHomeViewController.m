@@ -54,9 +54,6 @@
 /// The social sharing toolbar
 @property (nonatomic, weak) IBOutlet CLDSocialShareToolbar *socialShareToolbar;
 
-/// The up indicator displayed over the web view to assist in navigating to the top of the page
-@property (nonatomic, strong) UIImageView *upIndicatorView;
-
 @end
 
 
@@ -90,10 +87,42 @@
     Feed *lastSelectedFeed;
 }
 
+#pragma mark - Public Methods
+
+- (void)loadURLForFeedItem:(FeedItem *)feedItem
+{
+    NSURL *url = [NSURL URLWithString:feedItem.url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30.0];
+    
+    [self.webView_feedItem loadRequest:request];
+}
+
+- (void)resetWebView
+{
+    [self.webView_feedItem stopLoading];
+    
+    NSString *blankHTML = @"<html><head></head><body style=\"background-color: #000000;\"></body></html>";
+    [self.webView_feedItem loadHTMLString:blankHTML
+                                  baseURL:nil];
+}
+
+- (void)hideUpInidicator {
+    [UIView animateWithDuration:0.5f animations:^{
+        [self.upIndicatorView setAlpha:0.0f];
+    }];
+}
+
+- (void)showUpInidicator {
+    [UIView animateWithDuration:0.5f animations:^{
+        [self.upIndicatorView setAlpha:1.0f];
+    }];
+}
+
 - (FeedItem *)currentFeedItem
 {
     return self.collectionView_feedItems.currentFeedItem;
 }
+
 
 #pragma mark - UIViewController Methods
 
@@ -263,12 +292,7 @@
     [self.upIndicatorView addGestureRecognizer:tapRecognizer];
 }
 
-/**
- * Scrolls the main containing scroll view to the top (animated)
- */
-- (void) scrollToTop {
-    [self.scrollView_vertical setContentOffset:CGPointMake(0,0) animated:YES];
-}
+
 
 
 #pragma mark - Observations
@@ -328,7 +352,7 @@
 }
 
 
-#pragma mark - IBActions
+#pragma mark - Actions
 
 // Receives left menu link click
 - (IBAction)buttonLeftMenu_touchUpInside_goToMenu:(id)sender {
@@ -355,6 +379,15 @@
     
     [_collectionView_feedItems scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
+
+/**
+ * Scrolls the main containing scroll view to the top (animated)
+ */
+- (void) scrollToTop {
+    [self.scrollView_vertical setContentOffset:CGPointMake(0,0) animated:YES];
+}
+
+#pragma mark - Prefetching
 
 /**
  * Fetches the current feed item image, then prefetches after
@@ -388,33 +421,9 @@
     NSArray *itemsToPrefetch = [self.currentFeedsProvider.visibleFeedItems subarrayWithRange:fetchRange];
     
     [[EZRFeedImageService shared] prefetchImagesForFeedItems:itemsToPrefetch];
-    
 }
 
-/**
- * Loads the url for the new feed item in the web view
- *
- * @param feedItem The feed item to
- */
-- (void) loadURLForFeedItem:(FeedItem *)feedItem
-{
-    NSURL *url = [NSURL URLWithString:feedItem.url];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30.0];
 
-    [self.webView_feedItem loadRequest:request];
-}
-
-/**
- * Resets the content of the web view
- */
-- (void)resetWebView
-{
-    [self.webView_feedItem stopLoading];
-    
-    NSString *blankHTML = @"<html><head></head><body style=\"background-color: #000000;\"></body></html>";
-    [self.webView_feedItem loadHTMLString:blankHTML
-                                        baseURL:nil];
-}
 
 @end
 

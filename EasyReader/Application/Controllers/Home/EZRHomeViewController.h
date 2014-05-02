@@ -42,6 +42,9 @@
 /// Displays website that hosts article
 @property (nonatomic, strong) EZRNestableWebView *webView_feedItem;
 
+/// The up indicator displayed over the web view to assist in navigating to the top of the page
+@property (nonatomic, strong) UIImageView *upIndicatorView;
+
 
 # pragma mark - Properties
 
@@ -60,9 +63,20 @@
  * @param feedItem The feed item to
  */
 - (void) loadURLForFeedItem:(FeedItem *)feedItem;
+
 /**
  * Resets the content of the web view
  */
 - (void)resetWebView;
+
+/**
+ * Hides the scroll up indicator
+ */
+- (void)hideUpInidicator;
+    
+/**
+ * Shows the scroll up indicator
+ */
+- (void)showUpInidicator;
 
 @end
