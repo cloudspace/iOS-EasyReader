@@ -27,11 +27,6 @@
         
         flowLayout = [[UICollectionViewFlowLayout alloc] init];
         
-        CGFloat width = CGRectGetWidth(self.frame);
-        CGFloat height = CGRectGetHeight(self.frame);
-        
-        flowLayout.itemSize = CGSizeMake(width, height);
-        
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         flowLayout.minimumInteritemSpacing = 0;
         flowLayout.minimumLineSpacing = 0;
@@ -42,6 +37,15 @@
     }
     
     return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    CGFloat width = CGRectGetWidth(self.frame);
+    CGFloat height = CGRectGetHeight(self.frame);
+    
+    flowLayout.itemSize = CGSizeMake(width, height);
 }
 
 

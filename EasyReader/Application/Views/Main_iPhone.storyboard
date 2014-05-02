@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Hgn-0q-Z1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Hgn-0q-Z1W">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -124,7 +124,7 @@
                                                 </cells>
                                             </collectionView>
                                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZJR-Bc-2rZ" customClass="CSCollectionPageControl">
-                                                <rect key="frame" x="0.0" y="535" width="320" height="37"/>
+                                                <rect key="frame" x="0.0" y="531" width="320" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="37" id="IOR-d8-478"/>
@@ -134,7 +134,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="ZJR-Bc-2rZ" firstAttribute="leading" secondItem="wv0-Kq-lEd" secondAttribute="leading" id="4rH-P3-1FM"/>
-                                            <constraint firstAttribute="bottom" secondItem="ZJR-Bc-2rZ" secondAttribute="bottom" constant="-4" id="Udw-oK-lYS"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZJR-Bc-2rZ" secondAttribute="bottom" id="Udw-oK-lYS"/>
                                             <constraint firstItem="xvT-99-V3u" firstAttribute="top" secondItem="wv0-Kq-lEd" secondAttribute="top" id="eeM-6n-6rD"/>
                                             <constraint firstAttribute="trailing" secondItem="ZJR-Bc-2rZ" secondAttribute="trailing" id="g71-Kw-bfi"/>
                                             <constraint firstAttribute="trailing" secondItem="xvT-99-V3u" secondAttribute="trailing" id="i4C-E3-DhH"/>
@@ -167,17 +167,16 @@
                         <constraints>
                             <constraint firstItem="wv0-Kq-lEd" firstAttribute="width" secondItem="8sx-gS-Wib" secondAttribute="width" id="FjT-9R-6Wt"/>
                             <constraint firstItem="EWA-9Z-pb1" firstAttribute="leading" secondItem="8sx-gS-Wib" secondAttribute="leading" id="GLA-9c-NmZ"/>
-                            <constraint firstAttribute="height" secondItem="xvT-99-V3u" secondAttribute="height" id="IyD-bO-ocB"/>
                             <constraint firstItem="EWA-9Z-pb1" firstAttribute="top" secondItem="u5l-1H-L35" secondAttribute="bottom" id="R3e-Eb-s6m"/>
                             <constraint firstItem="lzz-HQ-Mp2" firstAttribute="top" secondItem="EWA-9Z-pb1" secondAttribute="bottom" id="XH9-7e-hB0"/>
-                            <constraint firstItem="xvT-99-V3u" firstAttribute="height" secondItem="8sx-gS-Wib" secondAttribute="height" id="gj6-Uu-uBO"/>
+                            <constraint firstAttribute="width" secondItem="xvT-99-V3u" secondAttribute="width" id="ZdL-6d-zjQ"/>
                             <constraint firstAttribute="trailing" secondItem="EWA-9Z-pb1" secondAttribute="trailing" id="otM-Jz-ztm"/>
+                            <constraint firstAttribute="height" secondItem="xvT-99-V3u" secondAttribute="height" id="qli-2m-aSN"/>
                             <constraint firstItem="wv0-Kq-lEd" firstAttribute="height" secondItem="8sx-gS-Wib" secondAttribute="height" id="xJM-P3-M8C"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="button_leftMenu" destination="wb1-Na-kaO" id="0oK-RY-cyj"/>
