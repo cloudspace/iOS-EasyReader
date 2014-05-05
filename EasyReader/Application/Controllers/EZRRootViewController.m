@@ -15,9 +15,13 @@
 
 //#import "UIViewController+NibLoader.h"
 
-@interface EZRRootViewController ()
+
+@interface MFSideMenuContainerViewController ()
+
+@property (nonatomic, strong) UIView *menuContainerView;
 
 @end
+
 
 @implementation EZRRootViewController
 
@@ -38,6 +42,21 @@
   }
   
   return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)[[[[UIApplication sharedApplication] delegate] window] rootViewController];
+//    container.menuContainerView.gestureRecognizers
+    
+    
+    for (UIGestureRecognizer *recognizer in container.menuContainerView.gestureRecognizers) {
+        [recognizer setEnabled:NO];
+//        [container.menuContainerView removeGestureRecognizer:recognizer];
+    }
+
 }
 
 /**

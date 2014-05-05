@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ApiHost</key>
+	<string>http://rss.cloudspace.com</string>
+	<key>ApiBasePath</key>
+	<string>/v2</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -37,18 +41,10 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>2.0.18</string>
-	<key>FacebookAppID</key>
-	<string>456979891044426</string>
-	<key>GoogleMapsAPIKey</key>
-	<string>AIzaSyA1AmUkZi_HgBXIR-QBC1cKKhZngTrC5Uc</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>TwitterConsumerKey</key>
-	<string>ieiL4qQcVx97nOR9G8X7g</string>
-	<key>TwitterConsumerSecret</key>
-	<string>nvsH4EVwFtoYNI9IxV2Csc9yWicDYZsu6kRObGB2SA</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -69,9 +65,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>apiBasePath</key>
-	<string>/v2</string>
-	<key>apiHost</key>
-	<string>http://rss.cloudspace.com</string>
 </dict>
 </plist>

@@ -81,10 +81,12 @@
                                                     leftMenuViewController:leftMenuViewController
                                                     rightMenuViewController:nil];
     
+    
     [container.shadow setEnabled:YES];
     [container.shadow setRadius:5.0f];
     [container.shadow setOpacity:0.75f];
     [container setMenuSlideAnimationFactor:3.0f];
+    
     self.window.rootViewController = container;
     [self.window makeKeyAndVisible];
     
