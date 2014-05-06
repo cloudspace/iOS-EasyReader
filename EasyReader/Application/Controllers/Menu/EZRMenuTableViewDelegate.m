@@ -32,6 +32,21 @@
 
 @implementation EZRMenuTableViewDelegate
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+
+    if ([cell isKindOfClass:[EZRMenuFeedCell class]]) {
+        EZRMenuFeedCell  *ezrcell = (EZRMenuFeedCell *)cell;
+        if (!ezrcell.feed) {
+            return UITableViewCellEditingStyleNone;
+        }
+    }
+    
+    return UITableViewCellEditingStyleDelete;
+}
+
+
 /**
  * Handles selection of a row
  */

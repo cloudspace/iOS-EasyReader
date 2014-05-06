@@ -118,6 +118,8 @@
             originalMenuHeight = self.menuHeight.constant;
             
             self.tableView_menu.dataSource = self.searchFeedDataSource;
+            self.searchFeedDataSource.source = @[];
+            [self.searchFeedDataSource setLastSearchTerm:nil];
             self.menuHeight.constant = originalMenuHeight - 216;
             break;
         }
@@ -128,7 +130,9 @@
             break;
         }
         case kEZRSearchStateResultsAvailable:
-            // Do nothing, just need to realod
+            [self.searchFeedDataSource setLastSearchTerm:[[notification userInfo] objectForKey:@"searchText"]];
+            
+            // Do nothing, just need to reload
             break;
     }
     

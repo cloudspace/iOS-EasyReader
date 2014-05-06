@@ -23,8 +23,6 @@ static dispatch_once_t pred;
 static EZRFeedImageService *sharedInstance;
 
 
-
-
 @implementation EZRFeedImageService
 {
     /// A cache of feed item images
@@ -42,6 +40,7 @@ static EZRFeedImageService *sharedInstance;
     /// An array of URLs that are currently being processed
     NSMutableArray *imageURLsCurrentlyBeingProcessed;
     
+    /// A list of prefetched images
     NSMutableArray *prefetched;
 }
 

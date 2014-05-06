@@ -119,7 +119,10 @@ NSString * const kEZRFeedSearchStateChangedNotification = @"kEZRFeedSearchStateC
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:kEZRFeedSearchStateChangedNotification
                                                         object:nil
-                                                      userInfo:@{@"searchState": [NSNumber numberWithInt:state]}];
+                                                      userInfo:@{
+                                                                 @"searchState": [NSNumber numberWithInt:state],
+                                                                 @"searchText": self.searchBar.text
+                                                                 }];
 }
 
 #pragma mark - UISearchBarDelegate Methods

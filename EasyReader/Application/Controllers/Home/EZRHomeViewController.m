@@ -325,7 +325,7 @@
     Feed *feed = notification.object;
     
     if ((!feed || feed != lastSelectedFeed) && [self.collectionView_feedItems numberOfItemsInSection:0] > 0) {
-        [self.collectionView_feedItems scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+        [self.collectionView_feedItems scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     }
 }
 
