@@ -9,7 +9,9 @@
 #import "EZRMenuSearchController.h"
 #import "EZRMenuSearchFeedDataSource.h"
 #import "EZRMenuUserFeedDataSource.h"
+#import "EZRGoogleAnalyticsService.h"
 #import "Feed.h"
+#import "TSMessage.h"
 
 
 NSString * const kEZRFeedSearchStateChangedNotification = @"kEZRFeedSearchStateChanged";
@@ -156,6 +158,17 @@ NSString * const kEZRFeedSearchStateChangedNotification = @"kEZRFeedSearchStateC
  */
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    if ([self isURL:searchBar.text]) {
+        UIViewController *rootVC = [[[UIApplication sharedApplication].delegate window] rootViewController];
+        
+        [Feed createFeedWithUrl:searchBar.text success:^(id responseObject, NSInteger httpStatus) {
+            [[EZRGoogleAnalyticsService shared] sendView:@"Feed Added"];
+            [TSMessage showNotificationInViewController:rootVC title:@"Easy Reader" subtitle:@"The selected feed has been added to the menu.  Please allow a few minutes for new items to populate." type:TSMessageNotificationTypeSuccess];
+        } failure:^(id responseObject, NSInteger httpStatus, NSError *error) {
+            [TSMessage showNotificationInViewController:rootVC title:@"Easy Reader" subtitle:@"There was an error adding that feed.  Please try again later." type:TSMessageNotificationTypeError];
+        }];
+    }
+    
     [self cancelSearch];
 }
 

@@ -185,8 +185,12 @@ static APIClient *sharedInstance = nil;
             {
                 httpStatus = [error.userInfo[AFNetworkingOperationFailingURLResponseErrorKey] statusCode];
             }
+            else
+            {
+                httpStatus = operation.response.statusCode;
+            }
             
-            failure(operation.responseObject, operation.response.statusCode, error);
+            failure(operation.responseObject, httpStatus, error);
         }
     };
 }

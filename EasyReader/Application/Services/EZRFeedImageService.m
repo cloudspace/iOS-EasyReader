@@ -440,7 +440,13 @@ static EZRFeedImageService *sharedInstance;
     
     CIImage *result = [blurFilter valueForKey: kCIOutputImageKey];
 
-    UIImage *blurredImage = [UIImage imageWithCGImage:[context createCGImage:result fromRect:inputImage.extent] scale:1.0 orientation:UIImageOrientationDownMirrored];
+    CGImageRef blurredImageRef =  [context createCGImage:result fromRect:inputImage.extent];
+    
+    UIImage *blurredImage = [UIImage imageWithCGImage:blurredImageRef
+                                                scale:1.0
+                                          orientation:UIImageOrientationDownMirrored];
+    
+    CGImageRelease(blurredImageRef);
 
     return blurredImage;
 }
