@@ -33,14 +33,14 @@
     [myInvocation setTarget:self];
     [myInvocation setSelector:@selector(requestFiveMinutesOfFeedItems:)];
     
-    int interval = 120 * 1;
+    int interval = 10 * 1;
     [NSTimer scheduledTimerWithTimeInterval:interval invocation:myInvocation repeats:YES];
 }
 
 
 #pragma mark - Private Methods
 
-- (void) requestFiveMinutesOfFeedItems:(id)sender
+- (void)requestFiveMinutesOfFeedItems:(id)sender
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *today = [NSDate date];
@@ -54,8 +54,7 @@
     NSLog(@"Invocation ran!");
 }
 
-
-- (void) requestOneWeekOfFeedItems
+- (void)requestOneWeekOfFeedItems
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *today = [NSDate date];
@@ -69,19 +68,22 @@
     NSLog(@"Setup Invocation");
 }
 
-//TODO: Remove 'this is for testing' functionality (in CSResponsiveApiRouter as well)
-- (void) requestFeedItemsSince:(NSDate *)since
+- (void)requestFeedItemsSince:(NSDate *)since
 {
     [FeedItem requestFeedItemsFromFeeds:[[User current] feeds]
-                                  Since:since
+                                  since:since
                                 success:^(id responseData, NSInteger httpStatus){
-                                    NSLog(@"Feed Items have been added");
+                                    NSInteger count = [responseData[@"feed_items"] count];
+                                    
+                                    if (count > 0) {
+                                      NSLog(@"%ld feed Items have been added", (long)count);
+                                    }
                                 }failure:nil
      ];
 }
 
 
-- (void) loadDefaultFeeds
+- (void)loadDefaultFeeds
 {
     [Feed requestDefaultFeedsWithSuccess:^(id responseObject, NSInteger httpStatus) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

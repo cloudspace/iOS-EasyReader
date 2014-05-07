@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/EZRCurrentUserProxy.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRCurrentUserProxy</TokenIdentifier>
+			<Abstract type="html">A proxy class that references the current user</Abstract>
+			<DeclaredIn>EZRCurrentUserProxy.h</DeclaredIn>
+            
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRCurrentUserProxy/setUser:</TokenIdentifier>
+			<Abstract type="html">The current user</Abstract>
+			<DeclaredIn>EZRCurrentUserProxy.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) User *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRCurrentUserProxy/user</TokenIdentifier>
+			<Abstract type="html">The current user</Abstract>
+			<DeclaredIn>EZRCurrentUserProxy.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) User *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRCurrentUserProxy/user</TokenIdentifier>
+			<Abstract type="html">The current user</Abstract>
+			<DeclaredIn>EZRCurrentUserProxy.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) User *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

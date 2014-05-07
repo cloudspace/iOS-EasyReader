@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/EZRFeedItemCollectionView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRFeedItemCollectionView</TokenIdentifier>
+			<Abstract type="html">A collection view built to hold feed items</Abstract>
+			<DeclaredIn>EZRFeedItemCollectionView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCollectionView/setCurrentFeedItem:</TokenIdentifier>
+			<Abstract type="html">The feed item that is currently focused</Abstract>
+			<DeclaredIn>EZRFeedItemCollectionView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) FeedItem *currentFeedItem</Declaration>
+			
+			
+			<Anchor>//api/name/currentFeedItem</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRFeedItemCollectionView/currentFeedItem</TokenIdentifier>
+			<Abstract type="html">The feed item that is currently focused</Abstract>
+			<DeclaredIn>EZRFeedItemCollectionView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) FeedItem *currentFeedItem</Declaration>
+			
+			
+			<Anchor>//api/name/currentFeedItem</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRFeedItemCollectionView/currentFeedItem</TokenIdentifier>
+			<Abstract type="html">The feed item that is currently focused</Abstract>
+			<DeclaredIn>EZRFeedItemCollectionView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) FeedItem *currentFeedItem</Declaration>
+			
+			
+			<Anchor>//api/name/currentFeedItem</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,811 @@
+=== BUILD TARGET Pods-AFNetworking OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-CSEnhancedTableView OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-Block-KVO OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-CSShortcuts OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-MBProgressHUD OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+Check dependencies
+
+=== BUILD TARGET Pods-GPUImage OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+Check dependencies
+
+=== BUILD TARGET Pods-RegexKitLite OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-MAObjCRuntime OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-CSStandardViewControllers OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-MFSideMenu OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-MTLabel OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-Inflections OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-MagicalRecord OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-NSDate+TimeAgo OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-OCMock OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-SDWebImage OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods-TestFlightSDK OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Pods OF PROJECT Pods WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+=== BUILD TARGET Staging OF PROJECT EasyReader WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+
+ProcessInfoPlistFile /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app/Info.plist EasyReader/Supporting\ Files/Staging-Info.plist
+    cd /Users/jlorich/projects/iOS-EasyReader
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+    builtin-infoPlistUtility /Users/jlorich/projects/iOS-EasyReader/EasyReader/Supporting\ Files/Staging-Info.plist -genpkginfo /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app/ResourceRules.plist -additionalcontentfile /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/assetcatalog_generated_info.plist -o /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app/Info.plist
+
+GenerateDSYMFile /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app.dSYM /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app/Staging
+    cd /Users/jlorich/projects/iOS-EasyReader
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app/Staging -o /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app.dSYM
+
+PhaseScriptExecution Auto\ Increment\ Version /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Script-9D79274518DA1D0300E1D3E1.sh
+    cd /Users/jlorich/projects/iOS-EasyReader
+    export ACTION=build
+    export AD_HOC_CODE_SIGNING_ALLOWED=NO
+    export ALTERNATE_GROUP=staff
+    export ALTERNATE_MODE=u+w,go-w,a+rX
+    export ALTERNATE_OWNER=jlorich
+    export ALWAYS_SEARCH_USER_PATHS=NO
+    export ALWAYS_USE_SEPARATE_HEADERMAPS=YES
+    export APPLE_INTERNAL_DEVELOPER_DIR=/AppleInternal/Developer
+    export APPLE_INTERNAL_DIR=/AppleInternal
+    export APPLE_INTERNAL_DOCUMENTATION_DIR=/AppleInternal/Documentation
+    export APPLE_INTERNAL_LIBRARY_DIR=/AppleInternal/Library
+    export APPLE_INTERNAL_TOOLS=/AppleInternal/Developer/Tools
+    export APPLY_RULES_IN_COPY_FILES=NO
+    export ARCHS="armv7 armv7s arm64"
+    export ARCHS_STANDARD="armv7 armv7s arm64"
+    export ARCHS_STANDARD_32_64_BIT="armv7 armv7s arm64"
+    export ARCHS_STANDARD_32_BIT="armv7 armv7s"
+    export ARCHS_STANDARD_64_BIT=arm64
+    export ARCHS_STANDARD_INCLUDING_64_BIT="armv7 armv7s arm64"
+    export ARCHS_UNIVERSAL_IPHONE_OS="armv7 armv7s arm64"
+    export AVAILABLE_PLATFORMS="iphonesimulator macosx iphoneos"
+    export BUILD_COMPONENTS="headers build"
+    export BUILD_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products
+    export BUILD_ROOT=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products
+    export BUILD_STYLE=
+    export BUILD_VARIANTS=normal
+    export BUILT_PRODUCTS_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos
+    export CACHE_ROOT=/var/folders/3q/2ns2wjdx7sv3xrl868sx5cmh0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode
+    export CCHROOT=/var/folders/3q/2ns2wjdx7sv3xrl868sx5cmh0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode
+    export CHMOD=/bin/chmod
+    export CHOWN=/usr/sbin/chown
+    export CLANG_CXX_LANGUAGE_STANDARD=gnu++0x
+    export CLANG_CXX_LIBRARY=libc++
+    export CLANG_ENABLE_OBJC_ARC=YES
+    export CLANG_MODULES_AUTOLINK=YES
+    export CLANG_WARN_CONSTANT_CONVERSION=YES
+    export CLANG_WARN_EMPTY_BODY=YES
+    export CLANG_WARN_ENUM_CONVERSION=YES
+    export CLANG_WARN_INT_CONVERSION=YES
+    export CLANG_WARN__DUPLICATE_METHOD_MATCH=YES
+    export CLASS_FILE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/JavaClasses
+    export CLEAN_PRECOMPS=YES
+    export CLONE_HEADERS=NO
+    export CODESIGNING_FOLDER_PATH=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app
+    export CODE_SIGNING_ALLOWED=YES
+    export CODE_SIGNING_REQUIRED=YES
+    export CODE_SIGN_CONTEXT_CLASS=XCiPhoneOSCodeSignContext
+    export CODE_SIGN_IDENTITY="iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)"
+    export COLOR_DIAGNOSTICS=NO
+    export COMBINE_HIDPI_IMAGES=NO
+    export COMMAND_MODE=legacy
+    export COMPOSITE_SDK_DIRS=/var/folders/3q/2ns2wjdx7sv3xrl868sx5cmh0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/CompositeSDKs
+    export COMPRESS_PNG_FILES=YES
+    export CONFIGURATION=Release
+    export CONFIGURATION_BUILD_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos
+    export CONFIGURATION_TEMP_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos
+    export CONTENTS_FOLDER_PATH=Staging.app
+    export COPYING_PRESERVES_HFS_DATA=NO
+    export COPY_PHASE_STRIP=YES
+    export COPY_RESOURCES_FROM_STATIC_FRAMEWORKS=YES
+    export CP=/bin/cp
+    export CREATE_INFOPLIST_SECTION_IN_BINARY=NO
+    export CURRENT_ARCH=arm64
+    export CURRENT_VARIANT=normal
+    export DEAD_CODE_STRIPPING=YES
+    export DEBUGGING_SYMBOLS=YES
+    export DEBUG_INFORMATION_FORMAT=dwarf-with-dsym
+    export DEFAULT_COMPILER=com.apple.compilers.llvm.clang.1_0
+    export DEFAULT_KEXT_INSTALL_PATH=/System/Library/Extensions
+    export DEPLOYMENT_LOCATION=NO
+    export DEPLOYMENT_POSTPROCESSING=NO
+    export DERIVED_FILES_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/DerivedSources
+    export DERIVED_FILE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/DerivedSources
+    export DERIVED_SOURCES_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/DerivedSources
+    export DEVELOPER_APPLICATIONS_DIR=/Applications/Xcode.app/Contents/Developer/Applications
+    export DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/usr/bin
+    export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+    export DEVELOPER_FRAMEWORKS_DIR=/Applications/Xcode.app/Contents/Developer/Library/Frameworks
+    export DEVELOPER_FRAMEWORKS_DIR_QUOTED=/Applications/Xcode.app/Contents/Developer/Library/Frameworks
+    export DEVELOPER_LIBRARY_DIR=/Applications/Xcode.app/Contents/Developer/Library
+    export DEVELOPER_SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs
+    export DEVELOPER_TOOLS_DIR=/Applications/Xcode.app/Contents/Developer/Tools
+    export DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/usr
+    export DEVELOPMENT_LANGUAGE=English
+    export DOCUMENTATION_FOLDER_PATH=Staging.app/English.lproj/Documentation
+    export DO_HEADER_SCANNING_IN_JAM=NO
+    export DSTROOT=/tmp/EasyReader.dst
+    export DT_TOOLCHAIN_DIR=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+    export DWARF_DSYM_FILE_NAME=Staging.app.dSYM
+    export DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT=NO
+    export DWARF_DSYM_FOLDER_PATH=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos
+    export EFFECTIVE_PLATFORM_NAME=-iphoneos
+    export EMBEDDED_PROFILE_NAME=embedded.mobileprovision
+    export ENABLE_HEADER_DEPENDENCIES=YES
+    export ENTITLEMENTS_ALLOWED=YES
+    export ENTITLEMENTS_REQUIRED=YES
+    export EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS=".DS_Store .svn .git .hg CVS"
+    export EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES="*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"
+    export EXECUTABLES_FOLDER_PATH=Staging.app/Executables
+    export EXECUTABLE_FOLDER_PATH=Staging.app
+    export EXECUTABLE_NAME=Staging
+    export EXECUTABLE_PATH=Staging.app/Staging
+    export FILE_LIST=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects/LinkFileList
+    export FIXED_FILES_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/FixedFiles
+    export FRAMEWORKS_FOLDER_PATH=Staging.app/Frameworks
+    export FRAMEWORK_FLAG_PREFIX=-framework
+    export FRAMEWORK_SEARCH_PATHS="/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos "
+    export FRAMEWORK_VERSION=A
+    export FULL_PRODUCT_NAME=Staging.app
+    export GCC3_VERSION=3.3
+    export GCC_C_LANGUAGE_STANDARD=gnu99
+    export GCC_INLINES_ARE_PRIVATE_EXTERN=YES
+    export GCC_PFE_FILE_C_DIALECTS="c objective-c c++ objective-c++"
+    export GCC_PRECOMPILE_PREFIX_HEADER=YES
+    export GCC_PREFIX_HEADER="EasyReader/Other Sources/EasyReader-Prefix.pch"
+    export GCC_PREPROCESSOR_DEFINITIONS=" COCOAPODS=1"
+    export GCC_SYMBOLS_PRIVATE_EXTERN=YES
+    export GCC_THUMB_SUPPORT=YES
+    export GCC_TREAT_WARNINGS_AS_ERRORS=NO
+    export GCC_VERSION=com.apple.compilers.llvm.clang.1_0
+    export GCC_VERSION_IDENTIFIER=com_apple_compilers_llvm_clang_1_0
+    export GCC_WARN_ABOUT_RETURN_TYPE=YES
+    export GCC_WARN_UNINITIALIZED_AUTOS=YES
+    export GCC_WARN_UNUSED_VARIABLE=YES
+    export GENERATE_MASTER_OBJECT_FILE=NO
+    export GENERATE_PKGINFO_FILE=YES
+    export GENERATE_PROFILING_CODE=NO
+    export GID=20
+    export GROUP=staff
+    export HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT=YES
+    export HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES=YES
+    export HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS=YES
+    export HEADERMAP_INCLUDES_PROJECT_HEADERS=YES
+    export HEADER_SEARCH_PATHS="/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/include \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/AFNetworking\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/Block-KVO\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSEnhancedTableView\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSShortcuts\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSStandardViewControllers\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/GPUImage\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/Inflections\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MAObjCRuntime\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MBProgressHUD\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MFSideMenu\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MTLabel\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MagicalRecord\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/NSDate+TimeAgo\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/OCMock\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/RegexKitLite\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/SDWebImage\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/TestFlightSDK\""
+    export ICONV=/usr/bin/iconv
+    export INFOPLIST_EXPAND_BUILD_SETTINGS=YES
+    export INFOPLIST_FILE="EasyReader/Supporting Files/Staging-Info.plist"
+    export INFOPLIST_OUTPUT_FORMAT=binary
+    export INFOPLIST_PATH=Staging.app/Info.plist
+    export INFOPLIST_PREPROCESS=NO
+    export INFOSTRINGS_PATH=Staging.app/English.lproj/InfoPlist.strings
+    export INSTALL_DIR=/tmp/EasyReader.dst/Applications
+    export INSTALL_GROUP=staff
+    export INSTALL_MODE_FLAG=u+w,go-w,a+rX
+    export INSTALL_OWNER=jlorich
+    export INSTALL_PATH=/Applications
+    export INSTALL_ROOT=/tmp/EasyReader.dst
+    export IPHONEOS_DEPLOYMENT_TARGET=7.0
+    export JAVAC_DEFAULT_FLAGS="-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"
+    export JAVA_APP_STUB=/System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub
+    export JAVA_ARCHIVE_CLASSES=YES
+    export JAVA_ARCHIVE_TYPE=JAR
+    export JAVA_COMPILER=/usr/bin/javac
+    export JAVA_FOLDER_PATH=Staging.app/Java
+    export JAVA_FRAMEWORK_RESOURCES_DIRS=Resources
+    export JAVA_JAR_FLAGS=cv
+    export JAVA_SOURCE_SUBDIR=.
+    export JAVA_USE_DEPENDENCIES=YES
+    export JAVA_ZIP_FLAGS=-urg
+    export JIKES_DEFAULT_FLAGS="+E +OLDCSO"
+    export KEEP_PRIVATE_EXTERNS=NO
+    export LD_DEPENDENCY_INFO_FILE=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects-normal/arm64/Staging_dependency_info.dat
+    export LD_GENERATE_MAP_FILE=NO
+    export LD_MAP_FILE_PATH=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Staging-LinkMap-normal-arm64.txt
+    export LD_NO_PIE=NO
+    export LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER=YES
+    export LEGACY_DEVELOPER_DIR=/Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer
+    export LEX=lex
+    export LIBRARY_FLAG_NOSPACE=YES
+    export LIBRARY_FLAG_PREFIX=-l
+    export LIBRARY_KEXT_INSTALL_PATH=/Library/Extensions
+    export LIBRARY_SEARCH_PATHS="/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos /Users/jlorich/projects/iOS-EasyReader/Pods/TestFlightSDK"
+    export LINKER_DISPLAYS_MANGLED_NAMES=NO
+    export LINK_FILE_LIST_normal_arm64=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects-normal/arm64/Staging.LinkFileList
+    export LINK_FILE_LIST_normal_armv7=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects-normal/armv7/Staging.LinkFileList
+    export LINK_FILE_LIST_normal_armv7s=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects-normal/armv7s/Staging.LinkFileList
+    export LINK_WITH_STANDARD_LIBRARIES=YES
+    export LOCALIZED_RESOURCES_FOLDER_PATH=Staging.app/English.lproj
+    export LOCAL_ADMIN_APPS_DIR=/Applications/Utilities
+    export LOCAL_APPS_DIR=/Applications
+    export LOCAL_DEVELOPER_DIR=/Library/Developer
+    export LOCAL_LIBRARY_DIR=/Library
+    export MACH_O_TYPE=mh_execute
+    export MAC_OS_X_PRODUCT_BUILD_VERSION=13C64
+    export MAC_OS_X_VERSION_ACTUAL=1092
+    export MAC_OS_X_VERSION_MAJOR=1090
+    export MAC_OS_X_VERSION_MINOR=0902
+    export MODULE_CACHE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/ModuleCache
+    export NATIVE_ARCH=armv7
+    export NATIVE_ARCH_32_BIT=i386
+    export NATIVE_ARCH_64_BIT=x86_64
+    export NATIVE_ARCH_ACTUAL=x86_64
+    export NO_COMMON=YES
+    export OBJECT_FILE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects
+    export OBJECT_FILE_DIR_normal=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects-normal
+    export OBJROOT=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates
+    export ONLY_ACTIVE_ARCH=NO
+    export OPTIMIZATION_LEVEL=0
+    export OS=MACOS
+    export OSAC=/usr/bin/osacompile
+    export OTHER_CFLAGS="-DNS_BLOCK_ASSERTIONS=1 \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/AFNetworking\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/Block-KVO\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSEnhancedTableView\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSShortcuts\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSStandardViewControllers\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/GPUImage\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/Inflections\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MAObjCRuntime\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MBProgressHUD\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MFSideMenu\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MTLabel\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MagicalRecord\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/NSDate+TimeAgo\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/OCMock\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/RegexKitLite\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/SDWebImage\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/TestFlightSDK\""
+    export OTHER_CPLUSPLUSFLAGS="-DNS_BLOCK_ASSERTIONS=1 \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/AFNetworking\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/Block-KVO\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSEnhancedTableView\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSShortcuts\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSStandardViewControllers\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/GPUImage\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/Inflections\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MAObjCRuntime\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MBProgressHUD\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MFSideMenu\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MTLabel\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MagicalRecord\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/NSDate+TimeAgo\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/OCMock\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/RegexKitLite\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/SDWebImage\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/TestFlightSDK\""
+    export OTHER_LDFLAGS="-ObjC -lTestFlight -licucore -lz -framework CoreData -framework CoreGraphics -framework CoreText -framework ImageIO -framework MobileCoreServices -framework QuartzCore -framework Security -framework SystemConfiguration -framework UIKit"
+    export PACKAGE_TYPE=com.apple.package-type.wrapper.application
+    export PASCAL_STRINGS=YES
+    export PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+    export PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES="/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode.app/Contents/Developer/Headers /Applications/Xcode.app/Contents/Developer/SDKs /Applications/Xcode.app/Contents/Developer/Platforms"
+    export PBDEVELOPMENTPLIST_PATH=Staging.app/pbdevelopment.plist
+    export PFE_FILE_C_DIALECTS=objective-c
+    export PKGINFO_FILE_PATH=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/PkgInfo
+    export PKGINFO_PATH=Staging.app/PkgInfo
+    export PLATFORM_DEVELOPER_APPLICATIONS_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Applications
+    export PLATFORM_DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
+    export PLATFORM_DEVELOPER_LIBRARY_DIR=/Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library
+    export PLATFORM_DEVELOPER_SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs
+    export PLATFORM_DEVELOPER_TOOLS_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Tools
+    export PLATFORM_DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr
+    export PLATFORM_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform
+    export PLATFORM_NAME=iphoneos
+    export PLATFORM_PREFERRED_ARCH=arm64
+    export PLATFORM_PRODUCT_BUILD_VERSION=11D167
+    export PLIST_FILE_OUTPUT_FORMAT=binary
+    export PLUGINS_FOLDER_PATH=Staging.app/PlugIns
+    export PODS_ROOT=/Users/jlorich/projects/iOS-EasyReader/Pods
+    export PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR=YES
+    export PRECOMP_DESTINATION_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/PrefixHeaders
+    export PRESERVE_DEAD_CODE_INITS_AND_TERMS=NO
+    export PRIVATE_HEADERS_FOLDER_PATH=Staging.app/PrivateHeaders
+    export PRODUCT_NAME=Staging
+    export PRODUCT_SETTINGS_PATH="/Users/jlorich/projects/iOS-EasyReader/EasyReader/Supporting Files/Staging-Info.plist"
+    export PRODUCT_TYPE=com.apple.product-type.application
+    export PROFILING_CODE=NO
+    export PROJECT=EasyReader
+    export PROJECT_DERIVED_FILE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/DerivedSources
+    export PROJECT_DIR=/Users/jlorich/projects/iOS-EasyReader
+    export PROJECT_FILE_PATH=/Users/jlorich/projects/iOS-EasyReader/EasyReader.xcodeproj
+    export PROJECT_NAME=EasyReader
+    export PROJECT_TEMP_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build
+    export PROJECT_TEMP_ROOT=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates
+    export PROVISIONING_PROFILE=A926550A-0F74-4C33-88F8-92CED490A97B
+    export PROVISIONING_PROFILE_REQUIRED=YES
+    export PUBLIC_HEADERS_FOLDER_PATH=Staging.app/Headers
+    export RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS=YES
+    export REMOVE_CVS_FROM_RESOURCES=YES
+    export REMOVE_GIT_FROM_RESOURCES=YES
+    export REMOVE_HG_FROM_RESOURCES=YES
+    export REMOVE_SVN_FROM_RESOURCES=YES
+    export RESOURCE_RULES_REQUIRED=YES
+    export REZ_COLLECTOR_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/ResourceManagerResources
+    export REZ_OBJECTS_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/ResourceManagerResources/Objects
+    export REZ_SEARCH_PATHS="/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos "
+    export SCAN_ALL_SOURCE_FILES_FOR_INCLUDES=NO
+    export SCRIPTS_FOLDER_PATH=Staging.app/Scripts
+    export SCRIPT_INPUT_FILE_COUNT=0
+    export SCRIPT_OUTPUT_FILE_COUNT=0
+    export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk
+    export SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk
+    export SDK_NAME=iphoneos7.1
+    export SDK_PRODUCT_BUILD_VERSION=11D167
+    export SED=/usr/bin/sed
+    export SEPARATE_STRIP=NO
+    export SEPARATE_SYMBOL_EDIT=NO
+    export SET_DIR_MODE_OWNER_GROUP=YES
+    export SET_FILE_MODE_OWNER_GROUP=NO
+    export SHALLOW_BUNDLE=YES
+    export SHARED_DERIVED_FILE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/DerivedSources
+    export SHARED_FRAMEWORKS_FOLDER_PATH=Staging.app/SharedFrameworks
+    export SHARED_PRECOMPS_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/PrecompiledHeaders
+    export SHARED_SUPPORT_FOLDER_PATH=Staging.app/SharedSupport
+    export SKIP_INSTALL=NO
+    export SOURCE_ROOT=/Users/jlorich/projects/iOS-EasyReader
+    export SRCROOT=/Users/jlorich/projects/iOS-EasyReader
+    export STRINGS_FILE_OUTPUT_ENCODING=binary
+    export STRIP_INSTALLED_PRODUCT=YES
+    export STRIP_STYLE=all
+    export SUPPORTED_DEVICE_FAMILIES=1,2
+    export SUPPORTED_PLATFORMS="iphonesimulator iphoneos"
+    export SYMROOT=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products
+    export SYSTEM_ADMIN_APPS_DIR=/Applications/Utilities
+    export SYSTEM_APPS_DIR=/Applications
+    export SYSTEM_CORE_SERVICES_DIR=/System/Library/CoreServices
+    export SYSTEM_DEMOS_DIR=/Applications/Extras
+    export SYSTEM_DEVELOPER_APPS_DIR=/Applications/Xcode.app/Contents/Developer/Applications
+    export SYSTEM_DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/usr/bin
+    export SYSTEM_DEVELOPER_DEMOS_DIR="/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built Examples"
+    export SYSTEM_DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+    export SYSTEM_DEVELOPER_DOC_DIR="/Applications/Xcode.app/Contents/Developer/ADC Reference Library"
+    export SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR="/Applications/Xcode.app/Contents/Developer/Applications/Graphics Tools"
+    export SYSTEM_DEVELOPER_JAVA_TOOLS_DIR="/Applications/Xcode.app/Contents/Developer/Applications/Java Tools"
+    export SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR="/Applications/Xcode.app/Contents/Developer/Applications/Performance Tools"
+    export SYSTEM_DEVELOPER_RELEASENOTES_DIR="/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes"
+    export SYSTEM_DEVELOPER_TOOLS=/Applications/Xcode.app/Contents/Developer/Tools
+    export SYSTEM_DEVELOPER_TOOLS_DOC_DIR="/Applications/Xcode.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"
+    export SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR="/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"
+    export SYSTEM_DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/usr
+    export SYSTEM_DEVELOPER_UTILITIES_DIR=/Applications/Xcode.app/Contents/Developer/Applications/Utilities
+    export SYSTEM_DOCUMENTATION_DIR=/Library/Documentation
+    export SYSTEM_KEXT_INSTALL_PATH=/System/Library/Extensions
+    export SYSTEM_LIBRARY_DIR=/System/Library
+    export TARGETED_DEVICE_FAMILY=1,2
+    export TARGETNAME=Staging
+    export TARGET_BUILD_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos
+    export TARGET_NAME=Staging
+    export TARGET_TEMP_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build
+    export TEMP_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build
+    export TEMP_FILES_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build
+    export TEMP_FILE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build
+    export TEMP_ROOT=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates
+    export TOOLCHAINS=com.apple.dt.toolchain.XcodeDefault
+    export UID=501
+    export UNLOCALIZED_RESOURCES_FOLDER_PATH=Staging.app
+    export UNSTRIPPED_PRODUCT=NO
+    export USER=jlorich
+    export USER_APPS_DIR=/Users/jlorich/Applications
+    export USER_LIBRARY_DIR=/Users/jlorich/Library
+    export USE_DYNAMIC_NO_PIC=YES
+    export USE_HEADERMAP=YES
+    export USE_HEADER_SYMLINKS=NO
+    export VALIDATE_PRODUCT=YES
+    export VALID_ARCHS="armv7 arm64 armv7s"
+    export VERBOSE_PBXCP=NO
+    export VERSIONPLIST_PATH=Staging.app/version.plist
+    export VERSION_INFO_BUILDER=jlorich
+    export VERSION_INFO_FILE=Staging_vers.c
+    export VERSION_INFO_STRING="\"@(#)PROGRAM:Staging  PROJECT:EasyReader-\""
+    export WRAPPER_EXTENSION=app
+    export WRAPPER_NAME=Staging.app
+    export WRAPPER_SUFFIX=.app
+    export XCODE_APP_SUPPORT_DIR=/Applications/Xcode.app/Contents/Developer/Library/Xcode
+    export XCODE_PRODUCT_BUILD_VERSION=5B130a
+    export XCODE_VERSION_ACTUAL=0510
+    export XCODE_VERSION_MAJOR=0500
+    export XCODE_VERSION_MINOR=0510
+    export XPCSERVICES_FOLDER_PATH=Staging.app/XPCServices
+    export YACC=yacc
+    export arch=arm64
+    export variant=normal
+    /bin/sh -c /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Script-9D79274518DA1D0300E1D3E1.sh
+Archive: false
+RELEASE incrementing build numbers
+Old version for CFBundleVersion: 2.0.26
+String
+Fixnum
+New version: 2.0.27
+
+PhaseScriptExecution Copy\ Pods\ Resources /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Script-9D79274618DA1D0300E1D3E1.sh
+    cd /Users/jlorich/projects/iOS-EasyReader
+    export ACTION=build
+    export AD_HOC_CODE_SIGNING_ALLOWED=NO
+    export ALTERNATE_GROUP=staff
+    export ALTERNATE_MODE=u+w,go-w,a+rX
+    export ALTERNATE_OWNER=jlorich
+    export ALWAYS_SEARCH_USER_PATHS=NO
+    export ALWAYS_USE_SEPARATE_HEADERMAPS=YES
+    export APPLE_INTERNAL_DEVELOPER_DIR=/AppleInternal/Developer
+    export APPLE_INTERNAL_DIR=/AppleInternal
+    export APPLE_INTERNAL_DOCUMENTATION_DIR=/AppleInternal/Documentation
+    export APPLE_INTERNAL_LIBRARY_DIR=/AppleInternal/Library
+    export APPLE_INTERNAL_TOOLS=/AppleInternal/Developer/Tools
+    export APPLY_RULES_IN_COPY_FILES=NO
+    export ARCHS="armv7 armv7s arm64"
+    export ARCHS_STANDARD="armv7 armv7s arm64"
+    export ARCHS_STANDARD_32_64_BIT="armv7 armv7s arm64"
+    export ARCHS_STANDARD_32_BIT="armv7 armv7s"
+    export ARCHS_STANDARD_64_BIT=arm64
+    export ARCHS_STANDARD_INCLUDING_64_BIT="armv7 armv7s arm64"
+    export ARCHS_UNIVERSAL_IPHONE_OS="armv7 armv7s arm64"
+    export AVAILABLE_PLATFORMS="iphonesimulator macosx iphoneos"
+    export BUILD_COMPONENTS="headers build"
+    export BUILD_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products
+    export BUILD_ROOT=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products
+    export BUILD_STYLE=
+    export BUILD_VARIANTS=normal
+    export BUILT_PRODUCTS_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos
+    export CACHE_ROOT=/var/folders/3q/2ns2wjdx7sv3xrl868sx5cmh0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode
+    export CCHROOT=/var/folders/3q/2ns2wjdx7sv3xrl868sx5cmh0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode
+    export CHMOD=/bin/chmod
+    export CHOWN=/usr/sbin/chown
+    export CLANG_CXX_LANGUAGE_STANDARD=gnu++0x
+    export CLANG_CXX_LIBRARY=libc++
+    export CLANG_ENABLE_OBJC_ARC=YES
+    export CLANG_MODULES_AUTOLINK=YES
+    export CLANG_WARN_CONSTANT_CONVERSION=YES
+    export CLANG_WARN_EMPTY_BODY=YES
+    export CLANG_WARN_ENUM_CONVERSION=YES
+    export CLANG_WARN_INT_CONVERSION=YES
+    export CLANG_WARN__DUPLICATE_METHOD_MATCH=YES
+    export CLASS_FILE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/JavaClasses
+    export CLEAN_PRECOMPS=YES
+    export CLONE_HEADERS=NO
+    export CODESIGNING_FOLDER_PATH=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app
+    export CODE_SIGNING_ALLOWED=YES
+    export CODE_SIGNING_REQUIRED=YES
+    export CODE_SIGN_CONTEXT_CLASS=XCiPhoneOSCodeSignContext
+    export CODE_SIGN_IDENTITY="iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)"
+    export COLOR_DIAGNOSTICS=NO
+    export COMBINE_HIDPI_IMAGES=NO
+    export COMMAND_MODE=legacy
+    export COMPOSITE_SDK_DIRS=/var/folders/3q/2ns2wjdx7sv3xrl868sx5cmh0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/CompositeSDKs
+    export COMPRESS_PNG_FILES=YES
+    export CONFIGURATION=Release
+    export CONFIGURATION_BUILD_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos
+    export CONFIGURATION_TEMP_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos
+    export CONTENTS_FOLDER_PATH=Staging.app
+    export COPYING_PRESERVES_HFS_DATA=NO
+    export COPY_PHASE_STRIP=YES
+    export COPY_RESOURCES_FROM_STATIC_FRAMEWORKS=YES
+    export CP=/bin/cp
+    export CREATE_INFOPLIST_SECTION_IN_BINARY=NO
+    export CURRENT_ARCH=arm64
+    export CURRENT_VARIANT=normal
+    export DEAD_CODE_STRIPPING=YES
+    export DEBUGGING_SYMBOLS=YES
+    export DEBUG_INFORMATION_FORMAT=dwarf-with-dsym
+    export DEFAULT_COMPILER=com.apple.compilers.llvm.clang.1_0
+    export DEFAULT_KEXT_INSTALL_PATH=/System/Library/Extensions
+    export DEPLOYMENT_LOCATION=NO
+    export DEPLOYMENT_POSTPROCESSING=NO
+    export DERIVED_FILES_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/DerivedSources
+    export DERIVED_FILE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/DerivedSources
+    export DERIVED_SOURCES_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/DerivedSources
+    export DEVELOPER_APPLICATIONS_DIR=/Applications/Xcode.app/Contents/Developer/Applications
+    export DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/usr/bin
+    export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+    export DEVELOPER_FRAMEWORKS_DIR=/Applications/Xcode.app/Contents/Developer/Library/Frameworks
+    export DEVELOPER_FRAMEWORKS_DIR_QUOTED=/Applications/Xcode.app/Contents/Developer/Library/Frameworks
+    export DEVELOPER_LIBRARY_DIR=/Applications/Xcode.app/Contents/Developer/Library
+    export DEVELOPER_SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs
+    export DEVELOPER_TOOLS_DIR=/Applications/Xcode.app/Contents/Developer/Tools
+    export DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/usr
+    export DEVELOPMENT_LANGUAGE=English
+    export DOCUMENTATION_FOLDER_PATH=Staging.app/English.lproj/Documentation
+    export DO_HEADER_SCANNING_IN_JAM=NO
+    export DSTROOT=/tmp/EasyReader.dst
+    export DT_TOOLCHAIN_DIR=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+    export DWARF_DSYM_FILE_NAME=Staging.app.dSYM
+    export DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT=NO
+    export DWARF_DSYM_FOLDER_PATH=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos
+    export EFFECTIVE_PLATFORM_NAME=-iphoneos
+    export EMBEDDED_PROFILE_NAME=embedded.mobileprovision
+    export ENABLE_HEADER_DEPENDENCIES=YES
+    export ENTITLEMENTS_ALLOWED=YES
+    export ENTITLEMENTS_REQUIRED=YES
+    export EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS=".DS_Store .svn .git .hg CVS"
+    export EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES="*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"
+    export EXECUTABLES_FOLDER_PATH=Staging.app/Executables
+    export EXECUTABLE_FOLDER_PATH=Staging.app
+    export EXECUTABLE_NAME=Staging
+    export EXECUTABLE_PATH=Staging.app/Staging
+    export FILE_LIST=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects/LinkFileList
+    export FIXED_FILES_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/FixedFiles
+    export FRAMEWORKS_FOLDER_PATH=Staging.app/Frameworks
+    export FRAMEWORK_FLAG_PREFIX=-framework
+    export FRAMEWORK_SEARCH_PATHS="/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos "
+    export FRAMEWORK_VERSION=A
+    export FULL_PRODUCT_NAME=Staging.app
+    export GCC3_VERSION=3.3
+    export GCC_C_LANGUAGE_STANDARD=gnu99
+    export GCC_INLINES_ARE_PRIVATE_EXTERN=YES
+    export GCC_PFE_FILE_C_DIALECTS="c objective-c c++ objective-c++"
+    export GCC_PRECOMPILE_PREFIX_HEADER=YES
+    export GCC_PREFIX_HEADER="EasyReader/Other Sources/EasyReader-Prefix.pch"
+    export GCC_PREPROCESSOR_DEFINITIONS=" COCOAPODS=1"
+    export GCC_SYMBOLS_PRIVATE_EXTERN=YES
+    export GCC_THUMB_SUPPORT=YES
+    export GCC_TREAT_WARNINGS_AS_ERRORS=NO
+    export GCC_VERSION=com.apple.compilers.llvm.clang.1_0
+    export GCC_VERSION_IDENTIFIER=com_apple_compilers_llvm_clang_1_0
+    export GCC_WARN_ABOUT_RETURN_TYPE=YES
+    export GCC_WARN_UNINITIALIZED_AUTOS=YES
+    export GCC_WARN_UNUSED_VARIABLE=YES
+    export GENERATE_MASTER_OBJECT_FILE=NO
+    export GENERATE_PKGINFO_FILE=YES
+    export GENERATE_PROFILING_CODE=NO
+    export GID=20
+    export GROUP=staff
+    export HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT=YES
+    export HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES=YES
+    export HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS=YES
+    export HEADERMAP_INCLUDES_PROJECT_HEADERS=YES
+    export HEADER_SEARCH_PATHS="/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/include \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/AFNetworking\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/Block-KVO\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSEnhancedTableView\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSShortcuts\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSStandardViewControllers\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/GPUImage\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/Inflections\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MAObjCRuntime\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MBProgressHUD\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MFSideMenu\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MTLabel\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MagicalRecord\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/NSDate+TimeAgo\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/OCMock\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/RegexKitLite\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/SDWebImage\" \"/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/TestFlightSDK\""
+    export ICONV=/usr/bin/iconv
+    export INFOPLIST_EXPAND_BUILD_SETTINGS=YES
+    export INFOPLIST_FILE="EasyReader/Supporting Files/Staging-Info.plist"
+    export INFOPLIST_OUTPUT_FORMAT=binary
+    export INFOPLIST_PATH=Staging.app/Info.plist
+    export INFOPLIST_PREPROCESS=NO
+    export INFOSTRINGS_PATH=Staging.app/English.lproj/InfoPlist.strings
+    export INSTALL_DIR=/tmp/EasyReader.dst/Applications
+    export INSTALL_GROUP=staff
+    export INSTALL_MODE_FLAG=u+w,go-w,a+rX
+    export INSTALL_OWNER=jlorich
+    export INSTALL_PATH=/Applications
+    export INSTALL_ROOT=/tmp/EasyReader.dst
+    export IPHONEOS_DEPLOYMENT_TARGET=7.0
+    export JAVAC_DEFAULT_FLAGS="-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"
+    export JAVA_APP_STUB=/System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub
+    export JAVA_ARCHIVE_CLASSES=YES
+    export JAVA_ARCHIVE_TYPE=JAR
+    export JAVA_COMPILER=/usr/bin/javac
+    export JAVA_FOLDER_PATH=Staging.app/Java
+    export JAVA_FRAMEWORK_RESOURCES_DIRS=Resources
+    export JAVA_JAR_FLAGS=cv
+    export JAVA_SOURCE_SUBDIR=.
+    export JAVA_USE_DEPENDENCIES=YES
+    export JAVA_ZIP_FLAGS=-urg
+    export JIKES_DEFAULT_FLAGS="+E +OLDCSO"
+    export KEEP_PRIVATE_EXTERNS=NO
+    export LD_DEPENDENCY_INFO_FILE=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects-normal/arm64/Staging_dependency_info.dat
+    export LD_GENERATE_MAP_FILE=NO
+    export LD_MAP_FILE_PATH=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Staging-LinkMap-normal-arm64.txt
+    export LD_NO_PIE=NO
+    export LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER=YES
+    export LEGACY_DEVELOPER_DIR=/Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer
+    export LEX=lex
+    export LIBRARY_FLAG_NOSPACE=YES
+    export LIBRARY_FLAG_PREFIX=-l
+    export LIBRARY_KEXT_INSTALL_PATH=/Library/Extensions
+    export LIBRARY_SEARCH_PATHS="/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos /Users/jlorich/projects/iOS-EasyReader/Pods/TestFlightSDK"
+    export LINKER_DISPLAYS_MANGLED_NAMES=NO
+    export LINK_FILE_LIST_normal_arm64=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects-normal/arm64/Staging.LinkFileList
+    export LINK_FILE_LIST_normal_armv7=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects-normal/armv7/Staging.LinkFileList
+    export LINK_FILE_LIST_normal_armv7s=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects-normal/armv7s/Staging.LinkFileList
+    export LINK_WITH_STANDARD_LIBRARIES=YES
+    export LOCALIZED_RESOURCES_FOLDER_PATH=Staging.app/English.lproj
+    export LOCAL_ADMIN_APPS_DIR=/Applications/Utilities
+    export LOCAL_APPS_DIR=/Applications
+    export LOCAL_DEVELOPER_DIR=/Library/Developer
+    export LOCAL_LIBRARY_DIR=/Library
+    export MACH_O_TYPE=mh_execute
+    export MAC_OS_X_PRODUCT_BUILD_VERSION=13C64
+    export MAC_OS_X_VERSION_ACTUAL=1092
+    export MAC_OS_X_VERSION_MAJOR=1090
+    export MAC_OS_X_VERSION_MINOR=0902
+    export MODULE_CACHE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/ModuleCache
+    export NATIVE_ARCH=armv7
+    export NATIVE_ARCH_32_BIT=i386
+    export NATIVE_ARCH_64_BIT=x86_64
+    export NATIVE_ARCH_ACTUAL=x86_64
+    export NO_COMMON=YES
+    export OBJECT_FILE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects
+    export OBJECT_FILE_DIR_normal=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Objects-normal
+    export OBJROOT=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates
+    export ONLY_ACTIVE_ARCH=NO
+    export OPTIMIZATION_LEVEL=0
+    export OS=MACOS
+    export OSAC=/usr/bin/osacompile
+    export OTHER_CFLAGS="-DNS_BLOCK_ASSERTIONS=1 \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/AFNetworking\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/Block-KVO\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSEnhancedTableView\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSShortcuts\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSStandardViewControllers\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/GPUImage\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/Inflections\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MAObjCRuntime\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MBProgressHUD\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MFSideMenu\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MTLabel\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MagicalRecord\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/NSDate+TimeAgo\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/OCMock\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/RegexKitLite\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/SDWebImage\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/TestFlightSDK\""
+    export OTHER_CPLUSPLUSFLAGS="-DNS_BLOCK_ASSERTIONS=1 \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/AFNetworking\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/Block-KVO\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSEnhancedTableView\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSShortcuts\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/CSStandardViewControllers\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/GPUImage\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/Inflections\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MAObjCRuntime\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MBProgressHUD\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MFSideMenu\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MTLabel\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/MagicalRecord\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/NSDate+TimeAgo\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/OCMock\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/RegexKitLite\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/SDWebImage\" \"-isystem/Users/jlorich/projects/iOS-EasyReader/Pods/Headers/TestFlightSDK\""
+    export OTHER_LDFLAGS="-ObjC -lTestFlight -licucore -lz -framework CoreData -framework CoreGraphics -framework CoreText -framework ImageIO -framework MobileCoreServices -framework QuartzCore -framework Security -framework SystemConfiguration -framework UIKit"
+    export PACKAGE_TYPE=com.apple.package-type.wrapper.application
+    export PASCAL_STRINGS=YES
+    export PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+    export PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES="/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode.app/Contents/Developer/Headers /Applications/Xcode.app/Contents/Developer/SDKs /Applications/Xcode.app/Contents/Developer/Platforms"
+    export PBDEVELOPMENTPLIST_PATH=Staging.app/pbdevelopment.plist
+    export PFE_FILE_C_DIALECTS=objective-c
+    export PKGINFO_FILE_PATH=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/PkgInfo
+    export PKGINFO_PATH=Staging.app/PkgInfo
+    export PLATFORM_DEVELOPER_APPLICATIONS_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Applications
+    export PLATFORM_DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
+    export PLATFORM_DEVELOPER_LIBRARY_DIR=/Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library
+    export PLATFORM_DEVELOPER_SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs
+    export PLATFORM_DEVELOPER_TOOLS_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Tools
+    export PLATFORM_DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr
+    export PLATFORM_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform
+    export PLATFORM_NAME=iphoneos
+    export PLATFORM_PREFERRED_ARCH=arm64
+    export PLATFORM_PRODUCT_BUILD_VERSION=11D167
+    export PLIST_FILE_OUTPUT_FORMAT=binary
+    export PLUGINS_FOLDER_PATH=Staging.app/PlugIns
+    export PODS_ROOT=/Users/jlorich/projects/iOS-EasyReader/Pods
+    export PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR=YES
+    export PRECOMP_DESTINATION_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/PrefixHeaders
+    export PRESERVE_DEAD_CODE_INITS_AND_TERMS=NO
+    export PRIVATE_HEADERS_FOLDER_PATH=Staging.app/PrivateHeaders
+    export PRODUCT_NAME=Staging
+    export PRODUCT_SETTINGS_PATH="/Users/jlorich/projects/iOS-EasyReader/EasyReader/Supporting Files/Staging-Info.plist"
+    export PRODUCT_TYPE=com.apple.product-type.application
+    export PROFILING_CODE=NO
+    export PROJECT=EasyReader
+    export PROJECT_DERIVED_FILE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/DerivedSources
+    export PROJECT_DIR=/Users/jlorich/projects/iOS-EasyReader
+    export PROJECT_FILE_PATH=/Users/jlorich/projects/iOS-EasyReader/EasyReader.xcodeproj
+    export PROJECT_NAME=EasyReader
+    export PROJECT_TEMP_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build
+    export PROJECT_TEMP_ROOT=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates
+    export PROVISIONING_PROFILE=A926550A-0F74-4C33-88F8-92CED490A97B
+    export PROVISIONING_PROFILE_REQUIRED=YES
+    export PUBLIC_HEADERS_FOLDER_PATH=Staging.app/Headers
+    export RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS=YES
+    export REMOVE_CVS_FROM_RESOURCES=YES
+    export REMOVE_GIT_FROM_RESOURCES=YES
+    export REMOVE_HG_FROM_RESOURCES=YES
+    export REMOVE_SVN_FROM_RESOURCES=YES
+    export RESOURCE_RULES_REQUIRED=YES
+    export REZ_COLLECTOR_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/ResourceManagerResources
+    export REZ_OBJECTS_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/ResourceManagerResources/Objects
+    export REZ_SEARCH_PATHS="/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos "
+    export SCAN_ALL_SOURCE_FILES_FOR_INCLUDES=NO
+    export SCRIPTS_FOLDER_PATH=Staging.app/Scripts
+    export SCRIPT_INPUT_FILE_COUNT=0
+    export SCRIPT_OUTPUT_FILE_COUNT=0
+    export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk
+    export SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk
+    export SDK_NAME=iphoneos7.1
+    export SDK_PRODUCT_BUILD_VERSION=11D167
+    export SED=/usr/bin/sed
+    export SEPARATE_STRIP=NO
+    export SEPARATE_SYMBOL_EDIT=NO
+    export SET_DIR_MODE_OWNER_GROUP=YES
+    export SET_FILE_MODE_OWNER_GROUP=NO
+    export SHALLOW_BUNDLE=YES
+    export SHARED_DERIVED_FILE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/DerivedSources
+    export SHARED_FRAMEWORKS_FOLDER_PATH=Staging.app/SharedFrameworks
+    export SHARED_PRECOMPS_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/PrecompiledHeaders
+    export SHARED_SUPPORT_FOLDER_PATH=Staging.app/SharedSupport
+    export SKIP_INSTALL=NO
+    export SOURCE_ROOT=/Users/jlorich/projects/iOS-EasyReader
+    export SRCROOT=/Users/jlorich/projects/iOS-EasyReader
+    export STRINGS_FILE_OUTPUT_ENCODING=binary
+    export STRIP_INSTALLED_PRODUCT=YES
+    export STRIP_STYLE=all
+    export SUPPORTED_DEVICE_FAMILIES=1,2
+    export SUPPORTED_PLATFORMS="iphonesimulator iphoneos"
+    export SYMROOT=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products
+    export SYSTEM_ADMIN_APPS_DIR=/Applications/Utilities
+    export SYSTEM_APPS_DIR=/Applications
+    export SYSTEM_CORE_SERVICES_DIR=/System/Library/CoreServices
+    export SYSTEM_DEMOS_DIR=/Applications/Extras
+    export SYSTEM_DEVELOPER_APPS_DIR=/Applications/Xcode.app/Contents/Developer/Applications
+    export SYSTEM_DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/usr/bin
+    export SYSTEM_DEVELOPER_DEMOS_DIR="/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built Examples"
+    export SYSTEM_DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+    export SYSTEM_DEVELOPER_DOC_DIR="/Applications/Xcode.app/Contents/Developer/ADC Reference Library"
+    export SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR="/Applications/Xcode.app/Contents/Developer/Applications/Graphics Tools"
+    export SYSTEM_DEVELOPER_JAVA_TOOLS_DIR="/Applications/Xcode.app/Contents/Developer/Applications/Java Tools"
+    export SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR="/Applications/Xcode.app/Contents/Developer/Applications/Performance Tools"
+    export SYSTEM_DEVELOPER_RELEASENOTES_DIR="/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes"
+    export SYSTEM_DEVELOPER_TOOLS=/Applications/Xcode.app/Contents/Developer/Tools
+    export SYSTEM_DEVELOPER_TOOLS_DOC_DIR="/Applications/Xcode.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"
+    export SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR="/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"
+    export SYSTEM_DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/usr
+    export SYSTEM_DEVELOPER_UTILITIES_DIR=/Applications/Xcode.app/Contents/Developer/Applications/Utilities
+    export SYSTEM_DOCUMENTATION_DIR=/Library/Documentation
+    export SYSTEM_KEXT_INSTALL_PATH=/System/Library/Extensions
+    export SYSTEM_LIBRARY_DIR=/System/Library
+    export TARGETED_DEVICE_FAMILY=1,2
+    export TARGETNAME=Staging
+    export TARGET_BUILD_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos
+    export TARGET_NAME=Staging
+    export TARGET_TEMP_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build
+    export TEMP_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build
+    export TEMP_FILES_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build
+    export TEMP_FILE_DIR=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build
+    export TEMP_ROOT=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates
+    export TOOLCHAINS=com.apple.dt.toolchain.XcodeDefault
+    export UID=501
+    export UNLOCALIZED_RESOURCES_FOLDER_PATH=Staging.app
+    export UNSTRIPPED_PRODUCT=NO
+    export USER=jlorich
+    export USER_APPS_DIR=/Users/jlorich/Applications
+    export USER_LIBRARY_DIR=/Users/jlorich/Library
+    export USE_DYNAMIC_NO_PIC=YES
+    export USE_HEADERMAP=YES
+    export USE_HEADER_SYMLINKS=NO
+    export VALIDATE_PRODUCT=YES
+    export VALID_ARCHS="armv7 arm64 armv7s"
+    export VERBOSE_PBXCP=NO
+    export VERSIONPLIST_PATH=Staging.app/version.plist
+    export VERSION_INFO_BUILDER=jlorich
+    export VERSION_INFO_FILE=Staging_vers.c
+    export VERSION_INFO_STRING="\"@(#)PROGRAM:Staging  PROJECT:EasyReader-\""
+    export WRAPPER_EXTENSION=app
+    export WRAPPER_NAME=Staging.app
+    export WRAPPER_SUFFIX=.app
+    export XCODE_APP_SUPPORT_DIR=/Applications/Xcode.app/Contents/Developer/Library/Xcode
+    export XCODE_PRODUCT_BUILD_VERSION=5B130a
+    export XCODE_VERSION_ACTUAL=0510
+    export XCODE_VERSION_MAJOR=0500
+    export XCODE_VERSION_MINOR=0510
+    export XPCSERVICES_FOLDER_PATH=Staging.app/XPCServices
+    export YACC=yacc
+    export arch=arm64
+    export variant=normal
+    /bin/sh -c /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Script-9D79274618DA1D0300E1D3E1.sh
+/Users/jlorich/projects/iOS-EasyReader/Pods/GPUImage/framework/Resources/lookup.png
+/Users/jlorich/projects/iOS-EasyReader/Pods/GPUImage/framework/Resources/lookup_amatorka.png
+/Users/jlorich/projects/iOS-EasyReader/Pods/GPUImage/framework/Resources/lookup_miss_etikate.png
+/Users/jlorich/projects/iOS-EasyReader/Pods/GPUImage/framework/Resources/lookup_soft_elegance_1.png
+/Users/jlorich/projects/iOS-EasyReader/Pods/GPUImage/framework/Resources/lookup_soft_elegance_2.png
+/Users/jlorich/projects/iOS-EasyReader/Pods/NSDate+TimeAgo/NSDateTimeAgo.bundle
+building file list ... done
+
+sent 1757 bytes  received 20 bytes  3554.00 bytes/sec
+total size is 429534  speedup is 241.72
+/* com.apple.actool.compilation-results */
+/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app/Assets.car
+
+
+Touch /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app
+    cd /Users/jlorich/projects/iOS-EasyReader
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+    /usr/bin/touch -c /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app
+
+ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/Entitlements.plist /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Staging.xcent
+    cd /Users/jlorich/projects/iOS-EasyReader
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+    builtin-productPackagingUtility /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/Entitlements.plist -entitlements -format xml -o /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Staging.xcent
+
+CodeSign /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app
+    cd /Users/jlorich/projects/iOS-EasyReader
+    export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+    Using code signing identity "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)" and provisioning profile "EasyReader Staging" (A926550A-0F74-4C33-88F8-92CED490A97B)
+    /usr/bin/codesign --force --sign 945141C038292DF976AC6D70C669E6A2A05E6088 --resource-rules=/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app/ResourceRules.plist --entitlements /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Intermediates/EasyReader.build/Release-iphoneos/Staging.build/Staging.xcent /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app
+/Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app: replacing existing signature
+
+Validate /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app
+    cd /Users/jlorich/projects/iOS-EasyReader
+    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+    export PRODUCT_TYPE=com.apple.product-type.application
+    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/Validation /Users/jlorich/Library/Developer/Xcode/DerivedData/EasyReader-fmdixuzzqbejmpeimoygvcfnvuqe/Build/Products/Release-iphoneos/Staging.app
+
+** BUILD SUCCEEDED **
+

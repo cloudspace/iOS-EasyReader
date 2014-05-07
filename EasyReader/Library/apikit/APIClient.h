@@ -50,6 +50,12 @@ typedef void (^APIFailureBlock)(id responseObject, NSInteger httpStatus, NSError
  */
 + (APIClient *) shared;
 
+/**
+ * Sets the singleton API client object
+ * @param sharedClient The new shared UWAPIClient object
+ */
++ (void)setSharedClient:(APIClient*)sharedClient;
+
 
 #pragma mark - Instance methods
 
@@ -61,9 +67,17 @@ typedef void (^APIFailureBlock)(id responseObject, NSInteger httpStatus, NSError
  * @param success The block to be executed on request success
  * @param failure The block to be executed on request failure
  */
-- (void) requestRoute:(NSString*)routeName
+- (void) requestRoute:(NSString *)routeName
            parameters:(NSDictionary *)parameters
               success:(APISuccessBlock)success
               failure:(APIFailureBlock)failure;
+
+/**
+ * Cancels all pending requests to given route
+ *
+ * @param routeName The route name to cancel requests by
+ * @param parameters The params to used to build the url to be cancelled
+ */
+- (void)cancelOperationsForRoute:(NSString *)routeName  parameters:(NSDictionary *)parameters;
 
 @end

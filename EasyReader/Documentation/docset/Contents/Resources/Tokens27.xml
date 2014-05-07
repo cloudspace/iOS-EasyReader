@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/Feed.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/Feed</TokenIdentifier>
+			<Abstract type="html">An RSS Feed</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+            
+			
+			<NodeRef refid="27"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/setIcon:</TokenIdentifier>
+			<Abstract type="html">This feed&apos;s icon</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *icon</Declaration>
+			
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/icon</TokenIdentifier>
+			<Abstract type="html">This feed&apos;s icon</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *icon</Declaration>
+			
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Feed/icon</TokenIdentifier>
+			<Abstract type="html">This feed&apos;s icon</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *icon</Declaration>
+			
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/setName:</TokenIdentifier>
+			<Abstract type="html">This feed&apos;s name</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/name</TokenIdentifier>
+			<Abstract type="html">This feed&apos;s name</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Feed/name</TokenIdentifier>
+			<Abstract type="html">This feed&apos;s name</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/setUrl:</TokenIdentifier>
+			<Abstract type="html">This feed&apos;s RSS url</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/url</TokenIdentifier>
+			<Abstract type="html">This feed&apos;s RSS url</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Feed/url</TokenIdentifier>
+			<Abstract type="html">This feed&apos;s RSS url</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/setId:</TokenIdentifier>
+			<Abstract type="html">The remote ID of this feed object on the API</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSNumber *id</Declaration>
+			
+			
+			<Anchor>//api/name/id</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/id</TokenIdentifier>
+			<Abstract type="html">The remote ID of this feed object on the API</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSNumber *id</Declaration>
+			
+			
+			<Anchor>//api/name/id</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Feed/id</TokenIdentifier>
+			<Abstract type="html">The remote ID of this feed object on the API</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSNumber *id</Declaration>
+			
+			
+			<Anchor>//api/name/id</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/setUser:</TokenIdentifier>
+			<Abstract type="html">The user this feed is associated to</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) User *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/user</TokenIdentifier>
+			<Abstract type="html">The user this feed is associated to</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) User *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Feed/user</TokenIdentifier>
+			<Abstract type="html">The user this feed is associated to</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) User *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/setFeedItems:</TokenIdentifier>
+			<Abstract type="html">The items in this feed</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/feedItems</TokenIdentifier>
+			<Abstract type="html">The items in this feed</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Feed/feedItems</TokenIdentifier>
+			<Abstract type="html">The items in this feed</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Feed/createFeedWithUrl:success:failure:</TokenIdentifier>
+			<Abstract type="html">Creates a new feed based on a given url</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>+ (void)createFeedWithUrl:(NSString *)url success:(APISuccessBlock)successBlock failure:(APIFailureBlock)failureBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>successBlock</Name>
+					<Abstract type="html">A block to be run on API call success</Abstract>
+				</Parameter><Parameter>
+					<Name>failureBlock</Name>
+					<Abstract type="html">A block to be run on API call failure</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/createFeedWithUrl:success:failure:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Feed/requestDefaultFeedsWithSuccess:failure:</TokenIdentifier>
+			<Abstract type="html">Requests the default feeds list (called once on the first app run)</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>+ (void)requestDefaultFeedsWithSuccess:(APISuccessBlock)successBlock failure:(APIFailureBlock)failureBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>successBlock</Name>
+					<Abstract type="html">A block to be run on API call success</Abstract>
+				</Parameter><Parameter>
+					<Name>failureBlock</Name>
+					<Abstract type="html">A block to be run on API call failure</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/requestDefaultFeedsWithSuccess:failure:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Feed/requestFeedsByName:success:failure:</TokenIdentifier>
+			<Abstract type="html">Requests a list of feeds by name (search)</Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>+ (void)requestFeedsByName:(NSString *)name success:(APISuccessBlock)successBlock failure:(APIFailureBlock)failureBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>successBlock</Name>
+					<Abstract type="html">A block to be run on API call success</Abstract>
+				</Parameter><Parameter>
+					<Name>failureBlock</Name>
+					<Abstract type="html">A block to be run on API call failure</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/requestFeedsByName:success:failure:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/addFeedItemsObject:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>- (void)addFeedItemsObject:(FeedItem *)value</Declaration>
+			
+			
+			<Anchor>//api/name/addFeedItemsObject:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/removeFeedItemsObject:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>- (void)removeFeedItemsObject:(FeedItem *)value</Declaration>
+			
+			
+			<Anchor>//api/name/removeFeedItemsObject:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/addFeedItems:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>- (void)addFeedItems:(NSSet *)values</Declaration>
+			
+			
+			<Anchor>//api/name/addFeedItems:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Feed/removeFeedItems:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>Feed.h</DeclaredIn>
+			
+			<Declaration>- (void)removeFeedItems:(NSSet *)values</Declaration>
+			
+			
+			<Anchor>//api/name/removeFeedItems:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

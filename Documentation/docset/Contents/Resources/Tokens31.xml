@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/EZRMenuUserFeedDataSource.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRMenuUserFeedDataSource</TokenIdentifier>
+			<Abstract type="html">A UITableViewDataSource for feeds in Core Data</Abstract>
+			<DeclaredIn>EZRMenuUserFeedDataSource.h</DeclaredIn>
+            
+			
+			<NodeRef refid="31"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuUserFeedDataSource/setFeeds:</TokenIdentifier>
+			<Abstract type="html">Feeds used to populate the menu table</Abstract>
+			<DeclaredIn>EZRMenuUserFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
+			
+			
+			<Anchor>//api/name/feeds</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuUserFeedDataSource/feeds</TokenIdentifier>
+			<Abstract type="html">Feeds used to populate the menu table</Abstract>
+			<DeclaredIn>EZRMenuUserFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
+			
+			
+			<Anchor>//api/name/feeds</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRMenuUserFeedDataSource/feeds</TokenIdentifier>
+			<Abstract type="html">Feeds used to populate the menu table</Abstract>
+			<DeclaredIn>EZRMenuUserFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSMutableSet *feeds</Declaration>
+			
+			
+			<Anchor>//api/name/feeds</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

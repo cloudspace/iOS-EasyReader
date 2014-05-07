@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/APIParameterComparator.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/APIParameterComparator</TokenIdentifier>
+			<Abstract type="html">A collection of comparator methods for assisting in comparing api parameters</Abstract>
+			<DeclaredIn>APIParameterComparator.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/APIParameterComparator/compareParametersIgnoringNulls:toParameters:</TokenIdentifier>
+			<Abstract type="html">Verifies that two sets of parameters match
+If NSNull is specified for any key in parameters2 the comparison will be considered a match</Abstract>
+			<DeclaredIn>APIParameterComparator.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)compareParametersIgnoringNulls:(NSDictionary *)parameters1 toParameters:(NSDictionary *)parameters2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>parameters1</Name>
+					<Abstract type="html">The parameters dictionary to check</Abstract>
+				</Parameter><Parameter>
+					<Name>parameters2</Name>
+					<Abstract type="html">The parameters dictionary to verify against</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/compareParametersIgnoringNulls:toParameters:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/APIParameterComparator/compareParameterIgnoringNull:toParamteter:</TokenIdentifier>
+			<Abstract type="html">Verifies that two single parameters match
+If NSNull is specified for parameter2 the comparison will be considered a match</Abstract>
+			<DeclaredIn>APIParameterComparator.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)compareParameterIgnoringNull:(id)parameter1 toParamteter:(id)parameter2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>parameter1</Name>
+					<Abstract type="html">The parameter to check</Abstract>
+				</Parameter><Parameter>
+					<Name>parameter2</Name>
+					<Abstract type="html">The parameter to verify against</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/compareParameterIgnoringNull:toParamteter:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/APIParameterComparator/compareArrayParameterIgnoringNull:toParameter:</TokenIdentifier>
+			<Abstract type="html">Verifies that two array parameters match
+If NSNull is specified for parameter2 the comparison will be considered a match</Abstract>
+			<DeclaredIn>APIParameterComparator.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)compareArrayParameterIgnoringNull:(NSArray *)array1 toParameter:(NSArray *)array2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>array1</Name>
+					<Abstract type="html">The array to check</Abstract>
+				</Parameter><Parameter>
+					<Name>array2</Name>
+					<Abstract type="html">The array to verify against</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/compareArrayParameterIgnoringNull:toParameter:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

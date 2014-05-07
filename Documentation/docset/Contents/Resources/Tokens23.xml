@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/EZRHomePageControlDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRHomePageControlDelegate</TokenIdentifier>
+			<Abstract type="html">A delegate for the page control on the home view controller</Abstract>
+			<DeclaredIn>EZRHomePageControlDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="23"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomePageControlDelegate/initWithController:</TokenIdentifier>
+			<Abstract type="html">Initializes a new page control delegate for the given home view controller instance</Abstract>
+			<DeclaredIn>EZRHomePageControlDelegate.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithController:(EZRHomeViewController *)homeController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>homeController</Name>
+					<Abstract type="html">The home view controller</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithController:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

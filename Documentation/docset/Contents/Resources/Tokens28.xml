@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/EZRMenuSearchController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRMenuSearchController</TokenIdentifier>
+			<Abstract type="html">Acts as the delegate object for the menu search bar</Abstract>
+			<DeclaredIn>EZRMenuSearchController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="28"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuSearchController/cancelSearch</TokenIdentifier>
+			<Abstract type="html">Cancels a search, clears the search text, hides the keyboard</Abstract>
+			<DeclaredIn>EZRMenuSearchController.h</DeclaredIn>
+			
+			<Declaration>- (void)cancelSearch</Declaration>
+			
+			
+			<Anchor>//api/name/cancelSearch</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

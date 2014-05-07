@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/EZRHomePageControlDataSource.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRHomePageControlDataSource</TokenIdentifier>
+			<Abstract type="html">A data source for the page control on the home view controller</Abstract>
+			<DeclaredIn>EZRHomePageControlDataSource.h</DeclaredIn>
+            
+			
+			<NodeRef refid="22"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomePageControlDataSource/initWithController:</TokenIdentifier>
+			<Abstract type="html">Initializes a new page control data source for the given home view controller instance</Abstract>
+			<DeclaredIn>EZRHomePageControlDataSource.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithController:(EZRHomeViewController *)homeController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>homeController</Name>
+					<Abstract type="html">The home view controller</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithController:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

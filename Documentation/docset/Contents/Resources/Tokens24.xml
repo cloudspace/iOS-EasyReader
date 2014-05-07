@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/EZRHomeScrollViewDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRHomeScrollViewDelegate</TokenIdentifier>
+			<Abstract type="html">A delegate for the scroll view on the home view controller</Abstract>
+			<DeclaredIn>EZRHomeScrollViewDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="24"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRHomeScrollViewDelegate/initWithController:</TokenIdentifier>
+			<Abstract type="html">Initializes a new scroll view delegate for the given home view controller instance</Abstract>
+			<DeclaredIn>EZRHomeScrollViewDelegate.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithController:(EZRHomeViewController *)homeController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>homeController</Name>
+					<Abstract type="html">The home view controller</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithController:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

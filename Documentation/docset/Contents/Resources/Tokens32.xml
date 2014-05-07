@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/EZRMenuViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRMenuViewController</TokenIdentifier>
+			<Abstract type="html">The menu view controller</Abstract>
+			<DeclaredIn>EZRMenuViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="32"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

@@ -19,9 +19,9 @@
 @dynamic updatedAt;
 @dynamic publishedAt;
 @dynamic createdAt;
-@dynamic image_iphone_retina;
-@dynamic image_ipad;
-@dynamic image_ipad_retina;
+@dynamic imageIphoneRetina;
+@dynamic imageIpad;
+@dynamic imageIpadRetina;
 @dynamic url;
 @dynamic feed;
 @dynamic id;
@@ -38,18 +38,23 @@
 - (NSString *)headline
 {
     NSString *timeAgo = [self.updatedAt timeAgo];
+    NSString *feedName = self.feed.name;
     
-    return[NSString stringWithFormat:@"%@ \u00b7 %@", self.feed.name, timeAgo];
+    if (feedName.length > 30) {
+        feedName = [[feedName substringToIndex:30] stringByAppendingString:@"..."];
+    }
+    
+    return[NSString stringWithFormat:@"%@ \u00b7 %@", feedName, timeAgo];
 }
 
 + (void) requestFeedItemsFromFeeds:(NSSet  *)feeds
-                             Since:(NSDate *)startAt
-                           success:(APISuccessBlock)successBlock
-                           failure:(APIFailureBlock)failureBlock
+                             since:(NSDate *)startAt
+                           success:(APISuccessBlock)success
+                           failure:(APIFailureBlock)failure
 {
     if ([feeds count] == 0)
     {
-        if (successBlock) successBlock(nil, 0);
+        if (success) success(nil, 0);
         return;
     }
     
@@ -67,21 +72,35 @@
     [[self client] requestRoute:@"feedItems"
                      parameters:params success:^(id responseObject, NSInteger httpStatus) {
                          [self saveParsedResponseData:responseObject];
-                         if(successBlock) successBlock(responseObject, httpStatus);
+                         if(success) success(responseObject, httpStatus);
                       }
-                        failure:failureBlock];
+                        failure:failure];
 }
 
 + (void) saveParsedResponseData:(id)responseData
 {
+    User *currentUser = [User current];
+    
     for(NSDictionary *data in responseData[@"feed_items"]) {
-        for( Feed *currentFeed in [[User current] feeds] ){
-            if( data[@"feed_id"] == currentFeed.id ){
-                [currentFeed addFeedItemsObject:[FeedItem createOrUpdateFirstFromAPIData:data]];
+        for( Feed *currentFeed in currentUser.feeds){
+            if([data[@"feed_id"] compare:currentFeed.id] == NSOrderedSame){
+                FeedItem *item = [FeedItem createOrUpdateFirstFromAPIData:data];
+                
+                if (![currentFeed.feedItems containsObject:item])
+                {
+                    
+                    if (![item.id isEqualToNumber:data[@"id"]])
+                    {
+                        NSLog(@"Something wen't horribly wrong");
+                    }
+                    
+                    // item id != data id???? wtf
+                    [currentFeed addFeedItemsObject:item];
+                }
             }
         }
     }
     
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 @end

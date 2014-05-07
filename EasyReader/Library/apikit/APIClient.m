@@ -77,6 +77,12 @@ static APIClient *sharedInstance = nil;
     return sharedInstance;
 }
 
++ (void)setSharedClient:(APIClient*)sharedClient
+{
+    sharedInstance = sharedClient;
+}
+
+
 - (void) requestRoute:(NSString*)routeName
            parameters:(NSDictionary *)parameters
               success:(APISuccessBlock)success
@@ -97,6 +103,21 @@ static APIClient *sharedInstance = nil;
                                                                                  success:afSuccess
                                                                                  failure:afFailure];
     [_requestManager.operationQueue addOperation:operation];
+}
+
+- (void)cancelOperationsForRoute:(NSString *)routeName parameters:(NSDictionary *)parameters
+{
+    APIRouter *router = [APIRouter shared];
+    
+    for (AFHTTPRequestOperation *operation in [_requestManager operationQueue].operations)
+    {
+        NSURL *url = [router urlFor:routeName parameters:parameters];
+        
+        if ([[operation.request.URL path] isEqualToString:[url path]])
+        {
+            [operation cancel];
+        }
+    }
 }
 
 
@@ -164,8 +185,12 @@ static APIClient *sharedInstance = nil;
             {
                 httpStatus = [error.userInfo[AFNetworkingOperationFailingURLResponseErrorKey] statusCode];
             }
+            else
+            {
+                httpStatus = operation.response.statusCode;
+            }
             
-            failure(operation.responseObject, operation.response.statusCode, error);
+            failure(operation.responseObject, httpStatus, error);
         }
     };
 }

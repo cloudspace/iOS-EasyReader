@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/EZRMenuSearchFeedDataSource.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/EZRMenuSearchFeedDataSource</TokenIdentifier>
+			<Abstract type="html">A UITableViewDataSource for custom and searched feeds returned by the API</Abstract>
+			<DeclaredIn>EZRMenuSearchFeedDataSource.h</DeclaredIn>
+            
+			
+			<NodeRef refid="29"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuSearchFeedDataSource/setFeedData:</TokenIdentifier>
+			<Abstract type="html">A dictionary of feed data to use as the base for this data source</Abstract>
+			<DeclaredIn>EZRMenuSearchFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *feedData</Declaration>
+			
+			
+			<Anchor>//api/name/feedData</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/EZRMenuSearchFeedDataSource/feedData</TokenIdentifier>
+			<Abstract type="html">A dictionary of feed data to use as the base for this data source</Abstract>
+			<DeclaredIn>EZRMenuSearchFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *feedData</Declaration>
+			
+			
+			<Anchor>//api/name/feedData</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/EZRMenuSearchFeedDataSource/feedData</TokenIdentifier>
+			<Abstract type="html">A dictionary of feed data to use as the base for this data source</Abstract>
+			<DeclaredIn>EZRMenuSearchFeedDataSource.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *feedData</Declaration>
+			
+			
+			<Anchor>//api/name/feedData</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

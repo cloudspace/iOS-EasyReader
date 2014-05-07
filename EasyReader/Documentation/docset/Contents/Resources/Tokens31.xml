@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/User.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/User</TokenIdentifier>
+			<Abstract type="html">An EasyReader User generally one per project</Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+            
+			
+			<NodeRef refid="31"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/User/setFeeds:</TokenIdentifier>
+			<Abstract type="html">The users feeds</Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSSet *feeds</Declaration>
+			
+			
+			<Anchor>//api/name/feeds</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/User/feeds</TokenIdentifier>
+			<Abstract type="html">The users feeds</Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSSet *feeds</Declaration>
+			
+			
+			<Anchor>//api/name/feeds</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/User/feeds</TokenIdentifier>
+			<Abstract type="html">The users feeds</Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSSet *feeds</Declaration>
+			
+			
+			<Anchor>//api/name/feeds</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/User/setFeedItems:</TokenIdentifier>
+			<Abstract type="html">The items in a users feeds</Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/User/feedItems</TokenIdentifier>
+			<Abstract type="html">The items in a users feeds</Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/User/feedItems</TokenIdentifier>
+			<Abstract type="html">The items in a users feeds</Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSSet *feedItems</Declaration>
+			
+			
+			<Anchor>//api/name/feedItems</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/User/current</TokenIdentifier>
+			<Abstract type="html">Gets the current user (a singleton shared user)</Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+			
+			<Declaration>+ (User *)current</Declaration>
+			
+			
+			<Anchor>//api/name/current</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/User/addFeedsObject:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+			
+			<Declaration>- (void)addFeedsObject:(Feed *)value</Declaration>
+			
+			
+			<Anchor>//api/name/addFeedsObject:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/User/removeFeedsObject:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+			
+			<Declaration>- (void)removeFeedsObject:(Feed *)value</Declaration>
+			
+			
+			<Anchor>//api/name/removeFeedsObject:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/User/addFeeds:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+			
+			<Declaration>- (void)addFeeds:(NSSet *)values</Declaration>
+			
+			
+			<Anchor>//api/name/addFeeds:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/User/removeFeeds:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>User.h</DeclaredIn>
+			
+			<Declaration>- (void)removeFeeds:(NSSet *)values</Declaration>
+			
+			
+			<Anchor>//api/name/removeFeeds:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

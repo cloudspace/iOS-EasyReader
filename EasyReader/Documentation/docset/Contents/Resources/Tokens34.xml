@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/UIColor+EZRSharedColorAdditions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/UIColor(EZRSharedColorAdditions)</TokenIdentifier>
+			<Abstract type="html">Extends UIColor to provide a set of standard colors used across the application</Abstract>
+			<DeclaredIn>UIColor+EZRSharedColorAdditions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="34"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/EZR_menuBackground</TokenIdentifier>
+			<Abstract type="html">The menu background color</Abstract>
+			<DeclaredIn>UIColor+EZRSharedColorAdditions.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)EZR_menuBackground</Declaration>
+			
+			
+			<Anchor>//api/name/EZR_menuBackground</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/EZR_menuInputBackground</TokenIdentifier>
+			<Abstract type="html">The menu input background color</Abstract>
+			<DeclaredIn>UIColor+EZRSharedColorAdditions.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)EZR_menuInputBackground</Declaration>
+			
+			
+			<Anchor>//api/name/EZR_menuInputBackground</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/EZR_charcoal</TokenIdentifier>
+			<Abstract type="html">The gradient background color</Abstract>
+			<DeclaredIn>UIColor+EZRSharedColorAdditions.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)EZR_charcoal</Declaration>
+			
+			
+			<Anchor>//api/name/EZR_charcoal</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/EZR_charcoalWithOpacity:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIColor+EZRSharedColorAdditions.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)EZR_charcoalWithOpacity:(float)opacity</Declaration>
+			
+			
+			<Anchor>//api/name/EZR_charcoalWithOpacity:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

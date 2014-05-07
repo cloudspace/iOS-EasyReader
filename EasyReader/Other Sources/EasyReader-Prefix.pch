@@ -24,19 +24,11 @@
 #endif
 
 // Make app delegate available
-#import "CSAppDelegate.h"
+#import "EZRAppDelegate.h"
 #define appDelegate (CSAppDelegate *)[UIApplication sharedApplication].delegate
 
 // Magical Record
-#define MR_SHORTHAND
 #import "CoreData+MagicalRecord.h"
 
 // Shortcuts
 #import "NSObject+CSShortcuts.h"
-
-
-#ifdef DEBUG
-#define host @"http://rss.cloudspace.com:8080"//@"http://33.33.33.107:3000"
-#else
-#define host @"http://rss.cloudspace.com:8080"
-#endif

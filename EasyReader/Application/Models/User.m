@@ -9,6 +9,8 @@
 #import "User.h"
 #import "Feed.h"
 
+
+
 #pragma mark - Static declarations
 
 
@@ -36,12 +38,18 @@ static User *sharedInstance = nil;
             }
             else
             {
-                sharedInstance = [User createEntity];
-                [[NSManagedObjectContext MR_defaultContext] saveToPersistentStoreAndWait];
+                sharedInstance = [User MR_createEntity];
+                [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
             }
         }
         
         return sharedInstance;
+    }
+}
+
++ (void) setCurrent:(User *)user {
+    @synchronized(self) {
+        sharedInstance = user;
     }
 }
 
@@ -59,6 +67,16 @@ static User *sharedInstance = nil;
     }
     
     return feedItems;
+}
+
+- (BOOL)hasFeedWithURL:(NSString *)url
+{
+    for (Feed *feed in self.feeds) {
+        if ([feed.url isEqualToString:url]) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 

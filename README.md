@@ -24,8 +24,5 @@ Project Setup Instructions
         pod install
 
 5. Open the project in xcode using 'EasyReader.xcworkspace'.  Do not open it with 'EasyReader.xcodeproj'.
+
 6. Build and run the project
-
-Note that version 1 of EasyReader requires a working development environment for the Cloudspace RSS project.  Clone it and follow the instructions in the readme to set it up.
-
-    git clone git@github.com:cloudspace/cloudspace_rss.git
