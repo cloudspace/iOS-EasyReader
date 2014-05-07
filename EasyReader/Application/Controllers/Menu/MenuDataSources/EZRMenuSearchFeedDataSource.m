@@ -45,7 +45,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    int numberOfResults = [super tableView:tableView numberOfRowsInSection:section];
+    NSInteger numberOfResults = [super tableView:tableView numberOfRowsInSection:section];
     
     if (numberOfResults == 0 && self.source.count == 0) {
         return 1;
