@@ -305,10 +305,6 @@
 		9DFC326D18FD8CB8008A2A44 /* CSArrayCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC326B18FD8CB8008A2A44 /* CSArrayCollectionViewDataSource.m */; };
 		9DFC326E18FD8CB8008A2A44 /* CSArrayCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC326B18FD8CB8008A2A44 /* CSArrayCollectionViewDataSource.m */; };
 		9DFC326F18FD8CB8008A2A44 /* CSArrayCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC326B18FD8CB8008A2A44 /* CSArrayCollectionViewDataSource.m */; };
-		9DFD89EA18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD89E918FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m */; };
-		9DFD89EB18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD89E918FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m */; };
-		9DFD89EC18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD89E918FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m */; };
-		9DFD89ED18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD89E918FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m */; };
 		9DFD89F618FC7D9300630CBF /* CSArrayTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD89F518FC7D9300630CBF /* CSArrayTableViewDataSource.m */; };
 		9DFD89F718FC7D9300630CBF /* CSArrayTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD89F518FC7D9300630CBF /* CSArrayTableViewDataSource.m */; };
 		9DFD89F818FC7D9300630CBF /* CSArrayTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD89F518FC7D9300630CBF /* CSArrayTableViewDataSource.m */; };
@@ -489,8 +485,6 @@
 		9DFC326518FD7263008A2A44 /* EZRCurrentFeedsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRCurrentFeedsProvider.m; sourceTree = "<group>"; };
 		9DFC326A18FD8CB8008A2A44 /* CSArrayCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArrayCollectionViewDataSource.h; sourceTree = "<group>"; };
 		9DFC326B18FD8CB8008A2A44 /* CSArrayCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArrayCollectionViewDataSource.m; sourceTree = "<group>"; };
-		9DFD89E818FC66E800630CBF /* EZRHomeFeedImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EZRHomeFeedImagePrefetcher.h; path = Home/EZRHomeFeedImagePrefetcher.h; sourceTree = "<group>"; };
-		9DFD89E918FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRHomeFeedImagePrefetcher.m; path = Home/EZRHomeFeedImagePrefetcher.m; sourceTree = "<group>"; };
 		9DFD89F418FC7D9300630CBF /* CSArrayTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArrayTableViewDataSource.h; sourceTree = "<group>"; };
 		9DFD89F518FC7D9300630CBF /* CSArrayTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArrayTableViewDataSource.m; sourceTree = "<group>"; };
 		A7ACF08D0CD54248B25E110A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -798,8 +792,6 @@
 				2751F4DB18DA0D3000339C96 /* FeedItemCollectionView */,
 				2751F4D818DA0A6B00339C96 /* EZRHomeViewController.h */,
 				2751F4D918DA0A6B00339C96 /* EZRHomeViewController.m */,
-				9DFD89E818FC66E800630CBF /* EZRHomeFeedImagePrefetcher.h */,
-				9DFD89E918FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m */,
 				9D38DDD318EB08D600C67022 /* EZRHomeCollectionViewDelegate.h */,
 				9D38DDD418EB08D600C67022 /* EZRHomeCollectionViewDelegate.m */,
 				9D38DDEB18EB0A7600C67022 /* EZRHomeScrollViewDelegate.h */,
@@ -1407,7 +1399,6 @@
 				9D79270B18DA1D0300E1D3E1 /* EZRAppDelegate.m in Sources */,
 				9D79270C18DA1D0300E1D3E1 /* main.m in Sources */,
 				9D38DDD718EB08D600C67022 /* EZRHomeCollectionViewDelegate.m in Sources */,
-				9DFD89EC18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */,
 				9D79270D18DA1D0300E1D3E1 /* EZRHomeViewController.m in Sources */,
 				9D38DDE318EB090500C67022 /* EZRHomePageControlDelegate.m in Sources */,
 				9DFC326E18FD8CB8008A2A44 /* CSArrayCollectionViewDataSource.m in Sources */,
@@ -1470,7 +1461,6 @@
 				9D79275118DA1D3800E1D3E1 /* EZRHomeViewController.m in Sources */,
 				9D79275218DA1D3800E1D3E1 /* EZRFeedItemCollectionView.m in Sources */,
 				9D79275318DA1D3800E1D3E1 /* NSObject+CSReflectionAdditions.m in Sources */,
-				9DFD89ED18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */,
 				9D38DDEA18EB091B00C67022 /* EZRHomePageControlDataSource.m in Sources */,
 				9D79275418DA1D3800E1D3E1 /* CSRemoteObject.m in Sources */,
 				9DFC326F18FD8CB8008A2A44 /* CSArrayCollectionViewDataSource.m in Sources */,
@@ -1559,7 +1549,6 @@
 				9D9CBACD18DCC68A00532F8C /* EZRFeedItemCollectionView.m in Sources */,
 				9D639E7D18E0A53100350B5F /* APIMockResponse.m in Sources */,
 				9D9CBACE18DCC68A00532F8C /* NSObject+CSReflectionAdditions.m in Sources */,
-				9DFD89EB18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */,
 				9D38DDE818EB091B00C67022 /* EZRHomePageControlDataSource.m in Sources */,
 				9D9CBACF18DCC68A00532F8C /* CSRemoteObject.m in Sources */,
 				9DFC326D18FD8CB8008A2A44 /* CSArrayCollectionViewDataSource.m in Sources */,
@@ -1622,7 +1611,6 @@
 				9DAC172E170A043200383722 /* main.m in Sources */,
 				2751F4DA18DA0A6B00339C96 /* EZRHomeViewController.m in Sources */,
 				2751F4E418DA0D3000339C96 /* EZRFeedItemCollectionView.m in Sources */,
-				9DFD89EA18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */,
 				9D38DDE718EB091B00C67022 /* EZRHomePageControlDataSource.m in Sources */,
 				2751F4D718DA02C100339C96 /* NSObject+CSReflectionAdditions.m in Sources */,
 				9DFC326C18FD8CB8008A2A44 /* CSArrayCollectionViewDataSource.m in Sources */,
@@ -1805,7 +1793,7 @@
 					UIKit,
 				);
 				PRODUCT_NAME = Staging;
-				PROVISIONING_PROFILE = "AE75F2A8-B0F9-486D-8DE0-CFEA22EC508C";
+				PROVISIONING_PROFILE = "56017F00-F968-4F0C-8C2F-8CEFF1BE147E";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;

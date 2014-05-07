@@ -16,10 +16,4 @@
  */
 @interface EZRHomeCollectionViewDelegate : NSObject <UICollectionViewDelegate, EZRFeedItemCollectionViewCellDelegate>
 
-/**
- * Initializes a collection view delegate for the given home view controller instance
- *
- * @param homeController The home view controller
- */- (instancetype)initWithController:(EZRHomeViewController *)homeController;
-
 @end

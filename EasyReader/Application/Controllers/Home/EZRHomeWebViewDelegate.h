@@ -17,12 +17,4 @@
  */
 @interface EZRHomeWebViewDelegate : NJKWebViewProgress <UIScrollViewDelegate, NJKWebViewProgressDelegate>
 
-/**
- * Initializes a new scroll view delegate for the given home view controller instance
- *
- * @param homeController The home view controller
- */
-- (instancetype)initWithController:(EZRHomeViewController *)homeController;
-
-
 @end

@@ -8,6 +8,9 @@
 
 #import "EZRHomeViewController.h"
 
+// Frameworks
+#import <AVFoundation/AVFoundation.h>
+
 // Pods
 #import <Block-KVO/MTKObserving.h>
 #import "MFSideMenu.h"
@@ -17,33 +20,28 @@
 #import "Feed.h"
 #import "User.h"
 
+// Categories
 #import "UIColor+EZRSharedColorAdditions.h"
+#import "UIView+PlaceholderAdditions.h"
 
+// Controls
+#import "EZRNestableWebView.h"
+#import "CLDSocialShareToolbar.h"
+
+// Cell
 #import "EZRFeedItemCollectionViewCell.h"
 #import "EZRFeedImageService.h"
-
 #import "EZRHomeCollectionViewDelegate.h"
 #import "EZRHomeScrollViewDelegate.h"
 #import "EZRHomePageControlDelegate.h"
 #import "EZRHomePageControlDataSource.h"
-
-#import "EZRNestableWebView.h"
 #import "EZRHomeWebViewDelegate.h"
-
 #import "EZRCurrentFeedsProvider.h"
-
-
 #import "CSArrayCollectionViewDataSource.h"
-
-#import "CLDSocialShareToolbar.h"
-
 #import "EZRHomeSocialToolbarDataSource.h"
 #import "EZRGoogleAnalyticsService.h"
-
 #import "CCARadialGradientLayer.h"
-#import "UIView+PlaceholderAdditions.h"
 
-#import <AVFoundation/AVFoundation.h>
 
 
 @interface EZRHomeViewController()
@@ -57,14 +55,18 @@
 /// The social sharing toolbar
 @property (nonatomic, weak) IBOutlet CLDSocialShareToolbar *socialShareToolbar;
 
+/// The home collection view delegate
+@property (nonatomic, weak) IBOutlet EZRHomeCollectionViewDelegate *collectionViewDelegate;
+
+
+
+
 @end
 
 
 @implementation EZRHomeViewController
 {
     /// The collectionView delegate
-    EZRHomeCollectionViewDelegate *collectionViewDelegate;
-    
     /// The scroll view delegate
     EZRHomeScrollViewDelegate *scrollViewDelegate;
     
@@ -231,10 +233,7 @@
 -(void)setUpVerticalScrollView
 {
     self.scrollView_vertical.pagingEnabled =YES;
-    scrollViewDelegate = [[EZRHomeScrollViewDelegate alloc] initWithController:self];
-    self.scrollView_vertical.delegate = scrollViewDelegate;
     [self layOutVerticalScrollView];
-    
     
     [self.scrollView_vertical setContentInset:UIEdgeInsetsMake(60, 0, 0, 0)];
     [self.scrollView_vertical setContentOffset:CGPointMake(0, 60)];
@@ -269,13 +268,10 @@
                                      reusableCellIdentifier:@"feedItem"
                                              configureBlock:^(UICollectionViewCell *cell, id item) {
                                                  ((EZRFeedItemCollectionViewCell *)cell).feedItem = item;
-                                                 ((EZRFeedItemCollectionViewCell *)cell).delegate = collectionViewDelegate;
+                                                 ((EZRFeedItemCollectionViewCell *)cell).delegate = self.collectionViewDelegate;
                                              }];
     
-    self.collectionView_feedItems.dataSource = collectionViewArrayDataSource;
-    
-    collectionViewDelegate = [[EZRHomeCollectionViewDelegate alloc] initWithController:self];
-    self.collectionView_feedItems.delegate = collectionViewDelegate;
+    self.collectionView_feedItems.dataSource = collectionViewArrayDataSource;    
 }
 
 /**
@@ -283,14 +279,12 @@
  */
 -(void)setUpWebView
 {
-    self.webView_feedItem = [[EZRNestableWebView alloc] init];
+    [self.webView_feedItem setTranslatesAutoresizingMaskIntoConstraints:YES];
     [self.webView_feedItem setBackgroundColor:[UIColor blackColor]];
     [self.scrollView_vertical addSubview:self.webView_feedItem];
     
-    webViewDelegate = [[EZRHomeWebViewDelegate alloc] initWithController:self];
-    
     self.webView_feedItem.scrollView.delegate = webViewDelegate;
-    self.webView_feedItem.delegate = webViewDelegate;
+
     self.webView_feedItem.multipleTouchEnabled = YES;
     self.webView_feedItem.scalesPageToFit = YES;
     

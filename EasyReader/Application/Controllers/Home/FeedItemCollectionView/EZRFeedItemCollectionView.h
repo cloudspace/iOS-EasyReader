@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "FeedItem.h"
 
-@class EZRCollectionView;
+@class EZRFeedItemCollectionView;
 
-@protocol EZRCollectionViewDelegate<NSObject, UICollectionViewDelegate>
+@protocol EZRFeedItemCollectionViewDelegate<NSObject, UICollectionViewDelegate>
 
 @optional
 
-- (void)collectionView:(EZRCollectionView *)collectionView didTapTitleOfItem:(FeedItem *)item;
+- (void)collectionView:(EZRFeedItemCollectionView *)collectionView didTapTitleOfItem:(FeedItem *)item;
 
 @end
 

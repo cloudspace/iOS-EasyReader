@@ -17,31 +17,26 @@
 @interface EZRHomeViewController (Additions)
 
 - (void)prefetchImagesNearIndex:(NSInteger)currentPageIndex count:(NSInteger)count;
-- (void)setCurrentFeedItem:(FeedItem *)item;
-- (void)setCurrentPageIndex:(NSInteger)index;
+
+@end
+
+
+@interface EZRHomeCollectionViewDelegate ()
+
+@property (nonatomic, weak) IBOutlet EZRHomeViewController *controller;
+
+@property (nonatomic, weak) IBOutlet EZRFeedItemCollectionView *collectionView;
+
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView_vertical;
 
 @end
 
 
 @implementation EZRHomeCollectionViewDelegate
 {
-    EZRHomeViewController    *controller;
-    EZRFeedItemCollectionView *collectionView;
     FeedItem *previousFeedItem;
 }
 
-- (instancetype)initWithController:(EZRHomeViewController *)homeController
-{
-    self = [super init];
-    
-    if (self)
-    {
-        controller     = homeController;
-        collectionView = homeController.collectionView_feedItems;
-    }
-    
-    return self;
-}
 
 /**
  * Fires when the collection view scrolls
@@ -51,20 +46,20 @@
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    FeedItem *currentFeedItem = collectionView.currentFeedItem;
-    NSInteger pageIndex = collectionView.currentPageIndex;
+    FeedItem *currentFeedItem = self.collectionView.currentFeedItem;
+    NSInteger pageIndex = self.collectionView.currentPageIndex;
     
-    if (previousFeedItem != collectionView.currentFeedItem) {
-        [controller resetWebView];
+    if (previousFeedItem != self.collectionView.currentFeedItem) {
+        [self.controller resetWebView];
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            if (collectionView.currentFeedItem == currentFeedItem) {
-                [controller loadURLForFeedItem:currentFeedItem];
+            if (self.collectionView.currentFeedItem == currentFeedItem) {
+                [self.controller loadURLForFeedItem:currentFeedItem];
             }
         });
         
-        [controller prefetchImagesNearIndex:pageIndex count:5];
-        [controller.pageControl_itemIndicator setPageControllerPageAtIndex:pageIndex];
+        [self.controller prefetchImagesNearIndex:pageIndex count:5];
+        [self.controller.pageControl_itemIndicator setPageControllerPageAtIndex:pageIndex];
         
         previousFeedItem = currentFeedItem;
     }
@@ -74,8 +69,8 @@
  * Scrolls the window down when a title is tapped
  */
 - (void)didTapHeadlineOfCell:(EZRFeedItemCollectionViewCell *)cell {
-    CGPoint lowestPoint = CGPointMake(0, controller.scrollView_vertical.contentSize.height - CGRectGetHeight(controller.scrollView_vertical.frame));
-    [controller.scrollView_vertical setContentOffset:lowestPoint animated:YES];
+    CGPoint lowestPoint = CGPointMake(0, self.scrollView_vertical.contentSize.height - CGRectGetHeight(self.scrollView_vertical.frame));
+    [self.scrollView_vertical setContentOffset:lowestPoint animated:YES];
 }
 
 @end

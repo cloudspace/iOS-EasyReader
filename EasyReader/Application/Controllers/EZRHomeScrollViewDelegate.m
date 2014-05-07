@@ -8,41 +8,46 @@
 
 #import "EZRHomeScrollViewDelegate.h"
 #import "EZRHomeViewController.h"
+#import "EZRFeedItemCollectionView.h"
+
+@interface EZRHomeScrollViewDelegate ()
+
+@property (nonatomic, weak) IBOutlet EZRNestableWebView *webView_feedItem;
+
+@property (nonatomic, weak) IBOutlet EZRFeedItemCollectionView *collectionView_feedItems;
+
+@end
 
 @implementation EZRHomeScrollViewDelegate
 {
-    EZRHomeViewController *controller;
     NSString *currentURL;
     BOOL dragging;
     CGPoint dragStart;
 }
 
-- (instancetype)initWithController:(EZRHomeViewController *)homeController
-{
+- (instancetype)init {
     self = [super init];
     
     if (self) {
-        controller = homeController;
         dragging = NO;
     }
     
     return self;
 }
-
 //
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // Make scrolling back up to the top feel more natural
     if (scrollView.contentOffset.y == scrollView.frame.size.height) {
-        if (controller.webView_feedItem.scrollView.contentOffset.y == 0) {
-            controller.webView_feedItem.scrollView.contentOffset = CGPointMake(0, 1);
+        if (self.webView_feedItem.scrollView.contentOffset.y == 0) {
+            self.webView_feedItem.scrollView.contentOffset = CGPointMake(0, 1);
         }
     }
     
     // Prevent collectionview scrolling when shar bar is showing
     if (scrollView.contentOffset.y < 0) {
-        controller.collectionView_feedItems.userInteractionEnabled = NO;
+        self.collectionView_feedItems.userInteractionEnabled = NO;
     } else {
-        controller.collectionView_feedItems.userInteractionEnabled = YES;
+        self.collectionView_feedItems.userInteractionEnabled = YES;
     }
     
     // Don't allow drags from the share view to go past the base view without a stop

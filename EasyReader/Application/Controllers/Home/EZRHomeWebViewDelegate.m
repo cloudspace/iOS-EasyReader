@@ -9,11 +9,19 @@
 #import "EZRHomeWebViewDelegate.h"
 #import "EZRHomeViewController.h"
 
+@interface EZRHomeWebViewDelegate ()
+
+/// The home view controller
+@property (nonatomic, weak) IBOutlet EZRHomeViewController *controller;
+
+/// The home view controller
+@property (nonatomic, weak) IBOutlet EZRNestableWebView *webView_feedItem;
+
+
+@end
+
 @implementation EZRHomeWebViewDelegate
 {
-    /// The home view controller
-    EZRHomeViewController *controller;
-
     /// The bar progress view
     NJKWebViewProgressView *progressView;
     
@@ -24,13 +32,12 @@
     CGPoint dragStart;
 }
 
-- (instancetype)initWithController:(EZRHomeViewController *)homeController
+- (instancetype)init
 {
     self = [super init];
     
     if (self)
     {
-        controller = homeController;
         self.progressDelegate = self;
     }
     
@@ -46,8 +53,8 @@
 - (void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress
 {
     if (!progressView) {
-        progressView = [[NJKWebViewProgressView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(controller.webView_feedItem.frame), 5)];
-        [controller.webView_feedItem addSubview:progressView];
+        progressView = [[NJKWebViewProgressView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.webView_feedItem.frame), 5)];
+        [self.webView_feedItem addSubview:progressView];
     }
     
     [progressView setProgress:progress animated:NO];
@@ -61,9 +68,9 @@
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView.contentOffset.y > dragStart.y && scrollView.contentOffset.y > scrollView.contentSize.height*.05) {
-        [controller hideUpInidicator];
+        [self.controller hideUpInidicator];
     } else {
-        [controller showUpInidicator];
+        [self.controller showUpInidicator];
     }
 }
 

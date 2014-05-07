@@ -141,6 +141,14 @@
                                             <constraint firstItem="xvT-99-V3u" firstAttribute="leading" secondItem="wv0-Kq-lEd" secondAttribute="leading" id="rr9-vu-oHF"/>
                                         </constraints>
                                     </view>
+                                    <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wno-NG-TY0" customClass="EZRNestableWebView">
+                                        <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Eep-ce-BgX" id="JfC-rF-i9G"/>
+                                        </connections>
+                                    </webView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wb1-Na-kaO">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -180,10 +188,12 @@
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="button_leftMenu" destination="wb1-Na-kaO" id="0oK-RY-cyj"/>
+                        <outlet property="collectionViewDelegate" destination="YCE-lq-nqY" id="ml2-wp-QgU"/>
                         <outlet property="collectionView_feedItems" destination="xvT-99-V3u" id="kb5-it-zd3"/>
                         <outlet property="pageControl_itemIndicator" destination="ZJR-Bc-2rZ" id="DWa-BN-VLk"/>
                         <outlet property="scrollView_vertical" destination="EWA-9Z-pb1" id="T2I-XO-1AS"/>
                         <outlet property="socialShareToolbar" destination="cdD-4o-hTR" id="YTt-sV-J3Z"/>
+                        <outlet property="webView_feedItem" destination="wno-NG-TY0" id="2Yk-qI-QCZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGN-P7-i1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,6 +207,20 @@
                         <outlet property="dataSource" destination="b7J-Of-yw4" id="ltQ-0S-sa5"/>
                     </connections>
                 </customObject>
+                <customObject id="YCE-lq-nqY" customClass="EZRHomeCollectionViewDelegate">
+                    <connections>
+                        <outlet property="collectionView" destination="xvT-99-V3u" id="aoe-Jm-0KV"/>
+                        <outlet property="controller" destination="Hgn-0q-Z1W" id="uvv-ub-yAo"/>
+                        <outlet property="scrollView_vertical" destination="EWA-9Z-pb1" id="sPI-1s-Ony"/>
+                    </connections>
+                </customObject>
+                <customObject id="NIq-Z2-7iE" customClass="EZRHomeScrollViewDelegate">
+                    <connections>
+                        <outlet property="collectionView_feedItems" destination="xvT-99-V3u" id="pYu-F0-B1d"/>
+                        <outlet property="webView_feedItem" destination="wno-NG-TY0" id="lS2-O9-vxA"/>
+                    </connections>
+                </customObject>
+                <customObject id="Eep-ce-BgX" customClass="EZRHomeWebViewDelegate"/>
             </objects>
             <point key="canvasLocation" x="63" y="-778"/>
         </scene>
