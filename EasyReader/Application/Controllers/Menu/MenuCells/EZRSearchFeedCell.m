@@ -20,8 +20,10 @@
 - (void)setFeedData:(NSDictionary *)feedData
 {
     _feedData = feedData;
-    //self.imageView_icon.image = [UIImage imageNamed:@"icon_plus"];
-    self.label_name.text = [feedData objectForKey:@"name"];
+    
+    if (feedData) {
+        self.label_name.text = [feedData objectForKey:@"name"];
+    }
 }
 
 @end

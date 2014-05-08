@@ -8,4 +8,5 @@ before_install:
 script:
   - xctool -workspace EasyReader.xcworkspace -scheme Development -sdk iphonesimulator7.1 ONLY_ACTIVE_ARCH=NO
   - xctool test -workspace EasyReader.xcworkspace -scheme Development -sdk iphonesimulator7.1 ONLY_ACTIVE_ARCH=NO
-
+notifications:
+  slack: cloudspace:euw2TezwiQfK9ebqBtGa1Rjz

@@ -157,6 +157,11 @@
  * Triggers the didSelectShareWithMailFromToolbar on the delegate if it responds
  */
 - (void)shareWithMail {
+    if (![MFMailComposeViewController canSendMail]) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"This device is not set up to send email. Please add an account from the iOS settings application." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
+        return;
+    }
+    
     UIViewController *presentingController = [self.dataSource containingViewControllerForDialogFromSocialToolbar:self];
     
     self.mailComposeViewContoller = [[MFMailComposeViewController alloc] init];
@@ -185,7 +190,11 @@
     
     [self.mailComposeViewContoller setMessageBody:messageBody isHTML:YES];
     
-    [presentingController presentViewController:self.mailComposeViewContoller animated:YES completion:nil];
+    if (self.mailComposeViewContoller && presentingController) {
+        [presentingController presentViewController:self.mailComposeViewContoller animated:YES completion:nil];
+    } else {
+        NSLog(@"cant present");
+    }
 }
 
 /**
