@@ -8,7 +8,7 @@ Project Setup Instructions
 2. Get the repo
 
 
-        git clone git@github.com:cloudspace/iOS-EasyReader.git
+        git clone https://github.com/cloudspace/iOS-EasyReader
 
 3. Install cocoapods if it is not already setup
 
@@ -20,7 +20,7 @@ Project Setup Instructions
 
 
         cd  ~/path/to/project
-        pod repo add Cloudspace-iOS-Pods git@github.com:cloudspace/Cloudspace-iOS-PodSpecs.git
+        pod repo add Cloudspace-iOS-Pods https://github.com/cloudspace/Cloudspace-iOS-PodSpecs
         pod install
 
 5. Open the project in xcode using 'EasyReader.xcworkspace'.  Do not open it with 'EasyReader.xcodeproj'.
