@@ -105,7 +105,7 @@
 }
 
 - (void)feedsDidChange:(EZRCurrentFeedsProvider *)currentFeedProvider feeds:(NSArray *)feeds {
-    ((CSArrayTableViewDataSource *)self.tableView_menu.dataSource).source = self.currentFeedsProvider.feeds;
+    ((CLDArrayTableViewDataSource *)self.tableView_menu.dataSource).source = self.currentFeedsProvider.feeds;
     [self.tableView_menu reloadData];
 }
 

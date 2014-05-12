@@ -17,8 +17,16 @@ PODS:
   - AFNetworking/Serialization (2.0.3)
   - AFNetworking/UIKit (2.0.3):
     - AFNetworking/NSURLConnection
+  - APIKit (0.0.1):
+    - AFNetworking (~> 2.0.3)
+    - Inflections (~> 1.0.0)
+    - MAObjCRuntime (~> 0.0)
   - Block-KVO (2.2.1)
   - CCARadialGradientLayer (1.0)
+  - CLDCommon (0.0.1):
+    - AFNetworking (~> 2.0.3)
+    - Block-KVO (~> 2.2.1)
+  - CLDSocialShareToolbar (0.0.1)
   - CSEnhancedTableView (0.0.1)
   - CSShortcuts (0.0.1)
   - CSStandardViewControllers (0.0.1):
@@ -43,6 +51,8 @@ PODS:
   - SDWebImage (3.5.4):
     - SDWebImage/Core
   - SDWebImage/Core (3.5.4)
+  - SRVApplicationDelegate (0.0.1):
+    - MAObjCRuntime (~> 0.0)
   - SVProgressHUD (1.0)
   - TestFlightSDK (2.2.3-beta)
   - TSMessages (0.9.7):
@@ -50,37 +60,54 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0.3)
+  - APIKit (from `https://github.com/jlorich/APIKit`, tag `0.0.1`)
   - Block-KVO (~> 2.2.1)
   - CCARadialGradientLayer (from `https://github.com/jilouc/CCARadialGradientLayer`, commit `4a2d6f31d8a08a3150ca517f0370e59047dae0e2`)
+  - CLDCommon (from `https://github.com/cloudspace/CLDCommon`, tag `0.0.1`)
+  - CLDSocialShareToolbar (from `https://github.com/cloudspace/CLDSocialShareToolbar`, tag `0.0.1`)
   - CSEnhancedTableView (~> 0.0.1)
   - CSShortcuts (~> 0.0.1)
   - CSStandardViewControllers (~> 0.0.1)
   - GoogleAnalytics-iOS-SDK (~> 3.0)
   - GPUImage (~> 0.1)
-  - Inflections (~> 1.0.0)
   - MagicalRecord (from `https://github.com/magicalpanda/MagicalRecord`, commit `98ec121bf767c495a2e887adeade7383b74a62f4`)
-  - MAObjCRuntime (~> 0.0)
   - MFSideMenu (~> 0.5.4)
   - NJKWebViewProgress (~> 0.2)
   - NSDate+TimeAgo (~> 1.0.2)
   - OCMock (~> 2.2.2)
   - SDWebImage (~> 3.5.1)
+  - SRVApplicationDelegate (from `https://github.com/jlorich/SRVApplicationDelegate`, tag `0.0.1`)
   - SVProgressHUD (~> 1.0)
   - TestFlightSDK (~> 2.2.0-noadid-beta)
   - TSMessages (~> 0.9)
 
 EXTERNAL SOURCES:
+  APIKit:
+    :git: https://github.com/jlorich/APIKit
+    :tag: 0.0.1
   CCARadialGradientLayer:
     :commit: 4a2d6f31d8a08a3150ca517f0370e59047dae0e2
     :git: https://github.com/jilouc/CCARadialGradientLayer
+  CLDCommon:
+    :git: https://github.com/cloudspace/CLDCommon
+    :tag: 0.0.1
+  CLDSocialShareToolbar:
+    :git: https://github.com/cloudspace/CLDSocialShareToolbar
+    :tag: 0.0.1
   MagicalRecord:
     :commit: 98ec121bf767c495a2e887adeade7383b74a62f4
     :git: https://github.com/magicalpanda/MagicalRecord
+  SRVApplicationDelegate:
+    :git: https://github.com/jlorich/SRVApplicationDelegate
+    :tag: 0.0.1
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
+  APIKit: 8166274c1660be46b4b88e6e3d4d9003b24574a2
   Block-KVO: 7b298fb4617e948179b4c7725569feff7bd58337
   CCARadialGradientLayer: 01c81a4868c20c11fd4d4f770cd9cb8eed6882bc
+  CLDCommon: 2a6691a1d90e09f36bba6395d8d8d3ac701b9deb
+  CLDSocialShareToolbar: 724f310087f9afdc1aa2d2ac1619004650dd1d32
   CSEnhancedTableView: 1e41e8e94529f19fb8f4f827b0e68ea908e26b69
   CSShortcuts: 0bd6b5f939bfbad0422ce7e07b52a8e47e938e8e
   CSStandardViewControllers: 40b3fbc88a2f30278969283c9dd22e345b855788
@@ -97,6 +124,7 @@ SPEC CHECKSUMS:
   OCMock: 5008fae4b4789b8fc3e48cd7660f2eb5ef8ce89e
   RegexKitLite: b16f029b518614394438e17b7d1df8bfa1e5a81e
   SDWebImage: 1a62010700adbba823b621fc217906739dbf6aa5
+  SRVApplicationDelegate: b1cc9ec98483da6494b069423d31bb3b235617c7
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
   TestFlightSDK: 79a20263b43de6f094271655c023d5581762cf8a
   TSMessages: 9dd053bcf1a8985275177ebe0fb8c0f1416e92f7

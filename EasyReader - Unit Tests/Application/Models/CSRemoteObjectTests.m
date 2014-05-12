@@ -10,9 +10,9 @@
 #import "EZRBaseModelTests.h"
 
 // Models
-#import "CSRemoteObject.h"
+#import "APIRemoteObject.h"
 
-@interface CSRemoteObject (Test)
+@interface APIRemoteObject (Test)
 
 + (NSDate *)dateFromAPIDateString:(NSString*)dateString;
 
@@ -48,7 +48,7 @@
     // First 10 characters go up to the date without time
     NSString *dateString = [[NSString stringWithFormat:@"%@",date] substringWithRange:NSMakeRange(0, 10)];
     
-    NSString *resultDateValue = [NSString stringWithFormat:@"%@",[CSRemoteObject dateFromAPIDateString:dateString]];
+    NSString *resultDateValue = [NSString stringWithFormat:@"%@",[APIRemoteObject dateFromAPIDateString:dateString]];
     
     XCTAssertTrue([resultDateValue rangeOfString:resultDateValue].location == 0, @"");
 }
@@ -56,7 +56,7 @@
 - (void)testDateFromAPIDateStringFullTimeString
 {
     NSString *dateString = @"2014-03-28T14:53:21.000Z";
-    NSDate *resultDate = [CSRemoteObject dateFromAPIDateString:dateString];
+    NSDate *resultDate = [APIRemoteObject dateFromAPIDateString:dateString];
     
     NSLog(@"%@", resultDate);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
