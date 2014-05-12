@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 0
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 3
 
+// APIKit
+#define COCOAPODS_POD_AVAILABLE_APIKit
+#define COCOAPODS_VERSION_MAJOR_APIKit 0
+#define COCOAPODS_VERSION_MINOR_APIKit 0
+#define COCOAPODS_VERSION_PATCH_APIKit 1
+
 // Block-KVO
 #define COCOAPODS_POD_AVAILABLE_Block_KVO
 #define COCOAPODS_VERSION_MAJOR_Block_KVO 2
@@ -59,6 +65,18 @@
 #define COCOAPODS_VERSION_MAJOR_CCARadialGradientLayer 1
 #define COCOAPODS_VERSION_MINOR_CCARadialGradientLayer 0
 #define COCOAPODS_VERSION_PATCH_CCARadialGradientLayer 0
+
+// CLDCommon
+#define COCOAPODS_POD_AVAILABLE_CLDCommon
+#define COCOAPODS_VERSION_MAJOR_CLDCommon 0
+#define COCOAPODS_VERSION_MINOR_CLDCommon 0
+#define COCOAPODS_VERSION_PATCH_CLDCommon 1
+
+// CLDSocialShareToolbar
+#define COCOAPODS_POD_AVAILABLE_CLDSocialShareToolbar
+#define COCOAPODS_VERSION_MAJOR_CLDSocialShareToolbar 0
+#define COCOAPODS_VERSION_MINOR_CLDSocialShareToolbar 0
+#define COCOAPODS_VERSION_PATCH_CLDSocialShareToolbar 1
 
 // CSEnhancedTableView
 #define COCOAPODS_POD_AVAILABLE_CSEnhancedTableView
@@ -173,6 +191,12 @@
 #define COCOAPODS_VERSION_MAJOR_SDWebImage_Core 3
 #define COCOAPODS_VERSION_MINOR_SDWebImage_Core 5
 #define COCOAPODS_VERSION_PATCH_SDWebImage_Core 4
+
+// SRVApplicationDelegate
+#define COCOAPODS_POD_AVAILABLE_SRVApplicationDelegate
+#define COCOAPODS_VERSION_MAJOR_SRVApplicationDelegate 0
+#define COCOAPODS_VERSION_MINOR_SRVApplicationDelegate 0
+#define COCOAPODS_VERSION_PATCH_SRVApplicationDelegate 1
 
 // SVProgressHUD
 #define COCOAPODS_POD_AVAILABLE_SVProgressHUD

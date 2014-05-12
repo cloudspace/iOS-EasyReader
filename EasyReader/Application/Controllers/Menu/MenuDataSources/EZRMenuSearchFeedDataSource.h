@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CSArrayTableViewDataSource.h"
+#import "CLDArrayTableViewDataSource.h"
 
 /**
  * A UITableViewDataSource for custom and searched feeds returned by the API
  */
-@interface EZRMenuSearchFeedDataSource : CSArrayTableViewDataSource
+@interface EZRMenuSearchFeedDataSource : CLDArrayTableViewDataSource
 
 #pragma mark - Properties
 

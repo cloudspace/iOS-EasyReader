@@ -39,9 +39,13 @@
 
 - (void)setFeedData:(NSDictionary *)feedData
 {
-    NSSet *feedSet = [NSSet setWithArray:feedData[@"feeds"]];
-    
-    self.source = [feedSet sortedArrayByAttributes:@[@"name"] ascending:YES];
+    if (feedData) {
+        NSSet *feedSet = [NSSet setWithArray:feedData[@"feeds"]];
+        
+        self.source = [feedSet sortedArrayByAttributes:@[@"name"] ascending:YES];
+    } else {
+        self.source = nil;
+    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

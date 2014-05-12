@@ -16,10 +16,9 @@ pod 'MagicalRecord', :git => 'https://github.com/magicalpanda/MagicalRecord', :c
 pod 'CCARadialGradientLayer', :git => 'https://github.com/jilouc/CCARadialGradientLayer', :commit => '4a2d6f31d8a08a3150ca517f0370e59047dae0e2'
 
 pod 'AFNetworking', '~> 2.0.3'
-pod 'NSDate+TimeAgo', '~> 1.0.2'
-pod 'Inflections', '~> 1.0.0'
+
 pod 'Block-KVO', '~> 2.2.1'
-pod 'MAObjCRuntime', '~> 0.0'
+pod 'NSDate+TimeAgo', '~> 1.0.2'
 
 # User notification
 pod 'SVProgressHUD', '~> 1.0'
@@ -41,4 +40,10 @@ pod 'OCMock', '~> 2.2.2'
 
 # Analytics
 pod 'GoogleAnalytics-iOS-SDK', '~> 3.0'
+
+
+pod 'CLDSocialShareToolbar', git: 'https://github.com/cloudspace/CLDSocialShareToolbar', tag: '0.0.1'
+pod 'SRVApplicationDelegate', git: 'https://github.com/jlorich/SRVApplicationDelegate', tag: '0.0.1'
+pod 'APIKit', git: 'https://github.com/jlorich/APIKit', tag: '0.0.1'
+pod 'CLDCommon', git: 'https://github.com/cloudspace/CLDCommon', tag: '0.0.1'
 

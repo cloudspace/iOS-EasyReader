@@ -37,7 +37,12 @@
 #import "EZRHomePageControlDataSource.h"
 #import "EZRHomeWebViewDelegate.h"
 #import "EZRCurrentFeedsProvider.h"
-#import "CSArrayCollectionViewDataSource.h"
+
+#import "CLDArrayCollectionViewDataSource.h"
+
+#import "CLDSocialShareToolbar.h"
+
+>>>>>>> master
 #import "EZRHomeSocialToolbarDataSource.h"
 #import "EZRGoogleAnalyticsService.h"
 #import "CCARadialGradientLayer.h"
@@ -80,7 +85,7 @@
     EZRHomeWebViewDelegate *webViewDelegate;
     
     /// The data source for the collection view
-    CSArrayCollectionViewDataSource *collectionViewArrayDataSource;
+    CLDArrayCollectionViewDataSource *collectionViewArrayDataSource;
     
     /// Background gradient
     CCARadialGradientLayer *gradient;
@@ -264,7 +269,7 @@
  */
 - (void)setUpCollectionView
 {
-    collectionViewArrayDataSource = [CSArrayCollectionViewDataSource dataSourceWithArray:self.currentFeedsProvider.feedItems
+    collectionViewArrayDataSource = [CLDArrayCollectionViewDataSource dataSourceWithArray:self.currentFeedsProvider.feedItems
                                      reusableCellIdentifier:@"feedItem"
                                              configureBlock:^(UICollectionViewCell *cell, id item) {
                                                  ((EZRFeedItemCollectionViewCell *)cell).feedItem = item;
