@@ -7,6 +7,7 @@
 //
 
 #import "APIRemoteObject.h"
+#import "CoreData+MagicalRecord.h"
 
 @implementation APIRemoteObject
 

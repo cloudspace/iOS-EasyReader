@@ -241,10 +241,6 @@
 		9DFC326718FD7263008A2A44 /* EZRCurrentFeedsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC326518FD7263008A2A44 /* EZRCurrentFeedsProvider.m */; };
 		9DFC326818FD7263008A2A44 /* EZRCurrentFeedsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC326518FD7263008A2A44 /* EZRCurrentFeedsProvider.m */; };
 		9DFC326918FD7263008A2A44 /* EZRCurrentFeedsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC326518FD7263008A2A44 /* EZRCurrentFeedsProvider.m */; };
-		9DFD89EA18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD89E918FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m */; };
-		9DFD89EB18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD89E918FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m */; };
-		9DFD89EC18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD89E918FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m */; };
-		9DFD89ED18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD89E918FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -389,8 +385,6 @@
 		9DAC1721170A043200383722 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DFC326418FD7263008A2A44 /* EZRCurrentFeedsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRCurrentFeedsProvider.h; sourceTree = "<group>"; };
 		9DFC326518FD7263008A2A44 /* EZRCurrentFeedsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRCurrentFeedsProvider.m; sourceTree = "<group>"; };
-		9DFD89E818FC66E800630CBF /* EZRHomeFeedImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EZRHomeFeedImagePrefetcher.h; path = Home/EZRHomeFeedImagePrefetcher.h; sourceTree = "<group>"; };
-		9DFD89E918FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EZRHomeFeedImagePrefetcher.m; path = Home/EZRHomeFeedImagePrefetcher.m; sourceTree = "<group>"; };
 		A7ACF08D0CD54248B25E110A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1269,7 +1263,6 @@
 				9D79275018DA1D3800E1D3E1 /* main.m in Sources */,
 				9D79275118DA1D3800E1D3E1 /* EZRHomeViewController.m in Sources */,
 				9D79275218DA1D3800E1D3E1 /* EZRFeedItemCollectionView.m in Sources */,
-				9DFD89ED18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */,
 				9D38DDEA18EB091B00C67022 /* EZRHomePageControlDataSource.m in Sources */,
 				9D923CE7191D95A200BA3CAD /* EasyReader.xcdatamodeld in Sources */,
 				9D06C64B1901AE190029A233 /* EZRHomeSocialToolbarDataSource.m in Sources */,
@@ -1341,7 +1334,6 @@
 				9D9CBACB18DCC68A00532F8C /* main.m in Sources */,
 				9D9CBACC18DCC68A00532F8C /* EZRHomeViewController.m in Sources */,
 				9D9CBACD18DCC68A00532F8C /* EZRFeedItemCollectionView.m in Sources */,
-				9DFD89EB18FC66E800630CBF /* EZRHomeFeedImagePrefetcher.m in Sources */,
 				9D38DDE818EB091B00C67022 /* EZRHomePageControlDataSource.m in Sources */,
 				9D923CE5191D95A200BA3CAD /* EasyReader.xcdatamodeld in Sources */,
 				9D06C6491901AE190029A233 /* EZRHomeSocialToolbarDataSource.m in Sources */,

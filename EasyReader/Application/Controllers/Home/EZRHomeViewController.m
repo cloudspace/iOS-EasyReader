@@ -42,7 +42,6 @@
 
 #import "CLDSocialShareToolbar.h"
 
->>>>>>> master
 #import "EZRHomeSocialToolbarDataSource.h"
 #import "EZRGoogleAnalyticsService.h"
 #import "CCARadialGradientLayer.h"

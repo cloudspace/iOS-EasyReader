@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E156522F478E4B89B8D4DE39"
+               BlueprintIdentifier = "8CB0583F56974B30A07FACF9"
                BuildableName = "libPods-CLDSocialShareToolbar.a"
                BlueprintName = "Pods-CLDSocialShareToolbar"
                ReferencedContainer = "container:Pods.xcodeproj">
