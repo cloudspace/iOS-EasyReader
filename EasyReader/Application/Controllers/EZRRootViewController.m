@@ -7,74 +7,69 @@
 //
 
 #import "EZRRootViewController.h"
-
 #import "EZRMenuViewController.h"
 #import "EZRHomeViewController.h"
 
 
+#pragma mark - MFSideMenuContainerViewController
 
-//#import "UIViewController+NibLoader.h"
-
-
+/**
+ * Category to enable access to the private menuContainerView property
+ */
 @interface MFSideMenuContainerViewController ()
 
+/// The menu container view
 @property (nonatomic, strong) UIView *menuContainerView;
 
 @end
 
+
+#pragma mark - Root view controller
 
 @implementation EZRRootViewController
 
 /**
  * Creates the menu contorllers and side menu
  */
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{    
-  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  
-  if (self) {
-    // Create view controller
-    UIStoryboard *storyboard_home = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
-    EZRHomeViewController *collections = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
-    _viewController_main = collections;
-
-    [self setViewControllers:@[_viewController_main]];
-  }
-  
-  return self;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (self) {
+        UIStoryboard *storyboard_home = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
+        EZRHomeViewController *collections = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
+        _viewController_main = collections;
+        
+        [self setViewControllers:@[_viewController_main]];
+    }
+    
+    return self;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+/**
+ * Disable the gesture recognizer on the left view controller so that it doesn't interfere with
+ * swipe to delete on the feed menu tableview
+ */
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)[[[[UIApplication sharedApplication] delegate] window] rootViewController];
-//    container.menuContainerView.gestureRecognizers
-    
     
     for (UIGestureRecognizer *recognizer in container.menuContainerView.gestureRecognizers) {
         [recognizer setEnabled:NO];
-//        [container.menuContainerView removeGestureRecognizer:recognizer];
     }
-
 }
 
 /**
  * If the left menu is open, it closes it
  * Otherwise it opens to the left menu
  */
-- (void) toggleLeftMenu
-{
-  if (self.menuContainerViewController.menuState == MFSideMenuStateLeftMenuOpen)
-  {
-    [self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
-  
-  }
-  else
-  {
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-  }
+- (void) toggleLeftMenu {
+    if (self.menuContainerViewController.menuState == MFSideMenuStateLeftMenuOpen) {
+        [self.menuContainerViewController setMenuState:MFSideMenuStateClosed completion:^{}];
+        
+    } else {
+        [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
+    }
 }
-
 
 @end

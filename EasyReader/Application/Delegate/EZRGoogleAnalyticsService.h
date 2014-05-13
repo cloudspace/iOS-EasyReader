@@ -8,6 +8,9 @@
 
 #import "SRVApplicationDelegateService.h"
 
+/**
+ * An AppDelegate service used to interface with google analytics
+ */
 @interface EZRGoogleAnalyticsService : SRVApplicationDelegateService
 
 /**

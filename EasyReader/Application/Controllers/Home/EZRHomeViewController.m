@@ -33,7 +33,6 @@
 #import "EZRFeedImageService.h"
 #import "EZRHomeCollectionViewDelegate.h"
 #import "EZRHomeScrollViewDelegate.h"
-#import "EZRHomePageControlDelegate.h"
 #import "EZRHomePageControlDataSource.h"
 #import "EZRHomeWebViewDelegate.h"
 #import "EZRCurrentFeedsProvider.h"
@@ -62,6 +61,8 @@
 /// The home collection view delegate
 @property (nonatomic, weak) IBOutlet EZRHomeCollectionViewDelegate *collectionViewDelegate;
 
+/// The delegate for the web view
+@property (nonatomic, weak) IBOutlet EZRHomeWebViewDelegate *webViewDelegate;
 
 
 
@@ -70,19 +71,6 @@
 
 @implementation EZRHomeViewController
 {
-    /// The collectionView delegate
-    /// The scroll view delegate
-    EZRHomeScrollViewDelegate *scrollViewDelegate;
-    
-    /// The page control delegate
-    EZRHomePageControlDelegate *pageControlDelegate;
-    
-    /// The page control data source
-    EZRHomePageControlDataSource  *pageControlDataSource;
-    
-    /// The delegate for the web view
-    EZRHomeWebViewDelegate *webViewDelegate;
-    
     /// The data source for the collection view
     CLDArrayCollectionViewDataSource *collectionViewArrayDataSource;
     
@@ -146,7 +134,6 @@
     
     [[EZRGoogleAnalyticsService shared] sendView:@"Home"];
     
-    [self setUpPageControl];
     [self setUpVerticalScrollView];
     [self setUpCollectionView];
     [self setUpWebView];
@@ -171,15 +158,9 @@
                                                object:nil];
     
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    BOOL ok;
+
     NSError *setCategoryError = nil;
-    ok = [audioSession setCategory:AVAudioSessionCategoryPlayback
-                             error:&setCategoryError];
-    if (!ok) {
-        NSLog(@"%s setCategoryError=%@", __PRETTY_FUNCTION__, setCategoryError);
-    }
-    
-    //[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
 }
 
 /**
@@ -220,18 +201,6 @@
 #pragma mark - Setup methods
 
 /**
- * Sets up the page control
- */
-- (void) setUpPageControl
-{
-    pageControlDelegate   = [[EZRHomePageControlDelegate alloc] initWithController:self];
-    pageControlDataSource = [[EZRHomePageControlDataSource alloc] init];
-    
-    self.pageControl_itemIndicator.delegate = pageControlDelegate;
-    self.pageControl_itemIndicator.datasource = pageControlDataSource;
-}
-
-/**
  * Sets up vertical scroll view on controller start up
  */
 -(void)setUpVerticalScrollView
@@ -243,6 +212,9 @@
     [self.scrollView_vertical setContentOffset:CGPointMake(0, 60)];
 }
 
+/**
+ * Sets up the share toolbar
+ */
 - (void)setUpShareToolbar {
     [self.scrollView_vertical insertSubview:self.socialShareToolbar belowSubview:self.webView_feedItem];
     self.socialShareToolbar.backgroundTransparent = YES;
@@ -287,7 +259,7 @@
     [self.webView_feedItem setBackgroundColor:[UIColor blackColor]];
     [self.scrollView_vertical addSubview:self.webView_feedItem];
     
-    self.webView_feedItem.scrollView.delegate = webViewDelegate;
+    self.webView_feedItem.scrollView.delegate = self.webViewDelegate;
 
     self.webView_feedItem.multipleTouchEnabled = YES;
     self.webView_feedItem.scalesPageToFit = YES;

@@ -7,7 +7,6 @@
 //
 
 #import "EZRCurrentFeedsProvider.h"
-
 #import "NSSet+CSSortingAdditions.h"
 
 #import "User.h"
@@ -16,9 +15,13 @@
 
 #import <Block-KVO/MTKObserving.h>
 
-
+/// A dispatch predicate used to ensure only one shared instance is created 
 static dispatch_once_t pred;
+
+/// The shared feeds provider instance
 static EZRCurrentFeedsProvider *sharedInstance;
+
+#pragma mark - Current feeds provider interface
 
 @interface EZRCurrentFeedsProvider ()
 
@@ -27,6 +30,8 @@ static EZRCurrentFeedsProvider *sharedInstance;
 
 @end
 
+
+#pragma mark - Current feeds provider implementation
 
 @implementation EZRCurrentFeedsProvider
 {

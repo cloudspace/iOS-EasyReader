@@ -122,6 +122,9 @@
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <connections>
+                                                    <outlet property="delegate" destination="YCE-lq-nqY" id="rCa-wl-ApW"/>
+                                                </connections>
                                             </collectionView>
                                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZJR-Bc-2rZ" customClass="CSCollectionPageControl">
                                                 <rect key="frame" x="0.0" y="531" width="320" height="37"/>
@@ -129,6 +132,10 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="37" id="IOR-d8-478"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="datasource" destination="eXU-Qe-r1Y" id="w4F-aM-2EC"/>
+                                                    <outlet property="delegate" destination="v5K-Iv-mvg" id="6Pd-EH-DRG"/>
+                                                </connections>
                                             </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -169,6 +176,9 @@
                                     <constraint firstAttribute="trailing" secondItem="wv0-Kq-lEd" secondAttribute="trailing" id="khT-1j-PHs"/>
                                     <constraint firstItem="wv0-Kq-lEd" firstAttribute="leading" secondItem="EWA-9Z-pb1" secondAttribute="leading" id="wh3-fI-UQy"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="NIq-Z2-7iE" id="ig9-Cs-JNU"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -193,7 +203,8 @@
                         <outlet property="pageControl_itemIndicator" destination="ZJR-Bc-2rZ" id="DWa-BN-VLk"/>
                         <outlet property="scrollView_vertical" destination="EWA-9Z-pb1" id="T2I-XO-1AS"/>
                         <outlet property="socialShareToolbar" destination="cdD-4o-hTR" id="YTt-sV-J3Z"/>
-                        <outlet property="webView_feedItem" destination="wno-NG-TY0" id="2Yk-qI-QCZ"/>
+                        <outlet property="webViewDelegate" destination="Eep-ce-BgX" id="czP-Hf-2cK"/>
+                        <outlet property="webView_feedItem" destination="wno-NG-TY0" id="8oy-lP-6qz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGN-P7-i1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -220,7 +231,18 @@
                         <outlet property="webView_feedItem" destination="wno-NG-TY0" id="lS2-O9-vxA"/>
                     </connections>
                 </customObject>
-                <customObject id="Eep-ce-BgX" customClass="EZRHomeWebViewDelegate"/>
+                <customObject id="Eep-ce-BgX" customClass="EZRHomeWebViewDelegate">
+                    <connections>
+                        <outlet property="controller" destination="Hgn-0q-Z1W" id="Pqk-QO-3Mh"/>
+                        <outlet property="webView_feedItem" destination="wno-NG-TY0" id="QcE-Xs-ZRf"/>
+                    </connections>
+                </customObject>
+                <customObject id="eXU-Qe-r1Y" customClass="EZRHomePageControlDataSource"/>
+                <customObject id="v5K-Iv-mvg" customClass="EZRHomePageControlDelegate">
+                    <connections>
+                        <outlet property="collectionView_feedItems" destination="xvT-99-V3u" id="9z8-mr-brw"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="63" y="-778"/>
         </scene>

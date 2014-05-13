@@ -14,8 +14,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [MagicalRecord setShouldDeleteStoreOnModelMismatch:YES];
-//    [MagicalRecord setShouldAutoCreateManagedObjectModel:YES];
-//    [MagicalRecord setShouldAutoCreateDefaultPersistentStoreCoordinator:YES];
     [MagicalRecord setupAutoMigratingCoreDataStack];
     return YES;
 }

@@ -57,10 +57,10 @@
 # pragma mark - Properties
 
 /// The object that acts as the delegate of the receiving page control
-@property (nonatomic, assign) id<CSCollectionPageControlDelegate> delegate;
+@property (nonatomic, assign) IBOutlet id<CSCollectionPageControlDelegate> delegate;
 
 /// The object that acts as the delegate of the receiving page control
-@property (nonatomic, assign) id<CSCollectionPageControlDataSource> datasource;
+@property (nonatomic, assign) IBOutlet id<CSCollectionPageControlDataSource> datasource;
 
 
 # pragma mark - Methods
