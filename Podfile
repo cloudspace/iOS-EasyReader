@@ -1,6 +1,6 @@
 platform :ios, '7.0'
 
-link_with ['Development', 'Staging', 'Production', 'EasyReader - Unit Tests']
+link_with ['Development', 'Staging', 'Production']
 
 # Hide cocoapods project warnings
 inhibit_all_warnings!
