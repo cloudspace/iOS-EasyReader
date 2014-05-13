@@ -37,7 +37,6 @@
 - (void)setUp
 {
     [super setUp];
-//    [[EZRRegisterRoutesService shared] application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:nil];
 }
 
 - (void)tearDown
