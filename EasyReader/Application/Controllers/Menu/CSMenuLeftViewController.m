@@ -47,7 +47,7 @@
   
   // Get feeds from core data
   NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user == %@", self.currentUser];
-  NSArray *feedSorts = [FeedSort findAllSortedBy:@"sortValue" ascending:NO withPredicate:userPredicate];
+  NSArray *feedSorts = [FeedSort MR_findAllSortedBy:@"sortValue" ascending:NO withPredicate:userPredicate];
   
   NSMutableArray *feeds = [NSMutableArray new];
 
@@ -91,7 +91,7 @@
   if ([keyPath isEqualToString:@"feeds"])
   {
     NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user == %@", self.currentUser];
-    NSArray *feedSorts = [FeedSort findAllSortedBy:@"sortValue" ascending:NO withPredicate:userPredicate];
+    NSArray *feedSorts = [FeedSort MR_findAllSortedBy:@"sortValue" ascending:NO withPredicate:userPredicate];
     
     NSMutableArray *feeds = [NSMutableArray new];
     
@@ -324,7 +324,7 @@
     feedSort.sortValue = [NSNumber numberWithInteger:[reorderedFeeds count] - i];
   }
 
-  [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+  [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
   
   self.feeds = [reorderedFeeds copy];
   
@@ -385,7 +385,7 @@
     
     [toDelete deleteEntity];
     
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
   }
 }
 
@@ -429,7 +429,7 @@
   User *user = [User current];
   user.activeFeed = self.feeds[indexPath.row];
   
-  [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+  [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
   [((CSRootViewController *)self.rootViewController).sideMenu setMenuState:MFSideMenuStateClosed];
 }
 

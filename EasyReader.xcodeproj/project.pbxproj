@@ -533,6 +533,11 @@
 				CLASSPREFIX = CS;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Cloudspace;
+				TargetAttributes = {
+					9DAC16C31709D48E00383722 = {
+						DevelopmentTeam = 34V4E5MT6Z;
+					};
+				};
 			};
 			buildConfigurationList = 9DAC16BF1709D48E00383722 /* Build configuration list for PBXProject "EasyReader" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -713,7 +718,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Lorich (G28849DAB7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Lorich (G28849DAB7)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -726,8 +732,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "0B1685CC-627C-4832-97D4-79736E8FE8EE";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -745,17 +752,19 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "90CA03DB-35B0-4E9E-BEA6-36B6897E6984";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};
@@ -763,17 +772,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5CECD14CAE964A1994399D15 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Lorich (G28849DAB7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Lorich (G28849DAB7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Lorich (V76X5MWR4Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Lorich (V76X5MWR4Y)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				INFOPLIST_FILE = "EasyReader/Supporting Files/EasyReader-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Easy Reader";
-				PROVISIONING_PROFILE = "1515F9BA-E615-4215-A1E9-D9C35CC9E667";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1515F9BA-E615-4215-A1E9-D9C35CC9E667";
-				VALID_ARCHS = armv7;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -782,17 +792,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5CECD14CAE964A1994399D15 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Lorich (V76X5MWR4Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				INFOPLIST_FILE = "EasyReader/Supporting Files/EasyReader-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Easy Reader";
-				PROVISIONING_PROFILE = "695DFFDA-701D-49EA-AAD5-B961B13DB6D3";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "695DFFDA-701D-49EA-AAD5-B961B13DB6D3";
-				VALID_ARCHS = armv7;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

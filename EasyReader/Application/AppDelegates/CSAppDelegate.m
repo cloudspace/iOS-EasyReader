@@ -53,6 +53,19 @@
   //
   [MagicalRecord setupAutoMigratingCoreDataStack];
   
+    Feed *feed = [Feed MR_createEntity];
+    feed.name = @"test";
+    feed.url = @"http://www.google.com";
+
+    [[User current] addFeedsObject:feed];
+    
+    Feed *feed2 = [Feed MR_createEntity];
+    feed2.name = @"test2";
+    feed2.url = @"http://www.google2.com";
+    
+    [[User current] addFeedsObject:feed2];
+    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 
   //
   // Set up root view controller

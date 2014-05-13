@@ -265,11 +265,11 @@
       }
       else
       {
-        Feed *feed = [Feed createEntity];
+        Feed *feed = [Feed MR_createEntity];
         feed.name  = availableFeed[@"name"];
         feed.url   = availableFeed[@"url"];
         
-        FeedSort *sort = [FeedSort createEntity];
+        FeedSort *sort = [FeedSort MR_createEntity];
         sort.user = currentUser;
         sort.feed = feed;
         
@@ -278,7 +278,7 @@
       }
       
       
-      [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+      [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
       
       [self.navigationController dismissViewControllerAnimated:YES completion:^{
         
@@ -520,12 +520,12 @@
     }
     
     // Create the new feed
-    Feed *newFeed = [Feed createEntity];
+    Feed *newFeed = [Feed MR_createEntity];
     
     newFeed.name = _textFieldName.text;
     newFeed.url = _textFieldURL.text;
     
-    FeedSort *sort = [FeedSort createEntity];
+    FeedSort *sort = [FeedSort MR_createEntity];
     sort.user = currentUser;
     sort.feed = newFeed;
     
@@ -535,7 +535,7 @@
   }
   
   // Save the data
-  [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+  [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
   
   // Dismiss the controller
   [self dismissViewControllerAnimated:YES completion:^{

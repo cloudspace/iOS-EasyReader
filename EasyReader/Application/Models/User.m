@@ -19,7 +19,7 @@
 
 + (User *)current
 {
-  NSArray *users = [User findAll];
+  NSArray *users = [User MR_findAll];
   
   if ([users count] > 0)
   {    
@@ -27,8 +27,8 @@
   }
   else
   {
-    User *user = [User createEntity];
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    User *user = [User MR_createEntity];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     return user;
   }
 }

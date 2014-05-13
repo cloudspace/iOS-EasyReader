@@ -13,7 +13,7 @@ pod 'MBProgressHUD', '~> 0.6'
 pod 'EGOTableViewPullRefresh', '~> 0.1.0'
 pod 'MFSideMenu', '~> 0.4.8'
 pod 'TestFlightSDK', '~> 1.3.0beta2'
-pod 'MagicalRecord', '~> 2.1.0'
+pod 'MagicalRecord', '2.1.0'
 pod 'MWFeedParser', '~> 0.0.1'
 
 pod 'MTLabel', '~> 0.0.1'

@@ -66,11 +66,11 @@
     // Create default feeds
     for (NSDictionary *feedData in JSON[@"feeds"])
     {
-      Feed *feed = [Feed createEntity];
+      Feed *feed = [Feed MR_createEntity];
       feed.name = feedData[@"name"];
       feed.url  = feedData[@"url"];
       
-      FeedSort *sort = [FeedSort createEntity];
+      FeedSort *sort = [FeedSort MR_createEntity];
       sort.user = currentUser;
       sort.feed = feed;
       
@@ -84,7 +84,7 @@
     }
     
     // Mark database as seeded
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"seeded"];

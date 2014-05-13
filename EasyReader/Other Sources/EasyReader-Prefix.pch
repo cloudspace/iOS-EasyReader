@@ -30,6 +30,7 @@
 // Magical Record
 #define MR_SHORTHAND
 #import "CoreData+MagicalRecord.h"
+#import "MagicalRecord+ShorthandSupport.h"
 
 // Shortcuts
 #import "NSObject+CSShortcuts.h"
