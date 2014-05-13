@@ -19,8 +19,10 @@ PODS:
     - AFNetworking/NSURLConnection
   - APIKit (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - CLDCommon (~> 0.0.1)
     - Inflections (~> 1.0.0)
-    - MAObjCRuntime (~> 0.0)
+    - MagicalRecord (~> 2.2)
+    - MAObjCRuntime (~> 0.0.1)
   - Block-KVO (2.2.1)
   - CCARadialGradientLayer (1.0)
   - CLDCommon (0.0.1):
@@ -36,7 +38,9 @@ PODS:
   - HexColors (2.2.1)
   - Inflections (1.0.0):
     - RegexKitLite
-  - MagicalRecord (2.2)
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core
+  - MagicalRecord/Core (2.2)
   - MAObjCRuntime (0.0.1)
   - MBProgressHUD (0.8)
   - MFSideMenu (0.5.4)
@@ -70,7 +74,7 @@ DEPENDENCIES:
   - CSStandardViewControllers (~> 0.0.1)
   - GoogleAnalytics-iOS-SDK (~> 3.0)
   - GPUImage (~> 0.1)
-  - MagicalRecord (from `https://github.com/magicalpanda/MagicalRecord`, commit `98ec121bf767c495a2e887adeade7383b74a62f4`)
+  - MagicalRecord (~> 2.2)
   - MFSideMenu (~> 0.5.4)
   - NJKWebViewProgress (~> 0.2)
   - NSDate+TimeAgo (~> 1.0.2)
@@ -94,16 +98,13 @@ EXTERNAL SOURCES:
   CLDSocialShareToolbar:
     :git: https://github.com/cloudspace/CLDSocialShareToolbar
     :tag: 0.0.1
-  MagicalRecord:
-    :commit: 98ec121bf767c495a2e887adeade7383b74a62f4
-    :git: https://github.com/magicalpanda/MagicalRecord
   SRVApplicationDelegate:
     :git: https://github.com/jlorich/SRVApplicationDelegate
     :tag: 0.0.1
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
-  APIKit: 8166274c1660be46b4b88e6e3d4d9003b24574a2
+  APIKit: 4d98b8acfbaa8edbc5eb303754c479d84c587765
   Block-KVO: 7b298fb4617e948179b4c7725569feff7bd58337
   CCARadialGradientLayer: 01c81a4868c20c11fd4d4f770cd9cb8eed6882bc
   CLDCommon: 2a6691a1d90e09f36bba6395d8d8d3ac701b9deb
@@ -115,7 +116,7 @@ SPEC CHECKSUMS:
   GPUImage: f9b32e12350792a630e596ffc7b050bea3662670
   HexColors: 99211502e17904af7891fc8f687d0e4958a6d66e
   Inflections: 59aaf387b9ce22342b504534ee785fbdd793edd0
-  MagicalRecord: 565156bae4de961860fad200a5c52e21e7933ebe
+  MagicalRecord: 95d49d74ef752cd52f6ad87bcb474817fc3978cf
   MAObjCRuntime: ab7a4cd2ad843a49c8d78d2a96453c76b465da46
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   MFSideMenu: f59e25c080097a701e108459c207fb22e1f62c30

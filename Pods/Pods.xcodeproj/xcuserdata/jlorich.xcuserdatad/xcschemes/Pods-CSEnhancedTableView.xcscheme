@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7FF33FD8EF3249B1AE884B4E"
+               BlueprintIdentifier = "6CCF7D8A2A61458AB6687012"
                BuildableName = "libPods-CSEnhancedTableView.a"
                BlueprintName = "Pods-CSEnhancedTableView"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -22,15 +22,9 @@
 
 #if MR_ENABLE_ACTIVE_RECORD_LOGGING != 0
       // First, check if we can use Cocoalumberjack for logging
-    #if defined(LOG_VERBOSE) || defined(COCOAPODS_POD_AVAILABLE_CocoaLumberjack)
-        #import "DDLog.h"
+    #ifdef LOG_VERBOSE
         extern int ddLogLevel;
-        #ifdef MR_LOG_CONTEXT
-            // Log to CocoaLumberjack with custom context
-            #define MRLog(frmt, ...)  ASYNC_LOG_OBJC_MAYBE(ddLogLevel, LOG_FLAG_VERBOSE, MR_LOG_CONTEXT, frmt, ##__VA_ARGS__)
-        #else
-            #define MRLog(...)  DDLogVerbose(__VA_ARGS__)
-        #endif
+        #define MRLog(...)  DDLogVerbose(__VA_ARGS__)
     #else
         #define MRLog(...) NSLog(@"%s(%p) %@", __PRETTY_FUNCTION__, self, [NSString stringWithFormat:__VA_ARGS__])
     #endif
@@ -40,18 +34,12 @@
 
 #ifdef NS_BLOCKS_AVAILABLE
 
-extern NSString * const kMagicalRecordCleanedUpNotification;
-
 @class NSManagedObjectContext;
 typedef void (^CoreDataBlock)(NSManagedObjectContext *context);
 
 #endif
 
 @interface MagicalRecord : NSObject
-
-+ (NSInteger)version;
-+ (NSString *)displayVersion;
-+ (NSString *)build;
 
 + (NSString *) currentStack;
 

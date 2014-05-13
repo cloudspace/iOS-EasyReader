@@ -19,10 +19,16 @@
 + (BOOL) hasAtLeastOneEntityInContext:(NSManagedObjectContext *)context;
 + (NSNumber *)aggregateOperation:(NSString *)function onAttribute:(NSString *)attributeName withPredicate:(NSPredicate *)predicate inContext:(NSManagedObjectContext *)context;
 + (NSNumber *)aggregateOperation:(NSString *)function onAttribute:(NSString *)attributeName withPredicate:(NSPredicate *)predicate;
-- (instancetype) objectWithMinValueFor:(NSString *)property;
-- (instancetype) objectWithMinValueFor:(NSString *)property inContext:(NSManagedObjectContext *)context;
+- (id) objectWithMinValueFor:(NSString *)property;
+- (id) objectWithMinValueFor:(NSString *)property inContext:(NSManagedObjectContext *)context;
 @end
-
+@interface NSManagedObject (MagicalRecord_DataImportShortHand)
+- (BOOL) importValuesForKeysWithObject:(id)objectData;
++ (id) importFromObject:(id)data;
++ (id) importFromObject:(id)data inContext:(NSManagedObjectContext *)context;
++ (NSArray *) importFromArray:(NSArray *)listOfObjectData;
++ (NSArray *) importFromArray:(NSArray *)listOfObjectData inContext:(NSManagedObjectContext *)context;
+@end
 @interface NSManagedObject (MagicalFindersShortHand)
 + (NSArray *) findAll;
 + (NSArray *) findAllInContext:(NSManagedObjectContext *)context;
@@ -32,20 +38,20 @@
 + (NSArray *) findAllSortedBy:(NSString *)sortTerm ascending:(BOOL)ascending withPredicate:(NSPredicate *)searchTerm inContext:(NSManagedObjectContext *)context;
 + (NSArray *) findAllWithPredicate:(NSPredicate *)searchTerm;
 + (NSArray *) findAllWithPredicate:(NSPredicate *)searchTerm inContext:(NSManagedObjectContext *)context;
-+ (instancetype) findFirst;
-+ (instancetype) findFirstInContext:(NSManagedObjectContext *)context;
-+ (instancetype) findFirstWithPredicate:(NSPredicate *)searchTerm;
-+ (instancetype) findFirstWithPredicate:(NSPredicate *)searchTerm inContext:(NSManagedObjectContext *)context;
-+ (instancetype) findFirstWithPredicate:(NSPredicate *)searchterm sortedBy:(NSString *)property ascending:(BOOL)ascending;
-+ (instancetype) findFirstWithPredicate:(NSPredicate *)searchterm sortedBy:(NSString *)property ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
-+ (instancetype) findFirstWithPredicate:(NSPredicate *)searchTerm andRetrieveAttributes:(NSArray *)attributes;
-+ (instancetype) findFirstWithPredicate:(NSPredicate *)searchTerm andRetrieveAttributes:(NSArray *)attributes inContext:(NSManagedObjectContext *)context;
-+ (instancetype) findFirstWithPredicate:(NSPredicate *)searchTerm sortedBy:(NSString *)sortBy ascending:(BOOL)ascending andRetrieveAttributes:(id)attributes, ...;
-+ (instancetype) findFirstWithPredicate:(NSPredicate *)searchTerm sortedBy:(NSString *)sortBy ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context andRetrieveAttributes:(id)attributes, ...;
-+ (instancetype) findFirstByAttribute:(NSString *)attribute withValue:(id)searchValue;
-+ (instancetype) findFirstByAttribute:(NSString *)attribute withValue:(id)searchValue inContext:(NSManagedObjectContext *)context;
-+ (instancetype) findFirstOrderedByAttribute:(NSString *)attribute ascending:(BOOL)ascending;
-+ (instancetype) findFirstOrderedByAttribute:(NSString *)attribute ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
++ (id) findFirst;
++ (id) findFirstInContext:(NSManagedObjectContext *)context;
++ (id) findFirstWithPredicate:(NSPredicate *)searchTerm;
++ (id) findFirstWithPredicate:(NSPredicate *)searchTerm inContext:(NSManagedObjectContext *)context;
++ (id) findFirstWithPredicate:(NSPredicate *)searchterm sortedBy:(NSString *)property ascending:(BOOL)ascending;
++ (id) findFirstWithPredicate:(NSPredicate *)searchterm sortedBy:(NSString *)property ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
++ (id) findFirstWithPredicate:(NSPredicate *)searchTerm andRetrieveAttributes:(NSArray *)attributes;
++ (id) findFirstWithPredicate:(NSPredicate *)searchTerm andRetrieveAttributes:(NSArray *)attributes inContext:(NSManagedObjectContext *)context;
++ (id) findFirstWithPredicate:(NSPredicate *)searchTerm sortedBy:(NSString *)sortBy ascending:(BOOL)ascending andRetrieveAttributes:(id)attributes, ...;
++ (id) findFirstWithPredicate:(NSPredicate *)searchTerm sortedBy:(NSString *)sortBy ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context andRetrieveAttributes:(id)attributes, ...;
++ (id) findFirstByAttribute:(NSString *)attribute withValue:(id)searchValue;
++ (id) findFirstByAttribute:(NSString *)attribute withValue:(id)searchValue inContext:(NSManagedObjectContext *)context;
++ (id) findFirstOrderedByAttribute:(NSString *)attribute ascending:(BOOL)ascending;
++ (id) findFirstOrderedByAttribute:(NSString *)attribute ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
 + (NSArray *) findByAttribute:(NSString *)attribute withValue:(id)searchValue;
 + (NSArray *) findByAttribute:(NSString *)attribute withValue:(id)searchValue inContext:(NSManagedObjectContext *)context;
 + (NSArray *) findByAttribute:(NSString *)attribute withValue:(id)searchValue andOrderBy:(NSString *)sortTerm ascending:(BOOL)ascending;
@@ -66,16 +72,16 @@
 + (void) setDefaultBatchSize:(NSUInteger)newBatchSize;
 + (NSArray *) executeFetchRequest:(NSFetchRequest *)request;
 + (NSArray *) executeFetchRequest:(NSFetchRequest *)request inContext:(NSManagedObjectContext *)context;
-+ (instancetype) executeFetchRequestAndReturnFirstObject:(NSFetchRequest *)request;
-+ (instancetype) executeFetchRequestAndReturnFirstObject:(NSFetchRequest *)request inContext:(NSManagedObjectContext *)context;
++ (id) executeFetchRequestAndReturnFirstObject:(NSFetchRequest *)request;
++ (id) executeFetchRequestAndReturnFirstObject:(NSFetchRequest *)request inContext:(NSManagedObjectContext *)context;
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 + (void) performFetch:(NSFetchedResultsController *)controller;
 #endif
 + (NSEntityDescription *) entityDescription;
 + (NSEntityDescription *) entityDescriptionInContext:(NSManagedObjectContext *)context;
 + (NSArray *) propertiesNamed:(NSArray *)properties;
-+ (instancetype) createEntity;
-+ (instancetype) createInContext:(NSManagedObjectContext *)context;
++ (id) createEntity;
++ (id) createInContext:(NSManagedObjectContext *)context;
 - (BOOL) deleteEntity;
 - (BOOL) deleteInContext:(NSManagedObjectContext *)context;
 + (BOOL) deleteAllMatchingPredicate:(NSPredicate *)predicate;
@@ -84,8 +90,8 @@
 + (BOOL) truncateAllInContext:(NSManagedObjectContext *)context;
 + (NSArray *) ascendingSortDescriptors:(NSArray *)attributesToSortBy;
 + (NSArray *) descendingSortDescriptors:(NSArray *)attributesToSortBy;
-- (instancetype) inContext:(NSManagedObjectContext *)otherContext;
-- (instancetype) inThreadContext;
+- (id) inContext:(NSManagedObjectContext *)otherContext;
+- (id) inThreadContext;
 @end
 @interface NSManagedObject (MagicalRequestsShortHand)
 + (NSFetchRequest *) createFetchRequest;
@@ -117,15 +123,13 @@
 + (NSManagedObjectContext *) context NS_RETURNS_RETAINED;
 + (NSManagedObjectContext *) contextWithParent:(NSManagedObjectContext *)parentContext NS_RETURNS_RETAINED;
 + (NSManagedObjectContext *) newMainQueueContext NS_RETURNS_RETAINED;
++ (NSManagedObjectContext *) contextThatPushesChangesToDefaultContext NS_RETURNS_RETAINED;
 + (NSManagedObjectContext *) contextWithStoreCoordinator:(NSPersistentStoreCoordinator *)coordinator NS_RETURNS_RETAINED;
 + (void) resetDefaultContext;
 + (NSManagedObjectContext *) rootSavingContext;
 + (NSManagedObjectContext *) defaultContext;
++ (void) cleanUp;
 - (NSString *) description;
-- (NSString *) parentChain;
-- (void) setWorkingName:(NSString *)workingName;
-- (NSString *) workingName;
-- (void) MR_deleteObjects:(id <NSFastEnumeration>)managedObjects;
 @end
 #import "NSManagedObjectContext+MagicalSaves.h"
 @interface NSManagedObjectContext (MagicalSavesShortHand)
@@ -145,9 +149,9 @@
 @end
 @interface NSManagedObjectContext (MagicalThreadingShortHand)
 + (NSManagedObjectContext *) contextForCurrentThread;
-+ (void) clearNonMainThreadContextsCache;
++ (NSManagedObjectContext *) contextThatNotifiesDefaultContextOnMainThread;
++ (NSManagedObjectContext *) contextThatNotifiesDefaultContextOnMainThreadWithCoordinator:(NSPersistentStoreCoordinator *)coordinator;
 + (void) resetContextForCurrentThread;
-+ (void) clearContextForCurrentThread;
 @end
 @interface NSManagedObjectModel (MagicalRecordShortHand)
 + (NSManagedObjectModel *) defaultManagedObjectModel;

@@ -7,7 +7,6 @@
 //
 
 #import "NSManagedObject+MagicalAggregation.h"
-#import "NSEntityDescription+MagicalDataImport.h"
 #import "NSManagedObjectContext+MagicalRecord.h"
 #import "NSManagedObjectContext+MagicalThreading.h"
 #import "NSManagedObject+MagicalRequests.h"
@@ -116,7 +115,7 @@
     [ed setExpression:ex];
     
     // determine the type of attribute, required to set the expression return type    
-    NSAttributeDescription *attributeDescription = [[self MR_entityDescription] MR_attributeDescriptionForName:attributeName];
+    NSAttributeDescription *attributeDescription = [[[self MR_entityDescription] attributesByName] objectForKey:attributeName];
     [ed setExpressionResultType:[attributeDescription attributeType]];    
     NSArray *properties = [NSArray arrayWithObject:ed];
     
