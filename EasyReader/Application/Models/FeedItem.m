@@ -69,7 +69,7 @@
                              @"feed_ids": feedIds
                              };
     
-    [[self client] requestRoute:@"feedItems"
+    [[APIClient shared] requestRoute:@"feedItems"
                      parameters:params success:^(id responseObject, NSInteger httpStatus) {
                          [self saveParsedResponseData:responseObject];
                          if(success) success(responseObject, httpStatus);

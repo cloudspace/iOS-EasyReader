@@ -16,6 +16,7 @@
 #import "FeedItem.h"
 #import "Feed.h"
 #import "User.h"
+#import "EZRRegisterRoutesService.h"
 
 @interface FeedItem (Test)
 
@@ -36,6 +37,7 @@
 - (void)setUp
 {
     [super setUp];
+//    [[EZRRegisterRoutesService shared] application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:nil];
 }
 
 - (void)tearDown
@@ -66,6 +68,15 @@
     XCTAssertTrue(assert, @"");
 }
 
+- (void)testStupidBrokenSingletonBullshit {
+    id mock = [[APIClient alloc] init];
+    [APIClient setSharedClient:mock];
+    
+    XCTAssertEqual(mock, [APIClient shared], @"works");
+    XCTAssertEqual([FeedItem client], [APIClient shared], @"doesn't work");
+    
+}
+
 - (void)testRequestFeedItemsFromFeeds
 {
     [[mockAPIClient expect] requestRoute:@"feedItems"
@@ -76,11 +87,13 @@
     Feed *feed = [Feed MR_createEntity];
     [feed setId:@1];
     
+   // [mockAPIClient requestRoute:@"feedItems" parameters:nil success:nil failure:nil];
+    
     [FeedItem requestFeedItemsFromFeeds:[NSSet setWithObject:feed]
                                   since:[NSDate date]
                                 success:nil
                                 failure:nil];
-        
+    
     [mockAPIClient verify];
 }
 

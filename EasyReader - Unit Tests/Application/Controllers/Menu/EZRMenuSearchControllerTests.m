@@ -69,26 +69,5 @@
     [mockAPIClient verify];
 }
 
-- (void)testSearchCancel
-{
-    [[mockAPIClient expect] requestRoute:@"feedSearch"
-                              parameters:[OCMArg any]
-                                 success:[OCMArg any]
-                                 failure:[OCMArg any]];
-    
-    [controller search:@"test1"];
-    
-    [[mockAPIClient expect] cancelOperationsForRoute:@"feedSearch"
-                                          parameters:@{@"name": @"test1"}];
-    
-    [[mockAPIClient expect] requestRoute:@"feedSearch"
-                              parameters:[OCMArg any]
-                                 success:[OCMArg any]
-                                 failure:[OCMArg any]];
-    
-    [controller search:@"test2"];
-    
-    [mockAPIClient verify];
-}
 
 @end

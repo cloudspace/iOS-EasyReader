@@ -47,3 +47,8 @@ pod 'SRVApplicationDelegate', git: 'https://github.com/jlorich/SRVApplicationDel
 pod 'APIKit', git: 'https://github.com/jlorich/APIKit', tag: '0.0.1'
 pod 'CLDCommon', git: 'https://github.com/cloudspace/CLDCommon', tag: '0.0.1'
 
+
+
+
+#pod 'Inflections', '~> 1.0.0'
+#pod 'MAObjCRuntime', '~> 0.0.1'

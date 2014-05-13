@@ -20,9 +20,6 @@
 /** The queued messages (TSMessageView objects) */
 @property (nonatomic, strong) NSMutableArray *messages;
 
-- (void)fadeInCurrentNotification;
-- (void)fadeOutNotification:(TSMessageView *)currentView;
-
 @end
 
 @implementation TSMessage
@@ -316,6 +313,11 @@ __weak static UIViewController *_defaultViewController;
 
 - (void)fadeOutNotification:(TSMessageView *)currentView
 {
+    [self fadeOutNotification:currentView animationFinishedBlock:nil];
+}
+
+- (void)fadeOutNotification:(TSMessageView *)currentView animationFinishedBlock:(void (^)())animationFinished
+{
     currentView.messageIsFullyDisplayed = NO;
     [NSObject cancelPreviousPerformRequestsWithTarget:self
                                              selector:@selector(fadeOutNotification:)
@@ -353,10 +355,19 @@ __weak static UIViewController *_defaultViewController;
          {
              [self fadeInCurrentNotification];
          }
+         
+         if(animationFinished) {
+             animationFinished();
+         }
      }];
 }
 
 + (BOOL)dismissActiveNotification
+{
+    return [self dismissActiveNotificationWithCompletion:nil];
+}
+
++ (BOOL)dismissActiveNotificationWithCompletion:(void (^)())completion
 {
     if ([[TSMessage sharedMessage].messages count] == 0) return NO;
     
@@ -366,7 +377,7 @@ __weak static UIViewController *_defaultViewController;
                        TSMessageView *currentMessage = [[TSMessage sharedMessage].messages objectAtIndex:0];
                        if (currentMessage.messageIsFullyDisplayed)
                        {
-                           [[TSMessage sharedMessage] fadeOutNotification:currentMessage];
+                           [[TSMessage sharedMessage] fadeOutNotification:currentMessage animationFinishedBlock:completion];
                        }
                    });
     return YES;

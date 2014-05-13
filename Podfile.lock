@@ -33,7 +33,7 @@ PODS:
   - CSShortcuts (0.0.1)
   - CSStandardViewControllers (0.0.1):
     - MBProgressHUD (~> 0.6)
-  - GoogleAnalytics-iOS-SDK (3.0.6)
+  - GoogleAnalytics-iOS-SDK (3.0.7)
   - GPUImage (0.1.4)
   - HexColors (2.2.1)
   - Inflections (1.0.0):
@@ -44,11 +44,11 @@ PODS:
   - MAObjCRuntime (0.0.1)
   - MBProgressHUD (0.8)
   - MFSideMenu (0.5.4)
-  - NJKWebViewProgress (0.2.2):
+  - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core
     - NJKWebViewProgress/ProgressView
-  - NJKWebViewProgress/Core (0.2.2)
-  - NJKWebViewProgress/ProgressView (0.2.2)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
   - NSDate+TimeAgo (1.0.3)
   - OCMock (2.2.4)
   - RegexKitLite (4.0)
@@ -59,7 +59,7 @@ PODS:
     - MAObjCRuntime (~> 0.0)
   - SVProgressHUD (1.0)
   - TestFlightSDK (2.2.3-beta)
-  - TSMessages (0.9.7):
+  - TSMessages (0.9.9):
     - HexColors
 
 DEPENDENCIES:
@@ -112,7 +112,7 @@ SPEC CHECKSUMS:
   CSEnhancedTableView: 1e41e8e94529f19fb8f4f827b0e68ea908e26b69
   CSShortcuts: 0bd6b5f939bfbad0422ce7e07b52a8e47e938e8e
   CSStandardViewControllers: 40b3fbc88a2f30278969283c9dd22e345b855788
-  GoogleAnalytics-iOS-SDK: 16dfcc0c4491148bf372edc85a8470cc405ffb72
+  GoogleAnalytics-iOS-SDK: 594702aaf93e6ee497140fd31e758c2e2fa44315
   GPUImage: f9b32e12350792a630e596ffc7b050bea3662670
   HexColors: 99211502e17904af7891fc8f687d0e4958a6d66e
   Inflections: 59aaf387b9ce22342b504534ee785fbdd793edd0
@@ -120,7 +120,7 @@ SPEC CHECKSUMS:
   MAObjCRuntime: ab7a4cd2ad843a49c8d78d2a96453c76b465da46
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   MFSideMenu: f59e25c080097a701e108459c207fb22e1f62c30
-  NJKWebViewProgress: 4f905b9ab7eb91525dc899cacebd2941a6d4553b
+  NJKWebViewProgress: 2e7a17adf394a54b0203f544b354c2f1022eb651
   NSDate+TimeAgo: ca09306750ac2564418042aa10cf8365c36d2cee
   OCMock: 5008fae4b4789b8fc3e48cd7660f2eb5ef8ce89e
   RegexKitLite: b16f029b518614394438e17b7d1df8bfa1e5a81e
@@ -128,6 +128,6 @@ SPEC CHECKSUMS:
   SRVApplicationDelegate: b1cc9ec98483da6494b069423d31bb3b235617c7
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
   TestFlightSDK: 79a20263b43de6f094271655c023d5581762cf8a
-  TSMessages: 9dd053bcf1a8985275177ebe0fb8c0f1416e92f7
+  TSMessages: 49f9083df41d320b34e8d66c5ed3ef147e543187
 
 COCOAPODS: 0.32.1
