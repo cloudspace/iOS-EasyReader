@@ -69,6 +69,8 @@
         cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
     }
     
+    cell.backgroundColor = [UIColor clearColor];
+    
     return cell;
 }
 

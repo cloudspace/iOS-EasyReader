@@ -68,6 +68,10 @@
 		9D458C6F18E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D458C6D18E3286500BC17D6 /* EZRFeedItemUpdateService.m */; };
 		9D458C7018E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D458C6D18E3286500BC17D6 /* EZRFeedItemUpdateService.m */; };
 		9D458C7118E3286500BC17D6 /* EZRFeedItemUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D458C6D18E3286500BC17D6 /* EZRFeedItemUpdateService.m */; };
+		9D5A134D1922E69900BE4CEF /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A134C1922E69900BE4CEF /* Main_iPad.storyboard */; };
+		9D5A134E1922E69900BE4CEF /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A134C1922E69900BE4CEF /* Main_iPad.storyboard */; };
+		9D5A134F1922E69900BE4CEF /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A134C1922E69900BE4CEF /* Main_iPad.storyboard */; };
+		9D5A13501922E69900BE4CEF /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A134C1922E69900BE4CEF /* Main_iPad.storyboard */; };
 		9D5ACFBF18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ACFBE18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m */; };
 		9D5ACFC018E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ACFBE18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m */; };
 		9D5ACFC118E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ACFBE18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m */; };
@@ -298,6 +302,7 @@
 		9D458C6C18E3286500BC17D6 /* EZRFeedItemUpdateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRFeedItemUpdateService.h; sourceTree = "<group>"; };
 		9D458C6D18E3286500BC17D6 /* EZRFeedItemUpdateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRFeedItemUpdateService.m; sourceTree = "<group>"; };
 		9D458C7718E3327D00BC17D6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		9D5A134C1922E69900BE4CEF /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		9D5ACFBD18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+EZRFeedImageAdditions.h"; path = "EasyReader/Application/Categories/UIImageView+EZRFeedImageAdditions.h"; sourceTree = SOURCE_ROOT; };
 		9D5ACFBE18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+EZRFeedImageAdditions.m"; path = "EasyReader/Application/Categories/UIImageView+EZRFeedImageAdditions.m"; sourceTree = SOURCE_ROOT; };
 		9D607E4518DCE0FD004DF7F3 /* Development-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Development-Info.plist"; sourceTree = "<group>"; };
@@ -857,6 +862,7 @@
 		9DC020F51921C2A70041D8D4 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				9D5A134C1922E69900BE4CEF /* Main_iPad.storyboard */,
 				9DC020F61921C2A70041D8D4 /* Main_iPhone.storyboard */,
 			);
 			path = Storyboards;
@@ -1010,6 +1016,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5A134F1922E69900BE4CEF /* Main_iPad.storyboard in Resources */,
 				9D010EE818F58BA2001999EE /* Media.xcassets in Resources */,
 				9DC020F91921C2A70041D8D4 /* Main_iPhone.storyboard in Resources */,
 			);
@@ -1019,6 +1026,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5A13501922E69900BE4CEF /* Main_iPad.storyboard in Resources */,
 				9D010EE918F58BA2001999EE /* Media.xcassets in Resources */,
 				9DC020FA1921C2A70041D8D4 /* Main_iPhone.storyboard in Resources */,
 			);
@@ -1039,6 +1047,7 @@
 				9D010EE718F58BA2001999EE /* Media.xcassets in Resources */,
 				9D616F2F18EDB7160058EFE6 /* feedItems.json in Resources */,
 				9DC020F81921C2A70041D8D4 /* Main_iPhone.storyboard in Resources */,
+				9D5A134E1922E69900BE4CEF /* Main_iPad.storyboard in Resources */,
 				9D639E8918E0BAD500350B5F /* feeds.json in Resources */,
 				9D9CBB0518DCC68A00532F8C /* (null) in Resources */,
 			);
@@ -1048,6 +1057,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5A134D1922E69900BE4CEF /* Main_iPad.storyboard in Resources */,
 				9D010EE618F58BA2001999EE /* Media.xcassets in Resources */,
 				9DC020F71921C2A70041D8D4 /* Main_iPhone.storyboard in Resources */,
 			);
@@ -1573,7 +1583,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Lorich (G28849DAB7)";
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
@@ -1590,8 +1600,8 @@
 					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
 				);
 				PRODUCT_NAME = "Easy Reader";
-				PROVISIONING_PROFILE = "69FD30FF-426E-4BD8-8941-A0A741F92746";
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "95A078F5-C68B-40F9-BE58-9AD3A36D668E";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1620,8 +1630,8 @@
 					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
 				);
 				PRODUCT_NAME = "Easy Reader";
-				PROVISIONING_PROFILE = "E41143CF-D6B6-4CE1-8493-853B58EB0910";
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "479F39F3-6896-4CB8-816C-0B5F93F5DC60";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

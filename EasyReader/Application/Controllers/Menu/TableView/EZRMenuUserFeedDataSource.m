@@ -61,6 +61,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:self.reusableCellIdentifier];;
         ((EZRMenuFeedCell*)cell).feed = nil;
         ((EZRMenuFeedCell*)cell).label_name.text = @"All Feeds";
+        cell.backgroundColor = [UIColor clearColor];
         if (self.currentFeedsProvider.currentFeed == nil) {
             cell.selected = YES;
         }
@@ -72,6 +73,8 @@
             cell.selected = YES;
         }
     }
+    
+    cell.backgroundColor = [UIColor clearColor];
 
     return cell;
 }

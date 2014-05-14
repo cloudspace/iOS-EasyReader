@@ -33,8 +33,14 @@ typedef void (^AFImageBlock)(NSURLRequest *request, NSHTTPURLResponse *response,
     
     
     [self.info_view setBackgroundColor:[[UIColor darkGrayColor] colorWithAlphaComponent:0.60]];
-    [self.imageView_background setImageForURLString:feedItem.imageIphoneRetina];
-    [self.imageView_backgroundReflection setBlurredImageForURLString:feedItem.imageIphoneRetina];
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self.imageView_background setImageForURLString:feedItem.imageIpad];
+        [self.imageView_backgroundReflection setBlurredImageForURLString:feedItem.imageIpad];
+    } else {
+        [self.imageView_background setImageForURLString:feedItem.imageIphoneRetina];
+        [self.imageView_backgroundReflection setBlurredImageForURLString:feedItem.imageIphoneRetina];
+    }
     
     [self appleStyles];
     
