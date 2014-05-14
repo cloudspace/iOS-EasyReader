@@ -30,7 +30,6 @@ static NSString * const kMagicalRecordNSManagedObjectContextWorkingName = @"kNSM
 {
     [self MR_setDefaultContext:nil];
     [self MR_setRootSavingContext:nil];
-    [self MR_clearNonMainThreadContextsCache];
 }
 
 - (NSString *) MR_description;
@@ -242,19 +241,12 @@ static NSString * const kMagicalRecordNSManagedObjectContextWorkingName = @"kNSM
 - (NSString *) MR_workingName;
 {
     NSString *workingName = [[self userInfo] objectForKey:kMagicalRecordNSManagedObjectContextWorkingName];
-    if ([workingName length] == 0)
+    if (nil == workingName)
     {
         workingName = @"UNNAMED";
     }
     return workingName;
 }
 
-- (void) MR_deleteObjects:(id <NSFastEnumeration>)managedObjects
-{
-    for (NSManagedObject *managedObject in managedObjects)
-    {
-        [self deleteObject:managedObject];
-    }
-}
 
 @end

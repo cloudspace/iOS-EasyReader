@@ -106,7 +106,7 @@
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_GoogleAnalytics_iOS_SDK 3
 #define COCOAPODS_VERSION_MINOR_GoogleAnalytics_iOS_SDK 0
-#define COCOAPODS_VERSION_PATCH_GoogleAnalytics_iOS_SDK 6
+#define COCOAPODS_VERSION_PATCH_GoogleAnalytics_iOS_SDK 7
 
 // HexColors
 #define COCOAPODS_POD_AVAILABLE_HexColors
@@ -144,23 +144,29 @@
 #define COCOAPODS_VERSION_MINOR_MagicalRecord 2
 #define COCOAPODS_VERSION_PATCH_MagicalRecord 0
 
+// MagicalRecord/Core
+#define COCOAPODS_POD_AVAILABLE_MagicalRecord_Core
+#define COCOAPODS_VERSION_MAJOR_MagicalRecord_Core 2
+#define COCOAPODS_VERSION_MINOR_MagicalRecord_Core 2
+#define COCOAPODS_VERSION_PATCH_MagicalRecord_Core 0
+
 // NJKWebViewProgress
 #define COCOAPODS_POD_AVAILABLE_NJKWebViewProgress
 #define COCOAPODS_VERSION_MAJOR_NJKWebViewProgress 0
 #define COCOAPODS_VERSION_MINOR_NJKWebViewProgress 2
-#define COCOAPODS_VERSION_PATCH_NJKWebViewProgress 2
+#define COCOAPODS_VERSION_PATCH_NJKWebViewProgress 3
 
 // NJKWebViewProgress/Core
 #define COCOAPODS_POD_AVAILABLE_NJKWebViewProgress_Core
 #define COCOAPODS_VERSION_MAJOR_NJKWebViewProgress_Core 0
 #define COCOAPODS_VERSION_MINOR_NJKWebViewProgress_Core 2
-#define COCOAPODS_VERSION_PATCH_NJKWebViewProgress_Core 2
+#define COCOAPODS_VERSION_PATCH_NJKWebViewProgress_Core 3
 
 // NJKWebViewProgress/ProgressView
 #define COCOAPODS_POD_AVAILABLE_NJKWebViewProgress_ProgressView
 #define COCOAPODS_VERSION_MAJOR_NJKWebViewProgress_ProgressView 0
 #define COCOAPODS_VERSION_MINOR_NJKWebViewProgress_ProgressView 2
-#define COCOAPODS_VERSION_PATCH_NJKWebViewProgress_ProgressView 2
+#define COCOAPODS_VERSION_PATCH_NJKWebViewProgress_ProgressView 3
 
 // NSDate+TimeAgo
 #define COCOAPODS_POD_AVAILABLE_NSDate_TimeAgo
@@ -208,7 +214,7 @@
 #define COCOAPODS_POD_AVAILABLE_TSMessages
 #define COCOAPODS_VERSION_MAJOR_TSMessages 0
 #define COCOAPODS_VERSION_MINOR_TSMessages 9
-#define COCOAPODS_VERSION_PATCH_TSMessages 7
+#define COCOAPODS_VERSION_PATCH_TSMessages 9
 
 // TestFlightSDK
 #define COCOAPODS_POD_AVAILABLE_TestFlightSDK

@@ -39,8 +39,6 @@
 /// The collection view which holds the individual feed items
 @property (strong, nonatomic) IBOutlet EZRFeedItemCollectionView *collectionView_feedItems;
 
-/// Displays website that hosts article
-@property (nonatomic, strong) EZRNestableWebView *webView_feedItem;
 
 /// The up indicator displayed over the web view to assist in navigating to the top of the page
 @property (nonatomic, strong) UIImageView *upIndicatorView;
@@ -54,6 +52,8 @@
 /// Feed Item currently visible
 @property (nonatomic, readonly) NSInteger currentPageIndex;
 
+/// Displays website that hosts article
+@property (nonatomic, weak) IBOutlet EZRNestableWebView *webView_feedItem;
 
 # pragma mark - Methods
 

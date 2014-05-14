@@ -12,6 +12,7 @@
 
 @implementation EZRBaseModelTests
 
+
 - (void)setUp
 {
     [User setCurrent:nil];

@@ -10,7 +10,10 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/jlorich/APIKit.git", :tag => s.version.to_s }
   s.source_files  = "APIKit", "APIKit/**/*.{h,m}"
   s.requires_arc = true
+
   s.dependency 'AFNetworking', '~> 2.0.3'
   s.dependency 'Inflections', '~> 1.0.0'
-  s.dependency 'MAObjCRuntime', '~> 0.0'
+  s.dependency 'MAObjCRuntime', '~> 0.0.1'
+  s.dependency 'MagicalRecord',  '~> 2.2'
+  s.dependency 'CLDCommon', '~> 0.0.1'
 end

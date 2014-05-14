@@ -8,6 +8,9 @@
 
 #import "EZRHomeViewController.h"
 
+// Frameworks
+#import <AVFoundation/AVFoundation.h>
+
 // Pods
 #import <Block-KVO/MTKObserving.h>
 #import "MFSideMenu.h"
@@ -17,21 +20,22 @@
 #import "Feed.h"
 #import "User.h"
 
+// Categories
 #import "UIColor+EZRSharedColorAdditions.h"
+#import "UIView+PlaceholderAdditions.h"
 
+// Controls
+#import "EZRNestableWebView.h"
+#import "CLDSocialShareToolbar.h"
+
+// Cell
 #import "EZRFeedItemCollectionViewCell.h"
 #import "EZRFeedImageService.h"
-
 #import "EZRHomeCollectionViewDelegate.h"
 #import "EZRHomeScrollViewDelegate.h"
-#import "EZRHomePageControlDelegate.h"
 #import "EZRHomePageControlDataSource.h"
-
-#import "EZRNestableWebView.h"
 #import "EZRHomeWebViewDelegate.h"
-
 #import "EZRCurrentFeedsProvider.h"
-
 
 #import "CLDArrayCollectionViewDataSource.h"
 
@@ -39,11 +43,8 @@
 
 #import "EZRHomeSocialToolbarDataSource.h"
 #import "EZRGoogleAnalyticsService.h"
-
 #import "CCARadialGradientLayer.h"
-#import "UIView+PlaceholderAdditions.h"
 
-#import <AVFoundation/AVFoundation.h>
 
 
 @interface EZRHomeViewController()
@@ -57,26 +58,19 @@
 /// The social sharing toolbar
 @property (nonatomic, weak) IBOutlet CLDSocialShareToolbar *socialShareToolbar;
 
+/// The home collection view delegate
+@property (nonatomic, weak) IBOutlet EZRHomeCollectionViewDelegate *collectionViewDelegate;
+
+/// The delegate for the web view
+@property (nonatomic, weak) IBOutlet EZRHomeWebViewDelegate *webViewDelegate;
+
+
+
 @end
 
 
 @implementation EZRHomeViewController
 {
-    /// The collectionView delegate
-    EZRHomeCollectionViewDelegate *collectionViewDelegate;
-    
-    /// The scroll view delegate
-    EZRHomeScrollViewDelegate *scrollViewDelegate;
-    
-    /// The page control delegate
-    EZRHomePageControlDelegate *pageControlDelegate;
-    
-    /// The page control data source
-    EZRHomePageControlDataSource  *pageControlDataSource;
-    
-    /// The delegate for the web view
-    EZRHomeWebViewDelegate *webViewDelegate;
-    
     /// The data source for the collection view
     CLDArrayCollectionViewDataSource *collectionViewArrayDataSource;
     
@@ -140,7 +134,6 @@
     
     [[EZRGoogleAnalyticsService shared] sendView:@"Home"];
     
-    [self setUpPageControl];
     [self setUpVerticalScrollView];
     [self setUpCollectionView];
     [self setUpWebView];
@@ -165,15 +158,9 @@
                                                object:nil];
     
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    BOOL ok;
+
     NSError *setCategoryError = nil;
-    ok = [audioSession setCategory:AVAudioSessionCategoryPlayback
-                             error:&setCategoryError];
-    if (!ok) {
-        NSLog(@"%s setCategoryError=%@", __PRETTY_FUNCTION__, setCategoryError);
-    }
-    
-    //[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
 }
 
 /**
@@ -214,32 +201,20 @@
 #pragma mark - Setup methods
 
 /**
- * Sets up the page control
- */
-- (void) setUpPageControl
-{
-    pageControlDelegate   = [[EZRHomePageControlDelegate alloc] initWithController:self];
-    pageControlDataSource = [[EZRHomePageControlDataSource alloc] init];
-    
-    self.pageControl_itemIndicator.delegate = pageControlDelegate;
-    self.pageControl_itemIndicator.datasource = pageControlDataSource;
-}
-
-/**
  * Sets up vertical scroll view on controller start up
  */
 -(void)setUpVerticalScrollView
 {
     self.scrollView_vertical.pagingEnabled =YES;
-    scrollViewDelegate = [[EZRHomeScrollViewDelegate alloc] initWithController:self];
-    self.scrollView_vertical.delegate = scrollViewDelegate;
     [self layOutVerticalScrollView];
-    
     
     [self.scrollView_vertical setContentInset:UIEdgeInsetsMake(60, 0, 0, 0)];
     [self.scrollView_vertical setContentOffset:CGPointMake(0, 60)];
 }
 
+/**
+ * Sets up the share toolbar
+ */
 - (void)setUpShareToolbar {
     [self.scrollView_vertical insertSubview:self.socialShareToolbar belowSubview:self.webView_feedItem];
     self.socialShareToolbar.backgroundTransparent = YES;
@@ -269,13 +244,10 @@
                                      reusableCellIdentifier:@"feedItem"
                                              configureBlock:^(UICollectionViewCell *cell, id item) {
                                                  ((EZRFeedItemCollectionViewCell *)cell).feedItem = item;
-                                                 ((EZRFeedItemCollectionViewCell *)cell).delegate = collectionViewDelegate;
+                                                 ((EZRFeedItemCollectionViewCell *)cell).delegate = self.collectionViewDelegate;
                                              }];
     
-    self.collectionView_feedItems.dataSource = collectionViewArrayDataSource;
-    
-    collectionViewDelegate = [[EZRHomeCollectionViewDelegate alloc] initWithController:self];
-    self.collectionView_feedItems.delegate = collectionViewDelegate;
+    self.collectionView_feedItems.dataSource = collectionViewArrayDataSource;    
 }
 
 /**
@@ -283,14 +255,12 @@
  */
 -(void)setUpWebView
 {
-    self.webView_feedItem = [[EZRNestableWebView alloc] init];
+    [self.webView_feedItem setTranslatesAutoresizingMaskIntoConstraints:YES];
     [self.webView_feedItem setBackgroundColor:[UIColor blackColor]];
     [self.scrollView_vertical addSubview:self.webView_feedItem];
     
-    webViewDelegate = [[EZRHomeWebViewDelegate alloc] initWithController:self];
-    
-    self.webView_feedItem.scrollView.delegate = webViewDelegate;
-    self.webView_feedItem.delegate = webViewDelegate;
+    self.webView_feedItem.scrollView.delegate = self.webViewDelegate;
+
     self.webView_feedItem.multipleTouchEnabled = YES;
     self.webView_feedItem.scalesPageToFit = YES;
     

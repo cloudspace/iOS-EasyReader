@@ -7,15 +7,19 @@
 //
 
 #import "CoreData+MagicalRecord.h"
-#import "NSEntityDescription+MagicalDataImport.h"
 
 @implementation NSEntityDescription (MagicalRecord_DataImport)
 
 - (NSAttributeDescription *) MR_primaryAttributeToRelateBy;
 {
     NSString *lookupKey = [[self userInfo] valueForKey:kMagicalRecordImportRelationshipLinkedByKey] ?: primaryKeyNameFromString([self name]);
+    NSDictionary *attributesByName = [self attributesByName];
+                                    
+    if ([attributesByName count] == 0) return nil;
+    
+    NSAttributeDescription *primaryAttribute = [attributesByName objectForKey:lookupKey];
 
-    return [self MR_attributeDescriptionForName:lookupKey];
+    return primaryAttribute;
 }
 
 - (NSManagedObject *) MR_createInstanceInContext:(NSManagedObjectContext *)context;
@@ -26,25 +30,5 @@
     return newInstance;
 }
 
-- (NSAttributeDescription *) MR_attributeDescriptionForName:(NSString *)name;
-{
-    __block NSAttributeDescription *attributeDescription;
-
-    NSDictionary *attributesByName = [self attributesByName];
-
-    if ([attributesByName count] == 0) {
-        return nil;
-    }
-
-    [attributesByName enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        if ([key isEqualToString:name]) {
-            attributeDescription = obj;
-
-            *stop = YES;
-        }
-    }];
-
-    return attributeDescription;
-}
 
 @end
