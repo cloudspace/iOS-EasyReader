@@ -41,6 +41,8 @@
         if (!ezrcell.feed) {
             return UITableViewCellEditingStyleNone;
         }
+    } else if ([cell isKindOfClass:[EZRSearchFeedCell class]]) {
+        return UITableViewCellEditingStyleNone;
     }
     
     return UITableViewCellEditingStyleDelete;

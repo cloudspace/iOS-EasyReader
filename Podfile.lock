@@ -26,7 +26,6 @@ PODS:
   - Block-KVO (2.2.1)
   - CCARadialGradientLayer (1.0)
   - CLDCommon (0.0.1):
-    - AFNetworking (~> 2.0.3)
     - Block-KVO (~> 2.2.1)
   - CLDSocialShareToolbar (0.0.1)
   - CSEnhancedTableView (0.0.1)
@@ -107,7 +106,7 @@ SPEC CHECKSUMS:
   APIKit: 4d98b8acfbaa8edbc5eb303754c479d84c587765
   Block-KVO: 7b298fb4617e948179b4c7725569feff7bd58337
   CCARadialGradientLayer: 01c81a4868c20c11fd4d4f770cd9cb8eed6882bc
-  CLDCommon: 2a6691a1d90e09f36bba6395d8d8d3ac701b9deb
+  CLDCommon: 7ab2c2a9a4b608c99a6f39374f75a0dd54440863
   CLDSocialShareToolbar: 724f310087f9afdc1aa2d2ac1619004650dd1d32
   CSEnhancedTableView: 1e41e8e94529f19fb8f4f827b0e68ea908e26b69
   CSShortcuts: 0bd6b5f939bfbad0422ce7e07b52a8e47e938e8e
