@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1532A546E3754D959302E504"
+               BlueprintIdentifier = "3B6B540337CE45729DFE3CFA"
                BuildableName = "libPods-Staging-CCARadialGradientLayer.a"
                BlueprintName = "Pods-Staging-CCARadialGradientLayer"
                ReferencedContainer = "container:Pods.xcodeproj">

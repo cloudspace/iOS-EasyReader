@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4109091B2D55409484AF2D2D"
+               BlueprintIdentifier = "8A5FADC108CC4E65B9FD2DAC"
                BuildableName = "libPods-MFSideMenu.a"
                BlueprintName = "Pods-MFSideMenu"
                ReferencedContainer = "container:Pods.xcodeproj">

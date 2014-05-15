@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8B4C19C2567646959A4CBF82"
+               BlueprintIdentifier = "750DB4F9055C4954911112F0"
                BuildableName = "libPods-Block-KVO.a"
                BlueprintName = "Pods-Block-KVO"
                ReferencedContainer = "container:Pods.xcodeproj">

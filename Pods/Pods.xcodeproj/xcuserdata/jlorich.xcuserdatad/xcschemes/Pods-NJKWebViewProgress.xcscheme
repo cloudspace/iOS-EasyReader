@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3BBFC2FA7D5F4A1497086C07"
+               BlueprintIdentifier = "14AE94F8F65F4547B7B87B73"
                BuildableName = "libPods-NJKWebViewProgress.a"
                BlueprintName = "Pods-NJKWebViewProgress"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -45,7 +45,7 @@ pod 'APIKit', git: 'https://github.com/jlorich/APIKit', tag: '0.0.1'
 pod 'CLDCommon', git: 'https://github.com/cloudspace/CLDCommon', tag: '0.0.1'
 
 
-target :Development do
+target :'EasyReader - Unit Tests', exclusive: true do
   pod 'OCMock', '~> 2.2.2'
 end
 
