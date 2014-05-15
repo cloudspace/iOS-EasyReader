@@ -1,0 +1,2 @@
+PODS_STAGING_GPUIMAGE_CLANG_MODULES_AUTOLINK = YES
+PODS_STAGING_GPUIMAGE_OTHER_LDFLAGS = -framework AVFoundation -framework CoreMedia -framework OpenGLES -framework QuartzCore

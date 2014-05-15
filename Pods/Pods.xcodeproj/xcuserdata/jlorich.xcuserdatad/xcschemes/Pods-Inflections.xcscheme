@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F322AEA641014698BADCF8DE"
+               BlueprintIdentifier = "F4CAF866392742149451F438"
                BuildableName = "libPods-Inflections.a"
                BlueprintName = "Pods-Inflections"
                ReferencedContainer = "container:Pods.xcodeproj">
