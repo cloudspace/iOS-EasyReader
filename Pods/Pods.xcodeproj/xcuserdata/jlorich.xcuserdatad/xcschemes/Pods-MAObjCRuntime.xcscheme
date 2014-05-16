@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C2988461CCFF419797380AAC"
+               BlueprintIdentifier = "0BCC5D8B373849DDBF569F21"
                BuildableName = "libPods-MAObjCRuntime.a"
                BlueprintName = "Pods-MAObjCRuntime"
                ReferencedContainer = "container:Pods.xcodeproj">
