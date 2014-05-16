@@ -37,8 +37,9 @@
 
 - (NSString *)headline
 {
-    NSString *timeAgo = [self.updatedAt timeAgo];
     NSString *feedName = self.feed.name;
+    NSString *timeAgo = self.publishedAt ? [self.publishedAt timeAgo] : [self.updatedAt timeAgo];
+    
     
     if (feedName.length > 30) {
         feedName = [[feedName substringToIndex:30] stringByAppendingString:@"..."];
