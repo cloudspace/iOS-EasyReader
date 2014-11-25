@@ -35,12 +35,31 @@ typedef void (^APISuccessBlock)(id responseObject, NSInteger httpStatus);
 typedef void (^APIFailureBlock)(id responseObject, NSInteger httpStatus, NSError *error);
 
 
+#pragma mark - Enumerations
+
+/// Each available request serialization type
+typedef NS_ENUM(NSInteger, APISerializationType) {
+    APIJSONSerialization,
+    APIFormSerialization,
+    APIPropertyListSerialization
+};
+
+
 #pragma mark - APIClient Interface
 
 /**
  * A client interface to an API
  */
 @interface APIClient : NSObject
+
+
+#pragma mark - Properties
+
+/// The HTTP Authorization header bearer token to be appended to outgoing requests
+@property (nonatomic, retain) NSString *authorizationBearerToken;
+
+/// The method of serialization for each request
+@property APISerializationType requestSerializationType;
 
 
 #pragma mark - Class methods
@@ -71,6 +90,11 @@ typedef void (^APIFailureBlock)(id responseObject, NSInteger httpStatus, NSError
            parameters:(NSDictionary *)parameters
               success:(APISuccessBlock)success
               failure:(APIFailureBlock)failure;
+
+/**
+ * Makes a request to a direct full URL, treating it as route "routeName"
+ */
+- (void)requestURL:(NSURL *)url asRoute:(NSString *)routeName parameters:(NSDictionary *)parameters success:(APISuccessBlock)success failure:(APIFailureBlock)failure;
 
 /**
  * Cancels all pending requests to given route

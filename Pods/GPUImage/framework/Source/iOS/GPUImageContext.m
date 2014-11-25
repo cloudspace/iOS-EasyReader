@@ -33,8 +33,7 @@ static void *openGLESContextQueueKey;
 	openGLESContextQueueKey = &openGLESContextQueueKey;
     _contextQueue = dispatch_queue_create("com.sunsetlakesoftware.GPUImage.openGLESContextQueue", NULL);
     
-#if (!defined(__IPHONE_6_0) || (__IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0))
-#else
+#if OS_OBJECT_USE_OBJC
 	dispatch_queue_set_specific(_contextQueue, openGLESContextQueueKey, (__bridge void *)self, NULL);
 #endif
     shaderProgramCache = [[NSMutableDictionary alloc] init];
@@ -71,7 +70,12 @@ static void *openGLESContextQueueKey;
 
 + (void)useImageProcessingContext;
 {
-    EAGLContext *imageProcessingContext = [[GPUImageContext sharedImageProcessingContext] context];
+    [[GPUImageContext sharedImageProcessingContext] useAsCurrentContext];
+}
+
+- (void)useAsCurrentContext;
+{
+    EAGLContext *imageProcessingContext = [self context];
     if ([EAGLContext currentContext] != imageProcessingContext)
     {
         [EAGLContext setCurrentContext:imageProcessingContext];
@@ -81,15 +85,20 @@ static void *openGLESContextQueueKey;
 + (void)setActiveShaderProgram:(GLProgram *)shaderProgram;
 {
     GPUImageContext *sharedContext = [GPUImageContext sharedImageProcessingContext];
-    EAGLContext *imageProcessingContext = [sharedContext context];
+    [sharedContext setContextShaderProgram:shaderProgram];
+}
+
+- (void)setContextShaderProgram:(GLProgram *)shaderProgram;
+{
+    EAGLContext *imageProcessingContext = [self context];
     if ([EAGLContext currentContext] != imageProcessingContext)
     {
         [EAGLContext setCurrentContext:imageProcessingContext];
     }
     
-    if (sharedContext.currentShaderProgram != shaderProgram)
+    if (self.currentShaderProgram != shaderProgram)
     {
-        sharedContext.currentShaderProgram = shaderProgram;
+        self.currentShaderProgram = shaderProgram;
         [shaderProgram use];
     }
 }

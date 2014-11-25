@@ -104,7 +104,6 @@ typedef enum {
     }
 }
 
-
 #pragma mark -
 #pragma mark - View Lifecycle
 
@@ -124,6 +123,35 @@ typedef enum {
         
         self.viewHasAppeared = YES;
     }
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    if([self respondsToSelector:@selector(topLayoutGuide)]) {
+        UIEdgeInsets insets = UIEdgeInsetsMake([self.topLayoutGuide length], 0, 0, 0);
+        if(_leftSideMenuViewController &&
+            [_leftSideMenuViewController automaticallyAdjustsScrollViewInsets] &&
+            [_leftSideMenuViewController.view respondsToSelector:@selector(setContentInset:)]) {
+            [(UIScrollView *)_leftSideMenuViewController.view setContentInset:insets];
+        }
+        if(_rightSideMenuViewController &&
+            [_rightSideMenuViewController automaticallyAdjustsScrollViewInsets] &&
+            [_rightSideMenuViewController.view respondsToSelector:@selector(setContentInset:)]) {
+            [(UIScrollView *)_rightSideMenuViewController.view setContentInset:insets];
+        }
+    }
+}
+
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    if (self.centerViewController) {
+        if ([self.centerViewController isKindOfClass:[UINavigationController class]]) {
+            return [((UINavigationController *)self.centerViewController).topViewController preferredStatusBarStyle];
+        }
+        return [self.centerViewController preferredStatusBarStyle];
+    }
+    return UIStatusBarStyleDefault;
 }
 
 
@@ -194,7 +222,6 @@ typedef enum {
 - (void)setCenterViewController:(UIViewController *)centerViewController {
     [self removeCenterGestureRecognizers];
     [self removeChildViewControllerFromContainer:_centerViewController];
-    self.shadow = nil;
     
     CGPoint origin = ((UIViewController *)_centerViewController).view.frame.origin;
     _centerViewController = centerViewController;
@@ -206,7 +233,11 @@ typedef enum {
     
     [_centerViewController didMoveToParentViewController:self];
     
-    self.shadow = [MFSideMenuShadow shadowWithView:[_centerViewController view]];
+    if(self.shadow) {
+        [self.shadow setShadowedView:centerViewController.view];
+    } else {
+        self.shadow = [MFSideMenuShadow shadowWithView:[_centerViewController view]];
+    }
     [self.shadow draw];
     [self addCenterGestureRecognizers];
 }
@@ -514,6 +545,11 @@ typedef enum {
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+        CGPoint velocity = [(UIPanGestureRecognizer *)gestureRecognizer velocityInView:gestureRecognizer.view];
+        BOOL isHorizontalPanning = fabsf(velocity.x) > fabsf(velocity.y);
+        return isHorizontalPanning;
+    }
     return YES;
 }
 
@@ -697,6 +733,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
                              animated:(BOOL)animated
                            completion:(void (^)(void))completion {
     void (^innerCompletion)() = ^ {
+        self.panGestureVelocity = 0.0;
         if(completion) completion();
     };
     

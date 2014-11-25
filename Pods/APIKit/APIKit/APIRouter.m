@@ -157,7 +157,7 @@ static APIRouter *shared = nil;
     if ([string characterAtIndex:0] == '/')
     {
         NSInteger stringLength = [string length];
-        return [self stripLeadingSlashes:[string substringWithRange:NSMakeRange(1, stringLength-2)]];
+        return [self stripLeadingSlashes:[string substringWithRange:NSMakeRange(1, stringLength-1)]];
     }
     else
     {

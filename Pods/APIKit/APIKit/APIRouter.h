@@ -26,6 +26,9 @@
 #import <Foundation/Foundation.h>
 #import "APIRoute.h"
 
+#define URL(routeName) [[APIRouter shared] urlFor:routeName parameters:nil]
+#define URLWithParams(routeName, params) [[APIRouter shared] urlFor:routeName parameters:params]
+
 /**
  * An interface to create and process named routes for URLs
  */

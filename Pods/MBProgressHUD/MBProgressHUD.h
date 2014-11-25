@@ -1,6 +1,6 @@
 //
 //  MBProgressHUD.h
-//  Version 0.8
+//  Version 0.9
 //  Created by Matej Bukovinski on 2.4.09.
 //
 
@@ -344,6 +344,12 @@ typedef void (^MBProgressHUDCompletionBlock)();
  */
 @property (assign) float margin;
 
+/**
+ * The corner radius for the HUD
+ * Defaults to 10.0
+ */
+@property (assign) float cornerRadius;
+
 /** 
  * Cover the HUD background view with a radial gradient. 
  */
@@ -388,10 +394,26 @@ typedef void (^MBProgressHUDCompletionBlock)();
  */
 @property (MB_STRONG) UIFont* labelFont;
 
-/** 
- * Font to be used for the details label. Set this property if the default is not adequate. 
+/**
+ * Color to be used for the main label. Set this property if the default is not adequate.
+ */
+@property (MB_STRONG) UIColor* labelColor;
+
+/**
+ * Font to be used for the details label. Set this property if the default is not adequate.
  */
 @property (MB_STRONG) UIFont* detailsLabelFont;
+
+/** 
+ * Color to be used for the details label. Set this property if the default is not adequate.
+ */
+@property (MB_STRONG) UIColor* detailsLabelColor;
+
+/**
+ * The color of the activity indicator. Defaults to [UIColor whiteColor]
+ * Does nothing on pre iOS 5.
+ */
+@property (MB_STRONG) UIColor *activityIndicatorColor;
 
 /** 
  * The progress of the progress indicator, from 0.0 to 1.0. Defaults to 0.0. 
@@ -402,6 +424,15 @@ typedef void (^MBProgressHUDCompletionBlock)();
  * The minimum size of the HUD bezel. Defaults to CGSizeZero (no minimum size).
  */
 @property (assign) CGSize minSize;
+
+
+/**
+ * The actual size of the HUD bezel.
+ * You can use this to limit touch handling on the bezel aria only.
+ * @see https://github.com/jdg/MBProgressHUD/pull/200
+ */
+@property (atomic, assign, readonly) CGSize size;
+
 
 /**
  * Force the HUD dimensions to be equal if possible. 
