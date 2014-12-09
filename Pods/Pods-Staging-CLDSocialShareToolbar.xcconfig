@@ -1,1 +1,0 @@
-PODS_STAGING_CLDSOCIALSHARETOOLBAR_OTHER_LDFLAGS = -framework MessageUI -framework Social

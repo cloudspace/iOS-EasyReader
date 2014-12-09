@@ -48,14 +48,19 @@ static dispatch_once_t pred;
 static APIClient *sharedInstance = nil;
 
 
+#pragma mark - APIClient Interface
+
+@interface APIClient()
+
+/// The AFNetworking request operation manager used to make requests
+@property (nonatomic, retain) AFHTTPRequestOperationManager *requestManager;
+
+@end
+
 
 #pragma mark - APIClient Implementation
 
 @implementation APIClient
-{
-    /// The AFNetworking request operation manager used to make requests
-    AFHTTPRequestOperationManager *_requestManager;
-}
 
 
 #pragma mark - Public Methods
@@ -82,6 +87,20 @@ static APIClient *sharedInstance = nil;
     sharedInstance = sharedClient;
 }
 
+- (void) setRequestSerializationType:(APISerializationType)requestSerializationType {
+    _requestSerializationType = requestSerializationType;
+    
+    switch (requestSerializationType) {
+        case APIJSONSerialization:
+            self.requestManager.requestSerializer = [AFJSONRequestSerializer serializer];
+            break;
+        case APIPropertyListSerialization:
+            self.requestManager.requestSerializer = [AFPropertyListRequestSerializer serializer];
+            break;
+        default:
+            self.requestManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    }
+}
 
 - (void) requestRoute:(NSString*)routeName
            parameters:(NSDictionary *)parameters
@@ -103,6 +122,27 @@ static APIClient *sharedInstance = nil;
                                                                                  success:afSuccess
                                                                                  failure:afFailure];
     [_requestManager.operationQueue addOperation:operation];
+}
+
+- (void) requestURL:(NSURL *)url
+			asRoute:(NSString *)routeName
+		 parameters:(NSDictionary *)parameters
+			success:(APISuccessBlock)success
+			failure:(APIFailureBlock)failure
+{
+	NSString *requestMethodString = [[APIRouter shared] methodStringFor:routeName];
+	NSMutableURLRequest *request = [self requestWithMethod:requestMethodString
+													   URL:url
+												parameters:parameters];
+	
+	
+	AFSuccessBlock afSuccess = [self translateAFSuccessBlock:success];
+	AFFailureBlock afFailure = [self translateAFFailureBlock:failure];
+	
+	AFHTTPRequestOperation *operation = [_requestManager HTTPRequestOperationWithRequest:request
+																				 success:afSuccess
+																				 failure:afFailure];
+	[_requestManager.operationQueue addOperation:operation];
 }
 
 - (void)cancelOperationsForRoute:(NSString *)routeName parameters:(NSDictionary *)parameters
@@ -133,6 +173,7 @@ static APIClient *sharedInstance = nil;
     if (self)
     {
         _requestManager = [AFHTTPRequestOperationManager manager];
+        self.requestSerializationType = APIJSONSerialization;
     }
     
     return self;
@@ -155,7 +196,19 @@ static APIClient *sharedInstance = nil;
                                                               URLString:[url absoluteString]
                                                              parameters:parameters];
     
+    [self addBearerTokenToRequest:request token:self.authorizationBearerToken];
+    
     return request;
+}
+
+/**
+ * Adds a bearer token to the given NSMutableURLRequest
+ */
+- (void) addBearerTokenToRequest:(NSMutableURLRequest *)request token:(NSString *)token {
+    if (token) {
+        NSString *headerValue = [NSString stringWithFormat:@"Bearer %@", token];
+        [request setValue:headerValue forHTTPHeaderField:@"Authorization"];
+    }
 }
 
 /**

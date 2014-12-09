@@ -1,1 +1,0 @@
-../../APIKit/APIKit/APIMockResponse.h

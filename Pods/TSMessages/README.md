@@ -3,6 +3,11 @@ TSMessages
 
 This library provides an easy to use class to show little notification views on the top of the screen. (à la Tweetbot).
 
+[![Twitter: @KauseFx](https://img.shields.io/badge/contact-@KrauseFx-blue.svg?style=flat)](https://twitter.com/KrauseFx)
+[![Version](https://img.shields.io/cocoapods/v/TSMessages.svg?style=flat)](http://cocoadocs.org/docsets/TSMessages)
+[![License](https://img.shields.io/cocoapods/l/TSMessages.svg?style=flat)](http://cocoadocs.org/docsets/TSMessages)
+[![Platform](https://img.shields.io/cocoapods/p/TSMessages.svg?style=flat)](http://cocoadocs.org/docsets/TSMessages)
+
 The notification moves from the top of the screen underneath the navigation bar and stays there for a few seconds, depending on the length of the displayed text. To dismiss a notification before the time runs out, the user can swipe it to the top or just tap it.
 
 There are 4 different types already set up for you: Success, Error, Warning, Message (take a look at the screenshots)
@@ -13,48 +18,78 @@ It is very easy to add new notification types with a different design. Add the n
 
 Follow the developer on Twitter: [KrauseFx](http://twitter.com/KrauseFx) (Felix Krause)
 
-## Installation
+# Installation
 
-### From CocoaPods
+## From CocoaPods
+TSMessages is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
-Add `pod 'TSMessages'` to your Podfile.
+    pod "TSMessages"
+    
+## Manually
+Copy the source files TSMessageView and TSMessage into your project. Also copy the TSMessagesDesignDefault.json.
 
-### Manually
-
-Drag the whole folder into your project and remove the example project. This library requires ARC.
-
-Drag HexColors{.h/.m} from Submodules/HexColors/Classes into your project.
+# Usage
 
 To show notifications use the following code:
---------
 
 ```objective-c
-    [TSMessage showNotificationWithTitle:title
-                                subtitle:subtitle
+    [TSMessage showNotificationWithTitle:@"Your Title"
+                                subtitle:@"A description"
                                     type:TSMessageNotificationTypeError];
 
 
     // Add a button inside the message
     [TSMessage showNotificationInViewController:self
-                                          title:NSLocalizedString(@"New version available", nil)
-                                       subtitle:NSLocalizedString(@"Please update our app. We would be very thankful", nil)
+                                          title:@"Update available"
+                                       subtitle:@"Please update the app"
                                           image:nil
                                            type:TSMessageNotificationTypeMessage
                                        duration:TSMessageNotificationDurationAutomatic
                                        callback:nil
-                                    buttonTitle:NSLocalizedString(@"Update", nil)
+                                    buttonTitle:@"Update"
                                  buttonCallback:^{
-                                     [TSMessage showNotificationWithTitle:NSLocalizedString(@"Thanks for updating", nil)
-                                                                     type:TSMessageNotificationTypeSuccess];
+                                     NSlog(@"User tapped the button");
                                  }
                                      atPosition:TSMessageNotificationPositionTop
-                            canBeDismisedByUser:YES];
+                           canBeDismissedByUser:YES];
+
 
     // Use a custom design file
     [TSMessage addCustomDesignFromFileWithName:@"AlternativeDesign.json"];
 ```
 
-The following properties can be set:
+You can define a default view controller in which the notifications should be displayed:
+```objective-c
+   [TSMessage setDefaultViewController:myNavController];
+```
+
+You can define a default view controller in which the notifications should be displayed:
+```objective-c
+   [TSMessage setDelegate:self];
+   
+   ...
+   
+   - (CGFloat)messageLocationOfMessageView:(TSMessageView *)messageView
+   {
+    return messageView.viewController...; // any calculation here
+   }
+```
+
+You can customize a message view, right before it's displayed, like setting an alpha value, or adding a custom subview
+```objective-c
+   [TSMessage setDelegate:self];
+   
+   ...
+   
+   - (void)customizeMessageView:(TSMessageView *)messageView
+   {
+      messageView.alpha = 0.4;
+      [messageView addSubview:...];
+   }
+```
+
+The following properties can be set when creating a new notification:
 
 * **viewController**: The view controller to show the notification in. This might be the navigation controller.
 * **title**: The title of the notification view
@@ -66,22 +101,29 @@ The following properties can be set:
 
 Except the title and the notification type, all of the listed values are optional
 
-You don't need to do anything with TSMessageView, except you want to modify the behavior or the types of the notification itself.
+If you don't want a detailed description (the text underneath the title) you don't need to set one. The notification will automatically resize itself properly. 
 
-If you don't want a detailed description (the text underneath the title) you don't need to set one. The notification will automatically resize itself properly. There are different initializer available.
+## Screenshots
 
-![Warning](http://www.toursprung.com/wp-content/uploads/2013/04/iNotificationWarning.png)
-![Success](http://www.toursprung.com/wp-content/uploads/2013/04/iNotificationSuccess.png)
-![Error](http://www.toursprung.com/wp-content/uploads/2013/04/iNotificationError.png)
-![Message](http://www.toursprung.com/wp-content/uploads/2013/04/iNotificationMessage.png)
-
-**iOS 7 Support**
+**iOS 7 Design**
 
 ![iOS 7 Error](http://www.toursprung.com/wp-content/uploads/2013/09/error_ios7.png)
+
 ![iOS 7 Message](http://www.toursprung.com/wp-content/uploads/2013/09/warning_ios7.png)
 
-This project requires ARC.
+**iOS 6 Design**
 
-If you have ideas how to improve this library please let me know or send a pull request.
+![Warning](http://www.toursprung.com/wp-content/uploads/2013/04/iNotificationWarning.png)
 
-**Recent changes can be found in the releases section of this repo.**
+![Success](http://www.toursprung.com/wp-content/uploads/2013/04/iNotificationSuccess.png)
+
+![Error](http://www.toursprung.com/wp-content/uploads/2013/04/iNotificationError.png)
+
+![Message](http://www.toursprung.com/wp-content/uploads/2013/04/iNotificationMessage.png)
+
+
+# License
+TSMessages is available under the MIT license. See the LICENSE file for more information.
+
+# Recent Changes
+Can be found in the [releases section](https://github.com/toursprung/TSMessages/releases) of this repo.

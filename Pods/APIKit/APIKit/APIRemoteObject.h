@@ -30,6 +30,13 @@
 + (id)createOrUpdateFirstFromAPIData:(NSDictionary *)remoteObjectData;
 
 
+/**
+ * Parses an NSDate out of an api date string
+ *
+ * @param dateString the api date string to parse
+ */
++ (NSDate *)dateFromAPIDateString:(NSString*)dateString;
+
 #pragma mark - API Client access helpers
 
 /// Returns a shared singleton API client for this object
