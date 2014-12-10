@@ -3,8 +3,9 @@ language: objective-c
 before_install:
   - brew update
   - brew upgrade xctool
-  - gem install cocoapods -v '0.32.1'
+  - gem install cocoapods -v '0.34.4'
   - pod repo add cloudspace https://github.com/cloudspace/Cloudspace-iOS-PodSpecs.git
+  - pod install
 script:
   - xctool -workspace EasyReader.xcworkspace -scheme Development -sdk iphonesimulator7.1 ONLY_ACTIVE_ARCH=NO
   - xctool test -workspace EasyReader.xcworkspace -scheme Development -sdk iphonesimulator7.1 ONLY_ACTIVE_ARCH=NO
