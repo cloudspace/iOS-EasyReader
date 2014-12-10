@@ -4,6 +4,7 @@ before_install:
   - brew update
   - brew upgrade xctool
   - gem install cocoapods -v '0.34.4'
+  - echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - pod repo add cloudspace https://github.com/cloudspace/Cloudspace-iOS-PodSpecs.git
   - pod install
 script:
