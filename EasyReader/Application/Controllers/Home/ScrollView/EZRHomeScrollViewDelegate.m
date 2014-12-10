@@ -67,7 +67,6 @@
 
 /**
  *
- *
  * @param scrollVsiew the
  */
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {

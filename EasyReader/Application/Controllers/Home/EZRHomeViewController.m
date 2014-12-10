@@ -344,6 +344,7 @@
 
 // Receives left menu link click
 - (IBAction)buttonLeftMenu_touchUpInside_goToMenu:(id)sender {
+    [self.scrollView_vertical setContentOffset:CGPointMake(0,0) animated:NO];
     [[self rootViewController] toggleLeftSideMenuCompletion:^{}];
 }
 

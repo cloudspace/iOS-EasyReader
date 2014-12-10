@@ -14,9 +14,9 @@
 
 @interface EZRFeedItemUpdateService (Test)
 
-- (void)requestFiveMinutesOfFeedItems:(id)sender;
-- (void)requestOneWeekOfFeedItems;
-- (void)requestFeedItemsSince:(NSDate *)since;
++ (void)requestFiveMinutesOfFeedItems:(id)sender;
++ (void)requestOneWeekOfFeedItems;
++ (void)requestFeedItemsSince:(NSDate *)since;
 - (void)loadDefaultFeeds;
 - (BOOL)hasSetDefaultFeeds;
 
@@ -49,31 +49,34 @@
 
 - (void)testRequestFiveMinutesOfFeedItems
 {
-    [[partialMockService expect] requestFeedItemsSince:[OCMArg any]];
+    [[[mockService expect] classMethod] requestFeedItemsSince:[OCMArg any]];
     
-    [partialMockService requestFiveMinutesOfFeedItems:[OCMArg any]];
-    [partialMockService verify];
+    [[mockService class] requestFiveMinutesOfFeedItems:[OCMArg any]];
+    
+    [mockService verify];
 }
 
 - (void)testRequestOneWeekOfFeedItems
 {
-    [[partialMockService expect] requestFeedItemsSince:[OCMArg any]];
+    [[[mockService expect] classMethod] requestFeedItemsSince:[OCMArg any]];
     
-    [partialMockService requestOneWeekOfFeedItems];
-    [partialMockService verify];
+    [[mockService class] requestOneWeekOfFeedItems];
+    
+    [mockService verify];
 }
 
 - (void)testRequestFeedItemsSince
 {
     id date = [OCMockObject mockForClass:[NSDate class]];
     
-    [[mockFeedItem expect] requestFeedItemsFromFeeds:[OCMArg any]
-                                               since:date
-                                             success:[OCMArg any]
-                                             failure:[OCMArg any]];
+    [[[mockFeedItem expect] classMethod] requestFeedItemsFromFeeds:[OCMArg any]
+                                                             since:date
+                                                           success:[OCMArg any]
+                                                           failure:[OCMArg any]];
 
-    [partialMockService requestFeedItemsSince:date];
-    [partialMockService verify];
+    [[mockService class] requestFeedItemsSince:date];
+    
+    [mockService verify];
 }
 
 - (void)testLoadDefaultFeeds

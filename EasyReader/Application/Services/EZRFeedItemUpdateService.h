@@ -18,4 +18,9 @@
  */
 - (void) start;
 
+/**
+ * Requests five minutes of feed items
+ */
++ (void)requestFiveMinutesOfFeedItems:(id)sender;
+
 @end

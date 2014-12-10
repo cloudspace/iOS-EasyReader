@@ -14,6 +14,7 @@
 
 #import "EZRMenuSearchController.h"
 #import "EZRRootViewController.h"
+#import "EZRCurrentFeedsProvider.h"
 
 #import "Feed.h"
 #import "User.h"
@@ -59,32 +60,38 @@
         NSDictionary *feedData = ((EZRSearchFeedCell *)cell).feedData;
         
         Feed *existingFeed = [Feed MR_findFirstByAttribute:@"id" withValue:feedData[@"id"]];
+        [self.searchController cancelSearch];
         
         if (!existingFeed) {
             UIViewController *rootVC = [[[UIApplication sharedApplication].delegate window] rootViewController];
             
-            [Feed createFeedWithUrl:feedData[@"url"] success:^(id responseObject, NSInteger httpStatus) {
-                [[EZRGoogleAnalyticsService shared] sendView:@"Feed Added"];
-                [TSMessage showNotificationInViewController:rootVC title:@"Easy Reader" subtitle:@"The selected feed has been added to the menu.  Please allow a few minutes for new items to populate." type:TSMessageNotificationTypeSuccess];
-            } failure:^(id responseObject, NSInteger httpStatus, NSError *error) {
-                [TSMessage showNotificationInViewController:rootVC title:@"Easy Reader" subtitle:@"There was an error adding that feed.  Please try again later." type:TSMessageNotificationTypeError];
+            [Feed createFeedWithUrl:feedData[@"url"]
+                            success:^(id responseObject, NSInteger httpStatus) {
+                                [[EZRGoogleAnalyticsService shared] sendView:@"Feed Added"];
+                                [TSMessage showNotificationInViewController:rootVC
+                                                                      title:@"Easy Reader"
+                                                                   subtitle:@"The selected feed has been added to the menu.  Please allow a few minutes for new items to populate."
+                                                                       type:TSMessageNotificationTypeSuccess];
+                            }
+                            failure:^(id responseObject, NSInteger httpStatus, NSError *error) {
+                                [TSMessage showNotificationInViewController:rootVC
+                                                                      title:@"Easy Reader"
+                                                                   subtitle:@"There was an error adding that feed.  Please try again later."
+                                                                       type:TSMessageNotificationTypeError];
             }];
         }
         else if (![[User current].feeds containsObject:existingFeed])
         {
             [[User current] addFeedsObject:existingFeed];
-            [self postSelectedNotificationForFeed:existingFeed];
         }
         
-        [self.searchController cancelSearch];
         [tableView reloadData];
         
     } else {
         Feed *feed = ((EZRMenuFeedCell *)cell).feed;
         [self postSelectedNotificationForFeed:feed];
+        [((MFSideMenuContainerViewController *)tableView.window.rootViewController) setMenuState:MFSideMenuStateClosed];
     }
-    
-    [((MFSideMenuContainerViewController *)tableView.window.rootViewController) setMenuState:MFSideMenuStateClosed];
 }
 
 /**

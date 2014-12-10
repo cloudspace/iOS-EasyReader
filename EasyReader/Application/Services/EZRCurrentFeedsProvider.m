@@ -136,6 +136,7 @@ static EZRCurrentFeedsProvider *sharedInstance;
     
     
     NSMutableSet *feedItems = [NSMutableSet setWithArray:self.feedItems];
+    oldFeeds = [NSSet setWithArray:self.feeds];
     
     NSMutableArray *addedFeeds = [[newFeeds allObjects] mutableCopy];
     NSMutableArray *removedFeeds = [[oldFeeds allObjects] mutableCopy];

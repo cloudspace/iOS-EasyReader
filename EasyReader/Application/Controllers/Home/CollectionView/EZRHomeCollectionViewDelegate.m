@@ -13,6 +13,7 @@
 #import "CSCollectionPageControl.h"
 
 #import "EZRGoogleAnalyticsService.h"
+#import "EZRFeedItemUpdateService.h"
 
 @interface EZRHomeViewController (Additions)
 
@@ -35,6 +36,7 @@
 @implementation EZRHomeCollectionViewDelegate
 {
     FeedItem *previousFeedItem;
+    BOOL _scrollingAtStart;
 }
 
 
@@ -48,6 +50,10 @@
 {
     FeedItem *currentFeedItem = self.collectionView.currentFeedItem;
     NSInteger pageIndex = self.collectionView.currentPageIndex;
+    
+    if (scrollView.contentOffset.x < -50) {
+        _scrollingAtStart = YES;
+    }
     
     if (previousFeedItem != self.collectionView.currentFeedItem) {
         [self.controller resetWebView];
@@ -63,6 +69,14 @@
         
         previousFeedItem = currentFeedItem;
     }
+}
+
+-(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (_scrollingAtStart) {
+        [EZRFeedItemUpdateService requestFiveMinutesOfFeedItems:self];
+    }
+
 }
 
 /**

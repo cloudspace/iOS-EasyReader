@@ -21,26 +21,30 @@
     }
     else
     {
-        [self requestOneWeekOfFeedItems];
+        [[self class] requestOneWeekOfFeedItems];
     }
     
+    [[self class] feedInvocations];
+}
+
++ (void) feedInvocations
+{
     NSMethodSignature *mySignature = [EZRFeedItemUpdateService
-                                      instanceMethodSignatureForSelector:@selector(requestFiveMinutesOfFeedItems:)];
+                                      methodSignatureForSelector:@selector(requestFiveMinutesOfFeedItems:)];
     
-    NSInvocation *myInvocation = [NSInvocation
-                                  invocationWithMethodSignature:mySignature];
+    NSInvocation *myInvocation = [NSInvocation invocationWithMethodSignature:mySignature];
     
     [myInvocation setTarget:self];
     [myInvocation setSelector:@selector(requestFiveMinutesOfFeedItems:)];
     
-    int interval = 10 * 1;
+    int interval = 1 * 10;
     [NSTimer scheduledTimerWithTimeInterval:interval invocation:myInvocation repeats:YES];
 }
 
 
 #pragma mark - Private Methods
 
-- (void)requestFiveMinutesOfFeedItems:(id)sender
++ (void)requestFiveMinutesOfFeedItems:(id)sender
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *today = [NSDate date];
@@ -54,13 +58,13 @@
     NSLog(@"Invocation ran!");
 }
 
-- (void)requestOneWeekOfFeedItems
++ (void)requestOneWeekOfFeedItems
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *today = [NSDate date];
     
     NSDateComponents *oneWeekAgoComponents = [[NSDateComponents alloc] init];
-    [oneWeekAgoComponents setWeek:-1];
+    [oneWeekAgoComponents setWeekOfMonth:-1];
     NSDate *oneWeekAgo = [calendar dateByAddingComponents:oneWeekAgoComponents toDate:today options:0];
     
     [self requestFeedItemsSince:oneWeekAgo];
@@ -68,7 +72,7 @@
     NSLog(@"Setup Invocation");
 }
 
-- (void)requestFeedItemsSince:(NSDate *)since
++ (void)requestFeedItemsSince:(NSDate *)since
 {
     [FeedItem requestFeedItemsFromFeeds:[[User current] feeds]
                                   since:since

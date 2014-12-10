@@ -5,7 +5,7 @@
 	<key>ApiBasePath</key>
 	<string>/v2</string>
 	<key>ApiHost</key>
-	<string>http://rss.cloudspace.com</string>
+	<string>http://easyreader.cloudspace.com</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

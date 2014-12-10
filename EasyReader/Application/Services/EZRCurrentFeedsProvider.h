@@ -36,4 +36,9 @@
  */
 + (EZRCurrentFeedsProvider *) shared;
 
+/**
+ * Sets shared instance of the current feeds service
+ */
++ (void) setShared:(EZRCurrentFeedsProvider *)shared;
+
 @end
