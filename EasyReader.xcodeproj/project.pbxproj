@@ -2546,7 +2546,9 @@ end</string>
 				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
 				<string>LaunchImage</string>
 				<key>CODE_SIGN_IDENTITY</key>
-				<string></string>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
 				<key>FRAMEWORK_SEARCH_PATHS</key>
 				<string>$(inherited)</string>
 				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
@@ -2571,7 +2573,7 @@ end</string>
 				<key>PRODUCT_NAME</key>
 				<string>Easy Reader</string>
 				<key>PROVISIONING_PROFILE</key>
-				<string>95A078F5-C68B-40F9-BE58-9AD3A36D668E</string>
+				<string></string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
 				<key>VALID_ARCHS</key>
@@ -2593,7 +2595,9 @@ end</string>
 				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
 				<string>LaunchImage</string>
 				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)</string>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
 				<key>FRAMEWORK_SEARCH_PATHS</key>
 				<string>$(inherited)</string>
 				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
@@ -2618,7 +2622,7 @@ end</string>
 				<key>PRODUCT_NAME</key>
 				<string>Easy Reader</string>
 				<key>PROVISIONING_PROFILE</key>
-				<string>479F39F3-6896-4CB8-816C-0B5F93F5DC60</string>
+				<string></string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
 				<key>VALID_ARCHS</key>
@@ -3870,6 +3874,11 @@ end</string>
 				<key>TargetAttributes</key>
 				<dict>
 					<key>9D79270818DA1D0300E1D3E1</key>
+					<dict>
+						<key>DevelopmentTeam</key>
+						<string>34V4E5MT6Z</string>
+					</dict>
+					<key>9D79274C18DA1D3800E1D3E1</key>
 					<dict>
 						<key>DevelopmentTeam</key>
 						<string>34V4E5MT6Z</string>
