@@ -43,11 +43,20 @@
         }
     }
     
+    MFSideMenuContainerViewController *rootVC =
+    (MFSideMenuContainerViewController*)[[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    
     // Prevent collectionview scrolling when shar bar is showing
     if (scrollView.contentOffset.y < 0) {
+        rootVC.panMode = MFSideMenuPanModeNone;
         self.collectionView_feedItems.userInteractionEnabled = NO;
     } else {
         self.collectionView_feedItems.userInteractionEnabled = YES;
+        rootVC.panMode = MFSideMenuPanModeDefault;
+    }
+    
+    if (scrollView.contentOffset.y >= scrollView.frame.size.height) {
+        rootVC.panMode = MFSideMenuPanModeNone;
     }
     
     // Don't allow drags from the share view to go past the base view without a stop
