@@ -35,7 +35,6 @@
 #import "EZRHomeScrollViewDelegate.h"
 #import "EZRHomePageControlDataSource.h"
 #import "EZRHomeWebViewDelegate.h"
-#import "EZRCurrentFeedsProvider.h"
 
 #import "CLDArrayCollectionViewDataSource.h"
 
@@ -50,10 +49,6 @@
 @interface EZRHomeViewController()
 
 @property User *currentUser;
-
-
-/// The current feeds provider object
-@property (nonatomic, strong) EZRCurrentFeedsProvider *currentFeedsProvider;
 
 /// The social sharing toolbar
 @property (nonatomic, weak) IBOutlet CLDSocialShareToolbar *socialShareToolbar;

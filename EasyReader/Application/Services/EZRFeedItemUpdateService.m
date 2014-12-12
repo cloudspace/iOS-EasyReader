@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Cloudspace. All rights reserved.
 //
 
+#import "EZRFeedItemCollectionView.h"
 #import "EZRFeedItemUpdateService.h"
 #import "FeedItem.h"
 #import "Feed.h"
@@ -46,6 +47,10 @@
 
 + (void)requestFiveMinutesOfFeedItems:(id)sender
 {
+    [self requestFiveMinutesOfFeedItemsWithCompletion:nil];
+}
+
++ (void)requestFiveMinutesOfFeedItemsWithCompletion:(void (^)(BOOL success)) completion {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *today = [NSDate date];
     
@@ -53,7 +58,7 @@
     [fiveMinutesAgoComponents setMinute:-5];
     NSDate *fiveMinutesAgo = [calendar dateByAddingComponents:fiveMinutesAgoComponents toDate:today options:0];
     
-    [self requestFeedItemsSince:fiveMinutesAgo];
+    [self requestFeedItemsSince:fiveMinutesAgo withCompletion:completion];
     
     NSLog(@"Invocation ran!");
 }
@@ -74,15 +79,26 @@
 
 + (void)requestFeedItemsSince:(NSDate *)since
 {
+    [self requestFeedItemsSince:since withCompletion:nil];
+}
+
++ (void)requestFeedItemsSince:(NSDate *)since withCompletion:(void (^)(BOOL success)) completion {
     [FeedItem requestFeedItemsFromFeeds:[[User current] feeds]
                                   since:since
                                 success:^(id responseData, NSInteger httpStatus){
                                     NSInteger count = [responseData[@"feed_items"] count];
-                                    
                                     if (count > 0) {
-                                      NSLog(@"%ld feed Items have been added", (long)count);
+                                        NSLog(@"%ld feed Items have been added", (long)count);
                                     }
-                                }failure:nil
+                                    
+                                    if (completion ) {
+                                        completion(YES);
+                                    }
+                                }failure:^(id responseObject, NSInteger httpStatus, NSError *error) {
+                                    if (completion ) {
+                                        completion(NO);
+                                    }
+                                }
      ];
 }
 

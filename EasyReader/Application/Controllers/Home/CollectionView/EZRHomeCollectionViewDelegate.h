@@ -16,4 +16,8 @@
  */
 @interface EZRHomeCollectionViewDelegate : NSObject <UICollectionViewDelegate, EZRFeedItemCollectionViewCellDelegate>
 
+@property (nonatomic, weak) IBOutlet EZRHomeViewController *controller;
+
+@property BOOL isRefreshing;
+
 @end

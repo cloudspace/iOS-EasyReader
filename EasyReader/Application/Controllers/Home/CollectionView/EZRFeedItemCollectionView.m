@@ -8,6 +8,7 @@
 
 #import "EZRFeedItemCollectionView.h"
 #import "EZRFeedItemCollectionViewCell.h"
+#import "EZRHomeViewController.h"
 
 @implementation EZRFeedItemCollectionView
 {
@@ -36,8 +37,48 @@
         self.pagingEnabled = YES;
     }
     
+    [self setupTapRecognizer];
+    [self setupRefreshIndicator];
+    
     return self;
 }
+
+- (void)setupTapRecognizer {
+    UITapGestureRecognizer *singleTapGestureRecognizer =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(singleTap:)];
+    singleTapGestureRecognizer.numberOfTapsRequired = 1;
+    singleTapGestureRecognizer.enabled = YES;
+    singleTapGestureRecognizer.cancelsTouchesInView = NO;
+    [self addGestureRecognizer:singleTapGestureRecognizer];
+}
+
+- (void)setupRefreshIndicator {
+    self.indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.indicator.frame = CGRectMake(10.0, ([self frame].size.height-40.0)/2, 40.0, 40.0);
+    [self addSubview:self.indicator];
+    [self bringSubviewToFront:self.indicator];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
+    self.delegate.isRefreshing = NO;
+}
+
+- (void)singleTap:(UITapGestureRecognizer *)gesture {
+    float viewWidth = [self frame].size.width;
+    float x = [gesture locationInView:self].x - (viewWidth*[self currentPageIndex]);
+    EZRHomeViewController *controller = self.delegate.controller;
+    
+    if (x <= viewWidth/4 && [self currentPageIndex] != 0) {
+        [self scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:[self currentPageIndex]-1 inSection:0]
+                     atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+                             animated:YES];
+    } else if (x >= (viewWidth*3)/4 &&
+               [self currentPageIndex] != [[[controller currentFeedsProvider] feedItems] count]-1) {
+        [self scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:[self currentPageIndex]+1 inSection:0]
+                     atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+                             animated:YES];
+    }
+}
+
 
 - (void)layoutSubviews {
     [super layoutSubviews];

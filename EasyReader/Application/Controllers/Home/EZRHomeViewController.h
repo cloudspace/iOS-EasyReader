@@ -13,6 +13,8 @@
 #import "EZRFeedItemCollectionView.h"
 #import "CSNestableScrollView.h"
 
+#import "EZRCurrentFeedsProvider.h"
+
 // View Controllers
 #import "CSBaseViewController.h"
 #import "EZRNestableWebView.h"
@@ -45,6 +47,9 @@
 
 
 # pragma mark - Properties
+
+/// The current feeds provider object
+@property (nonatomic, strong) EZRCurrentFeedsProvider *currentFeedsProvider;
 
 /// Feed Item currently visible
 @property (nonatomic, readonly) FeedItem *currentFeedItem;

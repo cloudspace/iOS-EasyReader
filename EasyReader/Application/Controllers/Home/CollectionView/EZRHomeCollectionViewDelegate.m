@@ -24,8 +24,6 @@
 
 @interface EZRHomeCollectionViewDelegate ()
 
-@property (nonatomic, weak) IBOutlet EZRHomeViewController *controller;
-
 @property (nonatomic, weak) IBOutlet EZRFeedItemCollectionView *collectionView;
 
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView_vertical;
@@ -38,7 +36,6 @@
     FeedItem *previousFeedItem;
     BOOL _scrollingAtStart;
 }
-
 
 /**
  * Fires when the collection view scrolls
@@ -73,10 +70,15 @@
 
 -(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    if (_scrollingAtStart) {
-        [EZRFeedItemUpdateService requestFiveMinutesOfFeedItems:self];
+    if (_scrollingAtStart && !self.isRefreshing) {
+        self.isRefreshing = YES;
+        
+        [self.collectionView.indicator startAnimating];
+        [EZRFeedItemUpdateService requestFiveMinutesOfFeedItemsWithCompletion:^void (BOOL success) {
+            [self.collectionView.indicator stopAnimating];
+            self.isRefreshing = NO;
+        }];
     }
-
 }
 
 /**

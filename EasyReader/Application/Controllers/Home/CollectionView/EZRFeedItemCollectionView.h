@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FeedItem.h"
+#import "EZRHomeCollectionViewDelegate.h"
 
 @class EZRFeedItemCollectionView;
 
@@ -25,11 +26,14 @@
  */
 @interface EZRFeedItemCollectionView : UICollectionView
 
+@property UIActivityIndicatorView *indicator;
+
 /// The feed item that is currently focused
 @property (nonatomic, readonly) FeedItem *currentFeedItem;
 
 /// The curent visible page index
 @property (nonatomic, readonly) NSInteger currentPageIndex;
 
+@property (nonatomic, weak) EZRHomeCollectionViewDelegate* delegate;
 
 @end

@@ -21,6 +21,6 @@
 /**
  * Requests five minutes of feed items
  */
-+ (void)requestFiveMinutesOfFeedItems:(id)sender;
++ (void)requestFiveMinutesOfFeedItemsWithCompletion:(void (^)(BOOL success)) completion;
 
 @end
