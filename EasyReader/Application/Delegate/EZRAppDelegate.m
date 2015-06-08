@@ -8,6 +8,7 @@
 
 #import "EZRAppDelegate.h"
 #import "EZRRootViewController.h"
+#import "EZRIntroViewController.h"
 
 // Services
 #import "EZRRegisterRoutesService.h"
@@ -16,9 +17,8 @@
 #import "EZRApplicationStyleService.h"
 #import "EZRTestFlightService.h"
 #import "EZRGoogleAnalyticsService.h"
-
+#import "EZRTwitterService.h"
 #import "User.h"
-
 
 @implementation EZRAppDelegate
 
@@ -46,7 +46,7 @@
     // Conditionally load testing services
     #ifdef STAGING
     
-    [self registerService:[EZRTestFlightService shared]];
+    //[self registerService:[EZRTestFlightService shared]];
     
     #endif
     
@@ -55,11 +55,11 @@
     [self registerService:[EZRApplicationStyleService shared]];
     [self registerService:[EZRFeedUpdateService shared]];
     [self registerService:[EZRGoogleAnalyticsService shared]];
-    
+    [self registerService:[EZRTwitterService shared]];
+
     [self invokeServiceMethodWithSelector:@selector(application:didFinishLaunchingWithOptions:) withArgument:&launchOptions];
     
     [self setUpApplicationWindow];
-    
     return YES;
 }
 
@@ -97,6 +97,5 @@
     [self.window makeKeyAndVisible];
     
 }
-
 
 @end
