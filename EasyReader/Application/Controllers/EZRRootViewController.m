@@ -57,6 +57,8 @@
         }
     }
     
+    self.navigationBarHidden = YES;
+    
     return self;
 }
 

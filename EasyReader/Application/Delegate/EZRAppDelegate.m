@@ -15,7 +15,7 @@
 #import "EZRFeedUpdateService.h"
 #import "EZRApplicationStyleService.h"
 #import "EZRGoogleAnalyticsService.h"
-
+#import "EZRTwitterService.h"
 #import "User.h"
 
 
@@ -47,6 +47,7 @@
     [self registerService:[EZRApplicationStyleService shared]];
     [self registerService:[EZRFeedUpdateService shared]];
     [self registerService:[EZRGoogleAnalyticsService shared]];
+    [self registerService:[EZRTwitterService shared]];
     
     [self invokeServiceMethodWithSelector:@selector(application:didFinishLaunchingWithOptions:) withArgument:&launchOptions];
     

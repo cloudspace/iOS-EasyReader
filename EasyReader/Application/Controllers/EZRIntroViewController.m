@@ -7,6 +7,7 @@
 //
 
 #import "EZRIntroViewController.h"
+#import "EZRHomeViewController.h"
 #import <TwitterKit/TwitterKit.h>
 
 @interface EZRIntroViewController ()
@@ -20,26 +21,27 @@
 - (void) viewDidLoad
 {
     TWTRLogInButton *logInButton = [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession *session, NSError *error) {
-        // play with Twitter session
+        if(error){
+            //TODO
+            return;
+        }
+        [self loginToFiltacular:session];
     }];
-    logInButton.center = self.view.center;
+    
+    CGFloat offsetFromBottom = 12;
+    logInButton.center =  CGPointMake(self.view.center.x, (self.view.bounds.origin.y + self.view.bounds.size.height) - (logInButton.bounds.size.height * .5f + offsetFromBottom));
     [self.view addSubview:logInButton];
 }
 
-- (IBAction)tapTwitterLogin {
-    [[Twitter sharedInstance] logInWithCompletion:^(TWTRSession *session, NSError *error) {
-        if (session) {
-            NSLog(@"signed in as %@", [session userName]);
-            [self loginToFiltacular:session];
-        } else {
-            NSLog(@"error: %@", [error localizedDescription]);
-        }
-    }];
-}
-
 - (void)loginToFiltacular:(TWTRSession*)twitterSession {
-    
-    //[self.navigationController pushViewController:vcTwitterFeed animated:true];
+    UIStoryboard* storyboard_home;
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        storyboard_home = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:[NSBundle mainBundle]];
+    } else {
+        storyboard_home = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
+    }
+    EZRHomeViewController *vcHome = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
+    [self.navigationController pushViewController:vcHome animated:true];
     return;
 }
 
