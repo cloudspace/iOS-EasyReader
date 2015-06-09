@@ -25,7 +25,7 @@
             //TODO
             return;
         }
-        [self loginToFiltacular:session];
+        [self loadTweetsWithSession:session];
     }];
     
     CGFloat offsetFromBottom = 12;
@@ -33,7 +33,18 @@
     [self.view addSubview:logInButton];
 }
 
-- (void)loginToFiltacular:(TWTRSession*)twitterSession {
+- (void)loadTweetsWithSession:(TWTRSession*)twitterSession {
+    //  TODO based on session info, check if user exists in Filtacular
+    //  if YES
+    //    load data using the user and linky_looier
+    //  else
+    //    load data from /tweets?filter[linky_looier]=1
+    //  Go to home screen.
+    
+    [self pushToHomeScreen];
+}
+
+- (void) pushToHomeScreen{
     UIStoryboard* storyboard_home;
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         storyboard_home = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:[NSBundle mainBundle]];
@@ -44,4 +55,6 @@
     [self.navigationController pushViewController:homeViewController animated:true];
 }
 
+
 @end
+
