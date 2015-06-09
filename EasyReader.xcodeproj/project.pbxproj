@@ -234,10 +234,6 @@
 		9DC020EE1921C27B0041D8D4 /* EZRRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC020D61921C27B0041D8D4 /* EZRRegisterRoutesService.m */; };
 		9DC020EF1921C27B0041D8D4 /* EZRRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC020D61921C27B0041D8D4 /* EZRRegisterRoutesService.m */; };
 		9DC020F01921C27B0041D8D4 /* EZRRegisterRoutesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC020D61921C27B0041D8D4 /* EZRRegisterRoutesService.m */; };
-		9DC020F11921C27B0041D8D4 /* EZRTestFlightService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC020D81921C27B0041D8D4 /* EZRTestFlightService.m */; };
-		9DC020F21921C27B0041D8D4 /* EZRTestFlightService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC020D81921C27B0041D8D4 /* EZRTestFlightService.m */; };
-		9DC020F31921C27B0041D8D4 /* EZRTestFlightService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC020D81921C27B0041D8D4 /* EZRTestFlightService.m */; };
-		9DC020F41921C27B0041D8D4 /* EZRTestFlightService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC020D81921C27B0041D8D4 /* EZRTestFlightService.m */; };
 		9DC020F71921C2A70041D8D4 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC020F61921C2A70041D8D4 /* Main_iPhone.storyboard */; };
 		9DC020F81921C2A70041D8D4 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC020F61921C2A70041D8D4 /* Main_iPhone.storyboard */; };
 		9DC020F91921C2A70041D8D4 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC020F61921C2A70041D8D4 /* Main_iPhone.storyboard */; };
@@ -412,8 +408,6 @@
 		9DC020D41921C27B0041D8D4 /* EZRGoogleAnalyticsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRGoogleAnalyticsService.m; sourceTree = "<group>"; };
 		9DC020D51921C27B0041D8D4 /* EZRRegisterRoutesService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRRegisterRoutesService.h; sourceTree = "<group>"; };
 		9DC020D61921C27B0041D8D4 /* EZRRegisterRoutesService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRRegisterRoutesService.m; sourceTree = "<group>"; };
-		9DC020D71921C27B0041D8D4 /* EZRTestFlightService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRTestFlightService.h; sourceTree = "<group>"; };
-		9DC020D81921C27B0041D8D4 /* EZRTestFlightService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRTestFlightService.m; sourceTree = "<group>"; };
 		9DC020F61921C2A70041D8D4 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		9DFC326418FD7263008A2A44 /* EZRCurrentFeedsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRCurrentFeedsProvider.h; sourceTree = "<group>"; };
 		9DFC326518FD7263008A2A44 /* EZRCurrentFeedsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRCurrentFeedsProvider.m; sourceTree = "<group>"; };
@@ -920,8 +914,6 @@
 				9DC020D41921C27B0041D8D4 /* EZRGoogleAnalyticsService.m */,
 				9DC020D51921C27B0041D8D4 /* EZRRegisterRoutesService.h */,
 				9DC020D61921C27B0041D8D4 /* EZRRegisterRoutesService.m */,
-				9DC020D71921C27B0041D8D4 /* EZRTestFlightService.h */,
-				9DC020D81921C27B0041D8D4 /* EZRTestFlightService.m */,
 				F2D12CAA1B25F35C00C4824D /* EZRTwitterService.h */,
 				F2D12CAB1B25F35C00C4824D /* EZRTwitterService.m */,
 			);
@@ -1377,7 +1369,6 @@
 				9D5ACFC118E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
 				9D79271718DA1D0300E1D3E1 /* EZRMenuViewController.m in Sources */,
 				9DC020B81921C2270041D8D4 /* EZRMenuFeedCell.m in Sources */,
-				9DC020F31921C27B0041D8D4 /* EZRTestFlightService.m in Sources */,
 				9DC020E31921C27B0041D8D4 /* EZRCoreDataService.m in Sources */,
 				9DC020A11921C1E00041D8D4 /* EZRHomeScrollViewDelegate.m in Sources */,
 				9DC020EB1921C27B0041D8D4 /* EZRGoogleAnalyticsService.m in Sources */,
@@ -1424,7 +1415,6 @@
 				9D5ACFC218E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
 				9D79275B18DA1D3800E1D3E1 /* EZRMenuViewController.m in Sources */,
 				9DC020B91921C2270041D8D4 /* EZRMenuFeedCell.m in Sources */,
-				9DC020F41921C27B0041D8D4 /* EZRTestFlightService.m in Sources */,
 				9DC020E41921C27B0041D8D4 /* EZRCoreDataService.m in Sources */,
 				9DC020A21921C1E00041D8D4 /* EZRHomeScrollViewDelegate.m in Sources */,
 				9DC020EC1921C27B0041D8D4 /* EZRGoogleAnalyticsService.m in Sources */,
@@ -1496,7 +1486,6 @@
 				9D9CBAD718DCC68A00532F8C /* EZRMenuViewController.m in Sources */,
 				9D096C3C18DCEDB40043423B /* CSCollectionPageControl.m in Sources */,
 				9DC020B71921C2270041D8D4 /* EZRMenuFeedCell.m in Sources */,
-				9DC020F21921C27B0041D8D4 /* EZRTestFlightService.m in Sources */,
 				9DC020E21921C27B0041D8D4 /* EZRCoreDataService.m in Sources */,
 				0D9A835318E0AA2900D8376E /* UIColor+EZRSharedColorAdditions.m in Sources */,
 				9DC020EA1921C27B0041D8D4 /* EZRGoogleAnalyticsService.m in Sources */,
@@ -1543,7 +1532,6 @@
 				9D5ACFBF18E5C787003CF3E7 /* UIImageView+EZRFeedImageAdditions.m in Sources */,
 				9D429770170E164D00E73BFE /* EZRMenuViewController.m in Sources */,
 				9DC020B61921C2270041D8D4 /* EZRMenuFeedCell.m in Sources */,
-				9DC020F11921C27B0041D8D4 /* EZRTestFlightService.m in Sources */,
 				9DC020E11921C27B0041D8D4 /* EZRCoreDataService.m in Sources */,
 				0D1F71DE18E08B1300B33B70 /* UIColor+EZRSharedColorAdditions.m in Sources */,
 				9DC020E91921C27B0041D8D4 /* EZRGoogleAnalyticsService.m in Sources */,
