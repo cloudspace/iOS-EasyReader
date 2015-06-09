@@ -40,9 +40,8 @@
     } else {
         storyboard_home = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
     }
-    EZRHomeViewController *vcHome = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
-    [self.navigationController pushViewController:vcHome animated:true];
-    return;
+    EZRHomeViewController *homeViewController = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
+    [self.navigationController pushViewController:homeViewController animated:true];
 }
 
 @end

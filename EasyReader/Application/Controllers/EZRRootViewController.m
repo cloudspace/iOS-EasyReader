@@ -45,16 +45,14 @@
             storyboard_home = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
         }
         
+        UIViewController* initialViewController;
         if([[Twitter sharedInstance] session] == nil) {
-            EZRIntroViewController *introViewController = [storyboard_home instantiateViewControllerWithIdentifier:@"IntroViewController"];
-            [self setViewControllers:@[introViewController]];
+            initialViewController = [storyboard_home instantiateViewControllerWithIdentifier:@"IntroViewController"];
         }
         else{
-            EZRHomeViewController *collections = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
-            _viewController_main = collections;
-            
-            [self setViewControllers:@[_viewController_main]];
+            initialViewController = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
         }
+        [self setViewControllers:@[initialViewController]];
     }
     
     self.navigationBarHidden = YES;
