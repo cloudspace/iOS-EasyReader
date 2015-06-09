@@ -51,7 +51,3 @@ pod 'CLDCommon', git: 'https://github.com/cloudspace/CLDCommon', tag: '0.0.1'
 target :'EasyReader - Unit Tests', exclusive: true do
   pod 'OCMock', '~> 2.2.2'
 end
-
-target :Staging do
-  pod 'TestFlightSDK', '~> 2.2.0-noadid-beta'
-end
