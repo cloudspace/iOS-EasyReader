@@ -14,7 +14,6 @@
 #import "EZRCoreDataService.h"
 #import "EZRFeedUpdateService.h"
 #import "EZRApplicationStyleService.h"
-#import "EZRTestFlightService.h"
 #import "EZRGoogleAnalyticsService.h"
 
 #import "User.h"
@@ -41,13 +40,6 @@
         if (unit_testing) {
             return YES;
         }
-    #endif
-    
-    // Conditionally load testing services
-    #ifdef STAGING
-    
-    [self registerService:[EZRTestFlightService shared]];
-    
     #endif
     
     [self registerService:[EZRCoreDataService shared]];
