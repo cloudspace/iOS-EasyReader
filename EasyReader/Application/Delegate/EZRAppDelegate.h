@@ -11,7 +11,6 @@
 #import "MFSideMenu.h"
 #import "SRVApplicationDelegate.h"
 
-
 /**
  * The main delegate for the application
  */

@@ -242,6 +242,30 @@
 		9DFC326718FD7263008A2A44 /* EZRCurrentFeedsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC326518FD7263008A2A44 /* EZRCurrentFeedsProvider.m */; };
 		9DFC326818FD7263008A2A44 /* EZRCurrentFeedsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC326518FD7263008A2A44 /* EZRCurrentFeedsProvider.m */; };
 		9DFC326918FD7263008A2A44 /* EZRCurrentFeedsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC326518FD7263008A2A44 /* EZRCurrentFeedsProvider.m */; };
+		F2D12C911B25DE3800C4824D /* EZRIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D12C901B25DE3800C4824D /* EZRIntroViewController.m */; };
+		F2D12C921B25DE3800C4824D /* EZRIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D12C901B25DE3800C4824D /* EZRIntroViewController.m */; };
+		F2D12C931B25DE3800C4824D /* EZRIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D12C901B25DE3800C4824D /* EZRIntroViewController.m */; };
+		F2D12C941B25DE3800C4824D /* EZRIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D12C901B25DE3800C4824D /* EZRIntroViewController.m */; };
+		F2D12C9A1B25E0AB00C4824D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D12C961B25E0AB00C4824D /* Fabric.framework */; };
+		F2D12C9B1B25E0AB00C4824D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D12C961B25E0AB00C4824D /* Fabric.framework */; };
+		F2D12C9C1B25E0AB00C4824D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D12C961B25E0AB00C4824D /* Fabric.framework */; };
+		F2D12C9D1B25E0AB00C4824D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D12C961B25E0AB00C4824D /* Fabric.framework */; };
+		F2D12C9E1B25E0AB00C4824D /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D12C971B25E0AB00C4824D /* TwitterKit.framework */; };
+		F2D12C9F1B25E0AB00C4824D /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D12C971B25E0AB00C4824D /* TwitterKit.framework */; };
+		F2D12CA01B25E0AB00C4824D /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D12C971B25E0AB00C4824D /* TwitterKit.framework */; };
+		F2D12CA11B25E0AB00C4824D /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D12C971B25E0AB00C4824D /* TwitterKit.framework */; };
+		F2D12CA21B25E0AB00C4824D /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F2D12C981B25E0AB00C4824D /* TwitterKitResources.bundle */; };
+		F2D12CA31B25E0AB00C4824D /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F2D12C981B25E0AB00C4824D /* TwitterKitResources.bundle */; };
+		F2D12CA41B25E0AB00C4824D /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F2D12C981B25E0AB00C4824D /* TwitterKitResources.bundle */; };
+		F2D12CA51B25E0AB00C4824D /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F2D12C981B25E0AB00C4824D /* TwitterKitResources.bundle */; };
+		F2D12CA61B25E0AB00C4824D /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D12C991B25E0AB00C4824D /* TwitterCore.framework */; };
+		F2D12CA71B25E0AB00C4824D /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D12C991B25E0AB00C4824D /* TwitterCore.framework */; };
+		F2D12CA81B25E0AB00C4824D /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D12C991B25E0AB00C4824D /* TwitterCore.framework */; };
+		F2D12CA91B25E0AB00C4824D /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D12C991B25E0AB00C4824D /* TwitterCore.framework */; };
+		F2D12CAC1B25F35C00C4824D /* EZRTwitterService.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D12CAB1B25F35C00C4824D /* EZRTwitterService.m */; };
+		F2D12CAD1B25F35C00C4824D /* EZRTwitterService.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D12CAB1B25F35C00C4824D /* EZRTwitterService.m */; };
+		F2D12CAE1B25F35C00C4824D /* EZRTwitterService.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D12CAB1B25F35C00C4824D /* EZRTwitterService.m */; };
+		F2D12CAF1B25F35C00C4824D /* EZRTwitterService.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D12CAB1B25F35C00C4824D /* EZRTwitterService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -391,6 +415,14 @@
 		AF63FCAA9A654ADAA0B27B20 /* libPods-Staging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Staging.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34B124A7C9F42CB87D9E47A /* libPods-EasyReader - Unit Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyReader - Unit Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FBB3504BDCD445175E20BC /* Pods-EasyReader - Unit Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyReader - Unit Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyReader - Unit Tests/Pods-EasyReader - Unit Tests.release.xcconfig"; sourceTree = "<group>"; };
+		F2D12C8F1B25DE3800C4824D /* EZRIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRIntroViewController.h; sourceTree = "<group>"; };
+		F2D12C901B25DE3800C4824D /* EZRIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRIntroViewController.m; sourceTree = "<group>"; };
+		F2D12C961B25E0AB00C4824D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = EasyReader/Fabric.framework; sourceTree = "<group>"; };
+		F2D12C971B25E0AB00C4824D /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = EasyReader/TwitterKit.framework; sourceTree = "<group>"; };
+		F2D12C981B25E0AB00C4824D /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = EasyReader/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		F2D12C991B25E0AB00C4824D /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = EasyReader/TwitterCore.framework; sourceTree = "<group>"; };
+		F2D12CAA1B25F35C00C4824D /* EZRTwitterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRTwitterService.h; sourceTree = "<group>"; };
+		F2D12CAB1B25F35C00C4824D /* EZRTwitterService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRTwitterService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +440,9 @@
 				9D79272418DA1D0300E1D3E1 /* CoreData.framework in Frameworks */,
 				9D79272518DA1D0300E1D3E1 /* libPods.a in Frameworks */,
 				976AFB048E744C49B8790BDB /* libPods-Staging.a in Frameworks */,
+				F2D12C9C1B25E0AB00C4824D /* Fabric.framework in Frameworks */,
+				F2D12CA01B25E0AB00C4824D /* TwitterKit.framework in Frameworks */,
+				F2D12CA81B25E0AB00C4824D /* TwitterCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,9 +451,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D618527192686E400C8E95F /* libGoogleAnalyticsServices.a in Frameworks */,
+				F2D12CA91B25E0AB00C4824D /* TwitterCore.framework in Frameworks */,
+				F2D12C9D1B25E0AB00C4824D /* Fabric.framework in Frameworks */,
 				9D79276218DA1D3800E1D3E1 /* MessageUI.framework in Frameworks */,
 				9D79276318DA1D3800E1D3E1 /* Social.framework in Frameworks */,
 				9D79276418DA1D3800E1D3E1 /* iAd.framework in Frameworks */,
+				F2D12CA11B25E0AB00C4824D /* TwitterKit.framework in Frameworks */,
 				9D79276518DA1D3800E1D3E1 /* UIKit.framework in Frameworks */,
 				9D79276618DA1D3800E1D3E1 /* Foundation.framework in Frameworks */,
 				9D79276718DA1D3800E1D3E1 /* CoreGraphics.framework in Frameworks */,
@@ -443,10 +481,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D9CBAE318DCC68A00532F8C /* MessageUI.framework in Frameworks */,
+				F2D12C9F1B25E0AB00C4824D /* TwitterKit.framework in Frameworks */,
 				9D9CBAE418DCC68A00532F8C /* Social.framework in Frameworks */,
 				9D9CBAE518DCC68A00532F8C /* iAd.framework in Frameworks */,
 				9D9CBAE618DCC68A00532F8C /* UIKit.framework in Frameworks */,
+				F2D12CA71B25E0AB00C4824D /* TwitterCore.framework in Frameworks */,
 				9D9CBAE718DCC68A00532F8C /* Foundation.framework in Frameworks */,
+				F2D12C9B1B25E0AB00C4824D /* Fabric.framework in Frameworks */,
 				9D9CBAE818DCC68A00532F8C /* CoreGraphics.framework in Frameworks */,
 				9D9CBAE918DCC68A00532F8C /* CoreData.framework in Frameworks */,
 				9D9CBAEA18DCC68A00532F8C /* libPods.a in Frameworks */,
@@ -458,10 +499,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4355761795C9B4002C6657 /* MessageUI.framework in Frameworks */,
+				F2D12C9E1B25E0AB00C4824D /* TwitterKit.framework in Frameworks */,
 				9D4355741795C708002C6657 /* Social.framework in Frameworks */,
 				9DA7CB26171C8B5E0045CC88 /* iAd.framework in Frameworks */,
 				9DAC16C81709D48E00383722 /* UIKit.framework in Frameworks */,
+				F2D12CA61B25E0AB00C4824D /* TwitterCore.framework in Frameworks */,
 				9DAC16CA1709D48E00383722 /* Foundation.framework in Frameworks */,
+				F2D12C9A1B25E0AB00C4824D /* Fabric.framework in Frameworks */,
 				9DAC16CC1709D48E00383722 /* CoreGraphics.framework in Frameworks */,
 				9DAC16CE1709D48E00383722 /* CoreData.framework in Frameworks */,
 				1884EDB920EE4720B254D07C /* libPods.a in Frameworks */,
@@ -580,6 +624,8 @@
 				9DC020761921C1900041D8D4 /* CollectionView */,
 				2751F4D818DA0A6B00339C96 /* EZRHomeViewController.h */,
 				2751F4D918DA0A6B00339C96 /* EZRHomeViewController.m */,
+				F2D12C8F1B25DE3800C4824D /* EZRIntroViewController.h */,
+				F2D12C901B25DE3800C4824D /* EZRIntroViewController.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -677,6 +723,10 @@
 		9DAC16C61709D48E00383722 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F2D12C991B25E0AB00C4824D /* TwitterCore.framework */,
+				F2D12C961B25E0AB00C4824D /* Fabric.framework */,
+				F2D12C971B25E0AB00C4824D /* TwitterKit.framework */,
+				F2D12C981B25E0AB00C4824D /* TwitterKitResources.bundle */,
 				9D618526192686E400C8E95F /* libGoogleAnalyticsServices.a */,
 				9D06021719142212009A94C0 /* AVFoundation.framework */,
 				8ECC8F8D18E4803E006EADD1 /* libPods-OCMock.a */,
@@ -864,6 +914,8 @@
 				9DC020D41921C27B0041D8D4 /* EZRGoogleAnalyticsService.m */,
 				9DC020D51921C27B0041D8D4 /* EZRRegisterRoutesService.h */,
 				9DC020D61921C27B0041D8D4 /* EZRRegisterRoutesService.m */,
+				F2D12CAA1B25F35C00C4824D /* EZRTwitterService.h */,
+				F2D12CAB1B25F35C00C4824D /* EZRTwitterService.m */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -980,6 +1032,7 @@
 				9DAC16C21709D48E00383722 /* Resources */,
 				9DAC17021709D4A600383722 /* Auto Increment Version */,
 				73D0C0D533564F0F9E21F790 /* Copy Pods Resources */,
+				F2D12C951B25E07100C4824D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1039,6 +1092,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D12CA41B25E0AB00C4824D /* TwitterKitResources.bundle in Resources */,
 				9D5A134F1922E69900BE4CEF /* Main_iPad.storyboard in Resources */,
 				9D010EE818F58BA2001999EE /* Media.xcassets in Resources */,
 				9DC020F91921C2A70041D8D4 /* Main_iPhone.storyboard in Resources */,
@@ -1049,6 +1103,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D12CA51B25E0AB00C4824D /* TwitterKitResources.bundle in Resources */,
 				9D5A13501922E69900BE4CEF /* Main_iPad.storyboard in Resources */,
 				9D010EE918F58BA2001999EE /* Media.xcassets in Resources */,
 				9DC020FA1921C2A70041D8D4 /* Main_iPhone.storyboard in Resources */,
@@ -1068,6 +1123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D010EE718F58BA2001999EE /* Media.xcassets in Resources */,
+				F2D12CA31B25E0AB00C4824D /* TwitterKitResources.bundle in Resources */,
 				9D616F2F18EDB7160058EFE6 /* feedItems.json in Resources */,
 				9DC020F81921C2A70041D8D4 /* Main_iPhone.storyboard in Resources */,
 				9D5A134E1922E69900BE4CEF /* Main_iPad.storyboard in Resources */,
@@ -1080,6 +1136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D12CA21B25E0AB00C4824D /* TwitterKitResources.bundle in Resources */,
 				9D5A134D1922E69900BE4CEF /* Main_iPad.storyboard in Resources */,
 				9D010EE618F58BA2001999EE /* Media.xcassets in Resources */,
 				9DC020F71921C2A70041D8D4 /* Main_iPhone.storyboard in Resources */,
@@ -1260,6 +1317,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		F2D12C951B25E07100C4824D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./EasyReader/Fabric.framework/run 10f371ccab6ea0713705fbb5dc2c6bd86f0aa474 1f1346a6733d796cc5ccfb6012b519eb9c067f0df38662b5b65c20c3c2d354a7";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1280,9 +1350,11 @@
 				9D79270D18DA1D0300E1D3E1 /* EZRHomeViewController.m in Sources */,
 				9DC0207F1921C1900041D8D4 /* EZRFeedItemCollectionView.m in Sources */,
 				9D923CE6191D95A200BA3CAD /* EasyReader.xcdatamodeld in Sources */,
+				F2D12C931B25DE3800C4824D /* EZRIntroViewController.m in Sources */,
 				9DC020DB1921C27B0041D8D4 /* EZRAppDelegate.m in Sources */,
 				9DC020E71921C27B0041D8D4 /* EZRFeedUpdateService.m in Sources */,
 				9DA831F018F2FB6000D93529 /* CSNestableScrollView.m in Sources */,
+				F2D12CAE1B25F35C00C4824D /* EZRTwitterService.m in Sources */,
 				9DC020871921C1900041D8D4 /* EZRHomeCollectionViewDelegate.m in Sources */,
 				9D6610D818F303CD0067EF5E /* EZRNestableWebView.m in Sources */,
 				9D010EEE18F6D39A001999EE /* EZRMenuSearchController.m in Sources */,
@@ -1324,9 +1396,11 @@
 				9D79275118DA1D3800E1D3E1 /* EZRHomeViewController.m in Sources */,
 				9D923CE7191D95A200BA3CAD /* EasyReader.xcdatamodeld in Sources */,
 				9DC020801921C1900041D8D4 /* EZRFeedItemCollectionView.m in Sources */,
+				F2D12C941B25DE3800C4824D /* EZRIntroViewController.m in Sources */,
 				9DC020DC1921C27B0041D8D4 /* EZRAppDelegate.m in Sources */,
 				9DC020E81921C27B0041D8D4 /* EZRFeedUpdateService.m in Sources */,
 				9DA831F118F2FB6000D93529 /* CSNestableScrollView.m in Sources */,
+				F2D12CAF1B25F35C00C4824D /* EZRTwitterService.m in Sources */,
 				9D6610D918F303CD0067EF5E /* EZRNestableWebView.m in Sources */,
 				9DC020881921C1900041D8D4 /* EZRHomeCollectionViewDelegate.m in Sources */,
 				9D010EEF18F6D39A001999EE /* EZRMenuSearchController.m in Sources */,
@@ -1393,9 +1467,11 @@
 				9D9CBACC18DCC68A00532F8C /* EZRHomeViewController.m in Sources */,
 				9D923CE5191D95A200BA3CAD /* EasyReader.xcdatamodeld in Sources */,
 				9DC0207E1921C1900041D8D4 /* EZRFeedItemCollectionView.m in Sources */,
+				F2D12C921B25DE3800C4824D /* EZRIntroViewController.m in Sources */,
 				9DC020DA1921C27B0041D8D4 /* EZRAppDelegate.m in Sources */,
 				9DC020E61921C27B0041D8D4 /* EZRFeedUpdateService.m in Sources */,
 				9DA831EF18F2FB6000D93529 /* CSNestableScrollView.m in Sources */,
+				F2D12CAD1B25F35C00C4824D /* EZRTwitterService.m in Sources */,
 				9D6610D718F303CD0067EF5E /* EZRNestableWebView.m in Sources */,
 				9DC020861921C1900041D8D4 /* EZRHomeCollectionViewDelegate.m in Sources */,
 				9D010EED18F6D39A001999EE /* EZRMenuSearchController.m in Sources */,
@@ -1437,9 +1513,11 @@
 				2751F4DA18DA0A6B00339C96 /* EZRHomeViewController.m in Sources */,
 				9D923CE4191D95A200BA3CAD /* EasyReader.xcdatamodeld in Sources */,
 				9DC0207D1921C1900041D8D4 /* EZRFeedItemCollectionView.m in Sources */,
+				F2D12C911B25DE3800C4824D /* EZRIntroViewController.m in Sources */,
 				9DC020D91921C27B0041D8D4 /* EZRAppDelegate.m in Sources */,
 				9DC020E51921C27B0041D8D4 /* EZRFeedUpdateService.m in Sources */,
 				9DA831EE18F2FB6000D93529 /* CSNestableScrollView.m in Sources */,
+				F2D12CAC1B25F35C00C4824D /* EZRTwitterService.m in Sources */,
 				9D6610D618F303CD0067EF5E /* EZRNestableWebView.m in Sources */,
 				9DC020851921C1900041D8D4 /* EZRHomeCollectionViewDelegate.m in Sources */,
 				9D010EEC18F6D39A001999EE /* EZRMenuSearchController.m in Sources */,
@@ -1508,7 +1586,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EasyReader",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1534,7 +1615,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EasyReader",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1559,7 +1643,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EasyReader",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1588,7 +1675,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EasyReader",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1681,7 +1771,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Lorich (G28849DAB7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Lorich (G28849DAB7)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EasyReader",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1711,7 +1804,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Unity Marketing, Inc. (34V4E5MT6Z)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EasyReader",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1801,7 +1897,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EasyReader",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1827,7 +1926,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EasyReader",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyReader/Other Sources/EasyReader-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (

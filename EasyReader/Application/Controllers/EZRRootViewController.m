@@ -9,7 +9,9 @@
 #import "EZRRootViewController.h"
 #import "EZRMenuViewController.h"
 #import "EZRHomeViewController.h"
+#import "EZRIntroViewController.h"
 
+#import <TwitterKit/TwitterKit.h>
 
 #pragma mark - MFSideMenuContainerViewController
 
@@ -43,11 +45,17 @@
             storyboard_home = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
         }
         
-        EZRHomeViewController *collections = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
-        _viewController_main = collections;
-        
-        [self setViewControllers:@[_viewController_main]];
+        UIViewController* initialViewController;
+        if([[Twitter sharedInstance] session] == nil) {
+            initialViewController = [storyboard_home instantiateViewControllerWithIdentifier:@"IntroViewController"];
+        }
+        else{
+            initialViewController = [storyboard_home instantiateViewControllerWithIdentifier:@"Home"];
+        }
+        [self setViewControllers:@[initialViewController]];
     }
+    
+    self.navigationBarHidden = YES;
     
     return self;
 }
